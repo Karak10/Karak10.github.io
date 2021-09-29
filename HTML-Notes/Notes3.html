@@ -1,0 +1,290 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8"> 
+<title> Page 3 of my notes </title>
+<link rel="stylesheet" href="../CSS-JavaScript-External-Files/HTMLnotes.css?version=1">
+</head>
+<body>
+
+<hr>
+<header>
+<h1>Page three of my HTML notes</h1>
+</header>
+
+<article id="start-of-page"> 
+  
+    <div id="homepages">
+    
+        <h3>Home Pages:</h3>
+       
+    
+    </div>
+    
+    <nav data-notes="html" data-page="3">
+    
+    </nav>
+            
+    <h3> Informations included in this page: </h3>
+<p><a href="#one"> About forms </a></p>
+<p><a href="#two"> HTML colors </a></p>
+  
+    </article>
+    
+     <script src="../CSS-JavaScript-External-Files/nav.js"></script>
+
+
+
+ 
+<hr>
+
+<article id="one">
+<header>
+<h1> About Forms:  </h1>
+</header>
+
+<p> More <span>informations</span> about <Span>forms</span> are included in <a href="../HTML-Notes/Notes4.html#nine">page four of my notes</a>. </p>
+<p>The <span class="c">&lt;form&gt;</span> tag is used to create a <span>form</span>, which can 
+include <span class="c">&lt;input&gt;</span>, <span class="c">&lt;textarea&gt;</span> and 
+<span class="c">&lt;select&gt;</span> tags, all added between <span class="c">&lt;form&gt;</span> and the 
+closing tag of form <span class="c">&lt;/form&gt;</span>. </p>
+
+<p>The <span class="c">&lt;form&gt;</span> tag needs some <span>attributes</span> in order to work, the most important one is <span class="c">action="url"</span> which specifies what page will you and the data you filled
+be transported to after you hit the <span>submit button</span>, in order to collect the data however you will need knowledge of <span>PHP</span>.
+</p>
+
+<p>Another important <span>attribute</span> is <span class="c">method="get/post"</span>, it specifies how you want the data to be
+transported, <span class="c">get</span> will <Span>form</span> the data <span>submitted by the user</span> in the <span>url</span>, therefore its <span>not recommended</span> for <span>sensitive information</span>
+like a <span>password</span> for example, <span class="c">post</span> is more secure, and its used for <span>sensitive information</span> like <span>passwords</span>.</p>
+
+<p>Inside the <span class="c">&lt;form&gt;</span> and <span class="c">&lt;/form&gt;</span> tags as I said before there is the <span class="c">&lt;input&gt;</span> tag, which doesn't need to be closed,
+some of the <span>attributes</span> it uses are the following: <span class="c">type="text/email/submit/file/img/etc", placeholder="", required, title=""</span>. </p>
+
+<p>
+The <span class="c">type</span> attribute specifies the <span>type of the input</span>, the <span class="c">placeholder=""</span> creates a <span>description</span> of what the user should type in the <span>input</span>,
+the <span class="c">required</span> attribute makes the input <Span>required</span> to be filled, and lastly, the <span class="c">title=""</span> attribute adds a <span>title</span> to the input, which appears whenever
+the user points his mouse on the <span>input</span>.</p>
+
+<p> Lastly, you can use <span class="c">&lt;label&gt; Username: &lt;/label&gt;</span> before the <span>input</span> if you want 
+so that the user knows he has to enter his <span>username</span> there, you can also use <span>tables</span>, or use the <span class="c">&lt;label&gt;</span> tag with the <Span>table</span>.</p>
+
+<p>
+Some of the <Span>advantages</span> the <span>&lt;label&gt;</span> element gives is that you can write <span class="c">&lt;label for="username"&gt; Username: &lt;/label&gt; &lt;input type="text" id="username"&gt;</span> 
+and then you can press the <span>label</span> with your mouse and it <span>automatically</span> makes you type in the <span>input</span>, lets try this: </p>
+      
+<p style="text-align:left;">Code:</p> 
+
+<p style="text-align:left;"> 
+<span class="c">&lt;form&gt;<br>
+&lt;label for="username1"&gt; Username: &lt;/label&gt;<br>
+&lt;input type="text" placeholder="Enter the user name" id="username1" title="Username"&gt; &lt;br&gt;<br>
+&lt;label for="password1"&gt; Password: &lt;/label&gt;<br>
+&lt;input type="password" placeholder="Enter your pass word" id="password1" title="Password"&gt; &lt;br&gt;<br>
+&lt;/form&gt;  
+</p> 
+
+<p style="text-align:left;">Outcome:</p> 
+<p>
+<form action = "Notes2.html">
+<label for="username1">Username:</label>
+<input type = "text" placeholder = "Enter the user name" id="username1" name = "username" title="Username"> <br/>
+<label for="password1">Password:</label>
+<input type = "password" placeholder = "Enter the pass word" id = "password1" title="Password">
+</form> </p>
+<p align = "center"> Now we will <span>do the same</span> but we will put it inside a <span>table</span>, and we will also make the inputs <span class="c">required</span> to be written by typing <span class="c">required</span> inside the <span>input</span>, we will also make a <span>submit button</span> by writing <span class="c">&lt;input type = "submit" value = "Login"&gt;</span>, the <span class="c">value=""</span> attribute specifies <span>what will be written on the button</span>, lets do this: </p>
+
+<p style="text-align:left;">Code:</p>
+
+<p style="text-align:left;">
+<span class="c">&lt;form action="Notes2.html" target="_blank" method="get"&gt;<br>
+&lt;table align="center" border="3px"&gt;<br>
+&lt;tr&gt;<br>
+&lt;td&gt;&lt;label for="username2"&gt; Username: &lt;/label&gt;&lt;/td&gt;<br>
+&lt;td&gt; &lt;input type="text" id="username2" placeholder="Enter your user name" required&gt; &lt;/td&gt;<br>
+&lt;/tr&gt;<br>
+&lt;tr&gt;<br>
+&lt;td&gt;&lt;label for="password2"&gt; Password: &lt;/label&gt; &lt;/td&gt;<br>
+&lt;td&gt; &lt;input type="password" id="password2" placeholder="Enter your pass word" required&gt; &lt;/td&gt;<br>
+&lt;/tr&gt;<br>
+&lt;tr&gt;<br>
+&lt;td colspan="2"&gt; &lt;input type="submit" value="login"&gt; &lt;/td&gt;<br>
+&lt;/tr&gt;<br>
+&lt;/table&gt; <br>
+&lt;/form&gt;</span>
+
+</p>
+
+<p style="text-align:left;">Output:</p>
+
+<p>
+<form action = "Notes2.html" target = "_blank" method="get">
+<table align = "center" border = "3px">
+<tr> 
+<td><label for="username2"> Username: </label></td>
+<td> <input type = "text" id="username2" name = "unm" placeholder = "Enter your user name" required> </td>
+</tr>
+<tr>
+<td><label for="password2"> Password: </label> </td>
+<td> <input type = "password" id="password2" name = "password" placeholder = "Enter your pass word" required> </td>
+</tr>
+<tr>
+<td colspan = "2"> <input type = "submit" name = "submit" value = "Login"> </td>
+</tr>
+</table>
+</form>
+</p>
+
+<p align = "center"> We learned about <span class="c">password</span>, <span class="c">sumbit</span> and <span class="c">text</span> types of <span class="c">&lt;input&gt;</span> tag, lets learn two more now, the <span class="c">radio</span> and <span class="c">checkbox</span> types.</p>
+
+<p>The <span class="c">radio</span> type allows you to choose 
+<Span>one</span> of <Span>many options</span>, for example, are you <span>male</span> or <span>female</span>? you can click <span>only one</span>, thats just an example btw I don't want to offend anyone, with <span class="c">checkbox</span> type you can pick <pan>many</span>. </p>
+
+<p> We will need to use <span>two new attributes</span> for <span class="c">radio</span> and <span class="c">checkbox</span> types, the <span class="c">name=""</span> and <span class="c">value=""</span>.</p>
+
+<p> The <span class="c">name</span> attribute is usually used to reference <span>elements</span> in <span>JavaScript</span>, or to reference <span>form data</span> after a <span>form</span> is submitted.
+However, the name is also important for <span class="c">radio</span> and <Span class="c">checkbox</span> input types, as I said before, the <span>radio</span> allows you only
+pick <Span>one</span> of <span>the options</span>, to put <span>more</span> than <span>one option</span> you should create <Span>two</span> different <span>inputs</span>,
+to let the browser know these two <span>inputs</span> are a <span>group</span> of <span>radio options</span> they should have the same <span>name</span>, if they share the same <span>name</span> then only <span>one</span> of the <span>inputs</span> can be picked, if they didn't have the same <span>name</span>, the browser wouldn't be able to guess these <span>two inputs</span> are on the <Span>same group</span> of <Span>radio options</span>, so you 
+would be able to click both. </p>
+
+<p>For <span class="c">checkbox</span> type you anyway can click as many <Span>options</span> as you like, so you don't really care, but still, you should put same <span>name</span> for all your <span>checkbox options</span>, because that will help you
+be organized when you <span>collect</span> the data. </p>
+
+<p> The <span class="c">value</span> attribute can be used for many different things, for <span class="c">button</span>, <span class="c">reset</span>, and <span class="c">submit</span> it defines the <span>text</span> on the button, for <span class="c">text</span>, <span class="c">password</span>, and <span class="c">hidden</span> it defines the initial (default) <span>value</span> of the <span>input</span> field, and lastly
+for <span class="c">checkbox</span>, <span class="c">radio</span>, <span class="c">image</span> it defines the <span>value</span> associated with the <span>input</span> (this is also the value that is sent on submit).</p>
+
+<p style="text-align:left;">Code:</p>
+
+<p style="text-align:left;">
+<span class="c">&lt;form&gt;<br>
+&lt;input type="radio" name="gender" value="male"&gt; Male &lt;br&gt;<br>
+&lt;input type="radio" name="gender" value="famale"&gt; Famale &lt;br&gt; <br>
+&lt;br&gt;<br>
+&lt;input type="checkbox" name="food" value="pizza"&gt; Pizza &lt;br&gt;<br>
+&lt;input type="checkbox" name="food" value="pie"&gt; Pie <br>
+&lt;/form&gt;</span>  
+</p>
+
+<p style="text-align:left;">Outcome:</p>
+
+<p>
+<form>
+<input type = "radio" name = "gender"  value="male" /> Male <br />
+<input type = "radio" name = "gender"  value="female" /> Female <br />
+<br /> 
+
+<input type = "checkbox" name = "food" value = "pizza"> Pizza <br />
+<input type = "checkbox" name = "food" value = "pie"> Pie 
+</form></p>
+
+<p align = "center"> Here is a <span>list</span> of different <span>types</span> of <span>inputs</span> I know:</p>
+
+<form>
+<input type = "color"> for <span>color</span> you type <span>color</span> <br/>
+<input type = "date"> for <span>date</span> you type <span>date</span> <br/>
+<input type = "datetime-local"> for <span>specific date</span>, you type <span>datetime-local</span> <br/>
+<input type = "email"> for <span>email</span> you type <span>email</span><br/>
+<input type = "month"> for <span>month</span> you type <span>month</span> <br/>
+<input type = "number"> for <Span>number</span> you type <span>number</span> <br/>
+<input type = "time"> for <Span>time</span> you type <span>time</span> <br/>
+<input type = "url"> for <span>url</span> you type <Span>url</span> <br/>
+<input type = "week"> to <span>select a week and year</span>, you type <span>week</span> <br/>
+</form>
+
+<p align = "center"> I know <span>some of these</span> may have <span>no effect</span> now but in <span>mobile</span> the <span>keyboard</span> changes. </p>
+
+<p align = "center">The <span class="c">&lt;fieldset&gt;</span> element creates a <span>fieldset</span> around the <Span>form</span>, to do that you write <span class="c">&lt;form&gt; &lt;fieldset&gt; (your inputs, tables, labels and stuff) &lt;/fieldset&gt; &lt;/form&gt;</span>, here is an example to understand what a <span>fieldset</span> is like: </p>
+
+<p>
+<form>
+<fieldset>
+First name: <input type = "text" name = "firstname" placeholder = "Enter your user name"> <br />
+Password: <input type ="password" name = "password" placeholder = "Enter your password"> <br />
+<input type = "submit" value = "Submit">
+</fieldset>
+</form> </p>
+
+<p align = "center"> To fix the width of the <span class="c">&lt;fieldset&gt;</span> you can use <span class="c">CSS</span>, now lets try something else, <span class="c">&lt;legend&gt;</span> tag, its used like this: <span class="c">&lt;form&gt; &lt;fieldset&gt; &lt;legend&gt; Username and Password &lt;/legend&gt; (your inputs, tables, labels and stuff) &lt;/fieldset&gt; &lt;/form&gt;</span>.  </p>
+
+<p>
+<form>
+<fieldset>
+<legend> Username and Password </legend> 
+First name: <input type = "text" name = "firstname" placeholder = "Enter your user name"> <br />
+Password: <input type ="password" name = "password" placeholder = "Enter your password"> <br />
+<input type = "submit" value = "Submit">
+</fieldset>
+</form> </p>
+
+<p align = "center"> One last thing I learned about forms in the <span class="c">&lt;textarea&gt;</span>, its like <span class="c">&lt;input&gt;</span> but it doesn't have the <span class="c">type</span> attribute, and it should be closed with <span class="c">&lt;/textarea&gt;</span>, when you put a <span class="c">&lt;textarea&gt;</span> it comes with a specific size, if you want it to be <span>smaller</span> or <Span>bigger</span> you can change it's size with <span class="c">cols=""</span> and <span class="c">rows=""</span> attributes, for example, <span class="c">cols = "100" rows = "15"</span>, to change it's position you should put it in a <span>paragraph</span> or use <span>CSS</span>, lets try it: </p>
+
+<p style="text-align:left;">Code:</p>
+
+<p style="text-align:left;"> 
+<span class="c">&lt;form align="center"&gt;<br>
+&lt;textarea cols="100" rows="15"&gt; &lt;/textarea&gt;<br>
+&lt;/form&gt;</span>
+</p>
+
+<p style="text-align:left;">Outcome:</p>
+
+<form align="center"> 
+<textarea cols = "100" rows = "15"> </textarea>
+ </form> 
+
+<p align = "center"> You can also put the <span class="c">placeholder</span> attribute but remember, there should be no space between <span class="c">&lt;textarea&gt;</span> and <span class="c">&lt;/textarea&gt;</span> or <span class="c">placeholder</span> will not be shown, that 
+happens because the space between <span>&lt;textarea&gt;</span> and <span>&lt;/textarea&gt;</span> is added as text, I explain how it works below. </p>
+
+<p>
+<textarea rows = "15" cols = "50" placeholder="Enter your message"></textarea></p>
+
+<p> Why does <span>textarea</span> have a closing tag? thats because you can put text between the two tags, like this: <span>&lt;textarea&gt; Hello, I'm Karak10 &lt;/textarea&gt;</span>
+
+<form align="center">
+<textarea> Hello, I'm Karak10 </textarea>
+</form>
+
+<p align = "center"> As you can see it lets your resize the <span class="c">&lt;textarea&gt;</span>, you can disable the resize option with <span class="c">CSS</span>, but I still haven't learned <span class="c">CSS</span> yet.
+
+<p> More informations about <span>forms</span> can be found in <a href="../HTML-Notes/Notes4.html#nine"> page four of my notes</a>.</p>
+</article>
+
+<hr width = "100%" size = "15" color = "black">
+
+<article id="two">
+<header>
+<h1> HTML colors: </h1>
+</header>
+
+<p> <span>HTML</span> colors are expressed as <span>hexademical values</span>. </p>
+
+<p><span>0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F</span></p>
+
+<p> <span>Colors</span> are displayed in <span>combinations</span> of <span>red</span>, <span>green</span>, and <span>blue</span> light (<span>RGB</span>).</p>
+
+<p><span>Hex values</span> are written using the <span>hashtag</span> symbol (<span>#</span>), followed by either <span>three</span> or <span>six</span> hex characters.<br>
+The <span>first two</span> characters are for <span>red</span>, the <span>two characters at the middle</span> are for <span>green</span> and the <span>two last</span> are for <span>blue</span>, if they all are <span>zero</span> there is <span>no light</span> at all, and when there is 
+<span>no light</span> there is darkness, <Span>black</span>, when <span>all the characters</span> are <span>as high as they can</span> there is as much <span>light</span> as possible, therefore we get the <span>white</span> color, here is an example so you understand better:</p>
+
+<ul>
+<li> #FF0000: <span style="background-color:#FF0000; color:red;">aaaaaaaaaaaaa      </span></li>
+<li> #00FF00: <span style="background-color:green; color:green;">aaaaaaaaaaaaa      </span></li>
+<li> #0000FF: <span style="background-color:blue; color:blue;">aaaaaaaaaaaaa      </span></li>
+<li> #000000: <span style="background-color:black; color:black;">aaaaaaaaaaaaa      </span></li>
+<li> #777777: <span style="background-color:gray; color:gray;">aaaaaaaaaaaaa      </span></li>
+<li> #FFFFFF: <span style="background-color:white; color:white;">aaaaaaaaaaaaa      </span></li>
+</ul>
+
+<p> We can <span>mix</span> the <span>colors</span> to form <span>additional colors</span>: <Span>Orange and red mix:</span></p>
+<p>#C1250F: <span style="background-color:#C1250F; color:#C1250F;">aaaaaaaaaaaaa      </span></p>
+
+<p> You can search in google to find the <Span>color</span> you want if you don't know much about how to <span>mix colors</span>, but knowing how it works is a useful information I believe.</p>
+
+<p> We can use <span class="c">bgcolor=""</span> attribute to change the <span>background</span> of <span>tables</span>, the <Span>body</span> of the <span>whole page</span>, and other <span>elements</span>, we can also use the <span class="c">&lt;font&gt;</span> tag to change the <span>color</span> of a specific word inside a <span>paragraph</span>, or the <Span>whole paragraph</span> if we want, by writing <span class="c">&lt;p&gt; &lt;font color="red"&gt; red &lt;/font&gt; &lt;p&gt;</span>, however, it is not recommended to use <span class="c">&lt;font&gt;</span> tag since its not available for <span>HTML5</span>, you should better use the <span class="c">&lt;span&gt;</span> tag for <span>inline content</span> and <span class="c">&lt;div&gt;</span> tag for <Span>block elements</span>, together with <span class="c">CSS.</span></p>
+
+</article>
+<hr width = "100%" size = "15" color = "black">
+
+
+</body>
+</html>

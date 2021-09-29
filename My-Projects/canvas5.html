@@ -1,0 +1,295 @@
+<!DOCTYPE HTML>
+<html>
+<head lang="en-US">
+<meta charset="UTF-8">
+<title> Canvas change image's effects </title>
+<style>
+       .left {
+        text-align: left;
+    }
+    
+    .code10 {
+    white-space: pre-wrap;
+    background-color: lightgreen;
+    }
+    
+    p {
+    text-align:center;
+    }
+    h1 {
+    text-align:center;
+    }
+    h2 {
+    text-align:center;
+    }
+    h3 {
+    text-align:center;
+    }
+    .c {
+    background-color:lightgreen;
+    }
+    hr {
+    width:100%;
+    height:15px;
+    background-color:black;
+    color:black;
+    border: black solid;
+    }
+    body {
+    background-color:rgb(165, 235, 235);
+    margin: 0;
+    height: 100vh;
+    }   
+    span {
+    background-color:lightgreen;
+    }
+    
+    a:link {
+    color: black;
+    text-shadow: 1px 0px 1px black;
+    
+    }
+    
+    a:visited {
+    color: black;
+    text-shadow: 1px 0px 1px rgb(22, 22, 22);
+    }
+    
+    a:hover {
+    text-decoration: underline;
+    color: red;
+    text-shadow: 1px 0px 1px black;
+    }
+    
+    .document{
+        width: 100vw;
+        height: 100vh;
+        overflow: auto;
+        overflow-x: hidden;
+    }
+    
+    .gray{
+        background-color: lightgray;
+    }
+    
+    .no-scroll{
+        overflow-y: hidden;
+    }
+</style> 
+<link rel="stylesheet" href="../CSS-JavaScript-External-Files/HTMLnotes.css?version=1">
+</head>
+<body>
+<hr>
+<article>
+
+<h1> Canvas change image's effects </h1>
+<p><a href="../Home-Pages/myprojects.html">Click to go back</a></p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><span class="code10">#canvas-project007{
+    display: grid;
+    grid-template-areas: 
+    'canvas' 
+    'form';
+    justify-content: space-evenly;
+    margin: auto; 
+    width: fit-content;
+}
+#canvas-0002{
+    border: 3px solid black;
+    grid-area: canvas;
+}
+#canvas-project007 form{
+    grid-area: form;
+    display: flex; 
+    width: 100%;
+    justify-content: space-evenly;
+}</span></p>
+
+<p class="left">CSS Code:</p>
+
+<p class="left"><span class="code10">&lt;div id="canvas-project007">
+&LT;canvas id="canvas-0002" style="border: 3px solid black; display: block; margin: auto;">&lt;/canvas>
+&lt;form>
+    &lt;input type="radio" name="type" value="original" checked="true"> Original 
+    &lt;input type="radio" name="type" value="Grayscale"> Grayscale 
+    &lt;input type="radio" name="type" value="Inverted"> Inverted
+&lt;/form>
+&lt;/div></span></p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let canvas = document.getElementById('canvas-0002');
+let c = canvas.getContext('2d');
+
+let inputs = document.querySelectorAll('#canvas-project007 input');
+
+let gradient = c.createLinearGradient(0, 0, canvas.width, canvas.height);
+gradient.addColorStop(0, 'red');
+gradient.addColorStop(0.3, 'pink');
+gradient.addColorStop(0.5, 'green');
+gradient.addColorStop(0.7, 'yellow');
+gradient.addColorStop(1, 'blue');
+
+let img = new Image();
+img.src = ../images/ω8.png';
+
+function original(){
+    let aspectRatio = img.naturalWidth / img.naturalHeight;
+    canvas.height = canvas.width / aspectRatio;
+    c.drawImage(img, 0, 0, canvas.width, canvas.height);
+}
+
+img.addEventListener('load', (e) => {
+    original();
+});
+
+function grayscale(){
+    original();
+    let imageData = c.getImageData(0, 0, canvas.width, canvas.height);
+    let data = imageData.data;
+    for(let i = 0; i < data.length; i+=4){
+        let avg = (data[i] + data[i + 1] + data[i + 2]) / 3;
+        data[i] = avg;
+        data[i + 1] = avg;
+        data[i + 2] = avg;
+    }
+    c.putImageData(imageData, 0, 0);
+}
+
+function inverted(){
+    original();
+    let imageData = c.getImageData(0, 0, canvas.width, canvas.height);
+    let data = imageData.data;
+    for(let i = 0; i < data.length; i += 4){
+        data[i] = 255 - data[i];
+        data[i + 1] = 255 - data[i + 1];
+        data[i + 2] = 255 - data[i + 2]
+    }
+    c.putImageData(imageData, 0, 0);
+}
+
+inputs.forEach((input) => {
+    input.addEventListener('change', (e) => {
+        switch(e.target.value){
+            case "Grayscale":
+                return grayscale();
+            break;
+            case "Inverted":
+                return inverted();
+            break;
+            default: 
+                return original();
+        }
+    });
+});</span></p>
+
+<p class="left">Outcome:</p>
+
+<style>
+    #canvas-project007{
+        display: grid;
+        grid-template-areas: 
+        'canvas' 
+        'form';
+        justify-content: space-evenly;
+        margin: auto; 
+        width: fit-content;
+    }
+    #canvas-0002{
+        border: 3px solid black;
+        grid-area: canvas;
+    }
+    #canvas-project007 form{
+        grid-area: form;
+        display: flex; 
+        width: 100%;
+        justify-content: space-evenly;
+    }
+</style>
+
+<div id="canvas-project007">
+<canvas id="canvas-0002" style="border: 3px solid black; display: block; margin: auto;"></canvas>
+<form>
+    <input type="radio" name="type" value="original" checked="true"> Original 
+    <input type="radio" name="type" value="Grayscale"> Grayscale 
+    <input type="radio" name="type" value="Inverted"> Inverted
+</form>
+</div>
+
+<script>
+    if(true){
+        let canvas = document.getElementById('canvas-0002');
+        let c = canvas.getContext('2d');
+
+        let inputs = document.querySelectorAll('#canvas-project007 input');
+
+        let gradient = c.createLinearGradient(0, 0, canvas.width, canvas.height);
+        gradient.addColorStop(0, 'red');
+        gradient.addColorStop(0.3, 'pink');
+        gradient.addColorStop(0.5, 'green');
+        gradient.addColorStop(0.7, 'yellow');
+        gradient.addColorStop(1, 'blue');
+        
+        let img = new Image();
+        img.src = '../images/ω8.png';
+
+        function original(){
+            let aspectRatio = img.naturalWidth / img.naturalHeight;
+            canvas.height = canvas.width / aspectRatio;
+            c.drawImage(img, 0, 0, canvas.width, canvas.height);
+        }
+
+        img.addEventListener('load', (e) => {
+            original();
+        });
+
+        function grayscale(){
+            original();
+            let imageData = c.getImageData(0, 0, canvas.width, canvas.height);
+            let data = imageData.data;
+            for(let i = 0; i < data.length; i+=4){
+                let avg = (data[i] + data[i + 1] + data[i + 2]) / 3;
+                data[i] = avg;
+                data[i + 1] = avg;
+                data[i + 2] = avg;
+            }
+            c.putImageData(imageData, 0, 0);
+        }
+
+        function inverted(){
+            original();
+            let imageData = c.getImageData(0, 0, canvas.width, canvas.height);
+            let data = imageData.data;
+            for(let i = 0; i < data.length; i += 4){
+                data[i] = 255 - data[i];
+                data[i + 1] = 255 - data[i + 1];
+                data[i + 2] = 255 - data[i + 2]
+            }
+            c.putImageData(imageData, 0, 0);
+        }
+
+        inputs.forEach((input) => {
+            input.addEventListener('change', (e) => {
+                switch(e.target.value){
+                    case "Grayscale":
+                        return grayscale();
+                    break;
+                    case "Inverted":
+                        return inverted();
+                    break;
+                    default: 
+                        return original();
+                }
+            });
+        });        
+    }
+</script>
+ 
+
+ </article>
+ 
+<hr>
+</body>
+</html>

@@ -1,0 +1,1997 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> Page eight of my notes </title>
+<link rel="stylesheet" href="../CSS-JavaScript-External-Files/HTMLnotes.css">
+<Style>
+
+.code10 {
+white-space: pre-line;
+background-color:lightgreen;
+}
+
+.left {
+    text-align: left;
+}
+
+</style>
+</head>
+<body>
+
+<hr>
+<header> 
+<h1> Page three of my CSS notes </h1>
+</header>
+
+<article id="start-of-page"> 
+  
+    <div id="homepages">
+    
+        <h3>Home Pages:</h3>
+       
+    
+    </div>
+    
+    <nav data-notes="CSS" data-page="3">
+    
+    </nav>
+            
+    <h3> Informations included in this page:</h3>
+<p> <a href="#one"> The CSS Box Model </a></p>
+<p> <a href="#two"> The border Property </a></p>
+<p> <a href="#three"> Width and Height Properties  </a></p>
+<p> <a href="#four"> The background-color Property </a></p>
+<p> <a href="#four-two"> The background-clip Property </a></p>
+<p> <a href="#five"> The background-image Property </a></p>
+<p> <a href="#six"> The background-repeat Property </a></p>
+<p> <a href="#seven"> The background-size and background-position Properties</a></p>
+<p> <a href="#eight"> The background-attachment Property </a></p>
+<p> <a href="#nine"> The list-style-type Property </a></p>
+<p> <a href="#ten">  The list-style-image, list-style-position and content Properties </a></p>
+<p> <a href="#eleven"> The list-style Property </a></p>
+<p> <a href="#twelve"> The border-collapse and border-spacing Properties </a></p>
+<p> <a href="#thirteen"> The caption-side Property </a></p>
+<p> <a href="#fourteen"> The empty-cells Property </a></p>
+<p> <a href="#fifteen"> The table-layout Property </a></p>
+<p> <a href="#sixteen"> Setting styles to links </a></p>
+<p> <a href="#seventeen"> Setting styles to the Mouse Cursor</a></p>
+
+    </article>
+    
+     <script src="../CSS-JavaScript-External-Files/nav.js"></script> 
+
+
+
+ 
+<hr>
+
+<article id="one">
+
+    <header>
+
+        <h1>The CSS Box Model</h1>
+
+    </header>
+
+<p> All <span>HTML elements</span> can be considered as <span>boxes</span>. 
+The <span>CSS box model</span> represents the <Span>design</Span> and <span>layout</span> of 
+the site. It consists of <span>margins</span>, <span>borders</span>, <span>paddings</span> and the 
+actual <Span>content</Span>. </p>
+
+<p>The properties work in the same orderL <span>top</span>, <span>right</span>, <span>bottom</span> and <Span>left</span>.</p>
+  
+<p>The image below illustrates the <span>box model</span>.</p>    
+
+<image style="display: flex; flex-direction: row; margin-left: auto; margin-right: auto;" src="https://api.sololearn.com/DownloadFile?id=2613" alt="CSS Box Model"></image>
+
+<p>When working with <span>boxes</span>, it is important to understand how the total <span>width</span>
+of an <span>element</span> is calculated. For example, the total <Span>width</Span> for the box with <Span>padding</Span>
+will be the sum of <span>width</span> plus <Span>padding lef</Span> and <Span>padding right</Span>.</p>
+
+<image style="display: flex; flex-direction: row; margin-left: auto; margin-right: auto;" src="https://api.sololearn.com/DownloadFile?id=2999" alt="CSS Box Model"></image>
+
+<p>The total <span>height</span> is calculated the same way as the <span>width</span>. 
+The example below is the same <Span>box</Span> from the previous picture with <Span>padding</Span>, 
+<Span>border</Span> and <span>margin.</span></p>
+
+<image style="display: flex; flex-direction: row; margin-left: auto; margin-right: auto;" src="https://api.sololearn.com/DownloadFile?id=3014" alt="CSS Box Model"></image>
+
+<p> You can use <Span>padding</Span> to define the space <Span>between</Span> the <Span>content</Span>
+and the <span>border</span>, note that any <Span>background-color</Span> you assign to the 
+<span>content</span> will also be applied to the <span>padding</span>, you can use <span>margin</span> to 
+change the <Span>distances</Span> of the <Span>content</Span> in relation to the whole space of the page it's located in, and 
+<Span>border</Span> of course to add a <span>border</span> that seperates the <Span>content/padding</Span> from the <Span>margin</Span>.
+</article>
+
+<hr>
+
+<article id="two">
+
+    <header>
+
+        <h1>The border Property</h1>
+
+    </header>
+
+<p>The <Span>border property</Span> allows you to <span>customize</span> the <Span>borders</Span> of 
+<span>HTML elements</span>. In order to add a <span>border</span> to the <Span>element</Span>, you 
+need to specify the <span>size</span>, <Span>style</Span> and <span>color</span> of the border. 
+The example below shows how to ad a <Span>5px</Span> <Span>solid</Span> <Span>green</Span> border to a <span>paragraph</span>.</p>
+
+
+<p class="left">HTML code:</p>
+
+<p class="left">
+    
+<span class="code10">  &lt;p id="border-example"> I'm a paragraph and I have a border around me &lt;/p></span>
+   
+</p>
+
+<p class="left">CSS code:</p>
+
+<p class="left">
+   
+    <span class="code10">&lt;Style>
+
+        #border-example {
+            border: 5px solid green; 
+            width: 300px; 
+            margin-left:auto;
+            margin-right:auto; 
+            padding:20px;
+        }
+        
+        &lt;/Style></span>   
+   
+</p>
+
+<p class="left">Outcome:</p>
+
+<Style>
+
+#border-example {
+    border: 5px solid green; 
+    width: 300px; 
+    margin-left:auto;
+    margin-right:auto; 
+    padding:20px;
+}
+
+</Style>
+ 
+<p id="border-example"> I'm a paragraph and I have a border around me </p>
+
+<p>The <Span>properties</Span> for the <span>border</span> can be set <Span>seperately</Span>. 
+The <span>border-width</span> property specifies the <Span>width</Span> of the <span>border</span>,
+the <Span>border-color</Span> specifies the <Span>color</Span> of the <span>border</span>
+and the <span>border-style</span> specifies the <Span>style</Span> of the <span>border</span>, 
+note that if you don't specify a <span>style</span> none of the other <Span>border properties</span> will not work.</p>
+
+
+    <p class="left">HTML code:</p>
+
+    <p class="left">
+        
+    <span class="code10">  &lt;p id="border-example2"> I'm a paragraph and I have a border around me &lt;/p></span>
+       
+    </p>
+    
+    <p class="left">CSS code:</p>
+    
+    <p class="left">
+       
+        <span class="code10">&lt;Style>
+    
+            #border-example2 {
+                border-width: 5px;
+                border-style: solid;
+                border-color: green;
+                width: 300px; 
+                margin-left:auto;
+                margin-right:auto; 
+                padding:20px;
+            }
+            
+            &lt;/Style></span>   
+       
+    </p>
+    
+    <p class="left">Outcome:</p>
+
+    <Style>
+
+        #border-example2 {
+            border-width: 5px;
+            border-style: solid;
+            border-color: green;
+            width: 300px; 
+            margin-left:auto;
+            margin-right:auto; 
+            padding:20px;
+        }
+        
+        </Style>
+         
+        <p id="border-example2"> I'm a paragraph and I have a border around me </p>
+
+<p>The <span>default</span> value for <span>border-style</span> is <span>none</span>, which defines
+<Span>no border</Span>. There are various <span>styles</span> supported for the <span>border-style</span>
+property: <span>dotted</span>, <span>dashed</span>, <span>double</span>, etc. </p>
+
+<style>
+     
+#solid{
+    border: 5px solid green; 
+    width: 300px; 
+    margin-left:auto;
+    margin-right:auto; 
+    padding:20px;
+}
+
+#dotted{
+    border: 5px dotted green; 
+    width: 300px; 
+    margin-left:auto;
+    margin-right:auto; 
+    padding:20px;
+}
+
+#dashed{
+    border: 5px dashed green; 
+    width: 300px; 
+    margin-left:auto;
+    margin-right:auto; 
+    padding:20px;
+}
+
+#double{
+    border: 5px double green; 
+    width: 300px; 
+    margin-left:auto;
+    margin-right:auto; 
+    padding:20px;
+}
+
+#groove{
+    border: 5px groove green; 
+    width: 300px; 
+    margin-left:auto;
+    margin-right:auto; 
+    padding:20px;
+}
+
+#ridge{
+    border: 5px ridge green; 
+    width: 300px; 
+    margin-left:auto;
+    margin-right:auto; 
+    padding:20px;
+}
+
+#inset{
+    border: 5px inset green; 
+    width: 300px; 
+    margin-left:auto;
+    margin-right:auto; 
+    padding:20px;
+}
+
+#outset{
+    border: 5px outset green; 
+    width: 300px; 
+    margin-left:auto;
+    margin-right:auto; 
+    padding:20px;
+}
+
+#hidden{
+    border: 5px hidden green; 
+    width: 300px; 
+    margin-left:auto;
+    margin-right:auto; 
+    padding:20px;
+}
+
+</Style>
+ 
+<p id="solid"> This is a solid border </p>
+<p id="dotted"> This is a dotted border </p>
+<p id="dashed"> This is a dashed border </p>
+<p id="double"> This is a double border </p>
+<p id="groove"> This is a groove border </p>
+<p id="ridge"> This is a ridge border </p>
+<p id="inset"> This is an inset border </p>
+<p id="outset"> This is an outset border </p>
+<p id="hidden"> This is an hidden border </p>
+
+<p>One last <span>border</span> property I want to speak about is 
+<span>border-radius</span>, it basically makes the <Span>border corners</Span> round, 
+see example:</p>
+
+
+<p class="left">HTML code:</p>
+
+<p class="left">
+    
+<span class="code10">&lt;p id="radius-border"> I'm a paragraph and I have a border around me &lt;/p>
+
+    &lt;p id="radius-border2"> I'm a paragraph and I have a border around me &lt;/p></span>
+   
+</p>
+
+<p class="left">CSS code:</p>
+
+<p class="left">
+   
+    <span class="code10">&lt;Style>
+
+        #radius-border {
+            border: 5px solid green; 
+            border-radius: 20px;
+            width: 300px; 
+            margin-left:auto;
+            margin-right:auto; 
+            padding:20px;
+        }
+        
+        #radius-border2 {
+            border: 5px solid green; 
+            border-radius: 30px;
+            width: 300px; 
+            margin-left:auto;
+            margin-right:auto; 
+            padding:20px;
+        }
+        
+        &lt;/Style></span>   
+   
+</p>
+
+<p class="left">Outcome:</p>
+
+<Style>
+
+    #radius-border {
+        border: 5px solid green; 
+        border-radius: 20px;
+        width: 300px; 
+        margin-left:auto;
+        margin-right:auto; 
+        padding:20px;
+    }
+    
+    #radius-border2 {
+        border: 5px solid green; 
+        border-radius: 30px;
+        width: 300px; 
+        margin-left:auto;
+        margin-right:auto; 
+        padding:20px;
+    }
+
+    </Style>
+     
+    <p id="radius-border"> I'm a paragraph and I have a border around me </p>
+
+    <p id="radius-border2"> I'm a paragraph and I have a border around me </p>
+
+<p>You can select to <span>costumize</span> each <span>side</span> of the <span>border</span>
+differently by writing <span>border-right-color: red;</span> for example, or for <span>border-radius</span> by writing 
+something like <span>border-bottom-right: 30px;</span>.</p>
+
+<p class="left">HTML code:</p>
+
+<p class="left">
+    
+<span class="code10">&lt;p id="border69"> I'm a paragraph and I have a border around me &lt;/p></span>
+   
+</p>
+
+<p class="left">CSS code:</p>
+
+<p class="left">
+   
+    <span class="code10">&lt;Style>
+
+        #border69 {
+            border-width: 10px;
+            border-left-width: 15px;
+            border-right-width: 5px;
+            border-style: double;
+            border-color: blue;
+            border-right-color: green;
+            border-left-color: brown;
+            border-right-style: ridge;
+            border-left-style: groove;
+            border-top-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+            width: 300px; 
+            margin-left:auto;
+            margin-right:auto; 
+            padding:20px;
+        }
+        
+        &lt;/Style></span>   
+   
+</p>
+
+<p class="left">Outcome:</p>
+
+<Style>
+
+    #border69 {
+        border-width: 10px;
+        border-left-width: 15px;
+        border-right-width: 5px;
+        border-style: double;
+        border-color: blue;
+        border-right-color: green;
+        border-left-color: brown;
+        border-right-style: ridge;
+        border-left-style: groove;
+        border-top-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+        width: 300px; 
+        margin-left:auto;
+        margin-right:auto; 
+        padding:20px;
+    }
+    
+    </Style>
+     
+    <p id="border69"> I'm a paragraph and I have a border around me </p>
+
+
+ 
+ 
+</article>
+
+ <hr>
+
+ <article id="three">
+
+    <header>
+
+        <h1>Width and Height</h1>
+
+    </header>
+
+<p>To <span>style</span> an <span>element</span> to have a 
+total <span>width</span> and <span>height</span> you can use the 
+<Span>width</Span> and <span>height</span> properties.</p>
+
+
+<p class="left">Code:</p>
+
+
+<p class="left">
+
+<Span class="code10">&lt;div style="
+    width: 200px ;
+    height: 200px ;
+    background-color: blue;
+    margin: auto;"> 
+    
+    &lt;/div></Span>
+
+</p>
+
+<p class="left">Outcome:</p>
+
+<div style="
+width: 200px ;
+height: 200px ;
+background-color: blue;
+margin: auto;"> 
+
+ 
+
+</div>
+
+<p>The <Span>width</Span> and <span>height</span>
+of an <Span>element</Span> can also be assigned using <span>percents</span></p>
+
+
+<p class="left">Code:</p>
+
+
+<p class="left">
+
+<Span class="code10">&lt;div style="
+    width: 50%;
+height: 200px;
+background-color: blue;
+margin: auto;"> 
+    
+    &lt;/div></Span>
+
+</p>
+
+<p class="left">Outcome:</p>
+
+<div style="
+width: 50%;
+height: 200px;
+background-color: blue;
+margin: auto;"> 
+
+ 
+
+</div>
+
+<p>Using <Span>percents</Span> instead of <Span>length</Span> can be prefered in some cases,
+if you try to change the size of the browser for example the size of the <Span>div</Span> will also change,
+so when we access the page on <span>phone</span> for example the <span>div</span> will get <Span>50%</Span>
+width of the <span>phone screen</span>.</p>
+
+<p>There are <span>four</span> more <span>width</span> and <Span>height</Span> properties we can use:</p>
+
+<p><Span>min-width</Span> - the minimum width of an element</p>
+<p><Span>max-width</Span> - the maximum width of an element</p>
+<p><Span>min-height</Span> - the minimum height of an element</p>
+<p><Span>max-height</Span> - the maximum height of an element</p>
+
+<p> These properties can be useful and can help you build responsive websites. </p>
+
+     
+</article>
+
+<hr>
+
+<article id="four">
+
+    <header>
+
+        <h1>The background-color Property</h1>
+
+    </header>
+
+<p>The <span>background-color</span> property is used to 
+specify the <Span>background color</Span> of an <span>element</span>.</p>
+
+
+<p class="left">Code:</p>
+
+
+<p class="left">
+
+<Span class="code10">&lt;div style="
+    width: 500px;
+    height: 500px;
+    background-color: gray;
+    margin: auto;">
+    
+    
+    &lt;div style="
+    display: inline-table;
+    background-color: red;
+    width:250px;
+    height:250px;
+    margin: 120px;">
+    
+    &lt;div style="
+    display: table-cell;
+    width: 250px;
+    height: 250px;
+    background-color: green;
+    font-size: 30px;
+    vertical-align: middle;
+    text-align: center;">
+
+    I'm a paragraph
+
+    &lt;/div>
+    
+    &lt;/div>
+    
+    &lt;/div></Span>
+
+</p>
+
+<p class="left">Outcome:</p>
+
+<div style="
+width: 500px;
+height: 500px;
+background-color: gray;
+margin: auto;">
+
+
+<div style="
+display: inline-table;
+background-color: red;
+width:250px;
+height:250px;
+margin: 120px;">
+
+<div style="
+display: table-cell;
+width: 250px;
+height: 250px;
+background-color: green;
+font-size: 30px;
+vertical-align: middle;
+text-align: center;">
+I'm a paragraph
+</div>
+
+</div>
+
+</div>
+
+<p>It can of course take other <Span>color formats</Span> too like <span>rgb</span>, 
+<span>rgba</span>, etc.</p>
+</article>
+
+<hr>
+
+<article id="four-two">
+
+    <header>
+
+        <h1>The background-clip property</h1>
+
+    </header>
+
+<p>The <span>background-clip</span> property defines how 
+far the <span>background</span> should extend within an <span>element</span>.</p>
+
+
+<p><span>background-clip: border-box;</span></p>
+<div style=" 
+width: 400px;
+height: 50px;
+margin: auto;
+background-color: cyan;
+border: 10px dashed black;
+background-clip: border-box;
+padding: 50px;"> Hello world</div>
+
+<p><span>background-clip: padding-box;</span></p>
+<div style=" 
+width: 400px;
+height: 50px;
+margin: auto;
+background-color: cyan;
+border: 10px dashed black;
+background-clip: padding-box;
+padding: 50px;"> Hello world</div>
+
+<p><span>background-clip: content-box;</span></p>
+<div style=" 
+width: 400px;
+height: 50px;
+margin: auto;
+background-color: cyan;
+border: 10px dashed black;
+background-clip: content-box;
+padding: 50px;"> Hello world</div>
+
+</article>
+
+<hr>
+
+<article id="five">
+
+    <header>
+
+        <h1>The background-image Property</h1>
+
+    </header>
+
+<p>The <span>background-image</span> property sets one or several 
+<span>background images</span> in an <Span>element</Span>. Let's 
+set a <Span>background-image</Span> for the <Span>paragraph</Span> element:</p>
+
+<p class="left">Code:</p>
+
+
+<p class="left">
+
+<Span class="code10">&lt;p style=" 
+    background-image: url(../images/background.jpg);
+    padding: 30px;
+    color: cyan;
+    font-weight: bold;
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-shadow: 5px -1px 0px blue;
+    width: 90%;
+margin: auto;"> 
+    
+    Hello I'm a paragraph with a background image.
+    
+    &lt;/p></Span>
+
+</p>
+
+<p class="left">Outcome:</p>
+
+
+<p style=" 
+background-image: url(../images/background.jpg);
+padding: 30px;
+color: cyan;
+font-weight: bold;
+font-size: 50px;
+font-family: Arial, Helvetica, sans-serif;
+text-shadow: 5px -1px 0px blue;
+width: 90%;
+margin: auto;"> 
+
+Hello I'm a paragraph with a background image.
+
+</p>
+
+<p>By default, a <Span>background-image</Span> is placed at 
+the <Span>top-left</Span> corner of an element, and is <Span>repeated</Span> both 
+<Span>horizontally</Span> and <span>vertically</span> to cover the 
+entire <span>element</span>.</p>
+
+
+</article>
+
+<hr>
+
+<article id="six">
+
+    <header>
+
+        <h1>The background-repeat Property</h1>
+
+    </header>
+
+<p>The <span>background repeat</span> property specifies how 
+<Span>background images</Span> are repeated. A <span>background image</span> 
+can be repeated along <span>horizontal axis</span>, <span>vertical axis</span>,
+or <span>not repeated</span> at all. </p>
+
+<p class="left">Code:</p>
+
+
+<p class="left">
+
+<Span class="code10">&lt;div style=" 
+    width: 500px;
+    height: 140px;
+    background-image: url(../images/background.jpg);
+    background-repeat: repeat-x;
+    background-color: black;
+    margin: auto;">
+    
+    &lt;/div>
+    
+    &lt;div style=" 
+    width: 500px;
+    height: 300px;
+    background-image: url(../images/background.jpg);
+    background-repeat: repeat-y;
+    background-color: blue;
+    margin: auto;"> 
+
+    &lt;/div>
+    
+    &lt;div style="
+    width: 500px;
+    height: 50px;
+    background-color: black;
+    margin:auto;"> 
+    
+    &lt;/div>
+    
+    &lt;div style=" 
+    width: 500px;
+    height: 300px;
+    background-image: url(../images/background.jpg);
+    background-repeat: repeat-xy;
+    background-color: white;
+    margin: auto;">
+    
+    &lt;/div>
+    
+    &lt;div style="
+    width: 500px;
+    height: 50px;
+    background-color: black;
+    margin:auto;"> 
+
+    &lt;/div>
+    
+    &lt;div style=" 
+    width: 500px;
+    height: 100px;
+    background-image: url(../images/background.jpg);
+    background-repeat: no-repeat;
+    background-color: blue;
+    margin: auto;">
+    
+    &lt;/div></Span>
+
+</p>
+
+<p class="left">Outcome:</p>
+
+<div style=" 
+width: 500px;
+height: 140px;
+background-image: url(../images/background.jpg);
+background-repeat: repeat-x;
+background-color: black;
+margin: auto;">
+
+</div>
+
+<div style=" 
+width: 500px;
+height: 300px;
+background-image: url(../images/background.jpg);
+background-repeat: repeat-y;
+background-color: blue;
+margin: auto;"> </div>
+
+<div style="
+width: 500px;
+height: 50px;
+background-color: black;
+margin:auto;"> </div>
+
+<div style=" 
+width: 500px;
+height: 300px;
+background-image: url(../images/background.jpg);
+background-repeat: repeat-xy;
+background-color: white;
+margin: auto;">
+
+</div>
+
+<div style="
+width: 500px;
+height: 50px;
+background-color: black;
+margin:auto;"> </div>
+
+<div style=" 
+width: 500px;
+height: 100px;
+background-image: url(../images/background.jpg);
+background-repeat: no-repeat;
+background-color: blue;
+margin: auto;">
+
+</div>
+
+</article>
+
+<hr>
+
+<article id="seven">
+ 
+
+    <header>
+
+        <h1>The background-size and background-position properties</h1>
+    </header>
+
+<p>The <span>background-size</span>, as you can probably guess is used 
+to change the <Span>size</Span> of the <span>image</span>, <Span>background-position</Span>
+can be used to <Span>move</span> the <span>image</span>.</p>
+
+    <p class="left">Code:</p>
+
+
+<p class="left">
+
+<Span class="code10">&lt;div style=" 
+    width: 500px;
+    height: 500px;
+    background-image: url(../images/background.jpg),
+    url(../background2.jpg);
+    background-repeat: no-repeat;
+    background-size: 250px;
+    background-position: 80px 350px,
+    80px 10px;
+    background-color: black;
+    margin: auto;">
+
+&lt;/div></Span>
+
+</p>
+
+<p class="left">Outcome:</p>
+
+<div style=" 
+width: 500px;
+height: 500px;
+background-image: url(../images/background.jpg),
+url(../background2.jpg);
+background-repeat: no-repeat;
+background-size: 250px;
+background-position: 80px 350px,
+80px 10px;
+background-color: black;
+margin: auto;"> </div> 
+
+<p>The <Span>background-size</span> property also takes 
+    the following <Span>keywords</Span>: <Span>contain</Span> and <Span>cover</Span>. </p>
+
+<p><span>Contain</span> keyword <Span>scales</Span> the <Span>image</Span> so 
+that it <Span>fits</Span> the <span>container</span>, <Span>cover</Span> does the same,
+however, if the <Span>container</Span> and the <Span>image</Span> have a 
+<span>different aspect ratio</span> the <span>image</span> will be
+<Span>cropped</Span>, pretty similar to how <Span>preserveAspectRatio="xMinYMin slice"</Span> attribute works
+in <Span>SVG</Span>. </p>
+
+</article>
+
+<hr>
+
+<article id="eight">
+
+
+    <header>
+
+        <h1>The background-attachment Property</h1>
+
+    </header>
+
+
+<p>The <span>background-attachment</span> property sets 
+wether a <span>background image</span> is <Span>fixed</Span>
+or <Span>scrolls</Span> with the rest of the page. Even if 
+an <Span>element</Span> has <span>scrolling mechanism</span>, 
+a <span>fixed</span> background doesn't move with the <Span>element</Span>.</p>
+
+<p>The <span>background-property</span> has <Span>five values</Span>:</p>
+
+
+<style>
+
+#bruh table{
+    margin: auto;
+    border: 3px solid black;
+    width: 300px;
+    border-collapse: collapse;
+}
+#bruh th {
+    border-bottom: 2px solid black;
+   
+}
+#bruh td {
+    border-bottom: 2px solid black;
+   text-align: center;
+   vertical-align: middle;
+}
+
+</style>
+
+<div id="bruh">
+    
+<table>
+<tr style=" background-color: white;">
+  <th style="text-align: center; width: 60px;">Value   </th>
+  <th id="twoo" style="text-align: center;">Description  </th> 
+    
+</tr>
+<tr style=" background-color: lightgray;">
+    <td> scroll</td>
+    <td> The background image wil scroll with the page </td>
+</tr>
+<tr style=" background-color: white;">
+    <td>fixed</td>
+    <td>The background image will not scroll with the page</td>
+</tr>
+<tr style=" background-color: lightgray;">
+    <td>local</td>
+    <td>The background image will scroll with the element's contents</td>
+</tr>
+<tr style=" background-color: white;">
+    <td>intial</td>
+    <td style="height: 40px; vertical-align: middle;">Sets property to it's default value</td>
+</tr>
+<tr style=" background-color: lightgray;">
+    <td>inherit</td>
+    <td>Inherits it's property from parent element</td>
+</tr>
+
+</table>
+ 
+
+</div>
+
+</article>
+
+<hr>
+
+<article id="nine">
+
+    <header>
+
+        <h1>The list-style-type Property</h1>
+
+    </header>
+
+<p>The <Span>list properties</Span> allow us to set different <span>list item markers</span>.
+In <span>HTML</span> there are <span>three types</span> of lists: </p>
+
+<p><span>unordered list</span> (&lt;ul&gt;) - the list items are marked with bullets<br>
+<span>ordered lists</span> (&lt;ol&gt;) - the list items are marked with number or letters<br>
+<span>description lists</span> (&lt;dl&gt;) - the list items can be assigned a description</p>
+
+<p>With <span>CSS</span> lists can be styled further, and <span>images</span> can be used 
+as the <span>list item marker</span>. One of the ways is to use the <span>list-style-type</span>
+property, which can be set to <span>circle</span>, <span>square</span>, 
+<span>decimal</span>, <span>disc</span>, <span>lower-alpha</span>, etc.</p>
+
+<p class="left">HTML code:</p>
+
+
+<p class="left">
+
+<Span class="code10">&lt;ol>
+    &lt;li id="circle"> Circle &lt;/li>
+    &lt;li id="square"> Square &lt;/li>
+    &lt;li id="decimal"> Decimal &lt;/li>
+    &lt;li id="disc"> Disc &lt;/li>
+    &lt;li id="lower-alpha"> Lower-alpha &lt;/li>
+    &lt;/ol></Span>
+
+</p>
+
+
+<p class="left">CSS code:</p>
+
+
+<p class="left">
+
+<Span class="code10">&lt;style>
+
+    #circle {
+        list-style-type: circle;
+    }
+    
+    #square {
+        list-style-type: square;
+    }
+    
+    #decimal { 
+        list-style-type: decimal;
+    }
+    
+    #disc {
+        list-style-type: disc;
+    }
+    
+    #lower-alpha {
+        list-style-type: lower-alpha;
+    }
+    
+    ol {
+        list-style-position: inside;
+        margin-left: 45%;
+    }
+    
+    &lt;/style></Span>
+
+</p>
+
+<p class="left">Outcome:</p>
+
+<style>
+
+#circle {
+    list-style-type: circle;
+}
+
+#square {
+    list-style-type: square;
+}
+
+#decimal { 
+    list-style-type: decimal;
+}
+
+#disc {
+    list-style-type: disc;
+}
+
+#lower-alpha {
+    list-style-type: lower-alpha;
+}
+
+ol {
+    list-style-position: inside;
+    margin-left: 45%;
+}
+
+</style>
+
+
+<ol>
+    <li id="circle"> Circle </li>
+    <li id="square"> Square </li>
+    <li id="decimal"> Decimal </li>
+    <li id="disc"> Disc </li>
+    <li id="lower-alpha"> Lower-alpha </li>
+    </ol>
+
+
+</article>
+
+<hr>
+
+<article id="ten">
+
+
+    <header>
+
+        <h1>The list-style-image, list-style-position and content Properties</h1>
+    </header>
+
+<p> The <span>list-style-image</span> specifies an  <span>image</span> to be used as the <Span>list item marker</Span>.
+<br>The <Span>list-style-position</Span> specifies the position of the <span>marker box</span>,
+it takes <Span>two values</Span>, <span>inside</span> and <span>outside</span>.<br>
+The <span>content</span> isn't a property only used for <span>lists</span>, it can probably be 
+used for other things too, but I found it cool so I wanted to write about it, you can use it to 
+add <span>emojis</span> as the <span>list item marke</span>, you can write <span>li:before</span> 
+to make the <Span>emoji</Span> appear <Span>before the item</Span>, or <span>li:after</span> to make it 
+appear <span>after the item</span>.</p>
+
+<p class="left">HTML code:</p>
+
+
+<p class="left">
+
+<Span class="code10">&lt;ul id="onelist">
+    &lt;li>Red&lt;/li>
+    &lt;li>Green&lt;/li>
+    &lt;li>Blue&lt;/li>
+    &lt;/ul>
+
+    &lt;ul id="twolist">
+    &lt;li>Red&lt;/li>
+    &lt;li>Green&lt;/li>
+    &lt;li>Blue&lt;/li>
+    &lt;/ul></Span>
+
+</p>
+
+
+<p class="left">CSS code:</p>
+
+
+<p class="left">
+
+<Span class="code10">&lt;style>
+
+    #onelist li {
+        list-style-position: outside;
+        border: 3px black solid;
+        list-style-image: url(li.jpg);
+        width: 370px;
+        margin: auto;
+    }
+    
+    #twolist li {
+        list-style-position: inside;
+        list-style-type: none;
+        border: 3px black solid;
+        width: 370px;
+        margin: auto;
+    }
+    
+    #twolist li:before {
+        content: "❤";
+        padding-right: 5px;
+        color: red;
+    }
+    
+    &lt;/style></Span>
+
+</p>
+
+<p class="left">Outcome:</p>
+
+<style>
+
+#onelist li {
+    list-style-position: outside;
+    border: 3px black solid;
+    list-style-image: url(li.jpg);
+    width: 370px;
+    margin: auto;
+}
+
+#twolist li {
+    list-style-position: inside;
+    list-style-type: none;
+    border: 3px black solid;
+    width: 370px;
+    margin: auto;
+}
+
+#twolist li:before {
+    content: "❤";
+    padding-right: 5px;
+    color: red;
+}
+
+</style>
+
+<ul id="onelist">
+    <li>Red</li>
+    <li>Green</li>
+    <li>Blue</li>
+</ul>
+
+<ul id="twolist">
+    <li>Red</li>
+    <li>Green</li>
+    <li>Blue</li>
+</ul>
+
+</article>
+
+<hr>
+
+<article id="eleven">
+
+    <header>
+
+        <h1>The list-style Property</h1>
+
+    </header>
+
+<p>The <span>list-style</span> property is a <Span>shorthand property</Span> for setting 
+<span>list-style-type</span>, <span>list-style-image</span> 
+and <span>list-style-position</span>. It is used to set <span>all of the list properties</span> in 
+one declaration:</p>
+
+<p class="left">Code:</p>
+
+
+<p class="left">
+
+<Span class="code10">&lt;ul style="list-style: lower-alpha none inside; 
+    border: 3px black solid; 
+    width: 300px;
+    padding-left: 0px;
+    margin: auto;">
+    
+    &lt;li>Red&lt;/li>
+    &lt;li>Blue&lt;/li>
+    &lt;li>Green&lt;/li>
+    
+    &lt;/ul></Span>
+
+</p>
+
+<p class="left">Outcome:</p>
+
+<ul style="list-style: lower-alpha none inside; 
+border: 3px black solid; 
+width: 300px;
+padding-left: 0px;
+margin: auto;">
+
+    <li>Red</li>
+    <li>Blue</li>
+    <li>Green</li>
+
+</ul>
+
+
+</article>
+
+<hr>
+
+<article id="twelve">
+
+    <header>
+
+        <h1>The table border Properties</h1>
+
+    </header>
+
+<p>The look of an <span>HTML table</span> can be greatly improved with <span>CSS</span>.</p>
+
+<P>The <span>border-collapse</span> property specifies whether the <span>table borders</span>
+are <span>collapsed</span> into a <span>single border</span> or <span>seperated</span> as default.
+If the borders are <Span>seperated</Span>, the <span>border-spacing</span> property can be used to 
+change the <Span>spacing</Span>.</P>
+
+<p class="left">HTML code:</p>
+
+
+<p class="left">
+
+<Span class="code10">&lt;div class="bruh2">
+
+    &lt;table>
+
+    &lt;tr>
+    &lt;td>Red&lt;/td>
+    &lt;td>Blue&lt;/td>
+    &lt;/tr>
+
+    &lt;tr>
+    &lt;td>Yellow&lt;/td>
+    &lt;td>Red&lt;/td>
+    &lt;/tr>
+    
+    &lt;/table>
+    
+    &lt;/div>
+
+    &lt;div class="bruh3" style="padding-top: 50px;">
+
+    &lt;table>
+
+    &lt;tr>
+    &lt;td>Red&lt;/td>
+    &lt;td>Blue&lt;/td>
+    &lt;/tr>
+
+    &lt;tr>
+    &lt;td>Yellow&lt;/td>
+    &lt;td>Red&lt;/td>
+    &lt;/tr>
+    
+    &lt;/table>
+    
+        &lt;/div></Span>
+
+</p>
+
+
+<p class="left">CSS code:</p>
+
+
+<p class="left">
+
+<Span class="code10">&lt;style>
+
+    .bruh2 table{
+        border: 3px solid black;
+        margin: auto;
+        width: 300px;
+        height: 300px;
+        border-collapse: separate;
+        border-spacing: 10px 20px;
+        background-image: url(../images/background.jpg);
+    }
+    
+    .bruh2 td{
+        border: 3px solid black;
+        background-color: cyan;
+        
+    }
+    
+    .bruh3 table{
+        border: 3px solid black;
+        margin: auto;
+        width: 300px;
+        height: 300px;
+        background-image: url(../images/background.jpg);
+        border-collapse: collapse;
+    }
+    
+    .bruh3 td{
+        border: 3px solid black;
+        background-color: cyan;
+        
+    }
+    
+    &lt;/style></Span>
+
+</p>
+
+<p class="left">Outcome:</p>
+
+<style>
+
+.bruh2 table{
+    border: 3px solid black;
+    margin: auto;
+    width: 300px;
+    height: 300px;
+    border-collapse: separate;
+    border-spacing: 10px 20px;
+    background-image: url(../images/background.jpg);
+}
+
+.bruh2 td{
+    border: 3px solid black;
+    background-color: cyan;
+    
+}
+
+.bruh3 table{
+    border: 3px solid black;
+    margin: auto;
+    width: 300px;
+    height: 300px;
+    background-image: url(../images/background.jpg);
+    border-collapse: collapse;
+}
+
+.bruh3 td{
+    border: 3px solid black;
+    background-color: cyan;
+    
+}
+
+</style>
+
+<div class="bruh2">
+
+<table>
+<tr>
+    <td>Red</td>
+    <td>Blue</td>
+</tr>
+<tr>
+    <td>Yellow</td>
+    <td>Red</td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="bruh3" style="padding-top: 50px;">
+
+    <table>
+    <tr>
+        <td>Red</td>
+        <td>Blue</td>
+    </tr>
+    <tr>
+        <td>Yellow</td>
+        <td>Red</td>
+    </tr>
+    
+    </table>
+    
+    </div>
+
+
+</article>
+
+<hr>
+
+<article id="thirteen">
+
+
+    <header>
+
+        <h1>The caption-side Property</h1>
+
+    </header>
+
+<p>The <span>caption-side</span> property specifies the <span>position</span> of 
+a <Span>table caption</Span>. The <Span>values</Span> can be set as <Span>top</Span> or <span>bottom</span>.</p>
+
+<p class="left">HTML code:</p>
+
+
+<p class="left">
+
+<Span class="code10">&lt;div class="bruh2">
+
+    &lt;table>
+
+    &lt;caption style=" 
+        font-size: 50px;
+        font-weight: bold;
+        color: gray;
+        text-shadow: 5px 1px 6px black;
+        caption-side: top;">
+        
+        Colors
+    
+    &lt;/caption>
+
+    &lt;caption style=" 
+    font-size: 50px;
+    font-weight: bold;
+    color: gray;
+    text-shadow: 5px 1px 6px black;
+    caption-side: bottom;">
+    
+    Are cool
+
+    &lt;/caption>
+    
+    &lt;tr>
+    &lt;td>Red&lt;/td>
+    &lt;td>Blue&lt;/td>
+    &lt;/tr>
+
+    &lt;tr>
+    &lt;td>Yellow&lt;/td>
+    &lt;td>Red&lt;/td>
+    &lt;/tr>
+        
+    &lt;/table>
+        
+    &lt;/div></Span>
+
+</p>
+
+
+<p class="left">CSS code:</p>
+
+
+<p class="left">
+
+<Span class="code10">&lt;style>
+
+    .bruh2 table{
+        border: 3px solid black;
+        margin: auto;
+        width: 300px;
+        height: 300px;
+        border-spacing: 10px 20px;
+        border-collapse: separate;
+        background-image: url(../images/background.jpg);
+    }
+    
+    .bruh2 td{
+        border: 3px solid black;
+        background-color: cyan;
+        
+    }
+    
+    &lt;/style></Span>
+
+</p>
+
+<p class="left">Outcome:</p>
+
+
+<div class="bruh2">
+
+<table>
+    <caption style=" 
+    font-size: 50px;
+    font-weight: bold;
+    color: gray;
+    text-shadow: 5px 1px 6px black;
+    caption-side: top;">
+    
+    Colors
+
+</caption>
+
+<caption style=" 
+    font-size: 50px;
+    font-weight: bold;
+    color: gray;
+    text-shadow: 5px 1px 6px black;
+    caption-side: bottom;">
+    
+    Are cool
+
+</caption>
+
+<tr>
+        <td>Red</td>
+        <td>Blue</td>
+    </tr>
+    <tr>
+        <td>Yellow</td>
+        <td>Red</td>
+    </tr>
+    
+    </table>
+
+    
+</div>
+
+     
+</article>
+
+<hr>
+
+<article id="fourteen">
+
+    <header>
+
+        <h1>The empty-cells Property</h1>
+
+    </header>
+
+    <p>The <span>empty-cells</span> property specifies wheter or not 
+    to display <span>borders</span> and <span>background</span> on 
+<span>empty cells</span> in <span>table</span>.</p>
+
+<p>This property has <span>two values</span>, <span>show</span> value and <Span>hide</Span> value.</p>
+
+<p class="left">HTML code:</p>
+
+
+<p class="left">
+
+<Span class="code10">&lt;table id="table-example" style=" 
+    width: 400px;
+    height: 200px;
+    border: 3px solid black;
+    border-collapse: seperate;
+    margin: auto;">
+    
+    &lt;tr>
+    &lt;td>Red&lt;/td>
+    &lt;td>Blue&lt;/td>
+    &lt;/tr>
+    
+    &lt;tr>
+    &lt;td>Green&lt;/td>
+    &lt;td> &lt;/td>
+    &lt;/tr>
+    
+    &lt;/table></Span>
+
+</p>
+
+
+<p class="left">CSS code:</p>
+
+
+<p class="left">
+
+<Span class="code10">&lt;style>
+
+    #table-example td {
+        border: 3px solid black;
+        text-align: center;
+        background-color: white;
+    }
+    
+    #table-example {
+        empty-cells: hide;
+    }
+    
+    &lt;/style></Span>
+
+</p>
+
+<p class="left">Outcome:</p>
+
+<Style>
+
+#table-example td{
+    border: 3px solid black;
+    text-align: center;
+    background-color: white;
+}
+
+#table-example {
+    empty-cells: hide;
+}
+
+</Style>
+
+<table id="table-example" style=" 
+width: 400px;
+height: 200px;
+border: 3px solid black;
+border-collapse: seperate;
+margin: auto;">
+
+<tr>
+   <td>Red</td>
+   <td>Blue</td>
+</tr>
+
+<tr>
+    <td>Green</td>
+    <td> </td>
+</tr>
+
+</table>
+
+</article>
+
+<hr>
+
+<article id="fifteen">
+
+    <header>
+
+        <h1>The table-layout Property</h1>
+
+    </header>
+
+<p>The <span>table-layout</span> specifies how the <span>width of table columns</span> is 
+calculated.</p>
+
+<p>The possible <span>values</span> are:</p>
+
+<p><span>auto</span> - when <span>columns</span> or <span>cell width</span> are not explocictly set, 
+the <span>column width</span> will be in proportion to the amount of <Span>content</Span> in the 
+<span>cells</span> that make up the <span>column</span>.</p>
+
+<p><span>fixed</span> - when <span>column</span> or <Span>cell width</span> are not explicitly set, the 
+<Span>column width</Span> will not be affected by the ammount of <span>content</span> in the <span>cells</span>
+that make up the <span>column</span>.</p>
+
+
+<p class="left">HTML code:</p>
+
+
+<p class="left">
+
+<Span class="code10">&lt;p>Table-layout is set to &lt;strong>auto&lt;/strong>&lt;/p>
+
+    &lt;table class="auto">
+
+    &lt;tr>
+    &lt;td width=“10%">500.000.000.000.000&lt;/td>
+    &lt;td width="90%">20.000&lt;/td>
+    &lt;/tr>
+
+    &lt;/table>
+    
+    &lt;p>Table-layout is set to &lt;strong>fixed&lt;/strong>&lt;/p>
+
+    &lt;table class="fixed">
+
+    &lt;tr>
+    &lt;td width="10%">500.000.000.000.000&lt;/td>
+    &lt;td width="90%">20.000&lt;/td>
+    &lt;/tr>
+
+    &lt;/table>
+    
+    &lt;/div></Span>
+
+</p>
+
+
+<p class="left">CSS code:</p>
+
+
+<p class="left">
+
+<Span class="code10">&lt;style>
+
+    .bruh69 table {
+        border-collapse: separate;
+        width: 300px;
+        border: 1px solid black;
+        margin: auto;
+     } 
+
+     .bruh69 td {
+        border: 1px solid black;
+     }
+
+     table.auto {
+        table-layout: auto;
+     }
+     
+     table.fixed {
+        table-layout: fixed;
+     }
+    
+    &lt;/style></Span>
+
+</p>
+
+<p class="left">Outcome:</p>
+
+<style>
+
+.bruh69 table {
+   border-collapse: separate;
+   width: 300px;
+   border: 1px solid black;
+   margin: auto;
+} 
+.bruh69 td {
+   border: 1px solid black;
+}
+table.auto {
+   table-layout: auto;
+}
+table.fixed {
+   table-layout: fixed;
+}
+ 
+</style>
+
+<div class="bruh69">
+
+<p>Table-layout is set to <strong>auto</strong></p>
+
+<table class="auto">
+  <tr>
+    <td width=“10%">500.000.000.000.000</td>
+    <td width="90%">20.000</td>
+  </tr>
+</table>
+
+<p>Table-layout is set to <strong>fixed</strong></p>
+<table class="fixed">
+  <tr>
+    <td width="10%">500.000.000.000.000</td>
+    <td width="90%">20.000</td>
+  </tr>
+</table>
+
+</div>
+
+</article>
+
+<hr>
+
+<article id="sixteen">
+ 
+    <header>
+
+        <h1>Setting styles to links</h1>
+
+    </header>
+
+<p><span>Links</span> can be <Span>styled</Span> with any <span>CSS</span> property (e.g., <span>color</Span>, 
+<span>font-family</span>, <span>background</span>, etc.). In addition, <span>links</span> can be 
+<Span>styled differently</Span>, depending on what state they are in. The following <span>pseudo selectors</span>
+are available</p>
+
+<p><span>a:link</span> - defines the style for normal unvisited links <br>
+<span>a:hover</span> - defines the style for link when mouse is hovered over it <br>
+<span>a:active</span> - defines the style for link when you click on it <br>
+<span>a:visited</span> - defines the style for link after you have already visited the url</p>
+
+
+<p class="left">HTML code:</p>
+
+
+<p class="left">
+
+<Span class="code10">&lt;a id="linkexample" href="https://www.sololearn.com/Courses/" target="_blank">
+    
+    Click me please I'm a link and I'm very very sad...
+    
+    &lt;/a></Span>
+
+</p>
+
+
+<p class="left">CSS code:</p>
+
+
+<p class="left">
+
+<Span class="code10">&lt;style>
+
+    #somethingbruh a:link{ 
+        color: blue;
+        text-decoration: underline
+    }
+    
+    
+    #somethingbruh  a:visited {
+        color: green;
+    }
+    
+    #somethingbruh  a:active {
+        color: red; 
+    }
+    
+    #somethingbruh  a:hover{
+        color: red; 
+    }
+    
+    &lt;/style></Span>
+
+</p>
+
+<p class="left">Outcome:</p>
+
+
+<style>
+
+#somethingbruh a:link{ 
+    color: blue;
+    text-decoration: underline
+}
+
+
+#somethingbruh  a:visited {
+    color: green;
+}
+
+#somethingbruh  a:active {
+    color: red; 
+}
+
+#somethingbruh  a:hover{
+    color: red; 
+}
+
+
+
+
+
+</style>
+
+
+<p id="somethingbruh">
+
+<a id="linkexample" href="https://www.sololearn.com/Courses/" target="_blank">
+    
+Click me please I'm a link and I'm very very sad...
+
+</a>
+
+ 
+
+</p>
+    
+<p>Remember, if we had put <span>a:hover</span> first for example it wouldn't work, because it would 
+be overran by the other rules, the rules should be written in the correct order, <span>a:active</span> and 
+<span>a:hover</span> should be last so they work at all times, <Span>a:visited</Span> should be
+second after <span>a:link</span>.</p>
+
+</article>    
+
+<hr>
+
+<article id="seventeen">
+
+    <header>
+
+        <h1>Setting the Mouse Cursor Style</h1>
+
+    </header>
+
+<p><span>CSS</span> allows you to set your desired <span>cursor style</span> when 
+you <Span>mouse over</Span> an <span>element</span>. For example, you can change 
+your <span>cursor</span> into a <span>hand icon</span>, <span>help icon</span>, and much more, 
+rather than using the <span>default pointer</span>.</p>
+
+<p class="left">Code:</p>
+
+
+<p class="left">
+
+<Span class="code10">&lt;p style="cursor: help;">
+    
+    Do you need help my child? maybe some food huh?
+    
+    &lt;/p> </Span>
+
+</p>
+
+<p class="left">Outcome:</p>
+
+<p style="cursor: help;">Do you need help my child? maybe some food huh?</p>
+
+<p>There are namerous other possible values for the <span>cursor</span> property, 
+here is a list:</p>
+
+<div style="margin:auto; width: 380px;">
+<image
+src="https://api.sololearn.com/DownloadFile?id=2983" 
+alt="a picture about stupid stuff I think are important">
+</image>
+</div>
+
+<p>You can create <span>custom cursor</span> with : <br><br>
+<Span>cursor: url(li,jpg), auto;</Span></p>
+
+<p>If it is not supported by the browser it will backup to the <Span>auto cursor</Span>.</p>
+
+<p style="cursor: url(li.jpg), help;">Hoever your cursor over me bebe, touch me, common I don't bite</p>
+
+</article>
+
+
+
+<hr>
+
+</body>
+</html>

@@ -1,0 +1,448 @@
+<!DOCTYPE HTML>
+<html>
+<head lang="en-US">
+<meta charset="UTF-8">
+<title> Navigation Bar creator </title>
+<style>
+       .left {
+        text-align: left;
+    }
+    
+    .code10 {
+    white-space: pre-line;
+    background-color: lightgreen;
+    }
+    
+    p {
+    text-align:center;
+    }
+    h1 {
+    text-align:center;
+    }
+    h2 {
+    text-align:center;
+    }
+    h3 {
+    text-align:center;
+    }
+    .c {
+    background-color:lightgreen;
+    }
+    hr {
+    width:100%;
+    height:15px;
+    background-color:black;
+    color:black;
+    border: black solid;
+    }
+    body {
+    background-color:rgb(165, 235, 235);
+    }
+    span {
+    background-color:lightgreen;
+    }
+    
+    a:link {
+    color: black;
+    text-shadow: 1px 0px 1px black;
+    
+    }
+    
+    a:visited {
+    color: black;
+    text-shadow: 1px 0px 1px rgb(22, 22, 22);
+    }
+    
+    a:hover {
+    text-decoration: underline;
+    color: red;
+    text-shadow: 1px 0px 1px black;
+    }
+    
+    </style> 
+<link rel="stylesheet" href="../CSS-JavaScript-External-Files/HTMLnotes.css?version=1">
+</head>
+<body>
+<hr>
+<article>
+
+<h1> Navigation Bar Creator </h1>
+<p><a href="../Home-Pages/myprojects.html">Click to go back</a></p>
+
+<p></p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><span class="code10">&lt;div id="homepages">
+
+    &lt;h1> Home Pages: &lt;/h1>
+
+    &lt;/div>
+
+&lt;nav id="pfifteen">
+&lt;/nav></span></p>
+
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">function create_nav(){
+
+    /* the nav element location */
+    var nav = document.getElementsByTagName("nav")[0];
+    
+    /* Function that creates headings */
+    function create_heading(x){
+    var heading1 = document.createElement("h3");
+    var heading_text1 = document.createTextNode(x);
+    
+    heading1.appendChild(heading_text1);
+    
+    nav.appendChild(heading1);
+    };
+    
+    /* Function that creates links */
+    function create_link(x, y){
+    var paragraph = document.createElement("p");
+    var link = document.createElement("a");
+    var text = document.createTextNode(x);
+    var url = document.createAttribute("href");
+    url.value = x;
+    var id = document.createAttribute("id");
+    id.value = y;
+    
+    link.setAttributeNode(id);
+    link.setAttributeNode(url);
+    link.appendChild(text);
+    paragraph.appendChild(link);
+     
+    nav.appendChild(paragraph);
+    };
+    
+    /* HTML Notes Links */
+    
+    create_heading("HTML Notes:");
+    
+    create_link("Notes.html", "oneK");
+    
+    create_link("Notes2.html", "twoK");
+    
+    create_link("Notes3.html", "threeK");
+    
+    create_link("Notes4.html", "fourK");
+    
+    create_link("Notes5.html", "fiveK");
+    
+    /* CSS Notes Links */
+    
+    create_heading("CSS Notes:");
+    
+    create_link("Notes6.html", "sixK");
+    
+    create_link("Notes7.html", "sevenK");
+    
+    create_link("Notes8.html", "eightK");
+    
+    create_link("Notes9.html", "nineK");
+    
+    create_link("Notes10.html", "tenK");
+    
+    create_link("Notes11.html", "elevenK");
+    
+    create_link("Notes12.html", "twelveK");
+    
+    /* JavaScript Notes Links */
+    
+    create_heading("JavaScript Notes:");
+    
+    create_link("Notes13.html", "thirteenK");
+
+    create_link("Notes14.html", "fourteenK");
+    
+    create_link("Notes15.html", "fifteenK");
+    
+    create_link("Notes16.html", "sixteenK");
+    
+    create_link("Notes17.html", "seventeenK");
+
+    create_link("Notes18.html", "eighteenK");
+    
+    /* array of all the children */
+    var children = nav.children;
+    
+    /* function that replaces link of 
+    viewd page with underlined text */
+    function something(x, y){
+        
+        var newParagraph = document.createElement("p");
+        var underline = document.createElement("u");
+        var text = document.createTextNode(x);
+        var children = nav.children;
+        
+        underline.appendChild(text);
+        newParagraph.appendChild(underline);
+        nav.replaceChild(newParagraph, y);
+        
+        };
+        
+    /* instructions for each page */
+    if ( nav.id == "pone") {
+    something("Notes.html", children[1]);
+    } else if ( nav.id == "ptwo") {
+    something("Notes2.html", children[2]);
+    } else if ( nav.id == "pthree"){
+    something("Notes3.html", children[3]);
+    } else if ( nav.id == "pfour") {
+    something("Notes4.html", children[4]);
+    } else if ( nav.id == "pfive") {
+    something("Notes5.html", children[5]);
+    } else if ( nav.id == "psix") {
+    something("Notes6.html", children[7]);
+    } else if ( nav.id == "pseven") {
+    something("Notes7.html", children[8]);
+    } else if ( nav.id == "peight") {
+    something("Notes8.html", children[9]);
+    } else if ( nav.id == "pnine") {
+    something("Notes9.html", children[10]);
+    } else if ( nav.id == "pten") {
+    something("Notes10.html", children[11]);
+    } else if ( nav.id == "peleven") {
+    something("Notes11.html", children[12]);
+    } else if ( nav.id == "ptwelve") {
+    something("Notes12.html", children[13]);
+    } else if ( nav.id == "pthirteen") {
+    something("Notes13.html", children[14]);
+    } else if ( nav.id == "pfourteen") {
+    something("Notes14.html", children[16]);
+    } else if ( nav.id == "pfifteen") {
+    something("Notes15.html", children[17]);
+    } else if ( nav.id == "psixteen") {
+    something("Notes16.html", children[18]);
+    } else if ( nav.id == "pseventeen") {
+    something("Notes17.html", children[19]);
+    } else if (nav.id == "peighteen") {
+        something("Notes18.html", children[20]);
+    };
+    
+    /* function that creates new home page link */
+
+    function create_homepage(x, y){
+    var div = document.getElementById("homepages");
+    var paragraph = document.createElement("p");
+    var link = document.createElement("a");
+    var text = document.createTextNode(x);
+    var att = document.createAttribute("href");
+    att.value = y; 
+    
+    link.setAttributeNode(att);
+    link.appendChild(text);
+    paragraph.appendChild(link);
+    div.appendChild(paragraph);
+    };
+
+    /* home pages */
+
+    create_homepage("home page of my notes", "index.html");
+    create_homepage("home page of my HTML notes", "myhtmlnotes.html");
+    create_homepage("home page of my CSS notes", "mycssnotes.html");
+    create_homepage("home page of my JavaScript notes", "javascriptnotes.html");
+    create_homepage("home page of my projects", "myprojects.html");
+
+    /* instructions for you:
+    
+    Every time you make a new page add an id to 
+    the nav tag of the number of the page but with a p infront, like this: pone, ptwo, etc.
+    To add a new link to nav simply go and use the create_paragraph function, to create a heading use the create_heading function, when a new page is made remember to add else if 
+    statement for the id of the new page, headings also are children of the nav so if it's page 18 for example but there have been 3 headings before then you should replace children[20] (since arrays start from 0), that's all */
+    
+    };
+
+    window.addEventListener("load", create_nav()); </span></p>
+
+<p class="left">Outcome:</p>
+ 
+<div id="homepages">
+
+    <h1>Home Pages:</h1>
+
+</div>
+<nav id="pfifteen">
+</nav>
+
+<script>
+  function create_nav(){
+
+/* the nav element location */
+var nav = document.getElementsByTagName("nav")[0];
+
+/* Function that creates headings */
+function create_heading(x){
+var heading1 = document.createElement("h3");
+var heading_text1 = document.createTextNode(x);
+
+heading1.appendChild(heading_text1);
+
+nav.appendChild(heading1);
+};
+
+/* Function that creates links */
+function create_link(x, y){
+var paragraph = document.createElement("p");
+var link = document.createElement("a");
+var text = document.createTextNode(x);
+var url = document.createAttribute("href");
+url.value = x;
+var id = document.createAttribute("id");
+id.value = y;
+
+link.setAttributeNode(id);
+link.setAttributeNode(url);
+link.appendChild(text);
+paragraph.appendChild(link);
+ 
+nav.appendChild(paragraph);
+};
+
+/* HTML Notes Links */
+
+create_heading("HTML Notes:");
+
+create_link("Notes.html", "oneK");
+
+create_link("Notes2.html", "twoK");
+
+create_link("Notes3.html", "threeK");
+
+create_link("Notes4.html", "fourK");
+
+create_link("Notes5.html", "fiveK");
+
+/* CSS Notes Links */
+
+create_heading("CSS Notes:");
+
+create_link("Notes6.html", "sixK");
+
+create_link("Notes7.html", "sevenK");
+
+create_link("Notes8.html", "eightK");
+
+create_link("Notes9.html", "nineK");
+
+create_link("Notes10.html", "tenK");
+
+create_link("Notes11.html", "elevenK");
+
+create_link("Notes12.html", "twelveK");
+
+/* JavaScript Notes Links */
+
+create_heading("JavaScript Notes:");
+
+create_link("Notes13.html", "thirteenK");
+
+create_link("Notes14.html", "fourteenK");
+
+create_link("Notes15.html", "fifteenK");
+
+create_link("Notes16.html", "sixteenK");
+
+create_link("Notes17.html", "seventeenK");
+
+create_link("Notes18.html", "eighteenK");
+
+/* array of all the children */
+var children = nav.children;
+
+/* function that replaces link of 
+viewd page with underlined text */
+function something(x, y){
+    
+    var newParagraph = document.createElement("p");
+    var underline = document.createElement("u");
+    var text = document.createTextNode(x);
+    var children = nav.children;
+    
+    underline.appendChild(text);
+    newParagraph.appendChild(underline);
+    nav.replaceChild(newParagraph, y);
+    
+    };
+    
+/* instructions for each page */
+if ( nav.id == "pone") {
+something("Notes.html", children[1]);
+} else if ( nav.id == "ptwo") {
+something("Notes2.html", children[2]);
+} else if ( nav.id == "pthree"){
+something("Notes3.html", children[3]);
+} else if ( nav.id == "pfour") {
+something("Notes4.html", children[4]);
+} else if ( nav.id == "pfive") {
+something("Notes5.html", children[5]);
+} else if ( nav.id == "psix") {
+something("Notes6.html", children[7]);
+} else if ( nav.id == "pseven") {
+something("Notes7.html", children[8]);
+} else if ( nav.id == "peight") {
+something("Notes8.html", children[9]);
+} else if ( nav.id == "pnine") {
+something("Notes9.html", children[10]);
+} else if ( nav.id == "pten") {
+something("Notes10.html", children[11]);
+} else if ( nav.id == "peleven") {
+something("Notes11.html", children[12]);
+} else if ( nav.id == "ptwelve") {
+something("Notes12.html", children[13]);
+} else if ( nav.id == "pthirteen") {
+something("Notes13.html", children[14]);
+} else if ( nav.id == "pfourteen") {
+something("Notes14.html", children[16]);
+} else if ( nav.id == "pfifteen") {
+something("Notes15.html", children[17]);
+} else if ( nav.id == "psixteen") {
+something("Notes16.html", children[18]);
+} else if ( nav.id == "pseventeen") {
+something("Notes17.html", children[19]);
+} else if (nav.id == "peighteen") {
+    something("Notes18.html", children[20]);
+};
+
+/* function that creates new home page link */
+
+function create_homepage(x, y){
+var div = document.getElementById("homepages");
+var paragraph = document.createElement("p");
+var link = document.createElement("a");
+var text = document.createTextNode(x);
+var att = document.createAttribute("href");
+att.value = y; 
+
+link.setAttributeNode(att);
+link.appendChild(text);
+paragraph.appendChild(link);
+div.appendChild(paragraph);
+};
+
+/* home pages */
+
+create_homepage("home page of my notes", "index.html");
+create_homepage("home page of my HTML notes", "myhtmlnotes.html");
+create_homepage("home page of my CSS notes", "mycssnotes.html");
+create_homepage("home page of my JavaScript notes", "javascriptnotes.html");
+create_homepage("home page of my projects", "myprojects.html");
+
+/* instructions for you:
+
+Every time you make a new page add an id to 
+the nav tag of the number of the page but with a p infront, like this: pone, ptwo, etc.
+To add a new link to nav simply go and use the create_paragraph function, to create a heading use the create_heading function, when a new page is made remember to add else if 
+statement for the id of the new page, headings also are children of the nav so if it's page 18 for example but there have been 3 headings before then you should replace children[20] (since arrays start from 0), that's all */
+
+};
+
+window.addEventListener("load", create_nav()); 
+</script>
+
+<hr>
+</body>
+</html>

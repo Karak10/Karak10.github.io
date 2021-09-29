@@ -1,0 +1,162 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<title> Page six of my HTML notes </title>
+<meta charset="UTF-8"> 
+<link href="../CSS-JavaScript-External-Files/HTMLnotes.css" rel="stylesheet">
+<Style>
+    .left {
+        text-align: left;
+    }
+    
+    .code10 {
+    white-space: pre-wrap;
+    background-color: lightgreen;
+    
+    }
+    
+    p {
+    text-align:center;
+    }
+    h1 {
+    text-align:center;
+    }
+    h2 {
+    text-align:center;
+    }
+    h3 {
+    text-align:center;
+    }
+    .c {
+    background-color:lightgreen;
+    }
+    hr {
+    width:100%;
+    height:15px;
+    background-color:black;
+    color:black;
+    border: black solid;
+    }
+    body {
+    background-color:rgb(165, 235, 235);
+    }
+    span {
+    background-color:lightgreen;
+    }
+    
+    a:link {
+    color: black;
+    text-shadow: 1px 0px 1px black;
+    
+    }
+    
+    a:visited {
+    color: black;
+    text-shadow: 1px 0px 1px rgb(22, 22, 22);
+    }
+    
+    a:hover {
+    text-decoration: underline;
+    color: red;
+    text-shadow: 1px 0px 1px black;
+    }
+
+    .pink {
+        background-color: lightcoral;
+        font-weight: bold;
+    }
+
+    iframe {
+        width: 600px;
+        height: 350px;
+        border: 3px solid black;
+        margin: 20px auto 20px auto;
+        display: block;
+    }
+    
+   .list_container li{
+       width: fit-content;
+       max-width: 600px;
+       background-color: white;
+       border: 3px solid black;
+       border-radius: 20px;
+       margin: 20px auto 20px auto;
+       padding: 20px;
+       font-weight: bold;
+   }
+    
+   .list_container li{
+       margin-top: 15px;
+   }
+
+   .gray{
+       background-color: lightgray;
+   }
+    
+   img{
+       margin: 20px auto 20px auto;
+       display: block;
+       border: 3px solid black;
+       border-radius: 20px;
+   }
+    </style> 
+</head>
+<body>
+
+<hr>
+
+    <header> 
+    <h1> Page six of my HTML notes </h1>
+    </header>
+    
+<article id="start-of-page"> 
+  
+<div id="homepages">
+
+    <h3>Home Pages:</h3>
+   
+
+</div>
+
+<nav data-notes="HTML_Extra" data-page="1">
+
+</nav>
+
+    <h3> Informations included in this page:</h3>
+    <p><a href="../HTML-Notes/HTML_Extra_1.html#one">crossorigin attribute</a></p>
+
+</article>
+
+ <script src="../CSS-JavaScript-External-Files/nav.js"></script>
+
+<hr>
+
+<article id="one">
+    <header>
+        <h1>crossorigin attribute</h1>
+    </header>
+
+<p>The <span>crossorigin attribute</span>, used on the <Span>&lt;audio></Span>, <Span>&lt;img></Span>, 
+<Span>&lt;link></Span>, <Span>&lt;script></Span> and <span>&lt;video></span> elements, provides support 
+for <span>CORS</span> (Cross-Origin Resource Sharing).</p>
+
+<p><Span>Cross-Origin Resource sharing</Span> aka <span>CORS</span> is an <span>HTTP-heder based mechanism</span> that allows a <Span>server</Span>
+to indicate any other <Span>origins</Span> (domin, scheme, or port) than its own from which a browser should permit loading of resources. <span>CORS</span> also relies 
+on  mechanism by which <Span>browsers</Span> make a <Span>"preflight" request</Span> to the <Span>server hosting the cross-origin source</Span>, in order to 
+check that the <span>server</span> will <Span>permit the actual request</Span>. In tht preflight, the browser 
+sends headers that indicate the <Span>HTTP</Span> method and headers tht will be used in the actual request.</p>
+
+<img src="../images/ω2.jpg" style="border: unset; width: 500pxl height: 400px;">
+
+<p>The <span>cross-origin</span> attribute lets you decide wether you want to make the 
+<Span>cross-origin request</Span> to get a <Span>source</Span> from another domain server <Span>anonymoulsy</Span> or 
+send <Span>information</Span> while making the <Span>request</Span>, to send informations use the 
+<Span>use-credentials</Span> value, else use <Span>anonymous</Span> value to make the request anonymously.</p>
+
+    <iframe src="https://www.youtube.com/embed/m6lsF8z0hKk?list=PLYxnDvM22X3NBARfD2aZcyUoKvfdHfygn" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</article>
+  
+<hr>
+</body>
+</html>

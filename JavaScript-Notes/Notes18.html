@@ -1,0 +1,2331 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<title> Page eighteen of my notes </title>
+<meta charset="UTF-8"> 
+<link href="../CSS-JavaScript-External-Files/HTMLnotes.css" rel="stylesheet">
+<Style>
+    .left {
+        text-align: left;
+    }
+    
+    .code10 {
+    white-space: pre-line;
+    background-color: lightgreen;
+    }
+    
+    p {
+    text-align:center;
+    }
+    h1 {
+    text-align:center;
+    }
+    h2 {
+    text-align:center;
+    }
+    h3 {
+    text-align:center;
+    }
+    .c {
+    background-color:lightgreen;
+    }
+    hr {
+    width:100%;
+    height:15px;
+    background-color:black;
+    color:black;
+    border: black solid;
+    }
+    body {
+    background-color:rgb(165, 235, 235);
+    }
+    span {
+    background-color:lightgreen;
+    }
+    
+    a:link {
+    color: black;
+    text-shadow: 1px 0px 1px black;
+    
+    }
+    
+    a:visited {
+    color: black;
+    text-shadow: 1px 0px 1px rgb(22, 22, 22);
+    }
+    
+    a:hover {
+    text-decoration: underline;
+    color: red;
+    text-shadow: 1px 0px 1px black;
+    }
+    
+    </style> 
+</head>
+<body>
+
+<hr>
+
+    <header> 
+    <h1> Page six of my JavaScript notes </h1>
+    </header>
+    
+<article id="start-of-page"> 
+  
+<div id="homepages">
+
+    <h3>Home Pages:</h3>
+   
+
+</div>
+
+<nav data-notes="JavaScript" data-page="6">
+
+</nav>
+
+    <h3> Informations included in this page:</h3>
+    <p><a href="../JavaScript-Notes/Notes18.html#one">Intro to ES6(ECMAScript6)</a></p>
+    <p><a href="../JavaScript-Notes/Notes18.html#two">ES6 Variables</a></p>
+    <p><a href="../JavaScript-Notes/Notes18.html#three">Template Literals in ES6</a></p>
+    <p><a href="../JavaScript-Notes/Notes18.html#four">Loops in ES6</a></p>
+    <p><a href="../JavaScript-Notes/Notes18.html#five">Functions in ES6</a></p>
+    <p><a href="../JavaScript-Notes/Notes18.html#six">Objects in ES6</a></p>
+    <p><a href="../JavaScript-Notes/Notes18.html#seven">ES6 Destructuring</a></p>
+    <p><a href="../JavaScript-Notes/Notes18.html#eight">What are Function Arguments</a></p>
+    <p><a href="../JavaScript-Notes/Notes18.html#nine">The indexOf() method</a></p>
+    <p><a href="../JavaScript-Notes/Notes18.html#ten">Rest parameter</a></p>
+    <p><a href="../JavaScript-Notes/Notes18.html#eleven">The Array filter() and map() methods</a></p>
+
+</article>
+
+ <script src="../CSS-JavaScript-External-Files/nav.js"></script>
+
+<hr>
+ 
+<article id="one">
+
+    <header>
+
+        <h1>Intro to ES6 (ECMAScript6)</h1>
+
+    </header>
+
+<p><span>ECMAScript</span> is a <Span>scripting language</Span> specification created to 
+<Span>standardize JavaScript</Span>.</p>
+
+<p>The <span>Sixth Edition</span>, initially known as <span>ECMAScript6</span> (ES6) and later renamed 
+to <span>ECMAScript 2015</span>, adds significant <span>new syntax</span> for writing 
+complex applications, including <Span>classes</Span> and <Span>modules</Span>, <span>iterators</span> 
+and <span>for/of loops</span>, <span>generators</span>, <span>arrow functions</span>, 
+<span>binary data</span>, <span>typed arrays</span>, <Span>collections</Span> (maps, sets and weak maps), <Span>promises</Span>, 
+<span>number and math enhancements</span>, <span>reflection</span>, and <Span>proxies</Span>. </p>
+
+<p>In other words, <Span>ES6</Span> is a <span>superset</span> of <Span>JavaScript (ES5)</Span>, the reason that 
+<span>ES6</span> became so popular is that it introduced <Span>new conventions</Span> and <Span>OOP concepts</Span>
+such as <Span>classes</Span>.</p>
+
+</article>
+
+<hr>
+
+<article id="two">
+
+<header>
+
+    <h1>ES6 Variables</h1>
+
+</header>
+
+<p>Here we go again huh, back to <Span>variables</Span>, in <span>ES6</span> we have
+<span>three ways</span> for declaring <Span>variables</Span>:</p>
+
+<p class="left">
+    <span class="code10">var a = 10;
+        const a = 10; 
+        let a = 10;
+    </span>
+</p>
+
+<p>What's the difference between those three you ask? Very good question, let me first 
+    explain the difference between <Span>let</Span> and <Span>var</Span>.
+</p>
+
+<p>Unlike the <Span>var</Span> keyword, which defines a variable <Span>globally</Span>, or <Span>locally</Span>
+to an <Span>entire function</Span> regardless of <Span>block scope</Span>, <Span>let</Span> allows you to 
+declare <span>variables</Span> that are <Span>limitied in scope</Span> to the <Span>block</Span>, 
+<span>statement</span>, or <Span>expression</Span> in which they are used.</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">var name = "Alex";
+
+    if(true){
+        var name ="Jack";
+        document.write(name + "&lt;br>");
+    }
+    
+    document.write(name);</Span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+var name = "Alex";
+
+if(true){
+    var name ="Jack";
+    document.write(name + "<br>");
+}
+
+document.write(name);
+</script>
+ 
+<p>In the example above, the <span>second variety</span> we added in the 
+<Span>if statement</Span> <Span>overwrote</Span> the <Span>first variety</Span>, so 
+it printed <Span>Jack</Span> twice. If we however used <Span>let</Span> inside the 
+<Span>if statement</Span> it wouldn't effect the <Span>variety</Span> outside the 
+<Span>statement</Span>, and it would first print <Span>Jack</Span> and then <Span>Alex</Span>,
+ like this:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">var name = "Alex";
+
+    if(true){
+        let name ="Jack";
+        document.write(name + "&lt;br>");
+    }
+    
+    document.write(name);</Span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+var name = "Alex";
+
+if(true){
+    let name ="Jack";
+    document.write(name + "<br>");
+}
+
+document.write(name);
+</script>
+
+<p>About the <span>const</span> variables now, they actually have the <Span>same scope</Span> 
+as variables declared using <span>let</span>, the difference is that <Span>const</Span> variables 
+are <span>immutable</span>, meaning they are <span>not allowed</span> to be <Span>reassigned</span>.</p>
+<p>If we tried to <Span>reasign</Span> a <span>variable</span> defined with <span>let</span> keyword 
+it would work just fine, like in the example below:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">if(true){
+    let name = "Jack &lt;br>";
+    name = "Christina &lt;br>";
+    document.write(name);
+}
+
+document.write(name);</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+var name = "Alex";
+
+if(true){
+    let name = "Jack <br>";
+    name = "Christina <br>";
+    document.write(name);
+}
+
+document.write(name);
+</script>
+
+<p>If we however used <span>const</span> instead, an <Span>error</Span> would occur, and code wouldn't work,
+we should use <Span>const</Span> for variables that shouldn't change.</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">if(true){
+    const name = "Jack &lt;br>";
+    name = "Christina &lt;br>";
+    document.write(name);
+}
+
+document.write(name);</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+var name = "Alex";
+
+if(true){
+    const name = "Jack <br>";
+    name = "Christina <br>";
+    document.write(name);
+}
+
+document.write(name);
+</script>
+
+<p>One thing to keep in mind is that while <span>const</span> is <span>immutable</span>, it only 
+applies to the <span>base assignment</span>. With an <span>array</span> or an <Span>object</Span> const still allows you to 
+change the <Span>contents</Span> of said <Span>array/object</Span>.</p>
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">const names = ["Alex &lt;br>", "Jack &lt;br>"];
+
+    names.push("Marry &lt;br>");
+    names[0] = "Alexander &lt;br>";
+    
+    const foods = {
+        best: "Pizza &lt;br>",
+        worst: "Brocolo &lt;br>"
+    }
+    
+    foods.best = "Pasta &lt;br>";
+    
+    document.write(names);
+    document.write(foods.best, foods.worst);</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+const names = ["Alex", "Jack <br>"];
+
+names.push("Marry <br>");
+names[0] = "Alexander <br>";
+
+const foods = {
+    best: "Pizza <br>",
+    worst: "Brocolo <br>"
+}
+
+foods.best = "Pasta <br>";
+
+document.write(names);
+document.write(foods.best, foods.worst);
+</script>
+
+<p>In the code above I only changed the <Span>content</Span> of the <span>array</span>
+and <span>object</span>, trying to change the <span>array</span> it self for example wouldn't work 
+if you have defined the array with <Span>const</Span>, this would give an error:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">const colors = ["Brown", "Red"];
+
+    colors = ["Green", "Pink"];
+    
+    document.write(colors);</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+const colors = ["Brown", "Red"];
+
+colors = ["Green", "Pink"];
+
+document.write(colors);
+
+</script>
+</article>
+
+<hr>
+
+<article id="three">
+
+    <header>
+
+        <h1>Template Literals in ES6</h1>
+
+    </header>
+
+<p><span>Template literals</span> are a way to output <Span>variable values</Span> in the <span>string</span>, 
+prior to <Span>ES6</Span> we had to <span>break the string</span>, like this:</p>
+    
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">var name1 = "Alex";
+    var msg1 = "Welcome " + name1 + "!";
+    
+    document.write(msg1);</span></p>
+
+<p class="left">Output:</p>
+
+<script>
+
+var name1 = "Alex";
+var msg1 = "Welcome " + name1 + "!";
+
+document.write(msg1);
+
+
+</script>
+
+<p><span>ES6</span> introduces a new way of outputting <span>variable values</span>
+inside <Span>strings</Span>. The same code above can be rewritten as:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">var name2 = "Alex";
+    var msg2 = `Welcome ${name2}!`;
+    
+    document.write(msg2);</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+var name2 = "Alex";
+var msg2 = `Welcome ${name2}!`;
+
+document.write(msg2);
+
+</script>
+
+<p>Notice that the <span>template litarals</span> are enclosed by the <Span>backtick</Span>(``) character instead 
+of <Span>double/single quotes</Span>, you can type <Span>backtick</Span> by pressing the button under 
+<span>Esc</span> at the left of <span>1</span>, that's where it is on my keyboard at least.</p>
+
+<p>The <Span>${expression}</Span> is a <Span>placeholder</Span>, and can include any 
+<span>expression</span>, which will get <Span>evaluated</Span> and <span>inserted</span>
+into the <span>template literal</span>.</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">var your_money = 10;
+    var price_of_product = 15;
+    var msg3;
+    
+    if (your_money - price_of_product > 0){ 
+        msg3 = `If you buy this product you will be left with ${your_money - price_of_product}$`
+        }else {
+    msg3 = `To buy this product you will need another ${price_of_product - your_money}$`};
+    
+    document.write(msg3);</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+var your_money = 10;
+var price_of_product = 15;
+var msg3;
+
+if (your_money - price_of_product > 0){ 
+    msg3 = `If you buy this product you will be left with ${your_money - price_of_product}$`
+    }else {
+msg3 = `To buy this product you will need another ${price_of_product - your_money}$`};
+
+document.write(msg3);
+
+</script>
+
+</article>
+
+<hr>
+
+<article id="four">
+
+<header>
+
+    <h1>Loops in ES6</h1>
+
+</header>
+
+<P>In <span>JavaScript</span> we commonly use the <span>for</span> loop to 
+iterate over values in a list, like this for example:</P>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let arr = [1, 2, 3, 4];
+
+    for ( let i = 0; i &lt; arr.length; i++ ){
+        document.write(arr[i]);
+    };</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+let arr = [1, 2, 3, 4];
+
+for ( let i = 0; i < arr.length; i++ ){
+    document.write(arr[i]);
+};
+
+</script>
+
+<h3><u>ES6 for...in loop:</u></h3>
+
+<p>The <Span>for...in</Span> loop is intended for iterating over the <span>enumerable keys</span> 
+of an <Span>object</Span>, for example:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">var person = {
+    name: "Alex",
+    gender: "Male",
+    age: 16
+};
+
+for (var x in person){
+    document.write(x + "&lt;br>");
+}</span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+var person = {
+    name: "Alex",
+    gender: "Male",
+    age: 16
+};
+
+for (var x in person){
+    document.write(x + "<br>");
+}
+
+</Script>
+
+<p>And of course, since you have the <span>property names</span> of the <Span>values</Span>
+of the <span>object</span> you can use them to get a list of all the <span>values</span> 
+too like in the code below:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">var person = {
+    name: "Alex",
+    gender: "Male",
+    age: 16
+};
+
+for (var x in person){
+    document.write( person[x] + "&lt;br>");
+}</span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+var person2 = {
+    name: "Alex",
+    gender: "Male",
+    age: 16
+};
+
+for ( var x in person2){
+    document.write( person2[x] + "<br>" );
+}
+
+</Script>
+
+<p>You may wonder now, why write <Span>person[x]</Span>? If I wrote <span>person[name]</span>
+for example it wouldn't work, I would had to write <Span>person.name</Span>, and that's correct, 
+however, if you wrote <Span>person.x</Span> the <span>x</span> wouldn't be treated as 
+a <span>variable</span>, and it would look for <Span>x property</Span>, which doesn't exist, 
+that's why we write <span>person[x]</span> which for some reason works, I don't know why it works, but I like things 
+that work.</p>
+
+<p>The <span>for...in</span> loop should <Span>NOT</Span> be used over <Span>arrays</Span>
+because, depending on the <Span>JavaScript engine</Span>, it could iterate in an arbitrary order. Also, 
+the iterating <span>variable</span> is a <Span>string</Span>, not a <span>number</span>, 
+so if you try to do any <span>math</span> with the <span>variable</span>, you'll be performing 
+<Span>string concatenation</Span> instead of <Span>addition</Span>.</p>
+
+<h3><u>ES6 for...of loop:</u></h3>
+
+<p><span>ES6</span> introduces the new <span>for...of</span> loop, which creates a 
+<span>loop iterating</span> over <Span>iterable objects</Span> (Arrays for example).</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">var numbers = ["One", "Two", "Three"]
+
+    for (let x of numbers){
+        document.write(x + "&lt;br>");
+    };</span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+var person3 = ["One", "Two", "Three"]
+
+for (let x of person3){
+    document.write(x + "<br>");
+}
+
+</Script>
+
+<p>It is recommended to avoid using the <Span>for...in</Span> loop, as it also iterates over
+the whole prototype, instead <Span>for...of</Span> should be used, but how do you use it 
+on not iterable objects? To do that we should use the <Span>Object.keys</Span> to make 
+an <Span>array</Span> of the <span>object's keys</span> first, which we can then use with 
+<span>for...of</span> loop, and either print the <span>property names</span>, or <span>values</span>, like this:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">var person4 = {
+    name: "Alex",
+    gender: "Male",
+    age: 16
+};
+
+var array = Object.keys(person4);
+
+for ( let x of array ){
+    document.write( person4[x] + "&lt;br>");
+}</span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+var person4 = {
+    name: "Alex",
+    gender: "Male",
+    age: 16
+};
+
+var array = Object.keys(person4);
+
+for ( let x of array ){
+    document.write( person4[x] + "<br>");
+}
+
+</Script>
+
+<p>The <span>for...of</span> loop works for other <Span>iterable objects</Span> as weel, 
+including <span>strings:</span></p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">for ( let x of "Hello"){
+    document.write(x + "&lt;br>")
+};</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+for ( let x of "Hello"){
+    document.write(x + "<br>")
+}
+
+</script>
+
+<p>The <span>for...of</span> loop also works on the newly introduced collections (<span>Maps</span>, 
+<span>Set</span>, <span>WeakMap</span>, and <span>WeakSet</span>). We will learn more about 
+them in the upcoming lessons.</p>
+
+<h3><u>The forEach method:</u></h3>
+
+<p>By the way, I would like to also mention the <span>forEach</span> method in this section just 
+    so we know it exists, 
+which can be used for <Span>arrays</Span>, and basically does what <span>for...of</span> does,
+see an example of how it's used to understand it better:</p>
+
+<P class="left">JavaScript Code:</P>
+
+<p class="left"><Span class="code10" style="background-color: lightgray">/* var arr6 = [2, 3, 4];
+    
+    for( let x of arr6 ){
+        document.write( x * 2);
+    }; 
+    
+    can be written as: */
+
+</Span><span class="code10">var arr6 = [2, 3, 4];
+
+        arr6.forEach( function(x){
+            document.write( x * 2 )
+        });</Span></p>
+
+<Script>
+
+    /* var arr6 = [2, 3, 4];
+    
+    for( let x of arr6 ){
+        document.write( x * 2);
+    } */
+    
+    var arr6 = [2, 3, 4];
+
+    arr6.forEach( function(x){
+        document.write( x * 2 )
+    });
+
+    </Script>
+
+    <p>While using this <span>method</span> the <span>first parameter</span> of the <Span>function</Span>
+    is used to define the <span>array elements</span>.</p>
+
+</article>
+
+<hr>
+
+<article id="five">
+
+<header>
+
+    <h1>Functions in ES6</h1>
+
+</header>
+
+<p>In <span>JavaScript</span> a <span>function</span> is defined 
+like this:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">function add(x, y){
+    return `${x} and ${y} equals ${x + y}`;
+}
+
+var example1 = add(1, 2);
+
+document.write(example1);</span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+function add(x, y){
+    return `${x} and ${y} equals ${x + y}`;
+}
+
+var example1 = add(1, 2);
+
+document.write(example1);
+
+</Script>
+
+<h3><u>New syntax:</u></h3>
+
+<p><Span>ES6</Span> introduces a <Span>new syntax</Span> for writing <span>functions</span>, 
+the <Span>same function</Span> from above can be written as:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">var add = (x, y) => {
+    return `${x} and ${y} equals ${x + y}`;
+}
+
+var example2 = add(1, 2);
+
+document.write(example2);</span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+var add = (x, y) => {
+    return `${x} and ${y} equals ${x + y}`;
+}
+
+var example2 = add(1, 2);
+
+document.write(example2);
+
+</Script>
+
+<p>This <Span>new syntax</Span> is quite handy when you just need a <Span>simple function</Span>
+with <Span>one argument</Span>, you can <span>skip</span> typing <span>function</span> and <span>return</span>, as well 
+as some <span>parentheses</span> and <Span>braces</Span>, so by using it you make your 
+code smaller, like in the example below:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10" style="background-color: lightgray">/* function greet(x){
+    return `Welcome ${x}!`;
+};
+
+document.write(greet("Alex")); 
+
+can be shortened to: */</span><span class="code10">
+
+const greet = x => `Welcome ${x}!`;
+
+document.write(greet("Alex"));</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+/* function greet(x){
+    return `Welcome ${x}!`;
+};
+
+document.write(greet("Alex")); 
+
+can be shortened to:*/
+
+const greet = x => `Welcome ${x}!`;
+
+document.write(greet("Alex"));</script>
+
+<p>If there are <span>no parameters</span>, an <Span>empty pair of parentheses</Span> should be 
+used, like this: <Span>const x = () => alert("Hi");</Span>.</p>
+
+<p>The great syntax however isn't the main reason <Span>arrow functions</Span> are so great,
+the main reason you should start using them more is because they treat <Span>this</Span>
+keyword differently than <Span>normal functions</Span> do, see example below:</p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><span class="code10">&lt;p id="container">&lt;/p>
+    &lt;p id="container2">&lt;/p></span></p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">var container = document.getElementById("container");
+    var container = document.getElementById("container");
+
+    let human = class {
+
+constructor(n){
+    this.user_name = n;
+}
+
+arrowFunction(){
+    let example = () => {
+      let text = document.createTextNode(`Arrow: ${this.user_name}`);
+      container.appendChild(text);
+    }
+     setTimeout(example,1000);
+}
+
+normalFunction(){
+    function example(){
+        let text = document.createTextNode(`Function: ${this.user_name}`);
+      container2.appendChild(text);
+    }
+    setTimeout(example,1000);
+}
+
+}
+
+let person = new human("Alex");
+
+person.arrowFunction()
+person.normalFunction()</Span></p>
+
+<p class="left">Outcome:</p>
+
+<p id="container"></p>
+<p id="container2"></p>
+<script>
+
+if(true){
+
+var container = document.getElementById("container");
+var container2 = document.getElementById("container2");
+
+    let human = class {
+
+constructor(n){
+    this.user_name = n;
+}
+
+arrowFunction(){
+    let example = () => {
+      let text = document.createTextNode(`Arrow: ${this.user_name}`);
+      container.appendChild(text);
+    }
+     setTimeout(example,1000);
+}
+
+normalFunction(){
+    function example(){
+        let text = document.createTextNode(`Function: ${this.user_name}`);
+      container2.appendChild(text);
+    }
+    setTimeout(example,1000);
+}
+
+}
+
+let person = new human("Alex");
+
+person.arrowFunction()
+person.normalFunction()
+
+}
+
+
+
+</script>
+
+<p>As you can see, the <span>normal function</span> does not select the <Span>user_name</Span>
+of the <span>class object</span>, that's because with the <span>normal function</span>
+when we <Span>execute</Span> the <span>function</span> the <span>this</span> keyword 
+is used <Span>outside the class object</Span>, so it looks for <span>user_name</span>
+in the <Span>global scope</Span>, if we made a <span>variable</span> called <span>user_name</span>
+then it would select it, see the code below for example:</p>
+
+
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">person.arrowFunction()
+
+    var user_name = "Christina";
+    
+    person.normalFunction()</Span></p>
+
+<p class="left">Outcome:</p>
+
+<p id="container3"></p>
+<p id="container4"></p>
+<script>
+
+if(true){
+
+    var container3 = document.getElementById("container3");
+var container4 = document.getElementById("container4");
+
+    let human = class {
+
+constructor(n){
+    this.user_name = n;
+}
+
+arrowFunction(){
+    let example = () => {
+      let text = document.createTextNode(`Arrow: ${this.user_name}`);
+      container3.appendChild(text);
+    }
+     setTimeout(example,1000);
+}
+
+normalFunction(){
+    function example(){
+        let text = document.createTextNode(`Function: ${this.user_name2}`);
+      container4.appendChild(text);
+    }
+    setTimeout(example,1000);
+}
+
+}
+
+let person = new human("Alex");
+
+person.arrowFunction()
+
+var user_name2 = "Christina";
+
+person.normalFunction()
+
+}
+
+
+
+</script>
+
+
+<p>I recommend to use <Span>classes</Span> for <span>object constructors</span>,
+use <span>normal functions</span> in the <span>global scope</span>
+and for <span>object.prototype properties</span> and 
+use <span>arrow functions</span> everywhere else.</p>
+
+<h3><u>How to set default values to function parameters:</u></h3>
+
+<P>In <span>ES6</span>, we can set <span>default values</span> for the 
+<Span>parameters</Span> in case they aren't defined when the function executes, here is 
+an example:</P>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">function something_cool(x = 5, y = 2){
+    document.write( `First parameter is ${x} and second is ${y}.` );
+}
+
+something_cool(3);</span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+function something_cool(x = 5, y = 2){
+    document.write( `First parameter is ${x} and second is ${y}.` );
+}
+
+something_cool(3);
+
+</Script>
+
+<p>The <Span>default value expressions</Span> are 
+<span>evaluated</span> at <span>function call time</span> from <Span>left</Span>
+to <Span>right</Span>, this also means the <span>default expressions</span> can 
+use <span>values</span> of <span>previously-filled parameters</span>.</p>
+
+</article>
+
+<hr>
+
+<article id="six">
+
+<header>
+
+<h1>Objects in ES6</h1>
+
+</header>
+
+<p><span>JavaScript variables</span> can be <Span>Object</Span> data types that 
+contain <Span>many values</Span> called <Span>properties</Span>. An <span>object</span>
+can also have <Span>properties</Span> that are <Span>function definitions</Span> called 
+<Span>methods</Span> for <Span>performing actions</Span> on the <Span>object</Span>.</p>
+
+<p><span>ES6</span> introdocues <Span>shorthand notations</Span> and <span>computed
+property names</span> that make <Span>declaring</Span> and <span>using</span> objects easier to understand.</p>
+
+<h3><u>Method definition shorthand:</u></h3>
+
+<p>The new <Span>method definition shorthand</span> does not require the <Span>colon</Span> (:) or <Span>function</Span>
+keyword, here is the code as we would write it <span>before ES6</span>:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<P class="left"><span class="code10">var tree = {
+    height: 10,
+    color: "green",
+    grow: function(x){
+        this.height += x;
+    }
+};
+
+tree.grow(2);
+
+document.write(tree.height);</span></P>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let tree = {
+    height: 10,
+    color: "green",
+    grow: function(x){
+        this.height += x;
+    }
+};
+
+tree.grow(2);
+
+document.write(tree.height);
+
+};
+
+
+
+</script>
+
+<p>And here it is how we write it now <span>after ES6</span>:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<P class="left"><span class="code10">var tree = {
+    height: 10,
+    color: "green",
+    grow(x){
+        this.height += x;
+    }
+};
+
+tree.grow(2);
+
+document.write(tree.height);</span></P>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+    
+let tree = {
+    height: 10,
+    color: "green",
+    grow(x){
+        this.height += x;
+    }
+};
+
+tree.grow(2);
+
+document.write(tree.height);
+
+};
+
+
+
+</script>
+
+<h3><u>Property value shorthand:</u></h3>
+
+<p>You can also use a <Span>property value shorthand</Span> when 
+<Span>initializing properties</Span> with a <Span>variable</Span> by the <span>same name</span>. For example, 
+the properties <span>height</span> and <span>color</span> can be 
+<Span>initialized</Span> with <Span>variables</Span> named <span>height</span> and 
+<span>color</span>, like in this code below:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<P class="left"><span class="code10">var height = 10;
+    var color = "green";
+    
+    var tree = {
+        height,
+        color
+    };
+    
+    document.write( `The height is ${tree.height} and the color is ${tree.color}`);</span></P>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+    
+let height = 10;
+let color = "green";
+
+let tree = {
+    height,
+    color
+};
+
+document.write( `The height is ${tree.height} and the color is ${tree.color}`);
+
+};
+
+
+
+</script>
+
+<h3><u>Computed Property Names</u></h3>
+
+<p>With <Span>ES6</Span>, you can use <span>coumputed property names</span>. Using the 
+<Span>square bracket</Span> notation [], we can use an <Span>expression</Span> for 
+a <span>property name</span>, including <span>concatenating strings</span>, for example, 
+I could write <Span>["user_" + var1]</Span> and if I had defined a <Span>variety</Span>
+called <Span>var1</Span> before the <span>property name</span> would be <Span>user_(var1's content)</Span>.</p>
+
+<p>This can be useful in cases where we want to create <span>cetain objects</span> based on 
+<Span>user data</Span> (e.g. <Span>id</Span>, <Span>email</Span>, and so on).</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">var prop = "name";
+    var id = "123"; 
+    var mobile = "08923";
+    
+    var user = {
+        [prop]: "Jack",
+        [`user_${id}`]: mobile
+    };
+    
+    document.write( `Name: ${user.name} &lt;br> Mobile: ${user.user_123}` ); </span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let prop = "name";
+let id = "123"; 
+let mobile = "08923";
+
+let user = {
+    [prop]: "Jack",
+    [`user_${id}`]: mobile
+};
+
+document.write( `Name: ${user.name} <br> Mobile: ${user.user_123}` ); 
+
+};
+
+
+</script>
+
+<p>Here is another example:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">var i = 0;
+
+    var a = {
+        [`foo${++i}`]: i,
+        [`foo${++i}`]: i,
+        [`foo${++i}`]: i
+    };
+    
+    document.write( a.foo1, a.foo2, a.foo3 )</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let i = 0;
+
+let a = {
+    [`foo${++i}`]: i,
+    [`foo${++i}`]: i,
+    [`foo${++i}`]: i
+};
+
+document.write( a.foo1, a.foo2, a.foo3 )
+
+}
+
+
+</script>
+
+<p>And here is a more complicated example:
+</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">var x = "size";
+
+    var config = {
+       [`mobile${x.charAt(0).toUpperCase() + x.slice(1)}`]: 4
+    }
+    
+    document.write(config.mobileSize);</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let x = "size";
+
+let config = {
+   [`mobile${x.charAt(0).toUpperCase() + x.slice(1)}`]: 4
+}
+
+document.write(config.mobileSize);
+
+};
+
+</script>
+
+<p>What does the <Span>x.charAt(0).toUpperCase() + x.slice(1)</Span> expression do? First, 
+it uses <Span>var.charAt()</Span> to select a <Span>character</Span> of the chosen <span>variable</span>, 
+it works like <span>arrays</span>, so <span>0</span> picks the <Span>first character</Span>, 
+then, I use the <Span>toUpperCase()</Span> method which gets the <Span>character</Span> 
+and changes it to <span>upper case</span> as you probably guessed from the name, 
+therefore, the <Span>property name</Span> we have so far is <Span>mobileS</Span>, then, 
+we added the <span>variety.slice()</span> method, which picks a <Span>variety</Span> and 
+slices it from the <Span>character</Span> you choose and after, so, we wrote <span>x.slice(1)</span>, 
+therefore it picked the <Span>variety x</Span> which we have assigned to be <Span>size</Span>, 
+met the <span>second character</span>, and selected everything after the <Span>second character</Span>, 
+so it gave us <Span>ize</Span>, with this, <Span>mobileS + ize</Span> gave us the final 
+<Span>property name</Span> which is <span>mobileSize</span>.</p>
+
+<h3><u>Object.assign() method in ES6:</u></h3>
+
+<P><span>ES6</span> adds a new <span>object method</span> that allows us to <Span>combine multiple sources</Span>
+into <span>one target</span> to create a single <Span>new object</Span>. <span>Object.assign()</span>
+is also useful for <span>creating a duplicate</span> of an <Span>existing object</Span>, 
+however I believe it's more effective to use <Span>object constructors</Span> for that, 
+since it's easier and faster to use, especially now that we also know how to set <span>defaul values</span> 
+for <Span>undefined parameters</Span> of the function.</P>
+
+<p>In the example below we will <Span>combine</Span> two <Span>objects</Span> into 
+one <span>new object</span>, any <span>properties</span> that <span>share</span> the 
+<Span>same name</Span> will be <span>overwritten</span> by the <Span>last parameter</Span>, 
+which in our case is the <Span>second object</Span>:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">var person1 = {
+    name: "Alex",
+    age: 16,
+    hair_color: "Black"
+};
+
+var person2 = {
+    name: "Christina",
+    age: 17, 
+    skin_color: "White"
+};
+
+var new_person = Object.assign({}, person1, person2);
+
+document.write( `Name: ${new_person.name} &lt;br>
+Age: ${new_person.age} &lt;br>
+Hair_color: ${new_person.hair_color} &lt;br>
+Skin_color: ${new_person.skin_color} ` );</span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+if(true){
+
+let person1 = {
+    name: "Alex",
+    age: 16,
+    hair_color: "Black"
+}
+
+let person2 = {
+    name: "Christina",
+    age: 17, 
+    skin_color: "White"
+}
+
+let new_person = Object.assign({}, person1, person2);
+
+document.write( `Name: ${new_person.name} <br>
+Age: ${new_person.age} <br>
+Hair_color: ${new_person.hair_color} <br>
+Skin_color: ${new_person.skin_color} ` );
+
+}
+
+</Script>
+
+<p>The <span>first parameter</span> of the <span>Object.assign()</span> method is the <Span>target object</Span>
+you want to <Span>apply</Span> the <Span>new properties</Span> to, <Span>every parameter after the first</Span>
+will be used as <span>sources</span> for the <Span>target</Span>. There are <span>no limitations</span>
+on the <Span>number of source parameters</Span>, however, <Span>order is important</Span>, 
+because <span>properties</span> in the <span>second parameter</span> will be <Span>overridden</Span> 
+by <span>properties of the same name</span> in <Span>third parameter</Span>, and so on.</p>
+
+<p>Using the <span>Object.assign()</span> method we can easily <span>duplicate</span> 
+an <span>object</span>, like this:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">var person1 = {
+    name: "Alex",
+    age: 16,
+    hair_color: "Black"
+};
+
+var person2 = Object.assign({}, person1);
+person2.name = "Christina"
+
+document.write( `${person1.name} ${person2.name}` );</span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+if(true){
+
+let person1 = {
+    name: "Alex",
+    age: 16,
+    hair_color: "Black"
+}
+
+let new_person = Object.assign({}, person1);
+new_person.name = "Christina"
+
+document.write( `${person1.name} ${new_person.name}` );
+
+}
+
+</Script>
+
+<p>How do you change the <span>property values</span> without having to <Span>redefine</Span>
+them one by one? We could use <span>object constructors</span>, like this:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">function human(n = "Alex", a = 16, h = "Black"){
+    this.name = n;
+    this.age = a; 
+    this.hair_color = h;
+};
+
+var person1 = new human();
+
+var person2 = new human ("Christina");
+
+document.write( `${person1.name} ${person2.name}` );</Span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+function human(n = "Alex", a = 16, h = "Black"){
+    this.name = n;
+    this.age = a; 
+    this.hair_color = h;
+};
+
+let person1 = new human();
+
+let person2 = new human ("Christina");
+
+document.write( `${person1.name} ${person2.name}` );
+
+};
+
+</script>
+
+<p>However, now with <span>ES6</span>, we could also do this very easily 
+by using the <span>brackets</span> {} to <Span>assign new properties</Span> (or rewrite 
+properties if we use the same name) inside the <span>Object.assign()</span> method, like that:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">var person1 = {
+    name: "Alex",
+    age: 16,
+    hair_color: "Black"
+}
+
+var person2 = Object.assign({}, person1, {name: "Christina", age: "18"});
+
+document.write( `Person1.name: ${person1.name} &lt;br>
+Person1.age: ${person1.age} &lt;br>
+Person2.name: ${person2.name} &lt;br> 
+Person2.age: ${person2.age}` );</span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+if(true){
+
+let person1 = {
+    name: "Alex",
+    age: 16,
+    hair_color: "Black"
+}
+
+let person2 = Object.assign({}, person1, {name: "Christina", age: "18"});
+
+document.write( `Person1.name: ${person1.name} <br>
+Person1.age: ${person1.age} <br>
+Person2.name: ${person2.name} <br> 
+Person2.age: ${person2.age}` );
+
+}
+
+</Script>
+
+
+
+</article>
+
+<hr>
+
+<article id="seven">
+
+<header>
+
+    <h1>ES6 Destructuring</h1>
+
+</header>
+
+
+<p>The <span>destructuring assignment syntax</span> is a <span>JavaScript expression</span>
+that makes it possible to <Span>unpack values</Span> from <Span>arrays</span> or 
+<span>properties</span> from <Span>objects</Span>, into <Span>distinct variables</Span>.</p>
+
+<h3><u>Array Destructuring in ES6:</u></h3>
+
+<P><span>ES6</span> has added a <span>shorthand syntax</span> for <span>destructuring</span>
+an <span>array</span>. The following example demonstrates how to <Span>unpack</Span> the 
+<Span>elements</Span> of an <Span>array</Span> into <Span>distinct variables</Span>.</P>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">var arr = ['1','2','3'];
+
+    var [one, two, three] = arr;
+    
+    document.write( one + two + three );</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let arr = ['1','2','3'];
+
+let [one, two, three] = arr;
+
+document.write( one + two + three );
+
+};
+
+
+</script>
+
+<p>This basically made <Span>three variables</Span>, we named the <Span>first variable</Span>
+    one, the <Span>second variable</Span> two, etc, the <Span>first variable</Span> 
+    got assigned the <span>first array's element</span>, the <Span>second variable</Span> got assigned 
+    the <Span>second array's element</Span>, etc. Before <Span>ES6</Span> if we wanted to 
+    make a <Span>variable</Span> of the <Span>second element</Span> and 
+    the <Span>fourth element</Span> of an <span>array</span> we would do this like this:
+</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">var arr = ['1','2','3','4'];
+
+    var two = arr[1];
+    var four = arr[3];
+    
+    document.write( two + four );</span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+if(true){
+
+let arr = ['1','2','3','4'];
+
+let two = arr[1];
+let four = arr[3];
+
+document.write( two + four );
+
+}
+
+
+</Script>
+
+<p>Now with <span>ES6</span> we can do this easier like this:</p>
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">var arr = ['1','2','3','4'];
+
+    var [,two,,four] = arr;
+    
+    document.write( two + four );</span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+if(true){
+
+let arr = ['1','2','3','4'];
+
+let [,two,,four] = arr;
+
+document.write( two + four );
+
+}
+
+
+</Script>
+
+<p>If you add <span>three dots</span> before the <span>last defined variable</span>
+then <span>all array elements left</span> will be <Span>assigned</Span> to it, like in the example below:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">var arr = ['1','2','3','4', '5'];
+
+    var [one,two,...three] = arr;
+    
+    document.write( one + two + three );</span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+if(true){
+
+let arr = ['1','2','3','4', '5'];
+
+let [one,two,...three] = arr;
+
+document.write( one + two + three );
+
+}
+
+
+</Script>
+
+<p>We can also <Span>destructure</Span> an <Span>array</Span> returned by a <Span>function</Span>:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">function a(){
+    return ['1','2','3',];
+}
+
+var [one,two,three] = a();
+
+document.write( one + two + three );</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+function a(){
+    return ['1','2','3',];
+}
+
+let [one,two,three] = a();
+
+document.write( one + two + three );
+};
+
+</script>
+
+<p>The <span>destructuring syntax</span> also simplifies <span>assignment</span>
+and <Span>swapping</Span> values.</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">var a = 69, b, c, d;
+
+    [a, b] = [1, 2];
+    
+    [c = 4, d] = [,3];
+    
+    [c, d] = [d, c];
+    
+    document.write ( a, b, c, d );</span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+if(true){
+
+let a = 69, b, c, d;
+
+[a, b] = [1, 2];
+
+[c = 4, d] = [,3];
+
+[c, d] = [d, c];
+
+document.write ( a, b, c, d );
+
+}
+
+
+</Script>
+
+<p>The main reason this <span>syntax</span> is so cool is because it makes 
+<span>swapping elements</span> much simplier and easier, that's how we would <Span>swap</Span>
+two elements <span>before ES6</span>:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">var a = '1';
+    var b = '2';
+    
+    var temp = a;
+    a = b;
+    b = temp;
+    
+    document.write( a + b );</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let a = '1';
+let b = '2';
+
+let temp = a;
+a = b;
+b = temp;
+
+document.write( a + b );
+
+}
+
+
+</script>
+
+<p>Now we can simply write the following code:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10"> var a = '1';
+    var b = '2';
+
+    [a, b] = [b, a];
+
+    document.write( a + b );</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+    let a = '1';
+    let b = '2';
+
+    [a, b] = [b, a];
+
+    document.write( a + b );
+}
+
+
+</script>
+
+<h3><u>Object Destructuring in ES6</u></h3>
+
+<p>Similar to <Span>Array destructuring</Span> we can <Span>unpack properties</Span> 
+of <span>objects</span> into <span>distinct variables</Span>.</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">var object = {
+    a: '1',
+    b: '2',
+    c: '3'
+};
+
+var {b: two,a: one,c: three} = object;
+
+document.write( one, two, three );</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let object = {
+    a: '1',
+    b: '2',
+    c: '3'
+};
+
+let {b: two,a: one,c: three} = object;
+
+document.write( one, two, three );
+
+}
+
+</script>
+
+<p>As you can see, they are quite different than before, instead of <sPAN>[]</sPAN> 
+we used <Span>{}</Span>, the <Span>order</Span> doesn't matter like before, and to 
+define which <Span>property</Span> to be assigned to which <Span>variable</Span> we simply 
+write <span>property: variable</span>.</p>
+
+<p>You can also assign <Span>default values</Span> to <span>variables</span>, in 
+case the <Span>property</Span> unpacked frin the <span>object</span> is <Span>undefined</Span>:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">var obj = {
+    a: '1',
+    c: '3'
+}
+
+var  {a: one, b: two = 2, c: three = 'test'} = obj;
+
+document.write( one,two,three );</span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+if(true){
+
+let obj = {
+    a: '1',
+    c: '3'
+}
+
+let  {a: one, b: two = 2, c: three = 'test'} = obj;
+
+document.write( one,two,three );
+
+}
+
+
+</Script>
+
+<p>If you want to assign the <Span>object property values</Span> to <Span>variables</Span>
+    that are <Span>predefined</Span> you should do this like this:</p>
+   
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10"> var obj = {
+    name: "Alex",
+    age: 16
+}
+
+var var1, var2;
+
+({name: var1, age: var2} = obj);
+
+document.write( var1, var2 );</span></p>
+
+<p class="left">Outcome:</p>
+
+    <Script>
+    
+    if(true){
+    
+        let obj = {
+        name: "Alex",
+        age: 16
+    }
+    
+    let var1, var2;
+    
+    ({name: var1, age: var2} = obj);
+    
+    document.write( var1, var2 );
+    
+    };
+    
+    
+    </Script>
+
+<p>The <span>();</span> is necessary when <span>destructuring without a declaration</span>
+because <span>curly braces</span> {} at the <Span>beginning of a line</Span> are treated 
+as the <Span>beginning of a code block</Span>, we add the code between <Span>();</Span> 
+to prevent this from happening.</p>
+
+
+</article>
+
+<hr>
+
+<article id="eight">
+
+<header>
+
+<h1>What are Function Arguments?</h1>
+
+</header>
+
+<p><span>JavaScript functions</span> have a <Span>built-in object</Span> called 
+the <span>arguments object</span>. The <span>argument object</span> contains an <Span>array</Span>
+of the <span>function parameters</span>.</p>
+
+<p>This way you can simply use a <Span>function</Span> to find the 
+<span>heighest value</span> in a list of <Span>numbers</Span>, like in the example below:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">function findMax(){
+
+    var max = -Infinity;
+    
+    for ( var i = 0; i &lt; arguments.length; i++){
+    
+    if ( arguments[i] > max ){ max = arguments[i] }
+    
+    }
+    
+    return max;
+    
+    }
+    
+    document.write( findMax(1,13,5) );</Span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+let findMax = function(){
+
+let max = -Infinity;
+
+for ( let i = 0; i < arguments.length; i++){
+
+if ( arguments[i] > max ){ max = arguments[i] }
+
+}
+
+return max;
+
+}
+
+document.write( findMax(1,13,5) );
+}
+
+</script>
+
+<p>Let me explain what the <span>function</span> does, first 
+it performs a <span>loop</span>, in which it gives <Span>max</Span> the 
+<Span>highest value</Span>, I have gave <Span>max</Span> the <Span>-Infinity</Span>
+value before so that no matter what the <Span>first parameter</Span> is 
+it gets assigned to <Span>max</Span>, since every number is higher than <Span>-Infinity</Span>, 
+even negative numbers. For every <span>loop</span> the <span>i</span> variable 
+gets <Span>+1</Span> so the <Span>next parameter</Span> is checked and if 
+it's <Span>heigher</Span> than <Span>max</Span> which was assigned the <Span>previous parameter</Span>
+the <span>max</span> gets assigned the <Span>new heigher parameter</Span> and the <Span>loop</Span> 
+continues, the <Span>loop</Span> only stops after <Span>all parameters</Span> are checked, and 
+we have done that by writing <Span>i &lt; arguments.lenght</Span>, when 
+the <Span>loop</Span> is over the <Span>function</Span> simply returns <Span>max</Span>
+which has been assigned the <Span>highest number</Span>.</p>
+
+<p>Before however we learned about the <Span>for...of</Span> loops of <Span>ES6</Span>, 
+so why not use this instead to make the code more clear?</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">function findMax(){
+    
+    var max = -Infinity;
+    
+    for( var i of arguments ){
+    
+    if ( i > max ) { max = i }
+    
+    }
+    
+    return max;
+    
+    }
+    
+    document.write( findMax(2,30,5) );</Span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let findMax = function(){
+
+let max = -Infinity;
+
+for( let i of arguments ){
+
+if ( i > max ) { max = i }
+
+}
+
+return max;
+
+}
+
+document.write( findMax(2,30,5) );
+
+}
+
+</script>
+
+</article>
+
+<hr>
+
+<article id="nine">
+
+<header>
+
+    <h1>The indexOf() method</h1>
+
+</header>
+
+<p>The <span>indexOf()</span> method searches the 
+<span>array</span> for the <span>specified item</span>, and <Span>returns</Span>
+it's <Span>position</Span>.</p>
+
+<p>The <Span>search</Span> will start at the <Span>specified position</Span>, or at 
+the <Span>beginning</Span> if <Span>no start position is specified</Span>, and 
+end the <Span>search</Span> at the <Span>end</Span> of the <Span>array</Span>.</p>
+
+<p>If the <Span>specified item</span> is <Span>not found</Span> then <Span>-1</Span>
+will be returned, if the <span>specified item</span> is present <Span>more than once</Span> 
+the <Span>indexOf</Span> method will return the <Span>position</Span> of the <Span>first occurence</Span>.</p>
+
+<p>The <Span>first item</Span> has position <Span>0</Span>, the <Span>second item</Span>  
+has position <Span>1</Span>, and so on.</p>
+
+<p>If you want to <Span>search</Span> from the <Span>end</Span> to <Span>start</Span>
+use the <Span>lastIndexOf()</Span> method.</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">var arr = ["alex","Alex", "alex", "Bob"];
+
+    document.write( arr.indexOf("alex", 1) );</span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+if(true){
+
+let arr = ["alex","Alex", "alex", "Bob"];
+
+document.write( arr.indexOf("alex", 1) );
+
+}
+
+
+</Script>
+
+<p>In the example above I made it <Span>search</Span> for <Span>'alex'</Span>, and 
+made it <Span>start searching</Span> from <Span>second element</Span> and after, so 
+it missed the <Span>first 'alex'</Span> and gave me the <Span>position</Span> of 
+the <Span>second 'alex'</Span>.</p>
+
+<p>This also works for <Span>strings</Span>, see the example:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">var string = "Hello world!";
+
+    document.write( string.indexOf("world") );</span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+if(true){
+
+let string = "Hello world!";
+
+document.write( string.indexOf("world") );
+
+}
+
+</Script>
+
+<p><span>Strings</span> are like <Span>arrays</Span>, <Span>string[0]</Span> is the 
+<Span>first character</Span>, <Span>string[1]</Span> is the <span>second character</span>
+and so on, that's why it gave us <Span>6</Span>, that's where the <Span>first character</Span> of 
+the word <Span>world</Span> was met.</p>
+
+</article>
+
+<hr>
+
+<article id="ten">
+
+<header>
+
+    <h1>Rest parameter</h1>
+
+</header>
+
+<p>Prior to <span>ES6</span>, if we wanted to pass a <span>variable number of arguments</span>
+to a <Span>function</Span>, we could use the <Span>arguments object</Span>, an <span>array-like object</span>, 
+to access the <Span>parameters</Span> passed to the <span>function</span>. For example, 
+let's write a <span>function</span> that checks if an <Span>array</Span> contains 
+<Span>all the arguments passed</Span>:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">function containsAll(x){
+
+    for( var i = 1; i &lt; arguments.length; i++){
+    let  num = arguments[i];
+    
+    if( x.indexOf(num) === -1 ){
+        return false;
+    } else { return true; }
+    
+    }
+    
+    }
+    
+    var arr = [1,5,10,20];
+    
+    document.write( `${containsAll(arr, 5, 10, 1)} &lt;br> ${containsAll(arr, 2, 5, 10)}`);</span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+if(true){
+
+function containsAll(x){
+
+for( let i = 1; i < arguments.length; i++){
+let num = arguments[i];
+
+if( x.indexOf(num) === -1 ){
+    return false;
+} else {
+    return true;
+}
+
+}
+
+}
+
+let arr = [1,5,10,20];
+
+document.write( `${containsAll(arr, 5, 10, 1)} <br> ${containsAll(arr, 2, 5, 10)}`);
+
+}
+
+</Script>
+
+<p>So, let me do the explaining, the <Span>function</Span> performs a <span>loop</span>
+which checks <span>all the function arguments</span> starting from the <Span>second argument</Span>, 
+and by using <span>indexOf()</span> method we check if the <Span>arguments</Span> 
+can be found inside the <span>x array</span>, if they are not, then <Span>-1</Span> returns, 
+and the <Span>function</Span> returns <span>false</span>, if not then it returns <span>true</span>, 
+</p>
+
+<p>While this does the job, <span>ES6</span> provides a <span>more readable syntax</span>
+to achieve <span>variable number of parameters</span> by using a <span>reset parameter</span>:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">function containsAll2(x, ...nums){
+
+    for( let y of nums ){
+    
+    if( x.indexOf(y) === -1 ){
+        return false;
+    } else { return true }
+    
+    }
+    
+    }
+    
+    let arr = [1, 10, 5, 6]
+    
+    document.write( `${containsAll2(arr, 1, 5, 10)} &lt;br> ${containsAll2(arr, 3, 5, 2)}` );</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+function containsAll2(x, ...nums){
+
+for( let y of nums ){
+
+if( x.indexOf(y) === -1 ){
+    return false;
+} else { return true }
+
+}
+
+}
+
+let arr = [1, 10, 5, 6]
+
+document.write( `${containsAll2(arr, 1, 5, 10)} <br> ${containsAll2(arr, 3, 5, 2)}` );
+
+}
+
+
+</script>
+
+<p>The <span>...nums</span> parameter assigns <Span>all the parameters after the first</Span>
+to <Span>nums</Span> argument, which allows us to use <span>for of</span> loop, 
+something we couldn't do before the same way since we wanted the <span>loop</span> 
+to only check the <span>parameters</span> after the <span>first one</span>.</p>
+
+<p>The <Span>three dots</Span> (...) are called the <span>Spread operator</span>, only 
+the <span>last parameter</span> of a <span>function</span> may be marked as 
+a <Span>rest parameter</Span>. If there are <span>no extra arguments</span>, the <span>rest parameter</span>
+will simply be an <Span>empty array</Span>, the <Span>rest parameter</Span> will 
+never be <Span>undefined</Span>.</p>
+
+</article>
+
+<hr>
+
+<article id="eleven">
+
+<header>
+
+<h1>The Array filter() and map() Methods</h1> 
+
+</header>
+
+<h3><u>The Array filter() method:</u></h3>
+
+<p>The <span>filter()</span> method creates an <Span>array</Span> filled with 
+<span>all array elements</span> that <Span>pass a test</Span> (provided as a <Span>function</Span>). 
+</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let arr = ["Car", "Computer", "Chair", "Chocolate"];
+
+    function test(x){
+    return x.length <= 5;
+    }
+    
+    let passed = arr.filter(test);
+    
+    document.write(passed);</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let arr = ["Car", "Computer", "Chair", "Chocolate"];
+
+function test(x){
+return x.length <= 5;
+}
+
+let passed = arr.filter(test);
+
+document.write(passed);
+
+}
+
+</script>
+
+<p>In the example above, all <Span>elements</Span> that returned <Span>true</Span> passed 
+the test, the same code could be written faster like this:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let arr = ["Car", "Computer", "Chair", "Chocolate"];
+
+    let passed = arr.filter( x => x.length <= 5 );
+    
+    document.write(passed);</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let arr = ["Car", "Computer", "Chair", "Chocolate"];
+
+let passed = arr.filter( x => x.length <= 5 );
+
+document.write(passed);
+
+}
+
+</script>
+
+<h3><u>The Array map() method:</u></h3>
+
+<p>The <span>map()</span> method calls a <Span>provided function</Span> once 
+<Span>for each element in an array</Span>.</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let arr = [1, 5, 6];
+
+    function idk(x){
+        return x * 10;
+    }
+    
+    let example = arr.map(idk);
+    
+    document.write(example);
+    </Span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let arr = [1, 5, 6];
+
+function idk(x){
+    return x * 10;
+}
+
+let example = arr.map(idk);
+
+document.write(example);
+
+
+}
+
+
+</script>
+
+<p>The same code could be shorten to this:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let arr = [1, 5, 6];
+
+    let example = arr.map( x => x * 10 );
+    
+    document.write(example);</Span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let arr = [1, 5, 6];
+
+let example = arr.map( x => x * 10 );
+
+document.write(example);
+
+
+}
+
+
+</script>
+
+<p>You could also <Span>add all array elements together</Span>, <Span>multiply</Span> them, <span>devide</span>
+them, etc, by doing something like this:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let arr = [1, 5, 6];
+    
+    let el = 0;
+
+    arr.map( x => el += x );
+    
+    document.write(el);</Span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+    if(true){
+    
+    let arr = [1, 5, 6];
+    
+    let el = 0;
+
+    arr.map( x => el += x );
+    
+    document.write(el);
+    
+    
+    }
+    
+    
+    </script>
+
+</article>
+
+<hr>
+
+</body>
+</html>

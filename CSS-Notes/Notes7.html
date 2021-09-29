@@ -1,0 +1,1618 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> Page seven of my notes </title>
+<link rel="stylesheet" href="../CSS-JavaScript-External-Files/HTMLnotes.css">
+<style>
+.NewRoman {
+font-family: "Times New Roman"; 
+background-color: yellow;
+}
+.Curier {
+font-family: "Curier New";
+background-color: lightgray;
+}
+.Lucida {
+font-family: "Lucida Console";
+background-color: lightgray;
+}
+p.serif {
+font-family: "Times New Roman", Times, serif;
+}
+p.sansserif {
+font-family: Helvetica, Arial, sans-serif;
+}
+p.monospace {
+font-family: "Cursier New", Courier, monospace;
+}
+p.cursive {
+font-family: Florence, cursive;
+}
+p.fantasy {
+font-family: Blippo, fantasy;
+}
+
+p.small {
+font-size: small;
+}
+p.medium {
+font-size: medium;
+}
+p.large {
+font-size: large;
+}
+p.xlarge {
+font-size: x-large;
+}
+
+
+h1.px {
+font-size: 20px;
+}
+h1.em {
+font-size: 1.25em;
+}
+</style>
+</head>
+<body>
+
+<hr>
+<header> 
+<h1> Page two of my CSS notes </h1>
+</header>
+
+<article id="start-of-page"> 
+  
+    <div id="homepages">
+    
+        <h3>Home Pages:</h3>
+       
+    
+    </div>
+    
+    <nav data-notes="CSS" data-page="2">
+    
+    </nav>
+            
+    <h3> Informations included in this page: </h3>
+<p> <a href="#one"> The font-family Property </a> </p>
+<p> <a href="#two"> The font-size Property </a> </p>
+<p> <a href="#three"> The font-style Property </a> </p>
+<p> <a href="#four"> The font-weight Property </a> </p>
+<p> <a href="#five"> The font-variant Property </a> </p>
+<p> <a href="#six"> The color Property </a> </p>
+<p> <a href="#seven"> The text-align Property </a> </p>
+<p> <a href="#eight"> The vertical-align Property </a> </p>
+<p> <a href="#nine"> The text-decoration Property</a> </p>
+<p> <a href="#ten"> The text-indent Property </a> </p>
+<p> <a href="#eleven"> The text-shadow Property </a> </p>
+<p> <a href="#twelve"> The text-transform Property </a> </p>
+<p> <a href="#thirteen"> The letter-spacing Property </a> </p>
+<p> <a href="#fourteen"> The word-spacing Property </a> </p>
+<p> <a href="#fifteen"> The white-spacing Property </a> </p>
+<p> <a href="#sixteen"> The line-height Property </a> </p>
+
+    </article>
+    
+     <script src="../CSS-JavaScript-External-Files/nav.js"></script> 
+
+
+ 
+<hr>
+
+<article id="one">
+
+<header>
+<h1>The font-family Property</h1>
+</header>
+
+<p> The <Span>font-family</span> property <span>specifies</span>
+the <span>font</span> of an <span>element</span>.</p>
+
+<p>There are <span>two</span> types of <span>font family</span> names:</p>
+
+<p>-<span>font family</span>: a specific <Span>font family</span> (like Times New Roman or Arial)<br>
+-<span>generic family</span>: a group of <span>font families</span> with a similar look (like Serif or Monospace)</p>
+
+<p>Here is an <span>example</span> of different <span>font styles</span>:</p>
+
+<table align="center" bgcolor="white" border="3px">
+<tr>
+<th align="left">Generic family</th>
+<th align="left">Font family</th>
+</tr>
+<tr bgcolor="lightgray">
+<td width="300">Serif</td>
+<td width="200><Span class="NewRoman">Times New Roman</span><br>
+<span style="background-color: lightgray; font-family: Georgia;">Georgia</span> </td>
+</tr>
+<tr>
+<td>Sans - serif</td>
+<td><Span style="font-family: Arial; background-color:white;">Arial</span> <br>
+<span style="font-family: Verdana; background-color: white;">Verdana</span></td>
+</tr>
+<tr bgcolor="lightgray">
+<td>Monospace</td>
+<td> <span class="Curier">Curier New</span><br>
+<span class="Lucida">Lucida Console</span></td>
+</tr>
+</table>
+
+<p style="text-align: left;">HTML code: 
+
+<span><p style="text-align: left;">
+
+<span>&lt;p class="serif"&gt;<br>
+This is a paragraph shown in serif font.<br>
+&lt;/p&gt;<br>
+<br>
+&lt;p class="sansserif"&gt;<br>
+This is a paragraph shown in sans-serif font. <br>
+&lt;/p&gt;<br>
+<br>
+&lt;p class="monospace"&gt;<br>
+This is a paragraph shown in monospace font. <br>
+&lt;/p&gt;<br>
+<br>
+&lt;p class="cursive"&gt;<br>
+This is a paragraph shown in cursive font. <br>
+&lt;/p&gt;<br>
+<br>
+&lt;p class="fantasy"&gt;<br>
+This is a paragraph shown in fantasy font.<br>
+&lt;/p&gt;</span></p> 
+
+
+<p style="text-align: left;"> 
+
+</p>
+
+<p style="text-align: left;">CSS code: 
+<br><br>
+<span>p.serif { <br>
+font-family: "Times New Roman", Times, serif; <br>
+} <br>
+p.sansserif { <br>
+font-family: Helvetica, Arial, sans-serif; <br>
+} <br>
+p.monospace { <br>
+font-family: "Cursier New", Courier, monospace; <br>
+} <br>
+p.cursive { <br>
+font-family: Florence, cursive; <br>
+} <br>
+p.fantasy { <br>
+font-family: Blippo, fantasy; <br>
+}</span></p>
+ 
+ 
+
+<p style="text-align: left;">Outcome:</p>
+<p class="serif">
+This is a paragraph shown in serif font. 
+</p>
+
+<p class="sansserif">
+This is a paragraph shown in sans-serif font. 
+</p>
+
+<p class="monospace">
+This is a paragraph shown in monospace font. 
+</p>
+
+<p class="cursive">
+This is a paragraph shown in cursive font. 
+</p>
+
+<p class="fantasy">
+This is a paragraph shown in fantasy font.
+</p>
+
+<p>I used <span>comma</span> to add more than one <Span>value</span>, the added <span>values</span> are <span>alternatives</span>.
+If <span>Time New Roman</span> is not available in <Span>browser</span> it will pick <span>Times</span>, if also not available it 
+will pick <span>similar</span> from <span>generic family</span> which is <span>serif</span>.</p>
+
+<p>If the <span>name</span> of a <span>font family</span> is <Span>more</span> than <span>one</span> word, it must be in <span>quotation marks</span>: "<strong>Times New Roman</strong>"</p>
+</article>
+<hr>
+
+<article id="two">
+
+<header>
+<h1> The font-size Property </h1>
+</header>
+
+<p>The <span>font-size</span> property sets the <span>size</span> of a <span>font</span>.
+One way to se the <span>size</span> of <span>fonts</span> on the <Span>web</span> is to 
+use <span>keywords</span>, for example <span>xx-small</span>, <span>small</span>, <span>medium</span>, <Span>large</span>, <Span>larger</span>, etc.</p>
+
+<p style="text-align: left;">HTML code: 
+
+<span><p style="text-align: left;">
+
+<span> 
+&lt;p class="small"&gt;<br>
+<br>
+Paragraph text set to be small<br>
+&lt;/p&gt;<br>
+<br>
+&lt;p class="medium"&gt;<br>
+Paragraph text set to be medium<br>
+&lt;/p&gt;<br>
+<br>
+&lt;p class="large"&gt;<br>
+Paragraph text set to be large<br>
+&lt;/p&gt;<br>
+<br>
+&lt;p class="xlarge"&gt;<br>
+Paragraph text set to be x-large<br>
+&lt;/p&gt;</span></p> 
+
+
+<p style="text-align: left;"> 
+
+</p>
+
+<p style="text-align: left;">CSS code: 
+<br><br>
+<span> 
+p.small {<br>
+font-size: small;<br>
+}<br>
+p.medium {<br>
+font-size: medium;<br>
+}<br> 
+p.large {<br>
+font-size: large;<br>
+}<br>
+p.xlarge {<br>
+font-size: x-large;<br>
+}<br>
+</span></p>
+ 
+ 
+
+<p style="text-align: left;">Outcome:</p>
+
+
+<p class="small">
+Paragraph text set to be small
+</p>
+<p class="medium">
+Paragraph text set to be medium
+</p>
+<p class="large">
+Paragraph text set to be large
+</p>
+<p class="xlarge">
+Paragraph text set to be x-large
+</p>
+
+<p>You can also use <span>numerical values</span> in <Span>pixels</span>, <span>ems</span> and others to manipulate <span>font size</span>.</p>
+
+<p>Setting the <span>font size</span> in <span>pixel values</span> (px) is a good choice when you need <span>pixel accurancy</span>, and it gives
+you full control of the <span>text size</span>.</p>
+
+<p>The <span>em</span> size unit is another way to set the <span>font size</span> (em is relative size unit). It allows all major browsers to <Span>resize</span> the <span>text</span>.
+If you haven't se the <span>font size</span> anywhere on the page, then it is the <Span>browser default size</span>, which is <span>16px</span>.</p>
+
+<p>To <span>calculate</span> the <span>em</span> size, juse use the following <span>formula</span>: <strong>em = pixels/16</strong></p>
+
+
+<p style="text-align: left;">HTML code:</p>
+
+ 
+
+<p style="text-align: left;"> 
+
+<span>&lt;h1 class="px"&gt; <br>
+This is a 20px heading<br>
+&lt;/h1&gt;<br>
+<br>
+&lt;h1 class="em"&gt; <br>
+This is a 1.25em heading <br>
+&lt;/h1&gt;</span> 
+
+</p>
+
+<p style="text-align: left;">CSS code:</p>
+
+
+<p style="text-align: left;"> 
+<Span>h1.px {<br>
+font-size: 20px;<br>
+}<br>
+h1.em {<br>
+font-size: 1.25em;<br>
+}</span>
+</p>
+
+<p style="text-align: left;">Outcome:</p>
+
+<h1 class="px"> This is a 20px heading </h1>
+
+<h1 class="em"> This is a 1.25em heading </h1>
+
+<p>Both of the <span>examples</span> will produce the <span>same result</span> in the <span>browser</span>, because <strong>20/16=1.25em</strong></p>
+
+<p> To finish with this section, I will add here some of the <span>values</span> you can use for <span>font size</span> categorized in groups:</p>
+
+<p><Span>Absolute size values</span>:<br>
+font-size: xx-small;<br>
+font-size: x-smal;<br>
+font-size: small;<br>
+font-size: medium;<br>
+font-size: large;<br>
+font-size: x-large;<br>
+font-size: xx-large; </p>
+
+<p><span>Relative size values</span>: <br>
+font-size: smaller; (makes the element smaller than it's parent)<br>
+font-size: larger; (makes the element larger than it's parent)
+</p>
+
+<p><span>Length values</span>:<br>
+font-size: 12px;<br>
+font-size: 0.8em;</p>
+
+<p><span>Percentage values</span>:<br>
+font-size: 80% (makes the element get the 80% size of it's parent)</p>
+
+<p><span>Global values</span>:<br>
+font-size: inherit; (Makes the element get same size with it's parent) <br>
+font-size: initial; (Gives element it's default size)<br>
+font-size: unset; (Resets a property to it's inherited value if the property naturally inherits from it's parent) </p>
+
+</article>
+<hr>
+
+<article id="three">
+
+<header>
+<h1>The font-style Property</h1>
+</header>
+
+<p>The <span>font-style</span> property is typically used to specify <span>italic</span> text.</p>
+
+<p style="text-align: left;">HTML code:</p>
+
+<p style="text-align: left;">
+
+<span>&lt;p class="italic"&gt; <br>
+This is a paragraph in italic style. <br>
+&lt;/p&gt;</span>
+</p>
+
+<p style="text-align: left;">CSS code:</p>
+
+<span>p.italic {<br>
+font-style: italic;<br>
+}</span> 
+<p style="text-align: left;">
+
+</p>
+
+<p style="text-align: left;">Outcome:</p>
+
+<p style="font-style: italic;"> This is a paragraph in italic style. </p>
+
+<p> The <span>font-style</span> property has <span>three values</span>: <span>normal</span>, <span>italic</span>, and <span>oblique</span>.</p>
+
+<p> The <span>normal</span> value doesn't do anything, it can be used if you want to <span>overrun</span> an older <span>styling rule</span>
+I believe, and thats pretty much the reason it exists, <Span>oblique</span> value is pretty similar to <span>italic</span> but less supported.</p>
+</article>
+
+<hr>
+
+<article id="four"> 
+
+<header>
+<h1>The font-weight Property</h1>
+</header>
+
+<p>The <span>font-weight</span> controls the <span>boldness</span> or 
+<Span>thickness</Span> of the <Span>text</Span>. The <Span>values</Span> can be set
+as <Span>normal</Span> (default size), <Span>bold</Span>, <span>bolder</span>, and <span>lighter</span>.</p>
+
+<p>Lets play around with <Span>font-weight</Span> now, to understand it better, 
+I will also change the <Span>font-family</Span> to <span>sans-serif</span> so 
+the difference is more visible.</p>
+
+<p style="text-align: left;">HTML code:</p>
+
+<p style="text-align: left;">
+<span>
+    &lt;p class="sans"> This is a font with a "normal" weight.&lt;/p><br>
+    <br>
+    &lt;p clas="light sans"> This is a font with a "lighter" weight.&lt;/p><br>
+    <br>
+    &lt;p class="bold sans">This is a font with a "bold" weight.&lt;/p><br>
+    <br>
+    &lt;p class="bolder sans">This is a font with a "bolder" weight.&lt;/p>
+</span>
+</p>
+
+<p style="text-align: left;">CSS code:</p>
+<span>
+&lt;style> <br>
+    .light {<br>
+        font-weight: lighter;<br>
+    }<br>
+    .bold {<br>
+        font-weight: bold;<br>
+    }<br>
+    .bolder {<br>
+        font-weight: bolder;<br>
+    }<br>
+    .sans {<br>
+        font-family: sans-serif;<br>
+    }<br>
+    &lt;/style>
+</span>
+<p style="text-align: left;">
+
+
+</p>
+
+<p style="text-align: left;">Outcome:</p>
+
+<style> 
+.light {
+    font-weight: lighter;
+}
+.bold {
+    font-weight: bold;
+}
+.bolder {
+    font-weight: bolder;
+}
+.sans {
+    font-family: sans-serif;
+}
+</style>
+
+<p class="sans"> This is a font with a "normal" weight.</p>
+<p clas="light sans"> This is a font with a "lighter" weight.</p>
+<p class="bold sans">This is a font with a "bold" weight.</p>
+<p class="bolder sans">This is a font with a "bolder" weight.</p>
+
+<p>You can also define the <span>font-weight</span> with a number from <span>100</span> (thin) to
+<span>900</span> (thick), according to how thick you want the text to be, <span>400</span> is the same as <span>normal</span>, 
+<span>700</span> is the same as <span>bold</span></p>
+
+</article>
+
+<hr>
+
+<article id="five">
+
+<header>
+
+<h1>The font-variant Property</h1>    
+
+</header>
+
+<p>The <Span>font-variant</Span> property allows you to <span>convert</span> your <Span>font</Span> 
+to all <Span>small caps</Span>. The values can be set as <span>normal</span>, <span>small-caps</span> and <span>inherit</span>, as 
+I explained in the <span>font-size</span> section, <Span>inherit</Span> gives the element same value it's <span>parent</span> has, so 
+if for example the <span>body</span> of the <span>HTML document</span> was set to <span>font-variant: small-caps</span> the 
+<span>paragraph</span> would also be <span>small-caps</span>.</p>
+
+
+<p style="text-align: left;">HTML code:</p>
+
+<p style="text-align: left;">
+<span>
+    &lt;p class="variant-normal"> Paragraph font variant set to normal. &lt;/p> <br>
+    <br>
+    &lt;p class="variant-smallcaps"> Paragraph font variant set to small-caps. &lt;/p> 
+</span>
+</p>
+
+<p style="text-align: left;">CSS code:</p>
+<span>
+&lt;style> <br>
+.variant-normal {<br>
+    font-variant: normal;<br>
+}<br>
+.variant-smallcaps{<br>
+    font-variant: small-caps;<br>
+}<br>
+    &lt;/style>
+</span>
+<p style="text-align: left;">
+
+
+</p>
+
+<p style="text-align: left;">Outcome:</p>
+
+
+<style>
+.variant-normal {
+    font-variant: normal;
+}
+.variant-smallcaps{
+    font-variant: small-caps;
+}
+</style>
+
+
+<p class="variant-normal">Paragraph font variant set to normal.</p>
+<p class="variant-smallcaps">Paragraph font variant set to small-caps.</p>
+
+</article>
+
+<hr>
+
+<article id="six">
+
+<header>
+
+    <h1>The color Property</h1>
+
+<p>The <span>color</span> property specifies the <span>color</span> of the <span>text</span>. </p>
+
+<p>One method of specifying the <span>color</span> of the <span>text</span> is using a <span>color name</span>: 
+like <span>red</span>, <span>blue</span>, <span>green</span>, etc. Here is an example of changing the <span>color</span>
+of your font.</p>
+
+<p style="text-align: left;">HTML code:</p>
+
+<p style="text-align: left;">
+<span>
+    &lt;p> &lt;span class="color-green"> The text inside the span is green. &lt;/span> The text outside the span is black (by default).&lt;/p>
+</span>
+</p>
+
+<p style="text-align: left;">CSS code:</p>
+<span>
+&lt;style> <br>
+.color-green {<br>
+    color: green;<br>
+    background-color: unset;<br>
+}<br>
+    &lt;/style>
+</span>
+<p style="text-align: left;">
+
+
+</p>
+
+<p style="text-align: left;">Outcome:</p>
+
+
+<style>
+
+.color-green {
+    color: green;
+    background-color: unset;
+}
+
+</style>
+
+<p> <span class="color-green"> The text inside the span is green. </span> The text outside the span is black (by default).</p>
+
+<p>I had to set the <span>background-color</span> to <span>unset</span> because I have set all <Span>spans</Span> to have 
+<span>background-color: green;</span>, something stupid, but I did that because I use <span>&lt;span></span> a lot to mark words in the 
+notes and it would take time to write a class every single time.</p>
+
+<p>Another way of defining colors is using <span>hexademical values</span> and <span>RGB</span>. </P>
+
+
+<P>    <span>Hexademical</span> form is a pount sign (<Span>#</Span>) followed by at most, <span>six hex values</span> (0-F).</p>
+
+<p><span>RBG</span> defines the individual values of <span>Red</span>, <span>Green</span>, and <span>Blue</span>.</p>
+
+
+<p style="text-align: left;">Code:</p>
+
+<p style="text-align: left;">
+<span>
+    &lt;p style="color: #0000FF">This is a blue paragraph &lt;/p><br>
+    <br>
+    &lt;p style="color: rgb(0,0,900)">This is also a blue paragraph &lt;/p>
+</span>
+</p>
+
+<p style="text-align: left;">Outcome:</p>
+
+<p style="color: #0000FF">This is a blue paragraph</p>
+
+<p style="color: rgb(0,0,900)">This is also a blue paragraph</p>
+
+
+<p>Another way to define <span>color</span> is with <span>rgba</span> method, it works just like <span>rgb</span> but there is 
+one more value, that defines the <span>opacity</span>, 0 is invisible, 1 is visible.</p>
+</article>
+
+<hr>
+
+<article id="seven">
+
+<header>
+
+    <h1>The text-align Property</h1>
+
+</header>
+
+<p>The <Span>text-align</Span> property specifies the <Span>horizontal alignment</Span> of 
+<Span>text</Span> in an element. By <Span>default</Span>, text on your website is <Span>aligned</Span> to 
+the <span>left</span>, however, at times you may require a different <span>alignment</span>.</p>
+
+<p><Span>Text-align</Span> property values are the following: <span>left</span>, <span>right</span>, <span>center</span>, and 
+<span>justify</span>.</p>
+
+
+<p style="text-align: left;">HTML code:</p>
+
+<p style="text-align: left;">
+<span>
+&lt;p class="left"> This paragraph is aligned to &lt;Strong>left&lt;/Strong>. &lt;/p><br>
+<br>
+&lt;p class="center"> This paragraph is aligned to &lt;Strong>center&lt;/Strong>. &lt;/p><br>
+<br>
+&lt;p class="right"> This paragraph is aligned to &lt;Strong>right&lt;/Strong>. &lt;/p>
+   
+</span>
+</p>
+
+<p style="text-align: left;">CSS code:</p>
+<span>
+    &lt;Style><br>
+        .left {<br>
+            text-align: left;<br>
+        }<br>
+        .center {<br>
+            text-align: center;<br>
+        }<br>
+        .right {<br>
+            text-align: right;<br>
+        }<br>
+    &lt;/Style>
+</span>
+<p style="text-align: left;">
+
+
+</p>
+
+<p style="text-align: left;">Outcome:</p>
+
+
+<Style>
+.left {
+    text-align: left;
+}
+.center {
+    text-align: center;
+}
+.right {
+    text-align: right;
+}
+</Style>
+
+
+<p class="left"> This paragraph is aligned to <Strong>left</Strong>. </p>
+
+<p class="center"> This paragraph is aligned to <Strong>center</Strong>. </p>
+
+<p class="right"> This paragraph is aligned to <Strong>right</Strong>. </p>
+
+<p>The <span>justify</span> value <Span>stretches</Span> all lines <Span>except the last line</Span> to 
+fill the width of the screen (or the containing element). This means <span>justify</span> won't have 
+any effects on one line of text. </p> 
+<P style="text-align: justify;"> This is a <span>justified</span> paragraph I made for an example using <span>text-align: justify</span>, 
+I don't really have anything to say so lets just talk about the weather, its pretty hot where I live, 
+for now at least, since it's summer, it does get cold at winter, but I don't really mind, I like cold weather
+more than hot weather. Lets now talk about food, my favorite one is pizza, its just great, if I could eat pizza 
+every single night I would definitely do that, I also like hot chocolate, and hate coffee, I just don't 
+like the taste of it.</P>
+
+<P style="text-align: left;"> This is a <span>left aligned</span> paragraph I made for an example using <span>text-align: left</span>, 
+    I don't really have anything to say so lets just talk about the weather, its pretty hot where I live, 
+    for now at least, since it's summer, it does get cold at winter, but I don't really mind, I like cold weather
+    more than hot weather. Lets now talk about food, my favorite one is pizza, its just great, if I could eat pizza 
+    every single night I would definitely do that, I also like hot chocolate, and hate coffee, I just don't 
+    like the taste of it.</P>
+
+<p>As you can see the <span>width</span> of the <span>two first lines</span> of the <span>first paragraph</span> are the same,
+because <Span>text-align: justify;</Span> strenched the <Span>second line</Span> to fit in.</p>
+</article>
+
+<hr>
+
+<article id="eight">
+
+<header>
+    <h1>The vertical-align Property</h1>
+</header>
+
+<p>The <Span>vertical-align</Span> property sets an element's <span>vertical alignment</span>.
+Commonly used values are <span>top</span>, <span>middle</span>, and <span>bottom</span>.</p>
+
+<p>The example below shows how to <Span>vertically align</Span> the <Span>text</Span> between a <Span>table</Span>.</p>
+
+<p style="text-align: left;">HTML code:</p>
+
+<p style="text-align: left;">
+  <span>  &lt;table> <br>
+    &lt;tr><br>
+        &lt;td class="tdTop">Top&lt;/td><br>
+    &lt;td class="tdMiddle">Middle&lt;/td><br>
+    &lt;td class="tdBottom">Bottom&lt;/td><br>
+    &lt;/tr><br>
+    &lt;/table>
+</span>
+</p>
+
+<p style="text-align: left;">CSS code:</p>
+
+<p style="text-align: left;">
+
+    <span>
+        &lt;Style><br>
+        <br>
+        #table2 {<br>
+            border: 3px solid black;<br>
+            border-collapse: collapse;<br>
+            height: 200px;<br>
+            width: 250px;<br>
+            text-align: center;<br>
+            margin-left: auto;<br>
+            margin-right: auto;<br>
+            background-color: white;<br>
+        }<br>
+        .tdTop {<br>
+            vertical-align: top;<br>
+            border: 3px solid black;<br>
+        }<br>
+        .tdMiddle {<br>
+            vertical-align: middle;<br>
+            border: 3px solid black;<br>
+        }<br>
+        .tdBottom {<br>
+            vertical-align: bottom;<br>
+            border: 3px solid black;<br>
+        }<br>
+        <br>
+        &lt;/Style>
+    </span>
+
+</p>
+
+<p style="text-align: left;">Outcome:</p>
+
+
+
+<style>
+#table2 {
+    border: 3px solid black;
+    border-collapse: collapse;
+    height: 200px;
+    width: 250px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+}
+.tdTop {
+    vertical-align: top;
+    border: 3px solid black;
+}
+.tdMiddle {
+    vertical-align: middle;
+    border: 3px solid black;
+}
+.tdBottom {
+    vertical-align: bottom;
+    border: 3px solid black;
+}
+</style>
+
+<table id="table2">
+<tr>
+<td class="tdTop">Top</td>
+<td class="tdMiddle">Middle</td>
+<td class="tdBottom">Bottom</td>
+</tr>
+</table>
+
+<p>The <span>vertical-align</span> property also takes the following values:
+<span>baseline</span>, <Span>sub</Span>, <span>super</span>, <span>%</span> and <span>px</span> (or pt, cm, etc).</p>
+
+
+<p style="text-align: left;">HTML code:</p>
+
+<p style="text-align: left;">
+
+<span>&lt;p>This is a &lt;Span class="baseline">baseline text&lt;/Span> example.&lt;/p><br>
+    <br>
+    &lt;p>This is a &lt;span class="subline">sub line text&lt;/span> example.&lt;/p><br>
+    <br>
+    &lt;p>This is a &lt;span class="superline">super line text&lt;/span> example.&lt;/p><br>
+    <br>
+    &lt;p>This is a &lt;span class="pixel">pixel&lt;/span> example.&lt;/p></span>
+   
+</p>
+
+<p style="text-align: left;">CSS code:</p>
+
+<p style="text-align: left;">
+
+    <span>
+        &lt;Style><br>
+        <br>
+        .baseline {<br>
+            vertical-align: baseline; <br>
+        }<br>
+        <br>
+        .subline {<br>
+            vertical-align: sub;<br>
+        }<br>
+        <br>
+        .superline {<br>
+            vertical-align: super;  <br>
+        }<br>
+        <br>
+        .pixel {<br>
+            vertical-align: -20px;    <br>
+        }<br>
+        <br>
+        &lt;/Style>
+    </span>
+
+</p>
+
+<p style="text-align: left;">Outcome:</p>
+
+<Style>
+
+.baseline {
+    vertical-align: baseline; 
+}
+
+.subline {
+    vertical-align: sub;
+}
+
+.superline {
+    vertical-align: super;  
+}
+
+.pixel {
+    vertical-align: -20px;    
+}
+
+</Style>
+
+
+<p>This is a <Span class="baseline">baseline text</Span> example.</p>
+<p>This is a <span class="subline">sub line text</span> example.</p>
+<p>This is a <span class="superline">super line text</span> example.</p>
+<p>This is a <span class="pixel">pixel</span> example.</p>
+
+<p><span>Vertical-align</span> works on <Span>inline elements</Span> directly 
+without any issue. eg:<span>&lt;dt&gt;</span>, <span>&lt;span&gt;</span>. 
+But while using it with <span>block elements</span> we have to use <span>display</span> property.
+eg: <span>&lt;div&gt;</span>.</p>
+
+<p>The <span>display</span> property is a bridge to use <span>vertical-align</span>
+on <span>block elements</span> by visualizing them as <span>inline elements</span>.</p>
+
+<p>Lets try to <span>vertically align</span> a <span>div</span> by making it 
+<span>display</span> as a <Span>table data</Span> inside a <span>table</span>:</p>
+
+
+<p style="text-align: left;">HTML code:</p>
+
+<p style="text-align: left;">
+<span> &lt;div id="main"><br>
+    <br>
+&lt;div id="exampletable"><br>
+<br>
+&lt;div id="exampletd">Hello, I'm Karak10 and I'm cool&lt;/div><br>
+<br>
+&lt;/div></p><br>
+<br>
+&lt;/div></span>
+   
+</p>
+
+<p style="text-align: left;">CSS code:</p>
+
+<p style="text-align: left;">
+
+    <span>
+        &lt;Style><br>
+        <br>
+        #exampletable {<br>
+            display: inline-table;<br>
+            background-color:aqua;<br>
+            height: 150px;<br>
+            width: 150px;<br>
+            margin-left: auto;<br>
+            margin-right: auto;<br>
+        }<br>
+        <br>
+        #exampletd {<br>
+            display: table-cell;<br>
+            vertical-align: middle;<br>
+            text-align: center;<br>
+        }<br>
+        <br>
+        #main {<br>
+            display: flex;<br>
+            flex-direction: row;<br>
+        }<br>
+        <br>
+        &lt;/Style>
+    </span>
+
+</p>
+
+<p style="text-align: left;">Outcome:</p>
+
+<style>
+
+#exampletable {
+    display: inline-table;
+    background-color:aqua;
+    height: 150px;
+    width: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+#exampletd {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+#main {
+    display: flex;
+    flex-direction: row;
+}
+
+</style>
+
+<div id="main">
+
+    <div id="exampletable">
+
+        <div id="exampletd">Hello, I'm Karak10 and I'm cool</div>
+
+    </div>
+
+</div>
+
+<p>The <span>styling rules</span> applied to <span>main div</span> and the <span>marging-left/margin-right</span> rules applied to 
+    <Span>exampletable div</Span> were added in order to 
+<span>horizontally center</span> the <span>square</span>.</p>
+</article>
+
+<hr>
+
+<article id="nine">
+
+<header>
+
+    <h1>The text-decoration Property</h1>
+
+</header>
+
+<p>The <span>text-decoration</span> property specifies how the text will be <span>decorated</span>.</p>
+
+<p><span>Commonly</span> used values are:</p>
+
+
+<style>
+
+.main {
+    display: flex;
+    flex-direction: row;
+}
+
+.table {
+    display: inline-table;
+    
+    margin-left: auto;
+    margin-right: auto;
+}
+
+ 
+</style>
+
+<div class="main">
+    <div class="table">
+<ul>
+<li><span>none</span> - The default value, this defines a normal text </li><br>
+<li><span>inherit</span> - Inherits this property from it's parent element </li><br>
+<li><span>overline</span> - Draws a horizontal line below the text </li><br>
+<li><span>underline</span> - Draws a horizontal line below the text </li><br>
+<li><span>line-through</span> - Draws a horizontal line through the text (substitudes the HTML <Span>&lt;s&gt;</Span> tag) </li>
+</ul>
+    </div>
+</div>
+
+
+<p style="text-align: left;">HTML code:</p>
+
+<p style="text-align: left;">
+<span>
+&lt;p class="none"> This is default style of text (none). &lt;/p><br><br>
+&lt;p class="inherit"> This text inherits the decoration of the parent. &lt;/p><br><br>
+&lt;p class="overline"> This is overlined text. &lt;/p><br><br>
+&lt;p class="underline"> This is underlined text. &lt;/p><br><br>
+&lt;p class="line-through"> This is lined-through text. &lt;/p>
+
+</span>
+   
+</p>
+
+<p style="text-align: left;">CSS code:</p>
+
+<p style="text-align: left;">
+
+    <span>
+        &lt;Style><br>
+        <br>
+        .none {<br>
+            text-decoration: none;<br>
+        }<br>
+        <br>
+        .inherit {<br>
+            text-decoration: inherit;<br>
+        }<br>
+        <br>
+        .overline {<br>
+            text-decoration: overline;<br>
+        }<br>
+        <br>
+        .underline {<br>
+            text-decoration: underline;<br>
+        }<br>
+        <br>
+        .line-through {<br>
+            text-decoration: line-through; <br>
+        }<br>
+        <br>
+        &lt;/Style>
+    </span>
+
+</p>
+
+<p style="text-align: left;">Outcome:</p>
+
+
+
+<style>
+
+.none {
+    text-decoration: none;
+}
+
+.inherit {
+    text-decoration: inherit;
+}
+
+.overline {
+    text-decoration: overline;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.line-through {
+    text-decoration: line-through; 
+}
+
+</style>
+
+
+<p class="none"> This is default style of text (none). </p>
+<p class="inherit"> This text inherits the decoration of the parent. </p>
+<p class="overline"> This is overlined text. </p>
+<p class="underline"> This is underlined text. </p>
+<p class="line-through"> This is lined-through text. </p>
+
+<p>You can also <span>combine</span> decorations: <span>&lt;p style="text-decoration: underline overline line-through;"> I'm a paragraph &lt;/p&gt;</span> </p>
+
+<p style="text-decoration: underline overline line-through;"> I'm a paragraph </p>
+
+</article>
+
+<hr>
+
+<article id="ten">
+
+    <header>
+
+        <h1>The text-indent Property</h1>
+
+    </header>
+
+<p>The <Span>text-indent</Span> property specifies how much <span>horizontal</span> space should be left before the 
+beginning of the <span>first line</span> of the text. Property <span>values</span> are <span>length</span> (px, pt, cm, en, %, etc) and 
+<span>inherit</span> of course.</p>
+
+<p style="text-align: left;">Code:</p>
+
+<p style="text-align: left;">
+<span>
+ 
+    &lt;p style="text-indent: 400px; text-align: left;"><br>This is an example of &lt;span>text-indent&lt;/span> property. <br>First line of our text is indented to the right in 400px. 
+        Besides pixels you can also use other measurement units, like pt, cm, em, etc. <br>&lt;/p>
+
+</span>
+   
+</p>
+
+ 
+
+<p style="text-align: left;">Outcome:</p>
+
+<p style="text-indent: 400px; text-align: left;">This is an example of <span>text-indent</span> property. First line of our text is indented to the right in 400px. 
+Besides pixels you can also use other measurement units, like pt, cm, em, etc. </p>
+
+
+</article>
+
+<hr>
+
+<article id="eleven">
+
+    <header>
+    
+        <h1>The text-shadow Property</h1>
+
+    </header>
+
+<p>The <span>text-shadow</span> property adds <span>shadow</span> to <span>text</span>.
+It takes <span>four values</span>: the <span>first value</span> defines the <span>distance</span> of the <span>shadow</span>
+in the <span>x direction</span>, the <span>second value</span> sets the <span>distance</span> in the <span>y direction</span>,
+the <span>third value</span> defines the <span>blur</span> of the <span>shadow</span>, and the <span>fourth</span> value sets 
+the <span>color</span>.</p>
+
+<p style="text-align: left;">HTML code:</p>
+
+<p style="text-align: left;">
+<span> 
+
+    &lt;h1 id="shadow-example"> Text-shadow example &lt;/h1>  
+</span>
+   
+</p>
+
+<p style="text-align: left;">CSS code:</p>
+
+<p style="text-align: left;">
+
+    <span>
+        &lt;Style><br>
+        <br>
+        #shadow-example {<br>
+            color:blue;<br>
+            text-align: center;<br>
+            font-size: 50px;<br>
+            text-shadow: 5px 2px 4px gray;<br>
+        }<br>
+        <br>
+        &lt;/Style>
+    </span>
+
+</p>
+
+<p style="text-align: left;">Outcome:</p>
+
+<Style>
+
+#shadow-example {
+    color:blue;
+    text-align: center;
+    font-size: 50px;
+    text-shadow: 5px 2px 4px gray;
+}
+
+#shadow-example2 {
+    color:blue;
+    text-align: center;
+    font-size: 50px;
+    text-shadow: 5px 2px 4px gray, 10px 4px 4px red, 15px 6px 4px purple, 20px 8px 4px green;
+}
+
+</Style>
+
+<h1 id="shadow-example"> Text-shadow example </h1>
+
+
+<p>To add <Span>multiple shadows</Span> you can add <span>comma</span>.</p>
+
+<p style="text-align: left;">HTML code:</p>
+
+<p style="text-align: left;">
+<span> 
+
+    &lt;h1 id="shadow-example2"> Text-shadow example using multiple shadows &lt;/h1>  
+</span>
+   
+</p>
+
+<p style="text-align: left;">CSS code:</p>
+
+<p style="text-align: left;">
+
+    <span>
+        &lt;Style><br>
+        <br>
+        #shadow-example2 {<br>
+            color:blue;<br>
+            text-align: center;<br>
+            font-size: 50px;<br>
+            text-shadow: 5px 2px 4px gray, 10px 4px 4px red, 15px 6px 4px purple, 20px 8px 4px green;<br>
+        }<br>
+        <br>
+        &lt;/Style>
+    </span>
+
+</p>
+
+<p style="text-align: left;">Outcome:</p>
+
+<h1 id="shadow-example2"> Text-shadow example using multiple shadows </h1>
+
+<p>You can of course use other <span>color formats</span> too like <span>rbg</span>, <span>rgba</span>, <span>hexademical</span>, etc.
+You can also use other <Span>units</Span> for the <span>x</span>, <span>y</span> and <span>blur</span> paremeters like 
+(px, cm, mm, in, pc, pt, etc)</p>
+
+</article>
+
+<hr>
+
+<article id="twelve">
+
+    <header>
+        
+        <h1>The text-transform Property</h1>
+
+    </header>
+
+<p>The <span>text-transform</span> property specifies how to <span>capitalize</span> an element's <span>text</span>. For 
+example, it can be used to make <span>text</span> appear with each word <span>capitalized</span>.</p>
+
+<p>The <Span>text-transform</Span> property uses the following values: <span>capitalize</span>, <SPAN>uppercase</SPAN> and <span>lowercase</span>.</p>
+
+<p style="text-align: left;">HTML code:</p>
+
+<p style="text-align: left;">
+<span> 
+
+    &lt;p id="capitalize"> This is what capitalize propery does to the text &lt;/p> <br>
+    <br>
+    &lt;p id="uppercase"> This is what uppercase propery does to the text &lt;/p><br>
+    <br>
+    &lt;p id="lowercase"> This is what lowercase propery does to the text &lt;/p> 
+</span>
+   
+</p>
+
+<p style="text-align: left;">CSS code:</p>
+
+<p style="text-align: left;">
+
+    <span>
+        &lt;Style><br>
+        <br>
+        #capitalize {<br>
+            text-transform: capitalize;<br>
+        }<br>
+        <br>
+        #uppercase {<br>
+            text-transform: uppercase;<br>
+        }<br>
+        <br>
+        #lowercase {<br>
+            text-transform: lowercase;<br>
+        }<br>
+        <br>
+        &lt;/Style>
+    </span>
+
+</p>
+
+<p style="text-align: left;">Outcome:</p>
+
+
+
+
+
+<style>
+
+#capitalize {
+    text-transform: capitalize;
+}
+
+#uppercase {
+    text-transform: uppercase;
+}
+
+#lowercase {
+    text-transform: lowercase;
+}
+
+</style>
+
+
+<p id="capitalize">This is what capitalize propery does to the text</p>
+
+<p id="uppercase">This is what uppercase propery does to the text</p>
+
+<p id="lowercase">This is what lowercase propery does to the text</p>
+
+
+</article>
+
+<hr>
+
+<article id="thirteen">
+
+    <header>
+        
+        <h1>The letter-spacing Property</h1>
+
+    </header>
+
+<p>The <span>letter-spacing</span> property specifies the <span>space between characters</span> in a <span>text</span>.
+The <span>values</span> can be set as: <Span>normal</Span> which is the default style with no extra space between characters, 
+<span>length</span> which defines an extra space between characters using measurement units like <span>px</span>, <span>cm</span>, 
+<span>pt</span>, etc, and <span>inherit</span> as usually which <span>inherits</span> the property from it's <Span>parent</Span> element.</p>
+</article>
+
+<p style="text-align: left;">HTML code:</p>
+
+<p style="text-align: left;">
+<span> 
+
+    &lt;p id="normal69"> This is a paragraph &lt;/p> <br>
+    <br>
+    &lt;p id="positive"> This is a paragraph &lt;/p> <br>
+    <br>
+    &lt;p id="negative"> This is a paragraph &lt;/p>
+</span>
+   
+</p>
+
+<p style="text-align: left;">CSS code:</p>
+
+<p style="text-align: left;">
+
+    <span>
+        &lt;Style><br>
+        <br>
+        #normal69 {<br>
+            letter-spacing: normal;<br>
+        }<br>
+        <br>
+        #positive {<br>
+            letter-spacing: 4px ;<br>
+        }<br>
+        <br>
+        #negative {<br>
+            letter-spacing: -1px;<br>
+        }<br>
+        <br>
+        &lt;/Style>
+    </span>
+
+</p>
+
+<p style="text-align: left;">Outcome:</p>
+
+
+<style>
+
+#normal69 {
+    letter-spacing: normal;
+}
+
+#positive {
+    letter-spacing: 4px ;
+}
+
+#negative {
+    letter-spacing: -1px;
+}
+
+</style>
+
+<p id="normal69"> This is a paragraph </p>
+
+<p id="positive"> This is a paragraph </p>
+
+<p id="negative"> This is a paragraph </p>
+
+</article>
+
+<hr>
+
+<article id="fourteen">
+
+    <header>
+
+        <h1>The word-spacing Property</h1>
+
+    </header>
+
+<p>This <span>property</span> has <Span>same values</Span> I wrote in section above about <span>letter-spacing</span>, 
+the only difference is that it changes the <Span>spacing between the words</Span>.</p>
+
+<p style="text-align: left;">HTML code:</p>
+
+<p style="text-align: left;">
+<span> 
+
+    &lt;p id="normal70"> This is a paragraph &lt;/p> <br>
+    <br>
+    &lt;p id="positive2"> This is a paragraph &lt;/p> <br>
+    <br>
+    &lt;p id="negative2"> This is a paragraph &lt;/p>
+</span>
+   
+</p>
+
+<p style="text-align: left;">CSS code:</p>
+
+<p style="text-align: left;">
+
+    <span>
+        &lt;Style><br>
+        <br>
+        #normal70 {<br>
+            word-spacing: normal;<br>
+        }<br>
+        <br>
+        #positive2 {<br>
+            word-spacing: 4px ;<br>
+        }<br>
+        <br>
+        #negative2 {<br>
+            word-spacing: -4px;<br>
+        }<br>
+        <br>
+        &lt;/Style>
+    </span>
+
+</p>
+
+<p style="text-align: left;">Outcome:</p>
+
+
+<style>
+
+#normal70 {
+    word-spacing: normal;
+}
+
+#positive2 {
+    word-spacing: 4px ;
+}
+
+#negative2 {
+    word-spacing: -4px;
+}
+
+</style>
+
+<p id="normal70"> This is a paragraph </p>
+
+<p id="positive2"> This is a paragraph </p>
+
+<p id="negative2"> This is a paragraph </p>
+
+
+</article>
+
+<hr>
+
+<article id="fifteen">
+
+
+    <header>
+
+        <h1>The white-space Property</h1>
+
+    </header>
+
+<p>The <Span>white-space</Span> property specifies how <span>white-space</span> inside an <span>element</span>
+is handled. The values can be set as <span>normal</span>, <span>inherit</span>, <span>nowrap</span>, etc.</p>
+
+<p>The <Span>nowrap</Span> value makes the <span>text</span> continue on the <span>same line</span> until 
+a <span>&lt;br&gt;</span> tag is encountered, and also <Span>collapses</Span> all <Span>sequences of whitespace</Span> 
+into a <span>single whitespace</span>.</p>
+
+<p style="text-align: left;">Code:</p>
+ 
+<p style="text-align: left; white-space:pre;">
+<span>&lt;p style="white-space: nowrap;"> This is a paragraph and I now have to write some stuff so it gets big so its  easier to understand   
+how the nowrap works, lets make a big whitespace here(                   )which doesn't really matter because 
+it will be collapsed into a single whitespace thanks to nowrap, so the whitespace will only be visible on code, also, all 
+the paragraph will be written in a single line because no br tag is met.&lt;/p></span>
+</p>
+
+<p style="text-align: left;">Outcome:</p>
+
+
+<p style="white-space: nowrap;"> This is a paragraph and I now have to write some stuff so it gets big so its  easier to understand 
+how the nowrap works, lets make a big whitespace here(                   )which doesn't really matter because 
+it will be collapsed into a single whitespace thanks to nowrap, so the whitespace will only be visible on code, also, all 
+the paragraph will be written in a single line because no br tag is met.</p>
+
+<p> The <Span>white-space</Span> property also supports other values:</p>
+
+<p><span>pre</span> - text will only wrap on line breaks and white spaces are visible</p>
+<p><span>pre-line</span> - text will wrap where there is a break in code, but extra white spaces are still ignored</p>
+<p><span>pre-wrap</span> - text will wrap when necessary (eg. when the line reaches the end), will wrap on line breaks and white spaces are visible.</p>
+
+</article>
+<hr>
+<article id="sixteen">
+
+
+    <header>
+
+        <h1>The line-height property</h1>
+    </header>
+
+<p>The <Span>line-height</Span> property can change the <Span>height</Span> of the <span>lines</span>, lets 
+try this:</p>
+
+<p class="left">Code:</p>
+
+<p style="text-align: left;"><span style="white-space: pre-line;">&lt;div style="width: 250px;
+    background-color: white;
+    padding: 20px;
+    line-height: 50px;
+    text-align: justify;
+    margin: 10px auto 10px auto;">
+    
+    Hello I'm karak10 and I'm writing this so that 
+    few lines of text are created so you can see how there will be fifty pixels space between each 
+    line, isn't that cool?
+
+    &lt;/div></span></p>
+
+    <p class="left">Outcome:</p>
+
+
+<div style="width: 250px;
+background-color: white;
+padding: 20px;
+line-height: 50px;
+ 
+text-align: justify;
+margin: 10px auto 10px auto;">Hello I'm karak10 and I'm writing this so that 
+few lines of text are created so you can see how there will be fifty pixels space between each 
+line, isn't that cool?</div>
+
+
+<p>When you have only <Span>one line of text</Span> you can even use the <Span>line-height</Span> property 
+to <span>vertically-align</span> it to the center, just use <Span>same line-height</Span> with <Span>element height</Span>.</p>
+
+<p><Span>style="height: 100px; <br>
+line-height: 100px;"</Span></p>
+
+<div style="width: 250px;
+background-color: white;
+padding: 20px;
+line-height: 100px;
+ height: 100px;
+text-align: center;
+margin: 10px auto 10px auto;">Hello I'm karak10  </div>
+
+</article>
+<hr>
+</body>
+</html>

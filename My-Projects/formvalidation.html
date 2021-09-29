@@ -1,0 +1,255 @@
+<!DOCTYPE HTML>
+<html>
+<head lang="en-US">
+<meta charset="UTF-8">
+<title> Form Validation </title>
+<style>
+       .left {
+        text-align: left;
+    }
+    
+    .code10 {
+    white-space: pre-line;
+    background-color: lightgreen;
+    }
+    
+    p {
+    text-align:center;
+    }
+    h1 {
+    text-align:center;
+    }
+    h2 {
+    text-align:center;
+    }
+    h3 {
+    text-align:center;
+    }
+    .c {
+    background-color:lightgreen;
+    }
+    hr {
+    width:100%;
+    height:15px;
+    background-color:black;
+    color:black;
+    border: black solid;
+    }
+    body {
+    background-color:rgb(165, 235, 235);
+    }
+    span {
+    background-color:lightgreen;
+    }
+    
+    a:link {
+    color: black;
+    text-shadow: 1px 0px 1px black;
+    
+    }
+    
+    a:visited {
+    color: black;
+    text-shadow: 1px 0px 1px rgb(22, 22, 22);
+    }
+    
+    a:hover {
+    text-decoration: underline;
+    color: red;
+    text-shadow: 1px 0px 1px black;
+    }
+    
+    </style> 
+<link rel="stylesheet" href="../CSS-JavaScript-External-Files/HTMLnotes.css?version=1">
+</head>
+<body>
+<hr>
+<article>
+
+<h1> Form Validation  </h1>
+<p><a href="../Home-Pages/myprojects.html">Click to go back</a></p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><span class="code10">&lt;form id="form" action="https://www.google.com/">
+    
+    &lt;table>
+    &lt;tr>
+    
+    &lt;td>
+    &lt;label for="input1">Email:&lt;/label>
+    &lt;/td>
+    
+    &lt;td>
+    &lt;input type="text" id="input1"> 
+    &lt;/td>
+    
+    &lt;/tr>
+    &lt;tr>
+    
+    &lt;td>
+    &lt;label for="input2">Confirm Email:&lt;/label>
+    &lt;/td>
+    
+    &lt;td>
+    &lt;input type="text" id="input2">
+    &lt;/td>
+    
+    &lt;/tr>
+    &lt;tr>
+    
+    &lt;td class="submit-td" colspan="2">
+    &lt;input type="submit" value="submit" id="submit">
+    &lt;/td>
+    
+    &lt;/tr>
+    &lt;/table>
+    
+    </form></span></p>
+
+<p class="left">CSS Code:</p>
+
+<p class="left"><span class="code10">table{
+    border: 2px solid green;
+    margin: auto;
+    background-color: black;
+    color: lightgreen;
+}
+
+td{
+    border: 2px solid green;
+    text-align: right;
+}
+
+.submit-td{
+   padding: 5px;
+}</span></p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">function load69(){
+var form = document.getElementById("form");
+var input1 = document.getElementById("input1");
+var input2 = document.getElementById("input2");
+
+function submit(){
+if (input1.value != "" || input2.value != ""){
+if (input1.value == input2.value){
+return true;
+} else {
+alert("The two emails do not match");
+return false;
+}
+} else {
+alert("Please fill in your email adress")
+return false
+}
+
+};
+
+function check_submit(){
+if (submit() == false){
+event.preventDefault();
+}
+};
+
+form.addEventListener("submit", check_submit);
+
+};
+
+window.addEventListener("load", load69);</span></p>
+
+<p class="left">Outcome:</p>
+
+<style>
+table{
+    border: 2px solid green;
+    margin: auto;
+    background-color: black;
+    color: lightgreen;
+}
+
+td{
+    border: 2px solid green;
+    text-align: right;
+}
+
+.submit-td{
+   padding: 5px;
+}
+</style>
+
+
+<form id="form" action="https://www.google.com/">
+    
+    <table>
+    <tr>
+    
+    <td>
+    <label for="input1">Email:</label>
+    </td>
+    
+    <td>
+    <input type="text" id="input1"> 
+    </td>
+    
+    </tr>
+    <tr>
+    
+    <td>
+    <label for="input2">Confirm Email:</label>
+    </td>
+    
+    <td>
+    <input type="text" id="input2">
+    </td>
+    
+    </tr>
+    <tr>
+    
+    <td class="submit-td" colspan="2">
+    <input type="submit" value="submit" id="submit">
+    </td>
+    
+    </tr>
+    </table>
+    
+    </form>
+    
+    <script>
+    function load69(){
+    var form = document.getElementById("form");
+    var input1 = document.getElementById("input1");
+    var input2 = document.getElementById("input2");
+    
+    function submit(){
+    if (input1.value != "" || input2.value != ""){
+    if (input1.value == input2.value){
+    return true;
+    } else {
+    alert("The two emails do not match");
+    return false;
+    }
+    } else {
+    alert("Please fill in your email adress")
+    return false
+    }
+    
+    };
+    
+    function check_submit(){
+    if (submit() == false){
+    event.preventDefault();
+    }
+    };
+    
+    form.addEventListener("submit", check_submit);
+    
+    };
+    
+    window.addEventListener("load", load69);
+    </script>
+
+<hr>
+</body>
+</html>

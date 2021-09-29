@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<html>
+<head lang="en-US>
+<meta charset="UTF-8">
+<title> Dancing Circles </title>
+<link rel="stylesheet" href="../CSS-JavaScript-External-Files/HTMLnotes.css?version=1">
+</head>
+<body>
+
+ 
+<hr>
+<article>
+
+<h1> Dancing Circles </h1>
+<p><a href="../Home-Pages/myprojects.html">Click to go back</a></p>
+
+
+<p style="text-align:left;">Code:</p>
+
+
+
+<p style="text-align:left;">
+
+<span>&lt;p align="center"&gt; <br> 
+&lt;svg width="400" height="450"&gt;</span> <br>
+<br>
+<span>&lt;rect width="400" height="450" x="0" y="0" fill="black" /&gt;</span> <br> 
+<br>
+<span>
+&lt;defs&gt;<br>
+<br>
+&lt;g id="dancingcircle" width="400" height="450"&gt;<br><br>
+&lt;circle r="100" cx="100" cy="100" stroke-width="3" stroke="red" fill="none"&gt; <br>
+&lt;animate attributeName="r" from="100" to="0" dur="1s" repeatCount="indefinite" fill="freeze" /&gt; <br>
+<br>
+&lt;animate attributeName="stroke" values="#f0f;#00f;#A34CBE;#000;<br>
+#D6002F;#B20FS3;#000;#F24091;" dur="10s" fill="freeze" repeatCount="indefinite" /&gt; &lt;/circle&gt; <br>
+<br>&lt;circle r="0" cx="100" cy="100" stroke-width="3" stroke="red" fill="none"&gt; <br>
+<br>
+&lt;animate attributeName="r" from="0" to="100" dur="1s" repeatCount="indefinite" fill="freeze" /&gt; <br>
+&lt;animate attributeName="stroke" values="#f0f;#00f;#A34CBE;#000;<br>
+#D6002F;#B20FS3;#F24091;" dur="10s" fill="freeze" repeatCount="indefinite" /&gt;  &lt;/circle&gt; <br>
+<br>&lt;/g&gt;<br>
+<br>
+&lt;/defs&gt;<br>
+<br>
+&lt;use href="#dancingcircle" /&gt; <br>
+<br>
+&lt;use href="#dancingcircle" x="220" y="-30" /&gt; <br>
+ 
+<br>
+&lt;use href="#dancingcircle" x="120" y="80" /&gt; <br>
+ 
+<br>
+&lt;use href="#dancingcircle" x="220" y="180" /&gt; <br>
+ 
+ <br>
+&lt;use href="#dancingcircle" x="130" y="300" /&gt; <br>
+ 
+ <br>
+&lt;use href="#dancingcircle" x="0" y="250" /&gt; <br>
+ 
+<br>
+&lt;/svg&gt; <br>
+&lt;/p&gt;</span>
+
+</p>
+
+
+
+
+<p style="text-align:left;">Outcome:</p>
+
+
+<p align="center"> <svg width="400" height="450">
+<rect width="400" height="450" x="0" y="0" fill="black" />
+ 
+<defs>
+<g id="dancingcircle">
+<circle   r="100" cx="100" cy="100" stroke-width="3" stroke="red" fill="none">
+<animate attributeName="r" from="100" to="0" dur="1s" repeatCount="indefinite" fill="freeze" /> 
+<animate attributeName="stroke" values="#f0f;#00f;#A34CBE;#000;#D6002F;#B20FS3;#000;#F24091;" dur="10s" fill="freeze" repeatCount="indefinite" /> </circle>
+<circle  r="0" cx="100" cy="100" stroke-width="3" stroke="red" fill="none">
+<animate attributeName="r" from="0" to="100" dur="1s" repeatCount="indefinite" fill="freeze" />
+<animate attributeName="stroke" values="#f0f;#00f;#A34CBE;#000;#D6002F;#B20FS3;#F24091;" dur="10s" fill="freeze" repeatCount="indefinite" />  </circle> 
+</g>
+</defs>
+
+<use href="#dancingcircle" />
+ 
+<use href="#dancingcircle" x="220" y="-30" />
+ 
+
+<use href="#dancingcircle" x="120" y="80" />
+ 
+
+<use href="#dancingcircle" x="220" y="180" />
+ 
+ 
+<use href="#dancingcircle" x="130" y="300" />
+ 
+ 
+<use href="#dancingcircle" x="0" y="250" />
+ 
+ 
+</svg> </p>
+  
+
+
+ <hr>
+</article>
+
+</body>
+</html>

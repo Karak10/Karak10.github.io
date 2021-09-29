@@ -1,0 +1,979 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<title> Extra page 1 of my CSS notes </title>
+<meta charset="UTF-8"> 
+<link href="../CSS-JavaScript-External-Files/HTMLnotes.css" rel="stylesheet">
+<Style>
+    .left {
+        text-align: left;
+    }
+    
+    .code10 {
+    white-space: pre-wrap;
+    background-color: lightgreen;
+    
+    }
+    
+    p {
+    text-align:center;
+    }
+    h1 {
+    text-align:center;
+    }
+    h2 {
+    text-align:center;
+    }
+    h3 {
+    text-align:center;
+    }
+    .c {
+    background-color:lightgreen;
+    }
+    hr {
+    width:100%;
+    height:15px;
+    background-color:black;
+    color:black;
+    border: black solid;
+    }
+    body {
+    background-color:rgb(165, 235, 235);
+    }
+    span {
+    background-color:lightgreen;
+    }
+    
+    a:link {
+    color: black;
+    text-shadow: 1px 0px 1px black;
+    
+    }
+    
+    a:visited {
+    color: black;
+    text-shadow: 1px 0px 1px rgb(22, 22, 22);
+    }
+    
+    a:hover {
+    text-decoration: underline;
+    color: red;
+    text-shadow: 1px 0px 1px black;
+    }
+
+    .orange {
+        background-color: lightcoral;
+        font-weight: bold;
+    }
+
+    iframe {
+        width: 600px;
+        height: 350px;
+        border: 3px solid black;
+        margin: 20px auto 20px auto;
+        display: block;
+    }
+    
+   .list_container{
+       width: fit-content;
+       background-color: white;
+       border: 3px solid black;
+       border-radius: 20px;
+       margin: 20px auto 20px auto;
+       padding: 20px;
+       font-weight: bold;
+   }
+    
+   .list_container li{
+       margin-top: 15px;
+   }
+
+   .gray{
+       background-color: lightgray;
+   }
+
+    </style> 
+</head>
+<body>
+
+<hr>
+
+    <header> 
+    <h1> Page eight of my CSS notes </h1>
+    </header>
+    
+<article id="start-of-page"> 
+  
+<div id="homepages">
+
+    <h3>Home Pages:</h3>
+   
+
+</div>
+
+<nav data-notes="CSS_Extra" data-page="1">
+
+</nav>
+
+    <h3>Informations included in this page:</h3>
+    <p><a href="../CSS-Notes/CSS_Extra_1.html#one">Box-sizing Property</a></p>
+    <p><a href="../CSS-Notes/CSS_Extra_1.html#two">CSS Variables</a></p>
+    <p><a href="../CSS-Notes/CSS_Extra_1.html#three">CSS Calc function</a></p>
+    <p><a href="../CSS-Notes/CSS_Extra_1.html#four">The :is pseudo-class</a></p>
+
+</article>
+
+ <script src="../CSS-JavaScript-External-Files/nav.js"></script>
+
+<hr>
+
+<article id="one">
+
+<header>
+  <h2>Box-sizing Property</h2>
+</header>
+
+<p>To understand <span>box-sizing</span> property you
+first need to understand the <span>box model</span>, 
+as I have said in previous <span>CSS</span> lessons,
+the <span>width</span> of an <Span>element</Span>
+is <Span>calculated</Span> by the <Span>width</Span>, 
+<Span>padding</Span> and <Span>border</Span>, because of
+that, usually you face problems where an <Span>element</Span>
+is <Span>overflowing</Span> it's parent, etc, and you need 
+to be very careful and <Span>calculate</Span> the <span>combined size</span>
+of the <span>border</span>, <span>padding</span> and <span>width</span>
+every single time to make it exactly the wanted size. </p>
+
+<p>Let's take a look to the following elements now:</p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><span class="code10">&lt;div id="el1">First Element&lt;/div>
+&lt;div id="el2">Second Element&lt;/div>
+&lt;div id="el3">Third Element&lt;/div></span></p>
+
+<p class="left">CSS Code:</p>
+
+<p class="left"><Span class="code10">#el1, #el2, #el3{
+    width: 500px;
+    height: 20px;
+    padding: 50px;
+    border: 3px solid black;
+}
+
+#el1 {
+    background-color: yellow;
+}
+
+#el2 {
+    background-color: brown
+}
+
+#el3 {
+    background-color: lightgreen
+}</Span></p>
+
+<p class="left">Outcome:</p>
+
+<Style>
+
+#el1, #el2, #el3{
+    width: 500px;
+    height: 20px;
+    padding: 50px;
+    border: 3px solid black;
+}
+
+#el1 {
+    background-color: yellow;
+}
+
+#el2 {
+    background-color: brown
+}
+
+#el3 {
+    background-color: lightgreen
+}
+
+</Style>
+
+<div id="el1">First Element</div>
+<div id="el2">Second Element</div>
+<div id="el3">Third Element</div>
+
+<P>If I wanted to change the <span>padding</span> of the <span>first element</span> 
+and the <Span>border</Span> of the <span>third element</span>, 
+the symetry of my creation would be totally ruined, without 
+making the necessary changes calculated by some time consuming math:</P>
+
+<p class="left">CSS Code:</p>
+
+<p class="left"><Span class="code10">#el1 {
+    background-color: yellow;
+    padding: 20px;
+}
+
+#el3 {
+    background-color: lightgreen;
+    border: 10px solid black;
+}</Span></p>
+
+<p class="left">Outcome:</p>
+
+<Style>
+
+    #eel1, #eel2, #eel3{
+        width: 500px;
+        height: 20px;
+        padding: 50px;
+        border: 3px solid black;
+    }
+    
+    #eel1 {
+        background-color: yellow;
+        padding: 20px;
+    }
+    
+    #eel2 {
+        background-color: brown
+    }
+    
+    #eel3 {
+        background-color: lightgreen;
+        border: 10px solid black;
+    }
+    
+    </Style>
+    
+    <div id="eel1">First Element</div>
+    <div id="eel2">Second Element</div>
+    <div id="eel3">Third Element</div>
+
+<p>With <span>box-sizing</span> property we can make <span>element sizing</span>
+much simplier. The <span>default value</span> of this <span>property</span>
+is <span>content-box</span>, which is the normal sizing you 
+are already familiar with, if you change it to <span>border-box</span> however,
+something great happens, that makes <Span>element sizing</Span>
+a lot easier to handle:</p>
+
+<p class="left">CSS Code:</p>
+
+<p class="left"><span class="code10">#e1el1, #e1el2, #e1el3{
+    width: 500px;
+    height: 30px;
+    padding: 50px;
+    border: 3px solid black;
+    box-sizing: border-box;
+}</span></p>
+
+<p class="left">Outcome:</p>
+
+<Style>
+
+    #e1el1, #e1el2, #e1el3{
+        width: 500px;
+        height: 30px;
+        padding: 50px;
+        border: 3px solid black;
+        box-sizing: border-box;
+    }
+    
+    #e1el1 {
+        background-color: yellow;
+        padding: 20px;
+    }
+    
+    #e1el2 {
+        background-color: brown
+    }
+    
+    #e1el3 {
+        background-color: lightgreen;
+        border: 10px solid black;
+    }
+    
+    </Style>
+    
+    <div id="e1el1">First Element</div>
+    <div id="e1el2">Second Element</div>
+    <div id="e1el3">Third Element</div>
+
+<p>Let me explain what happened, the <span>width</span>
+of the <span>elements</span> ramained to <span>500px</span>, 
+even though we changed the <span>padding</span> of the <Span>first element</Span>
+and the <span>border</span> of the <span>third element</span>. 
+Instead of making the <span>width</span> bigger however, it
+<Span>shrank</Span> the <span>content</span> or made 
+the <Span>content bigger</Span> to fill all the <span>500px</span>. 
+It takes <Span>border</Span> and <Span>padding</Span> and 
+then adds the <span>width</span> necessary so that all together
+take <span>500px</span>.</p>
+
+<p>Usually you will see this <span>property</span> being 
+used like in the code below:</p>
+
+<p class="left">CSS Code:</p>
+
+<p class="left"><span class="code10">html{
+    box-sizing: border-box;
+}
+*::before, *::after{
+    box-sizing: inherit;
+}
+</span></p>
+
+<p>That's to make sure <Span>all the elements</Span>
+are using <Span>border-sizing: border-box</Span>, 
+even <span>pseudo elements</span>, this simple two 
+lines of code make it easier for you to style your 
+page without having to do a lot of math 
+to create the project you want.</p>
+
+<iframe src="https://www.youtube.com/embed/WlGQdgy-M6w?list=PLYxnDvM22X3NBARfD2aZcyUoKvfdHfygn" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</article>
+
+<hr>
+
+<article id="two">
+
+<header>
+    <h1>CSS Variables</h1>
+</header>
+
+<p>Let's talk about <span>CSS variables</span> now, they were 
+introduced in <span>CSS3</span>, and can help you a lot while writing 
+style sheets. Usually, <Span>CSS variables</Span> are declared 
+in either the <span>root</span> or the <Span>html</Span> of your document, 
+and that's because <span>CSS variables</span> just like <span>all CSS properties</span>,
+<Span>cascade down</Span> and can be <Span>inherited</Span> or <Span>overridden</Span>
+in lower down more specific elements.<span>:root</span> pseudo-class matches the
+<Span>&lt;html></Span> element, and is identical to the selector <span>html</span>, except 
+that it's specificity is higher.</p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><Span class="code10">&lt;div class="ex11">Hello World!&lt;/div></Span></p>
+
+<p class="left">CSS Code:</p>
+
+<p class="left"><Span class="code10">:root{
+    --var-1: red;
+    --var-2: white;
+    --var-3: 3px solid black;
+    --var-4: 50px;
+}
+
+.ex11{
+    background-color: var(--var-1);
+    color: var(--var-2);
+    border: var(--var-3);
+    width: var(--var-4);
+}</Span></p>
+
+<p class="left">Outcome:</p>
+
+<style>
+
+:root{
+    --var-1: red;
+    --var-2: white;
+    --var-3: 3px solid black;
+    --var-4: 50px;
+}
+
+.ex11{
+    background-color: var(--var-1);
+    color: var(--var-2);
+    border: var(--var-3);
+    width: var(--var-4);
+}
+
+</style>
+
+<div class="ex11">Hello World!</div>
+
+<p>As you can see <span>CSS variables</span> store <span>values</span>
+that can later be used for <span>properties</span>, and that's cool, 
+mainly becaue that means you can use a <Span>variable</Span>
+in <span>multiple places</span> and be able to change the <span>value</span>
+of all those places by changing the <Span>variable's value</Span>.</p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><span class="code10">&lt;div class="D-one">
+    &lt;div class="one-one child">1-1&lt;/div>
+    &lt;div class="one-two child">1-2&lt;/div>
+    &lt;div class="one-three child">1-3&lt;/div>
+&lt;/div>
+
+&lt;div class="D-two">
+    &lt;div class="two-one child">2-1&lt;/div>
+    &lt;div class="two-two child">2-2&lt;/div>
+    &lt;div class="two-three child">2-3&lt;/div>
+&lt;/div></span></p>
+
+<p class="left">CSS Code:</p>
+
+<p class="left"><Span class="code10">:root{
+    --div-background-color: red;
+    --div-color: black;
+}
+
+.child{
+    background-color: var(--div-background-color);
+    color: var(--div-color);
+    width: 100px;
+    border: 1px solid black;
+}
+
+.D-one{
+    --div-background-color: blue;
+    --div-color: white;
+}</Span></p>
+
+<p class="left">Outcome:</p>
+
+<style>
+
+:root{
+--div-background-color: red;
+--div-color: black;
+}
+
+.child{
+    background-color: var(--div-background-color);
+    color: var(--div-color);
+    width: 100px;
+    border: 1px solid black;
+}
+
+.D-one{
+    --div-background-color: blue;
+    --div-color: white;
+}
+
+
+</style>
+
+<div class="D-one">
+    <div class="one-one child">1-1</div>
+    <div class="one-two child">1-2</div>
+    <div class="one-three child">1-3</div>
+</div>
+
+<div class="D-two">
+    <div class="two-one child">2-1</div>
+    <div class="two-two child">2-2</div>
+    <div class="two-three child">2-3</div>
+</div>
+
+<p>As you can see, <Span>variables</Span> can 
+be <span>overriden</span> if you <Span>redeclare</Span> them in 
+lower down more specific elements</p>
+
+<p>If you use an <span>undeclared variable</span> you can 
+specify a <Span>fallback value</Span> to be used if 
+the <Span>variable</Span> can't be found, that's useful 
+when used together with <span>JavaScript</span>, since 
+you can use <Span>JavaScript</Span> to create that <span>CSS variable</span>
+later:</p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><span class="code10">&lt;div class="idkk">Hello World!&lt;/div></span></p>
+
+<p class="left">CSS Code:</p>
+
+<p class="left"><span class="code10">.idkk{
+    background-color: var(--background-color, pink);
+    width: 100px;
+}</span></p>
+
+<p class="left">Outcome:</p>
+
+<style>
+
+.idkk{
+    background-color: var(--background-color, pink);
+    width: 100px;
+}
+
+
+</style>
+
+<div class="idkk">Hello World!</div>
+
+<iframe src="https://www.youtube.com/embed/oZPR_78wCnY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</article>
+
+<hr>
+
+<article id="three">
+
+<header>
+    <h1>CSS Calc Function</h1>
+</header>
+
+<p>In this section I'm gonna speak about the <span>calc</span> keyword that 
+can be used in <Span>CSS</Span> to do <span>calculations</span> and 
+I will explain why it is so useful. Firstly, let's try and 
+set the <span>width</span> of a div using <span>calc</span>, 
+a quite useless calculation indeed, but I will create more 
+useful examples using this keyword later on the section, now 
+I only create a simple calculation  
+so that we can take a look to the <Span>syntax</Span>:</p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><span class="code10">&lt;div id="calc1">Hello World!&lt;/div></span></p>
+
+<p class="left">CSS Code:</p>
+
+<p class="left"><span class="code10">#calc1{
+    background-color: orange;
+    width: calc(25px + 25px);
+}</span></p>
+
+<p class="left">Outcome:</p>
+
+<style>
+
+#calc1{
+    background-color: orange;
+    width: calc(25px + 25px);
+}
+
+</style>
+
+<div id="calc1">Hello World!</div>
+
+<p>As you can see, the <Span>syntax</Span> is quite simple, 
+it takes <Span>number of units</Span>, for example, <Span>pixels</Span>, 
+<Span>percent</Span>, etc, and you can use <span>mathematical operators</span>
+to do a <Span>calculations</Span>, you need to be careful however, there 
+have to be <Span>spaces</Span> between the <span>numbers</span>
+and the <span>mathematical operators</span>, writing <span>5px -10px</span> wouldn't work, 
+you have to write <Span>5px - 10px</Span>. The <span>calc functions</span> 
+can also be <span>nested</span>, like in the example below:</p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><span class="code10">&lt;div id="calc2">Hello World!&lt;/div></span></p>
+
+<p class="left">CSS Code:</p>
+
+<p class="left"><Span class="code10">#calc2{
+    background-color: lightcoral;
+    width: calc((25 + calc(5 + 5) + 15) * 1px);
+}</Span></p>
+
+<p class="left">Outcome:</p>
+
+<style>
+
+#calc2{
+    background-color: lightcoral;
+    width: calc((25 + calc(5 + 5) + 15) * 1px);
+}
+
+</style>
+
+<div id="calc2">Hello World!</div>
+
+<p>So, one of the reasons <Span>calc</Span> is so useful, is because 
+you can actually <span>combine</span> together <Span>different units</Span>, 
+for example, <Span>percent</Span> and <span>pixels</span> like in the example below:</p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><span class="code10">&lt;div id="parent-calc">
+&lt;div id="calc3">&lt;/div>
+&lt;/div></span></p>
+
+<p class="left">CSS Code:</p>
+
+<p class="left"><Span class="code10">#parent-calc{
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+#calc3{
+    background-color: lightpink;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+}</Span></p>
+
+<p class="left">Outcome:</p>
+
+<style>
+
+#parent-calc{
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+#calc3{
+    background-color: lightpink;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+}
+
+</style>
+
+<div id="parent-calc">
+<div id="calc3"></div>
+</div>
+
+<p>When <span>calc</span> really becomes very useful though, is when 
+it's used together with <span>CSS variables</span>. For example, let's 
+say I have <Span>two divs</Span> and I want to <span>second div</span>
+to always be <Span>half the width</Span> of the <Span>first div</Span>, 
+this could be done using <span>CSS variables</span> and <Span>calc keyword</Span>
+like below:</p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><span class="code10">&lt;div id="calc4">Hello World!&lt;/div>
+
+&lt;div id="calc5">Hello World!&lt;/div></span></p>
+
+<p class="left">CSS Code:</p>
+
+<p class="left"><Span class="code10">:root{
+    --width: 100px;
+}
+
+#calc4{
+    width: var(--width);
+    background-color: pink;
+}</Span></p>
+
+<p class="left">Outcome:</p>
+
+<style>
+
+:root{
+    --width: 100px;
+}
+
+#calc4{
+    width: var(--width);
+    background-color: pink;
+}
+
+#calc5{
+    width: calc(var(--width) / 2);
+    background-color: pink;
+}
+
+</style>
+
+<div id="calc4">Hello World!</div>
+
+<div id="calc5">Hello World!</div>
+
+<p>Now, if you ever decide to change the <Span>width</Span> variable, 
+the <span>second div</span> will always be <Span>half the width</Span>
+of the <Span>first div</Span>, this combined with some <Span>JavaScript</Span>
+could do amazing things, but even without <Span>JavaScript</Span>, it 
+still can be really helpful</p>
+
+</article>
+
+<hr>
+
+<article id="four">
+    <header>
+        <h1>The :is pseudo-class</h1>
+    </header>
+
+    <p>So, usually, if we wanted to <Span>select multiple targets</Span> we 
+    would do something like this:</p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><span class="code10">&lt;div id="div-example">
+&lt;h1>I'm a header&lt;/h1>
+&lt;p>Hello, this is a paragraph and I just want to fill this 
+paragraph so it looks cool, well, here is a link that gets you nowhere: 
+&lt;a href="./CSS_Extra_1.html">nowhere.com&lt;/a>, so, if you click
+that link it will just reload the page, because why not, and, to make
+this paragraph a little better here is another link: 
+&lt;a href="CSS_Extra_1.html">imalink.html&lt;/a>, I guess that should 
+be enough, let's get into styling now.
+&lt;/p>
+&lt;/div></span></p>
+
+<p class="left">CSS Code:</p>
+
+<p class="left"><span class="code10">#div-example{
+    width: 500px;
+    margin: auto;
+    border: 3px solid black;
+    background-color: red;
+    padding: 20px;
+}
+
+#div-example p{
+    text-align: justify;
+    line-height: 25px;
+    font-weight: bold;
+}
+
+#div-example h1{
+    border: 3px solid black;
+    border-radius: 30%;
+    width: fit-content;
+    padding: 20px;
+    margin: auto;
+    background-color: orange;
+}
+
+<Span class="orange">#div-example h1, 
+#div-example a{
+    color: purple;
+}</span></span></p>
+
+<p class="left">Outcome:</p>
+
+<style>
+    .div-example{
+        width: 500px;
+        margin: auto;
+        border: 3px solid black;
+        background-color: red;
+        padding: 20px;
+    }
+    .div-example p{
+        text-align: justify;
+        line-height: 25px;
+        font-weight: bold;
+    }
+    .div-example h1{
+        border: 3px solid black;
+        border-radius: 30%;
+        width: fit-content;
+        padding: 20px;
+        margin: auto;
+        background-color: orange;
+    }
+
+    .div-example h1, 
+    .div-example a{
+        color: purple;
+    }
+</style>
+
+<div class="div-example">
+<h1>I'm a header</h1>
+<p>Hello, this is a paragraph and I just want to fill this 
+paragraph so it looks cool, well, 
+here is a link that gets you nowhere: <a href="./CSS_Extra_1.html">nowhere.com</a>, 
+so, if you click that link it will just reload the page, because why not, 
+and, to make this paragraph a little better here is another link: <a href="CSS_Extra_1.html">imalink.html</a>, 
+I guess that should be enough, let's get into styling now.
+</p>
+</div>
+
+<p>So, what I want you to pay attention at is the 
+<Span>orange colored code</Span>, as you can see, I wrote 
+<Span>#div-example h1, #div-example a{ color: purple; }</Span> to 
+select <Span>both targets</Span>, which is fine, but has some problems.
+First of all, it <Span>takes space and time</Span>, except from that, 
+if <Span>even one of the selectors</Span> is <Span>misspelled</Span> the 
+<Span>whol styling block will be ignored</Span>.</p>
+
+<p>Another, better way to <Span>select multiple targets</Span> is to use the 
+<Span>:is() pseudo-class</Span>. If I wanted for example to <Span>select h1 and a tags</Span> inside 
+the <Span>div with the id #div-example</Span>, just like in the example I made before, 
+I could write <Span>#div-example :is(h1, a){ color: purple }</Span>:</p>
+
+<p class="left">Style:</p>
+
+<p class="left"><Span class="code10">#div-example2 :is(a, h1){
+    color: green;
+}</Span></p>
+
+<p>The <Span>:is() pseudo-class</Span> can also be used <Span>behind other selectors</Span>, 
+and the <Span>selectors inside it</Span> can be <Span>more complicated selectors</Span>:</p>
+
+
+
+<p class="left">Outcome:</p>
+
+<style>
+    #div-example2{
+        width: 500px;
+        margin: auto;
+        border: 3px solid black;
+        background-color: red;
+        padding: 20px;
+    }
+    #div-example2 p{
+       text-align: justify;
+        line-height: 25px;
+        font-weight: bold;
+    }
+    #div-example2 h1{
+        border: 3px solid black;
+        border-radius: 30%;
+        width: fit-content;
+        padding: 20px;
+        margin: auto;
+        background-color: orange;
+    }
+
+    #div-example2 :is(a, h1){
+        color: green;
+    }
+</style>
+
+<div id="div-example2">
+<h1>I'm a header</h1>
+<p>Hello, this is a paragraph and I just want to fill this 
+paragraph so it looks cool, well, 
+here is a link that gets you nowhere: <a href="./CSS_Extra_1.html">nowhere.com</a>, 
+so, if you click that link it will just reload the page, because why not, 
+and, to make this paragraph a little better here is another link: <a href="CSS_Extra_1.html">imalink.html</a>, 
+I guess that should be enough, let's get into styling now.
+</p>
+</div>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><Span class="code10">&lt;div id="div-example3">
+    &lt;grass>
+        &lt;h3>Grass&lt;/h3>
+        &lt;p>grass is really cool, it is green 
+        cows love to eat it all the time.
+        &lt;/p>
+    &lt;/grass>
+    &lt;tree>
+    &lt;leafs>
+        &lt;h3>Leafs&lt;/h3>
+        &lt;p>the leafs is the part of the tree that 
+        is green, it is really cool and beautiful.
+        &lt;/p>
+    &lt;/leafs>
+    &lt;wood>
+        &lt;h3>Wood&lt;/h3>
+        &lt;p>wood is the brown part of the tree, 
+        wood can be used for many things, and 
+        a friend of mine called Steve loves
+        to punch it all the time.
+        &lt;/p>
+    &lt;/wood>
+    &lt;/tree>
+&lt;/div></Span></p>
+
+<p class="left">CSS Code:</p>
+
+<p class="left"><Span class="code10">#div-example3{
+    width: 500px;
+    margin: auto;
+    border: 3px solid black;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: lightsalmon; 
+    padding-bottom: 20px;
+}
+
+<Span class="orange">#div-example3 :is(grass, tree leafs) h3{
+    background-color: lightgreen;
+}</Span>
+
+#div-example3 wood h3{
+    background-color: brown;
+}
+
+#div-example3 p{
+    width: 300px;
+    margin: auto;
+}</Span></p>
+
+<p class="left">Outcome:</p>
+
+<Style>
+    #div-example3{
+        width: 500px;
+        margin: auto;
+        border: 3px solid black;
+        border-radius: 50%;
+        overflow: hidden;
+        background-color: lightsalmon; 
+        padding-bottom: 20px;
+    }
+
+    #div-example3 :is(grass, tree leafs) h3{
+        background-color: lightgreen;
+    }
+
+    #div-example3 wood h3{
+        background-color: brown;
+    }
+
+    #div-example3 p{
+        width: 300px;
+        margin: auto;
+    }
+</Style>
+
+<div id="div-example3">
+    <grass>
+        <h3>Grass</h3>
+        <p>grass is really cool, it is green 
+        cows love to eat it all the time.
+        </p>
+    </grass>
+    <tree>
+    <leafs>
+        <h3>Leafs</h3>
+        <p>the leafs is the part of the tree that 
+        is green, it is really cool and beautiful.
+        </p>
+    </leafs>
+    <wood>
+        <h3>Wood</h3>
+        <p>wood is the brown part of the tree, 
+        wood can be used for many things, and 
+        a friend of mine called Steve loves
+        to punch it all the time.
+        </p>
+    </wood></tree>
+</div>
+
+<p>If I were not using the <Span>:is pseudo-class</Span>, 
+to make the example above, in 
+order to <Span>style</Span> the <Span>wanted headings</Span>
+I would need to write the following code:</p>
+
+<p class="left"><span class="code10">#div-example3 grass h3, 
+#div-example3 tree leafs h3{
+    background-color: lightgreen;
+}
+</span></p>
+
+<p>The <Span>:is() pseudo-class</Span> just makes things way faster, 
+and except from that, if one of the <Span>selectors</Span> you 
+put inside <span>is misspelled</span>, the <span>style still works for
+the other selectors</span>, which is another great reason to use the <Span>:s() pseudo-class</Span>.</p>
+
+
+
+</article>
+
+<hr>
+</body>
+</html>

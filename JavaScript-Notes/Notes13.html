@@ -1,0 +1,714 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<title> Page thirteen of my notes </title>
+<meta charset="UTF-8"> 
+<link href="../CSS-JavaScript-External-Files/HTMLnotes.css" rel="stylesheet">
+<Style>
+    .left {
+        text-align: left;
+    }
+    
+    .code10 {
+    white-space: pre-line;
+    background-color: lightgreen;
+    }
+    </style> 
+</head>
+<body>
+
+<hr>
+
+    <header> 
+    <h1> Page one of my JavaScript notes </h1>
+    </header>
+    
+    <article id="start-of-page"> 
+  
+        <div id="homepages">
+        
+            <h3>Home Pages:</h3>
+           
+        
+        </div>
+        
+        <nav data-notes="JavaScript" data-page="1">
+        
+        </nav>
+                
+        <h3> Informations included in this page:</h3>
+    <p> <a href="../JavaScript-Notes/Notes13.html#one">Introduction to JavaScript</a></p>
+    <p> <a href="../JavaScript-Notes/Notes13.html#two">Creating your first JavaScript</a></p>
+    <p> <a href="../JavaScript-Notes/Notes13.html#three">JavaScript Comments</a></p>
+    <p> <a href="../JavaScript-Notes/Notes13.html#four">JavaScript Variables</a></p>
+    <p> <a href="../JavaScript-Notes/Notes13.html#five">Data Types</a></p>
+    <p> <a href="../JavaScript-Notes/Notes13.html#six">Math Operators</a></p>
+    <p> <a href="../JavaScript-Notes/Notes13.html#seven">Assignment Operators</a></p>
+    <p> <a href="../JavaScript-Notes/Notes13.html#eight">Comparison Operators</a></p>
+    <p> <a href="../JavaScript-Notes/Notes13.html#nine">Logical Operators</a></p>
+
+        </article>
+        
+         <script src="../CSS-JavaScript-External-Files/nav.js"></script>
+  
+
+<hr>
+
+<article id="one">
+
+<header>
+<h1> Introduction to JavaScript </h1>
+</header>
+
+<p><span>JavaScript</span> is one of the most popular <Span>programming languages</Span>
+on earth and is used to <span>add interactivity</span> to webpages, <Span>process data</Span>, as well 
+as <Span>create various applications</Span> (mobile apps, desktop apps, games, and more) </p>
+
+<p>I'm very interested to learn this language better, since it's the first real programming language 
+    I get to learn, <span>CSS</span> and <span>HTML</span> are not considered programming languages, 
+    I'm also a little scared, it took me a while to learn <span>CSS</span> and <span>HTML</span>, 
+    I can't even imagine how long it will take me to learn <span>JavaScript</span>, but the 
+    only way to find out is to begin.
+</p>
+
+</article>
+
+<hr>
+
+<article id="two">
+
+    <header>
+
+        <h1>Creating your first JavaScript</h1>
+
+    </header>
+
+<p>First, let's start with adding <Span>JavaScript</Span> to the <Span>webpage</Span>, 
+we can do that by using the <Span>script</Span> element inside out <span>HTML</span>, 
+you can use this element inside the <span>head section</span> or <span>body section</span>, 
+it is recommended to use it at the <span>bottom of the body</span> so that 
+the <span>webpage</span> loads completely before <Span>JavaScript</Span> is <span>rendered</span>. 
+You can of course the <span>script</span> element multiple times, you don't have to use 
+it only once, also, just like when adding <span>CSS</span> you can also write 
+<span>external JavaScript code</span> in a different <span>document</span> and link 
+it to this <Span>document</Span> by writing <span>&lt;script src="example.js'> &lt;/script></span>.</p>
+
+<p>IT'S TIME NOW! To take the FIRST step to SUCEES! The FIRST step to becoming the 
+    GREATEST WEB DEVELOPER of all! Let's write our first JAVASCRIPT code!
+</p>
+
+<p class="left">JavaScript code:</p>
+
+<p class="left"><span class="code10">&lt;script>
+
+    document.write("Hello World!");
+
+&lt;/script></span></p>
+
+<p class="left">Outcome:</p>
+
+
+<Script>
+
+document.write("Hello World!");
+
+</Script>
+
+<p>The <span>document.write()</span> function writes <Span>string</Span> into 
+our <span>HTML</span> document. This function can be used to write <span>text</span>, 
+<Span>HTML</Span> or both.</p>
+
+<p>Let's try using <Span>HTML tags</Span> to format <span>text</span> in <span>JavaScript</span>.</p>
+
+<p class="left">JavaScript code:</p>
+
+<p class="left"><span class="code10">&lt;script>
+    
+    document.write("&lt;h3 style='text-align: left;'> Hello World! &lt;/h3>");
+
+&lt;/script></span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+document.write("<h3 style='text-align: left;'> Hello World! </h3>");
+
+</script>
+
+</article>
+
+<hr>
+
+<article id="three">
+
+    <header>
+
+        <h1>JavaScript Comments</h1>
+
+    </header>
+
+<p>To add a <span>comment</span> inside your <span>JavaScript</span> you 
+can either write what you want <span>after double slash //</span>, or <Span>between /* and */</Span>.</p>
+
+<p class="left">JavaScript code:</p>
+
+<p class="left"><span class="code10">&lt;script>
+
+    //this is a single line comment
+
+/* This is 
+a multy
+line comment */
+
+alert("Welcome my friends to the first page of my JavaScript notes!");
+
+&lt;/script></span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+//this is a single line comment
+
+/* This is 
+a multy
+line comment */
+
+//alert("Welcome my friends to the first page of my JavaScript notes!");
+
+</script>
+
+<p>Using comments is good, use them a lot to keep your code organized, 
+    your future self will thank you a lot, since it will make things way 
+    easier if you ever need to go over the code again to fix stuff, it's 
+    also required to used comments when working with other people on a big project, 
+    reading code written by someone else can be one of the hardest things, really, 
+    your co-workers will be very thankful if you wrote a description of what your 
+    code does.
+</p>
+
+</article>
+
+<hr>
+
+<article id="four">
+
+    <header>
+
+        <h1>JavaScript Variables</h1>
+
+    </header>
+
+
+<p><span>Variables</span> are <span>containers</span> for storing <span>data values</span>. 
+The <Span>value</Span> of a <Span>variable</Span> can <span>change</span> through the 
+<Span>program</Span>. To declare a <span>variable</span> you can use the <span>var</span>
+keyword:</p>
+
+<p class="left">JavaScript code:</p>
+
+<p class="left"><span class="code10">&lt;script>
+
+    var x = "Hello, I'm a variable!";
+    document.write(x);
+    
+    &lt;/script></span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+var x = "Hello, I'm a variable!";
+document.write(x);
+
+</script>
+
+<p><span>JavaScript</span> is <Span>case sensitive</Span>, if for example 
+the <Span>x</Span> was <Span>capitalized</Span> and I wrote <span>document.write(x)</span>
+it wouldn't work.</p>
+
+<p>In <span>JavaScript</span> the <Span>equal sign</Span> (=) is called the <Span>"assignment"</Span>
+operator, rather than an "equal to" operator. For example, <Span>x = y</Span> will asign 
+the value of <span>y</span> to <span>y</span>.</p>
+
+<p>Using <span>variables</span> is useful in many ways, you might have a thousand lines 
+of code that may include the <span>variable</span> x, when you change the value of x <Span>one time</Span>,
+it will automatically be changed in <Span>all places</Span> where you used it.</p>
+
+<p style="line-height: 23px;">Naming rules: <br> 
+-The first character <Span>must be</Span> a <Span>letter</Span>, an <Span>underscore</Span>
+(_), or a <Span>dollar sign</Span> ($). <Span>Subquent characters</Span> may be 
+<Span>letters</Span>, <span>digits</span>, <span>underscores</span>, or <span>dollar signs</span>.<br>
+-<span>Numbers</span> are <Span>not allowed</Span> as the <span>first character</span>. <br>
+-<span>Variable</span> names <span>cannot</span> include <Span>mathematical or logical operators</Span>
+in the <Span>name</Span>. For instance, <Span>2*something</Span> or <span>this+that</span>. <br>
+-<span>JavaScript</span> names <Span>must not contain spaces</Span>.</p>
+
+<p>There are some other <span>rules</span> to follow when namking your <span>JavaScript variables</span>:</p>
+
+<p>-You <span>must not</span> use any <Span>special symbols</Span>, like <Span>#num</Span>, 
+<span>num%</span>, etc. <br>
+-Be sure that you <span>do not</span> use any of the following <span>JavaScript reversed words</span>:</p>
+
+<style>
+
+.somethingbruh {
+    display: block; 
+    margin: auto;
+}
+
+</style>
+
+<img class="somethingbruh" src="../images/reversedwords.png">
+
+<p>When you get more familiar with <span>JavaScript</span>, remembering these <span>keywords</span>
+will be much easier.</p>
+
+</article>
+
+<hr>
+
+<article id="five">
+
+    <header>
+
+        <h1>Data Types</h1>
+
+    </header>
+
+<p>The term <span>data type</span> refers to the <span>types</span> of 
+<span>values</span> with which a <Span>program</Span> can work. <span>JavaScript variables</span>
+can hold many <span>data types</span>, such as <span>numbers</span>, <span>strings</span>,
+<span>arrays</span>, and more.</p>
+
+<p>Unlike many other <Span>programming languages</Span>, <span>JavaScript</span> does 
+not define <Span>different types of numbers</Span>, like <span>integers</span>, <span>short</span>, 
+<Span>long</Span>, <Span>floating-point</Span>, etc.</p>
+
+<p><Span>JavaScript numbers</Span> can be written with or without <span>demicals</span>.</p>
+
+<p class="left">JavaScript code:</p>
+
+<p class="left"><span class="code10">&lt;script>
+
+    var x = 69 /* A number without decimals */, y = 10.5 /* A number with decimals */; 
+document.write('"', x, '"', " is a better number than ", '"', y, '"', " and that's a fact! ");
+    
+    &lt;/script></span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+var x = 69 /* A number without decimals */, y = 10.5 /* A number with decimals */; 
+document.write('"', x, '"', " is a better number than ", '"', y, '"', " and that's a fact! ");
+
+</script>
+
+<p><span>JavaScript strings</span> are used for <Span>storing</Span> and 
+<span>manipulating</span> text. A <span>string</span> can be any 
+<spaN>text</spaN> that appears within <span>quotes</span>, you can use <span>single</span>
+or <Span>double</Span> quotes, if you use <Span>double quotes</Span> then you can 
+use <span>single quotes</span> inside the <span>string</span> without a problem, the 
+opposite is also true, if you use <span>single quotes</span> then you are able to use 
+<Span>double quotes</Span> inside the <Span>string</Span> without any problem.</p>
+
+<p class="left">JavaScript code:</p>
+
+<p class="left"><span class="code10">&lt;script>
+   
+var x = "My name is 'Karak10' and I'm cool.", y='My name is "Karak10" and Im cool.';
+document.write(x, "&lt;br>");
+document.write(y);
+    
+    &lt;/script></span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+var x = "My name is 'Karak10' and I'm cool.", y='My name is "Karak10" and Im cool.';
+document.write(x, "<br>");
+document.write(y);
+
+</script>
+
+<p>What if you want to use <Span>same</Span> quotes that you used to <Span>surround the string</Span> inside 
+the <Span>string</Span>? In the code above for example, I wanted to put a <Span>single quote</Span> at <Span>I'm</Span>
+in <Span>variable y</Span> but I couldn't because the <span>string</span> was surrounded by <Span>single quotes</Span>, 
+there is a way to do that, by simply using <span>backslash</span>, like this: <span>\'</span>, or <Span>\"</Span>, 
+you can also use the <span>backslash</span> to insert other <Span>special characters</Span>
+into a <Span>string</Span>.</p>
+
+<p class="left">JavaScript code:</p>
+
+<p class="left"><span class="code10">&lt;script>
+   
+    var x = 'My name is "Karak10" and I\'m cool.';
+    document.write(x);
+    
+    &lt;/script></span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+var x = 'My name is "Karak10" and I\'m cool.';
+document.write(x);
+
+</script>
+
+<p>These <spaN>special characters</spaN> can be added using <span>backslash</span>:</p>
+
+<img style="display: block; margin: auto;" src="../images/specialcharacters.png">
+
+<P>In <span>JavaScript Boolean</span>, you can have <Span>one</Span> or <Span>two</Span> values, 
+either <Span>true</Span> or <span>false</span>. These are useful when you need a <span>data type</span>
+that can only have <Span>one</Span> or <span>two</span> values, such as <Span>Ye/No</Span>, 
+<span>On/Off</span>, <Span>True/False</Span>. </P>
+
+<p class="left">Example:</p>
+
+<p class="left"><span class="code10">&lt;script>
+   
+    var isActive = true;
+var isInactive = false;
+    
+    &lt;/script></span></p>
+
+<Script>
+
+var isActive = true;
+var isInactive = false;
+
+</Script>
+
+</article>
+
+<hr>
+
+<article id="six">
+
+    <header>
+
+        <h1>Math Operators</h1>
+
+    </header>
+
+<p><Span>Arithmetic operators</Span> perform <span>arithmetic functions</span>
+on <Span>numbers</Span> (literals or variables).</p>
+
+<img style="display: block; margin: auto;" src="../images/idkdude.png">
+
+<p>In the example below the <Span>addition operator</Span> is used 
+to determine the <span>sum of two numbers</span>.</p>
+
+<p class="left">JavaScript Code: </p>
+
+<p class="left"><span class="code10">var x = 5 + 5, y = 5 + 5;
+    document.write(x + y);</span></p>
+
+<p class="left">Outcome:</p>
+   
+<Script>
+
+var x = 5 + 5, y = 5 + 5;
+document.write(x + y);
+
+</Script>
+
+<p>Let's now use <Span>substraction</Span>, <Span>multiplication</Span>
+and <span>division</span> operators to play around a little, I don't think 
+I need to explain basic <span>math operators</span> like these.</p>
+
+<p class="left">JavaScript Code: </p>
+
+<p class="left"><span class="code10">var x = 10 / 2, y = 2.5 * 2, b = 10 - 5;
+    document.write(x + y + b)</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+var x = 10 / 2, y = 2.5 * 2, b = 10 - 5;
+document.write(x + y + b)
+
+</script>
+
+<p>Now, about <span>modulus operator</span>, I have seen this one in the past so I know 
+how it works, it basically works like <Span>division operator</Span>, however, 
+if I did <Span>10 / 3</Span> for example, <Span>3</Span> can fit <span>three times</Span>
+inside <span>10</span> when it gets to <Span>9</Span>, if we added <Span>3</Span> one more time 
+for example it would surpass <Span>10</Span> and went to <span>12</span>, we now get 
+<Span>9</Span>, and do <Span>10 - 9</Span> which equals <span>1</span>, that's the number 
+we would get if we did <Span>10 % 3</Span>, it lets us know how much numbers away 
+from <Span>10</Span> it gets, if that makes any sense, I'm not really the best at 
+explaining stuff, especially in english since that's not my native language, 
+if we did <span> 10 % 5</span> we would get <Span>0</Span>, since <span>5</span> can fit 
+perfectly inside <Span>10</Span>, if we did <Span>8 % 3</Span> we would get <Span>2</Span>, 
+since after <Span>3</Span> gets to <span>6</span> if we added anoter <span>3</span> it 
+would surpass <Span>8</Span> and go to <Span>9</Span>, if we do <Span>8 - 6</Span>
+we get <Span>2</Span>, I hope you understand.</p>
+
+<p class="left">JavaScript Code: </p>
+
+<p class="left"><span class="code10">
+    var x = 10 % 3, y = 10 % 5, b = 8 % 3;
+    document.write("10 % 3 = ", x, 
+    " &lt;br> 10 % 5 = ", y, 
+    " &lt;br> 8 % 3 = ", b);</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+var x = 10 % 3, y = 10 % 5, b = 8 % 3;
+document.write("10 % 3 = ", x, 
+" <br> 10 % 5 = ", y, 
+" <br> 8 % 3 = ", b);
+
+ 
+
+</script>
+
+<p>About the <span>Increment</span> and <Span>Decrement</Span> operators now, if placed <Span>before</Span> the <Span>operand</Span>, 
+for example, if we wrote <Span>var b = 10, a = ++b;</Span>, then, <span>a</span> would get the 
+value of <span>b</span> and would get <span>increased by one</span>, and <Span>b</Span> would also get 
+<span>increased by one</span>, if we wrote <span>b++</span> then <span>a</span> would 
+get the value of <Span>b</Span> without being increased by one, and <Span>b</Span>
+would only be <Span>increased by one</Span>. </p>
+
+<p>The same goes for <Span>--b</Span> and <Span>b--</Span>, if placed <Span>after</span>, then 
+<span>a</span> would get the <Span>value of b</Span>, and <Span>b</Span> would be 
+<Span>decreased</Span> this time by one, if placed <Span>before</Span> then 
+<span>a</span> would get the <Span>value of b</Span> and would be <Span>decreased by one</Span>, 
+and <span>b</span> also would be <Span>decreased by one</Span>, making them have the 
+same value.</p>
+
+<p class="left">JavaScript Code: </p>
+
+<p class="left"><span class="code10">
+    var b = 10,
+ a = b--, 
+
+ b2 = 10,
+a2 = --b2, 
+
+b3 = 10,
+a3 = b3++, 
+
+b4 = 10,
+a4 = ++b4;
+
+document.write("(b = 10, a = b--)", "&lt;br>a = ", a, " &lt;br> b = ", b, 
+
+"&lt;br>&lt;br>", "(b2 = 10, a2 = --b2)", " &lt;br> a2 = ", a2, " &lt;br> b2 = ", b2,
+
+"&lt;br>&lt;br>", "(b3 = 10, a3 = b3++)", " &lt;br> a3 = ", a3, " &lt;br> b3 = ", b3,
+
+"&lt;br>&lt;br>", "(b4 = 10, a4 = ++b4)", " &lt;br> a4 = ", a4, " &lt;br> b4 = ", b4);</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+var b = 10,
+ a = b--, 
+
+ b2 = 10,
+a2 = --b2, 
+
+b3 = 10,
+a3 = b3++, 
+
+b4 = 10,
+a4 = ++b4;
+
+document.write("(b = 10, a = b--)", "<br>a = ", a, " <br> b = ", b, 
+
+"<br><br>", "(b2 = 10, a2 = --b2)", " <br> a2 = ", a2, " <br> b2 = ", b2,
+
+"<br><br>", "(b3 = 10, a3 = b3++)", " <br> a3 = ", a3, " <br> b3 = ", b3,
+
+"<br><br>", "(b4 = 10, a4 = ++b4)", " <br> a4 = ", a4, " <br> b4 = ", b4);
+
+
+</script>
+
+<p>I really don't know how this is ever going to be useful, but I guess I'm gonna find out 
+    in the future, that's enough of math for now, I'm going to take a break and continue tomorrow.
+</p>
+
+<p>Here is a project I made using simply <span>math operators</span>, check this out:</p>
+
+<p class="left">JavaScript Code: </p>
+
+<p class="left"><span class="code10">&lt;script>
+    
+    var money = prompt("Enter how much money you have");
+    var price = 20;
+    var answer = ( money - price &lt; 0 ) ? "you cannot buy the product, in order to buy it you will need ": 
+     "if you buy the product you will be left with ";
+    var result = ( money - price &lt; 0 ) ? price - money: money - price;
+    
+    document.write( "The price of the the product is ", price, "$ therefore, since you have ", 
+    money,"$ ", answer, result, "$");  
+
+    &lt;script></span></p>
+
+<p class="left">Outcome:</p>
+
+<p><a href="../My-Projects/JavaScriptProject1.html" target="_blank">JavaScriptProject1.html</a></p>
+
+</article>
+
+<hr>
+
+<article id="seven">
+
+    <header>
+
+        <h1>Assignment Operators</h1>
+
+    </header>
+
+<p><span>Assignment operators</span> assign <span>values</span> to <span>JavaScript variables</span>.</p>
+
+<img style="display: block; margin: auto;" src="../images/idkdude2.png">
+
+<p class="left">JavaScript Code: </p>
+
+<p class="left"><span class="code10">&lt;script>
+    
+    var x = 5;
+    document.write("x += 10 could also be written as x = x + 10, which equals ", x += 10,
+    "&lt;br> You could assume we just did x + 10, but that's false, because x is now 15, if we now do x -= 5 for example we would assign x to be ", x-=5, 
+    "&lt;br> Since now x = 10 if we did x - 5 we would get ", x - 5, " however, x would continue being 10, that's the difference");
+
+    &lt;script></span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+var x = 5;
+document.write("x += 10 could also be written as x = x + 10, which equals ", x += 10,
+"<br> You could assume we just did x + 10, but that's false, because x is now 15, if we now do x -= 5 for example we would assign x to be ", x-=5, 
+"<br> Since now x = 10 if we did x - 5 we would get ", x - 5, " however, x would continue being 10, that's the difference");
+
+
+</script>
+
+
+
+</article>
+
+<hr>
+
+<article id="eight">
+
+
+    <header>
+
+        <h1>Comparison Operators</h1>
+
+    </header>
+
+<p><span>Comparison operators</span> are used in logical statements to determine
+<Span>equality</Span> or <span>difference</span> between <Span>variables</Span> or 
+<span>values</span>. They return <span>true</span> or <span>false</span>.</p>
+
+<p>See the example below, if <Span>x = 15</Span> then it will write <Span>true</Span>, 
+    else it will write <span>false</span>:</p>
+
+<p class="left">JavaScript code:</p>
+
+<p class="left"><span class="code10">&lt;script>
+
+    var x = 15; 
+    (x == 15) ? document.write (true): document.write(false);
+    
+    &lt;/script></span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+var x = 15; 
+(x == 15) ? document.write (true): document.write(false);
+
+</script>
+
+<p>The table below explains the <Span>comparison operators</Span>:</p>
+
+<img style="display: block; margin: auto;" src="https://api.sololearn.com/DownloadFile?id=2748" alt="image not found for some reason">
+
+<p><Span>===</Span> and <Span>!==</Span> are pretty much 
+the same with <Span>==</Span> and <span>!=</span>, however, 
+if I wrote <Span>var x = '10';</Span> for example, which 
+is a <span>string</span> when I wrote <Span>x == 10</Span>
+it would come up as true, even tho <Span>10</Span> is a number,
+that's where we use <span>===</span> which checks 
+if it's <Span>equal</Span> and of <Span>same type</Span>, I 
+hope you understand.</p>
+
+</article>
+
+<hr>
+
+<article id="nine">
+
+    <header>
+
+        <h1>Logical Operators</h1>
+
+    </header>
+
+<p><span>Logical operators</span>, also known as <Span>Boolean Operators</Span>, 
+evaluate the expression and return <Span>true</span> or <Span>flase</span>.</p>
+
+<img style="display: block; margin: auto;" src="https://api.sololearn.com/DownloadFile?id=2749">
+
+<p>For example:<br> <br>
+<Span>6&lt;5 && 7&lt;8</Span> will return <Span>false</Span> because first operator is not true<br>
+<span>6&lt;5 || 7&lt;8</Span> will return <Span>true</Span> because second operator is true<br>
+<Span>!(6&lt;5)</Span> will return <Span>true</Span> because the operator is false</p>
+
+<p>You can also remember it like this: <br><br>
+<Span>AND</Span> - <Span>&&</Span><br>
+<span>OR</span> - <span>||</span><br>
+<span>NOT</span> - <span>!</span></p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">&lt;script>
+
+    var x = 10, y = 15;
+    
+    (x &lt; 15 && y == 16) ? document.write("True &lt;br>"): document.write("False &lt;br>"); 
+    (x &lt; 15 || y == 16)? document.write("True &lt;br>"): document.write("False &lt;br>");
+    (!(x > 15))? document.write("True &lt;br>"): document.write("False &lt;br>");
+    
+    &lt;/script></Span></p>
+
+<p class="left">Outcome:</p>
+
+
+<script>
+
+var x = 10, y = 15;
+
+(x < 15 && y == 16) ? document.write("True <br>"): document.write("False <br>"); 
+(x < 15 || y == 16)? document.write("True <br>"): document.write("False <br>");
+(!(x > 15))? document.write("True <br>"): document.write("False <br>");
+
+</script>
+
+</article>
+
+
+<hr>
+
+</body>
+</html>

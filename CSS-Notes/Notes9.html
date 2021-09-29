@@ -1,0 +1,1637 @@
+<!DOCTYPE HTML>
+<html>
+<head lang="en-US">
+<meta charset="UTF-8">
+<title> Page nine of my notes </title>
+<link rel="stylesheet" href="../CSS-JavaScript-External-Files/HTMLnotes.css">
+<Style>
+
+    .code10 {
+    white-space: pre-line;
+    background-color:lightgreen;
+    }
+    
+    .left {
+        text-align: left;
+    }
+    
+    </style>
+</head>
+<body>
+
+<hr>
+<header> 
+<h1> Page four of my CSS notes </h1>
+</header>
+
+<article id="start-of-page"> 
+  
+    <div id="homepages">
+    
+        <h3>Home Pages:</h3>
+       
+    
+    </div>
+    
+    <nav data-notes="CSS" data-page="4">
+    
+    </nav>
+            
+    <h3> Informations included in this page:</h3>
+<div style="width: 300px; margin: auto;"> 
+<ul>
+    <li><a href="../CSS-Notes/Notes9.html#one">The display Property</a>
+    </li>
+
+<li><a href="../CSS-Notes/Notes9.html#two">About display: flex</a>
+  <ul>
+     <li><a href="../CSS-Notes/Notes9.html#three">The flex-direction property</a></li>
+     <li><a href="../CSS-Notes/Notes9.html#four">The justify-content property</a></li>
+     <li><a href="../CSS-Notes/Notes9.html#five">The align-items property</a></li>
+     <li><a href="../CSS-Notes/Notes9.html#six">The align-content and flex-wrap properties</a></li>
+     <li><a href="../CSS-Notes/Notes9.html#seven">The flex-shrink, flex-grow and flex-basis properties</a></li>
+     <li><a href="../CSS-Notes/Notes9.html#eight">The align-self and order properties</a></li>
+     <li><a href="../CSS-Notes/Notes9.html#eight-2">The flex property</a></li>
+     <li><a href="../CSS-Notes/Notes9.html#nine">Tutorial about display: flex;</a></li>
+  </ul>
+</li>
+
+<li><a href="../CSS-Notes/Notes9.html#ten">About display: grid</a> 
+<ul>
+    <li><a href="../CSS-Notes/Notes9.html#eleven">The grid-template-columns and grid-template-rows properties</a></li>
+    <li><a href="../CSS-Notes/Notes9.html#twelve">The grid-auto-columns and grid-auto-rows properties</a></li>
+    <li><a href="../CSS-Notes/Notes9.html#twelve-2">The grid-gap, grid-row-gap and grid-column-gap properties</a></li>
+    <li><a href="../CSS-Notes/Notes9.html#thirteen">The grid-template-areas and grid-area properties</a></li>
+    <li><a href="../CSS-Notes/Notes9.html#fourteen">The grid-column/row-start, grid-column/row-end and grid-column/row properties</a></li>
+    <li><a href="../CSS-Notes/Notes9.html#fourteen-2">The justify-content, align-content, justify-items, align-items, align-self and justify-self properties</a></li>
+    <li><a href="../CSS-Notes/Notes9.html#fifteen">Tutorial about display: grid;</a></li>
+</ul>
+</li>
+
+ 
+  
+</ul>
+</div>
+
+    </article>
+    
+     <script src="../CSS-JavaScript-External-Files/nav.js"></script> 
+
+
+
+ 
+<hr>
+
+<article id="one">
+
+    <header>
+
+        <h1>The display Property</h1>
+
+    </header>
+
+<p>Every <span>element</span> on a <span>web page</span> is a 
+<span>rectangular box</span>.
+The <span>display</span> property determines how 
+that <span>rectangular box</span> behaves.</p> 
+
+<p> A <span>block</span> element is an <Span>element</Span> 
+that takes up the <Span>fullest width</Span> available, it's <span>width</span> and <span>height</span>
+can be changed and you can't place <Span>two block elements</Span> one next ot each other, since 
+a <span>block element</span> forces a <span>line break</span> before and after it.</p>
+
+<p>An <span>inline</span> element on the other hand can be placed inside a <span>block element</span>, 
+and you can place many <span>inline elements</span> one after another, their <span>width</span> and 
+<span>height</span> however can't be changed.</p>
+
+<p>An <span>inline-block</span> element behaves like an <Span>image</Span>, you can place it inside 
+a <Span>block element</Span>, you can place many of these one after another, but you can also change it's 
+<span>width</span> and <span>height</span>.</p>
+
+<p class="left">HTML code:</p>
+
+<p class="left"> 
+
+    <span class="code10">&lt;p class="inline-element size"> Helli I'm an inline paragraph&lt;/p>
+        &lt;p class="inline-element size"> Helli I'm an inline paragraph&lt;/p>
+        
+        &lt;p class="block-element size"> Helli I'm a block paragraph&lt;/p>
+        &lt;p class="block-element size"> Helli I'm a block paragraph&lt;/p>
+        
+        &lt;p class="inline-block-element size"> Helli I'm an inline-block paragraph&lt;/p>
+        &lt;p class="inline-block-element size"> Helli I'm an inline-block paragraph&lt;/p></span>
+
+
+</p>
+
+<p class="left">CSS code:</p>
+
+<p class="left"> 
+    
+    <Span class="code10">&lt;style>
+
+        .size {
+            width: 100px;
+            height: 60px;
+            background-color: red;
+            border: 3px solid black;
+            margin: auto;
+        }
+        
+        .inline-element {
+            display: inline;
+        }
+        
+        .block-element {
+            display: block;
+        }
+        
+        .inline-block-element {
+            display: inline-block;
+        }
+        
+        
+        &lt;/style></Span>
+
+</p>
+
+<p class="left"> Outcome: </p>
+
+
+<style>
+
+.size {
+    width: 100px;
+    height: 60px;
+    background-color: red;
+    border: 3px solid black;
+    margin: auto;
+}
+
+.inline-element {
+    display: inline;
+}
+
+.block-element {
+    display: block;
+}
+
+.inline-block-element {
+    display: inline-block;
+}
+
+
+</style>
+
+<p class="inline-element size"> Helli I'm an inline paragraph</p>
+<p class="inline-element size"> Helli I'm an inline paragraph</p>
+
+<p class="block-element size"> Helli I'm a block paragraph</p>
+<p class="block-element size"> Helli I'm a block paragraph</p>
+
+<p class="inline-block-element size"> Helli I'm an inline-block paragraph</p>
+<p class="inline-block-element size"> Helli I'm an inline-block paragraph</p>
+
+<p>The reason <span>margin:auto;</span> didn't work on the <span>inline elements</span> is 
+because they aren't inside a <span>block element</span>. </p>
+
+<p>Another <span>display</span> property is <span>none</span>, it doesn't just <span>hide</span>
+the <span>element</span>, it <span>removes it</span> completely, see the example:</p>
+
+<p class="left">Code:</p>
+
+<p class="left"> 
+
+    <span class="code10">&lt;p class="inline-element size"> Helli I'm an inline paragraph&lt;/p>
+        &lt;p class="inline-element size"> Helli I'm an inline paragraph&lt;/p>
+        
+        &lt;p class="block-element size"> Helli I'm a block paragraph&lt;/p>
+        &lt;p class="block-element size"> Helli I'm a block paragraph&lt;/p>
+        
+        &lt;p class="size" style="display: none;"> Helli I'm an inline-block paragraph&lt;/p>
+        &lt;p class="inline-block-element size"> Helli I'm an inline-block paragraph&lt;/p></span>
+
+
+</p>
+
+<p class="left">Outcome:</p>
+
+<p class="inline-element size"> Helli I'm an inline paragraph</p>
+<p class="inline-element size"> Helli I'm an inline paragraph</p>
+
+<p class="block-element size"> Helli I'm a block paragraph</p>
+<p class="block-element size"> Helli I'm a block paragraph</p>
+
+<p class="size" style="display: none;"> Helli I'm an inline-block paragraph</p>
+<p class="inline-block-element size"> Helli I'm an inline-block paragraph</p>
+
+<p>Here is a video that helped a lot:</p>
+
+
+<iframe style="display:block; margin:auto; width:733px; height:413px;"   src="https://www.youtube.com/embed/Qf-wVa9y9V4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</article>
+
+<hr>
+
+<h1>WARNING:</h1>
+<p>Bellow I explain how the grid and flex CSS layouts work, however, when I made this explanation I
+was still a beginner and I rushed this part a lot, I didn't explain stuff well and didn't organize the properties
+as I should had. For this reason I remade the two sections in my <a href="./../Front-End-Notes/frontend1.html#three">responsive web design notes</a>,
+there I explain flex and grid way better.</p>
+
+<hr>
+<article id="two">
+
+    <header>
+
+        <h1>About display: flex;</h1>
+
+    </header>
+
+    <p><strong>Warning:</strong> when I made this section I was still a beginner and the explanation of flex layout
+    you will see bellow is not very well written, I remade this section in my <a href="./../Front-End-Notes/frontend1.html#three">responsive web design notes</a>
+    where I explain flex way better.</p>
+<p>The <span>display: flex</span> can be used to create a <span>flex container</span> for elements that 
+you want to be <span>flexible</span> on <span>screen resizing</span>.</p>
+
+<p>Lets take three <span>praragraphs</span> for example:</p>
+
+<p class="left">HTML code:</p>
+
+<p class="left"> 
+
+    <span class="code10">&lt;p class="item item-1"> Hello I'm an item 1 &lt;/p>
+
+        &lt;p class="item item-2"> Hello I'm an item 2 &lt;/p>
+        
+        &lt;p class="item item-3"> Hello I'm an item 3 &lt;/p></span>
+
+
+</p>
+
+<p class="left">CSS code:</p>
+
+<p class="left"> 
+    
+    <Span class="code10">&lt;style>
+
+        .item {
+            background-color: lightgray;
+            border: 2px solid black;
+            width: 100px;
+            margin: 10px;
+        }
+        
+        .item-1 {
+            min-height: 50px;
+        }
+        
+        .item-2 {
+            min-height: 100px;
+        }
+        
+        .item-3 {
+            min-height: 150px;
+        }
+        
+        &lt;/style></Span>
+
+</p>
+
+<p class="left"> Outcome: </p>
+
+
+<style>
+
+.item {
+    background-color: lightgray;
+    border: 2px solid black;
+    width: 100px;
+    margin: 10px
+}
+
+.item-1 {
+    min-height: 50px;
+}
+
+.item-2 {
+    min-height: 100px;
+}
+
+.item-3 {
+    min-height: 150px;
+}
+
+</style>
+
+
+<p class="item item-1"> Hello I'm an item 1 </p>
+
+<p class="item item-2"> Hello I'm an item 2</p>
+
+<p class="item item-3"> Hello I'm an item 3 </p>
+
+<p>Now lets put them inside a <span>div</span> whith the <span>display: flex;</span> property:</p>
+
+<p class="left">HTML code:</p>
+
+<p class="left"> 
+
+    <span class="code10">&lt;div class="flex-container"&gt;
+        
+        &lt;p class="item item2-1"> Hello I'm an item 1 &lt;/p>
+
+        &lt;p class="item item2-2"> Hello I'm an item 2 &lt;/p>
+        
+        &lt;p class="item item2-3"> Hello I'm an item 3 &lt;/p>
+    
+    &lt;/div&gt;</span>
+
+
+</p>
+
+<p class="left">CSS code:</p>
+
+<p class="left"> 
+    
+    <Span class="code10">&lt;style>
+
+        .item {
+            background-color: lightgray;
+            border: 2px solid black;
+            width: 100px;
+            margin: 10px;
+        }
+        
+        .item2-1 {
+            min-height: 50px;
+        }
+        
+        .item2-2 {
+            min-height: 100px;
+        }
+        
+        .item2-3 {
+            min-height: 150px;
+        }
+        
+        .flex-container { 
+            background-color: orange;
+            border: 3px solid black;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 20px;
+            display: flex;
+        }    
+        
+        &lt;/style></Span>
+
+</p>
+
+<p class="left"> Outcome: </p>
+
+
+<style>
+
+    .item {
+        background-color: lightgray;
+        border: 2px solid black;
+        width: 100px;
+        margin: 10px;
+    }
+    
+    .item2-1 {
+        min-height: 50px;
+    }
+    
+    .item2-2 {
+        min-height: 100px;
+    }
+    
+    .item2-3 {
+        min-height: 150px;
+    }
+    
+    .flex-container { 
+        background-color: rgb(233, 185, 97);
+        border: 3px solid black;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 20px;
+        display: flex;
+    }
+
+    </style>
+
+<div class="flex-container">
+    
+    <p class="item item2-1"> Hello I'm an item 1 </p>
+    
+    <p class="item item2-2"> Hello I'm an item 2</p>
+    
+    <p class="item item2-3"> Hello I'm an item 3 </p>
+
+</div>
+<hr style="height:1px; background-color:black; border: solid black;">
+
+ <section id="three">
+
+<h2> The flex-direction property</h2>
+
+
+<p> Before we continue I want you to understand the <span>main axis</span> and 
+    <span>cross axis</span>, it's like <Span>x axis</Span> and <span>y axis</span>, if the <Span>flex-direction: row;</Span>
+    then the <span>main axis</span> is the <span>x axis</span>, and <span>cross axis</span> is the <span>y axis</span>, 
+    if however the <span>flex-direction: column;</span> then its the opposite, the <span>main axis</span> is the <span>y axis</span>
+    and the <span>cross axis</span> is the <span>x axis</span>.
+
+    <p>For <span>flex-direction: row;</span> (the defaul value):</p>
+    <div style="position: relative;">
+        <div style=" 
+        position: absolute;
+        width: 100px;
+        height: 50px;
+        top: 110px;
+        left: 10px;
+        color: green;
+        font-weight: bold;
+        "> Main Axis</div>
+    
+    </div>
+
+
+    <div style="position: relative;">
+        <div style=" 
+        position: absolute;
+        width: 100px;
+        height: 50px;
+        top: 8px;
+        left: 51%;
+        color: blue;
+        font-weight: bold;
+        "> Cross Axis</div>
+    
+    </div>
+
+<div style="position: relative;">
+    <div style=" 
+    position: absolute;
+    background-color: blue;
+    width: 5px;
+    height: 177px;
+    top: 8px;
+    left: 50%;"></div>
+
+</div>
+
+    <div style=" 
+    position: relative;
+    background-color: green;
+    width: 100%;
+    height: 5px;
+    top: 100px;"></div>
+
+
+
+    <div class="flex-container">
+    
+        <p class="item item2-1"> Hello I'm an item 1 </p>
+        
+        <p class="item item2-2"> Hello I'm an item 2</p>
+        
+        <p class="item item2-3"> Hello I'm an item 3 </p>
+    
+    </div>
+    <p>For <span>flex-direction: column;</span>  :</p>
+
+
+<div style="position: relative;"> 
+<div style="
+width:100%; 
+height: 5px;
+position: absolute;
+top: 200px;
+background-color: blue;"></div>
+
+<div style=" 
+width: 100px;
+position: absolute; 
+top: 210px;
+left: 10px;
+color: blue;
+font-weight: bold;">Cross Axis</div>
+
+</div> 
+
+<div style="position: relative;"> 
+    <div style="
+    width: 5px; 
+    height: 375px;
+    position: absolute;
+    left: 50%;
+    background-color: green;"></div>
+    
+    <div style=" 
+    width: 100px;
+    position: absolute; 
+    top: 2px;
+    left: 51%;
+    color: green;
+    font-weight: bold;">Main Axis</div>
+    
+    
+
+    </div> 
+
+    <div class="flex-container" style="flex-direction: column;">
+    
+        <p class="item item2-1"> Hello I'm an item 1 </p>
+        
+        <p class="item item2-2"> Hello I'm an item 2</p>
+        
+        <p class="item item2-3"> Hello I'm an item 3 </p>
+    
+    </div>
+
+</section>
+
+    <hr style="height:1px; background-color:black; border: solid black;">
+
+    <section id="four">
+<h2>The justify-content property</h2>
+
+    <p> We can use the <span>justify-content</span> property to define how we want our 
+    <span>content</span> to be <Span>positioned</Span> on the <span>main axis</span>. We can use 
+<span>justify-content: flex-start;</span> (its the default value), <span>justify-content: center;</span>, <span>justifty-content: flex-end;</span>,
+<span>justify-content: space-between</span> and <span>justify-content: space-around</span>.</p>
+
+<p><span>justify-content: flex-start;</span></p>
+<div style="position: relative;">
+    <div style=" 
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    top: 110px;
+    left: 10px;
+    color: green;
+    font-weight: bold;
+    "> Main Axis</div>
+
+</div>
+
+
+<div style="position: relative;">
+    <div style=" 
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    top: 8px;
+    left: 51%;
+    color: blue;
+    font-weight: bold;
+    "> Cross Axis</div>
+
+</div>
+
+<div style="position: relative;">
+<div style=" 
+position: absolute;
+background-color: blue;
+width: 5px;
+height: 177px;
+top: 8px;
+left: 50%;"></div>
+
+</div>
+
+<div style=" 
+position: relative;
+background-color: green;
+width: 100%;
+height: 5px;
+top: 100px;"></div>
+
+
+
+<div class="flex-container"  style="justify-content: flex-start;">
+
+    <p class="item item2-1"> Hello I'm an item 1 </p>
+    
+    <p class="item item2-2"> Hello I'm an item 2</p>
+    
+    <p class="item item2-3"> Hello I'm an item 3 </p>
+
+</div>
+
+<div style="position: relative;"> 
+    <div style="
+    width:100%; 
+    height: 5px;
+    position: absolute;
+    top: 200px;
+    background-color: blue;"></div>
+    
+    <div style=" 
+    width: 100px;
+    position: absolute; 
+    top: 210px;
+    left: 10px;
+    color: blue;
+    font-weight: bold;">Cross Axis</div>
+    
+    </div> 
+    
+    <div style="position: relative;"> 
+        <div style="
+        width: 5px; 
+        height: 503px;
+        position: absolute;
+        left: 50%;
+        background-color: green;"></div>
+        
+        <div style=" 
+        width: 100px;
+        position: absolute; 
+        top: 2px;
+        left: 51%;
+        color: green;
+        font-weight: bold;">Main Axis</div>
+        
+        
+    
+        </div> 
+    
+        <div class="flex-container" style="flex-direction: column; height: 500px; ">
+        
+            <p class="item item2-1"> Hello I'm an item 1 </p>
+            
+            <p class="item item2-2"> Hello I'm an item 2</p>
+            
+            <p class="item item2-3"> Hello I'm an item 3 </p>
+        
+        </div>
+
+<p><span>justify-content: center;</span></p>
+
+<div style="position: relative;">
+    <div style=" 
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    top: 110px;
+    left: 10px;
+    color: green;
+    font-weight: bold;
+    "> Main Axis</div>
+
+</div>
+
+
+<div style="position: relative;">
+    <div style=" 
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    top: 8px;
+    left: 51%;
+    color: blue;
+    font-weight: bold;
+    "> Cross Axis</div>
+
+</div>
+
+<div style="position: relative;">
+<div style=" 
+position: absolute;
+background-color: blue;
+width: 5px;
+height: 177px;
+top: 8px;
+left: 50%;"></div>
+
+</div>
+
+<div style=" 
+position: relative;
+background-color: green;
+width: 100%;
+height: 5px;
+top: 100px;"></div>
+
+
+
+<div class="flex-container"  style="justify-content: center;">
+
+    <p class="item item2-1"> Hello I'm an item 1 </p>
+    
+    <p class="item item2-2"> Hello I'm an item 2</p>
+    
+    <p class="item item2-3"> Hello I'm an item 3 </p>
+
+</div>
+
+<div style="position: relative;"> 
+    <div style="
+    width:100%; 
+    height: 5px;
+    position: absolute;
+    top: 200px;
+    background-color: blue;"></div>
+    
+    <div style=" 
+    width: 100px;
+    position: absolute; 
+    top: 210px;
+    left: 10px;
+    color: blue;
+    font-weight: bold;">Cross Axis</div>
+    
+    </div> 
+    
+    <div style="position: relative;"> 
+        <div style="
+        width: 5px; 
+        height: 503px;
+        position: absolute;
+        left: 50%;
+        background-color: green;"></div>
+        
+        <div style=" 
+        width: 100px;
+        position: absolute; 
+        top: 2px;
+        left: 51%;
+        color: green;
+        font-weight: bold;">Main Axis</div>
+        
+        
+    
+        </div> 
+    
+        <div class="flex-container" style="flex-direction: column; height: 500px; justify-content: center; ">
+        
+            <p class="item item2-1"> Hello I'm an item 1 </p>
+            
+            <p class="item item2-2"> Hello I'm an item 2</p>
+            
+            <p class="item item2-3"> Hello I'm an item 3 </p>
+        
+        </div>
+
+
+<p><span>justify-content: flex-end;</span></p>
+
+<div style="position: relative;">
+    <div style=" 
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    top: 110px;
+    left: 10px;
+    color: green;
+    font-weight: bold;
+    "> Main Axis</div>
+
+</div>
+
+
+<div style="position: relative;">
+    <div style=" 
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    top: 8px;
+    left: 51%;
+    color: blue;
+    font-weight: bold;
+    "> Cross Axis</div>
+
+</div>
+
+<div style="position: relative;">
+<div style=" 
+position: absolute;
+background-color: blue;
+width: 5px;
+height: 177px;
+top: 8px;
+left: 50%;"></div>
+
+</div>
+
+<div style=" 
+position: relative;
+background-color: green;
+width: 100%;
+height: 5px;
+top: 100px;"></div>
+
+
+
+<div class="flex-container"  style="justify-content: flex-end;">
+
+    <p class="item item2-1"> Hello I'm an item 1 </p>
+    
+    <p class="item item2-2"> Hello I'm an item 2</p>
+    
+    <p class="item item2-3"> Hello I'm an item 3 </p>
+
+</div>
+
+<div style="position: relative;"> 
+    <div style="
+    width:100%; 
+    height: 5px;
+    position: absolute;
+    top: 200px;
+    background-color: blue;"></div>
+    
+    <div style=" 
+    width: 100px;
+    position: absolute; 
+    top: 210px;
+    left: 10px;
+    color: blue;
+    font-weight: bold;">Cross Axis</div>
+    
+    </div> 
+    
+    <div style="position: relative;"> 
+        <div style="
+        width: 5px; 
+        height: 503px;
+        position: absolute;
+        left: 50%;
+        background-color: green;"></div>
+        
+        <div style=" 
+        width: 100px;
+        position: absolute; 
+        top: 2px;
+        left: 51%;
+        color: green;
+        font-weight: bold;">Main Axis</div>
+        
+        
+    
+        </div> 
+    
+        <div class="flex-container" style="flex-direction: column; height: 500px; justify-content: flex-end;">
+        
+            <p class="item item2-1"> Hello I'm an item 1 </p>
+            
+            <p class="item item2-2"> Hello I'm an item 2</p>
+            
+            <p class="item item2-3"> Hello I'm an item 3 </p>
+        
+        </div>
+
+        <p><span>justify-content: space-between;</span></p>
+
+        <div style="position: relative;">
+            <div style=" 
+            position: absolute;
+            width: 100px;
+            height: 50px;
+            top: 110px;
+            left: 10px;
+            color: green;
+            font-weight: bold;
+            "> Main Axis</div>
+        
+        </div>
+        
+        
+        <div style="position: relative;">
+            <div style=" 
+            position: absolute;
+            width: 100px;
+            height: 50px;
+            top: 8px;
+            left: 51%;
+            color: blue;
+            font-weight: bold;
+            "> Cross Axis</div>
+        
+        </div>
+        
+        <div style="position: relative;">
+        <div style=" 
+        position: absolute;
+        background-color: blue;
+        width: 5px;
+        height: 177px;
+        top: 8px;
+        left: 50%;"></div>
+        
+        </div>
+        
+        <div style=" 
+        position: relative;
+        background-color: green;
+        width: 100%;
+        height: 5px;
+        top: 100px;"></div>
+        
+        
+        
+        <div class="flex-container"  style="justify-content: space-between;">
+        
+            <p class="item item2-1"> Hello I'm an item 1 </p>
+            
+            <p class="item item2-2"> Hello I'm an item 2</p>
+            
+            <p class="item item2-3"> Hello I'm an item 3 </p>
+        
+        </div>
+        
+        <div style="position: relative;"> 
+            <div style="
+            width:100%; 
+            height: 5px;
+            position: absolute;
+            top: 200px;
+            background-color: blue;"></div>
+            
+            <div style=" 
+            width: 100px;
+            position: absolute; 
+            top: 210px;
+            left: 10px;
+            color: blue;
+            font-weight: bold;">Cross Axis</div>
+            
+            </div> 
+            
+            <div style="position: relative;"> 
+                <div style="
+                width: 5px; 
+                height: 503px;
+                position: absolute;
+                left: 50%;
+                background-color: green;"></div>
+                
+                <div style=" 
+                width: 100px;
+                position: absolute; 
+                top: 2px;
+                left: 51%;
+                color: green;
+                font-weight: bold;">Main Axis</div>
+                
+                
+            
+                </div> 
+            
+                <div class="flex-container" style="flex-direction: column; height: 500px; justify-content: space-between;">
+                
+                    <p class="item item2-1"> Hello I'm an item 1 </p>
+                    
+                    <p class="item item2-2"> Hello I'm an item 2</p>
+                    
+                    <p class="item item2-3"> Hello I'm an item 3 </p>
+                
+                </div>
+
+                <p><span>justify-content: space-around;</span></p>
+
+                <div style="position: relative;">
+                    <div style=" 
+                    position: absolute;
+                    width: 100px;
+                    height: 50px;
+                    top: 110px;
+                    left: 10px;
+                    color: green;
+                    font-weight: bold;
+                    "> Main Axis</div>
+                
+                </div>
+                
+                
+                <div style="position: relative;">
+                    <div style=" 
+                    position: absolute;
+                    width: 100px;
+                    height: 50px;
+                    top: 8px;
+                    left: 51%;
+                    color: blue;
+                    font-weight: bold;
+                    "> Cross Axis</div>
+                
+                </div>
+                
+                <div style="position: relative;">
+                <div style=" 
+                position: absolute;
+                background-color: blue;
+                width: 5px;
+                height: 177px;
+                top: 8px;
+                left: 50%;"></div>
+                
+                </div>
+                
+                <div style=" 
+                position: relative;
+                background-color: green;
+                width: 100%;
+                height: 5px;
+                top: 100px;"></div>
+                
+                
+                
+                <div class="flex-container"  style="justify-content: space-around;">
+                
+                    <p class="item item2-1"> Hello I'm an item 1 </p>
+                    
+                    <p class="item item2-2"> Hello I'm an item 2</p>
+                    
+                    <p class="item item2-3"> Hello I'm an item 3 </p>
+                
+                </div>
+                
+                <div style="position: relative;"> 
+                    <div style="
+                    width:100%; 
+                    height: 5px;
+                    position: absolute;
+                    top: 200px;
+                    background-color: blue;"></div>
+                    
+                    <div style=" 
+                    width: 100px;
+                    position: absolute; 
+                    top: 210px;
+                    left: 10px;
+                    color: blue;
+                    font-weight: bold;">Cross Axis</div>
+                    
+                    </div> 
+                    
+                    <div style="position: relative;"> 
+                        <div style="
+                        width: 5px; 
+                        height: 503px;
+                        position: absolute;
+                        left: 50%;
+                        background-color: green;"></div>
+                        
+                        <div style=" 
+                        width: 100px;
+                        position: absolute; 
+                        top: 2px;
+                        left: 51%;
+                        color: green;
+                        font-weight: bold;">Main Axis</div>
+                        
+                        
+                    
+                        </div> 
+                    
+                        <div class="flex-container" style="flex-direction: column; height: 500px; justify-content: space-around; ">
+                        
+                            <p class="item item2-1"> Hello I'm an item 1 </p>
+                            
+                            <p class="item item2-2"> Hello I'm an item 2</p>
+                            
+                            <p class="item item2-3"> Hello I'm an item 3 </p>
+                        
+                        </div>
+                    </section>
+                        <hr style="height:1px; background-color:black; border: solid black;">
+
+<section id="five">
+
+<h2>The align-items property</h2>
+
+<p>The <span>align-items</span> property is used to <span>position</span> the 
+<Span>items</Span> on the <span>cross axis</span>, the <Span>default</Span> value 
+is <span>stretch</span>, which makes the <Span>items</Span> stretch to 
+<span>fill</span> the whole <span>cross axis</span>, thats why the 
+<span>items</span> even tho they had <span>different height</span> when put
+in the <span>flex box</span> took the <span>same height</span>, because we 
+used <span>min-height</span>, we haven't specified the <span>max-height</span>, so 
+they can <Span>grow</Span> as much as they need, for <span>width</span> however we 
+used <Span>width</Span>, therefore they remain at this <Span>specific width</Span> and 
+don't fill the <span>cross axis</span> when <span>flex-direction: column;</span>, I 
+hope you understand.</p>
+
+<p>This property uses pretty much the same <Span>values</Span> that <Span>justify-content</Span> uses, it 
+just spaces them on the <Span>cross axis</Span>.</p>
+
+</section>
+<hr style="height:1px; background-color:black; border: solid black;">
+
+<section id="six">
+<h2>align-content and flex-wrap properties</h2>
+
+<p>The <span>align-content</span> property can be visible on <span>multi lined</span> flexboxes,
+the <Span>align-item</Span> will position the <Span>items</Span> on their <Span>line</Span>, the 
+<span>align-content</span> will position all the <Span>items</Span> to be at <Span>start</Span>, 
+<span>center</span>, <span>enter</span>, etc, it takes same values with <span>justify-content</Span>, 
+and positions the <Span>items</Span> on the <span>cross axis</span>.</p>
+
+<p>The <Span>flex-wrap: wrap;</Span> property can <span>wrap</span> the items, normally, when 
+we changed the size of the <Span>browser</Span> the <span>items</span> would shrink, with 
+<Span>flex-wrap: wrap;</Span> however they get one under another, lets try this:</p>
+
+<p><span>&lt;div class="flex-container"  style="justify-content: flex-start; flex-wrap: wrap; align-items: flex-start; align-content: flex-end; height: 600px;"></span></p>
+
+<div class="flex-container"  style="justify-content: flex-start; flex-wrap: wrap; align-items: flex-start; align-content: flex-end; height: 600px;">
+
+    <p class="item item2-1" style="width:200px;"> Hello I'm an item 1 </p>
+    
+    <p class="item item2-2" style="width:200px;"> Hello I'm an item 2</p>
+    
+    <p class="item item2-3" style="width:100px;"> Hello I'm an item 3 </p>
+
+    <p class="item item2-3" style="width:100px;"> Hello I'm an item 4 </p>
+
+    <p class="item item2-3" style="width:100px;"> Hello I'm an item 5 </p>
+    <p class="item item2-3" style="width:100px;"> Hello I'm an item 6 </p>
+    <p class="item item2-3" style="width:100px;"> Hello I'm an item 7 </p>
+    <p class="item item2-3" style="width:100px;"> Hello I'm an item 8 </p>
+    <p class="item item2-3" style="width:100px;"> Hello I'm an item 9  </p>
+     
+
+</div>
+
+<p>Try to change the <span>size</span> of the browser, you will see the <span>items</span> will wrap 
+into <span>multiple</span> lines, also, they will be <span>aligned</span> to the <span>end</span>.</p>
+
+<p>The reason the <Span>first two</Span> items have differente size is because I use the same 
+<Span>items</Span> I used in examples above, the <Span>extra items</Span> I added aree all 
+<span>copies</span> of the <span>third item</span>, thats why they have same <span>height</span>.</p>
+</section>
+
+<hr style="height:1px; background-color:black; border: solid black;">
+
+<Sectio id="seven">
+    
+<h1> flex-shrink, flex-grow and flex-basis properties</h1>
+
+<P>When the <span>size</span> of the <span>browser</span> changes, the <span>items</span> shrink by 
+default, you can change the way they <Span>shrink</Span> with the <span>flex-shrink</span> property, this 
+property should be used on the <Span>items</Span> and not on the <span>container</span>, you could write 
+for example <span>flex-shrink: 0;</span> and the item wouldn't shrink at all, <span>flex-shrink: 1</span>
+and the item would shrink, <span>flex-shrink: 2</span> and the item would shrink twice as much as the one 
+with <span>flex-shrink: 1</span>.</P>
+
+<p>The <Span>flex-grow</Span> works the same way, it defines how the <span>items</span> will 
+grow when the <Span>size</Span> of the <span>browser</span> gets bigger, but you need to remember,
+if for example we had <span>two items</span> and used <Span>flex-grow: 1;</Span> on first and 
+<span>flex-grow: 2;</span> on second, the <Span>second item</Span> wouldn't be twice the 
+size of the first, because it would just take <span>twice</span> of the <span>empty space</span> on the 
+browser, and since we have already defined that the start <span>width</span> of the <span>items</span> 
+is <span>200px</span>, the <Span>second item</Span> wouldn't be exactly twice of the <span>first</span>, 
+lets say the empty space was <span>450px</span>, first item would take <span>150px</span> and second would 
+take <Span>300px</Span>, so first item would be <span>350px</span> and second would be <span>500px</span> since 
+their start <span>width</span> is <span>200px</span>, as you can see the <Span>second item</Span> isn't 
+twice the <Span>size</Span> of the <Span>first</Span>.  </p>
+
+<p>To fix that, you can use the <span>flex-basis</span> property, if you write <span>flex-basis: 0;</span>
+on <span>both items</span> the <span>start width</span> will be ignored, and the <span>second item</span>
+will always be <span>twice as big</span> to the <Span>first item</Span>.</p>
+
+</Sectio>
+
+<hr style="height:1px; background-color:black; border: solid black;">
+
+<section id="eight">
+<h1>align-self and order properties</h1>
+
+<p>The <Span>align-self</Span> property works exactly like <span>align-items</span> property, but it can be used
+in each <Span>item</Span> seperately, to <span>align</span> items differently, it uses same values with the 
+<span>align-items</span> property. </p>
+
+<p>The <span>order</span> property can be used to change the <span>order</span> of the 
+<span>items</span> without changing the <Span>HTML</Span>, simply by writing <span>order: 1;</span>,
+<span>order: 2;</span>, etc, but it isn't recommended to use it, because screen readers 
+don't still read the <span>HTML</span> order, and there are also other problems.</p>
+</section>
+<hr style="height:1px; background-color:black; border: solid black;">
+
+<section id="eight-2">
+<h1>The flex property</h1>
+
+<p>The <span>flex</span> property is a shortcut for <span>flex-shrink</span>, <span>flex-grow</span> 
+and <span>flex-basis</span> properties, it uses <span>three paremeters</span>, firt is used 
+for the <Span>flex-grow</Span>, second for the <span>flex-shrink</span> and third for the 
+<span>flex-basis</span>.</p>
+
+</section>
+
+<hr style="height:1px; background-color:black; border: solid black;">
+
+<section id="nine">
+    
+<h1>Tutorial about display: flex;</h1>
+<iframe style="display:block; margin:auto; width:733px; height:413px;" src="https://www.youtube.com/embed/fYq5PXgSsbE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</section>
+<hr>
+
+</article>
+
+<article id="ten">
+
+    <header>
+
+        <h1>About display: grid;</h1>
+
+    </header>
+
+    <p><strong>Warning:</strong> when I made this section I was still a beginner and the explanation of grid layout
+        you will see bellow is not very well written, I remade this section in my <a href="./../Front-End-Notes/frontend1.html#four">responsive web design notes</a>
+        where I explain grid way better.</p>
+<p> The <span>display: grid;</span> is pretty similar to <span>display: flex;</span>, the difference is 
+that while the <span>display: flex;</span> makes the <span>content</span> flexible in only <span>one direction</span>, 
+the <Span>display: grid;</Span> makes the <Span>content</Span> flexible in <Span>all directions</Span>.</p>
+
+
+<img src="https://qph.fs.quoracdn.net/main-qimg-273858213285396edb57d9bb175825d6" style="border: 3px solid black; display: block; margin: auto;">
+
+
+<p>Just like when we create a <span>flexbox</span>, we first need to make our <Span>grid-container</Span></p>
+
+<p class="left">HTML code:
+</p>
+
+<p class="left">
+    <span class="code10">&lt;div class="grid-container">
+
+        &lt;div class="grid-item grid-item-1" > Item 1&lt;/div>
+        
+        &lt;div class="grid-item grid-item-2" style="background-color: rgb(0, 174, 255);">Item 2&lt;/div>
+        
+        &lt;div class="grid-item grid-item-3">Item 3&lt;/div>
+        
+        &lt;/div></span>
+</p>
+
+<p class="left">CSS code:</p>
+
+<p class="left">
+    <span class="code10">&lt;style>
+
+        .grid-container {
+            display: grid;
+            background-color: gray;
+            border: 3px solid black;
+        }
+        
+        .grid-item {
+            background-color: cyan;
+            border: solid white;
+            min-width: 100px;
+            min-height: 100px;
+            font-size: 40px;
+            word-spacing: 390px;
+        }
+        
+        &lt;/style></span>
+</p>
+
+<p class="left">Outcome:</p>
+
+<style>
+
+.grid-container {
+    display: grid;
+    background-color: gray;
+    border: 3px solid black;
+}
+
+.grid-item {
+    background-color: cyan;
+    border: solid white;
+    min-width: 100px;
+    min-height: 100px;
+    font-size: 40px;
+    word-spacing: 390px;
+}
+
+
+</style>
+
+    
+<div class="grid-container">
+
+<div class="grid-item grid-item-1" > Item 1</div>
+
+<div class="grid-item grid-item-2" style="background-color: rgb(0, 174, 255);">Item 2</div>
+
+<div class="grid-item grid-item-3">Item 3</div>
+
+</div>
+    
+<p>As you can see, <Span>display: grid;</Span> by it's own doesn't effect the <Span>content</Span>.</p>
+
+<hr style="height:1px; background-color:black; border: solid black;">
+
+<section id="eleven"> 
+
+<h2>grid-template-columns and grid-template-rows properties</h2>
+
+<p>The <Span>grid-template-columns</Span> property defines the <Span>width</Span> of the <span>columns</span>,
+if for example I wanted the <Span>first column</Span> to be <span>200px</span> and the <span>second column</span>
+to be <span>100px</span> I could write <Span>grid-template-columns: 200px 100px;</Span>, see the example below:</p>
+
+<p><span>&lt;div class="grid-container" style="grid-template-columns: 100px 200px"&gt;</span></p>
+<div class="grid-container" style="grid-template-columns: 105px 200px">
+
+    <div class="grid-item grid-item-1" > Item 1</div>
+    
+    <div class="grid-item grid-item-2" style="background-color: rgb(0, 174, 255);">Item 2</div>
+    
+    <div class="grid-item grid-item-3">Item 3</div>
+    
+    </div>
+
+<p>Another way to defien the <span>width</span> is with <span>fr</span>, which is useful if you want one 
+of your <Span>items</Span> to have <Span>twice</Span> the <Span>width</span> of the other, you simply write 
+    <Span>grid-template-columns: 2fr 1fr;</Span>, see example below:</p>
+
+    <p><span>&lt;div class="grid-container" style="grid-template-columns: 2fr 1fr; width:100%;"&gt;</span></p>
+    <div class="grid-container" style="grid-template-columns: 2fr 1fr ; width:100%;">
+    
+        <div class="grid-item grid-item-1" > Item 1</div>
+        
+        <div class="grid-item grid-item-2" style="background-color: rgb(0, 174, 255);">Item 2</div>
+        
+        <div class="grid-item grid-item-3">Item 3</div>
+        
+        </div>
+
+<p>Another thing you can do if you want to <span>size multiple columns</span> so you 
+don't have to write veryone again and again, you can write <span>repeat(3, 100px)</span> and 
+that will make the <Span>first three columns</Span> get <span>100 width</span>, see example below:</p>
+
+<p><span>&lt;div class="grid-container" style="grid-template-columns: repeat(3, 100px);"&gt;</span></p>
+    <div class="grid-container" style="grid-template-columns: repeat(3, 100px);">
+    
+        <div class="grid-item grid-item-1" > Item 1</div>
+        
+        <div class="grid-item grid-item-2" style="background-color: rgb(0, 174, 255);">Item 2</div>
+        
+        <div class="grid-item grid-item-3">Item 3</div>
+        
+        </div>
+
+<p>The <span>grid-template-rows</span> property works the same way, but it defines the <Span>height</Span>, of 
+each <Span>row</Span>, see example below:</p>
+
+<p><span>&lt;div class="grid-container" style="grid-template-columns: repeat(2, 100px); grid-template-rows: 2fr 1fr;"&gt;</span></p>
+    <div class="grid-container" style="grid-template-columns: repeat(2, 100px); grid-template-rows: 2fr 1fr;">
+    
+        <div class="grid-item grid-item-1" > Item 1</div>
+        
+        <div class="grid-item grid-item-2" style="background-color: rgb(0, 174, 255);">Item 2</div>
+        
+        <div class="grid-item grid-item-3">Item 3</div>
+        
+        </div>
+    </section>
+
+<hr style="height:1px; background-color:black; border: solid black;">
+
+<section id="twelve">
+
+<h2>grid-auto-columns and grid-auto-rows properties</h2>
+
+<p>You can use these properties to define what the <Span>default width/height</Span> of 
+<Span>columns/rows</Span> should be if you haven't defined it already, thats very useful when 
+you are using many <Span>items</Span> but only want to size few.</p>
+
+<p>Something I want to add, which can be used for both <span>grid-auto-rows/columns</span> and 
+<span>grid-template-rows/columns</span> is the <span>minmax()</span> value, before I spoke about 
+the <span>reapeat()</span>, the <span>minmax()</span> value is another helpful keyword used to 
+define the <span>minimum</span> and <span>maximum</span> <span>width/height</span> a <span>column/row</span>
+can get based on the <span>content</span> it has inside it, if for example I wanted to make it so 
+the more <Span>words</Span> that get written inside the <span>item</span> the taller it gets, 
+I would write <Span>grid-auto-rows: minmax(150px, auto);</Span>, this would make all 
+<Span>rows</Span> that <span>aren't defined</span> have <span>150px</span> height, unless 
+the <span>content</span> inside of them doesn't fit, in which case they get <span>taller</span>, pretty cool huh?</p>
+
+</section>
+
+<hr style="height:1px; background-color:black; border: solid black;">
+
+<Section id="twelve-2"> 
+
+<h2>grid-gap, grid-row-gap and grid-column-gap properties</h2>
+
+<p>As you probably guessed, these properties are used to define the <Span>gaps</Span> between the 
+<span>items</span> inside the <Span>grid container</Span>. Lets make it so it has <span>10px gap</span> between
+each <Span>row</Span>, and <span>20px gap</span> between each <span>column</span>.</p>
+
+<p><span>&lt;div class="grid-container" style="grid-template-columns: repeat(2, 200px); grid-template-rows: 2fr 1fr; grid-row-gap: 10px; grid-column-gap: 20px;"&gt;</span></p>
+    <div class="grid-container" style="grid-template-columns: repeat(2, 200px); grid-template-rows: 2fr 1fr; grid-row-gap: 10px; grid-column-gap: 20px;">
+    
+        <div class="grid-item grid-item-1" > Item 1</div>
+        
+        <div class="grid-item grid-item-2" style="background-color: rgb(0, 174, 255);">Item 2</div>
+        
+        <div class="grid-item grid-item-3">Item 3</div>
+        
+        </div>
+
+<p>The <span>grid-gap</span> can be used to define both <span>row-gap</span> and <span>column-gap</span>, see example below: </p>
+
+<p><span>&lt;div class="grid-template-columns: repeat(2, 200px); grid-template-rows: 2fr 1fr; grid-gap: 10px 20px;"&gt;</span></p>
+    <div class="grid-container" style="grid-template-columns: repeat(2, 200px); grid-template-rows: 2fr 1fr; grid-gap: 10px 20px;">
+    
+        <div class="grid-item grid-item-1" > Item 1</div>
+        
+        <div class="grid-item grid-item-2" style="background-color: rgb(0, 174, 255);">Item 2</div>
+        
+        <div class="grid-item grid-item-3">Item 3</div>
+        
+        </div>
+
+        </Section>
+<hr style="height:1px; background-color:black; border: solid black;">
+
+
+<section id="thirteen">
+
+<h1>The grid-template-areas and grid-area properties</h1>
+
+<p>The <span>grid-template-areas</span> is used inside the <span>grid-container</span> to define 
+different <Span>grid-areas</Span> and how they should be structured, for example, I would write 
+<span>grid-template-areas: "header header"</span> and if I then went to the <Span>first item</Span>
+and wrote <span>grid-area: header</span> it would take the <span>first two columns</span>, see example below: </p>
+
+
+<p class="left">Code: <br><br><span class="code10">&lt;div class="grid-container" style="grid-template-columns: repeat(2, 200px); grid-gap: 10px 20px; height: 400px; grid-template-areas:   
+    'header header content content' 
+    'sidebar sidebar header2 header3'  
+    'sidebar sidebar header2 header3';"&gt;
+
+    &lt;div class="grid-item grid-item-1" style="grid-area: header;" > Item 1&lt;/div>
+        
+    &lt;div class="grid-item grid-item-2" style="background-color: rgb(0, 174, 255); grid-area: sidebar;">Item 2&lt;/div>
+    
+    &lt;div class="grid-item grid-item-3" style="grid-area: content;">Item 3&lt;/div>
+    
+    &lt;div class="grid-item grid-item-3" style="grid-area: header2;">Item 4&lt;/div>
+
+    &lt;div class="grid-item grid-item-3" style="grid-area: header3;">Item 5&lt;/div>
+
+    &lt;/div></span></p>
+
+    <p class="left">Outcome:</p>
+    <div class="grid-container" style="grid-template-columns: repeat(2, 200px); grid-gap: 10px 20px; height: 400px; grid-template-areas: 
+    'header header content content'
+    'sidebar sidebar header2 header3' 
+    'sidebar sidebar header2 header3';">
+    
+        <div class="grid-item grid-item-1" style="grid-area: header;" > Item 1</div>
+        
+        <div class="grid-item grid-item-2" style="background-color: rgb(0, 174, 255); grid-area: sidebar;">Item 2</div>
+        
+        <div class="grid-item grid-item-3" style="grid-area: content;">Item 3</div>
+        
+        <div class="grid-item grid-item-3" style="grid-area: header2;">Item 4</div>
+
+        <div class="grid-item grid-item-3" style="grid-area: header3;">Item 5</div>
+
+
+
+        </div>
+
+</section>
+<hr style="height:1px; background-color:black; border: solid black;">
+
+<section id="fourteen">
+
+<h1>The grid-column/row-start, grid-column/row-end and grid-column/row properties</h1>
+
+<p>Just like before, we can use these properties to define how we want our <span>items</span>
+to <span>display</span>, for example, if I wanted the <Span>first item</Span> to take <span>two columns</span>
+I would write <span>grid-column-start: 1</span> so it starts at <Span>first column</Span>, and 
+<span>grid-column-end: 3</span>, so it ends <Span>before the third column</Span>, that would make it take 
+<span>two columns</span>, if you want it to take the <Span>whole column</Span> you could also just write 
+<Span>grid-column-start: 1</Span> and then <Span>grid-column-end: -1</Span> and it would take the 
+<Span>whole column</Span>.</p>
+
+
+<p class="left">Code: <br><br><span class="code10">&lt;div class="grid-container" style="grid-template-columns: repeat(2, 200px); grid-gap: 10px 20px; height: 400px;">
+
+    &lt;div class="grid-item grid-item-1" style="grid-column-start: 1; grid-column-end: 3;"> Item 1&lt;/div>
+    
+    &lt;div class="grid-item grid-item-2" style="background-color: rgb(0, 174, 255); grid-column-start: 1; grid-column-end: 3; grid-row-start: 2; grid-row-end: 4;">Item 2&lt;/div>
+    
+    &lt;div class="grid-item grid-item-3" style="grid-column-start: 3; grid-column-end: 5;">Item 3&lt;/div>
+    
+    &lt;div class="grid-item grid-item-3" style="grid-column-start: 3; grid-column-end: 4;  grid-row-start: 2; grid-row-end: 4;">Item 4&lt;/div>
+
+    &lt;div class="grid-item grid-item-3" style="grid-column-start: 4; grid-column-end: 5;  grid-row-start: 2; grid-row-end: 4;">Item 5&lt;/div>
+
+    &lt;/div></span></p>
+
+    <p class="left">Outcome:</p>
+
+<div class="grid-container" style="grid-template-columns: repeat(2, 200px); grid-gap: 10px 20px; height: 400px;">
+
+    <div class="grid-item grid-item-1" style="grid-column-start: 1; grid-column-end: 3;"> Item 1</div>
+    
+    <div class="grid-item grid-item-2" style="background-color: rgb(0, 174, 255); grid-column-start: 1; grid-column-end: 3; grid-row-start: 2; grid-row-end: 4;">Item 2</div>
+    
+    <div class="grid-item grid-item-3" style="grid-column-start: 3; grid-column-end: 5;">Item 3</div>
+    
+    <div class="grid-item grid-item-3" style="grid-column-start: 3; grid-column-end: 4;  grid-row-start: 2; grid-row-end: 4;">Item 4</div>
+
+    <div class="grid-item grid-item-3" style="grid-column-start: 4; grid-column-end: 5;  grid-row-start: 2; grid-row-end: 4;">Item 5</div>
+
+
+
+    </div>
+
+<p>Another way to do this is by using only the <Span>grid-column/row property</Span>, to make an <span>item</span>
+start at <span>first column</span> and end before <span>third column</span> you can write <span>grid-column: 1/3</span>, lets try this:</p>
+
+
+<p class="left">Code: <br><br><span class="code10">&lt;div class="grid-container" style="grid-template-columns: repeat(2, 200px); grid-gap: 10px 20px; height: 400px;">
+
+    &lt;div class="grid-item grid-item-1" style="grid-column: 1/3;"> Item 1&lt;/div>
+    
+    &lt;div class="grid-item grid-item-2" style="background-color: rgb(0, 174, 255); grid-column: 1/3; grid-row: 2/4;">Item 2&lt;/div>
+    
+    &lt;div class="grid-item grid-item-3" style="grid-column: 3/5;">Item 3&lt;/div>
+    
+    &lt;div class="grid-item grid-item-3" style="grid-column: 3/4; grid-row: 2/4;">Item 4&lt;/div>
+
+    &lt;div class="grid-item grid-item-3" style="grid-column: 4/5; grid-row: 2/4;">Item 5&lt;/div>
+
+    &lt;/div></span>&lt;/p>
+
+    &lt;p class="left">Outcome:&lt;/p>
+
+<div class="grid-container" style="grid-template-columns: repeat(2, 200px); grid-gap: 10px 20px; height: 400px;">
+
+    <div class="grid-item grid-item-1" style="grid-column: 1/3;"> Item 1</div>
+    
+    <div class="grid-item grid-item-2" style="background-color: rgb(0, 174, 255); grid-column: 1/3; grid-row: 2/4;">Item 2</div>
+    
+    <div class="grid-item grid-item-3" style="grid-column: 3/5;">Item 3</div>
+    
+    <div class="grid-item grid-item-3" style="grid-column: 3/4; grid-row: 2/4;">Item 4</div>
+
+    <div class="grid-item grid-item-3" style="grid-column: 4/5; grid-row: 2/4;">Item 5</div>
+
+
+
+    </div>
+
+<p>You can also use <span>span number</span> if you want, which is pretty simple, if I wanted to make 
+an item take <span>two columns</span> for example you could simply write <span>grid-column: span 2</span>, however, <Span>span</Span>
+doesn't seem very flexible to me, since you only can define where the <span>item ends</span>, and not where the <span>item starts</span>.</p>
+
+</section>
+<hr style="height:1px; background-color:black; border: solid black;">
+
+<section id="fourteen-2"> 
+<h1>The justify-content, align-content, justify-items, align-items, align-self and justify-self properties</h1>
+
+<P>Some of these properties are also used on <Span>flexbox</Span>, so there isn't really much to speak about these, 
+the only <span>new property</span> we see is the <span>justify-items</span> property, which works 
+pretty much the same with <Span>align-items</Span>, but for the <Span>x axis</Span>, this property doesn't 
+exist in <Span>flexbox</Span> because it isn't needed.</P>
+
+<p>Something <span>important</span> you need to remember is the when you want to <span>align</span> the 
+<span>content</span> or <span>items</span> to the <span>start</span> or <span>end</span> you don't 
+write <span>flex-start/end</span> like when we used <span>flexbox</span>, you simply write <span>start/end</span>.</p>
+
+<p>The <span>justify-items</span> property by default has the <span>stretch</span> value, which makes the <span>items</span> stretch 
+to <Span>fill</Span> the <Span>screen</Span> on the <span>x axis</span>, this is only seen if 
+you haven't specified a <span>width</span> or <span>max-width</span>, this property can take many values, 
+such as <span>end</span>, <span>start</span>, <span>center</span>, <span>stretch</span>, etc.</p>
+
+<p>The <span>justify-content</span> property <span>aligns</span> the <Span>content</Span>, by 
+default it's value is <span>start</span>, it can like I said in the <Span>flex-box section</Span> 
+take few values such as <span>start</span>, <span>center</span>, <Span>end</Span>, <span>space-between</span>, <span>space-around</span>, etc.</p>
+
+<p>The <span>align-items</span> and <span>align-content</span> work the same as the <span>justify</span> properties,
+the only difference is that they <span>align</span> the <span>content/items</span> vertically on the <span>y axis</span>.</p>
+
+<p>The <span>align-self</span> and <span>justify-self</span> properties work exactly like <span>align-items</span>
+and <span>justify-items</span> but you can use the properties on <Span>each item seperately</Span>, these 
+properties <span>override</span> the <span>justify-items</span> and <span>align-items</span> properties.  </p>
+</section>
+<hr style="height:1px; background-color:black; border: solid black;">
+
+<section id="fifteen">
+
+<h2>Tutorial about display: grid;</h2>
+
+<iframe style="display:block; margin:auto; width:733px; height:413px; margin-top: 20px;" src="https://www.youtube.com/embed/9zBsdzdE4sM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</section>
+</article>
+
+<hr>
+</body>
+</html>

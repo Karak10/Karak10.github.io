@@ -1,0 +1,3590 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<title> Page nineteen of my notes </title>
+<meta charset="UTF-8"> 
+<link href="../CSS-JavaScript-External-Files/HTMLnotes.css" rel="stylesheet">
+<Style>
+    .left {
+        text-align: left;
+    }
+    
+    .code10 {
+    white-space: pre-wrap;
+    background-color: lightgreen;
+    
+    }
+    
+    p {
+    text-align:center;
+    }
+    h1 {
+    text-align:center;
+    }
+    h2 {
+    text-align:center;
+    }
+    h3 {
+    text-align:center;
+    }
+    .c {
+    background-color:lightgreen;
+    }
+    hr {
+    width:100%;
+    height:15px;
+    background-color:black;
+    color:black;
+    border: black solid;
+    }
+    body {
+    background-color:rgb(165, 235, 235);
+    }
+    span {
+    background-color:lightgreen;
+    }
+    
+    a:link {
+    color: black;
+    text-shadow: 1px 0px 1px black;
+    
+    }
+    
+    a:visited {
+    color: black;
+    text-shadow: 1px 0px 1px rgb(22, 22, 22);
+    }
+    
+    a:hover {
+    text-decoration: underline;
+    color: red;
+    text-shadow: 1px 0px 1px black;
+    }
+    
+    </style> 
+</head>
+<body>
+
+<hr>
+
+    <header> 
+    <h1> Page seven of my JavaScript notes </h1>
+    </header>
+    
+<article id="start-of-page"> 
+  
+<div id="homepages">
+
+    <h3>Home Pages:</h3>
+   
+
+</div>
+
+<nav data-notes="JavaScript" data-page="7">
+
+</nav>
+
+    <h3> Informations included in this page:</h3>
+        <p><a href="../JavaScript-Notes/Notes19.html#one">The call(), apply() and bind() function methods</a></p>
+        <p><a href="../JavaScript-Notes/Notes19.html#two">Array concat() Method</a></p>
+        <p><a href="../JavaScript-Notes/Notes19.html#three">The Array splice() Method</a></p>
+        <p><a href="../JavaScript-Notes/Notes19.html#four">The Spread Operator</a></p>
+        <p><a href="../JavaScript-Notes/Notes19.html#five">ES6 Classes</a></p>
+        <p><a href="../JavaScript-Notes/Notes19.html#six">A simple explanation of JavaScript Iterators</a></p>
+        <p><a href="../JavaScript-Notes/Notes19.html#seven">The map object</a></p>
+        <p><a href="../JavaScript-Notes/Notes19.html#eight">The Set object</a></p>
+        <p><a href="../JavaScript-Notes/Notes19.html#nine">The setTimeout() Method</a></p>
+        <p><a href="../JavaScript-Notes/Notes19.html#ten">Function Callbacks</a></p>
+        <p><a href="../JavaScript-Notes/Notes19.html#eleven">ES6 Promise Object</a></p>
+        <p><a href="../JavaScript-Notes/Notes19.html#twelve">More on Function Callbacks and Promises</a></p>
+        <p><a href="../JavaScript-Notes/Notes19.html#thirteen">JavaScript Async Await</a></p>
+
+</article>
+
+ <script src="../CSS-JavaScript-External-Files/nav.js"></script>
+
+<hr>
+
+<article id="one">
+
+    <header>
+
+     <h1>The call(), apply() and bind() function methods</h1>
+
+    </header>
+
+    <h3><u>About the call() method:</u></h3>
+
+    <p>With the <Span>call()</Span> method, you can write a <Span>method</Span> 
+    that can be used on <Span>different objects</Span>.</p>
+
+    <p>In <span>JavaScript</span> all <Span>functions</Span> are 
+    <Span>object methods</Span>, if a <Span>function</Span> isn't a <Span>method</Span>
+    of a <Span>JavaScript object</Span>, it is a <Span>function of the global object</Span>. </p>
+
+    <p>The example below creates an <Span>object</Span> with <span>3 properties</span>, firstName, 
+    lastName and fullName.</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let person = {
+        firstName: "Alex",
+        lastName: "Gkiafis",
+        fullName: function(){
+            return `${this.firstName} ${this.lastName}`; 
+        }
+    }
+   
+    document.write( person.fullName() );</Span></p>
+
+<p class="left">Outcome:</p>
+
+ <Script>
+
+ if(true){
+
+ let person = {
+     firstName: "Alex",
+     lastName: "Gkiafis",
+     fullName: function(){
+         return `${this.firstName} ${this.lastName}`; 
+     }
+ }
+
+ document.write( person.fullName() );
+
+ }
+
+ </script>
+
+<p>The <Span>call()</Span> method is a <span>predefined JavaScript method</span>, it 
+can be used to <span>invoke</span> (call) a <span>method</span> with an 
+<span>owner object</span> as an <span>argument</span> (parameter).</p>
+
+<p>Let's make a <span>person2</span> for example, and use <Span>fullName</Span> method 
+of <Span>person</Span> to <Span>person2</Span>:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let person = {
+    firstName: "Alex",
+    lastName: "Gkiafis",
+    fullName: function(){
+        return `${this.firstName} ${this.lastName}`; 
+    }
+}
+
+let person2 = {
+    firstName: "Christina", 
+    lastName: "Classified"
+}
+
+document.write( person.fullName.call(person2) );</Span></p>
+
+<p class="left">Outcome:</p>
+
+ <Script>
+
+ if(true){
+
+ let person = {
+     firstName: "Alex",
+     lastName: "Gkiafis",
+     fullName: function(){
+         return `${this.firstName} ${this.lastName}`; 
+     }
+ }
+
+ let person2 = {
+     firstName: "Christina", 
+     lastName: "Classified"
+ }
+
+document.write( person.fullName.call(person2) );
+
+ }
+
+ </script>
+
+<p>The <span>call()</span> method can also accept <span>arguments</span>:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let person = {
+    firstName: "Alex",
+    lastName: "Gkiafis",
+    fullName: function(a, b, ...c){
+
+        let fullname = `${this.firstName} ${this.lastName}, ${a}, ${b}`;
+
+        let arr = [];
+        
+        for( let i of c){ 
+         arr.push( `, ${i}` )
+        } 
+        
+        let extra_arguments = arr.join('');
+
+        return fullname + extra_arguments + ".";
+    }
+}
+
+let person2 = {
+    firstName: "Christina", 
+    lastName: "Classified"
+}
+
+document.write( person.fullName.call(person2, "pizza", "cat", "videgames", "anime", "etc") );</Span></p>
+
+<p class="left">Outcome:</p>
+
+ <Script>
+
+ if(true){
+
+ let person = {
+     firstName: "Alex",
+     lastName: "Gkiafis",
+     fullName: function(a, b, ...c){
+         let fullname = `${this.firstName} ${this.lastName}, ${a}, ${b}`;
+
+         let arr = [];
+         
+         for( let i of c){ 
+          arr.push( `, ${i}` )
+         } 
+         
+         let extra_arguments = arr.join('');
+
+         return fullname + extra_arguments + ".";
+     }
+ }
+
+ let person2 = {
+     firstName: "Christina", 
+     lastName: "Classified"
+ }
+
+document.write( person.fullName.call(person2, "pizza", "cat", "videgames", "anime", "etc") );
+
+ }
+
+ </script>
+
+ <p>So, let's play around with <Span>call()</Span> method a little more:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10"><Span class="gray">// this references the object the function belongs to</Span>
+let example = function(name, age){
+    document.write(name + age + this)
+} 
+
+<Span class="gray">// this will reference the global object</Span>
+example("Alex ", 15);
+
+let person = {
+    example: "example"
+}
+
+<span class="gray">// this will reference the person object</Span>
+example.call(person, "&lt;br> Chrisina ", 18);</Span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+if(true){
+
+// this references the object the function belongs to
+let example = function(name, age){
+    document.write(name + age + this)
+} 
+
+// this will reference the global object
+example("Alex ", 15);
+
+let person = {
+    example: "example"
+}
+
+// this will reference the person object
+example.call(person, "<br> Chrisina ", 18);
+
+}
+
+</Script>
+
+
+
+<h3><u>About the apply() method:</u></h3>
+
+<p>The <span>apply()</span> method works in a similar way to the <Span>call()</Span>
+method, the only difference is the way these two <span>methods</span> can take 
+<span>extra arguments</span>, while with <span>call()</span> we could simple 
+add the <Span>arguments</Span> after the <Span>first parameter</Span> 
+which is used to pick an <Span>object</Span>, the <Span>apply()</Span> method 
+only takes <Span>arguments</Span> as an <Span>array.</Span>.</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let person = {
+    firstName: "Alex",
+    lastName: "Gkiafis",
+    fullName: function(){
+        let fullname = `${this.firstName} ${this.lastName}`;
+        
+        let arr = []
+
+        for( let i of arguments){
+        arr.push(`, ${i}`);
+        }
+  
+        let extra_arguments = arr.join('');
+
+        return fullname + extra_arguments + ".";
+    }
+}
+
+let person2 = {
+    firstName: "Pewdie",
+    lastName: "Pie"
+}
+
+document.write( person.fullName.apply(person2, ["pizza", "cats", "videogames", "animes"]) );</Span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let person = {
+    firstName: "Alex",
+    lastName: "Gkiafis",
+    fullName: function(){
+        let fullname = `${this.firstName} ${this.lastName}`;
+        
+        let arr = []
+
+        for( let i of arguments){
+        arr.push(`, ${i}`);
+        }
+  
+        let extra_arguments = arr.join('');
+
+        return fullname + extra_arguments + ".";
+    }
+}
+
+let person2 = {
+    firstName: "Pewdie",
+    lastName: "Pie"
+}
+
+document.write( person.fullName.apply(person2, ["pizza", "cats", "videogames", "animes"]) );
+
+}
+
+
+</script>
+
+<P>This little difference may seem useless, but it can come very handy when you want 
+    to use an <Span>array</Span> for your <Span>argument list</Span>. For example, 
+    do you remember the <Span>math object</Span>? We can use it's <Span>math</Span>
+    method on an <Span>array</Span> to get the <Span>highest number</Span> of the <Span>array</Span>:
+</P>
+
+<p>If we did that like this, it wouldn't work:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let arr = [1, 2, 3]
+
+    document.write( Math.max(arr) );</Span></p>
+
+<p class="left">Outcome:</p>
+<script>
+
+if(true){
+let arr = [1, 2, 3]
+
+document.write( Math.max(arr) );
+}
+
+</script>
+
+<p>If however we used the <Span>apply()</Span> method to use 
+the <Span>max</Span> method of the <Span>Math</Span> object on a 
+<Span>null</Span> object (null represents nothing, so we basically skip whe first parameter)
+we can add <Span>arguments</Span> to the <Span>max</Span> method as an <Span>array</Span>:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let arr = [1, 2, 3]
+
+    document.write( Math.max.apply(null, arr) );</Span></p>
+
+<p class="left">Outcome:</p>
+<script>
+
+if(true){
+let arr = [1, 2, 3]
+
+document.write( Math.max.apply(null, arr) );
+}
+
+</script>
+
+<h3>About the bind method</h3>
+
+<p>The <Span>bind</Span> method is pretty similar to <Span>call</Span> method, 
+however, instead of <Span>calling</Span> the <Span>function</Span> inside a 
+specified <span>object</span> it creates a <span>copy</span> of the <Span>function</Span> 
+inside a specified <Span>object</Span>, here is an example:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">function example(name, age){
+    document.write(name + age + this + "&lt;br>");
+}
+
+let obj = {};
+
+example.bind(obj, "Alex "); <Span class="gray">// this does nothing</span>
+
+let example2 = example.bind(obj, "Christina ", 18); <Span class="gray">// this creates the copy</span>
+example2(); <Span class="gray">// this calls the copy</span>
+
+let example3 = example.bind(obj); <Span class="gray">// if you create the copy like this</span>
+example3("Jerry ", 15) <Span class="gray">// then you can add arguments later like that</span>
+
+let example4 = example.bind(obj, "Jonathan"); <Span class="gray">// if you only added the first argument</span>
+example4(19); <Span class="gray">// then you would only be able to define the second argument later</span></span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+function example(name, age){
+    document.write(name + age + this + "<br>");
+}
+
+let obj = {};
+
+example.bind(obj, "Alex "); // this does nothing
+
+let example2 = example.bind(obj, "Christina ", 18); // this creates the copy
+example2(); // this calls the copy
+
+let example3 = example.bind(obj); // if you create the copy like this
+example3("Jerry ", 15) // then you can add arguments later like that
+
+let example4 = example.bind(obj, "Jonathan"); // if you only added the first argument
+example4(19); // then you would only be able to define the second argument later
+}
+
+
+</script>
+
+</article>
+
+<hr>
+
+<article id="two">
+
+<header>
+
+<h1>Array concat() Method</h1>
+
+</header>
+
+
+<p>The <Span>concat()</Span> method is used to <Span>join two or more arrays</Span>, 
+This <span>method</span> does <Span>not</Span> change the <Span>existing arrays</span>, but 
+<Span>returns</Span> a <Span>new array</Span>, containing the <Span>values</Span> of the 
+<Span>joined arrays</Span>, see example below:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let arr1 = [1, 2];
+
+    let arr2 = [3, 4];
+     
+    let arr3 = [2, 1];
+    
+    document.write( arr1.concat(arr2, arr3) );</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let arr1 = [1, 2];
+
+let arr2 = [3, 4];
+ 
+let arr3 = [2, 1];
+
+document.write( arr1.concat(arr2, arr3) );
+
+}
+
+
+</script>
+
+
+
+</article>
+
+<hr> 
+
+<article id="three">
+
+<header>
+
+<h1>The Array splice() Method</h1>
+
+</header>
+
+<p>The <Span>splice()</Span> method <Span>adds/removes</Span> items <Span>to/from</Span>
+an <Span>array</Span>. The <Span>first parameter</Span> is required and it specifies at what <Span>position</Span> to <Span>add/remove</Span>
+items, the <span>second parameter</span> is optional and it specifies the <Span>number of items</Span>
+to be <Span>removed</Span>, if set to <span>0</span> no items will be removed, all 
+<Span>other parameters</Span> are the items you want to add.</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">arr = ["One", "Test", "Five"];
+
+    arr.splice(1, 1, "Two", "Three", "Four");
+    
+    document.write( arr );
+    </Span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+arr = ["One", "Test", "Five"];
+
+arr.splice(1, 1, "Two", "Three", "Four");
+
+document.write( arr );
+
+}
+
+</script>
+
+<p>In the example above, I chose the <span>position 1</span>, and chose to 
+<Span>remove 1 item</Span>, so <Span>"Test"</Span> item, which was at the 
+<Span>position 1</Span> was <Span>removed</Span> and then the items I wanted were 
+added. If I changed the <Span>second parameter</Span> to <span>2</span> then 
+the <span>"Five"</span> item would be removed too, if I changed it to <Span>0</Span>, 
+no items would be removed, like this:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">arr = ["One", "Test", "Five"];
+
+    arr.splice(1, 0, "Two", "Three", "Four");
+    
+    document.write( arr );
+    </Span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+arr = ["One", "Test", "Five"];
+
+arr.splice(1, 0, "Two", "Three", "Four");
+
+document.write( arr );
+
+}
+
+</script>
+
+</article>
+
+<hr>
+
+<article id="four">
+
+<header>
+
+<h1>The Spread Operator</h1>
+
+</header>
+
+<p>The <Span>spread operator</Span> is similar to the <Span>Rest Parameter</Span> 
+I talked about earlier, but it has another purpose when used in <Span>objects</Span>
+or <Span>arrays</Span> or <Span>function calls</Span> (arguments).</p>
+
+<h3><u>Spread in function calls:</u></h3>
+
+<p>So, if you wanted to pass the <Span>elements</Span> of an <Span>array</Span> 
+as <Span>arguments</Span> to a <span>function</span>, how would you do this? Before 
+<Span>ES6</Span>, we would use the <Span>apply method</Span>, which let's us 
+add <Span>arguments</Span> as <Span>arrays</Span>, I talked about the <Span>apply()</Span>
+method before, here is an example:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">function example(a,b,c,d){
+    return a + b + c + d;
+}
+
+let arr = ["1", "2", "3", "4"];
+
+document.write( example.apply(null, arr) );</span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+if(true){
+
+function example(a,b,c,d){
+    return a + b + c + d;
+}
+
+let arr = ["1", "2", "3", "4"];
+
+document.write( example.apply(null, arr) );
+
+}
+
+
+</Script>
+
+<p>If I had simple wrote <Span>example(arr)</Span> the <Span>array</Span> would 
+be assigned to only the <Span>first argument</Span> of the <Span>function</Span>, 
+and all the other <Span>arguments</Span> would be empty.</p>
+
+<p><span>ES6</span> provides an <Span>easier way</Span> to do the example above with 
+<Span>spread operators</Span>:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let example = function(a,b,c,d){
+    return a + b + c + d;
+}
+
+let arr = ["1", "2", "3"];
+
+document.write( example(...arr, "4") );</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let example = function(a,b,c,d){
+    return a + b + c + d;
+}
+
+let arr = ["1", "2", "3"];
+
+document.write( example(...arr, "4") );
+
+}
+
+
+
+</script>
+
+<h3><u>Spread in array literals:</u></h3>
+
+<p>Before <Span>ES6</Span>, we used the following syntax to add an <Span>item</Span>
+at the <Span>middle of an array</Span>:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">var arr = ["One", "Two", "Five"];
+
+    arr.splice(2, 0, "Three", "Four");
+    
+    document.write( arr );</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let arr = ["One", "Two", "Five"];
+
+arr.splice(2, 0, "Three", "Four");
+
+document.write( arr );
+
+}
+
+
+
+</script>
+
+
+<p>You can use <span>methods</span> such as <span>push</span>, <Span>splice</Span>, 
+and <Span>concat</Span>, for example, to achieve this in different <Span>positions</Span>
+of the <Span>array</Span>, however, in <Span>ES6</Span> the <Span>spread operator</Span>
+lets us do this more easily like this:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let newArr = ["Three", "Four"];
+
+    let arr = ["One", "Two", ...newArr, "Five"];
+    
+    document.write( arr );</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let newArr = ["Three", "Four"];
+
+let arr = ["One", "Two", ...newArr, "Five"];
+
+document.write( arr );
+
+}
+
+
+</script>
+
+<h3><u>Spread in object literals:</u></h3>
+
+<p>In <span>objects</span> it <Span>copies</Span> the <Span>own enumerable properties</span>
+from the <span>provided object</span> onto a <span>new object</span>:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let obj1 = { name: "Alex", x: 5 };
+    let obj2 = { name: "Christina", y: 10 };
+    
+    let clonedObj = {...obj1}; // { name: "Alex", x: 5 }
+    let mergedObj = {...obj1, ...obj2}; // { name: "Christina", x: 5, y: 10 }
+    
+    document.write( `${clonedObj.name} ${mergedObj.name} ${mergedObj.x}` );</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let obj1 = { name: "Alex", x: 5 };
+let obj2 = { name: "Christina", y: 10 };
+
+let clonedObj = {...obj1}; // { name: "Alex", x: 5 }
+let mergedObj = {...obj1, ...obj2}; // { name: "Christina", x: 5, y: 10 }
+
+document.write( `${clonedObj.name} ${mergedObj.name} ${mergedObj.x}` );
+
+}
+
+</script>
+
+<p>However, if you try to <Span>merge</Span> the two <Span>objects</Span> in 
+    an <Span>array</Span> like 
+in the example below, it won't work:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let obj1 = { name: "Alex", x: 5 };
+    let obj2 = { name: " Christina", y: 10 };
+    
+    function merge(...arr){
+    return {...arr};
+    }
+    
+    let mergedObj = merge(obj1, obj2);
+    // {{ name: "Alex", x: 5 }, { name: "Christina", y: 10 }}
+    
+    document.write( mergedObj.name );</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let obj1 = { name: "Alex", x: 5 };
+let obj2 = { name: " Christina", y: 10 };
+
+function merge(...arr){
+return {...arr};
+}
+
+let mergedObj = merge(obj1, obj2);
+// {{ name: "Alex", x: 5 }, { name: "Christina", y: 10 }}
+
+document.write( mergedObj.name );
+
+}
+
+
+
+</script>
+
+<P><Span>Shallow cloning</Span> or <Span>merging objects</Span> is 
+possible with another <Span>operator</Span> called <Span>Object.assign()</Span>, 
+I talked about it before when I talked about <Span>ES6 Objects</Span>. </P>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let obj1 = { name: "Alex", x: 5 };
+    let obj2 = { name: " Christina", y: 10 };
+    
+    function merge(...arr){
+    return Object.assign({}, ...arr);
+    }
+    
+    let mergedObj = merge(obj1, obj2);
+    // {{ name: "Alex", x: 5 }, { name: "Christina", y: 10 }}
+    
+    document.write( mergedObj.name + mergedObj.x );</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let obj1 = { name: "Alex", x: 5 };
+let obj2 = { name: " Christina", y: 10 };
+
+function merge(...arr){
+return Object.assign({}, ...arr);
+}
+
+let mergedObj = merge(obj1, obj2);
+// {{ name: "Alex", x: 5 }, { name: "Christina", y: 10 }}
+
+document.write( mergedObj.name + mergedObj.x );
+
+}
+
+
+
+</script>
+
+</article>
+
+<hr>
+
+<article id="five">
+
+    <header>
+
+<h1>ES6 Classes</h1>
+
+     </header>
+
+<p>In this lesson I will explain how to create a <span>class</span> that can be used 
+to create <Span>multiple objects</Span> of the <Span>same structure</Span>, just like 
+<Span>object constructors</Span>.</p>
+
+<h3><u>The constructor method:</u></h3>
+
+<p>A <span>class</span> uses the keyword <span>class</span> and contains a <Span>constructor method</Span>
+for initializing.</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">class human{
+    constructor(n,a){
+        this.name = n;
+        this.age = a;
+    }
+}
+
+var person1 = new human("Alex", 16);
+var person2 = new human("Christina", 18);
+
+document.write( `Name: ${person1.name}, Age: ${person1.age} &lt;br> 
+Name: ${person2.name}, Age: ${person2.age}` );</Span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+class human{
+    constructor(n,a){
+        this.name = n;
+        this.age = a;
+    }
+}
+
+let person1 = new human("Alex", 16);
+let person2 = new human("Christina", 18);
+
+document.write( `Name: ${person1.name}, Age: ${person1.age} <br> 
+Name: ${person2.name}, Age: ${person2.age}` );
+
+}
+
+</script>
+
+<p><span>Class Declarations</span> are <Span>not hoiste</Span> while 
+<Span>Function Declarations</Span> are, if you try to access your <span>class</span>
+before declaring it, <Span>ReferenceError</Span> will be returned, if you try the same 
+thing with an <Span>object constructor</Span> it will work just fine:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">// This doesn't work:
+
+    var person1 = new human1("Christina", 18); 
+    
+    document.write( person1.name );
+    
+    var human1 = class {
+        constructor(n, a) {
+            this.name = n;
+            this.age = a;
+      }
+    };
+    
+    // This works just fine: 
+     
+    var person2 = new human2("Alex", 16);
+    
+    document.write(person2.name);
+    
+    function human2(n,a){
+        this.name = n;
+        this.age = a;
+    }</Span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+if(true){
+    let person1 = new human2("Alex", 16);
+
+document.write(person1.name);
+
+
+function human2(n,a){
+    this.name = n;
+    this.age = a;
+}
+}
+
+</Script>
+
+<p>The <Span>constructor</Span> is a special <Span>method</Span> which is used for 
+<Span>creating</Span> and <Span>initializing</Span> an <span>object</span> created
+with a <span>class</span>. There can only be <Span>one constructor</Span> in <Span>each class</Span>.
+</p>
+
+<h3><u>Class Methods:</u></h3>
+
+<p><span>ES6</span> introduced a <span>shorthand</span> that does not 
+require the keyword <Span>function</Span> for a function assigned to a 
+<Span>method's name</Span>. One type of <span>class method</Span> is the 
+<Span>prototype method</Span>, which is available to <Span>objects</Span>
+of the <Span>class</Span>.</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">class human {
+    constructor(a, b) {
+      this.firstName = a;
+      this.lastName = b;
+    }
+  
+    mergeNames() {
+        return `${this.firstName} ${this.lastName}` ;
+      }
+
+    get fullName() {
+      return this.mergeNames();
+    }
+}
+
+  var person = new human("Alex", "Gkiafis");
+  
+  document.write(person.fullName);</Span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+    let human = class{
+    constructor(a, b) {
+      this.firstName = a;
+      this.lastName = b;
+    }
+  
+    mergeNames() {
+        return `${this.firstName} ${this.lastName}` ;
+      }
+
+    get fullName() {
+      return this.mergeNames();
+    }
+}
+
+  let person = new human("Alex", "Gkiafis");
+  
+  document.write(person.fullName);
+}
+
+</script>
+
+<p>In the code above, <Span>mergeNames</Span> is a <Span>method</Span>, and 
+<Span>fullName</Span> is a <Span>getter</Span>, the difference between the two is 
+that if you wanted to acces <Span>mergeNames</Span> you would have to write 
+<span>person.mergeNames()</span>, while when you want to access a <Span>getter</Span>
+you simply write <Span>person.fullName</Span>. A <span>getter</span> must not have 
+any formal <Span>parameters</Span> or an error will return.</p>
+
+<p>Another type of <Span>method</Span> is the <Span>static method</Span>, which can be 
+called through a <Span>class instance</Span>. <Span>Static methods</Span> are often 
+used to create <Span>utility functions</Span> for an <Span>application</Span>.</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let human = class{
+    constructor(n,a){
+        this.name = n;
+        this.age = a;
+    }
+    
+    static age_gap(x,y){
+        let temp;
+        
+        if(x.age > y.age){
+            temp = x.age - y.age;
+        } else { temp = y.age - x.age };
+    
+        return `The age gap between ${x.name} and 
+        ${y.name} is ${temp} years.`;
+    }
+    
+    }
+    
+    let person1 = new human("Alex", 16);
+    let person2 = new human("Christina", 18);
+    
+    document.write( human.age_gap(person1, person2) );</Span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let human = class{
+constructor(n,a){
+    this.name = n;
+    this.age = a;
+}
+
+static age_gap(x,y){
+    let temp;
+    
+    if(x.age > y.age){
+        temp = x.age - y.age;
+    } else { temp = y.age - x.age };
+
+    return `The age gap between ${x.name} and 
+    ${y.name} is ${temp} years.`;
+}
+
+}
+
+let person1 = new human("Alex", 16);
+let person2 = new human("Christina", 18);
+
+document.write( human.age_gap(person1, person2) );
+
+}
+
+</script>
+
+<p>Try removing the <Span>static</Span> keyword and this won't work, why is that? Because 
+with <Span>static</Span> methods we are able to use the <Span>method</Span> without 
+using it through an <Span>object</Span>, if we did want to use that <Span>method</Span>
+without the <Span>static</Span> keyword we could write <Span>person2.age_gap(person1, person2)</Span> instead,
+that would do work, because we would use the <Span>method</Span> through the <Span>person2 object</Span>. 
+Conclusion: The <Span>static method</Span> can be <Span>called</Span> directly using 
+the <Span>class name</Span> without an <Span>object</Span>.</p>
+
+<p>Let's create a more advanced example now:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">class Point {
+    constructor(x, y) { 
+    // 7 or 3 , 2 or 8
+      this.x = x; // 7 or 3
+      this.y = y; // 2 or 8
+    }
+  
+    static distance(a, b) { 
+    // p1 , p2 
+      const dx = a.x - b.x; 
+    // 7 - 3 = 4
+      const dy = a.y - b.y; 
+    // 2 - 8 = -6
+      return Math.hypot(dx, dy); 
+    // √(4)² + (-6)² = √52 = 7.21110255...
+    }
+  }
+  
+  const p1 = new Point(7, 2);
+  const p2 = new Point(3, 8);
+  
+  document.write(Point.distance(p1, p2));</Span></p>
+
+  <p class="left">Outcome:</p>
+
+<Script>
+if(true){
+
+    class Point {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+  }
+  static distance(a, b) {
+    const dx = a.x - b.x;
+    const dy = a.y - b.y;
+    return Math.hypot(dx, dy);
+  }
+}
+const p1 = new Point(7, 2);
+const p2 = new Point(3, 8);
+
+document.write(Point.distance(p1, p2));
+}
+</Script>
+
+<p>This example uses math rules to calculate the distance between two points, to exaplain 
+    it easier I will need you to look at this image first:
+</p>
+
+<img src="../images/hypotenuse.jpg" style="display: block; margin: 20px auto 20px auto">
+
+<p>So, with the <Span>constructor</Span> we 
+created the points <Span>p1</Span> and <Span>p2</Span>, to find the distance between the two 
+we should use the <Span>hypotenuse</Span> formula, but in order to do that 
+we need to find the size of the two sides of the triangle, something 
+that we can easily do, by doing <Span>p1.x - p2.x</Span> to find the 
+side that's on the <Span>x axis</Span> and <Span>p1.y - p2.x</Span> to find the 
+side that's on the <Span>y axis</Span>. After we have done than we used the <Span>Math.hypot</Span>
+method to calculate the <Span>third side</Span> of the triangle, which is the 
+distance between <span>p1</span> and <Span>p2</Span>, the <span>hypotenuse</span>
+formula is <Span>a^2 + b^2 = c^2</Span> which can be changed to <Span>√a^2 + b^2 = c</Span>
+which in our example equals <Span>7.211102550927979</Span>.  </p>
+
+<h3><u>The extends keyword:</u></h3>
+
+<p>The <Span>extends</Span> keyword is used in <Span>class declarations</Span> or 
+<Span>class expressions</Span> to create a <Span>child of a class</Span>. The child 
+<Span>inherits</Span> the <Span>properties</Span> and <span>methods</span> of the 
+<Span>parent</span>.</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let animals = class{
+    constructor(n){
+        this.name = n;
+    }
+
+    speak(){
+        return `${this.name} makes a noise`; 
+    }
+}
+
+let dog = class extends animals{
+    speak(){
+        return `${this.name} barks`;
+    }
+}
+
+let dog_object = new dog("Dog");
+
+document.write( dog_object.speak() );</Span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+if(true){
+
+let animals = class{
+    constructor(n){
+        this.name = n;
+    }
+
+    speak(){
+        return `${this.name} makes a noise`; 
+    }
+}
+
+let dog = class extends animals{
+    speak(){
+        return `${this.name} barks`;
+    }
+}
+
+let dog_object = new dog("Dog");
+
+document.write( dog_object.speak() );
+
+}
+
+</Script>
+
+<p>As you can see the <Span>dog class</Span> inherited the <Span>name property</Span> 
+of the <span>animals class</span> and <Span>overwrote</Span> the <span>speak method</span>.</p>
+
+<p>If there is a <Span>constructor</Span> present in the <span>child class</span>, 
+it needs to first call <Span>super()</Span> before using <Span>this</Span>, else it won't work, 
+to keep the <Span>parent properties</Span> and add more, you should do this like this:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let animals = class{
+    constructor(n, a){
+        this.name = n;
+        this.age = a;
+    }
+}
+
+let dog = class extends animals{
+    constructor(n, c, a){
+        super(n, a)
+        this.color = c;
+    }
+}
+
+let dog_object = new dog("Bella", "brown", 3);
+
+document.write( dog_object.name );</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let animals = class{
+    constructor(n, a){
+        this.name = n;
+        this.age = a;
+    }
+}
+
+let dog = class extends animals{
+    constructor(n, c, a){
+        super(n, a)
+        this.color = c;
+    }
+}
+
+let dog_object = new dog("Bella", "brown", 3);
+
+document.write( dog_object.name );
+
+
+}
+
+
+
+    
+</script>
+
+<p>In the <Span>super()</Span> method you should add 
+the <Span>two constructor parameters</Span>, they don't have 
+to be named the same with the ones in <Span>animals class</Span>, they can be different, 
+the <Span>first parameter</Span> will be assigned to <Span>name property</Span>
+and <Span>second parameter</Span> to <Span>age property</Span>, 
+no matter the names you have chose, if you only add the <Span>super()</Span> method 
+without any <Span>parameters</Span> the <span>first two constructor parameters</span>
+will simple by <Span>undefined</Span>, and only the <Span>third parameter</Span>
+will be assigned to a <Span>property</Span>. Why does it work like this? I guess 
+it is because to <Span>merge</Span> the two <Span>constructors</Span> 
+we should redefine in which <Span>order</Span> the <Span>parameters</Span>
+should be.</p>
+ 
+<p>Also, the <Span>super</Span> keyword can be used to call <Span>parent's methods</Span>, like 
+in the example below:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let animals = class{
+    constructor(n){
+        this.name = n;
+    }
+
+    speak(){
+        document.write( `${this.name} makes a noise ` ); 
+    }
+}
+
+let dog = class extends animals{
+    speak(){
+        super.speak();
+        document.write( `${this.name} barks` );
+    }
+}
+
+let dog_object = new dog("Dog");
+
+dog_object.speak()</Span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+if(true){
+
+    let animals = class{
+    constructor(n){
+        this.name = n;
+    }
+
+    speak(){
+        document.write( `${this.name} makes a noise ` ); 
+    }
+}
+
+let dog = class extends animals{
+    speak(){
+        super.speak();
+        document.write( `${this.name} barks` );
+    }
+}
+
+let dog_object = new dog("Dog");
+
+dog_object.speak() 
+
+}
+ 
+
+</Script>
+
+</article>    
+
+<hr>
+
+<article id="six">
+
+<header>
+
+<h1>A simple explanation of JavaScript Iterators</h1>
+
+</header>
+
+<p>A <Span>collection</Span> is a <Span>data structure</Span> that 
+contains <Span>elements</Span>. For example, a <Span>string</Span> is 
+a <Span>collection of characters</Span> and an <Span>array</Span> is 
+a <span>collection of ordered items</span>:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">var message = 'Hi!';  // consists of 'H', 'i' and '!'
+
+    var numbers = [1, 3, 4]  // consists of 1, 3 and 4
+</Span></p>
+
+<p>To easily access <Span>elements</Span> of <Span>collections</Span> of 
+different structure, <Span>JavaScript</Span> implements a special pattern named 
+<Span>iteterator</Span>.</p>
+
+<p>In this lesson, as a part of the <span>iterator pattern</span>, you'll 
+learn what are <Span>iterables</Span> and <Span>iterators</Span>. You'll also 
+learn about <Span>iterables consumers</Span>: how to <Span>iterate</Span> over 
+a <Span>collection</Span> using <Span>for...of</Span> cycle, 
+<span>transform</span> any <Span>iterable</Span> to an <Span>array</Span>
+using the <Span>spread operator</Span> [...iterable], and more.</p>
+
+<h2><u>Digging up the iterable:</u></h2>
+
+<p>Let's not jump right in the dry theory of <Span>iterators</Span>, 
+because they do are pretty confusing at first sign, on the contrary, let's 
+start with a warm-up eample to dig up the concept of <span>iterable</span>.</p>
+
+<P>Let's try to simply print <Span>each item</Span> of an <span>array</span>
+using the <Span>for...of</Span> loop we learned in previous lessons.</P>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let numbers = [1, 3, 4];
+
+    for( let i of numbers ){
+        document.write( i );
+    }</span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+if(true){
+
+let numbers = [1, 3, 4];
+
+for( let i of numbers ){
+    document.write( i );
+}
+
+}
+
+
+</Script>
+
+<p>As expected, the <Span>for...of</Span> loop printed 
+<Span>each item</Span> of <Span>numbers array</Span>, good.</p>
+
+<p>Now, let's try another experiment, can <Span>for...of</Span> enumerate 
+each <Span>property</Span> of an <Span>object</Span>?</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let person = {
+    name: "Alex",
+    age: 16
+}
+
+for( let i of person ){
+    document.write( i );
+}</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let person = {
+    name: "Alex",
+    age: 16
+}
+
+for( let i of person ){
+    document.write( i );
+}
+
+}
+
+
+</script>
+
+<p>This code throws an error saying <span>person is not iterable</span>. 
+The <span>for...of</span> cyrcle requires an <Span>iterable</Span> collection to <Span>iterate</Span>
+over it's <Span>items</Span>.</p>
+
+<P>So, to find out wheter a <span>data structure</span> is <span>iterable</span>
+or not you can simply try to <Span>iterate</Span> it 
+using <span>for...of</span> loop. Having this warm-up experiment, let's state stricter what 
+an <Span>iterable</Span> is in the next section.</P>
+
+<h2><u>Iterable and iterator interfaces</u></h2>
+
+<p>"An <span>object</span> is <span>iterable</span> when it conforms to 
+<span>iterable interface</span>."</p>
+
+<p>The <Span>iterable interface</Span> requires the <span>object</span>
+to <Span>contain</Span> a method <Span>Symbol.iterator</Span>
+that must <Span>return</Span> an <Span>iterator object</Span>.</p>
+
+<p class="left">JavaScript Code:</p>
+ 
+<p class="left"><Span class="code10">interface Iterable {
+    [Symbol.iterator]() {
+        //...
+        return Iterator;
+    }
+}
+</Span></p>
+
+<p>In simple words, <Span>any object</Span> is <span>iterable</span> 
+(iter + able meaning able to be iterated) if it contains a <Span>method</Span>
+named <span>Symbol.iterator</span> (symbols can also define methods) that 
+<Span>returns</Span> an <span>iterator</span>.</p>
+
+<p>"The <Span>iterator object</Span> must conform to <span>iterator interface</span>."</p>
+
+<P>The <span>iterator object</span> must have a method <Span>next()</Span>
+that <Span>returns</Span> an <Span>object</Span> with 
+properties <Span>done</Span> (a boolean indicating the end of iteration) and 
+<Span>value</Span> (the item extracted from the collection at the iteration).</P>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">interface Iterator {
+    next() {
+        //...
+        return {
+            value: &lt;value>,
+            done: &lt;boolean>,
+        };
+    };
+    }
+</Span></p>
+
+<p>I know these theoretical terms are confusing, but stay with me.</p>
+
+<h2><u>How does array conform to iterable</u></h2>
+
+<p>You know from the warm-up experiment that <Span>arrays</Span> are <Span>iterable</Span>. 
+But how does exactly the <Span>array</Span> conform to the <Span>iterable interface</Span>?</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let numbers = [1, 3, 4];
+
+    document.write( numbers[Symbol.iterator]() );</Span></p>
+
+<p class="left">Outcome:</p>
+
+
+<script>
+
+if(true){
+
+let numbers = [1, 3, 4];
+
+document.write( numbers[Symbol.iterator]() );
+
+
+}
+
+</script>
+
+<p>Invoking the expression <Span>numbers[Symbol.iterator]()</Span> shows that the 
+<Span>array</Span> instance contains the special method <span>Symbol.iterator</span>. 
+This makes the <span>array</span> conform to the <Span>iterable interface</Span>.</p>
+
+<p>The <span>numbers[Symbol.iterator]()</span> method must return the <Span>iterator object</Span>.</p>
+
+<p>The <span>iterator object</span> is the one that performs the <Span>iteration</Span>
+over the <Span>array items</Span>. Just call <Span>iterator.next()</Span> to access 
+<span>each item</span> of the <Span>array</Span>.</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let numbers = [1, 3, 4];
+
+    let iterator = numbers[Symbol.iterator]();
+    
+    document.write( iterator.next().value, // => {value: 1, done: false}
+    iterator.next().value, // => {value: 3, done: false}
+    iterator.next().value, // => {value: 4, done: false}
+    iterator.next().value); // => {value: undefined, done: true}</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let numbers = [1, 3, 4];
+
+let iterator = numbers[Symbol.iterator]();
+
+document.write( iterator.next().value, // => {value: 1, done: false}
+iterator.next().value, // => {value: 3, done: false}
+iterator.next().value, // => {value: 4, done: false}
+iterator.next().value); // => {value: undefined, done: true}
+
+}
+
+
+</script>
+
+<p>Each invocation of <span>iterator.next()</span> returns 
+an object <Span>{ value: &lt;item>, done: &lt;boolean> }</Span>.</p>
+
+<p>The <Span>value</Span> property contains the <span>iterated item</span>, 
+while <Span>done</Span> indicates whether the <Span>iteration</Span> is <Span>complete</Span>.</p>
+
+<p>When there are no more items to iterate, <Span>iterator.next()</Span>
+returns <Span>{ value: underfined, done: true }</Span>.</p>
+
+<h2><u>Consumers of iterables:</u></h2>
+
+<p><span>JavaScript</span> provides a good set of <span>cyrcles</span>, 
+    <Span>syntaxes</Span>, and <Span>functions</Span>
+    that consume <Span>iterables</Span></p>
+
+<style>
+
+h4 {
+    text-align: center;
+}
+
+</style>
+
+<h3><u>for...of cycle:</u></h3>
+
+<p>As you know already, <Span>for...of</Span> cycle accepts 
+an <span>iterable object</span> and <span>iterates</span> through it's 
+<Span>items</Span>.</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let message = 'Hi!';
+
+    for( let i of message ){
+        document.write(i);
+    }</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let message = 'Hi!';
+
+for( let i of message ){
+    document.write(i);
+}
+
+}
+
+
+</script>
+
+<p>In the above example, <Span>message</Span> is a <span>string type</span>
+that is an <Span>iterable</Span>. <span>for...of</span> cycle <Span>iterates</Span>
+over the <span>characters</span> in the <Span>string</Span>.</p>
+
+<h3><u>Spread operator:</u></h3>
+
+<p>Another great consumer of <span>iterables</span> is the <span>spread operator</span>
+[...iterable]:</p>
+
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let message = 'Hi!';
+
+    let chars = [...message];
+    
+    document.write(chars);</Span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let message = 'Hi!';
+
+let chars = [...message];
+
+document.write(chars);
+
+}
+
+
+</script>
+
+<p>The <span>spread operator</span> [...message] <span>iterates</span> over the 
+<span>characters</span> of the <Span>string</Span> and creates an <span>array</span>
+of these <span>characters</span>.</p>
+
+<h3><u>Array destructuring:</u></h3>
+
+<p>The <span>array destructuring</span> syntax can destructure <span>iterables</span> too.</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let message = 'Hi!';
+
+    let [firstChar, ...restChars] = message;
+    
+    document.write( restChars );</Span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let message = 'Hi!';
+
+let [firstChar, ...restChars] = message;
+
+document.write( restChars );
+
+}
+
+
+</script>
+
+<p><span>[firstChar, restChars] = message</span> is a <Span>destructuring assignment</Span>
+that <span>destructures</span> the <Span>iterable string message</Span>.</p>
+
+<p><span>firstChar</span> is assigned with the <span>first character</span>, the 
+<span>rest characters</span> are stored into the array <span>restChars</span>.</p>
+
+<h3><u>Array.from()</u></h3>
+
+<p><span>Array.from(iterable[, mapFunction])</span> also accepts an <Span>iterable</Span>
+and transforms it into an <Span>array</Span>:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let message = 'Hi!';
+
+    let chars = Array.from(message);
+    
+    document.write( chars );</Span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let message = 'Hi!';
+
+let chars = Array.from(message);
+
+document.write( chars );
+
+}
+
+
+</script>
+
+<h2>Summary:</h2>
+
+<p><span>Iterables</span> are <span>collections</span> that 
+can be <span>iterated</span>. To be an <span>iterable</span>, the <Span>object</Span>
+must conform the <span>iterable interface</span>.</p>
+
+<p><Span>Iterable consumers</Span> are <span>language constructs</span> 
+that <span>consume iterables</span>. <Span>for...of</Span> cycle is 
+an <Span>iterable consumer</Span> that cycles over <Span>each item</Span>
+of the <Span>iterable</Span>, <Span>spread operator</Span> [...iterable] creates 
+an <span>array</span> from the <Span>iterable's items</Span>.</p>
+
+<p>What makes the <span>iterator pattern</span> so useful is that 
+any <Span>iterable</Span> can be used by any <span>iterable consumer</span>.</p>
+
+</article>
+
+<hr>
+
+<article id="seven">
+
+<header>
+
+<h1>The map object</h1>
+
+</header>
+
+<p>A <span>Map</span> object can be used to hold <Span>key/value</Span> pairs. 
+A <Span>key</Span> or <Span>value</Span> in a <Span>map</Span> can be <Span>anything</Span>
+(objects and promitive values).</p>
+
+<p>The syntax <Span>new Map([iterable])</Span> creates a <Span>map object</Span> where 
+<Span>iterable</Span> is an <Span>array</Span> or any other <Span>iterable object</Span>
+whose elements are <Span>arrays</Span> (with <Span>key/value</Span> pair each).</p>
+
+<p>An <Span>object</Span> is similar to <span>Map</span> but there are 
+<Span>important differences</Span> that make using a <Span>Map</Span> preferable 
+in certain cases:</p>
+
+<style>
+
+.list1{
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 20px;
+    width: 50%;
+    margin: 20px auto 20px;
+    text-align: center;
+}
+
+.list1 ol, .list1 ul{
+    display: inline-block;
+    text-align: left;
+ }
+
+ .list1 ol li, .list1 ul{
+     margin-top: 5px;
+      font-weight: bold;
+ }
+
+</style>
+
+<div class="list1"> 
+<ol type="1">
+<li>The keys can be any type including functions, objects and any primitive.</li>
+<li>You can get the size of a Map</li>
+<li>You can directly iterate over Map</li>
+<li>Performance of the map is better in scenarios involving frequent addition and remove 
+    of key/value pairs.
+</li>
+</ol>
+</div>
+
+<p>The <span>size</span> property returns the <Span>number</Span> 
+of <Span>key/value pairs</Span> in a <Span>map</Span>.</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let map = new Map([['k1', 'v1'], ['k2', 'v2']]);
+
+    document.write( map.size );</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let map = new Map([['k1', 'v1'], ['k2', 'v2']]);
+
+document.write( map.size );
+
+}
+
+
+</script>
+
+<p>Now, to play around a little more with <Span>Map</Span>, we are gonna 
+need to use the following <Span>methods</Span>:</p>
+
+<div class="list1">
+
+<ul>
+<li>set(key, value) adds a psecified key/value pair to the map. If specified key already 
+    exists, value corresponding to it is replaced with the specified value.</li>
+    <li>get(key) gets the value corresponding to a specified key in the map. If the 
+        specified key doesn't exist, undefined is returned.
+    </li>
+    <li>has(key) returns true if a specified key exists in the map and false otherwise.</li>
+<li>delete(key) deletes the key/value pair with a specified key from the map and returns true. 
+    It returns false if the element does not exist.
+</li>
+<li>clear() removes all key/value pairs from map</li>
+<li>keys() returns an iterator of keys in the map for each element.</li>
+<li>values() returns an iterator of values in the map for each element.</li>
+<li>entries() returns an iterator of array[key, value] in the map for each element.</li>
+</ul>
+
+
+</div>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let map = new Map();
+
+    map.set("k1", "v1").set("k2", "v2");
+    
+    document.write( `${map.get("k1")} &lt;br>
+    ${map.has("k3")}` );</Span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+if(true){
+
+let map = new Map();
+
+map.set("k1", "v1").set("k2", "v2");
+
+document.write( `${map.get("k1")} <br>
+${map.has("k3")}` );
+
+}
+
+
+
+</Script>
+
+<p>Let's try to create an <Span>iterator</Span> of the <span>keys</span> now:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let map = new Map();
+
+    map.set("k1", "v1").set("k2", "v2");
+    
+    let itr = map.keys();
+    
+    do {
+        var obj = itr.next()
+        
+        if( obj.done == true){
+            break;
+        }
+        
+        document.write( obj.value );
+    } 
+    while ( obj.done == false );</Span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+if(true){
+
+    let map = new Map();
+
+map.set("k1", "v1").set("k2", "v2");
+
+let itr = map.keys();
+
+do {
+    var obj = itr.next()
+    
+    if( obj.done == true){
+        break;
+    }
+    
+    document.write( obj.value );
+} 
+while ( obj.done == false );
+
+}
+
+</Script>
+
+<p>I used <span>do...while</span> loop because I wanted the 
+<span>code block</span> to be executed once before the <span>while</span> 
+gets checked, otherwise the <Span>obj</Span> variable wouldn't yet be created, 
+also, I used <Span>break</Span> keyword to break the code block after 
+<span>done</span> property returns true so that <span>undefined</span> isn't 
+written at the final run.</p>
+
+<p>The same thing could be done using the <Span>for...of</Span> loop way 
+easier:</p>
+
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">if(true){
+
+    let map = new Map();
+map.set('k1', 'v1').set('k2', 'v2');
+
+for (let key of map.keys())
+    document.write(key);
+}</Span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+if(true){
+
+    let map = new Map();
+map.set('k1', 'v1').set('k2', 'v2');
+
+
+for (let kv of map.keys())
+    document.write(kv);
+
+}
+
+
+</Script>
+
+<p>Let's try <Span>entries()</Span> method now which returns 
+an <Span>iterator</Span> in which if we use the <span>next()</span>
+method this <Span>object</Span> will be returned: <span>{value: ["k1", "v1"], done: false}</span>, 
+it works just like before when I use <span>keys()</span> method but 
+the <Span>value</Span> this time returns an <Span>array</Span>.</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let map = new Map();
+
+    map.set("k1", "v1").set("k2", "v2");
+    
+    let itr = map.entries();
+    
+    do {
+        var obj = itr.next()
+        
+        if( obj.done == true){
+            break;
+        }
+        
+        document.write( `${obj.value[0]} : ${obj.value[1]} &lt;br>` );
+    } 
+    while ( obj.done == false );</Span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+if(true){
+
+    let map = new Map();
+
+map.set("k1", "v1").set("k2", "v2");
+
+let itr = map.entries();
+
+do {
+    var obj = itr.next()
+    
+    if( obj.done == true){
+        break;
+    }
+    
+    document.write( `${obj.value[0]} : ${obj.value[1]} <br>` );
+} 
+while ( obj.done == false );
+
+}
+
+</Script>
+
+<P>This can of course be shorten with the help of <span>for...of</span> loop like this:</P>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let map = new Map();
+    
+    map.set("k1", "v1").set("k2", "v2");
+    
+    for( let kv of map.entries() ){
+        document.write( `${kv[0]} : ${kv[1]} &lt;br>` )
+    }</Span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+    if(true){
+    
+        let map = new Map();
+    
+    map.set("k1", "v1").set("k2", "v2");
+    
+    for( let kv of map.entries() ){
+        document.write( `${kv[0]} : ${kv[1]} <br>` )
+    }
+
+    }
+    
+    </Script>
+
+</article>
+
+<hr>
+
+<article id="eight">
+
+<header>
+
+<h1>The Set object</h1>
+
+</header>
+
+<p>A <span>Set object</span> can be used to hold <span>unique values</span>
+(no repititions are allowed). A <Span>value</Span> in a <span>set</span> can be 
+anything (objects and privitive values).</p>
+
+<p>The syntax <span>new Set([iterable])</span> creates a <Span>Set object</Span> 
+where <Span>iterable</Span> is an <Span>array</Span> or <Span>any other iterable object of values</Span>.</p>
+
+<p>The <Span>size</Span> property returns the <span>number of distinct values</span>
+in a <span>set</span>:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let set = new Set([1, 1, 2, 2, 3, 3, "Alex", "Alex"]);
+
+    document.write(set.size);</Span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let set = new Set([1, 1, 2, 2, 3, 3, "Alex", "Alex"]);
+
+document.write(set.size);
+
+}
+
+</script>
+
+<p>As you can see it returned <span>4</span> even though 
+the elements are <span>8</span>, that happened because 
+elements that share the same name count as one.</p>
+
+<div class="list1">
+
+<ul>
+<li>add(value) Adds a new element with the given value to the Set.</li>
+<li>delete(value) Deletes a specified value from the set.</li>
+<li>has(value) Clears the set.</li>
+<li>values() Returns an iterator of values in the set.</li>
+</ul>
+
+</div>
+
+<p class="left">JavaScript Code:</p>
+
+<P class="left"><span class="code10">let set = new Set();
+
+    set.add(3).add(9).add(16).add(1);
+    
+    document.write( set.has(3) + "&lt;br>" );
+    
+    set.delete(3);
+    
+    document.write( set.has(3) + "&lt;br>" );
+    
+    for( let x of set.values() ){
+        document.write(x);
+    }</span></P>
+
+<p class="left">Outcome:</p>
+<script>
+
+if(true){
+
+let set = new Set();
+
+set.add(3).add(9).add(16).add(1);
+
+document.write( set.has(3) + "<br>" );
+
+set.delete(3);
+
+document.write( set.has(3) + "<br>" );
+
+for( let x of set.values() ){
+    document.write(x);
+}
+
+}
+
+
+
+</script>
+
+
+
+</article>
+
+<hr>
+
+<article id="nine">
+
+<header>
+
+<h1>The setTimeout() Method</h1>
+
+</header>
+
+<p>The <span>setTimeout()</span> method calls a <Span>function</Span>
+or <Span>evaluates an expression</Span> after a <Span>specified number of milliseconds</Span>. The <span>function</span>
+is only executed once, if you need to repeat execution you can use the <Span>setInterval()</Span>
+method, I talked about this method in a previous lesson.</p>
+
+<p>To <Span>prevent</Span> the <Span>function</Span> from running you should use 
+the <span>clearTimeout()</span> method, a method similar to <span>clearInterval()</span>.</p>
+
+<p>The <Span>syntax</Span> is like this: <span>setTimeout(function, milliseconds, param1, param2, ...)</span>. 
+The <Span>function</Span> is required, <Span>milliseconds</Span> are optional, if not ommited 
+the value is set to 0, other extra parameters are also optional and 
+are passed to the <span>function parameters</span>.</p>
+
+<style>
+
+#container1, #container2, #container3 {
+    text-align: left;
+}
+
+</style>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><Span class="code10">&lt;p id="container1">&lt;button id="button1" >Click&lt;/button>&lt;/p></Span></p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">function write(x){
+    let text = document.createTextNode(x);
+    document.getElementById("container1").appendChild(text);
+}
+
+function button_click(){
+    setTimeout(write, 3000, "Hello World! ");
+}
+
+document.getElementById("button1").addEventListener("click", button_click);</span></p>
+
+<p class="left">Outcome:</p>
+
+<p id="container1"><button id="button1" >Click</button></p>
+
+<script>
+
+if(true){
+
+function write(x){
+    let text = document.createTextNode(x);
+    document.getElementById("container1").appendChild(text);
+}
+
+function button_click(){
+    setTimeout(write, 3000, "Hello World! ");
+}
+
+document.getElementById("button1").addEventListener("click", button_click);
+
+}
+
+
+</script>
+
+<p>As you can see, if you press the button, after three seconds the text "Hello World!" will appear.</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">var paragraph = document.getElementById("container2");
+
+    let start = function(){
+    timeout = setTimeout(one, 2000);
+    }
+    
+    let one = function(){
+    let text = document.createTextNode(2);
+        paragraph.appendChild(text);
+    timeout = setTimeout(two, 2000);
+    }
+    
+    let two = function(){
+    let text = document.createTextNode(4);
+    paragraph.appendChild(text);
+    timeout = setTimeout(three, 2000);
+    }
+    
+    let three = function(){
+    let text = document.createTextNode(6);
+    paragraph.appendChild(text);
+    }
+    
+    let end = function(){
+    clearTimeout(timeout);    
+    }
+    
+    document.getElementById("start1").addEventListener("click", start);
+    document.getElementById("stop1").addEventListener("click", end);</Span></p>
+
+<p class="left">Outcome:</p>
+
+<p id="container2"><button id="start1">start</button> <button id="stop1">stop</button></p>
+
+<Script>
+
+if(true){
+
+let paragraph = document.getElementById("container2");
+
+let start = function(){
+timeout = setTimeout(one, 2000);
+}
+
+let one = function(){
+let text = document.createTextNode(1);
+    paragraph.appendChild(text);
+timeout = setTimeout(two, 2000);
+}
+
+let two = function(){
+let text = document.createTextNode(2);
+paragraph.appendChild(text);
+timeout = setTimeout(three, 2000);
+}
+
+let three = function(){
+let text = document.createTextNode(3);
+paragraph.appendChild(text);
+}
+
+let end = function(){
+clearTimeout(timeout);    
+}
+
+document.getElementById("start1").addEventListener("click", start);
+document.getElementById("stop1").addEventListener("click", end);
+
+}
+
+</Script>
+
+<p>The example above was made to demonstrate how <Span>clearTimeout()</Span> method 
+can be used, to do something like I did in the example above however it is recommended 
+to use <Span>setInterval()</Span> method instead since it allows you to way easier 
+do this:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let paragraph = document.getElementById("container3");
+
+    let num = 0;
+    
+    let counter = function(){
+        let text = document.createTextNode(num++);
+        paragraph.appendChild(text);
+    }
+    
+    let start = function(){
+     interval = setInterval(counter, 2000); 
+    } 
+    
+    let end = function(){
+        clearInterval(interval);
+    }
+    
+    document.getElementById("start2").addEventListener("click", start);
+    document.getElementById("stop2").addEventListener("click", end);</Span></p>
+
+<p class="left">Outcome:</p>
+
+<p id="container3"><button id="start2">start</button> <button id="stop2">stop</button></p>
+
+<Script>
+    if(true){
+
+let paragraph = document.getElementById("container3");
+
+let num = 0;
+
+let counter = function(){
+    let text = document.createTextNode(num++);
+    paragraph.appendChild(text);
+}
+
+let start = function(){
+ interval = setInterval(counter, 2000); 
+} 
+
+let end = function(){
+    clearInterval(interval);
+}
+
+document.getElementById("start2").addEventListener("click", start);
+document.getElementById("stop2").addEventListener("click", end);
+}
+</script>
+
+</article>    
+
+<hr>
+
+<article id="ten">
+
+<header>
+
+<h1>Function Callbacks</h1>
+
+</header>
+
+<p>In this lesson I wanna talk about <span>function callbacks</span>, so that 
+I can later easier introduce you to <span>promises</span> which work 
+really similar to the way <Span>function callbacks</Span> work, but better.</p>
+
+<p><span>Function callbacks</span> are in simple words, <Span>functions</Span> used as 
+<Span>parameters</Span> in other <Span>functions</Span>, see this code for example:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let num = 1;
+
+    let example = (x, y) => {
+
+        if( num == 1){
+            x("Num", num);
+        } else { y("Num", num); }
+
+    }
+    
+    let parameter1 = (a, b) => {
+        document.write( `${a} is ${b}` );
+    }
+    
+    let parameter2 = (a, b) =>{
+        document.write( `${a} is not ${b}` );
+    }
+    
+    example(parameter1, parameter2);</Span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let num = 1;
+
+let example = (x, y) => {
+    if( num == 1){
+        x("Num", num);
+    } else { y("Num", num); }
+}
+
+let parameter1 = (a, b) => {
+    document.write( `${a} is ${b}` );
+}
+
+let parameter2 = (a, b) =>{
+    document.write( `${a} is not ${b}` );
+}
+
+example(parameter1, parameter2);
+
+}
+
+</script>
+
+<p>So, I think the way the code works is pretty clear, where <Span>x</Span> is called 
+<Span>parameter1</Span> function is called, so where it writes <Span>x("Num", num);</Span>
+it's like if it wrote <Span>parameter1("Num",num);</Span>, it works pretty simple, 
+however, if you nest it a lot it starts to get ugly and complicated.</p>
+
+
+</article>
+
+<hr>
+
+<article id="eleven">
+
+<header>
+
+<h1>ES6 Promise Object</h1>
+
+</header>
+
+<img style="display: block; margin: 20px auto 20px auto;" src="../images/promise.png">
+
+<p>A JavaScript <Span>promise object</Span> contains both the 
+<Span>producing code</Span> and <Span>calls</Span> to the <Span>consuming code</Span>:</p>
+
+<style>
+
+.gray {
+    background-color: rgb(238, 237, 237);
+}
+
+</style>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left">
+<span class="code10">let myPromise = new Promise( function(myResolve, myReject){
+</span><span class="gray">// "Producing Code" (May take some time)</span><span class="code10">
+
+myResolve(); </span><span class="gray">// when successful</span><span class="code10">
+myReject(); </span><span class="gray">// when error</span><span class="code10">
+});
+
+</span><span class="gray">// "Consuming Code" (Must wait for a fulfilled promise)</span><span class="code10">
+myPromise.then(
+    function(value) { </span><span class="gray">/* code if successful */</span><span class="code10"> },
+    function(error) { </span><span class="gray">/* code if error */</span><span class="code10"> }
+);</span></p>
+
+<p>When the executing code obtains the <Span>result</Span>, it should <span>call</span> one 
+of the two callbacks:</p>
+
+<Style>
+
+#table1 {
+    background-color: white;
+    margin: auto;
+    border-collapse: collapse;
+    text-align: left;
+    border: 1px solid rgb(204, 203, 203);
+}
+
+#table1 tr:nth-child(2n+2){
+background-color: rgb(204, 203, 203);
+}
+
+#table1 td, #table1 th{
+    width: 300px;
+    height: 30px;
+    padding-left: 20px;
+}
+
+</Style>
+
+<table id="table1" >
+<tr>
+    <th>Result</th>
+    <th>Call</th>
+</tr>
+<tr>
+    <td>Success</td>
+    <td>myResolve(result value)</td>
+</tr>
+<tr>
+    <td>Error</td>
+    <td>myReject(error object)</td>
+</tr>
+</table>
+
+<h2><u>Promise Object Properties:</u></h2>
+
+<p>A JavaScript <span>Promise Object</span> can be:</p>
+
+<style>
+
+.list-container{
+    display: block;
+     margin: auto;
+    width: fit-content;
+}
+
+</style>
+
+<div class="list-container">
+<ul>
+    <li>Pending</li>
+    <li>Fulfilled</li>
+    <li>Rejected</li>
+</ul>
+</div>
+
+<p>The <span>Promise Object</span> supports two <span>properties</span>: <span>state</span> and <span>result</span>.</p>
+
+<p>While a <Span>Promise Object</Span> is <span>"pending"</span> (working), the <span>result</span>
+is <Span>undefined</Span>. When it is <Span>"fulfilled"</Span>, the <Span>result</Span> is a <Span>value</Span>. 
+When it is <Span>"rejected"</Span>, the <span>result</span> is an <Span>error object</Span>.</p>
+
+<table id="table1" >
+    <tr>
+        <th>myPromise.state</th>
+        <th>myPromise.result</th>
+    </tr>
+    <tr>
+        <td>"pending"</td>
+        <td>undefined</td>
+    </tr>
+    <tr>
+        <td>"fulfilled"</td>
+        <td>a result value</td>
+    </tr>
+    <tr>
+        <td>"rejected"</td>
+        <td>an error object</td>
+    </tr>
+    </table>
+
+<p>You <Span>cannot</Span> access the Promise properties <Span>state</Span> and <span>result</span>. 
+You must use <span>Promise methods</span> to handle <Span>promises</Span>.</p>
+
+<h2><u>How to use Promises:</u></h2>
+
+<p>Here is how to use a <span>Promise</span>:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">myPromise.then(
+    function(value) { <span class="gray">/* code if successful */</span> },
+    function(error) { <Span class="gray">/* code if some error */</Span> }
+);
+</span></p>
+
+<p><span>Promise.then()</span> method takes <Span>two arguments</Span>, a callback for <span>success</span> and 
+another for <Span>failure</Span>. Both are <span>optional</span>, so you can add a callback for <span>success</span> 
+or <Span>failure</Span> only.</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">function example(myResolve, myReject){
+    let x = 0;
+
+    if( x == 0){
+        myResolve();
+    } else { myReject()}
+
+}
+
+let myPromise = new Promise(example);
+
+myPromise.then(
+    function(){ document.write( "Success" ); },
+    function(){ document.write( "Error"); }  
+);</span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+if(true){
+
+let example = function(myResolve, myReject){
+    let x = 0;
+
+    if( x == 0){
+        myResolve();
+    } else { myReject()}
+
+}
+
+let myPromise = new Promise(example);
+
+myPromise.then(
+    function(){ document.write( "Success" ); },
+    function(){ document.write( "Error"); }  
+);
+
+}
+
+
+</Script>
+
+<p>In the example above, if x isn't 0 then <Span>myResolve()</Span> is called, which 
+    means the code was <Span>successful</Span>, so the <Span>first function</Span>
+    inside the <Span>myPromise.then()</Span> method is executed, if x was not 0 then 
+    <Span>myReject()</Span> would be called, which would <Span>reject</Span> the code, 
+    so the <Span>second function</Span> inside the <span>myPromise.then()</span> method would 
+    be executed.
+</p>
+
+<p>Here is one more example:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let uses_tiktok = false;
+    let is_simp = true;
+    
+    let example = (resolve,reject) =>{
+    
+    if( uses_tiktok ){
+
+        reject({
+            error: "use tiktok",
+            message: "stop using tiktok" 
+        })
+
+    } else if ( is_simp){
+
+        reject({
+            error: "are a simp",
+            message: "stop being a simp"
+        })
+
+    } else { resolve("You are cool!") }
+    
+    }
+    
+    let promise = new Promise(example);
+    
+    promise.then((message) => {
+        document.write(message)
+    }).catch((obj) =>{
+        document.write(`You ${obj.error} please ${obj.message}.`)
+    })  </Span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+if(true){
+
+let uses_tiktok = false;
+let is_simp = true;
+
+let example = (resolve,reject) =>{
+
+if( uses_tiktok ){
+    reject({
+        error: "use tiktok",
+        message: "stop using tiktok" 
+    })
+} else if ( is_simp){
+    reject({
+        error: "are a simp",
+        message: "stop being a simp"
+    })
+} else { resolve("You are cool!") }
+
+}
+
+let promise = new Promise(example);
+
+promise.then((message) => {
+    document.write(message)
+}).catch((obj) =>{
+    document.write(`You ${obj.error} please ${obj.message}.`)
+}) 
+
+}
+
+</Script>
+
+<p>Feel confused? The code is actually pretty simple, it works similarly to how 
+    <Span>function calls</Span> I talked about before work, the <span>promise.then()</span>
+    method returns a <Span>function</Span> to the <Span>first parameter</Span> of the 
+    <Span>promise</Span>, and the <Span>promise.catch()</Span> returns a <Span>function</Span>
+    to the <Span>second parameter</Span> of the <Span>promise</Span>, we could had simple used a 
+    <Span>second parameter</Span> to <Span>promise.then</Span> method, however I wanted to include 
+    the <span>catch</span> method too in the lesson, which basically <Span>returns</Span> a <Span>function</Span>
+    to the <Span>second parameter</Span> of our <Span>promise</Span>, which parameter is 
+    used when our promise <span>fails</span>, to easily remember it, just think of it like this: 
+    the <span>catch</span> method <Span>catches any errors</Span> and <Span>returns</Span> a <Span>function</Span>.
+</p>
+
+<p>Let me now talk about <span>Promise.all([])</span> method, 
+which can take an <Span>array</Span> of <Span>promises</Span> and <Span>runs them</Span>
+all at the same time only after they are all <span>completed</span>,  like in the example below:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let recordVideoOne = new Promise((resolve) => resolve("Video 1 recorded"));
+
+    let recordVideoTwo = new Promise((resolve) => resolve("Video 2 recorded"));
+    
+    let recordVideoThree = new Promise((resolve) => resolve("Video 3 recorded"));
+    
+    Promise.all([
+        recordVideoOne,
+        recordVideoTwo,
+        recordVideoThree
+    ]).then((message) => document.write(message))</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let recordVideoOne = new Promise((resolve) => resolve("Video 1 recorded"));
+
+let recordVideoTwo = new Promise((resolve) => resolve("Video 2 recorded"));
+
+let recordVideoThree = new Promise((resolve) => {
+    let x = 1;
+
+    if(x == 1){
+    resolve("Video 3 recorded")
+    }
+
+});
+
+Promise.all([
+    recordVideoOne,
+    recordVideoTwo,
+    recordVideoThree
+]).then((message) => document.write(message))
+
+
+}
+
+</script>
+
+<p>Lastly, I wanna mention to <span>Promise.race</span> method, which works the same way <Span>Promise.all</Span>
+method works, however, it only waits for the <span>first promise</span> to <span>complete</span>, therefore, 
+it only runs <span>one promise</span> and doesn't wait for the rest.</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let recordVideoOne = new Promise((resolve) => resolve("Video 1 recorded"));
+
+    let recordVideoTwo = new Promise((resolve) => resolve("Video 2 recorded"));
+    
+    let recordVideoThree = new Promise((resolve) => resolve("Video 3 recorded"));
+    
+    Promise.race([
+        recordVideoOne,
+        recordVideoTwo,
+        recordVideoThree
+    ]).then((message) => document.write(message))</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let recordVideoOne = new Promise((resolve) => resolve("Video 1 recorded"));
+
+let recordVideoTwo = new Promise((resolve) => resolve("Video 2 recorded"));
+
+let recordVideoThree = new Promise((resolve) => resolve("Video 3 recorded"));
+
+Promise.race([
+    recordVideoOne,
+    recordVideoTwo,
+    recordVideoThree
+]).then((message) => document.write(message))
+
+
+}
+
+</script>
+
+</article>
+
+<hr>
+
+<article id="twelve">
+
+<header>
+    <h1>More on Function Callbacks and Promises</h1>
+</header>
+
+<p>So, in this lesson I wanna talk some more about <span>function callbacks</span>
+and <span>promises</span>, because they do are a little hard to 
+gasp, and I want to feel confortable using them before I move on, 
+I watched some youtube videos which I will link at the end of the section, 
+let's get started.</p>
+
+<h2><u>Asynchronous vs Synchronous Programming:</u></h2>
+
+<p>Let's start with the basics, what's <Span>synchronous</Span>
+and what's <Span>asynchronous</Span> programming? <span>Synchronous</span>
+programming is read from the <span>top</span> to the <span>bottom</span>
+one by one, like this:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">document.write("Start ");
+    document.write("Middle ");
+    document.write("End");</Span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+document.write("Start ");
+document.write("Middle ");
+document.write("End");
+
+</script>
+
+<p><span>Asynchronous code</span> also runs from the <Span>top</Span> to 
+the <span>bottom</span>, however, during this run, it runs through 
+certain <Span>asyncrhonous functions</Span> and split off to execute that <span>asynchronous code</span>
+seperately from the rest of the code. Here is an example of 
+an <span>asynchronous code</span>:</p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><span class="code10">&lt;p id="container10">&lt;/p></span></p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let container = document.getElementById("container10");
+
+    setTimeout(() => {
+        let text = document.createTextNode("Sync");
+        container.appendChild(text);
+    }, 1);
+    
+    let text = document.createTextNode("Start ");
+    container.appendChild(text);
+    
+    let text2 = document.createTextNode("End ");
+    container.appendChild(text2);</span></p>
+
+<p class="left">Outcome:</p>
+
+<p style="text-align: left;" id="container10"></p>
+
+<script>
+
+if(true){
+let container = document.getElementById("container10");
+
+setTimeout(() => {
+    let text = document.createTextNode("Sync");
+    container.appendChild(text);
+}, 1);
+
+let text = document.createTextNode("Start ");
+container.appendChild(text);
+
+let text2 = document.createTextNode("End ");
+container.appendChild(text2);
+}
+
+</script>
+
+<p>Let me give you an example of when <Span>asynchronous code</Span>
+could be used, let's say I wanna make an <Span>object</Span>
+of a <Span>user</Span> in my site, which will have an <span>email</span>
+and a <span>password</span>, the <span>user data</span> could be 
+create at any time, so if I were to try to do what I want using <span>synchronous</span>
+code I would get an error:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let registerUser = (email, password) => {
+    setTimeout( () => {
+        return {user_email: email, user_password: password}
+    }, 3000)
+}
+
+let userInfo = registerUser("alex@gmail.com", 1234);
+
+document.write(userInfo);</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let registerUser = (email, password) => {
+    setTimeout( () => {
+        return {user_email: email, user_password: password}
+    }, 3000)
+}
+
+let user = registerUser("alex@gmail.com", 1234);
+
+document.write(user);
+
+}
+
+</script>
+
+<p>That's because the <span>object</span> is returned 
+after it is referenced, anyway, to fix that, 
+we could use <Span>function callbacks</Span>.</p>
+
+<h2><u>Function Callbacks:</u></h2>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><Span class="code10">&lt;p id="container11">&lt;/p></Span></p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let container = document.getElementById("container11");
+
+    let registerUser = (email, password, callback) => {
+        setTimeout( () => {
+            callback({user_email: email, user_password: password});
+        }, 3000)
+    }
+    
+    let userInfo = registerUser("alex@gmail.com", 1234, user => {
+     container.innerHTML = `User_email: ${user.user_email} &lt;br> 
+     User_password: ${user.user_password}`;
+    });</span></p>
+
+<p class="left">Outcome:</p>
+
+<p style="text-align: left;" id="container11"></p>
+
+<script>
+
+    if(true){
+    
+let container = document.getElementById("container11");
+
+    let registerUser = (email, password, callback) => {
+        setTimeout( () => {
+            callback({user_email: email, user_password: password});
+        }, 3000)
+    }
+    
+    let userInfo = registerUser("alex@gmail.com", 1234, user => {
+     container.innerHTML = `User_email: ${user.user_email} <br>
+     User_password: ${user.user_password}`;
+    });
+    
+    }
+    
+    </script>
+
+<p>Now, if I wanted to create another <Span>function</Span>
+and make it execute 2 seconds after <Span>registerUser</Span> function 
+is executed, I would have to <Span>nest it</Span> like this:</p>
+
+<Style>
+
+.orange {
+    background-color: lightcoral;
+    font-weight: bold;
+}
+
+</Style>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><Span class="code10">&lt;p id="container12">&lt;/p></Span></p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let container = document.getElementById("container12");
+
+    let registerUser = (email, password, callback) => {
+        setTimeout( () => {
+            callback({user_email: email, user_password: password});
+        }, 3000)
+    }
+
+    <span class="orange">let getVideos = (callback) => {
+        setTimeout(() => { 
+        callback(['video1', 'video2', 'video3']);
+    }, 2000);
+    }</span>
+
+    let userInfo = registerUser("alex@gmail.com", 1234, user => {
+     
+     container.innerHTML = `User_email: ${user.user_email} &lt;br>
+     User_password: ${user.user_password}`;
+
+    <span class="orange">getVideos( videos => {container.innerHTML += `&lt;br> ${videos}` });</span>
+
+    });</span></p>
+
+<p class="left">Outcome:</p>
+
+<p style="text-align: left;" id="container12"></p>
+
+<script>
+
+    if(true){
+    
+let container = document.getElementById("container12");
+
+    let registerUser = (email, password, callback) => {
+        setTimeout( () => {
+            callback({user_email: email, user_password: password});
+        }, 3000)
+    }
+
+    let getVideos = (callback) => {
+        setTimeout(() => { 
+        callback(['video1', 'video2', 'video3']);
+    }, 2000);
+    }
+
+    let userInfo = registerUser("alex@gmail.com", 1234, user => {
+     
+     container.innerHTML = `User_email: ${user.user_email} <br>
+     User_password: ${user.user_password}`;
+
+    getVideos( videos => {container.innerHTML += `<br> ${videos}` });
+
+    });
+    
+    }
+    
+    </script>
+
+<p>Let's nest it even more, and include a <Span>videoDetails</Span> function, 
+which will execute 2 seconds after the <Span>getVideos</Span> function:</p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><Span class="code10">&lt;p id="container13">&lt;/p></Span></p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let container = document.getElementById("container13");
+
+    let registerUser = (email, password, callback) => {
+        setTimeout( () => {
+            callback({user_email: email, user_password: password});
+        }, 3000)
+    }
+
+    let getVideos = (callback) => {
+        setTimeout(() => { 
+        callback(['video1', 'video2', 'video3']);
+    }, 2000);
+    }
+
+    <span class="orange">let videoDetails = (video, callback) => {
+        setTimeout(() => {
+            callback(`${video} is cool!`)
+        }, 2000)
+    }</span>
+
+    let userInfo = registerUser("alex@gmail.com", 1234, user => {
+     
+        container.innerHTML = `User_email: ${user.user_email} &lt;br>
+        User_password: ${user.user_password}`;
+
+        getVideos( videos => {
+        container.innerHTML += `&lt;br> ${videos}` 
+
+              <span class="orange">videoDetails(videos[0], (description) => {
+              container.innerHTML += `&lt;br> ${description}`;
+            });</span>
+
+        });
+
+    });</span></p>
+
+<p class="left">Outcome:</p>
+
+ <p style="text-align: left;" id="container13"></p>
+
+<script>
+
+    if(true){
+    
+let container = document.getElementById("container13");
+
+    let registerUser = (email, password, callback) => {
+        setTimeout( () => {
+            callback({user_email: email, user_password: password});
+        }, 3000)
+    }
+
+    let getVideos = (callback) => {
+        setTimeout(() => { 
+        callback(['video1', 'video2', 'video3']);
+    }, 2000);
+    }
+
+    let videoDetails = (video, callback) => {
+        setTimeout(() => {
+            callback(`${video} is cool!`)
+        }, 2000)
+    }
+
+    let userInfo = registerUser("alex@gmail.com", 1234, user => {
+     
+     container.innerHTML = `User_email: ${user.user_email} <br>
+     User_password: ${user.user_password}`;
+
+    getVideos( videos => {
+        container.innerHTML += `<br> ${videos}` 
+
+        videoDetails(videos[0], (description) => {
+            container.innerHTML += `<br> ${description}`;
+        });
+
+        });
+
+    });
+    
+    }
+    
+    </script>
+
+<p>As you can see, the <span>syntax</span> isn't very pretty, 
+if <Span>function callbacks</Span> are nested a lot, it gets 
+ugly and hard to read, it's the known <Span>function callbacks hell</Span> 
+developers talk about, luckily for us, now we <span>ES6</span>, we 
+can use <span>promises</span> to write <Span>asynchronous code</Span>
+much better.</p>
+
+<h2><u>ES6 Promises:</u></h2>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><Span class="code10">&lt;p id="container14">&lt;/p></Span></p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let container = document.getElementById("container14");
+
+    let registerUser = (email, password) => {
+        return new Promise((resolve, reject) => {
+            setTimeout( () => {
+            resolve({user_email: email, user_password: password});
+        }, 3000)
+        })
+    }
+
+    let getVideos = () => {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => { 
+         resolve(['video1', 'video2', 'video3']);
+         }, 2000);
+        })
+    }
+
+    let videoDetails = (video) => {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+            resolve(`${video} is cool!`)
+        }, 2000)
+        })
+    }
+
+
+registerUser("alex@gmail.com", 123)
+.then((user) => {
+    container.innerHTML = `User_email: ${user.user_email} &lt;br>
+    User_password: ${user.user_password}`;
+
+    return getVideos();
+}).then((videos) => {
+    container.innerHTML += `&lt;br> ${videos}`;
+
+    return videoDetails(videos[0])
+}).then((description) => {
+    container.innerHTML += `&lt;br> ${description}`;
+})</span></p>
+
+<p class="left">Outcome:</p>
+
+
+<p style="text-align: left;" id="container14"></p>
+
+<script>
+
+    if(true){
+    
+let container = document.getElementById("container14");
+
+    let registerUser = (email, password) => {
+        return new Promise((resolve, reject) => {
+            setTimeout( () => {
+            resolve({user_email: email, user_password: password});
+        }, 3000)
+        })
+    }
+
+    let getVideos = () => {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => { 
+         resolve(['video1', 'video2', 'video3']);
+         }, 2000);
+        })
+    }
+
+    let videoDetails = (video) => {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+            resolve(`${video} is cool!`)
+        }, 2000)
+        })
+    }
+
+
+registerUser("alex@gmail.com", 123)
+.then((user) => {
+    container.innerHTML = `User_email: ${user.user_email} <br>
+    User_password: ${user.user_password}`;
+
+    return getVideos();
+}).then((videos) => {
+    container.innerHTML += `<br> ${videos}`;
+
+    return videoDetails(videos[0])
+}).then((description) => {
+    container.innerHTML += `<br> ${description}`;
+})
+    
+    }
+    
+    </script>
+
+<p>As you can see, by simply using <span>then</span> we can easily 
+add <Span>asynchronous functions</Span> one by one without all the complicated 
+syntax.</p>
+
+<p>Now, there is an even cleaner way to write this code using <span>promises</span>, 
+but about that I will speak in the next lesson.</p>
+
+<h2><u>Tutorial videos that helped me:</u></h2>
+
+<style>
+
+iframe {
+    width: 650px;
+    height: 300px;
+    display: block;
+    margin: 30px auto 30px auto;
+    border: 3px solid black;
+
+}
+
+</style>
+
+<iframe  src="https://www.youtube.com/embed/_8gHHBlbziw?list=LL" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe src="https://www.youtube.com/embed/DHvZLI7Db8E" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</article>
+
+<hr>
+
+<article id="thirteen">
+
+<header>
+
+<h1>JavaScript Async Await</h1>
+
+</header>
+
+<p>As I said in the lesson above, there is an even better way to 
+    use <span>promises</span>, and that's what I'm gonna talk about 
+    in this section. This new syntax I'm gonna talk about is pretty useful 
+    mainly because it makes referencing parameters between the 
+    <Span>asynchronous functions</Span> easier, see the code I wrote 
+    in the lesson above written with the new syntax:
+</p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><Span class="code10">&lt;p id="container14">&lt;/p></Span></p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let container = document.getElementById("container15");
+
+    let registerUser = (email, password) => {
+        return new Promise((resolve, reject) => {
+            setTimeout( () => {
+            resolve({user_email: email, user_password: password});
+        }, 3000)
+        })
+    }
+
+    let getVideos = () => {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => { 
+         resolve(['video1', 'video2', 'video3']);
+         }, 2000);
+        })
+    }
+
+    let videoDetails = (video) => {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+            resolve(`${video} is cool!`);
+        }, 2000)
+        })
+    }
+
+<span class="orange">async function example(){
+
+var user = await registerUser("alex@gmail.com", 123);
+container.innerHTML = `User_email: ${user.user_email} &lt;br> User_password: ${user.user_password}`;
+
+var videos = await getVideos();
+container.innerHTML += `&lt;br> ${videos}`;
+
+var description = await videoDetails(videos[0]);
+container.innerHTML += `&lt;br> ${description}`;
+
+}
+
+example();</span></span></p>
+
+<p class="left">Outcome:</p>
+
+
+<p style="text-align: left;" id="container15"></p>
+
+<script>
+
+    if(true){
+    
+let container = document.getElementById("container15");
+
+    let registerUser = (email, password) => {
+        return new Promise((resolve, reject) => {
+            setTimeout( () => {
+            resolve({user_email: email, user_password: password});
+        }, 3000)
+        })
+    }
+
+    let getVideos = () => {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => { 
+         resolve(['video1', 'video2', 'video3']);
+         }, 2000);
+        })
+    }
+
+    let videoDetails = (video) => {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+            resolve(`${video} is cool!`);
+        }, 2000)
+        })
+    }
+    
+async function example(){
+    
+let user = await registerUser("alex@gmail.com", 123);
+container.innerHTML = `User_email: ${user.user_email} <br> User_password: ${user.user_password}`;
+
+let videos = await getVideos();
+container.innerHTML += `<br> ${videos}`;
+
+let description = await videoDetails(videos[0]);
+container.innerHTML += `<br> ${description}`;
+
+}
+
+example();
+
+    }
+    
+    </script>
+
+<p>Let me explain now, the <span>async</span> keyword I wrote before 
+the <span>function</span> lets <Span>JavaScript</Span> know I'm writing 
+<span>asynchronous code</span>, whenever the keyword <span>await</span> is met 
+the <span>function</span> will cease to work, till the <span>function</span>
+    after the keyword is done, only then the code will continue.</p>
+
+
+<p>Normally, using the other syntax to catch any errors we would use <span>catch()</span>
+method, but now with that new syntax what do we do? To 
+catch any errors and define how we want the errors to be handled 
+we can use the <span>try</span> and <span>catch</span> code blocks, like this: </p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><Span class="code10">&lt;p id="container14">&lt;/p></Span></p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let container = document.getElementById("container16");
+
+    let registerUser = (email, password) => {
+        return new Promise((resolve, reject) => {
+            setTimeout( () => {
+            resolve({user_email: email, user_password: password});
+        }, 3000)
+        })
+    }
+
+    let getVideos = () => {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => { 
+         resolve(['video1', 'video2', 'video3']);
+         }, 2000);
+        })
+    }
+
+    let videoDetails = (video) => {
+        return new Promise((resolve, reject) => {
+
+<span class="orange">         if( video == undefined ){
+                reject("No video was selected");
+            } else {</span>
+            setTimeout(() => {
+            resolve(`${video} is cool!`);
+            }, 2000)
+<Span class="orange">          }</span>
+
+        })
+    }
+
+async function example(){
+
+<span class="orange">try{</span>
+let user = await registerUser("alex@gmail.com", 123);
+container.innerHTML = `User_email: ${user.user_email} &lt;br> User_password: ${user.user_password}`;
+
+let videos = await getVideos();
+container.innerHTML += `&lt;br> ${videos}`;
+
+let description = await <span class="orange">videoDetails();</span>
+container.innerHTML += `&lt;br> ${description}`;
+<span class="orange">} catch(err) { container.innerHTML += `&lt;br> ${err}` }</span>
+
+}
+
+example();</span></span></p>
+
+<p class="left">Outcome:</p>
+
+
+<p style="text-align: left;" id="container16"></p>
+
+<script>
+
+    if(true){
+    
+let container = document.getElementById("container16");
+
+    let registerUser = (email, password) => {
+        return new Promise((resolve, reject) => {
+            setTimeout( () => {
+            resolve({user_email: email, user_password: password});
+        }, 3000)
+        })
+    }
+
+    let getVideos = () => {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => { 
+         resolve(['video1', 'video2', 'video3']);
+         }, 2000);
+        })
+    }
+
+    let videoDetails = (video) => {
+        return new Promise((resolve, reject) => {
+            
+            if( video == undefined ){
+                reject("No video was selected");
+            } else {
+            setTimeout(() => {
+            resolve(`${video} is cool!`);
+        }, 2000)
+            }
+        })
+    }
+    
+async function example(){
+    
+try{    
+let user = await registerUser("alex@gmail.com", 123);
+container.innerHTML = `User_email: ${user.user_email} <br> User_password: ${user.user_password}`;
+
+let videos = await getVideos();
+container.innerHTML += `<br> ${videos}`;
+
+let description = await videoDetails();
+container.innerHTML += `<br> ${description}`;
+} catch(err) { container.innerHTML += `<br> ${err}` }
+
+}
+
+example();
+
+    }
+    
+    </script>
+
+<iframe src="https://www.youtube.com/embed/V_Kr9OSfDeU?list=LL" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</article>
+
+
+
+<hr>
+
+</body>
+</html>

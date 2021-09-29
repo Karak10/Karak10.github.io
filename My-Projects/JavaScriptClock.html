@@ -1,0 +1,333 @@
+<!DOCTYPE HTML>
+<html>
+<head lang="en-US">
+<meta charset="UTF-8">
+<title> JavaScript Clock </title>
+<style>
+       .left {
+        text-align: left;
+    }
+    
+    .code10 {
+    white-space: pre-line;
+    background-color: lightgreen;
+    }
+    
+    p {
+    text-align:center;
+    }
+    h1 {
+    text-align:center;
+    }
+    h2 {
+    text-align:center;
+    }
+    h3 {
+    text-align:center;
+    }
+    .c {
+    background-color:lightgreen;
+    }
+    hr {
+    width:100%;
+    height:15px;
+    background-color:black;
+    color:black;
+    border: black solid;
+    }
+    body {
+    background-color:rgb(165, 235, 235);
+    }
+    span {
+    background-color:lightgreen;
+    }
+    
+    a:link {
+    color: black;
+    text-shadow: 1px 0px 1px black;
+    
+    }
+    
+    a:visited {
+    color: black;
+    text-shadow: 1px 0px 1px rgb(22, 22, 22);
+    }
+    
+    a:hover {
+    text-decoration: underline;
+    color: red;
+    text-shadow: 1px 0px 1px black;
+    }
+    
+    </style> 
+<link rel="stylesheet" href="../CSS-JavaScript-External-Files/HTMLnotes.css?version=1">
+</head>
+<body>
+<hr>
+<article>
+
+<h1> JavaScript Clock </h1>
+<p><a href="../Home-Pages/myprojects.html">Click to go back</a></p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><span class="code10">&lt;div class="clock">&lt;/div>
+    &lt;div class="hand second" data-seconds-hand>&lt;/div>
+    &lt;div class="hand minute" data-minutes-hand>&lt;/div>
+    &lt;div class="hand hour" data-hours-hand>&lt;/div>
+    &lt;div class="number number1">1&lt;/div>
+    &lt;div class="number number2">2&lt;/div>
+    &lt;div class="number number3">3&lt;/div>
+    &lt;div class="number number4">4&lt;/div>
+    &lt;div class="number number5">5&lt;/div>
+    &lt;div class="number number6">6&lt;/div>
+    &lt;div class="number number7">7&lt;/div>
+    &lt;div class="number number8">8&lt;/div>
+    &lt;div class="number number9">9&lt;/div>
+    &lt;div class="number number10">10&lt;/div>
+    &lt;div class="number number11">11&lt;/div>
+    &lt;div class="number number12">12&lt;/div>
+&lt;/div></span></p>
+
+<p class="left">CSS Code:</p>
+
+<p class="left"><span class="code10">.clock{
+    width: 500px;
+    height: 500px;
+    background-color:rgba(255, 255, 255, 0.377);
+    border: 3px solid black;
+    border-radius: 50%;
+    margin: auto;
+    position: relative;
+}
+
+.clock .number{
+    --rotate: 0deg;
+    font-size: 2em;
+    font-weight: bold;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform: rotate(var(--rotate));
+}
+
+.clock .number.number1{ --rotate: 30deg; }
+.clock .number.number2{ --rotate: 60deg; }
+.clock .number.number3{ --rotate: 90deg; }
+.clock .number.number4{ --rotate: 120deg; }
+.clock .number.number5{ --rotate: 150deg; }
+.clock .number.number6{ --rotate: 180deg; }
+.clock .number.number7{ --rotate: 210deg; }
+.clock .number.number8{ --rotate: 240deg; }
+.clock .number.number9{ --rotate: 270deg; }
+.clock .number.number10{ --rotate: 300deg; }
+.clock .number.number11{ --rotate: 330deg; }
+
+.clock::after{
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    bottom: 50%;
+    left: 50%;
+    border: 1px solid black;
+    border-radius: 50%;
+    transform: translate(-50%, 50%);
+    background-color: black;
+    z-index: 11;
+}
+
+.clock .hand{
+  --rotate: 0;
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  transform: translate(-50%) rotate(calc(var(--rotate) * 1deg));
+  transform-origin: bottom;
+  box-sizing: border-box;
+  border: 1px solid white;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  z-index: 10;
+}
+
+.clock .hand.second{
+    width: 4px;
+    height: 45%;
+    background-color: red;
+}
+
+.clock .hand.minute{
+    width: 8px;
+    height: 40%;
+    background-color: black;
+}
+
+.clock .hand.hour{
+    width: 11px;
+    height: 35%;
+    background-color: black;
+}</span></p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">const secondsHand = document.querySelector('[data-seconds-hand]');
+const minutesHand = document.querySelector('[data-minutes-hand]');
+const hoursHand = document.querySelector('[data-hours-hand');
+
+function setRotation(element, rotation){
+    element.style.setProperty('--rotate', rotation * 360);
+}
+
+function setClock(){
+    const currentDate = new Date;
+    const secondsRatio = currentDate.getSeconds() / 60;
+    const minutesRatio = (secondsRatio + currentDate.getMinutes()) / 60;
+    const hoursRatio = (minutesRatio + currentDate.getHours()) / 12;
+
+    setRotation(secondsHand, secondsRatio);
+    setRotation(minutesHand, minutesRatio);
+    setRotation(hoursHand, hoursRatio);
+}
+
+setClock();
+
+setInterval(setClock, 1000);</span></p>
+
+<p class="left">Outcome:</p>
+
+<style>
+
+.clock{
+    width: 500px;
+    height: 500px;
+    background-color:rgba(255, 255, 255, 0.377);
+    border: 3px solid black;
+    border-radius: 50%;
+    margin: auto;
+    position: relative;
+}
+
+.clock .number{
+    --rotate: 0deg;
+    font-size: 2em;
+    font-weight: bold;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform: rotate(var(--rotate));
+}
+
+.clock .number.number1{ --rotate: 30deg; }
+.clock .number.number2{ --rotate: 60deg; }
+.clock .number.number3{ --rotate: 90deg; }
+.clock .number.number4{ --rotate: 120deg; }
+.clock .number.number5{ --rotate: 150deg; }
+.clock .number.number6{ --rotate: 180deg; }
+.clock .number.number7{ --rotate: 210deg; }
+.clock .number.number8{ --rotate: 240deg; }
+.clock .number.number9{ --rotate: 270deg; }
+.clock .number.number10{ --rotate: 300deg; }
+.clock .number.number11{ --rotate: 330deg; }
+
+.clock::after{
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    bottom: 50%;
+    left: 50%;
+    border: 1px solid black;
+    border-radius: 50%;
+    transform: translate(-50%, 50%);
+    background-color: black;
+    z-index: 11;
+}
+
+.clock .hand{
+  --rotate: 0;
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  transform: translate(-50%) rotate(calc(var(--rotate) * 1deg));
+  transform-origin: bottom;
+  box-sizing: border-box;
+  border: 1px solid white;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  z-index: 10;
+}
+
+.clock .hand.second{
+    width: 4px;
+    height: 45%;
+    background-color: red;
+}
+
+.clock .hand.minute{
+    width: 8px;
+    height: 40%;
+    background-color: black;
+}
+
+.clock .hand.hour{
+    width: 11px;
+    height: 35%;
+    background-color: black;
+}
+
+</style>
+
+<br><br>
+
+<div class="clock">
+    <div class="hand second" data-seconds-hand></div>
+    <div class="hand minute" data-minutes-hand></div>
+    <div class="hand hour" data-hours-hand></div>
+    <div class="number number1">1</div>
+    <div class="number number2">2</div>
+    <div class="number number3">3</div>
+    <div class="number number4">4</div>
+    <div class="number number5">5</div>
+    <div class="number number6">6</div>
+    <div class="number number7">7</div>
+    <div class="number number8">8</div>
+    <div class="number number9">9</div>
+    <div class="number number10">10</div>
+    <div class="number number11">11</div>
+    <div class="number number12">12</div>
+</div>
+
+<Script>
+
+const secondsHand = document.querySelector('[data-seconds-hand]');
+const minutesHand = document.querySelector('[data-minutes-hand]');
+const hoursHand = document.querySelector('[data-hours-hand');
+
+function setRotation(element, rotation){
+    element.style.setProperty('--rotate', rotation * 360);
+}
+
+function setClock(){
+    const currentDate = new Date;
+    const secondsRatio = currentDate.getSeconds() / 60;
+    const minutesRatio = (secondsRatio + currentDate.getMinutes()) / 60;
+    const hoursRatio = (minutesRatio + currentDate.getHours()) / 12;
+
+    setRotation(secondsHand, secondsRatio);
+    setRotation(minutesHand, minutesRatio);
+    setRotation(hoursHand, hoursRatio);
+}
+
+setClock();
+
+setInterval(setClock, 1000);
+
+</Script>
+
+<br><br><br>
+<hr>
+</body>
+</html>

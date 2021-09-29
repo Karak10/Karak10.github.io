@@ -1,0 +1,2345 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<title> Page one of my responsive web design notes</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<link href="../CSS-JavaScript-External-Files/HTMLnotes.css" rel="stylesheet">
+<style>
+    header h1{
+        font-weight: bold;
+    }
+    body{
+        overflow-x: hidden;
+        width: 100%;
+        margin: 0px;
+    }
+    .left {
+        text-align: left;
+        margin-left: 10px;
+    }
+    iframe {
+        width: 600px;
+        height: 350px;
+        border: 3px solid black;
+        margin: 20px auto 20px auto;
+        display: block;
+    }
+    .code10 {
+    white-space: pre-wrap;
+    background-color: lightgreen;
+    overflow-wrap: break-word;
+    } 
+    p {
+    text-align:center;
+    }
+    h1 {
+    text-align:center;
+    }
+    h2 {
+    text-align:center;
+    }
+    h3 {
+    text-align:center;
+    }
+    .c {
+    background-color:lightgreen;
+    }
+    hr {
+    width:100%;
+    height:15px;
+    background-color:black;
+    color:black;
+    border: black solid;
+    }
+    body {
+    background-color:rgb(165, 235, 235);
+    }
+    span {
+    background-color:lightgreen;
+    }  
+    a:link {
+    color: black;
+    text-shadow: 1px 0px 1px black;
+    
+    }
+    a:visited {
+    color: black;
+    text-shadow: 1px 0px 1px rgb(22, 22, 22);
+    }
+    a:hover {
+    text-decoration: underline;
+    color: red;
+    text-shadow: 1px 0px 1px black;
+    }     
+    img{
+        display: block;
+        margin: 20px auto 20px auto;
+        border: 3px solid black;
+        border-radius: 10px;
+    }
+</style> 
+</head>
+<body>
+
+<hr>
+
+    <header> 
+    <h1>Page one of my responsive web design notes</h1>
+    <p>In my responsive web design notes I will write about stuff
+    that can help you build responsive web sites that look cool in
+    all different kind of devices and screen sizes.</p>
+    </header>
+    
+<article id="start-of-page"> 
+  
+<div id="homepages">
+
+    <h3>Home Pages:</h3>
+   
+
+</div>
+
+<nav data-notes="frontendnotes" data-page="1">
+
+</nav>
+
+    <h3>Informations included in this page:</h3>
+    <p><a href="./../Front-End-Notes/frontend1.html#one">The viewport and meta tags</a></p>
+    <p><a href="./../Front-End-Notes/frontend1.html#two">Media Queries</a></p>
+    <p><a href="./../Front-End-Notes/frontend1.html#three">CSS Flexbox layout (Flexible Box)</a></p>
+    <p><a href="./../Front-End-Notes/frontend1.html#four">CSS Grid Layout (aka "Grid")</a></p>
+
+</article>
+
+<script src="../CSS-JavaScript-External-Files/nav.js"></script>
+
+<hr>
+
+<article id="one">
+<header><h1>THE VIEWPORT AND META TAGS</h1></header>
+
+<p>Before you start making a page responsive, you need to cover a few concepts. The first concept is the viewport: the invisible are of a web page</p>
+
+<p>Usually a web page with a fixed width becomes too large to fit the viewport on a small screen, such as a mobile device or tablet. To fix this,
+browsers on those devices scaled down the entire web page to fit the screen.
+</p>
+
+<h1>Meta tags</h1>
+
+<p>You can control your viewport in HTML5 using a meta tag:</p>
+
+<p class="left"><span class="code10">&lt;meta name = "viewport" content = "width=device-width, initial-scale=1.0"></span></p>
+
+<p>width=device-width sets the width of the page to follow the screen-width of the device. initial-scale=1.0 sets the initial zoom
+level when the page is first loaded by the browser.
+</p>
+
+<p>If you are working on VS code, just create a new html file and type ! (exclamation point), hit enter and wallah, all your
+required meta tags are there + the basic structure of the document. For it to work you should also install emmet in your vscode.
+</p>
+
+<p>Since we found out about the meta tag however let's learn some more about it, a meta
+tag is not only used to control your viewport, there are many uses in meta tags:
+</p>
+
+<p class="left"><span class="code10">&lt;head>
+   &lt;meta charset="UTF-8">
+   &lt;meta name="description" content="Some ugly notes I keep">
+   &lt;meta name="keywords" content="HTML, CSS, JavaScript">
+   &lt;meta name="author" content="Karak10">
+   &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+&lt;/head>
+</span></p>
+
+<h3><u>Definition and Usage:</u></h3>
+
+<p>The meta tag defines metadata about an HTML document. Metadata is data (information) about data.</p>
+<p>Meta tags always got inside the &lt;head> element, and are typically used to specify character set,
+page description, keywords, author of the document, and viewport settings.
+</p>
+<p>Metadata will not be displayed on the page, but is machine parsable.</p>
+<p>Metadata is used by browsers (how to display content or reload page), search engines (keywords),
+and other web services.
+</p>
+
+<h3><u>Attributes:</u></h3>
+
+<Style>
+    :root{
+        --table-border: 2px solid black;
+    }
+    .notes-table{
+        text-align: left;
+        border: var(--table-border);
+        border-collapse: collapse;
+        background-color: white;
+        margin: auto;
+    }
+    .notes-table :is(th, td){
+        vertical-align: top;
+        border: var(--table-border);
+        width: 20vw;
+        padding: 5px 30px 5px 10px;
+    }
+    .notes-table tr:nth-child(odd){
+        background-color: lightgrey;
+    }
+</Style>
+
+<table class="notes-table">
+    <tr>
+        <th>Attribute</th>
+        <th>Value</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td><u>charset</u></td>
+        <td>character_set</td>
+        <td>Specifies the character encoding for the HTML document</td>
+    </tr>
+    <tr>
+        <td><u>content</u></td>
+        <td>text</td>
+        <td>Specifies the value associated with the http-equiv or name attribute</td>
+    </tr>
+    <tr>
+        <td><u>http-equiv</u></td>
+        <td>content-security-policy </br>content-type </br>default-style </br>refresh</td>
+        <td>provides an HTTP header for the information/value of the content attribute</td>
+    </tr>
+    <tr>
+        <td><u>name</u></td>
+        <td>application-name </br>author </br>description </br>generator </br>keywords </br>viewport</td>
+        <td>Specifies a name for the metadata</td>
+    </tr>
+</table>
+
+<p>Try out some of those attributes if you want, for example, try adding &lt;meta http-equiv="refresh" content="30"> to your page,
+this will make the page reload every 30 seconds.
+</p>
+
+<h2>Setting the Viewport:</h2>
+
+<p>The viewport is the user's visible area of a web page. It varies with the device, it will be smaller on a mobile phone than on a computer screen.</p>
+
+<p>You should include the following meta element in all your web pages:</p>
+
+<p class="left"><span class="code10">&lt;meta name = "viewport" content = "width=device-width, initial-scale=1.0"></span></p>
+
+<p>This gives the browser instructions on how to control page's dimensions and scaling.</p>
+
+<p>The width=device-width part sets the width of the page to follow the screen-width of the device (which will vary depending on the device).</p>
+
+<p>The initial-scale=1.0 part sets the initial zoom level when the page is first loaded by the browser.</p>
+
+<p>Here is an example of a web page without the viewport meta tag and the same web page with
+the viewport meta tag:
+</p>
+
+<style>
+    .images{
+        margin: auto;
+        border-spacing: 50px 10px;
+    }
+</style>
+<table class="images">
+    <tr>
+        <th>Without the viewport meta tag</th>
+        <th>With the viewport meta tag</th>
+    </tr>
+    <tr>
+        <td><img src="./../images/withoutmetatag.png" alt="image not found"></td>
+        <td><img src="./../images/withmetatag.png" alt="image not found"></td>
+    </tr>
+</table>
+</article>
+
+<hr>
+
+<article id="two">
+    <header><h1>MEDIA QUERIES</h1></header>
+    <p>In this section we will talk about media queries, a really coll CSS3 feauture that is required to know if you want to create flexible websites that look cool in all different kind of devices.</p>
+    <h2><u>CSS2 Intrudocued Media Types:</u></h2>
+    <p>The @media rule, introduced in CSS2, made it possible to define different style rules for different media types.</p>
+    <p>Examples: You could have one set of style rules for computer screens, one for printers, one for handheld devices, one for television-type devices, and so on.</p>
+    <p>Unfortunately these media types never got a lot of support by devices, other than the print media type.</p>
+    <h2><u>CSS3 Introduced Media Queries:</u></h2>
+    <p>Media queries in CSS3 extended the CSS2 media types idea: Instead of looming for a type of device, they look at the capability of the device.</p>
+    <p>Media queries can be used to check many things, such as:</p>
+    <ul>
+        <li>width and height of the viewport</li>
+        <li>width and height of the device</li>
+        <li>orientation (is the tablet/phone in landscape or portrait mode?)</li>
+        <li>resolution</li>
+    </ul>
+    <p>Using media queries are a popular technique for delivering a tailored style sheet to desktops, laptops, tablets, and mobile phones (such as Iphone and Android phones).</p>
+    <h2><u>Media Query Syntax:</u></h2>
+    <p>A media query consists of a media type and can contain one or more expressions, which resolve to either true or false:</p>
+<p class="left"><span class="code10">@media not|only mediatype and (expressions){
+    CSS-Code;
+}
+</span></p>
+    <p>The result of the query is true if specified media type matches the type of device the document is being displayed on and all expressions in the media query are true. When a media query is true,
+    the corresponding style sheet or style rules are applied, following the normal cascading rules.
+    </p>
+    <p>Unless you use the not or only operators, the media type is optional and the "all" type will be implied.</p>
+    <p>You can also have different stylesheets for different media:</p>
+<p class="left"><span class="code10">&lt;link rel="stylesheet" media="mediatype and|not|only (expressions)" href="styles.css"></span></p>
+    <h2><u>CSS3 Media Types:</u></h2>
+    <table class="notes-table">
+        <tr>
+            <th>Value</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>all</td>
+            <td>Used for all media type devices</td>
+        </tr>
+        <tr>
+            <td>print</td>
+            <td>Used for printers</td>
+        </tr>
+        <tr>
+            <td>screen</td>
+            <td>Used for computer screens, tablets, smart-phones etc.</td>
+        </tr>
+        <tr>
+            <td>speech</td>
+            <td>Used for screenreaders that "reads" the page out loud</td>
+        </tr>
+    </table>
+    <h2><u>Meaning of the and, only and not keywords:</u></h2>
+    <table class="notes-table">
+        <tr>
+            <th>keyword</th>
+            <th>meaning</th>
+        </tr>
+        <tr>
+            <td>not</td>
+            <td>The not keyword inverts the meaning of an entire media query</td>
+        </tr>
+        <tr>
+            <td>only</td>
+            <td>The only keyword prevents older browsers that do not support media queries with media
+                features from applying the specified styles. It has no effect on modern browsers.
+            </td>
+        </tr>
+        <tr>
+            <td>and</td>
+            <td>The and keyword combines a media feature with a media type or other media features</td>
+        </tr>
+    </table>
+    <h2><u>Some of the media feautures (not all are included)</u></h2>
+    <p>Here I will list some media feautures I find useful, at the end of the media queries section
+        I will put a link to a website that has more informations about media queries.
+    </p>
+    <table class="notes-table">
+        <tr>
+            <th>Value</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>any-hover</td>
+            <td>Does any available input mechanism allow the user to hover over elements?</td>
+        </tr>
+        <tr>
+            <td>any-pointer</td>
+            <td>Is any available input mechanism a pointing device, and if so, how accurate is it?</td>
+        </tr>
+        <tr>
+            <td>height</td>
+            <td>The viewport height</td>
+        </tr>
+        <tr>
+            <td>width</td>
+            <td>The viewport width</td>
+        </tr>
+        <tr>
+            <td>min-height</td>
+            <td>The minimum height of the display area, such as a browser window</td>
+        </tr>
+        <tr>
+            <td>min-width</td>
+            <td>The minimum width of the display area, such as a browser window</td>
+        </tr>
+        <tr>
+            <td>max-height</td>
+            <td>The maximum height of the display area, such as a browser window</td>
+        </tr>
+        <tr>
+            <td>max-width</td>
+            <td>The maximum width of a display aray, such as a browser window</td>
+        </tr>
+        <tr>
+            <td>scripting</td>
+            <td>Is scripting (e.g. JavaScript) available?</td>
+        </tr>
+        <tr>
+            <td>aspect-ratio</td>
+            <td>The ratio between the width and the height of the viewport</td>
+        </tr>
+        <tr>
+            <td>min-aspect-ratio</td>
+            <td>The minimum ratio between the width and the height of the display area</td>
+        </tr>
+        <tr>
+            <td>max-aspect-ratio</td>
+            <td>The maximum ratio between the width and the height of the display area</td>
+        </tr>
+        <tr>
+            <td>orientation</td>
+            <td>The orientation of the viewport (landscape or portrait mode)</td>
+        </tr>
+    </table>
+    <h2><u>Media Queries Examples:</u></h2>
+    <p>One way to use media queries is to have an alternate CSS section right inside your style sheet.</p>
+    <p>The following example changes the background-color of the div bellow to lightgreen if the viewport
+    is bigger or equal to 700 pixels, else the background will be pink.
+    </p>
+<p class="left">HTML Code:</p>
+<p class="left"><span class="code10">&lt;div id="media-query-example1">&lt;/div></span></p>
+<p class="left">CSS Code:</p>
+<p class="left"><span class="code10">#media-query-example1{
+    background-color: pink;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    border: 2px solid black;
+    border-style: dotted;
+}
+@media screen and (min-width: 700px) {
+    #media-query-example1{
+        background-color: lightgreen;
+    }
+}</span></p>
+<p class="left">Outcome:</p>
+    <style>
+        #media-query-example1{
+            background-color: pink;
+            width: 100px;
+            height: 100px;
+            margin: auto;
+            border: 2px solid black;
+            border-style: dotted;
+        }
+        @media screen and (min-width: 700px) {
+            #media-query-example1{
+                background-color: lightgreen;
+            }
+        }
+    </style>
+    <div id="media-query-example1"></div>
+    <p>You can also define multiple conditions, for example, a max and min width, like in the example bellow:</p>
+<p class="left"><span class="code10">@media only screen and (min-width: 800px) and (max-width: 1024px){
+    CSS-Code;
+}
+</span></p>
+    <h2><u>Always Design for Mobile First</u></h2>
+    <p>Mobile first means designing for mobile before designing for desktop or any other device (This will make the page display faster on smaller devices).</p>
+    <p>Instead of changing styles when the width gets smaller, we should change the design when the width gets larger.</p>
+    <h2><u>Typical Device Breakpoints</u></h2>
+    <p>There are tons of screens and devices with different heights and widths, so it is hard to
+    create an exact breakpoint for each device. To keep things simple you could target five groups:
+    </p>
+    <style>
+        .grey{
+            background-color: lightgrey;
+        }
+    </style>
+<p class="left"><span class="code10"><span class="grey">/* Extra small devices (phones, 600px and down) */</span>
+@media only screen and (max-width: 600px) {...}
+
+<span class="grey">/* Small devices (portrait tablets and large phones, 600px and up) */</span>
+@media only screen and (min-width: 600px) {...}
+
+<span class="grey">/* Medium devices (landscape tablets, 768 and up) */</span>
+@media only screen and (min-width: 768px) {...}
+
+<span class="grey">/* Large devices (laptops/desktops, 992px and up) */</span>
+@media only screen and (min-width: 992px) {...}
+
+<span class="grey">/* Extra large devices (large laptops and desktops, 1200px and up) */</span>
+@media only screen and (min-width: 1200px) {...}</span></p>
+    <h2><u>Orientation: Portrait / Landscape</u></h2>
+    <p>Media queries can also be used to change layout of a page depending on the orientation of the browser.</p>
+    <p>You can have a set of CSS properties that will only apply when the browser window is wider than it's height, a so called "Landscape" orientation:</p>
+<p class="left"><span class="code10">@media only screen and (orientation: landscape) {
+    CSS-Code;
+}
+</span></p>
+
+<h2><u>More information about Media Queries:</u></h2>
+<p>For a full overview of all the media types and features/expressions, you can visit <a href="https://www.w3schools.com/cssref/css3_pr_mediaquery.asp" target="_blank">this</a> site.</p>
+</article>
+
+<hr>
+<article id="three">
+    <h1>CSS Flexbox layout (Flexible Box)</h1>
+    <p>So, I already have talked about flex box before in my CSS notes,
+    however I think the notes I took back then weren't very well organized,
+    and so I wanted to create a more complete guide of how flexbox works here. The reason
+    I include this section in this category of notes and not in my CSS notes is because
+    I am trying to organize some notes here and slowly start writing about tricks and tips
+    on how to make responsive websites. Flex box is one of the things a developer needs to
+    know well in order to make a website responsive, since if used correctly it can easily
+    make a website look good on all different screen sizes, without having to use
+    media queries and define how you want things to look on different screen sizes your self.
+    </p>
+    <hr style="height: 3px; padding: 0px; border: none;">
+    <h2><u>Background:</u></h2>
+    <p>The Flexbox Layout (Flexible Box) module aims at providing a more efficient way to lay out,
+    align and distribute space among items in a container, even when their size is unknown and/or dynamic (thus the word "flex").
+    </p>
+    <p>The main idea behind the flex layout is to give the container the ability to alter it's items width/height (and order) to best fill the container
+        the available space (mostly to accommodate to all kind of display devices and screen sizes). A flex container expands items to fill available free space
+        or shrinks them to prevent overflow.
+    </p>
+    <p>Most importantly, the flexbox layout is direction-agnostic as opposed to the regular layouts (block which is vertically-based and inline which is horizontally-based).
+    While those work well for pages, they lack flexibility to support large or complex applications (especially when it comes to orientation changings, resizing, stretching, shrinking, etc).
+    </p>
+    <p><strong>Note:</strong> Flexbox layout is most appropriate to the components of an application, and small-scale layouts, while the Gred layout is intended for larger scale layouts.</p>
+    <hr style="height: 3px; padding: 0px; border: none;">
+    <h2><u>Basics and terminology:</u></h2>
+    <p>Since flexbox is a whole module and not a single property, it involves a lot of things including its whole set of properties.
+    Some of them are meant to be set on the container (parent element, known as "flex container") whereas the others are meant to be set on the children (said "flex items").
+    </p>
+    <p>If "regular" layout is based on both block and inline flow directions, the flex layout
+    is based on "flex-flow directions". Please have a look at this figure from the specification, explaining the main idea behind the flex layout:
+    </p>
+    <style>
+        .notes-image{
+            width: 50%;
+            border: none;
+        }
+    </style>
+    <img class="notes-image" src="./../images/flex1.svg">
+    <p>Items will be laid out following the main axis (from main-start to main-end) or the cross axis (from cross-start to cross-end).</p>
+    <ul>
+        <li><strong>main axis -</strong> The main axis of a flex container is the primary axis along which flex items are laid out.
+        Beware, it is not necessarily horizontal, it depends on the flex-direction property.</li>
+        <li><strong>main-start | main-end -</strong> The flex items are placed within the container starting from main-start and going to main-end.</li>
+        <li><strong>main size -</strong> A flex item's width or height, whichever is the main dimension, is the item's main size. The flex item's main
+        size property is either 'width' or 'height' property, whichever is the main dimension.</li>
+        <li><strong>cross axis -</strong> The axis perpendicular to the main axis is called the cross axis. Its direction depends on the main axis direction.</li>
+        <li><strong>cross-start | cross-end -</strong> Flex lines are filled with items and placed into the container starting on the cross-start side of the
+        flex container and going towards the cross-end side.</li>
+        <li><strong>cross size -</strong> The width or height of a flex item, whichever is in the cross dimension, is the item's cross size.
+        The cross size property is whichever of 'width' or 'height' that is in the cross dimension.</li>
+    </ul>
+    <hr style="height: 3px; padding: 0px; border: none;">
+    <h2><u>Flexbox properties:</u></h2>
+    <p>To make the notes more organized, I will split the flexbox properties in two categories, the
+    properties that are applied to the parent element, else known as the flex container, and the
+    properties that are applied directly to the children inside that flex container.
+    </p>
+    <hr style="height: 3px; padding: 0px; border: none;">
+    <h2><u>Properties for the Parent (flex container):</u></h2>
+    <img class="notes-image" src="./../images/flex2.svg" style="width: 40%">
+    <h2>display property:</h2>
+    <p>Before you start working with a flexbox you first have to define you flex container,
+    to do so you should use the display property, just like in the example bellow:
+    </p>
+<p class="left"><span class="code10">.container {
+    display: flex;
+}</span></p>
+    <p>Note that CSS columns have no effect on a flex container.</p>
+    <h2>flex-direction:</h2>
+    <img src="./../images/flex3.svg" class="notes-image" style="width: 40%">
+    <p>The flex-direction property establishes the main-axis, thus defining the direction flex items are placed in the flex container.
+    Flexbox is (aside from optional wrapping) a single-direction layout concept. Think of flex items as primarily
+    laying out either in horizontal rows or vertical columns.
+    </p>
+<p class="left"><span class="code10">.container {
+    display: flex;
+    flex-direction: row | row-reverse | column | column-reverse;
+}</span></p>
+    <ul>
+        <li><strong>row (default):</strong> left to right in ltr, right to left in rtl</li>
+        <li><strong>row-reverse:</strong> right to left in ltr, left to right in rtl</li>
+        <li><strong>column:</strong> same as row but top to bottom</li>
+        <li><strong>column-reverse:</strong> same as row-reverse but bottom to top</li>
+    </ul>
+</span></p>
+    <h2>flex-wrap:</h2>
+    <img src="./../images/flex4.svg" class="notes-image" style="width: 40%">
+    <p>By default, flex items will all try to fit onto one line. You can change that and allow the items to wrap
+    as needed with this property.
+    </p>
+<p class="left"><span class="code10">.container {
+    flex-wrap: nowrap | wrap | wrap-reverse;
+}</span></p>
+    <ul>
+        <li><strong>nowrap (default):</strong> all flexx items will be on one line.</li>
+        <li><strong>wrap:</strong> flex items will wrap onto multiple lines, from top to bottom.</li>
+        <li><strong>wrap-reverse:</strong> flex items will wrap onto multiple lines from buttom to top.</li>
+    </ul>
+    <p>There are some <a href="https://css-tricks.com/almanac/properties/f/flex-wrap/" target="_blank">visual demos of flex-wrap here</a>.</p>
+    <h2>flex-flow:</h2>
+    <p>This is a shorthand for the <Span>flex-direction</Span> and <Span>flex-wrap</Span> properties, which
+    together define the flex container's main and cross axes. The default value is <span>row nowrap</span>.</p>
+<p class="left"><span class="code10">.container {
+    flex-flow: column wrap;
+}</span></p>
+    <h2>justify-content:</h2>
+    <img src="./../images/flex5.svg" class="notes-image" style="width: 40%">
+     <p>This defines the alignment along the main axis. It helps distribute extra free space leftover when either all the flex items on a line are inflexible, or
+    are flexible but have reached their maximum size. It also exerts some control over the alignment of items when they overflow the line.
+    </p>
+<p class="left"><span class="code10">.container {
+    justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly | start | end | left | right ... + safe | unsafe;
+}</span></p>
+    <ul>
+        <li><strong>flex-start (default):</strong> items are packed towards the start of the flex-direction.</li>
+        <li><strong>flex-end:</strong> items are packed towards the end of the flex-direction</li>
+        <li><strong>start:</strong> items are packed towards the start of the writing-mode direction.</li>
+        <li><strong>end:</strong> items are packed towards the end of the wirting-mode direction.</li>
+        <li><strong>left:</strong> items are packed towards the left edge of the container, unless that doesn't make sense with the flex-direction, then it behaves like start.</li>
+        <li><strong>right:</strong> items are packed towards the right edge of the container, unless that doesn't make sense with the flex-direction, then it behavaves like end.</li>
+        <li><strong>center:</strong> items are center along the line.</li>
+        <li><strong>space-between:</strong> items are evenly distributed in the line, first item is on the start line, last item on the end line.</li>
+        <li><strong>space-around:</strong> items are evenly distributed in the line with equal space around them. Note that visually the spaces aren't equal, since
+        all the items have equal space on both sides. The first item will have one unit of space against the container edge, but two units of space between the next item
+        because that next item has its own spacing that applies.</li>
+        <li><strong>space-evenly:</strong> items are distributed so that the spacing between two items (and the space to the edges) is equal.</li>
+    </ul>
+    <p>Note that that browser support for these values is nuanced. For example, space-between never got support for some versions of Edge, and start/end/left/right aren't in Chrome yet. The
+    safest values are <Span>flex-start</Span>, <span>flex-end</span>, and <span>center</span>.
+    </p>
+    <p>There are also two additional keywords you can pair with these values: <Span>safe</Span> and <span>unsafe</span>. Using
+    safe ensures that however you do this type of positioning, you can't push an element such that it renders off-screen (e.g off the top) in such a way that content
+    can't be scrolled too (called "data loss").</p>
+    <h2>align-items:</h2>
+    <img src="./../images/flex6.svg" class="notes-image" style="width: 40%">
+    <p>This defines the default behavior for how flex items are laid out along the <Span>cross-axis</Span> on the current line.
+    Think of it as the <span>justify-content</span> version for the <span>cross-axis</span> (perpendicular to the main-axis).</p>
+<p class="left"><span class="code10">.container {
+    align-items: stretch | flex-start | flex-end | center | baseline | forst baseline | last baseline | start | end | self-start | self-end + ... safe | unsafe;
+}</span></p>
+    <ul>
+        <li><strong>stretch (default):</strong> stretch to fill the container (still respect min-width / max-width).</li>
+        <li><strong>flex-start / start / self-start:</strong> items are placed at the start of the cross axis. The difference between these is subtle, and is about
+        respecting the flex-direction rules or the writing-mode rules.</li>
+        <li><strong>flex-end / end / self-end:</strong> items are placed at the end of the cross axis. The difference again is subtle and is
+        about respecting flex-direction rules vs writing-mode rules.</li>
+        <li><strong>center:</strong> items are centerd in the cross-axis.</li>
+        <li><strong>baseline:</strong> items are aligned such as their baselines align.</li>
+    </ul>
+    <p>The <Span>safe</Span> and <span>unsafe</span> modifier keywords can be used
+    in conjunction with all the rest of these keywords, and deal with helping you prevent aligning elements such as the content becomes inaccessible.</p>
+    <h2>align-content:</h2>
+    <img src="./../images/flex7.svg" class="notes-image" style="width: 40%">
+    <p>This aligns a flex container's lines within when there is extra space in the cross-axis, similar to how <span>justify-content</span> aligns
+    individual items within the main-axis.</p>
+    <p><strong>Note:</strong> this property only takes effect on multi-line flexible containers, where flex-flow is set to
+    either wrap or wrap-reverse. A signle-line flexible container (i.e. where flex-flow is set to it's default value, row nowrap) will not reflect align-content.</p>
+<p class="left"><span class="code10">.container{
+    align-content: flex-start | flex-end | center | space-between | space-around | space-evenly | stretch | start | end | first baseline | last baseline + ... safe | unsafe;
+}</span></p>
+    <ul>
+        <li><Strong>normal (default):</Strong> items are packed in their default position as if no value was set.</li>
+        <li><strong>flex-start / start:</strong> items are packed to the start of the container. The (more supported) flex-start honors the
+        flex-direction while start honors the writing-mode direction.</li>
+        <li><strong>flex-end / end:</strong> items are packed to the end of the container. The (more supported) flex-end
+        honors the flex-direction while end honors the writing-mode direction.</li>
+        <li><strong>center:</strong> items are centered in the container.</li>
+        <li><strong>space-between:</strong> items are evenly distributed, the first line is at the start of the container while the last one is at the end.</li>
+        <li><strong>space-around:</strong> items are evenly distributed with equal space around each line.</li>
+        <li><strong>space-evenly:</strong> items are evenly distributed with equal space around them, I explaiend the
+        difference between this and space-around earleir in justify-content section.</li>
+        <li><strong>stretch:</strong> lines stretch to take up the remaining space.</li>
+    </ul>
+    <p>The <span>safe</span> and <span>unsafe</span> modifier keywords can be used in conjunction with all the rest of these keywords, and deal with
+    helping you prevent aligning elements such that the content becomes inaccessible.</p>
+    <hr style="height: 3px; padding: 0px; border: none;">
+    <h2><u>Properties for the children:</u></h2>
+    <img src="./../images/flex8.svg" class="notes-image" style="width: 40%">
+    <h2>flex-grow:</h2>
+    <img src="./../images/flex10.svg" class="notes-image" style="width: 40%">
+    <p>This defines the ability for a flex item to grow if necessary.
+    It accepts a unitless value that serves as a proportion. It dictates what amount of the available space inside
+    the flex container the item should take up.
+    </p>
+    <p>If all items have flex-grow set to 1, the remaining space in the container will be distributed equally to all children.
+    If one of the children has a value of 2, the remaining space would take up twice as much space as the others (or it will try to, at least).
+    </p>
+<p class="left"><span class="code10">.item {
+    flex-grow: 4; /* default is 0 */
+}</span></p>
+    <p><Strong>Note:</Strong> negative numbers are invalid.</p>
+    <h2>flex-shrink:</h2>
+    <p>Similar to flex-grow, this defines the ability for a flex item to shrink if necessary.</p>
+<p class="left"><span class="code10">.item {
+    flex-shrink: 3; /* default is 1 */
+}</span></p>
+    <p><strong>Note:</strong> negative numbers are invalid.</p>
+    <h2>flex-basis</h2>
+    <p>This defines the default size of an element before the remaining space is distributed.
+    It can be a length (e.g. 20%, 5rem, etc.) or a keyword. The <span>auto</span> keyword means
+    "look at my width or height property" (which was temporarily done by the <span>main-size</span> keyword until deprecated).
+    The <span>content</span> keyword means "size it based on the item's content", this keyword isn't well
+    supported yet, so it's hard to test and harder to know what its brethren <span>max-content</span>, <span>min-content</span>,
+    and <span>fit-content</span> do.
+    </p>
+<p class="left"><span class="code10">.item {
+    flex-basis: length | auto; /* default is auto */
+}</span></p>
+    <p>If set to 0, the extra space around content isn't factored in. If set to auto,
+    the extra space is distributed based on it's flex-grow value. <a href="https://www.w3.org/TR/css-flexbox-1/images/rel-vs-abs-flex.svg" target="_blank">See this graphic</a>.
+    </p>
+    <h2>flex:</h2>
+    <p>This is the shorthand for <span>flex-grow</span>, <span>flex-shrink</span> and
+    <span>flex-basis</span> combined. The second and third parameters (<Span>flex-shrink</Span> and <span>flex-basis</span>) are optional.
+    The default is <Span>0 1 auto</Span>, but if you set it with a single number value, it's like <span>1 0</span>.</p>
+<p class="left"><span class="code10">.item {
+    flex: none | [ &lt;'flex-grow'> &lt;'flex-shrink'>? || &lt;'flex-basis'> ];
+}</span></p>
+    <p><Strong>It is recommended that you use this shorthand property</Strong> rather than set the individual properties.
+    The shorthand sets the other values intelligently.</p>
+    <h2>order:</h2>
+    <img src="./../images/flex9.svg" class="notes-image" style="width: 40%">
+    <p>By default, flex items are laid out in the source order. However, the otder property
+    controls the order in which they appear in the flex container.
+    </p>
+<p class="left"><span class="code10">.item {
+    order: 5; /* default is 0 */
+}</span></p>
+    <h2>align-self:</h2>
+    <img src="./../images/flex11.svg" class="notes-image" style="width: 40%">
+    <p>This allows the default alignment (or the one specified by <span>align-items</span>) to be
+    overridden for individual flex items.</p>
+    <p>You can read all the values it can take above in the section I talked about <span>align-items</span>.</p>
+<p class="left"><span class="code10">.itme {
+    align-self: auto | flex-start | flex-end | center | baseline | stretch;
+}</span></p>
+    <p>Note that float, clear and vertical-align have no effect on a flex item.</p>
+    <hr style="height: 3px; padding: 0px; border: none;">
+    <h2><u>Prefixing Flexbox</u></h2>
+    <p>Flexbox requires some vendor prefixing to support the most browsers possible.
+    It doesn't just include prepending properties with the vendor prefix, but there are actually
+    entirely different property and value names. This is because the Flexbox spec has changed over time, creating
+    an <a href="https://css-tricks.com/old-flexbox-and-new-flexbox/" target="_blank">old", "tweener", and "new"</a> versions.
+    </p>
+    <p>Perhaps the best way to handle this is to write the new (and final) syntax and run your CSS through <a href="https://css-tricks.com/autoprefixer/" target="_blank">Autoprefixer</a>, which handles the fallbacks very well,
+    I still haven't learned how to use this however but I am planning learn and write about Autoprefixer later in this page.</p>
+    <p>Alternatively you can use Sass @mixin to help with some of the prefixing, which also
+    gives you an idea of what kind of things need to be done, I'm still unfamiliar with Sass
+    though but I'm planning to learn this too as well and I will probably write notes about it
+    in my <a href="./../Home-Pages/mycssnotes.html" target="_blank">CSS notes</a>.
+    Anyway, here is an example of how Sass @mixin can be used:
+    </p>
+<p class="left"><span class="code10">@mixin flexbox() {
+    display: -webkit-box;
+    display: -mox-box;
+    display: -webkit-flex;
+    display: flex;
+}
+
+@mixin flex($values) {
+    -webkit-box-flex: $values;
+    -moz-box-flex: $values;
+    -webkit-flex: $values;
+    -ms-flex: $values;
+    flex: $values;
+}
+
+@mixin order($val) {
+    -webkit-box-ordinal-group: $val;
+    -moz-box-ordinal-group: $val;
+    -ms-flex-order: $val;
+    -webkit-order: $val;
+    order: $val;
+}
+
+.wrapper {
+    @include flexbox();
+}
+
+.item {
+    @include flex(1 200px);
+    @include order(2);
+}</span></p>
+    <hr style="height: 3px; padding: 0px; border: none;">
+    <h1><u>Examples:</u></h1>
+    <p>Here I will include some examples of when and how can flexbox be useful to you.</p>
+    <p>Let's start with a very very simple example, solving an almost daily problem:
+    perfect centering. It couldn't be any simplier if you use flexbox.
+    </p>
+<p class="left">HTML Code:</p>
+<p class="left"><span class="code10">&lt;div id="parent1">
+    &lt;div id="child1">&lt;/div>
+&lt;/div></span></p>
+<p class="left">CSS Code:</p>
+<p class="left"><span class="code10">#parent1 {
+    height: 200px;
+    width: 200px;
+    border: 3px solid black;
+    border-radius: 20px;
+    background-color: pink;
+    display: flex;
+    margin: auto;
+}
+
+#child1 {
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 20px;
+    margin: auto; <Span class="grey">/* magic! */</Span>
+}</span></p>
+<p class="left">Outcome:</p>
+    <style>
+        #parent1 {
+            height: 200px;
+            width: 200px;
+            border: 3px solid black;
+            border-radius: 20px;
+            background-color: pink;
+            display: flex;
+            margin: auto;
+        }
+        #child1 {
+            width: 50px;
+            height: 50px;
+            background-color: white;
+            border: 3px solid black;
+            border-radius: 20px;
+            margin: auto;
+        }
+    </style>
+    <div id="parent1">
+        <div id="child1"></div>
+    </div>
+    <p>This relies on the fact that a margin set to auto in a flex container absorbs extra space.
+    So setting margin to auto will make the item perfetly centered in both axes. Need
+    more help understanding how it works, you can read <a href="https://css-tricks.com/the-peculiar-magic-of-flexbox-and-auto-margins/" target="_blank">this article</a>
+    which explains how margin="auto" works a little bit better.
+    </p>
+    <p>Now let's use some more properties. Consider a list of 6 items, all with fixed dimensions, but can
+    be auto-sized. We want them to be evenly distributed on the horizontal axis so that when we resize the browser, everything scales nicely, and without media queries.
+    </p>
+<p class="left">HTML Code:</p>
+<p class="left"><span class="code10">&lt;div id="parent2">
+    &lt;div class="children2">&lt;/div>
+    &lt;div class="children2">&lt;/div>
+    &lt;div class="children2">&lt;/div>
+    &lt;div class="children2">&lt;/div>
+    &lt;div class="children2">&lt;/div>
+    &lt;div class="children2">&lt;/div>
+&lt;/div></span></p>
+<p class="left">CSS Code:</p>
+<p class="left"><span class="code10">#parent2 {
+    width: 50%;
+    height: fit-content;
+    background-color: black;
+    border: 3px solid black;
+    margin: auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-content: space-evenly;
+    overflow: hidden;
+}
+
+.children2{
+    width: 120px;
+    height: 50px;
+    margin: 20px;
+    flex-shrink: 0;
+    background-color: white;
+}</span></p>
+<p class="left">Outcome:</p>
+    <style>
+        #parent2 {
+            width: 50%;
+            height: fit-content;
+            background-color: black;
+            border: 3px solid black;
+            margin: auto;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-around;
+            align-content: space-evenly;
+            overflow: hidden;
+        }
+        .children2{
+            width: 120px;
+            height: 50px;
+            margin: 20px;
+            flex-shrink: 0;
+            background-color: white;
+        }
+    </style>
+    <div id="parent2">
+        <div class="children2"></div>
+        <div class="children2"></div>
+        <div class="children2"></div>
+        <div class="children2"></div>
+        <div class="children2"></div>
+        <div class="children2"></div>
+    </div>
+    <p>Let's try something else. Imagine we have a right-aligned navigation element on the very top of our website, but
+    we want it to be centered on medium-sized screens and single-columned on small devices. Easy enough.
+    </p>
+<p class="left">HTML Code:</p>
+<p class="left"><span class="code10">&lt;div id="navigationBar">
+    &lt;div>&lt;span>&lt;a>Home&lt;/a>&lt;/span>&lt;/div>
+    &lt;div>&lt;span&lt;a>About&lt;/a>&lt;/span>&lt;/div>
+    &lt;div>&lt;span>&lt;a>Products&lt;/a>&lt;/span>&lt;/div>
+    &lt;div>&lt;span>&lt;a>Contact&lt;/a>&lt;/span>&lt;/div>
+&lt;/div>&lt;/span>&lt;/p>
+<p class="left">CSS Code:</p>
+<p class="left"><span class="code10">#navigationBar {
+    box-sizing: border-box;
+    width: 100%;
+    height: fit-content;
+    border: 3px solid black;
+    background-color: black;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    align-items: stretch;
+}
+
+#navigationBar div{
+    padding: 20px;
+    font-size: 4vh;
+    display: flex;
+    color: white;
+}
+
+#navigationBar div span{
+    margin: auto;
+    background-color: unset;
+}
+
+#navigationBar div:hover{
+<span class="grey">    /* I just reset some styles I had added to all links in the past */</span>
+    cursor: pointer;
+    background-color: gray;
+    color: black;
+}
+
+#navigationBar div span a:hover{
+    text-shadow: unset;
+    color: unset;
+    text-decoration: unset;
+}
+
+#navigationBar div span a{
+    user-select: none;
+}
+
+@media all and (max-width: 800px) {
+<span class="grey">    /* When on medium sized screens */</span>
+    #navigationBar {
+        justify-content: space-around;
+    }
+}
+
+@media all and (max-width: 600px) {
+<span class="grey">    /* When on small sized screens */</span>
+    #navigationBar {
+        flex-direction: column;
+    }
+}</span></p>
+<p class="left">Outcome:</p>
+    <style>
+        #navigationBar {
+            box-sizing: border-box;
+            width: 100%;
+            height: fit-content;
+            border: 3px solid black;
+            background-color: black;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: flex-end;
+            align-items: stretch;
+        }
+
+        #navigationBar div{
+            padding: 20px;
+            font-size: 4vh;
+            display: flex;
+            color: white;
+        }
+
+        #navigationBar div span{
+            margin: auto;
+            background-color: unset;
+        }
+
+        #navigationBar div:hover{
+            /* I just reset some styles I had added to all links in the past */
+            cursor: pointer;
+            background-color: gray;
+            color: black;
+        }
+
+        #navigationBar div span a:hover{
+            text-shadow: unset;
+            color: unset;
+            text-decoration: unset;
+        }
+
+        #navigationBar div span a{
+            user-select: none;
+        }
+
+        @media all and (max-width: 800px) {
+            /* When on medium sized screens */
+            #navigationBar {
+                justify-content: space-around;
+            }
+        }
+
+        @media all and (max-width: 600px) {
+            /* When on small sized screens */
+            #navigationBar {
+                flex-direction: column;
+            }
+        }
+    </style>
+    <div id="navigationBar">
+        <div><span><a>Home</a></span></div>
+        <div><span><a>About</a></span></div>
+        <div><span><a>Products</a></span></div>
+        <div><span><a>Contact</a></span></div>
+    </div>
+    <p>Let's try something even better by playing with flex items fexibility! What about a mobile-first 3-columns layout with
+    full-width header and footer. And independent from source order.
+    </p>
+<p class="left">HTML Code:</p>
+<p class="left"><span class="code10">&lt;div class="wrapper1">
+    &lt;header class="header1">Header&lt;/header>
+    &lt;article class="main">
+        Pellentesque habitant morbi tristique
+        senectus et netus et malesuada fames ac turpis egestas.
+        Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor
+        sit amet, ante. Donec eu libero sit amet quam egestas semper.
+        Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
+    &lt;/article>
+    &lt;aside class="aside aside1">Aside 1&lt;/aside>
+    &lt;aside class="aside aside2">Aside 2&lt;/aside>
+    &lt;footer class="footer1">Footer&lt;/footer>
+&lt;/div></span></p>
+<p class="left">CSS Code:</p>
+<p class="left"><span class="code10">.wrapper1 {
+    display: flex;
+    flex-flow: row wrap;
+    text-align: center;
+    font-weight: bold;
+}
+
+.wrapper1 > * {
+<span class="grey">    /* each item takes one row each and 
+    that's because flex-basis is set to 100%, meaning
+    all items will take 100% width */</span>
+    flex: 1 100%;
+    padding: 10px;
+}
+
+<span class="grey">/* Medium screens */</span>
+@media all and (min-width: 600px) {
+    .aside {
+<span class="grey">        /* this makes aside divs share one row,
+        the way it works is that since the flex-basis is
+        set to 0px, their min width is 0px, I also set their flex-grow 
+        to 1, meaning they should grow and share the same ammount of free
+        available, and that's why free space is shared
+        equally among them and at the end each takes
+        half of the row, the same exact effect could be achieved
+        by writing flex: 1 0 0, or flex-basis: 0; flex-grow: 1 */</span>
+        flex: 1 0px;
+    }
+}
+
+<span class="grey">/* Large screens */</span>
+@media all and (min-width: 800px){
+<span class="grey">    /* We invert order of elements and tell the main element
+    to take twice as much width as the other two sidebars. So,
+    since screen size is higher than 800px, it also is higher than 600px,
+    and the styles we set before still apply here, which means aside1 and aside2
+    styles I set before are still in use. I used the order property and
+    placed the main div between the two asides, and also I changed it's flex property
+    to flex: 3 0px, meaning, just like the aside divs, it has a min-width of 0px,
+    and it's flex-grow is set to 3, while the aside divs flex-grow is set to 1,
+    and that's why it grows twice as much as the two asides. Footer and header
+    still take the full width since their flex-basis is set to 100% */</span>
+    .main {
+        flex: 3 0px;
+        order: 2;
+    }
+    .aside1 {
+        order: 1;
+    }
+    .aside2 {
+        order: 3;
+    }
+    .footer1 {
+        order: 4;
+    }
+}
+
+.header1 {
+    background-color: coral;
+}
+
+.footer1 {
+    background-color: lime;
+}
+
+.main {
+    background-color: cornsilk;
+}
+
+.aside1 {
+    background-color: yellow;
+}
+
+.aside2 {
+    background-color: pink;
+}</span></p>
+<p class="left">Outcome:</p>
+
+    <style>
+        .wrapper1 {
+            display: flex;
+            flex-flow: row wrap;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .wrapper1 > * {
+            /* each item takes one row each and 
+            that's because flex-basis is set to 100% 
+            and flex-grow for all items is set to 1, meaning
+            all items will take 100% width */
+            flex: 1 100%;
+            padding: 10px;
+        }
+
+        /* Medium screens */
+        @media all and (min-width: 600px) {
+            .aside {
+                /* this makes aside divs share one row,
+                the way it works is that since the flex-basis is
+                set to 0px, their min width is 0px, I also set their flex-grow 
+                to 1, meaning they should share the same ammount of free
+                space to grow, and that's why free space is shared
+                equally among them and at the end each takes
+                half of the row, the same exact effect could be achieved
+                by writing flex: 1 0 0, or flex-basis: 0; flex-grow: 1 */
+                flex: 1 0px;
+            }
+        }
+
+        /* Large screens */
+        @media all and (min-width: 800px){
+            /* We invert order of elements and tell the main element
+            to take twice as much width as the other two sidebars. So,
+            since screen size is heigher than 800px, it also is higher than 600px,
+            so the styles we set before still apply here, and so aside1 and aside2
+            styles I set before are still in use here. I used the order property and
+            placed the main div between the two asides, and also I changed it's flex property
+            to flex: 3 0px, meaning, just like the aside divs, it has a min-width of 0px,
+            and it's flex-grow is set to 3, while the aside divs flex-grow is set to 1,
+            and so that's why it grows twice as much as the two asides. Footer and header
+            still take the full width since their flex-basis is set to 100% */
+            .main {
+                flex: 3 0px;
+                order: 2;
+            }
+            .aside1 {
+                order: 1;
+            }
+            .aside2 {
+                order: 3;
+            }
+            .footer1 {
+                order: 4;
+            }
+        }
+
+        .header1 {
+            background-color: coral;
+        }
+
+        .footer1 {
+            background-color: lime;
+        }
+
+        .main {
+            background-color: cornsilk;
+        }
+
+        .aside1 {
+            background-color: yellow;
+        }
+
+        .aside2 {
+            background-color: pink;
+        }
+    </style>
+    <div class="wrapper1">
+        <header class="header1">Header</header>
+        <article class="main">
+            Pellentesque habitant morbi tristique
+            senectus et netus et malesuada fames ac turpis egestas.
+            Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor
+            sit amet, ante. Donec eu libero sit amet quam egestas semper.
+            Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
+        </article>
+        <aside class="aside aside1">Aside 1</aside>
+        <aside class="aside aside2">Aside 2</aside>
+        <footer class="footer1">Footer</footer>
+    </div>
+    <p>Try resizing your browser to see the results of the code,
+    this code above is a great example of how responsive websites
+    can actually be built, with only a few clever lines of code we
+    have built a webpage layout that looks nice on all different screen sizes.
+    </p>
+    <hr style="height: 3px; padding: 0px; border: none;">
+    <h2><u>Credits for the information included in this section:</u></h2>
+    <p>This section is mostly copied from <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/#flexbox-tricks" target="_blank">this amazing article</a>, made by Chris Coyier.
+    Those notes I keep are kept for personal use, and the main reason I keep them is because I can this way
+    keep information organized somewhere, without having to make a long list of links from all the different websites 
+    I read and have to look through them whenever I need to remember somethimg. Also,
+    while copying those articles I do not copy paste, I type everything my self, slowly, while trying to
+    understand what it is I write and also look for ways I could improve the way some stuff are explained if I judge
+    this is needed. Writing things down is how I learn, and that's a major reason why I do what I do, however,
+    I do not recommend to anyone to use my notes to study, since they are not very well written, especially the
+    first pages I made as a beginner, and also, a lot of stuff I write here are copied from other sites.</p>
+</article>
+
+<hr>
+
+<article id="four">
+    <h1>CSS Grid Layout (aka "Grid")</h1>
+    <p>In this section we are gonna learn about another really useful CSS feauture,
+    which is Grid, it's similar to Flexbox, but harder and much more powerful if used correctly.
+    </p>
+    <hr style="height: 3px; padding: 0px; border: none;">
+    <h2><u>Introduction:</u></h2>
+    <p>CSS Grid Layout (aka "Grid"), is a two-dimensional grid-based layout system that aims to do nothing less than
+    completely change the way we design grid-based user interfaces. CSS has always been used to lay out our web pages, but it's never
+    done a very good job for it. First, we used tables, then floats, positioning and inline-blocks, but all of these methods were essentially
+    hacks and left out a lot of important functionality (vertical centering, for instance). Flexbox helped out,
+    but it's intended for simplier one-dimensional layouts, not complex two-dimensional ones (Flexbox and Grid actually work very well together). Grid is the very
+    first CSS module created specifically to solve the layout problems we've all been hacking our way around fo as
+    long as we've been making websites.
+    </p>
+    <hr style="height: 3px; padding: 0px; border: none;">
+    <h2><u>Important terminology:</u></h2>
+    <p>Before diving into the concepts of Grid it's important to understand the
+    terminology. Since the terms involved here are all kinda conceptually similar, it's easy
+    to confuse them with one another if you don't first memorize their meanings defined by the Grid specification. But don't worry, there aren't many of them.
+    </p>
+    <h2>Grid Container</h2>
+    <p>The element on which display: grid is applied. It's the direct parent of all
+    the grid items. In this example container is the grid container:
+    </p>
+<p class="left"><span class="code10">&lt;style>
+    .container{
+        display: grid;
+    }
+&lt;/style>
+
+&lt;div class="container">
+    &lt;div class="item item-1"> &lt;/div>
+    &lt;div class="item item-2"> &lt;/div>
+    &lt;div class="item item-3"> &lt;/div>
+&lt;/div></span></p>
+    <h2>Grid Item</h2>
+    <p>The children (i.e. direct descendants) of the grid container. Here the item elements
+    are grid items, but sub-item is not.
+    </p>
+<p class="left"><span class="code10">&lt;div class="container">
+    &lt;div class="item"> &lt;/div>
+    &lt;div class="item">
+        &lt;p class="sub-item"> &lt;/p>
+    &lt;/div>
+    &lt;div class="item"> &lt;/div>
+&lt;/div>
+</span></p>
+    <h2>Grid Line</h2>
+    <p>The dividing lines that make up the structure of the grid. They can be either vertical ("column grid lines") or
+    horizontal ("row grid lines") and reside on either side of a row or column. Here the yellow line is an example
+    of a column grid line.
+    </p>
+    <img class="notes-image" src="./../images/grid1.svg" style="width: 40%">
+    <h2>Grid Cell</h2>
+    <p>The space between two adjacent row and two adjacent column grid lines.
+    It's a single "unit" of the grid. Here's the grid cell between row grid lines 1 and 2,
+    and column grid lines 2 and 3:
+    </p>
+    <img class="notes-image" src="./../images/grid2.svg" style="width: 40%">
+    <h2>Grid Track</h2>
+    <p>The space between two adjacent grid lines. You can think of them line the columns or rows of the grid.
+    Here's the grid track between the second and third row grid lines:
+    </p>
+    <img class="notes-image" src="./../images/grid3.svg" style="width: 40%">
+    <h2>Grid Area</h2>
+    <p>The total space surrounded by four grid lines. A grid area may be composed of any number of grid cells.
+    Here's the grid area between row grid lines 1 and 3, and column grid lines 1 and 3:
+    </p>
+    <img class="notes-image" src="./../images/grid4.svg" style="width: 40%">
+    <hr style="height: 3px; padding: 0px; border: none;">
+    <h2 style="font-size: bigger;"><u>Grid Properties:</u></h2>
+    <p>To keep my notes more organized I will split the properties into two groups,
+    the properties for the parent (Grid Container) and the properties for the children
+    (Grid Items).
+
+    <style>
+        .properties_list {
+            border: 3px solid black;
+            border-collapse: collapse;
+            margin: auto;
+        }
+        .properties_list :is(th, td){
+            border: 3px solid black;
+            padding-right: 200px;
+        }
+        .properties_list th {
+            padding: 0px 100px;
+            text-align: center;
+        }
+        .properties_list tr:nth-child(odd){
+            background-color: lightgrey;
+        }
+        .properties_list tr:nth-child(even){
+            background-color: white;
+        }
+    </style>
+
+    <style>
+        .table-grid {
+            display: grid;
+            background-color: rgba(0, 0, 0, 0.2);
+            width: fit-content;
+            height: fit-content;
+            grid-template-columns: repeat(2, minmax(50px, max-content));
+            grid-template-rows: repeat(19, auto);
+            row-gap: 10px;
+            padding: 5vw;
+            margin: auto;
+            column-gap: 5vw;
+            border-radius: 20px;
+            border: 4px solid black;
+            transition-property: column-gap;
+            transition-duration: 100ms;
+            transition-delay: 0ms;
+        }
+        .table-grid > * {
+            border: 3px solid black;
+            background-color: lightgrey;
+            padding: 1vw;
+            border-radius: 20px;
+        }
+        .extra-grid-properties {
+            grid-column: 1 / 2;
+        }
+        .table-grid div:nth-child(4n + 0){
+            background-color: white;
+        }
+        .table-grid div:nth-child(4n + 3){
+            background-color: white;
+        }
+        .table-grid div:nth-child(4n + 3){
+            background-color: white;
+        }
+        .extra-grid-properties:nth-child(2n + 1){
+            background-color: white;
+        }
+        .extra-grid-properties:nth-child(2n + 0){
+            background-color: lightgrey !important; 
+        }
+    </style>
+     <div class="table-grid">
+        <div style="background-color: black; color: white;"><h2>Properties for the Grid Container</h2></div>
+        <div style="background-color: black; color: white;"><h2>Properties for the Grid Items</h2></div>
+        <div><ul><li><a href="./frontend1.html#display">display</a></li></ul></div>
+        <div><ul><li><a href="./frontend1.html#grid-column-start">grid-column-start</a></li></ul></div>
+        <div><ul><li><a href="./frontend1.html#gird-template-columns-rows">grid-template-columns</a></li></ul></div>
+        <div><ul><li><a href="./frontend1.html#grid-column-start">grid-column-end</a></li></ul></div>
+        <div><ul><li><a href="./frontend1.html#gird-template-columns-rows">grid-template-rows</a></li></ul></div>
+        <div><ul><li><a href="./frontend1.html#grid-column-start">grid-row-start</a></li></ul></div>
+        <div><ul><li><a href="./frontend1.html#grid-template-areas">grid-template-areas</a></li></ul></div>
+        <div><ul><li><a href="./frontend1.html#grid-column-start">grid-row-end</a></li></ul></div>
+        <div><ul><li><a href="./frontend1.html#grid-template">grid-template</a></li></ul></div>
+        <div><ul><li><a href="./frontend1.html#grid-column">grid-column</a></li></ul></div>
+        <div><ul><li><a href="./frontend1.html#grid-column-row-gap">grid-column-gap</a></li></ul></div>
+        <div><ul><li><a href="./frontend1.html#grid-column">grid-row</a></li></ul></div>
+        <div><ul><li><a href="./frontend1.html#grid-column-row-gap">grid-row-gap</a></li></ul></div>
+        <div><ul><li><a href="./frontend1.html#grid-area">grid-area</a></li></ul></div>
+        <div><ul><li><a href="./frontend1.html#gap">grid-gap</a></li></ul></div>
+        <div><ul><li><a href="./frontend1.html#justify-self">justify-self</a></li></ul></div>
+        <div><ul><li><a href="./frontend1.html#justify-items">justify-items</a></li></ul></div>
+        <div><ul><li><a href="./frontend1.html#align-self">align-self</a></li></ul></div>
+        <div><ul><li><a href="./frontend1.html#align-items">align-items</a></li></ul></div>
+        <div><ul><li><a href="./frontend1.html#place-self">place-self</a></li></ul></div>
+        <div><ul><li><a href="./frontend1.html#place-items">place-items</a></li></ul></div>
+
+        <div class="extra-grid-properties"><ul><li><a href="./frontend1.html#justify-content">justify-content</a></li></ul></div>
+        <div class="extra-grid-properties"><ul><li><a href="./frontend1.html#align-content">align-content</a></li></ul></div>
+        <div class="extra-grid-properties"><ul><li><a href="./frontend1.html#place-content">place-content</a></li></ul></div>
+        <div class="extra-grid-properties"><ul><li><a href="./frontend1.html#grid-auto-columns">grid-auto-columns</a></li></ul></div>
+        <div class="extra-grid-properties"><ul><li><a href="./frontend1.html#grid-auto-columns">grid-auto-rows</a></li></ul></div>
+        <div class="extra-grid-properties"><ul><li><a href="./frontend1.html#grid-auto-flow">grid-auto-flow</a></li></ul></div>
+        <div class="extra-grid-properties"><ul><li><a href="./frontend1.html#grid">grid</a></li></ul></div>
+     </div>
+    </p>
+    <hr style="height: 3px; padding: 0px; border: none;">
+    <h2><u>Properties for the Parent (Grid Container)</u></h2>
+    <p>The properties mentioned bellow should only be used inside the grid container.
+    </p>
+    <h2 id="display">display:</h2>
+    <p>Defines the element as a grid container and establishes a new grid formatting context for it's contents.</p>
+    <p style="text-align: left;"><strong>Values:</strong></p>
+    <ul>
+        <li><strong>grid -</strong> generates a block-level grid</li>
+        <li><Strong>inline-grid -</Strong> generates an inline-level grid</li>
+    </ul>
+<p class="left"><span class="code10">.container {
+    display: grid | inline-grid;
+}</span></p>
+    <h2 id="gird-template-columns-rows">grid-template-columns <br>grid-template-rows</h2>
+    <p>Defines the columns and rows of the grid with a space-seperated list of values. The
+    values represent the track size, and the space between them represents the grid line.
+    </p>
+    <p style="text-align: left;"><strong>Values:</strong></p>
+    <ul>
+        <li><strong>&lt;track-size> -</strong> can be a length, a percentage, or a fraction of the free space in the grid
+        (using the <strong>fr</strong> unit)
+        </li>
+        <li><strong>&lt;line-name> -</strong> an arbitrary name of your choosing</li>
+    </ul>
+<p class="left"><span class="code10">.container {
+    grid-template-columns: ... | ...;
+    grid-template-rows: ... | ...;
+}</span></p>
+<p><strong>Examples:</strong></p>
+<p>When you leave an empty space between the track values,  the grid lines are automatically assigned positive and negative numbers:</p>
+<p class="left"><span class="code10">.container {
+    grid-template-columns: 40px 50px auto 50px 40px;
+    grid-template-rows: 25% 100px auto;
+}</span></p>
+    <img class="notes-image" src="./../images/grid5.svg" style="width: 40%">
+    <p>But you can choose to explicitly name the lines. Note the bracket syntax for the line names:</p>
+<p class="left"><span class="code10">.container {
+    grid-template-columns: [first] 40px [line2] 50px [line3] auto [col4-start] 50px [five] 40px [end];
+    grid-template-rows: [row1-start] 25% [row1-end] 100px [third-line] auto [last-line];
+}</span></p>
+    <img class="notes-image" src="./../images/grid6.svg" style="width: 40%">
+    <p>Note that a line can have more than one name. For example, here the second line will have
+    two names: row1-end and row2-end:
+    </p>
+<p class="left"><span class="code10">.container {
+    grid-template-rows: [row1-start] 25% [row1-end row2-start] 25% [row2-end];
+}</span></p>
+    <p>If your definition contains repeating parts, you can use the <strong>repeat()</strong> notation to streamline things:</p>
+<p class="left"><span class="code10">.container {
+    grid-template-columns: repeat(3, 20px [col-start]);
+}</span></p>
+    <p>Which is equivalent to this:</p>
+<p class="left"><span class="code10">.container {
+    grid-template-columns: 20px [col-start] 20px [col-start] 20px [col-start];
+}</span></p>
+    <p>If multiple lines share the same name, they can be referenced by their line name and count.</p>
+<p class="left"><Span class="code10">.item {
+    grid-column-start: col-start 2;
+}</Span></p>
+    <p>The <Strong>fr unit</Strong> allows you to set the size of a track as
+    a fraction of the free space of the grid container. For example, this will set
+    each item to one third of width of the grid container:</p>
+<p class="left"><span class="code10">.container {
+    grid-template-columns: 1fr 1fr 1fr;
+}</span></p>
+    <p>The free space is calculated after any non-flexible items. In this example the total amount of free
+    space available to the fr units doesn't include the 50px:
+    </p>
+<p class="left"><span class="code10">.container {
+    grid-template-columns: 1fr 50px 1fr 1fr;
+}</span></p>
+    <h2 id="grid-template-areas">grid-template-areas:</h2>
+    <p>Defines a grid template by referencing the names of the grid areas which are specified with
+    the <strong>grid-area</strong> property. Repeating the name of a grid area causes the  content to span those cells.
+    A period signifies an empty cell. The syntax itself provides a visualization of the structure of the grid.
+    </p>
+    <p class="left"><strong>Values:</strong></p>
+    <ul>
+        <li><strong>&lt;grid-area-name> -</strong> the name of a grid area specified with <strong>grid-area</strong></li>
+        <li><strong>. -</strong> a period signifies an empty grid cell</li>
+        <li><strong>none -</strong> no grid areas are defined</li>
+    </ul>
+    <p class="left"><strong>Example:</strong></p>
+<p class="left">HTML Code:</p>
+<p class="left"><span class="code10">&lt;div id="container1">
+    &lt;div id="item1">Header&lt;/div>
+    &lt;div id="item2">Main&lt;/div>
+    &lt;div id="item3">Sidebar&lt;/div>
+    &lt;div id="item4">Footer&lt;/div>
+&lt;/div></span></p>
+<p class="left">CSS Code:</p>
+<p class="left"><span class="code10">#container1 {
+    background-color: white;
+    border: 3px solid black;
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 50px 50px 50px 100px;
+    grid-template-rows: auto;
+    grid-template-areas:
+    "header header header header"
+    "main main . sidebar"
+    "footer footer footer footer";
+}
+#container1 > *{
+    text-align: center;
+    font-weight: bold;
+    border: 3px solid black;
+}
+#item1{
+    grid-area: header;
+    background-color: red;
+}
+#item2{
+    grid-area: main;
+    background-color: pink
+}
+#item3{
+    grid-area: sidebar;
+    background-color: lime;
+}
+#item4{
+    grid-area: footer;
+    background-color: coral;
+}</span></p>
+<p class="left">Outcome:</p>
+<style>
+    #container1 {
+        background-color: white;
+        border: 3px solid black;
+        width: fit-content;
+        width: intrinsic;           /* Safari/WebKit uses a non-standard name */
+        width: -moz-max-content;    /* Firefox/Gecko */
+        height: fit-content;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 50px 50px 50px 100px;
+        grid-template-rows: auto;
+        grid-template-areas:
+        "header header header header"
+        "main main . sidebar"
+        "footer footer footer footer";
+    }
+    #container1 > *{
+        text-align: center;
+        font-weight: bold;
+        border: 3px solid black;
+    }
+    #item1{
+        grid-area: header;
+        background-color: red;
+    }
+    #item2{
+        grid-area: main;
+        background-color: pink
+    }
+    #item3{
+        grid-area: sidebar;
+        background-color: lime;
+    }
+    #item4{
+        grid-area: footer;
+        background-color: coral;
+    }
+</style>
+<div id="container1">
+    <div id="item1">Header</div>
+    <div id="item2">Main</div>
+    <div id="item3">Sidebar</div>
+    <div id="item4">Footer</div>
+</div>
+<p>So, you may be a little confused of this example,
+first of all we define the grid-template-columns and rows,
+we made it so that the grid has three columns of 50px each
+at the beginning, and one with 100px at the end. We set rows
+to auto, meaning their height will be determined by the content
+inside them.Then we used grid-template-areas, to set the areas
+we used strings, each string is one row, an empty space
+is used to seperate the areas names, the first three header
+I wrote will take 50px each, since the first 3 columns
+are 50px each, the last header will take 100px, since
+the last column is 100px. Sime logic applies to the other
+areas, the dot at the second row defines an empty cell.
+</p>
+<p>Here is an image that may help you understand it better:</p>
+<img class="notes-image" src="./../images/grid7.svg" style="width: 40%">
+<p>The image above displays a grid different from the example I previously created,
+the difference is that in the image all columns take only 50px, while in my example I
+made the last column take 100px.
+</p>
+<p>Each row in your declaration needs to have the same number of cells.</p>
+<p>You can use any number of adjacent periods to declare a single empty cell. As long as the
+periods have no spaces between them they represent a single cell.
+</p>
+<p>Notice that you're not naming lines with this syntax, just areas. When you use this syntax the lines on
+either end of the areas are actually getting named automatically. If the name of your grid area is <Strong>foo</Strong>,
+the name of the area's starting row line and starting column line will be <strong>foo-start</strong>, and the name of its last row line
+and last column line will be <strong>foo-end</strong>. This means that some lines might have multiple names,
+such as the far left line in above example, which will have three names: header-start, main-start, and footer-start.
+</p>
+<h2 id="grid-template">grid-template</h2>
+<p>A shorthand for setting <span>grid-template-rows</span>,
+<span>grid-template-columns</span>, and <span>grid-template-areas</span>
+in a single declaration.</p>
+<p class="left">Values:</p>
+<ul>
+    <li><strong>none -</strong> sets all three properties to their initial values</li>
+    <li><strong>&lt;grid-template-rows> / &lt;grid-template-columns> -</strong> sets
+    grid-template-columns and grid-template-rows to the specified values, respectively, and sets grid-template-areas to none</li>
+</ul>
+<p class="left"><span class="code10">.container {
+    grid-template: none | &lt;grid-template-rows> / &lt;grid-template-columns>;
+}
+</span></p>
+<p>It also accepts a more complex but quite handy syntax for specifying all three. Here's an example:</p>
+<p class="left"><span class="code10">.container {
+    grid-template:
+    [row1-start] "header header header" 25px [row1-end]
+    [row2-start] "footer footer footer" 25px [row2-end]
+    / auto 50px auto;
+}</span></p>
+<p>This is equivalent to this:</p>
+<p class="left"><span class="code10">.container {
+    grid-template-rows: [row1-start] 25px [row1-end row2-start] 25px [row2-end];
+    grid-template-columns: auto 50px auto;
+    grid-template-areas:
+      "header header header"
+      "footer footer footer";
+}</span></p>
+<p>Since <span>grid-template</span> doesn't reset the implicit
+grid properties (<span>grid-auto-columns</span>, <span>grid-auto-rows</span>,
+and <span>grid-auto-flow</span>), which is probably what you want to do in most cases,
+it's recommended to use the <Span>grid</Span> property instead of <Span>grid-template</Span>.</p>
+<h2 id="grid-column-row-gap">column-gap<br>row-gap<br>grid-column-gap<br>grid-row-gap</h2>
+<p>Specifies the size of the grid lines. You can think of it as setting the width
+of the gutters between columns/rows.</p>
+<p class="left"><strong>Values:</strong></p>
+<ul>
+    <li><strong>&lt;line-size> -</strong> a length value</li>
+</ul>
+<p class="left"><span class="code10">.container {
+<span class="grey">    /* standard */</span>
+    column-gap: &lt;line-size>;
+    row-gap: &lt;line-size>
+
+<span class="grey">    /* old */</span>
+    grid-column-gap: &lt;line-size>;
+    grid-row-gap: &lt;line-size>;
+}
+</span></p>
+<p class="left"><strong>Example:</strong></p>
+<p class="left"><span class="code10">.container {
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 80px 80px 80px;
+    column-gap: 10px;
+    row-gap: 15px;
+}</span></p>
+<img class="notes-image" src="./../images/grid8.svg" style="width: 40%">
+<p>The gutters are only created between the columns/rows, not on the outer edges.</p>
+<p><strong>Note:</strong> The grid- prefix will be removed and grid-column-gap and grid-row-gap
+renamed to column-gap and row-gap. The unprefixed properties are already supported in Chrome 68+, Safari 11.2, Release 50+ and Opera 54+.</p>
+<h2 id="gap">gap<br>grid-gap</h2>
+<p>A shorthand for <span>row-gap</span> and <Span>column-gap</Span></p>
+<p class="left"><strong>Values:</strong></p>
+<ul>
+    <li><Strong>&lt;grid-row-gap> &lt;grid-column-gap> -</Strong> length values</li>
+</ul>
+<p class="left"><span class="code10">.container {
+<span class="grey">    /* standard */</span>
+    gap: &lt;grid-row-gap> &lt;grid-column-gap>;
+
+<span class="grey">    /* old */</span>
+    grid-gap: &lt;grid-row-gap> &lt;grid-column-gap>;
+}</span></p>
+<p class="left"><strong>Example:</strong></p>
+<p class="left"><span class="code10">.container {
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 80px 80px 80px;
+    gap: 15px 10px;
+}</span></p>
+<p>If no <span>row-gap</span> is specified, it's set to the same value as <Span>column-gap</Span>.</p>
+<h2 id="justify-items">justify-items</h2>
+<p>Aligns grid items along the inline (row) axis (as opposed to <span>align-items</span> which
+aligns along the block (column) axis). This value applies to all grid items inside the container.</p>
+<p class="left"><strong>Values:</strong></p>
+<ul>
+    <li><strong>start -</strong> aligns items to be flushed with the start edge of their cell</li>
+    <li><strong>end -</strong> aligns items to be flushed with the end edge of their cell</li>
+    <li><strong>center -</strong> aligns items in the center of their cell</li>
+    <li><strong> stretch -</strong> fills the whole width of the cell (this is the default)</li>
+</ul>
+<p class="left"><span class="code10">.container {
+    justify-items: start | end | center | stretch;
+}</span></p>
+<p class="left"><strong>Examples:</strong></p>
+<p class="left"><span class="code10">.container {
+    justify-items: start;
+}</span></p>
+<img class="notes-image" src="./../images/grid9.svg" style="width: 40%">
+<p class="left"><span class="code10">.container {
+    justify-items: end;
+}</span></p>
+<img class="notes-image" src="./../images/grid10.svg" style="width: 40%">
+<p class="left"><span class="code10">.container {
+    justify-items: center;
+}</span></p>
+<img class="notes-image" src="./../images/grid11.svg" style="width: 40%">
+<p class="left"><span class="code10">.container {
+    justify-items: stretch;
+}</span></p>
+<img class="notes-image" src="./../images/grid12.svg" style="width: 40%">
+<p>This behavior can also be set on individual grid items via the <span>justify-self</span> property.</p>
+<h2 id="align-items">align-items</h2>
+<p>Aligns grid items along the block (column) axis (as opposed to <span>justify-items</span> which
+aligns along the inline (row) axis). This value applies to all grid items inside the container.</p>
+<p class="left"><strong>Values:</strong></p>
+<ul>
+    <li><strong>start -</strong> aligns items to be flush with the start edge of their cell</li>
+    <li><strong>end -</strong> aligns items to be flush with the end edge of their cell</li>
+    <li><strong>center -</strong> aligns items in the center of their cell</li>
+    <li><strong>stretch -</strong> fills the whole height of the cell (this is the default)</li>
+</ul>
+<p class="left"><span class="code10">.container {
+    align-items: start | end | center | stretch;
+}</span></p>
+<p class="left"><Strong>Examples:</Strong></p>
+<p class="left"><span class="code10">.container {
+    align-items: start;
+}</span></p>
+<img class="notes-image" src="./../images/grid13.svg" style="width: 40%">
+<p class="left"><span class="code10">.container {
+    align-items: end;
+}</span></p>
+<img class="notes-image" src="./../images/grid14.svg" style="width: 40%">
+<p class="left"><span class="code10">.container {
+    align-items: center;
+}</span></p>
+<img class="notes-image" src="./../images/grid15.svg" style="width: 40%">
+<p class="left"><span class="code10">.container {
+    align-items: stretch;
+}</span></p>
+<img class="notes-image" src="./../images/grid16.svg" style="width: 40%">
+<p>This behavior can also be set on individual grid items via the <Span>align-self</Span> property.</p>
+<h2 id="place-items">place-items</h2>
+<p><span>place-items</span> sets both the <Span>align-items</Span> and <span>justify-items</span>
+properties in a single declaration.</p>
+<p class="left"><strong>Values:</strong></p>
+<ul>
+    <li><strong>&lt;align-items> / &lt;justify-items> -</strong> The
+    first value sets align-items, the second value sets justify-items. If the
+    second value is omitted, the first value is assigned to both properties.</li>
+</ul>
+<p>All major browsers except Edge support the place-items shorthand property.</p>
+<h2 id="justify-content">justify-content</h2>
+<p>Sometimes the total size of your grid might be less than the size of it's grid container. This
+could happen if all of your grid items are sized with non flexible units like px. In this case you can set the
+alignment of the grid within the grid container. This property aligns the grid along the inline (row) axis (as opposed to <span>align-content</span> which
+aligns the grid along the block (column) axis).
+</p>
+<p class="left"><strong>Values:</strong></p>
+<ul>
+    <li><strong>start -</strong> aligns the grid to be flush with the start edge of the grid container</li>
+    <li><strong>end -</strong> aligns the grid to be flush with the end edge of the grid container</li>
+    <li><strong>center -</strong> aligns the grid in the center of the grid container</li>
+    <li><strong>stretch -</strong> resizes the grid items to allow the grid to fill the full width of the grid container</li>
+    <li><strong>space-around -</strong> places an even amount of space between each grid item, with half-sized spaces on the far ends</li>
+    <li><strong>space-between -</strong> places an even amount of space between each grid item, with no space at the far ends</li>
+    <li><strong>space-evenly -</strong> places an even amount of space between each grid item, including the far ends</li>
+</ul>
+<p class="left"><span class="code10">.container {
+    justify-content: start | end | center | stretch | space-around | space-between | space-evenly;
+}</span></p>
+<p class="left"><strong>Examples:</strong></p>
+<p class="left"><span class="code10">.container {
+    justify-content: start;
+}</span></p>
+<img class="notes-image" src="./../images/grid17.svg" style="width: 40%">
+<p class="left"><span class="code10">.container {
+    justify-content: end;
+}</span></p>
+<img class="notes-image" src="./../images/grid18.svg" style="width: 40%">
+<p class="left"><span class="code10">.container {
+    justify-content: center;
+}</span></p>
+<img class="notes-image" src="./../images/grid19.svg" style="width: 40%">
+<p class="left"><span class="code10">.container {
+    justify-content: stretch;
+}</span></p>
+<img class="notes-image" src="./../images/grid20.svg" style="width: 40%">
+<p class="left"><span class="code10">.container {
+    justify-content: space-around;
+}</span></p>
+<img class="notes-image" src="./../images/grid21.svg" style="width: 40%">
+<p class="left"><span class="code10">.container {
+    justify-content: space-between;
+}</span></p>
+<img class="notes-image" src="./../images/grid22.svg" style="width: 40%">
+<p class="left"><span class="code10">.container {
+    justify-content: space-evenly;
+}</span></p>
+<img class="notes-image" src="./../images/grid23.svg" style="width: 40%">
+<h2 id="align-content">align-content</h2>
+<p>Sometimes the total size of your grid might be less than the size of it's container. This could
+happen if all of your grid items are size with non-flexible units like px for example. In this case you can set the
+alignment of the grid within the grid container. This property aligns the grid along the block  (column) axis (as opposed to <span>justify-content</span> which
+aligns the grid along the inline (row) axis).
+</p>
+<p class="left"><strong>Values:</strong></p>
+<ul>
+    <li><strong>start -</strong> aligns the grid to be flush with the start edge of the grid container</li>
+    <li><strong>end -</strong> aligns the grid to be flush with the end edge of the grid container</li>
+    <li><strong>center -</strong> aligns the grid in the center of the grid container</li>
+    <li><strong>stretch -</strong> resizes the grid items to allow the grid to fill the full height of the grid container</li>
+    <li><strong>space-around -</strong> places an even amount of space between each grid item, with half-sized spaces on the far ends</li>
+    <li><strong>space-between -</strong> places an even amount of space between each grid item, with no space at the far ends</li>
+    <li><strong>space-evenly -</strong> places an even amount of space between each grid item, including the far ends</li>
+</ul>
+<p class="left"><span class="code10">.container {
+    align-content: start | end | center | stretch | space-around | space-between | space-evenly;
+}</span></p>
+<p class="left"><strong>Examples:</strong></p>
+<p class="left"><span class="code10">.container {
+    align-content: start;
+}</span></p>
+<img class="notes-image" src="./../images/grid24.svg" style="width: 40%">
+<p class="left"><span class="code10">.container {
+    align-content: end;
+}</span></p>
+<img class="notes-image" src="./../images/grid25.svg" style="width: 40%">
+<p class="left"><span class="code10">.container {
+    align-content: center;
+}</span></p>
+<img class="notes-image" src="./../images/grid26.svg" style="width: 40%">
+<p class="left"><span class="code10">.container {
+    align-content: stretch;
+}</span></p>
+<img class="notes-image" src="./../images/grid27.svg" style="width: 40%">
+<p class="left"><span class="code10">.container {
+    align-content: space-around;
+}</span></p>
+<img class="notes-image" src="./../images/grid28.svg" style="width: 40%">
+<p class="left"><span class="code10">.container {
+    align-content: space-between;
+}</span></p>
+<img class="notes-image" src="./../images/grid29.svg" style="width: 40%">
+<p class="left"><span class="code10">.container {
+    align-content: space-evenly;
+}</span></p>
+<img class="notes-image" src="./../images/grid30.svg" style="width: 40%">
+<h2 id="place-content">place-content</h2>
+<p><span>place-content</span> sets both the <span>align-content</span> and <span>justify-content</span>
+properties in a single declaration.</p>
+<p class="left"><strong>Values:</strong></p>
+<ul>
+    <li><strong>&lt;align-content> / &lt;justify-content> -</strong> The first value
+    sets align-content, the second value sets justify-content. If the second value is omitted, the
+    first value is assigned to both properties.</li>
+</ul>
+<p>All major browsers except Edge support the place-content shorthand property.</p>
+<h2 id="grid-auto-columns">grid-auto-columns<br>grid-auto-rows</h2>
+<p>Specifies the size of any auto-generated grid tracks (aka implicit grid tracks). Implicit tracks get
+created when there are more grid items than cells in the grid or when a grid item is placed outside of the
+explicit grid. I will write more about the difference between explicit and implicit grids after we have talked about
+all properties first.
+</p>
+<p class="left"><strong>Values:</strong></p>
+<ul>
+    <li><strong>&lt;track-size> -</strong> can be a length, a percentage, or a fraction of the free space in the grid (using the fr unit)</li>
+</ul>
+<p class="left"><span class="code10">.container {
+    grid-auto-columns: &lt;track-size> ...;
+    grid-auto-rows: &lt;track-size> ...;
+}</span></p>
+<p>To illustrate how implicit grid tracks get created, think about this:</p>
+<p class="left"><span class="code10">.container {
+    grid-template-columns: 60px 60px;
+    grid-template-rows: 90px 90px;
+}</span></p>
+<img class="notes-image" src="./../images/grid31.svg" style="width: 40%">
+<p>This creates a 2 x 2 grod.</p>
+<p>But now imagine you use <span>grid-column</span> and <span>grid-row</span>
+to position your grid items like this: <strong>(I am explaining those two properties bellow in the
+section that I write about grid items properties you may want to check these out first to better understand the example)</strong></p>
+<p class="left"><span class="code10">.item-a {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+
+.item-b {
+    grid-column: 5 / 6;
+    grid-row: 2 / 3;
+}</span></p>
+<img class="notes-image" src="./../images/grid35.svg" style="width: 40%">
+<p>We told item-b to start on column line 5 and end at column line 6, but we never defined a column line 5
+or 6. Because we referenced lines that don't exist, implicit tracks with widths of 0 are created to fill the gaps. We
+can use <span>grid-auto-columns</span> and <Span>grid-auto-rows</Span> to specify the width of these implicit tracks:
+</p>
+<p class="left"><span class="code10">.container {
+    grid-auto-columns: 60px;
+}</span></p>
+
+<img class="notes-image" src="./../images/grid36.svg" style="width: 40%">
+<h2 id="grid-auto-flow">grid-auto-flow</h2>
+<p>If you have grid items that you don't explicitly place on the grid, the auto-placement algorithm
+kicks in to automatically place the items. This property controls how the auto-placement algorithm works.
+</p>
+<p class="left"><strong>Values:</strong></p>
+<ul>
+    <li><strong>row -</strong> tells the auto-placement algorithm to fill in each
+    row in turn, adding new rows as necessary (default)</li>
+    <li><strong>column -</strong> tells the auto-placement algorithm to fill in each column in
+    turn, adding new columns as necessary</li>
+    <li><strong>dense -</strong> tells the auto-placement algorithm to attempt to fill in holes earlier in the grid if smaller items come up later.</li>
+</ul>
+<p class="left"><span class="code10">.container {
+    grid-auto-flow: row | column | row dense | column dense;
+}</span></p>
+<p><strong>Note:</strong> dense only changes the visual order of your items and might
+cause them to appear out of order, which is bad for accessibility.</p>
+<p class="left"><strong>Examples:</strong></p>
+<p>Consider this HTML:</p>
+<p class="left"><span class="code10">&lt;section class="container">
+    &lt;div class="item-1">item-a&lt;div>
+    &lt;div class="item-2">item-b&lt;div>
+    &lt;div class="item-3">item-c&lt;div>
+    &lt;div class="item-4">item-d&lt;div>
+    &lt;div class="item-5">item-e&lt;div>
+&lt;/section></span></p>
+<p>You define a grid with five columns and two rows, and set <span>grid-auto-flow</span>
+to <Span>row</Span> (which is also the default):</p>
+<p class="left"><span class="code10">.container {
+    display: grid;
+    grid-template-columns: 60px 60px 60px 60px 60px;
+    grid-template-rows: 30px 30px;
+    grid-auto-flow: row;
+}</span></p>
+<p>When placing the items on the grid, you only specify spots for two of them:</p>
+<p class="left"><span class="code10">.item-1 {
+    grid-column: 1;
+    grid-row: 1 / 3;
+}
+
+.item-5 {
+    grid-column: 5;
+    grid-row: 1 / 3;
+}</span></p>
+
+<p>Because we set grid-auto-flow to row, our grid will look like this. Notice
+how the three items we didn't place (item-2, item-3 and item-4) flow across the available columns:
+</p>
+<img class="notes-image" src="./../images/grid37.svg" style="width: 40%">
+<p>If we instead set grid-auto-flow to column, item-2, item3 and item-4 will flow down the rows.</p>
+<p class="left"><span class="code10">.container {
+    display: grid;
+    grid-template-columns: 60px 60px 60px 60px 60px;
+    grid-template-rows: 30px 30px;
+    grid-auto-flow: column;
+}</span></p>
+<img class="notes-image" src="./../images/grid38.svg" style="width: 40%">
+<h2 id="grid">grid</h2>
+<p>A shorthand for setting all of the following properties in a single declaration:
+<span>grid-template-rows</span>, <span>grid-template-columns</span>, <span>grid-template-areas</span>,
+<span>grid-auto-rows</span>, <span>grid-auto-columns</span>, and <span>grid-auto-flow</span>
+(Note: You can only specify the explicit or the implicit grid properties in a single grid declaration).</p>
+<p class="left"><strong>Values:</strong></p>
+<ul>
+    <li><strong>none -</strong> sets all sub-properties to their initial values.</li>
+    <li><strong>&lt;grid-template> -</strong> works the same as the <Span>grid-template</Span> shorthand.</li>
+    <li><strong>&lt;grid-template-rows> / [ auto-flow && dense? ] &lt;grid-columns>? -</strong> sets
+    <span>grid-template-rows</span> to the specified value. If the <Span>auto-flow</Span> keyword is the right of the slash, it
+    sets <span>grid-auto-flow</span> to <span>column</span>. If the <span>dense</span> keyword
+    is specified additionally, the auto-placement algorithm uses a "dense" packing algorithm.
+    If <span>grid-auto-columns</span> is omitted, it is set to auto.</li>
+    <li><strong>[ auto-flow && dense? ] &lt;grid-auto-rows>? / &lt;grid-template-columns> -</strong>
+    Sets <span>grid-template-columns</span> to the specified value. If the <Span>auto-flow</Span> keyword is to
+    the left of the slash, it sets <span>grid-auto-flow</span> to <Span>row</Span>. If the <span>dense</span> keyword is
+    specified additionally, the auto-placement algorithm uses a "dense" packing algorithm. If <Span>grid-auto-rows</Span> is
+    omitted, it is set to <Span>auto</Span>.</li>
+</ul>
+<p class="left"><span class="left">Examples:</span></p>
+<p class="left">The following two code blocks are quivalent:</p>
+<p class="left"><span class="code10">.container {
+    grid: 100px 300px / 3fr 1fr;
+}
+
+.container {
+    grid-template-rows: 100px 300px;
+    grid-template-columns: 3fr 1fr;
+}</span></p>
+<p>The following two code blocks are quivalent:</p>
+<p class="left"><span class="code10">.container {
+    grid: auto-flow / 200px 1fr;
+}
+
+.container {
+    grid-auto-flow: row;
+    grid-template-columns: 200px 1fr;
+}</span></p>
+<p>The following two code blocks are quivalent:</p>
+<p class="left"><span class="code10">.container {
+    grid: auto-flow dense 100px / 1fr 2fr;
+}
+
+.container {
+    grid-auto-flow: row dense;
+    grid-auto-rows: 100 px;
+    grid-template-columns: 1fr 2fr;
+}</span></p>
+<p>The following two code blocks are quivalent:</p>
+<p class="left"><span class="code10">.container {
+    grid: 100px 300px / auto-flow 200px;
+}
+
+.container {
+    grid-template-rows: 100px 300px;
+    grid-auto-flow: column;
+    grid-auto-columns: 200px;
+}</span></p>
+<p>It also accepts a more complex but quite handy syntax for setting everything at once. You specify
+<span>grid-template-areas</span>, <span>grid-template-rows</span> and <span>grid-template-columns</span>,
+and all the other sub-properties are set to their initial values. What you're doing is specifying the line names and track sizes
+inline with the respective grid areas. This is easiest to describe with an example:
+</p>
+<p class="left"><span class="code10">.container {
+    grid: [row1-start] "header header header" 1fr [row1-end]
+          [row2-start "footer footer footer" 25px [row2-end]
+          / auto 50px auto;
+}</span></p>
+<p>This is equivalent to this:</p>
+<p class="left"><span class="code10">,container {
+    grid-template-areas: 
+      "header header header"
+      "footer footer footer";
+    grid-template-rows: [row1-start] 1fr [row1-end];
+    grid-template-columns: auto 50px auto;
+}</span></p>
+<hr style="height: 3px; padding: 0px; border: none;">
+<h2><u>Properties for the Children (Grid Items)</u></h2>
+<p><strong>Note:</strong> float, display: inline-block, display: table-cell, vertical-align
+and column-* properties have no effect on a grid item.</p>
+<h2 id="grid-column-start">grid-column-start<br>grid-column-end<br>grid-row-start<br>grid-row-end</h2>
+<p>Determines a grid item's location within grid by referring to specific grid lines.
+<Span>grid-column-start</Span> / <Span>grid-row-start</Span> is the line here the item
+begins, and <Span>grid-column-end</Span> / <span>grid-row-end</span> is the line where the item ends.
+</p>
+<p class="left"><Strong>Values:</Strong></p>
+<ul>
+    <li><Strong>&line> -</Strong> can be a number to refer to a numbered grid line, or a name to refer to a named grid line</li>
+    <li><Strong>span &lt;number> -</Strong> the item will span across the provided number of grid tracks</li>
+    <li><strong>span &lt;name> -</strong> the item will span across until it hits the next line with the provided name</li>
+    <li><strong>auto -</strong> indicates auto-placement, an automatic span, or default span of one</li>
+</ul>
+<p class="left"><span class="code10">.item {
+  grid-column-start: &lt;number> | &lt;name> | span &lt;number> | span &lt;name> | auto;
+  grid-column-end: &lt;number> | &lt;name> | span &lt;number> | span &lt;name> | auto;
+  grid-row-start: &lt;number> | &lt;name> | span &lt;number> | span &lt;name> | auto;
+  grid-row-end: &lt;number> | &lt;name> | span &lt;number> | span &lt;name> | auto;
+}</span></p>
+<p class="left"><strong>Examples:</strong></p>
+<p class="left"><span class="code10">.item-a {
+    grid-column-start: 2;
+    grid-column-end: five;
+    grid-row-start: row1-start;
+    grid-row-end: 3;
+}</span></p>
+<img class="notes-image" src="./../images/grid32.svg" style="width: 40%">
+<p class="left"><span class="code10">.item-b {
+    grid-column-start: 1;
+    grid-column-end: span col4-start;
+    grid-row-start: 2;
+    grid-row-end: span 2;
+}</span></p>
+<img class="notes-image" src="./../images/grid33.svg" style="width: 40%">
+<p>If no grid-column-end / grid-row-end is declared, the item will span 1 track by default.</p>
+<h2 id="grid-column">grid-column<br>grid-row</h2>
+<p>Shorthand for <Span>grid-column-start</Span> + <span>grid-column-end</span>, and
+<span>grid-row-start</span> + <span>grid-row-end</span>, respectively.</p>
+<p class="left"><strong>Values:</strong></p>
+<ul>
+    <li><Strong>&lt;start-line> / &lt;end-line> -</Strong> each one accepts all the same values as the longhand version, including span</li>
+</ul>
+<p class="left"><span class="code10">.item {
+    grid-column: <start-line> / <end-line> | <start-line> / span <value>;
+    grid-row: <start-line> / <end-line> | <start-line> / span <value>;
+}</span></p>
+<p class="left"><strong>Example:</strong></p>
+<p class="left"><span class="code10">.item-c {
+    grid-column: 3 / span 2;
+    grid-row: third-line / 4;
+}</span></p>
+<img class="notes-image" src="./../images/grid34.svg" style="width: 40%">
+<p>If no end line value is declared, the item will span 1 track by default.</p>
+<h2 id="grid-area">grid-area</h2>
+<p>Gives an item a name so that it can be referenced by a template created with the <Span>grid-template-areas</Span> property. Alternatively, this
+property can be used as an even shorter shorthand for <span>grid-row-start</span> + <span>grid-column-start</span> + <span>grid-row-end</span>
++ <span>grid-row-end</span> + <span>grid-column-end</span>.</p>
+<p class="left"><strong>Values:</strong></p>
+<ul>
+    <li><strong>&lt;name> -</strong> a name of your choosing</li>
+    <li><strong>&lt;row-start> / &lt;column-start> / &lt;row-end> / &lt;column-end> -</strong> can be numbers or named lines</li>
+</ul>
+<p class="left"><span class="code10">.item {
+    grid-area: &lt;name> | &lt;row-start> / &lt;column-start? / &lt;row-end> / &lt;column-end>;
+}</span></p>
+<p class="left">Example:</p>
+<p class="left"><span class="code10">.item-d {
+    grid-area: 1 / col4-start / last-line / 6;
+}</span></p>
+<img class="notes-image" src="./../images/grid39.svg" style="width: 40%">
+
+<h2 id="justify-self">justify-self</h2>
+<p>Aligns a grid item inside a cell along the inline (row) axis (as opposed to <span>align-self</span> which aligns
+along the block (column) axis). This property applies to a grid item inside a single cell.</p>
+<p class="left">Values:</p>
+<ul>
+    <li><strong>start -</strong> aligns the grid item to be flush with the start edge of the cell</li>
+    <li><strong>end -</strong> aligns the grid item to be flush with the end edge of the cell</li>
+    <li><strong>center -</strong> aligns the grid item in the center of the cell</li>
+    <li><strong>stretch -</strong> fills the whole width of the cell (this is the default)</li>
+</ul>
+<p class="left"><span class="code10">.item {
+    justify-self: start | end | center | stretch;
+}</span></p>
+
+<p>To set alignment for all the items in a grid, this behavior can also be set on the grid container via the <span>justify-items</span> property.</p>
+
+<h2 id="align-self">align-self</h2>
+<p>Aligns a grid item inside a cell along the block (column) acis (as opposed to <Span>justify-self</Span> which
+aligns along the inline (rows) axis). This value applies to the content inside a single grid item.</p>
+<p class="left">Values:</p>
+<ul>
+    <li><strong>start -</strong> aligns the grid item to be flush with the start edge of the cell</li>
+    <li><strong>end -</strong> aligns the grid item to be flush with the end edge of the cell</li>
+    <li><strong>center -</strong> aligns the grid item in the center of the cell</li>
+    <li><strong>stretch -</strong> fills the whole height of the cell (this is the default)</li>
+</ul>
+<p class="left"><span class="code10">.item {
+    aligns-self: start | end | center | stretch;
+}</span></p>
+<p>To align all items in a grid, this behavior can also be set on the grid container via the <span>align-items</span> property.</p>
+<h2 id="place-self">place-self</h2>
+<p><span>place-self</span> sets both the <span>align-self</span> and <Span>justify-self</Span>
+properties in a single declaration.</p>
+<p class="left">Values:</p>
+<ul>
+    <li><strong>auto -</strong> The "default" alignment for the layout mode.</li>
+    <li><Strong>&lt;align-self> / &lt;justify-self> -</Strong> the first value sets align-self, the second value
+    sets justify-self. If the second value is omitted, the first value is assigned to both properties.</li>
+</ul>
+<p>All major browsers except Edge support the place-self shorthand property.</p>
+<hr style="height: 3px; padding: 0px; border: none;">
+
+<h2><u>Special functions and keywords:</u></h2>
+<ul>
+    <li>When sizing rows and columns, you can use all the lengths you are used to, like px, rem, %, etc, but
+    you also have keywords like <span>min-content</span>, <span>max-content</span>, <span>auto</span>,
+    and perhaps the most useful, <span>fractional units</span>. grid-template-columns: 200px 1fr 2fr min-content;
+    </li>
+    <li>You also have access to a function which can help set boundaries for otherwise flexible units. For
+    example to set a column to be 1fr, but shrink no further than 200px: grid-template-folumns: 1fr <span>minmax(200px, 1fr)</span>;
+    </li>
+    <li>There is <span>repeat()</span> function, which saves some typing like making 10 columns: grid-template-columns: repeat(10, 1fr)</li>
+    <li>Combining all of these can be extremely powerful, like grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));</li>
+</ul>
+
+<hr style="height: 3px; padding: 0px; border: none;">
+<h2><u>Fluid columns snippet:</u></h2>
+<p>Fluid width columns that break into more or less columns as space is available, with no media queries:</p>
+<p class="left">HTML Code:</p>
+<p class="left"><span class="code10">&lt;div class="grid-example">
+    &lt;div>...&lt;/div>
+    &lt;div>...&lt;/div>
+    &lt;div>...&lt;/div>
+    &lt;div>...&lt;/div>
+    &lt;div>...&lt;/div>
+    &lt;div>...&lt;/div>
+    &lt;div>...&lt;/div>
+    &lt;div>...&lt;/div>
+    &lt;div>...&lt;/div>
+&lt;/div></span></p>
+<p class="left">CSS Code:</p>
+<p class="left"><span class="code10">.grid-example{
+    background-color: black;
+    width: 70%;
+    border: 3px solid black;
+    border-radius: 20px;
+    padding: 50px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+<span class="grey">    /* auto-fill means it will repeat as many times as necessary to fill the max
+    size of the grid without overflowing, and all columns are declared to span 
+    1 fraction of the width available, however, they cannot be less than 100px */</span>
+    grid-gap: 1rem;
+<span class="grey">    /* this adds a gap between the cells, since only one value is specified it is
+    assigned to both column and row gaps */</span>
+}
+
+.grid-example > div {
+  background: #EDE7F6;
+  padding: 1.5rem;
+  border-radius: 1rem;
+}</span></p>
+<p class="left">Outcome::</p>
+
+<style>
+    .grid-example{
+        background-color: black;
+        width: 70%;
+        border: 3px solid black;
+        border-radius: 20px;
+        padding: 50px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        /* auto-fill means it will repeat as many times as necessary to fill the max
+        size of the grid without overflowing, and all columns are declared to span 
+        1 fraction of the width available, however, they cannot be less than 100px */
+        grid-gap: 1rem;
+        /* this adds a gap between the cells, since only one value is specified it is
+        assigned to both column and row gaps */
+    }
+    .grid-example > div {
+      background: #EDE7F6;
+      padding: 1.5rem;
+      border-radius: 1rem;
+    }
+</style>
+<div class="grid-example">
+    <div>Quibusdam, eos esse dolorum facere voluptatem eius, dolore quas totam aspernatur obcaecati harum? Nihil eligendi eos minus odit minima earum incidunt rem fugit reprehenderit, molestiae possimus eveniet itaque laudantium excepturi.</div>
+    <div>Ducimus quibusdam inventore delectus doloribus dignissimos. Dignissimos quos officia minus exercitationem perspiciatis harum iusto molestiae deleniti quod sunt amet recusandae autem, neque doloremque ad alias eaque consequuntur nesciunt quis eius!</div>
+    <div>Cumque aspernatur ex ipsum dolorum eius, tempore omnis minus sequi architecto totam sunt maxime nemo, ab repellendus. Aut voluptatem saepe voluptatibus nisi ipsum. Debitis corporis culpa ipsa error nemo doloribus.</div>
+    <div>Consequatur dolore, architecto quos saepe consequuntur libero minus totam? Enim optio provident commodi corporis officiis, sunt maiores? Cupiditate consequuntur, cumque natus corporis velit sunt ad magni aliquid facere deleniti molestiae.</div>
+    <div>Voluptatibus similique modi voluptatum voluptatem quo quod minima ducimus facere, sequi libero accusamus nisi nobis? Minima error tempore quo esse quod odit, deleniti labore nulla ullam velit nemo neque sint!</div>
+    <div>Qui, corporis delectus? Pariatur vel autem commodi, accusantium, voluptate obcaecati iste, a debitis facilis repellendus mollitia. Dolore dicta totam, quaerat omnis accusantium magni alias voluptates eligendi ex id aut dolorem?</div>
+    <div>Recusandae tempora ab error omnis exercitationem illo accusamus esse sit ipsa accusantium iure, possimus ducimus quis consequuntur qui corporis nobis culpa repudiandae! Suscipit, debitis. Omnis delectus at vitae laborum quos?</div>
+    <div>Dolorem saepe accusamus sed placeat porro ex, ab, vel eaque libero incidunt facilis delectus, iure odio dicta error consequuntur perspiciatis quasi? Corrupti incidunt quia asperiores quo magnam at minima laudantium?</div>
+    <div>Dolor ad saepe, nemo fugit tempora autem est fugiat quis porro atque nam repellendus maxime neque voluptatem rerum amet odit aspernatur voluptates iusto eos laboriosam enim vel. Eius, debitis beatae!</div>
+</div>
+
+<hr style="height: 3px; padding: 0px; border: none;">
+<h2><u>The Difference Between Explicit and Implicit Grids</u></h2>
+<p>Grid layout finally gives us the ability to define grid in CSS and place items into grid cells. This on its
+own is great, but the fact that we don't face to specify each track and we don't have to place every item manually makes the new module even better.
+Grids are flexible enough to adapt to their items.
+</p>
+<p>This is all handled by the so called explicit and implicit grid.</p>
+<hr style="height: 3px; padding: 0px; border: none;">
+
+<h2>Explicit Grids:</h2>
+<p>We can define a fixed number of lines and tracks that form a grid by using
+the properties gird-template-rows, grid-template-columns, and grid-template-areas. This manually
+defined grid is called the explicit grid.</p>
+<p class="left"><span class="code10">.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 100px 100px;
+    grid-gap: 20px;
+}</span></p>
+<img class="notes-image" src="./../images/grid40.png" style="width: 40%; border: 3px solid black; border-radius: 20px;">
+
+<h2>Repeating tracks:</h2>
+<p>When we define grid-templaet-columns: 1fr 1fr 1fr 1fr; we get four vertical tracks each with a width of 1fr. We can automate that by
+using the <span>repeat()</span> notation like so: grid-template-columns: repeat(4, 1fr); The first
+argument specifies the number of repetitions, the second a track list, which is repeated that number of times.</p>
+
+<p>This track list can actually contain more than one track, like this: repeat(2, 120px 10% 200px).
+</p>
+
+<h2>Automatic repetition of tracks:</h2>
+<p>The repeat notation is quite useful, but it can be automated even further. Instead of setting a fixed
+number of repetitions we can use the auto-fill and auto-fit keywords.
+</p>
+<h2>Auto-filling tracks:</h2>
+<p>The <Span>auto-fill</Span> keyword creates as many tracks as fit into the grid cotnainer
+without causing the grid to overflow it:</p>
+<p class="left"><span class="code10">.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 100px);
+    grid-gap: 20px;
+}</span></p>
+<img class="notes-image" src="./../images/grid41.png" style="width: 60%; border: 3px solid black; border-radius: 20px;">
+
+<h2>Auto-fitting tracks:</h2>
+<p>The <Span>auto-fit</Span> keyword behaves the same way as <span>auto-fill</span>, except that after
+grid item placement it will only create as many tracks as needed and any empty repeated track collapses.</p>
+<p class="left"><span class="code10">.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 100px);
+    grid-gap: 20px;
+}</span></p>
+<p>In the example above the grid will look the same with repeat(4, 100px). the difference is
+visible when more grid items are added.
+</p>
+<p>If there are more items, auto-fit creates more columns:</p>
+<img class="notes-image" src="./../images/grid42.png" style="width: 60%; border: 3px solid black; border-radius: 20px;">
+<p>On the other hand, if a fixed number of column tracks is used in the repeat notation and
+the number of items exceeds this value more rows are added:</p>
+<img class="notes-image" src="./../images/grid43.png" style="width: 60%; border: 3px solid black; border-radius: 20px;">
+
+<p>I've used grid-template-columns in the above examples out of convenience, but all rules also apply to grid-template-rows:</p>
+<p class="left"><span class="code10">.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 100px);
+    grid-template-rows: repeat(auto-fill, 100px);
+    grid-gap: 20px;
+    height: 100%;
+}</span></p>
+<img class="notes-image" src="./../images/grid44.png" style="width: 60%; border: 3px solid black; border-radius: 20px;">
+<hr style="height: 3px; padding: 0px; border: none;">
+
+<h2><u>Implicit Grids:</u></h2>
+<p>If there are more grid items than cells in the grid or when a grid item is placed outside
+of the explicit grid, the grid container automatically generates grid tracks by adding grid lines to the grid. The
+explocit grid together with these additional implicit tracks and lines forms the so called <strong>implicit grid</strong>.
+</p>
+<h2>Sizing implicit tracks:</h2>
+<p>The <Span>grid-auto-rows</Span> and <Span>grid-auto-columns</Span>
+properties give us control over the size of implicit tracks:</p>
+<p class="left"><span class="code10">.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 100px 100px;
+    grid-gap: 20px;
+    grid-auto-columns: 200px;
+    grid-auto-rows: 60px;
+}</span></p>
+<p>Implicit tracks will now always have a width of 200px and height of 60px, no matter
+if the grid item fits or not:
+</p>
+<p>You can make sized implicit tracks more flexible by specifying a range using the <span>minmax()</span> notation.</p>
+<p class="left"><Span class="code10">.grid {
+    grid-auto-columns: minmax(200px, auto);
+    grid-auto-rows: minmax(60px, auto);
+}</Span></p>
+<p>Implicit tracks are now at least 200px wide and 60px high, but will expand if the content demands it.</p>
+<hr style="height: 3px; padding: 0px; border: none;">
+    <h2><u>Credits for the information included in this section:</u></h2>
+    <p>This section is mostly copied from <a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="_blank">this amazing article</a>, made by Chris House.
+    Those notes I keep are kept for personal use, and the main reason I keep them is because I can this way
+    keep information organized somewhere, without having to make a long list of links from all the different websites 
+    I read and have to look through them whenever I need to remember something. Also,
+    while copying those articles I do not copy paste, I type everything my self, slowly, while trying to
+    understand what it is I write and also look for ways I could improve the way some stuff are explained if I judge
+    this is needed. Writing things down is how I learn, and that's a major reason why I do what I do, however,
+    I do not recommend to anyone to use my notes to study, since they are not very well written, especially the
+    first pages I made as a beginner, and also, a lot of stuff I write here are copied from other sites.</p>
+</article>
+<hr>
+</body>
+</html>

@@ -1,0 +1,344 @@
+<!DOCTYPE HTML>
+<html>
+<head lang="en-US">
+<meta charset="UTF-8">
+<title> Galactic Light Trails </title>
+<style>
+       .left {
+        text-align: left;
+    }
+    
+    .code10 {
+    white-space: pre-wrap;
+    background-color: lightgreen;
+    }
+    
+    p {
+    text-align:center;
+    }
+    h1 {
+    text-align:center;
+    }
+    h2 {
+    text-align:center;
+    }
+    h3 {
+    text-align:center;
+    }
+    .c {
+    background-color:lightgreen;
+    }
+    hr {
+    width:100%;
+    height:15px;
+    background-color:black;
+    color:black;
+    border: black solid;
+    }
+    body {
+    background-color:rgb(165, 235, 235);
+    margin: 0;
+    height: 100vh;
+    }   
+    span {
+    background-color:lightgreen;
+    }
+    
+    a:link {
+    color: black;
+    text-shadow: 1px 0px 1px black;
+    
+    }
+    
+    a:visited {
+    color: black;
+    text-shadow: 1px 0px 1px rgb(22, 22, 22);
+    }
+    
+    a:hover {
+    text-decoration: underline;
+    color: red;
+    text-shadow: 1px 0px 1px black;
+    }
+    
+    .document{
+        width: 100vw;
+        height: 100vh;
+        overflow: auto;
+        overflow-x: hidden;
+    }
+    
+    .gray{
+        background-color: lightgray;
+    }
+    
+    .no-scroll{
+        overflow-y: hidden;
+    }
+</style> 
+<link rel="stylesheet" href="../CSS-JavaScript-External-Files/HTMLnotes.css?version=1">
+</head>
+<body>
+<hr>
+<article>
+
+<h1> Galactic Light Trails </h1>
+<p><a href="../Home-Pages/myprojects.html">Click to go back</a></p>
+
+<p class="left">JavaScript Code:</p>
+<p class="left"><span class="code10">let canvas = document.querySelector('#canvvaas25');
+let c = canvas.getContext('2d');
+
+canvas.width = 500;
+canvas.height = 300;
+
+let particle = class{
+    constructor(x, y, r, cl){
+        this.x = x;
+        this.y = y;
+        this.r = r;
+        this.cl = cl;
+    }
+
+    draw(){
+        c.shadowColor = this.cl;
+        c.shadowBlur = 15;
+        c.fillStyle = this.cl;
+        c.beginPath();
+        c.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+        c.fill();
+    }
+
+    update(){
+        this.draw();
+    }
+}
+
+let colors = ['#2185C5', '#7ECEFD', '#FFF6E5', '#FF7F66'];
+let particles = new Array();
+
+for(let i = 0; i < 400; i++){
+    let r = 0.5 + Math.random() * 2;
+    let canvasWidth = canvas.width + 200;
+    let canvasHeight = canvas.height + 200;
+    let x = Math.random() * canvasWidth - canvasWidth / 2;
+    let y = Math.random() * canvasHeight - canvasHeight / 2;
+    let cl = colors[Math.floor(Math.random() * colors.length)];
+    particles.push(new particle(x, y, r, cl));
+}
+
+function isScrolledIntoView(el) {
+    var rect = el.getBoundingClientRect();
+    var elemTop = rect.top;
+    var elemBottom = rect.bottom;
+    var isVisible = (elemTop >= 0) && (elemBottom <= window.innerHeight);
+    return isVisible;
+}
+
+<Span class="orange">let mouseDown = false;
+
+canvas.addEventListener('mousedown', (e)=>{
+    mouseDown = true;
+});
+
+window.addEventListener('mouseup', (e)=>{
+    mouseDown = false;
+});
+
+canvas.addEventListener('touchstart', (e)=>{
+    mouseDown = true;
+});
+
+window.addEventListener('touchend', (e)=>{
+    mouseDown = false;
+});</span>
+
+let increment = 0;
+<span class="orange">let alpha = 0;
+let speed = 0.001;</span>
+
+let animate = function(){
+    if(isScrolledIntoView(canvas)){
+<span class="orange">        if(mouseDown){
+            if(alpha < 0.94){
+                alpha += 0.005;
+            } else {
+                alpha = alpha;
+            }
+
+            if(speed < 0.01){
+                speed += 0.0001;
+            } else {
+                speed = speed;
+            }
+        } else {
+            if(alpha > 0){
+                alpha -= 0.005;
+            } else{
+                alpha = 0;
+            } 
+
+            if(speed > 0.001){
+                speed -= 0.0001;
+            } else {
+                speed = 0.001;
+            }
+        }
+
+        let imageData = c.getImageData(0, 0, canvas.width, canvas.height);
+        let data = imageData.data;
+        for(let i = 3; i < data.length; i += 4){
+            data[i] *= alpha;
+        }
+        c.clearRect(0, 0, canvas.width, canvas.height);
+        c.putImageData(imageData, 0, 0);</span>
+
+        c.save();
+        c.translate(canvas.width / 2, canvas.height / 2);
+        c.rotate(increment);
+        c.fillStyle = 'red';
+        particles.forEach((particle) => {
+            particle.update();
+        });
+        c.restore();
+<Span class="orange">        increment += speed;</span>
+    }
+    requestAnimationFrame(animate);
+}
+
+animate();</span></p>
+<p class="left">Outcome:</p>
+
+    <canvas class="canvvaas" id="canvvaas25" style="display: block; margin: auto; background-color: black; border: none"></canvas>
+    
+    <Script>
+    if(true){
+        let canvas = document.querySelector('#canvvaas25');
+        let c = canvas.getContext('2d');
+    
+        canvas.width = 500;
+        canvas.height = 300;
+    
+        let particle = class{
+            constructor(x, y, r, cl){
+                this.x = x;
+                this.y = y;
+                this.r = r;
+                this.cl = cl;
+            }
+    
+            draw(){
+                c.shadowColor = this.cl;
+                c.shadowBlur = 15;
+                c.fillStyle = this.cl;
+                c.beginPath();
+                c.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+                c.fill();
+            }
+    
+            update(){
+                this.draw();
+            }
+        }
+    
+        let colors = ['#2185C5', '#7ECEFD', '#FFF6E5', '#FF7F66'];
+        let particles = new Array();
+    
+        for(let i = 0; i < 400; i++){
+            let r = 0.5 + Math.random() * 2;
+            let canvasWidth = canvas.width + 200;
+            let canvasHeight = canvas.height + 200;
+            let x = Math.random() * canvasWidth - canvasWidth / 2;
+            let y = Math.random() * canvasHeight - canvasHeight / 2;
+            let cl = colors[Math.floor(Math.random() * colors.length)];
+            particles.push(new particle(x, y, r, cl));
+        }
+    
+        function isScrolledIntoView(el) {
+            var rect = el.getBoundingClientRect();
+            var elemTop = rect.top;
+            var elemBottom = rect.bottom;
+            var isVisible = (elemTop >= 0) && (elemBottom <= window.innerHeight);
+            return isVisible;
+        }
+
+        let mouseDown = false;
+
+        canvas.addEventListener('mousedown', (e)=>{
+            mouseDown = true;
+        });
+
+        window.addEventListener('mouseup', (e)=>{
+            mouseDown = false;
+        });
+
+        canvas.addEventListener('touchstart', (e)=>{
+            mouseDown = true;
+        });
+
+        window.addEventListener('touchend', (e)=>{
+            mouseDown = false;
+        });
+            
+        let increment = 0;
+        let alpha = 0;
+        let speed = 0.001;
+    
+        let animate = function(){
+            if(isScrolledIntoView(canvas)){
+                if(mouseDown){
+                    if(alpha < 0.94){
+                        alpha += 0.005;
+                    } else {
+                        alpha = alpha;
+                    }
+
+                    if(speed < 0.01){
+                        speed += 0.0001;
+                    } else {
+                        speed = speed;
+                    }
+                } else {
+                    if(alpha > 0){
+                        alpha -= 0.005;
+                    } else{
+                        alpha = 0;
+                    } 
+
+                    if(speed > 0.001){
+                        speed -= 0.0001;
+                    } else {
+                        speed = 0.001;
+                    }
+                }
+
+                let imageData = c.getImageData(0, 0, canvas.width, canvas.height);
+                let data = imageData.data;
+                for(let i = 3; i < data.length; i += 4){
+                    data[i] *= alpha;
+                }
+                c.clearRect(0, 0, canvas.width, canvas.height);
+                c.putImageData(imageData, 0, 0);
+
+                c.save();
+                c.translate(canvas.width / 2, canvas.height / 2);
+                c.rotate(increment);
+                c.fillStyle = 'red';
+                particles.forEach((particle) => {
+                    particle.update();
+                });
+                c.restore();
+                increment += speed;
+            }
+            requestAnimationFrame(animate);
+        }
+    
+        animate();
+    }
+    </Script>
+
+ </article>
+ 
+<hr>
+</body>
+</html>

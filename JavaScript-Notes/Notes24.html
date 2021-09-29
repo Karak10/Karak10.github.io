@@ -1,0 +1,1772 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<title> Page twenty-four of my notes </title>
+<meta charset="UTF-8"> 
+<link href="../CSS-JavaScript-External-Files/HTMLnotes.css" rel="stylesheet">
+<Style>
+    .left {
+        text-align: left;
+    }
+    
+    .code10 {
+    white-space: pre-wrap;
+    background-color: lightgreen;
+    
+    }
+    
+    p {
+    text-align:center;
+    }
+    h1 {
+    text-align:center;
+    }
+    h2 {
+    text-align:center;
+    }
+    h3 {
+    text-align:center;
+    }
+    .c {
+    background-color:lightgreen;
+    }
+    hr {
+    width:100%;
+    height:15px;
+    background-color:black;
+    color:black;
+    border: black solid;
+    }
+    body {
+    background-color:rgb(165, 235, 235);
+    }
+    span {
+    background-color:lightgreen;
+    }
+    
+    a:link {
+    color: black;
+    text-shadow: 1px 0px 1px black;
+    
+    }
+    
+    a:visited {
+    color: black;
+    text-shadow: 1px 0px 1px rgb(22, 22, 22);
+    }
+    
+    a:hover {
+    text-decoration: underline;
+    color: red;
+    text-shadow: 1px 0px 1px black;
+    }
+
+    .pink {
+        background-color: lightcoral;
+        font-weight: bold;
+    }
+
+    iframe {
+        width: 600px;
+        height: 350px;
+        border: 3px solid black;
+        margin: 20px auto 20px auto;
+        display: block;
+    }
+    
+   .list_container li{
+       width: fit-content;
+       max-width: 600px;
+       background-color: white;
+       border: 3px solid black;
+       border-radius: 20px;
+       margin: 20px auto 20px auto;
+       padding: 20px;
+       font-weight: bold;
+   }
+    
+   .list_container li{
+       margin-top: 15px;
+   }
+
+   .gray{
+       background-color: lightgray;
+   }
+    
+   img{
+       margin: 20px auto 20px auto;
+       display: block;
+       border: 3px solid black;
+       border-radius: 20px;
+   }
+    </style> 
+</head>
+<body>
+
+<hr>
+
+    <header> 
+    <h1> Page twelve of my JavaScript notes </h1>
+    </header>
+    
+<article id="start-of-page"> 
+  
+<div id="homepages">
+
+    <h3>Home Pages:</h3>
+   
+
+</div>
+
+<nav data-notes="JavaScript" data-page="12">
+
+</nav>
+
+    <h3> Informations included in this page:</h3>
+<p><a href="../JavaScript-Notes/Notes24.html#one">JavaScript Regular Expressions</a></p>
+<p><a href="../JavaScript-Notes/Notes24.html#two">RegExp Object</a></p>
+<p><a href="../JavaScript-Notes/Notes24.html#three">More RegExp methods</a></p>
+<p><a href="../JavaScript-Notes/Notes24.html#four">String split()</a></p>
+<p><a href="../JavaScript-Notes/Notes24.html#five">String replaceAll()</a></p>
+
+</article>
+
+ <script src="../CSS-JavaScript-External-Files/nav.js"></script>
+
+<hr>
+
+<article id="one">
+    <header><h1>JavaScript Regular Expressions</h1></header>
+
+<p><Span>Regular expressions</Span> are <Span>patterns</Span> used to 
+<Span>match character combinations</Span> in <Span>strings</Span>. In 
+<Span>JavaScript</Span>, <Span>regular expressions</Span> are also 
+<Span>objects</Span>. These <Span>patterns</Span> are used with the <Span>exec()</Span>
+and <Span>test()</Span> methods of <Span>RegExp</Span>, and with the <Span>match()</Span>, 
+<Span>matchAll()</Span>, <Span>replace()</Span>, <Span>replaceAll()</Span>, <Span>search()</Span>, and <Span>split()</Span> 
+methods of <Span>String</Span>.</p>
+
+<h2><u>How to construct a regular expression:</u></h2>
+
+<p>There are two ways you can <Span>construct</Span> a <Span>regular expression</Span></p>
+
+<p>One way is to use a <Span>regular expression literal</Span>, which consists of a <Span>pattern enclosed between slashes</Span>, like 
+this: <Span>let re = /ab+c/</Span></p>
+
+<p><Span>Regular expression literals</Span> provide compilation of the <Span>regular expression</Span> 
+when the <Span>script</Span> is loaded. If the <span>regular expression</span> remains constant, using this can 
+improve performance.</p>
+
+<P>The second way to <Span>construct a regular expression</Span> is by calling the 
+<Span>constructor function</Span> of the <Span>RegExp object</Span>, as follows: <Span>let re = new RegExmp('ab+c')</Span>.</P>
+
+<p>Using the <Span>constructor function</Span> provides runtime compilation of the 
+<Span>regular expression</Span>, Use the <Span>constructor function</Span> when you know the <Span>regular expression pattern will be changing</Span>, 
+or you <Span>don't know the pattern</Span> and are <Span>getting it from another source</Span>, such as 
+<Span>user input</Span>.</p>
+
+<h2><u>Using simple patterns:</u></h2>
+
+<p><span>Simple patterns</span> are <Span>constructed of characters</Span> for which you 
+ant to find a <Span>direct match</Span>. For example, the pattern <Span>/abc/</Span> matches 
+<Span>character combinations</Span> in <Span>strings</Span> only when the <Span>exact sequence "abc" occurs</Span>
+(all characters together and in that order).</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let re = /abc/g;
+
+let string = "Hello abc!";
+string = string.replace(re, "World");
+
+document.write(string);</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+    let re = /abc/g;
+
+    let string = "Hello abc!";
+
+    string = string.replace(re, "World");
+    document.write(string);
+}
+
+</script>
+
+
+<p>About the <span>g</span> next to the <Span>/pattern/</Span>, this is what we 
+call a <Span>global flag</Span>, there are more kind of <Span>flags</Span> out there that 
+you can use, but I'm gonna speak more about <Span>flags</Span> later.</p>
+
+<h2><u>Using special characters:</u></h2>
+
+<p>When the search for a match requires something more than a direct match, such as 
+    finding <Span>one or more b's</Span>, or finding <Span>white space</Span>, you can include 
+    <Span>special characters</Span> in the <Span>pattern</Span>. For example, to 
+    match a <Span>single "a" followed by zero or more "b"s followed by "c"</Span>, you would 
+    used the pattern <Span>/ab*c/</Span>. The <Span>*</Span> after <Span>"b"</Span> means 
+    <Span>0 or more occurrences of the precending item</Span>, here is an example:
+</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let re = /ab*c\*/g;
+
+let string = "Hello abbbbbbbc*!";
+string = string.replace(re, "World")
+
+document.write(string);</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+    if(true){
+        let re = /ab*c\*/g;
+
+        let string = "Hello abbbbbbbc*!";
+        string = string.replace(re, "World")
+
+        document.write(string);
+    }
+</script>
+
+<P>As you can see, the <Span>second *</Span> was rendered as a 
+<Span>normal character</Span>, and that's because I used <Span>backslash \</Span>, 
+you can use <Span>backslash</Span> to <Span>cancel special characters</Span> and make 
+them work as <Span>normal characters</Span>.</P>
+
+<p>I will go in more depth about the different <Span>groups</Span> of 
+<Span>special characters</Span> in the following sections:</p>
+
+<h2><u>Assertions:</u></h2>
+
+<p><Span>Assertions</Span> include <Span>boundaries</Span>, which indicate the <Span>beginnings and endings</Span> 
+of <Span>lines</Span> and <Span>words</Span>, and <Span>other patterns</Span> indicating in some way that a 
+<Span>match is possible</Span> (including look-ahead, look-behind, and conditional expressions).</p>
+
+<p>First, here is a list of all the <Span>Boundary-type assertions</Span>:</p>
+
+<div class="list_container">
+    <ul>
+        <li><Span> ^ </Span> - Matches the beginning of input. If the multiline flag is set to true, also matches 
+        imediately after a line break character. For example, /^A/ does not match the "A" in "an A", but does match the first "A"
+    in "An A".</li>
+        <li><span> $ </span> - Matches the end of input. If the multiline flag is set to true, also matches immediately before a line break 
+        character. For example, /t$/ does not match the "t" in "eater", but does match it in <Span>eat</Span>.</li>
+        <li><span> \b </span> - Matches a word boundary. This is the position where a word character is not followed or precended by another word-character, 
+        such as between a letter and a space. Note that a matched word boundary is not included in the match. 
+    In other words, the length of a matched word boundary is zero. <br> <br> 
+    
+    Examples: /\bm/ matches the "m" in "moon" <br>
+        /oo\b/ does not match the "oo" in "moon", because "oo" is followed by "n" which is a 
+        word character. <br>
+        /oon\b/ matches the "oon" in "moon", because "oon" is the end of the string, thus 
+        not followed by a word character.
+    </li>
+    <li><Span> \B </Span> - Matches a non-word boundary. This is a position where the previous and next character 
+    are of the same type: Either both must be words, or both must be non-words, for example 
+between two letters or between two spaces. The beginning and end of a string are considered non-words. Same 
+as the matched word boundary, the matched non-word boundary is also not included in the match. For example, 
+/\Bon/ matches "on" in "at noon", and /ye\B/ matches "ye" in "possibly yesterday".</li>
+    </ul>
+</div>
+
+<p>Here is an example using the <Span>^</Span> character:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let re = /^a/g;
+
+let string = "aello a World!";
+string = string.replaceAll(re, "H");
+
+document.write(string);</Span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+    if(true){
+        let re = /^a/gm;
+
+        let string = "aello a World!";
+        string = string.replaceAll(re, "H");
+
+        document.write(string);
+    }
+</script>
+
+<p>Here is an example using the <Span>$</Span> character:</p>
+
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let re = /a$/g;
+
+let string = "Hello a"
+string = string.replace(re, "World!");
+
+document.write(string);</Span></p>
+
+<p class="left">Outcome:</p>
+
+
+<script>
+    if(true){
+        let re = /a$/g;
+
+        let string = "Hello a"
+        string = string.replace(re, "World!");
+
+        document.write(string);
+    }
+</script>
+
+<p class="left">JavaScript Code:</p>
+
+<p>Now, the hardest to understand are probably the <span>/b</span> and 
+<Span>/B</Span> characters, so let me explain these ones a little better.</p>
+
+<p><span>\b</span> matches the <Span>pattern</Span> at the <Span>beggining</Span> or 
+<Span>end</Span> of a <Span>word</Span>.</p>
+<p><span>\B</span> does the opposite, meaning, it <span>does not match</span> the 
+<Span>pattern</Span> at the <span>beginning</span> or <Span>end</Span> of the <Span>word</Span>.</p>
+
+<p>Here are few examples to help you understand:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let string = "catmania thiscat thiscatmania";
+
+<span class="gray">// Case1: At the beginning of each word:</span>
+
+let result = string.replace(/\bcat/g, "CT");
+document.write(result);
+
+<span class="gray">// Case2: At the end of each word:</span>
+
+result = string.replace(/cat\b/g, "CT");
+document.write("&lt;br>" + result);
+
+<span class="gray">// Case3: Not in the beginning:</span>
+
+result = string.replace(/\Bcat/g, "CT");
+document.write("&lt;br>" + result);
+
+<span class="gray">// Case4: Not in the end:</span>
+
+result = string.replace(/cat\B/g, "CT");
+document.write("&lt;br>" + result);
+
+<span class="gray">// Case5: Not in the beginning nor end:</span>
+
+result = string.replace(/\Bcat\B/g, "CT");
+document.write("&lt;br>" + result);</Span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+    if(true){
+        let string = "catmania thiscat thiscatmania cat";
+
+        // Case1: At the beginning of each word:
+
+        let result = string.replace(/\bcat/g, "CT");
+        document.write(result);
+
+        // Case2: At the end of each word:
+        
+        result = string.replace(/cat\b/g, "CT");
+        document.write("<br>" + result);
+
+        // Case3: Not in the beginning:
+
+        result = string.replace(/\Bcat/g, "CT");
+        document.write("<br>" + result);
+
+        // Case4: Not in the end:
+        
+        result = string.replace(/cat\B/g, "CT");
+        document.write("<br>" + result);
+
+        // Case5: Not in the beginning nor end:
+
+        result = string.replace(/\Bcat\B/g, "CT");
+        document.write("<br>" + result);
+    }    
+</script>
+
+<p>As you can see, the <Span>last cat</Span> was <Span>not matched</Span> when 
+I used <Span>\B</Span>, even though it has no characters before or after it, that's because, 
+if it has <Span>non-word characters</Span> both 
+<Span>before</Span> and <span>after</span> then it doesn't get matched.</p>
+
+<p>Let's now learn some of the <Span>other assertions</Span> that exist, here is 
+a list I found online:</p>
+
+<div class="list_container">
+    <ul>
+        <li><span>x(?=y)</span> - Lookahead assertion: Matches "x" only if "x" is followed by "y" for example 
+        /Jack(?=Sprat)/ matches "Jack" only if it is followed by "Sprat". However, 
+    "Sprat" is not a part of the match result.</li>
+    <li><span>x(?!y)</span> - Negative lookahead assertion: Matches "x" only if "x" 
+    is not followed by "y". FFor example, /John(?!Cena)/ matches "John" only if it is not followed 
+by "Cena".</li>
+<li><Span>(?&lt;=y)x</Span> - Lookbehind assertion: Matches "x" only if "x" is precended by "y". 
+For example, /(?&lt;=Jack)Sprat/ matches "Sprat" only if it is precended by "Jack", however, 
+"Jack" is not a part of the match result.</li>
+<li><span>(?&lt;!y)x</span> - Negative lookbehind assertion: Matches "x" only if "x" is not 
+preceded by "y". For example, /(?&lt;!Cena)John/ matches "John" only if it 
+is not preceded by "Cena".</li>
+    </ul>
+</div>
+
+<p>Here is an example for the <Span>lookahead assertions</Span>:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let string = "Hello a!&lt;br>";
+let result = string.replace(/a(?=!)/g, "World");
+
+document.write(result);
+
+result = string.replace(/a(?!example)/g, "World");
+
+document.write(result);</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+    if(true){
+        let string = "Hello a!<br>";
+        let result = string.replace(/a(?=!)/g, "World");
+
+        document.write(result);
+        
+        result = string.replace(/a(?!example)/g, "World");
+
+        document.write(result);
+    }
+</script>
+
+<p>And here is an example for the <Span>lookbehind assertions</Span>:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let string = "Hello Wa!&lt;br>";
+let result = string.replace(/(?&lt;=W)a/g, "orld");
+
+document.write(result);
+
+result = string.replace(/(?&lt;!example)a/g, "orld");
+
+document.write(result);</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+    if(true){
+        let string = "Hello Wa!<br>";
+        let result = string.replace(/(?<=W)a/g, "orld");
+
+        document.write(result);
+        
+        result = string.replace(/(?<!example)a/g, "orld");
+
+        document.write(result);
+    }
+</script>
+
+<h2><u>Character classes:</u></h2>
+
+<p><Span>Character classes</Span> distinguish kinds of <Span>characters</Span>, such 
+as, for example distinguishing <Span>between letters and digits</Span>.</p>
+
+<div class="list_container">
+    <ul>
+        <li><span>. </span> - Matches any single character except line terminators: /n, /r, /u2028 or /2029. 
+        For example, /.y/ matches "my" and "ay", but not "yes", in "yes make my day", since 
+    "yes" has no character behind the letter "y". Inside a character set, the dot loses it's special meaning and 
+matches a literal dot. <br><br> Note that the m multiline flag doesn't change the dot behavior. So to match a 
+pattern across multiple lines, the character [^] can be used, it will match any character including newlines.</li>
+        <li><span>\d </span> - Matches any digit (Arabic numeral). Equivalent to [0-9]. For example, 
+        /\d/ or /[0-9]/ matches "2" in "B2 is the suite numbers".</li>
+        <li><Span>\D </Span> - Matches any character that is not a digit (Aarabic numeral). Equivalent 
+        to [^0-9]. For example, /\D/ or /[^0-9]/ matches "B" in "B2 is the suite number".</li>
+        <li><span>\w </span> - Matches any alphanumeric character from the basic latin alphabet, including 
+        the underscore. Equivalent to [A-Z a-z 0-9]. For example, /\w/ matches 
+    "a" in "apple", "5" in "$5.28", "3" in "3D" and "m" in "Emanuel".</li>
+    <li><span>\W </span> - Matches any character that is not a word characcter from 
+    the basic Latin alphabet. Equivalent to [^A-Z a-z 0-9]. For example, /\W\ 
+matches "%" in "50%" and "É" in "Émanuel".</li>
+    <li><span>\s </span> - Matches a single white space character, including space, tab, form feed, 
+    line feed, and other Unicode spaces. Equivalent to [\f\n\r\t\v\u00a0\u1680\u2000-\u200a\u2028\u2029\u202f\u205f\u3000\ufeff].
+    For example, /\s\w*/ matches " bar" in "foo bar". 
+</li>
+<li><span>\S </span> - Matches a single character other than white space. Equivalent to [^ \f\n\r\t\v\u00a0\u1680\u2000-\u200a\u2028\u2029\u202f\u205f\u3000\ufeff].
+For example, /\S\w*/ matches "foo" in "foo bar".</li>
+<li><span>\ </span> - Indicates that the following character should be treated specially, or 
+"escaped". It behaves one of two ways. <br><br> For characters that are usually treated literally, indicates that 
+the next character is special and not to be interpeted literally. For example, 
+/b/ matches the character "b". By placing a backslash infront of "b", like this: /\b/, the character 
+becomes special and matches a word boundary. <br><br>
+For characters that are usually treated specially, indicates that the next character is not 
+special and should be interpeted literally. For example, "*" is a special character that 
+means 0 or more occurrences of the precending character should be matched, for example, /a*/ means match 
+0 or more "a"s. To match * literally, precede it with a backslash, for example, 
+/a\*/ matches "a*".</li>
+    </ul>
+</div>
+
+<p>Let's create some projects now, the following code will match and create an array of all 
+the numbers that contain 4 digits in a row, if they contain more or less they won't match.
+</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let re = /\b\d{4}\b/g;
+
+<span class="gray">// \b indicates a boundary (i.e. do not start matching in the middle of a word)
+// \d{4} indicates a digit, four times
+// \b indicates another boundary (i.e. do not end matching in the middle of a word)</Span>
+
+let numbers = "015 354 8787 687351 3512 8735";
+let result = numbers.match(re);
+
+document.write(result);</Span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+    if(true){
+        let re = /\b\d{4}\b/g;
+
+        // \b indicates a boundary (i.e. do not start matching in the middle of a word)
+        // \d{4} indicates a digit, four times
+        // \b indicates another boundary (i.e. do not end matching in the middle of a word)
+
+        let numbers = "015 354 8787 687351 3512 8735";
+        let result = numbers.match(re);
+
+        document.write(result);
+    }
+</script>
+
+<p>Another project now, let's take a string and match all the words starting with 
+    the letter <Span>a</Span> or <Span>A</Span>, then create an <Span>array</Span> of 
+    them using the <Span>match method</Span>:
+</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let re = /\b[aA]\w+/g;
+
+<Span class="gray">// \b indicates a boundary (i.e. do not start matching in the middle of a word)
+// [aA] indicates the letter a or A
+// \w+ indicates any character *from the latin alphabet*, multiple times</span>
+
+let string = "I'm Alex, and I want to become a web developer.";
+let result = string.match(re);
+
+document.write(result);</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+    if(true){
+        let re = /\b[aA]\w+/g;
+
+        // \b indicates a boundary (i.e. do not start matching in the middle of a word)
+        // [aA] indicates the letter a or A
+        // \w+ indicates any character *from the latin alphabet*, multiple times
+
+        let string = "I'm Alex, and I want to become a web developer.";
+        let result = string.match(re);
+
+        document.write(result);
+    }
+</script>
+
+<h2><u>Groups and ranges:</u></h2>
+
+<p>Groups and range indicate groups and ranges of expression characters.</p>
+
+<div class="list_container">
+    <ul>
+        <li><Span>x|y </Span> - Matches either "x" or "y". For example, /green|red/ matches "green: in 
+        "green apple" and "red" in "red apple".</li>
+        <li><span>[abc] or [a-c] </span> - A character set matches any of the enclosed characters. You can 
+        specify a range of characters by using a hyphen, but if the hyphen appears as the first or last 
+    characters enclosed in the square brackets it is taken as a literal hyphen to be included in 
+the character set as a normal character. It is also possible to include a character class  in a character set. <br><br>
+For example, [abc] is the same as [a-c]. They match the "b" in "brisket", and the "c" in "chop". The [abcd-] and [-abcd] match 
+the "b" in brisket, the "c" in "chop" and the "-" (hyphen) in "non-profit" and the 
+[/w-] is the same as [A-Za-z0-9_-].</li>
+        <li><span>[^abc] </span> - A negated or complemented character set. That is, it matches anything that is not enclosed 
+        in the brackets. You can specify a range of characters by using a hyphen, but 
+    if the hyphen appears as the first or last character enclosed in the square brackets it is taken as a literal 
+hyphen to be included in the character as a normal character. For example [^abc] is 
+the same as [^a-c], they intially match "o" and "n" in "bacon".</li>
+        <li><span>(x) </span> - Capturing group: Matches x and remembers the match. For example, /(foo)/ matches and remembers "foo" in "foo bar".<br><br>
+        A regular expression may have multiple capturing groups. In results, matches to capturing groups typically in an array whose members are in the same order as the left parentheses in 
+    the capturing group. This is usually just the order of the capturing groups themselves. This 
+becomes important when capturing groups are nested. Matches are accessed using the index result's element ([1], ..., [n]) or from the 
+predefined RegExp Object's properties ($1, ..., $9). <br><br>
+Capturing groups have a performance penalty. If you don't need matched 
+substring to be recalled, prefer non-capturing parentheses (see below): <br><br>
+String.match() won't return groups if /.../g flag is set, however, you can still use 
+String.matchAll() to get all matches.</li>
+<li><span>\n </span> - Where "n" is a positive integer. A back reference to the last substring matching 
+the n parenthetical in the regular expression (counting left parentheses). For example, 
+apple(,)\sorange\1/ matches "apple, orange," in "apple, orange, cherry, peach", do not 
+be confused with \sorange, that's actually \s orange, aka " orange" with a space at it's left.</li>
+<li><span>(?&lt;name>x)</span> - Named capturing group: Matches "x" and 
+stores it on the groups property of the returned matches under the name specified by &lt;name>. 
+The angle brackets (&lt; and >) are required for group name. For example, /(?&lt;name>Alex)/ would 
+match Alex and also store it as a captured group with the name "name".</li>
+<li><Span>\k&lt;Name> </Span> - A back reference to the last sibstring matching the 
+named capture group specified by &lt;name>. For example /(?&lt;title>\w+), yes \k&lt;title>/ matches 
+"Sir, yes Sir" in "Do you copy? Sir, yes Sir!".</li>
+<li><Span>(?:x) </Span> - Non-capturing group: Matches "x" but does not remember 
+the match. The matched substring cannot be recalled from the resulting array's elements
+([1], ..., [n]) or from predefined RegExp object's propertis ($1, ..., $9).</li>
+</ul>
+</div>
+
+<p>So, I there is some explaining that needs to be done about <Span>capute groups</Span>, 
+    first, take a look at the example below::</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let re = /(\w)\d(\w)/g;
+let re2 = /(\w)\d(\w)/;
+let string = "A1A B2B C3C";
+
+string1 = string.match(re);
+string2 = string.match(re2);
+string3 = string.matchAll(re);
+
+document.write(string1 + "&lt;br>");
+document.write(string2 + "&lt;br>");
+document.write(string3.next().value + "&lt;br>");
+document.write(string3.next().value + "&lt;br>");
+document.write(string3.next().value + "&lt;br>");</Span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+    if(true){
+        let re = /(\w)\d(\w)/g;
+        let re2 = /(\w)\d(\w)/;
+        let string = "A1A B2B C3C";
+        
+        string1 = string.match(re);
+        string2 = string.match(re2);
+        string3 = string.matchAll(re);
+
+        document.write(string1 + "<br>");
+        document.write(string2 + "<br>");
+        document.write(string3.next().value + "<br>");
+        document.write(string3.next().value + "<br>");
+        document.write(string3.next().value + "<br>");
+        }
+</script>
+
+<p>Alright, so at first, when I tried to <Span>match</Span> the 
+<Span>string</Span> using <Span>global flag</Span>, the <span>string was matched</span> 
+but the <Span>capture groups</Span> couldn't be accesed, when I tried to do the same but 
+<Span>without the global flag</Span> only the <Span>first match was matched</Span>, 
+and <Span>the capture groups were also added to the array</Span>, to <Span>match all matches</Span>
+and <Span>have the capture groups too</Span> I used <Span>matchAll</Span> which 
+returned an <Span>iterator</Span>, that <Span>itarator</Span> can <Span>iterate</Span>
+through all the <span>matches</span> and returns <span>arrays</span> of the 
+<Span>matched text</Span> and <Span>capture groups</Span>.</p>
+
+<p>I however, prefer to use the <span>exec()</span> method instead, 
+like in the example below:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let re = /(\w)\d(\w)/g;
+let string = "A1A B2B C3C";
+
+document.write(re.exec(string) + "&lt;br>");
+document.write(re.exec(string) + "&lt;br>");
+document.write(re.exec(string) + "&lt;br>");
+document.write(re.exec(string));</Span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+    if(true){
+        let re = /(\w)\d(\w)/g;
+        let string = "A1A B2B C3C";
+        
+        document.write(re.exec(string) + "<br>");
+        document.write(re.exec(string) + "<br>");
+        document.write(re.exec(string) + "<br>");
+        document.write(re.exec(string));
+        }
+</script>
+
+<p>This works similar to <Span>matchAll iterators</Span>, but it's shorter, 
+I could get <Span>all matches and capture groups</Span> easily using a really 
+simple code like this:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let re = /(\w)\d(\w)/g;
+let string = "A1A B2B C3C";
+let matches = [];
+let groups = [];
+
+let results;
+while(results = re.exec(string)){
+    matches.push(results[0]);
+    groups.push(results.slice(1));
+}
+
+document.write(matches + "&lt;br>");
+document.write(groups[0] + "&lt;br>");
+document.write(groups.slice(1));</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+    if(true){
+        let re = /(\w)\d(\w)/g;
+        let string = "A1A B2B C3C";
+        let matches = [];
+        let groups = [];
+        
+        let results;
+        while(results = re.exec(string)){
+            matches.push(results[0]);
+            groups.push(results.slice(1));
+        }
+
+        document.write(matches + "<br>");
+        document.write(groups[0] + "<br>");
+        document.write(groups.slice(1));
+        }
+</script>
+
+<P>So, let me show you a nice example of how <Span>capture group</Span> can actually come 
+in handy in certain situations, let's say we have names, listed like this: Alex, Gkiafis Christina, Classified, etc, 
+using <span>capture group</span>, I can change the position of the last and first name, like in the example below:</P>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let re = /(\w+),\s+(\w+)/g;
+let string = "{Alex, Gkiafis} {Christina, Koresu}"
+
+let result
+while(result = re.exec(string)){
+    document.write(`${result[2]} ${result[1]} &lt;br>`);
+}</Span>
+
+<p class="left">Outcome:</p>
+
+<Script>
+    if(true){
+        let re = /(\w+),\s+(\w+)/g;
+        let string = "{Alex, Gkiafis} {Christina, Koresu}"
+ 
+        let result
+        while(result = re.exec(string)){
+            document.write(`${result[2]} ${result[1]} <br>`);
+        }
+    }  
+</Script>
+
+<p><Span>Capture groups</Span> can be useful in other ways too however, for example, using 
+the <span>\number</span> character, you can <Span>reference them</Span>, like this:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let re = /(a)b\1/g
+let string = "This will match aba";
+
+document.write(string.match(re));</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+    if(true){
+        let re = /(a)b\1/g
+        let string = "This will match aba";
+
+        document.write(string.match(re));
+    }
+</script>
+
+<p>When you have many <Span>captured groups</Span> referencing them by <Span>\number</Span> 
+may be a little hard, that's why you can also create <span>named captured groups</span> 
+with <span>/(?&lt;name>x)/</span> and then reference them using <Span>/\k&lt;name>/</Span>, 
+like in the example below:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let re = /(?&lt;example>a)b\k&lt;example>/g
+let string = "This will match aba";
+
+document.write(string.match(re));</Span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+    if(true){
+        let re = /(?<example>a)b\k<example>/g
+        let string = "This will match aba";
+
+        document.write(string.match(re));
+    }
+</script>
+
+<h2><u>Quantifiers:</u></h2>
+
+<p><span>Quantifiers</span> indicate <Span>numbers of characters</Span> or <Span>expressions</Span> to 
+<Span>match</Span>.</p>
+
+<div class="list_container">
+    <ul>
+        <li><span>x* </span> - Matches the preceding item "x" 0 or more times. For example, /bo*/ matches 
+        "boooo" in "A ghost booooed" and "b" in "A bird warbled", but nothing in "A goat grunted".</li>
+        <li><span>x+</span> - Matches the preceding item "x" 1 or more times. 
+        Equivalent to {1,}. For example, /a+/ matches the "a" in "candy" and all the "a"s in "caaaaaaandy".</li>
+        <li><Span>x? </Span> - This means that the character x may exist, or may not exist, for example, 
+            /aIbc/ will not match "abc", but /aI?bc/ will match "abc" and will also 
+            match "aIbc".</li>
+        <li><Span>x{n} </Span> - Where "n" is a positive integer, matches exactly "n" occurrences of 
+        the preceding item "x". For example, /a{2}/ doesn't match the "a" in "candy" but it matches all of the "a"s in "caandy", 
+        and the first two "a"s in "caaandy".</li>
+        <li><Span>x{n,} </Span> - Where "n" is a positive integer, matches 
+        at least "n" occurrences of the preceding item "x" or more. For example, 
+    /a{2,}/ doesn't match the "a" in "candy", but matches all of the a's in "caandy" 
+and in "caaaaaaaaandy".</li>
+        <li><Span>x{n,m} </Span> - Where "n" is 0 or a positive integer, "m" is a positive integer, and m > n, matches at 
+            least "n" and at most "m" occurrences of the preceding item "x". For example, /a{1,3}/ matches nothing 
+            in "cndy", the "a" in "candy", the two "a"s in "caandy", and the first three "a"s in 
+            "caaaaaaaandy". Notice that when matching "caaaaaaandy", the match is "aaa", even though 
+            the original string had more "a"s in it, that's because the max number of "a"s it can match is 3, 
+            and them minimum is 1.
+        </li>
+        <li><Span>x(*|+|?|{n}|{n,}|{n,m})?</Span> - By default, quantifiers like * and 
+        + are "greedy", meaning that they try to match as much of the string as possible. The ? character after the 
+    quantifier makes the quantifier "non-greedy", meaning that it will stop as soon as it finds a match. <br><br>
+For example, given a string like "some &lt;foo> &lt;bar> new &lt;/bar> &lt;/foo> thing": <br><br>
+/&lt;.*>/ will match "&lt;foo> &lt;bar> new &lt;/bar> &lt;/foo>"<br>
+/&lt;.*?>/ will match "&lt;foo>".</li>
+    </ul>
+</div>
+
+<p>Most of the quantifiers I listed above are easy to understand 
+and I don't really need to talk more about them, let's talk about 
+the ones I consider the hardest to understand, first of all, let's 
+understand the <Span>?</Span> character, if used alone, it means 
+a <Span>specified character</Span> or <Span>group of characters</Span>
+may or may not exist, here is an example:
+</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let re = /a(?:example)?bc/g;
+let string = "This will match abc and aexamplebc";
+
+document.write(string.match(re));</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+    if(true){
+        let re = /a(?:example)?bc/g;
+        let string = "This will match abc and aexamplebc";
+        
+        document.write(string.match(re));
+    }
+</script>
+
+<p>What happens however when we use the <Span>?</Span> character infront 
+one of the <span>quantifiers</span>? Lets take a look:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">if(true){
+    let re = /a(?:example)??bcD??/g;
+    let string = "This will match abc and aexamplebcD";
+
+    document.write(string.match(re));
+}</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+    if(true){
+        let re = /a(?:example)??bcD??/g;
+        let string = "This will match abc and aexamplebcDS";
+        
+        document.write(string.match(re));
+    }
+</script>
+
+<p>So, something weird happened, the <Span>example</Span> text was 
+matched, but the <Span>D</Span> at the end wasn't. Why is that? That's because, 
+as I said before in the list, the <Span>?</Span> character makes the <Span>quantifier</Span>
+become <Span>non-greedy</Span>, meaning, it will try to match as less of the string as 
+possible. Since <Span>bc</Span> had to be matched, <Span>example</Span> which was 
+<Span>before bc</Span> was also forced to be matched, after that however, the <Span>D</Span> 
+didn't need to be matched.</p>
+
+<p>Let's try some more examples:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">if(true){
+    let re = /co*?kie\d*?/g;
+    let re2 = /co+?kie\d+?/g;
+    let re3 = /co{2,}?kie\d{2,}?/g;
+    let string = "cookie12 cooooookie1233";
+
+    document.write(string.match(re) + "&lt;br>");
+    document.write(string.match(re2) + "&lt;br>");
+    document.write(string.match(re3) + "&lt;br>");
+}</Span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+    if(true){
+        let re = /co*?kie\d*?/g;
+        let re2 = /co+?kie\d+?/g;
+        let re3 = /co{2,}?kie\d{2,}?/g;
+        let string = "cookie12 cooooookie1233";
+        
+        document.write(string.match(re) + "<br>");
+        document.write(string.match(re2) + "<br>");
+        document.write(string.match(re3) + "<br>");
+    }
+</script>
+
+<h2><u>Advanced searching with flags:</u></h2>
+
+<p><Span>Regular expressions</Span> have <Span>six optional flags</Span> that allow for 
+functionality like <Span>global</Span> and <Span>case insensitive</Span> searching. These <span>flags</span> can be 
+used seperately or together in any order, and are included as part of the <span>regular expression</span>.</p>
+
+<Style>
+    .table_style{
+        text-align: left;
+        border: 2px solid black;
+        border-left: 8px solid green;
+        border-collapse: collapse;
+        background-color: white;
+        z-index: 10;
+        margin: auto;
+    }
+
+    .table_style td, .table_style th{
+        border: 2px solid black;
+        z-index: 1;
+        border-left: unset;
+        border-radius: 20px;
+        padding-left: 10px;
+    }
+
+    .table_style tr td:nth-child(2){
+        background-color: lightgray;
+    }
+
+    .table_style tr th:nth-child(2){
+        background-color: lightgray;
+    }
+</Style>
+
+<table class="table_style">
+    <tr>
+        <th>Flag</th>
+        <th>Descriptipion</th>
+        <th>Corresponding property</th>
+    </tr>
+    <tr>
+        <td>g</td>
+        <td>Global Search</td>
+        <td>RegExp.prototype.global</td>
+    </tr>
+    <tr>
+        <td>i</td>
+        <td>Case-insensitive search</td>
+        <td>RegExp.prototype.ignoreCase</td>
+    </tr>
+    <tr>
+        <td>m</td>
+        <td>Multi-line search</td>
+        <td>RegExp.prototype.multiline</td>
+    </tr>
+    <tr>
+        <td>s</td>
+        <td>Allows . to match newline characters</td>
+        <td>RegExp.prototype.dotAll</td>       
+    </tr>
+    <tr>
+        <td>u</td>
+        <td>"Unicode" treat a pattern as a sequence of unicode code points</td>
+        <td>RegExp.prototype.unicode</td>
+    </tr>
+    <tr>
+        <td>y</td>
+        <td>Perform a "sticky" search that matches starting at the current 
+            position in the target string. 
+        </td>
+        <td>RegExp.prototype.sticky</td>
+    </tr>
+</table>
+
+<p>To include a <Span>flag</Span> with the <span>regular expression</span>, use 
+this syntax: <Span>var re = /pattern/flags;</Span> or this syntax: <Span>var re = new RegExp('pattern', 'flags');</Span>.</p>
+
+<p>When you aren't using a <Span>flag</Span>, the <span>regular expression</span> will 
+only <Span>match the first match</Span>, like in the example below:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let re = /f\w{2}/;
+let string = "fo fee faa";
+
+document.write(string.match(re));</span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+    if(true){
+        let re = /f\w{2}/;
+        let string = "fo fee faa";
+
+        document.write(string.match(re));
+    }
+</Script>
+
+<p>If you used the <Span>g flag</Span>, then <Span>all matches would be matched</Span>, 
+like this:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let re = /f\w{2}/g;
+let string = "fo fee faa";
+
+document.write(string.match(re));</span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+    if(true){
+        let re = /f\w{2}/g;
+        let string = "fo fee faa";
+
+        document.write(string.match(re));
+    }
+</Script>
+
+<p>If you want the <span>pattern</span> to be <Span>case insesitive</Span> AND <Span>match globally</Span>, 
+you can write <span>//gi</span>, like this:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let re = /F\w{2}/gi;
+let string = "fo fee faa";
+
+document.write(string.match(re));</span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+    if(true){
+        let re = /F\w{2}/gi;
+        let string = "fo fee faa";
+
+        document.write(string.match(re));
+    }
+</Script>
+
+<p>As you can see, in the pattern I wrote <Span>F</Span> capitalized, but 
+it still matched <Span>fee</Span> and <Span>faa</Span>.</p>
+
+<Script>
+    if(true){
+        let re = /.*/gs;
+        let string = "fo fee faa \n \n \n \n";
+
+        document.write(string.match(re));
+    }
+</Script>
+
+<p>The <Span>s flag</Span> can be used so that <span>.</span> matches <Span>newline characters</Span> 
+too, like <span>\n</span> for example, here is an example to help you understand:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let re = /.+/;
+let re2 = /.+/s;
+let string = "Content flows\ndownward and\ndownward";
+
+document.write(string.match(re) + "&lt;br>");
+document.write(string.match(re2));</Span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+    if(true){
+        let re = /.+/;
+        let re2 = /.+/s;
+        let string = "Content flows\ndownward and\ndownward";
+
+        document.write(string.match(re) + "<br>");
+        document.write(string.match(re2));      
+    }
+</Script>
+
+<p>As you can see, in the <Span>first pattern</Span> it stopped 
+matching after it met the <Span>\n</Span>, while in the <span>second pattern</span>
+it matched everything.</p>
+
+<p>The <Span>m flag</Span> stands for <Span>multiline mode</Span> and serves
+to make the <span>boundary tokens ^ and $</span> match the <Span>beginning</Span>
+and <Span>end</Span> of <Span>each line</Span>:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let re = /^A\w*/g;
+let re2 = /^A\w*$/gm;
+
+let string = "Alex\nArgiris";
+
+document.write(string.match(re) + "&lt;br>");
+document.write(string.match(re2));</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+    if(true){
+        let re = /^A\w*/g;
+        let re2 = /^A\w*$/gm;
+
+        let string = "Alex\nArgiris";
+
+        document.write(string.match(re) + "<br>");
+        document.write(string.match(re2));
+
+    }
+</script>
+
+<p>Often times, we might want an <Span>expression</Span> to start it's 
+<Span>searching routine</Span>, within a given <Span>string</Span>, from an <Span>index other than 0</Span>. 
+In other words, we might want to <span>search for matches</span> in the 
+<Span>string</Span> from a <Span>custom position</Span>, like <Span>2, 3, 4</Span> and so on.</p>
+
+<p>This can be accomplished using the <span>y flag</span>. The 
+<Span>y flag</Span> stands for <Span>sticky searching</Span>. It makes an 
+<Span>expression</Span> search from the <Span>position</Span> specified in the 
+<Span>lastIndex property</Span>. The <Span>lastIndex property</Span> can be 
+found in the <Span>regular expression object</Span>, here is an image of it:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let re = /asd/g
+console.dir(re);</Span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+    if(true){
+        let re = /asd/g
+        console.dir(re);
+    }
+</script>
+
+<img src="../images/x2.JPG">
+
+<p>Remember however, the <span>y flag</span> tells the 
+    <Span>regular expression</Span> to 
+    <Span>search for a match</Span> at <span>lastIndex</span> 
+    and <Span>only at lastIndex</Span> (not earlier or later in the string). So, let's give the <Span>y flag</Span> a try now and see if 
+it works:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let re = /A\w+/y;
+let re2 = /A\w+/y;
+re2.lastIndex = 5;
+let string = "Alex Argiris";
+
+document.write(string.match(re) + "&lt;br>");
+document.write(string.match(re2));</Span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+    if(true){
+        let re = /A\w+/y;
+        let re2 = /A\w+/y;
+        re2.lastIndex = 5;
+        let string = "Alex Argiris";
+
+        document.write(string.match(re) + "<br>");
+        document.write(string.match(re2));
+    }
+</Script>
+
+
+</article>
+
+<hr>
+
+<article id="two">
+
+    <header>
+        <h1>RegExp Object</h1>
+    </header>
+
+    <p>The <Span>RegExp object</Span> is used for <Span>matching text</Span> with a <Span>pattern</Span>.</p>
+
+    <p>There are <Span>two ways</Span> to create a <Span>RegExp object</Span>, a <Span>literal notation</Span> 
+    and a <Span>contructor</Span>.</p>
+
+    <p>The following three expressions create the same regular expression object:</p>
+
+    <p class="left">JavaScript Code:</p>
+
+    <p class="left"><span class="code10">let re1 = /abc/gi; <span class="gray">// literal notation</span>
+let re2 = new RegExp('abc', "gi") <span class="gray">// constructor with string pattern as first argument</span>
+let re3 = new RegExp(/abc/, "gi") <span class="gray">// constructor with regular expression literal as first argument (Starting with ECMAScript 6)</span>
+let string = "This will match abc";
+
+document.write(string.match(re1) + "&lt;br>");
+document.write(string.match(re2) + "&lt;br>");
+document.write(string.match(re3));</span></p>
+
+    <p class="left">Outcome:</p>
+
+    <script>
+        let re1 = /abc/gi; // literal notation
+        let re2 = new RegExp('abc', "gi") // constructor with string pattern as first argument
+        let re3 = new RegExp(/abc/, "gi") // constructor with regular expression literal as first argument (Starting with ECMAScript 6)
+        let string = "This will match abc";
+
+        document.write(string.match(re1) + "<br>");
+        document.write(string.match(re2) + "<br>");
+        document.write(string.match(re3));
+
+        console.dir(re2);
+       
+    </script>
+
+
+<p>Now, let's take a look at what's inside the <Span>regular expression object's prototype</Span>:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let re2 = new RegExp('abc', "gi");
+
+console.dir(re2);</Span></p>
+
+<p class="left">Outcome:</p>
+
+<img src="../images/χ2.JPG">
+
+<p>Let's talk about some of the <Span>methods</Span> of the <Span>regular expression object</Span>, 
+the most basic one is probably the <Span>test()</Span> method, which executes a <Span>search for a match</Span>  
+between a <Span>regular expression</Span> and a <Span>specified string</Span> and 
+returns <Span>true</Span> if it <Span>finds a match</Span> else it returns <Span>false</Span>. This 
+method is perfect for things like email verifications and stuff, where you need to check if 
+an email has the @ character and stuff like this, here is an example:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let re = /world/gi;
+let string = "Hello World!"
+
+document.write(re.test(string));</Span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+if(true){
+    let re = /world/gi;
+    let string = "Hello World!"
+
+    document.write(re.test(string));
+}
+</script>
+
+<p>The <Span>RegExp.exec()</Span> method is pretty useful when you want to get the 
+<Span>captured groups</Span> or when you want to be able to <Span>match</Span> and also 
+get the <Span>index position</Span> of text. Here is an example:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let re = /(\w)(\w)o/g;
+let string = "Poop, Shock";
+
+let result;
+while(result = re.exec(string)){
+    document.write(`Found ${result[0]}, it's index position is ${re.lastIndex - result[0].length} \
+    and it's captured groups are the following: ${result.slice(1)} &lt;br>`);
+}</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+if(true){
+    let re = /(\w)(\w)o/g;
+    let string = "Poop, Shock";
+
+    let result;
+    while(result = re.exec(string)){
+        document.write(`Found ${result[0]}, it's index position is ${re.lastIndex - result[0].length} \
+        and it's captured groups are the following: ${result.slice(1)} <br>`);
+    }
+}
+</script>
+</article>
+
+<hr>
+
+<article id="three">
+    <header>
+        <h1>More RegExp methods</h1>
+    </header>
+
+    <p>The <Span>RegExp.prototype[Symbol.replace]</Span> method <Span>replaces</Span> some or 
+    all matches of a <Span>this pattern</Span> in a <Span>string</Span> by a <span>replacement</span>, and 
+<Span>returns</Span> the <span>result</span> of the <Span>replacement</Span> as a <Span>new string</Span>. 
+The <Span>replacement</Span> can be a <Span>string</Span> or a <Span>function</Span> to be called for each match.</p>
+
+<p>This <Span>method</Span> is called <Span>internally</Span> in 
+<Span>String.prototype.replace()</Span> if the <Span>pattern argument</Span> is 
+a <Span>RegExp object</Span>. For example, the following two methods will return 
+the same result:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let re = /abc/;
+let string = 'Hello abc!';
+
+document.write(re[Symbol.replace](string, 'World') + '&lt;br>');
+document.write(string.replace(re, 'World'));</span></p>
+
+<p class="left">Outcome:</p>
+<script>
+    if(true){
+        let re = /abc/;
+        let string = 'Hello abc!';
+
+        document.write(re[Symbol.replace](string, 'World') + '<br>');
+        document.write(string.replace(re, 'World'));
+    }
+</script>
+
+<p>This <Span>method</Span> exists for <Span>customizing replace behavior</Span> in <span>RegExp subclass</span>, as I will show you later.</p>
+
+<p>If <Span>pattern argument</Span> is <Span>not</Span> a <Span>RegExp object</Span>, then <span>String.prototype.replace()</span>
+will not call it.</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">class MyRegExp extends RegExp {
+    constructor(pattern, flags, count) {
+        super(pattern, flags);
+        this.count = count;
+    }
+    [Symbol.replace](str, replacement){
+        <span class="gray">// Perform @@replace |count| times</span>
+        var string = str;
+        for(var i = 0; i&lt;this.count ;i++){
+            string = RegExp.prototype[Symbol.replace].call(this, string, replacement);
+        };
+        return string;
+    }
+}
+
+let re = new MyRegExp('abc', '', 3);
+let text = "abc abc abc abc";
+
+document.write(text.replace(re, 'replaced'));</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+    if(true){
+        class MyRegExp extends RegExp {
+            constructor(pattern, flags, count) {
+                super(pattern, flags);
+                this.count = count;
+            }
+            [Symbol.replace](str, replacement){
+                // Perform @@replace |count| times
+                var string = str;
+                for(var i = 0; i<this.count ;i++){
+                    string = RegExp.prototype[Symbol.replace].call(this, string, replacement);
+                };
+                return string;
+            }
+        }
+
+        let re = new MyRegExp('abc', '', 3);
+        let text = "abc abc abc abc";
+
+        document.write(text.replace(re, 'replaced'));
+    }
+</script>
+
+<p>Let me explain what the code does now, I created a <Span>class</Span> that 
+<Span>extends</Span> the <Span>RegExp constructor</Span>, I used <Span>super()</Span> to 
+add the <Span>pattern</Span> and <Span>flags</Span> properties from the 
+<Span>RegExp constructor</Span> to our <Span>class</Span> and be 
+able to define them while creating the <span>class</span>, then I <Span>rewrote</Span> the 
+<Span>[Symbol.replace]</Span> method, which executes whenever <Span>string.prototype.replace()</Span> method 
+is used with a <Span>regular expression</Span>, this allowed me to 
+<Span>customize</Span> it's <span>behavior</span>, the <span>two parameters</span> 
+it takes are defined when the <Span>string.replace()</Span> method is used, the 
+<Span>str</Span> takes the value of the <span>string</span> and 
+the <Span>replacement</Span> takes the value of the <Span>replacement string</Span> defined as the 
+<span>second parameter</span> of the <span>string.replace()</span> method. I then created a <Span>variable</Span> and 
+assigned it the <span>string</span>, then I made a <Span>loop</Span>, which uses the 
+<Span>count property</Span> that you define while creating the <Span>regular expression</Span> to 
+determine <Span>how many times to check the string</Span>, each time it checks the string it 
+<Span>replaces</Span> the <span>first match</span> and <span>updates</span> the <Span>string</Span> with the <span>new string</span>, so that
+in the <Span>next iteration</Span>, the <Span>next match</Span> is matched, and so on, till the <Span>loop</Span>
+is over, then it simple <Span>returns</Span> the <Span>final string</Span>.</p>
+
+<p>In order to better understand how the class <Span>extends</Span> the <span>RegExp constructor</span>, 
+I made a picture to demostrate what the <span>prototype tree</span> of the <Span>regular expression</Span> I created 
+above looks like:</p>
+
+<img src="../images/χ3.png">
+
+<p>Next <Span>method</Span> I wanna talk about is <span>RegExp.prototype[Symbol.match]()</span>
+method, work similarly to <Span>[Symbol.replace]</Span> however, this one is called 
+when <span>string.prototype.match()</span> method is used with a <Span>RegExp pattern</Span>, also, 
+it only takes <span>one parameter</span>, which is the <Span>string</Span>:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let string = "Hello World!";
+
+document.write(/W\w+/[Symbol.match](string));</Span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+    if(true){
+        let string = "Hello World!";
+
+        document.write(/W\w+/[Symbol.match](string));
+    }
+</script>
+
+<p>Like <Span>[Symbol.replace]</Span>, you can use a <span>class</span> to create 
+<Span>custom behavior</Span>, like this:</p>
+
+<P class="left">JavaScript Code:</P>
+
+<p class="left"><span class="code10">class MyRegExp extends RegExp {
+    constructor(pattern, flags){
+        super(pattern, flags);
+    }
+    [Symbol.match](str) {
+        let result = RegExp.prototype[Symbol.match].call(this, str);
+        if (result == null){
+            return null;
+        } else {
+            return {
+                group(n) {
+                    return result[n];
+                }
+            }
+        }
+    }
+}
+
+let re = new MyRegExp('([0-9]+)-([0-9]+)-([0-9]+)', '');
+let str = '2016-01-02';
+let result = str.match(re); <Span class="gray">// String.prototype.match calls re[@@match]</span>
+document.write(result.group(0) + "&lt;br>");
+document.write(result.group(1) + "&lt;br>");
+document.write(result.group(2) + "&lt;br>");
+document.write(result.group(3));</span></p>
+<p class="left">Outcome:</p>
+
+<script>
+    if(true){
+        class MyRegExp extends RegExp {
+            constructor(pattern, flags){
+                super(pattern, flags);
+            }
+            [Symbol.match](str) {
+                let result = RegExp.prototype[Symbol.match].call(this, str);
+                if (result == null){
+                    return null;
+                } else {
+                    console.log(result);
+                    return {
+                        group(n) {
+                            return result[n];
+                        }
+                    }
+                }
+            }
+        }
+
+        let re = new MyRegExp('([0-9]+)-([0-9]+)-([0-9]+)', '');
+        let str = '2016-01-02';
+        let result = str.match(re); // String.prototype.match calls re[@@match].
+        document.write(result.group(0) + "<br>");
+        document.write(result.group(1) + "<br>");
+        document.write(result.group(2) + "<br>");
+        document.write(result.group(3));
+    }
+</script>
+
+<p>Let me explain now, just like before, we added the <span>patern</span> and 
+<Span>flag</Span> properties to our <Span>class constructor</Span>, then 
+we <Span>rewrote</Span> the <Span>[Symbol.match]</Span> method, this 
+method is executed whenever <Span>string.prototype.match</Span> is used with a <Span>regular expression</Span>, 
+and the <span>string</span> is passed in it as a <span>parameter</span>, so after we call the 
+<span>match</span> method, we call the <Span>real [Symbom.match]</Span> method and assign the result into a variable named <Span>result</span>, 
+then we check if there is a <Span>match</Span>, if 
+<span>null</span> is returned then we <Span>return null</Span>, else we <span>return an object</span>, 
+with a <Span>group method</Span>, this <Span>group method</Span> we created takes a <Span>parameter</Span>, now, 
+I want to mention that <Span>string.match</Span> returns an <span>array</span>, with it's 
+<Span>first item</Span> being <span>the match</span>, and it's <Span>other items</Span>
+being the <Span>captured groups</Span>, remember however that this will not work 
+if the <Span>global flag</Span> is used, I have talked about 
+alternative ways to get the <Span>captured groups</Span> while using the <span>global flag</span> in the <Span>regular expressions section</Span>. Anyway, using the <Span>group</Span> method, we can later 
+accees those <span>array items</span>, if you want to access the <span>first captured group</span> you simple write 
+<span>result.group(1)</span>, if you want to access the <Span>matched text</Span> then you can write 
+<span>result.group[0]</span>.</p>
+
+<p>So, as I said, if you used the <Span>global flag</Span> the 
+<Span>captured groups</Span> won't be returned, this could easily be solved with the <Span>RegExp.prototype[Symbol.matchAll]</Span>
+method, which returns an <span>iterator</span>, if you create an <Span>array</Span>
+of this <Span>iterator</Span> by writing <Span>Array.from(iterator)</Span> you can 
+get an <Span>array</Span>, it's <Span>first item</Span> will be another <Span>array</Span> of the 
+<Span>first matched text</Span> and it's <Span>captured groups</Span>, the 
+<span>second groups</span> will be the <Span>next matched text</Span> and 
+it's <Span>captured groups</Span>, and so on:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">class MyRegExp extends RegExp {
+    constructor(pattern, flags){
+        super(pattern, flags);
+    }
+    [Symbol.match](str) {
+        let result = RegExp.prototype[Symbol.matchAll].call(this, str);
+        if (result == null){
+            return null;
+        } else {
+            return Array.from(result); 
+        }
+    }
+}
+
+let re = new MyRegExp('([0-9]+)-([0-9]+)-([0-9]+)', 'g');
+let str = '2016-01-02 | 100-200-300';
+let result = str.match(re); <Span class="gray">// String.prototype.match calls re[@@match]</Span>
+
+result.forEach((x) => {
+    x.forEach((x) => {
+        document.write(`{${x}}`);
+    });
+    document.write('&lt;br>');
+});</Span></p>
+
+<p class="left">Outcome:</p>
+<script>
+    if(true){
+        class MyRegExp extends RegExp {
+            constructor(pattern, flags){
+                super(pattern, flags);
+            }
+            [Symbol.match](str) {
+                let result = RegExp.prototype[Symbol.matchAll].call(this, str);
+                if (result == null){
+                    return null;
+                } else {
+                    return Array.from(result); 
+                }
+            }
+        }
+
+        let re = new MyRegExp('([0-9]+)-([0-9]+)-([0-9]+)', 'g');
+        let str = '2016-01-02 | 100-200-300';
+        let result = str.match(re); // String.prototype.match calls re[@@match].
+        
+        result.forEach((x) => {
+            x.forEach((x) => {
+                document.write(`{${x}}`);
+            });
+            document.write('<br>');
+        });
+    }
+</script>
+
+<p><span>Custom behaviors</span> can of course be made for other <span>methods</span> too, like 
+<Span>split</Span> or <Span>search</Span>.</p>
+
+<p>The <span>RegExp.prototype[Symbol.split]()</span> is called when 
+when <Span>string.split()</Span> method is used with a <Span>regular expression</Span>, it 
+is assigned <Span>two parameters</Span>, the <Span>first parameter</Span> is the 
+<Span>string</Span> and the <Span>second parameter</Span> is the <span>limit</span>, here is 
+an example:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">class myRegExp extends RegExp{
+    [Symbol.split](string, limit){
+        let array = RegExp.prototype[Symbol.split].call(this, string, limit);
+        return array.map(x => `(${x})`);
+    }
+}
+
+let re = new myRegExp('-', 'g');
+let number = "111-222-333-444";
+
+document.write(number.split(re, 3));</Span></p>
+<p class="left">Outcome:</p>
+
+<script>
+    if(true){
+        class myRegExp extends RegExp{
+            [Symbol.split](string, limit){
+                let array = RegExp.prototype[Symbol.split].call(this, string, limit);
+                return array.map(x => `(${x})`);
+            }
+        }
+
+        let re = new myRegExp('-', 'g');
+        let number = "111-222-333-444";
+
+        document.write(number.split(re, 3));
+        console.dir(re);
+    }
+</script>
+
+<p>Something I didn't explain before is that you don't necessarily need to make a 
+    <Span>constructor</Span>, since the <span>class</span> is <Span>extending RegExp</Span>, 
+    if you don't add a <span>constructor</span> then the <Span>RegExp constructor</Span> 
+    will be used, which by default uses <span>first parameter</span> as <Span>pattern</Span> and 
+    <Span>second parameter</Span> as <span>flags</span>, the only reason you may need to use 
+    <span>super()</span> is if you want to <Span>create a new property</Span>, in which case, you have 
+    to use <Span>super()</Span> to <Span>add flags and pattern properies</Span> to your <span>new constructor</span>.
+</p>
+
+<p>The <Span>RegExp.prototype[Symbol.search]</Span> takes <Span>one parameter</Span>, which is assigned the 
+<Span>string</Span>, it works just like the rest so I'm not gonna make an example of this, since all it really does it 
+return the <Span>index position</Span> of the <span>matched text</span>.</p>
+</article>
+
+
+<hr>
+
+<article id="four">
+    <header>
+        <h1>String split()</h1>
+    </header>
+
+    <p>The <Span>split()</Span> method is used to <Span>split a string</Span>
+    into an <Span>array</Span> of <Span>substrings</Span>, and returns the <Span>new array</Span>.</p>
+
+    <P>This method takes <Span>two parameters</Span>, the <Span>seperator</Span> which specifies the 
+    <Span>text</Span>, or the <Span>regular expression</Span>, to use for <span>splittin</span> the 
+<Span>string</Span>. If <Span>ommited</Span>, the <Span>entire string will be returned</Span>, if you 
+use <Span>""</Span> as the <Span>first parameter</Span>, the <Span>string</Span> will be <Span>split between each character</Span>.
+The <Span>second paremeter</Span> is the <Span>limit</Span>, if for example you only want to 
+<Span>split three items</Span> you can write <span>3</span>, if this parameter is not 
+specified there will be no limit.</P>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let string = "Bannana, ,Apple, , , ,Orange, Peach";
+let re = /,[,\s]+/g
+
+document.write(string.split(re) + "&lt;br>");
+document.write(string.split(re, 2));</Span></p>
+<p class="left"></p>
+
+<script>
+    if(true){
+        let string = "Bannana, ,Apple, , , ,Orange, Peach";
+        let re = /,[,\s]+/g
+
+        document.write(string.split(re) + "<br>");
+        document.write(string.split(re, 2));
+    }
+</script>
+</article>
+
+<hr>
+
+<article id="five">
+    <header>
+        <h1>String replaceAll()</h1>
+    </header>
+
+    <p>The <Span>replaceAll()</Span> method returns a <Span>new string</Span> with 
+    <span>all matches</span> of a <Span>pattern</Span> replaced by a replacement. The <span>pattern</span> can 
+be a <Span>string</Span> or a <Span>RegExp</Span>, and the <Span>replacement</Span> can be 
+a <Span>string</Span> or a <span>function</span> to be called for <span>each match</span>.</p>
+
+<p>Right now, from what I read, this <Span>replaceAll</Span> method is still new and not 
+well supported among the browsers, for browsers that don't support it, we are gonna use a 
+<Span>regular replace method</Span>, which if used with a <Span>regular expression</Span> that 
+has a <Span>global flag</Span> it works pretty similar to <Span>replaceAll</Span> method.</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let string = "abc abc abc";
+
+if('replaceAll' in String.prototype){
+    document.write(string.replaceAll('abc', 'REPLACED'));
+} else {
+    String.prototype.replaceAll = function(find, replace){
+        if(typeof(find) != "string"){
+            find = find.toString();
+        }
+        let re = new RegExp(find, "g");
+        return this.replace(re, replace);
+    }
+    document.write(string.replaceAll("abc", "REPLACED"));
+}</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+    if(true){
+
+        let string = "abc abc abc";
+
+        if('replaceAll' in String.prototype){
+            
+            document.write(string.replaceAll('abc', 'REPLACED'));
+        } else {
+            String.prototype.replaceeAll = function(find, replace){
+                if(typeof(find) != "string"){
+                    find = find.toString();
+                }
+                let re = new RegExp(find, "g");
+                return this.replace(re, replace);
+            }
+
+            document.write(string.replaceeAll("abc", "REPLACED"));
+        }
+    }
+</script>
+
+<iframe src="https://www.youtube.com/embed/UHwWxxRCnM4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</article>
+
+<hr>
+</body>
+</html>

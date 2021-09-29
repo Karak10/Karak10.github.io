@@ -1,0 +1,497 @@
+<!DOCTYPE HTML>
+<html>
+<head lang="en-US">
+<meta charset="UTF-8">
+<title> Drag and Drop for mouse/touch </title>
+<style>
+       .left {
+        text-align: left;
+    }
+    
+    .code10 {
+    white-space: pre-wrap;
+    background-color: lightgreen;
+    }
+    
+    p {
+    text-align:center;
+    }
+    h1 {
+    text-align:center;
+    }
+    h2 {
+    text-align:center;
+    }
+    h3 {
+    text-align:center;
+    }
+    .c {
+    background-color:lightgreen;
+    }
+    hr {
+    width:100%;
+    height:15px;
+    background-color:black;
+    color:black;
+    border: black solid;
+    }
+    body {
+    background-color:rgb(165, 235, 235);
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    }   
+    span {
+    background-color:lightgreen;
+    }
+    
+    a:link {
+    color: black;
+    text-shadow: 1px 0px 1px black;
+    
+    }
+    
+    a:visited {
+    color: black;
+    text-shadow: 1px 0px 1px rgb(22, 22, 22);
+    }
+    
+    a:hover {
+    text-decoration: underline;
+    color: red;
+    text-shadow: 1px 0px 1px black;
+    }
+    
+    body{
+        margin: 0px;
+    }
+    .document{
+        width: 100vw;
+        height: 100vh;
+        overflow: auto;
+        overflow-x: hidden;
+    }
+    
+    .gray{
+        background-color: lightgray;
+    }
+    
+    .no-scroll{
+        overflow-y: hidden;
+    }
+</style> 
+<link rel="stylesheet" href="../CSS-JavaScript-External-Files/HTMLnotes.css?version=1">
+</head>
+<body>
+<div class="document">    
+<hr>
+<article>
+
+<h1> Drago and Drop for mouse/touch users </h1>
+<p><a href="../Home-Pages/myprojects.html">Click to go back</a></p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><span class="code10">&lt;div class="container4">
+   &lt;div class="draggable4" draggable="false">1&lt;/div>
+   &lt;div class="draggable4" draggable="false">2&lt;/div>
+&lt;/div>
+ 
+&lt;div class="container4">
+   &lt;div class="draggable4" draggable="false">3&lt;/div>
+   &lt;div class="draggable4" draggable="false">4&lt;/div>
+&lt;/div></span></p>
+
+<p class="left">CSS Code:</p>
+
+<p class="left"><span class="code10">.container4{
+    background-color: #333;
+    padding: 60px 20px 30px 20px;
+    padding-top: 10px;
+    max-width: 500px;
+    width: 50vw;
+    margin: 10px auto;    
+    border: 3px solid black;
+}
+
+.draggable4{
+    background-color: white;
+    border: 3px solid black;
+    padding: 15px;
+    margin-top: 15px;
+    cursor: move;
+}
+
+.draggable4.dragging{
+    opacity: 0.5;
+}
+
+.no-scroll{
+    height: 100vh;
+    overflow: hidden;
+}</span></p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10"><span class="gray">// this makes sure that the code will run only 
+// after the window has fully loaded</span>
+window.addEventListener('load', (e) => {
+
+<span class="gray">    // this gets the draggable elements 
+    // and the two containers</span>
+    let elements = Array.from(document.querySelectorAll(".draggable4"));
+    let containers = Array.from(document.querySelectorAll(".container4"));    
+
+<span class="gray">    // function that gets the element next of your cursor/touch</span>
+    function getElementAfter(container, y){
+        const elements = Array.from(container.querySelectorAll('.draggable4:not(.dragging)'));
+        
+        return elements.reduce((closest, child) => {
+            const box = child.getBoundingClientRect();
+            const offset = y - box.top - box.height / 2;
+            
+            if(offset &lt; 0 && offset > closest.offset){
+                return { offset: offset, element: child};
+            } else {
+                return closest;
+            }
+        
+        }, { offset: Number.NEGATIVE_INFINITY } ).element;
+     
+    }    
+
+<span class="gray">    // loop that makes sure all events 
+    // created below are added on all 
+    // the draggable elements</span>
+    elements.forEach((elements) => {    
+
+<span class="gray">        // this sets draggable attribute to true
+        // the reason I didn't have it set to 
+        // true from the start is to prevent 
+        // possible bugs that can occur, so
+        // that users can only drag the elements
+        // after the window has fully loaded.</span>
+        elements.draggable = "true";    
+
+<span class="gray">        //function that triggers when toucmove event is added
+        //I needed to use a named function so I can remove the 
+        //toucmove event later after touchend event triggers</span>
+        function touchmove(e){
+            let box1 = containers[0].getBoundingClientRect();
+            let y1 = box1.top + box1.height;
+            let container;
+            let y2 = e.touches[0].clientY;
+<span class="gray">            // this finds at which container 
+            // the element should be placed, 
+            // we then use that container on 
+            // getElementAfter function to 
+            // get the element after our cursor, 
+            // if any, else we just append the 
+            // element in the end of the container</span>
+            if(y2 &lt; y1){
+                container = containers[0];
+            } else if(y2 > y1){
+                container = containers[1];
+            }
+            let elementAfter = getElementAfter(container, y2);
+            if(elementAfter == null){
+            container.append(elements);
+            } else {
+            container.insertBefore(elements, elementAfter);
+            }                
+        }
+       
+<span class="gray">        // this triggers when a touch is made</span>
+        elements.addEventListener('touchstart', (e) => {
+            elements.draggable = "false";
+<span class="gray">            // touch should be hold for 1 second before</span>
+            // the element can be moved
+            let timeout = setTimeout(function(){
+                elements.classList.add('dragging');
+                document.body.classList.add('no-scroll');
+<span class="gray">                // after you hold a touch for 1 second on 
+                // the element then touchmove event is 
+                // added to the document, which triggers
+                // the function i made before</span>
+                document.addEventListener('touchmove', touchmove);     
+            }, 1000);    
+
+            elements.addEventListener('touchend', (e) => {
+<span class="gray">                // after touch ends everything is returned
+                // to normal and the touchmove event is 
+                // removed from the document, also
+                // the timout is cleared so if the 
+                // touch was not held for 1 second 
+                // then the code that was supposed to 
+                // trigger after the timeout will not run</span>
+                elements.draggable = "true";
+                clearTimeout(timeout);
+                elements.classList.remove('dragging');
+                document.body.classList.remove('no-scroll');
+                document.removeEventListener('touchmove', touchmove);
+            })    
+
+            elements.addEventListener('touchcancel', (e) => {
+<span class="gray">                // if touch is canceled everything is returned
+                // to normal and the touchmove event is 
+                // removed from the document</span>
+                elements.draggable = "true";
+                clearTimeout(timeout);
+                elements.classList.remove('dragging');
+                document.body.classList.remove('no-scroll');
+                document.removeEventListener('touchmove', touchmove);
+            })
+        });    
+
+<span class="gray">        // drag events, these will not trigger 
+        // on mobile, and I make sure they won't 
+        // by turning draggable attribute to false 
+        // when a touch occurs, because of devices that 
+        // support both touch and mouse I also 
+        // return the attribute back to true
+        // after the touch ends/cancels</span>
+
+<span class="gray">        // when an element is dragged the dragging 
+        // class is added to it, when it is dropped 
+        // the dragging class is removed from it</span>
+        elements.addEventListener("dragstart", (e) => {
+            elements.classList.add("dragging");
+        });
+        elements.addEventListener("dragend", (e) => {
+            elements.classList.remove("dragging");
+        });
+    });    
+
+<span class="gray">    // this adds the dragover event to both 
+    // containers, when an element is dragged over 
+    // a container it will call the getElementAfter 
+    // function which will return the element that's 
+    // right after the cursor, if any, else it 
+    // will append the element with the draggin class 
+    // to the end of the container</span>
+    containers.forEach((containers) => {
+        containers.addEventListener("dragover", (e) => {
+            e.preventDefault();
+            const elementAfter = getElementAfter(containers, e.clientY);
+            const element = document.querySelector('.dragging');
+            if(elementAfter == null){
+            containers.append(element);
+            } else {
+            containers.insertBefore(element, elementAfter);
+            }
+        });
+    });
+});</span></p>
+
+<p class="left">Outcome:</p>
+
+<style>
+
+    .container4{
+        background-color: #333;
+        padding: 60px 20px 30px 20px;
+        padding-top: 10px;
+        max-width: 500px;
+        width: 50vw;
+        margin: 10px auto;    
+        border: 3px solid black;
+    }
+    
+    .draggable4{
+        background-color: white;
+        border: 3px solid black;
+        padding: 15px;
+        margin-top: 15px;
+        cursor: move;
+    }
+
+    .draggable4.dragging{
+        opacity: 0.5;
+    }
+
+    .no-scroll{
+        overflow-y: hidden;
+    }
+
+    </style>
+    
+    <div class="container4">
+       <div class="draggable4" draggable="false">1</div>
+       <div class="draggable4" draggable="false">2</div>
+    </div>
+    
+    <div class="container4">
+       <div class="draggable4" draggable="false">3</div>
+       <div class="draggable4" draggable="false">4</div>
+    </div>
+
+<script>
+
+// this makes sure that the code will run only 
+// after the window has fully loaded
+window.addEventListener('load', (e) => {
+    
+    // this gets the draggable elements 
+    // and the two containers 
+    let elements = Array.from(document.querySelectorAll(".draggable4"));
+    let containers = Array.from(document.querySelectorAll(".container4"));    
+
+    // function that gets the element next of your cursor/touch
+    function getElementAfter(container, y){
+        const elements = Array.from(container.querySelectorAll('.draggable4:not(.dragging)'));
+        
+        return elements.reduce((closest, child) => {
+            const box = child.getBoundingClientRect();
+            const offset = y - box.top - box.height / 2;
+            
+            if(offset < 0 && offset > closest.offset){
+                return { offset: offset, element: child};
+            } else {
+                return closest;
+            }
+        
+        }, { offset: Number.NEGATIVE_INFINITY } ).element;
+     
+    }    
+
+    // loop that makes sure all events 
+    // created below are added on all 
+    // the draggable elements
+    elements.forEach((elements) => {    
+
+        // this sets draggable attribute to true
+        // the reason I didn't have it set to 
+        // true from the start is to prevent 
+        // possible bugs that can occur, so
+        // that users can only drag the elements
+        // after the window has fully loaded.
+        elements.draggable = "true";    
+    
+
+        //function that triggers when toucmove event is added
+        //I needed to use a named function so I can remove the 
+        //toucmove event later after touchend event triggers
+        function touchmove(e){
+            let box1 = containers[0].getBoundingClientRect();
+            let y1 = box1.top + box1.height;
+            let container;
+            let y2 = e.touches[0].clientY;
+            // this finds at which container 
+            // the element should be placed, 
+            // we then use that container on 
+            // getElementAfter function to 
+            // get the element after our cursor, 
+            // if any, else we just append the 
+            // element in the end of the container
+            if(y2 < y1){
+                container = containers[0];
+            } else if(y2 > y1){
+                container = containers[1];
+            }
+            let elementAfter = getElementAfter(container, y2);
+            if(elementAfter == null){
+            container.append(elements);
+            } else {
+            container.insertBefore(elements, elementAfter);
+            }                
+        }
+       
+        // this triggers when a touch is made    
+        elements.addEventListener('touchstart', (e) => {
+            elements.draggable = "false";
+            // touch should be hold for 1 second before 
+            // the element can be moved
+            let timeout = setTimeout(function(){
+                elements.classList.add('dragging');
+                document.querySelector('.document').classList.add('no-scroll');
+                console.log(document.querySelector('.document').classList);
+                // after you hold a touch for 1 second on 
+                // the element then touchmove event is 
+                // added to the document, which triggers
+                // the function i made before
+                document.addEventListener('touchmove', touchmove);     
+            }, 1000);    
+
+            elements.addEventListener('touchend', (e) => {
+                // after touch ends everything is returned
+                // to normal and the touchmove event is 
+                // removed from the document, also
+                // the timout is cleared so if the 
+                // touch was not held for 1 second 
+                // then the code that was supposed to 
+                // trigger after the timeout will not run
+                elements.draggable = "true";
+                clearTimeout(timeout);
+                elements.classList.remove('dragging');
+                document.querySelector('.document').classList.remove('no-scroll');
+                document.removeEventListener('touchmove', touchmove);
+            })    
+
+            elements.addEventListener('touchcancel', (e) => {
+                // if touch is canceled everything is returned
+                // to normal and the touchmove event is 
+                // removed from the document
+                elements.draggable = "true";
+                clearTimeout(timeout);
+                elements.classList.remove('dragging');
+                document.quertSelector('.document').classList.remove('no-scroll');
+                document.removeEventListener('touchmove', touchmove);
+            })
+        });    
+
+        // drag events, these will not trigger 
+        // on mobile, and I make sure they won't 
+        // by turning draggable attribute to false 
+        // when a touch occurs, because of devices that 
+        // support both touch and mouse I also 
+        // return the attribute back to true  
+        // after the touch ends/cancels    
+
+        // when an element is dragged the dragging 
+        // class is added to it, when it is dropped 
+        // the dragging class is removed from it
+        elements.addEventListener("dragstart", (e) => {
+            elements.classList.add("dragging");
+        });
+        elements.addEventListener("dragend", (e) => {
+            elements.classList.remove("dragging");
+        });
+    });    
+
+    // this adds the dragover event to both 
+    // containers, when an element is dragged over 
+    // a container it will call the getElementAfter 
+    // function which will return the element that's 
+    // right after the cursor, if any, else it 
+    // will append the element with the draggin class 
+    // to the end of the container
+    containers.forEach((containers) => {
+        containers.addEventListener("dragover", (e) => {
+            e.preventDefault();
+            const elementAfter = getElementAfter(containers, e.clientY);
+            const element = document.querySelector('.dragging');
+            if(elementAfter == null){
+            containers.append(element);
+            } else {
+            containers.insertBefore(element, elementAfter);
+            }
+        });
+    });
+});
+
+</script>
+
+ </article>
+
+<style>
+    #hra{
+        position: fixed;
+        bottom: -12px;
+    }
+</style>
+
+<hr id="hra">;
+</div>
+
+</body>
+</html>

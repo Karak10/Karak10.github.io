@@ -1,0 +1,607 @@
+<!DOCTYPE HTML>
+<html>
+<head lang="en-US>
+<meta charset="UTF-8">
+<title> Escape Room </title>
+<link rel="stylesheet" href="../CSS-JavaScript-External-Files/HTMLnotes.css">
+</head>
+<body>
+
+<hr width="100%" size="10"/>
+ 
+<h1 align="center"> <ins>Escape Room</ins></h1>
+
+<p><a href="../Home-Pages/myprojects.html">Click to go back</a></p>
+
+
+
+ 
+<p id="fanprojectt" style="text-align:left;">Code:</p>
+ 
+<span>&lt;p align="center"><br>
+&lt;svg width="500" height="500" viewBox="0 0 340 340" style="border: 5px black solid; background-color:gray;" ><br></span>
+      <br>
+&lt;!-- floor path below -->            <br>
+             <br>
+<span>&lt;path fill="brown" stroke="black" d="M0 220 h340 v120 h-340 v-120"/><br></span>
+    <br>
+&lt;!-- floor path above --><br>
+<br>
+          <br>
+          <br>
+&lt;!-- items bar path below --><br>     
+ <br>
+ <br>
+<span>&lt;path d="M20 330 v2.2" stroke="black" fill="white" stroke-width="5"/><br>
+        <br>
+&lt;path d="M20 330 h300 v-50 h-300 v50<br>
+M70 330 v-50 M120 330 v-50 M170 330 v-50 M220 330 v-50 M270 330 v-50" stroke="black" fill="white" stroke-width="5"/><br></span>
+<br>
+&lt;!-- items bar path above --><br>
+<br>
+<br>
+<br>
+&lt;!-- animation that makes key disappear from ground when clicked and animation the makes key appear on ground when replay button clicked below --><br>
+ <br>
+<span>&lt;use id="key1" href="#key" transform="scale(2) translate(-50,-125)"><br>
+<br>
+&lt;animate attributeName="x"<br>
+from="0" to="-500" dur="0.1s" begin="click" calcmode="discrete" fill="freeze"/><br>
+<br>
+&lt;animate attributeName="x"<br>
+from="-500" to="0" dur="0.1s" begin="replay.click" calcmode="discrete" fill="freeze"/><br>
+<br>
+&lt;/use>       <br></span>
+ <br>
+&lt;!-- animation that makes key disappear from ground when clicked and animation the makes key appear on ground when replay button clicked when pressed above --><br>
+     <br>
+<br>
+<br>
+&lt;!-- animatiom that makes key on items appear when key on ground is pressed, animation that makes key on items disappear when it is pressed,animation that makes key on items appear again after the selected key on items is pressed and animation that makes key on items disappear when replay button is clicked below--><br>
+<br>
+<span>&lt;use id="key2" href="#item" x="-500"><br>
+<br>
+&lt;animate attributeName="x"<br>
+from="-500" to="0" dur="0.1s" fill="freeze" begin="key1.click" calcmode="discrete"/><br>
+<br>
+&lt;animate attributeName="x" from="0"<br>
+to="-500" begin="click" dur="0.1s"<br>
+fill="freeze" calcmode="discrete"/><br>
+<br>
+&lt;animate attributeName="x"<br>
+from="-500" to="0" dur="0.1s" fill="freeze" begin="key3.click" calcmode="discrete"/><br>
+<br>
+&lt;animate attributeName="x"<br>
+from="0" to="-500" dur="0.1s" fill="freeze" begin="replay.click" calcmode="discrete"/><br>
+<br>
+&lt;/use><br></span>
+  <br>
+&lt;!-- animatiom that makes key on items appear when key on ground is pressed, animation that makes key on items disappear when it is pressed,animation that makes key on items appear again after the selected key on items is pressed and animation that makes key on items disappear when replay button is clicked above --><br>
+<br>
+<br>
+<br>
+&lt;!-- animation that makes stroke around key on items become red after key on items is pressed, animation that makes stroke go back to normal after selected key on items is clicked and animation that makes stroke turn back to normal after replay button is clicked, also, animation that makes stroke turn to normal when door that can be unlocked is clicked and a bunch of stroke animations below--><br>
+ <br>
+<span>&lt;path d="M21 329 h48 v-48 h-49 z" stroke="black" fill="none" stroke-width="3" stroke-Dasharray="0"><br>
+ <br>
+&lt;animate attributeName="stroke" from="none" dur="0.1s"<br>
+to="red" calcmode="discrete"<br>
+begin="key2.click" fill="freeze"/> <br>
+<br>
+&lt;animate attributeName="stroke-dasharray" from="0" dur="0.1s"<br>
+to="5" calcmode="discrete"<br>
+begin="key2.click" fill="freeze"/>  <br>  
+<br>
+&lt;animate attributeName="stroke-dashoffset" from="0" dur="2s"<br>
+to="100" <br>
+begin="key2.click" repeatCount="indefinite"/>   <br> 
+<br>
+<br>
+&lt;animate attributeName="stroke-dasharray" from="5" dur="0.1s"<br>
+to="0" calcmode="discrete"<br>
+begin="key3.click;replay.click;door2.click" fill="freeze"/>    <br>
+<br> 
+<br>
+&lt;animate attributeName="stroke" from="red" dur="0.1s"<br>
+to="none" calcmode="discrete"<br>
+begin="key3.click;replay.click;door2.click" <br>
+fill="freeze"/><br>
+<br>
+&lt;animate attributeName="stroke" from="red" dur="0.1s"<br>
+to="none" calcmode="discrete"<br>
+begin="replay.click;door2.click" <br>
+fill="freeze"/><br>
+<br>
+&lt;animate attributeName="stroke" from="red" dur="0.1s"<br>
+to="none" calcmode="discrete"<br>
+begin="door2.click" <br>
+fill="freeze"/><br>
+<br>
+&lt;/path><br></span>
+&lt;!-- animation that makes stroke around key on items become red after key on items is pressed, animation that makes stroke go back to normal after selected key on items is clicked and animation that makes stroke turn back to normal after replay button is clicked, also, animation that makes stroke turn to normal when door that can be unlocked is clicked and a bunch of stroke animations above --><br>
+<br>
+<br>
+<br>
+&lt;!-- animation that makes selected key on items appear when key on items is pressed, animation that makes selected key on items disappear when its clicked, animatiom that makes selected key on items disappear when replay button is clicked and animation that makes selected key on items disappear when door that can be unlocked is clicked below --><br>
+     <br>
+<span>&lt;use id="key3" href="#item" x="-500"><br>
+<br>
+&lt;animate attributeName="x"<br>
+from="-500" to="0" dur="0.1s" fill="freeze" begin="key2.click" calcmode="discrete"/><br>
+<br>
+&lt;animate attributeName="x" from="0"<br>
+to="-500" begin="click" dur="0.1s"<br>
+fill="freeze" calcmode="discrete"/><br>
+<br>
+&lt;animate attributeName="x" from="0"<br>
+to="-500" begin="replay.click" dur="0.1s"<br>
+fill="freeze" calcmode="discrete"/><br>
+<br>
+&lt;animate attributeName="x" from="0"<br>
+to="-500" begin="door2.click" dur="0.1s"<br>
+fill="freeze" calcmode="discrete"/><br>
+</use><br></span>
+<br>
+&lt;!-- animation that makes selected key on items appear when key on items is pressed, animation that makes selected key on items disappear when its clicked, animatiom that makes selected key on items disappear when replay button is clicked and animation that makes selected key on items disappear when door that can be unlocked is clicked above-->  <br>  
+<br>
+ <br>
+ <br>
+&lt;!-- animation that makes the door disappear after key in items gets clicked, animation that makes the door appear again after selected key in items is clicked and animation hat make the door appears when replay button is clicked below --><br>
+<br>
+<span>&lt;use href="#door"><br>
+<br>
+&lt;animate attributeName="x"<br>
+from="0" to="-500" begin="key2.click" dur="0.1s" calcmode="discrete" fill="freeze"/><br>
+<br>
+&lt;animate attributeName="x"<br>
+from="-500" to="0" begin="key3.click" dur="0.1s" calcmode="discrete" fill="freeze"/><br>
+<br>
+&lt;animate attributeName="x"<br>
+from="-500" to="0" begin="replay.click" dur="0.1s" calcmode="discrete" fill="freeze"/><br>
+<br>
+&lt;/use><br></span>
+ <br>
+&lt;!-- animation that makes the door disappear after key in items gets clicked, animation that makes the door appear again after selected key in items is clicked and animation hat make the door appears when replay button is clicked above --><br>
+ <br>
+ <br>
+ <br>
+&lt;!-- animation that makes door that can be unlocked appear after key in items gets clicked animation that makes door that can be unlocked disappear after selected key in items gets clicked and animation that makes door that can be unlocked disappear after it gets clicked below --><br>
+<br>
+<span>&lt;use id="door2" href="#door" x="-500"><br>
+<br>
+&lt;animate attributeName="x"<br>
+from="-500" to="0" begin="key2.click" dur="0.1s" calcmode="discrete" fill="freeze"/><br>
+<br>
+&lt;animate attributeName="x"<br>
+from="0" to="-500" begin="key3.click" dur="0.1s" calcmode="discrete" fill="freeze"/><br>
+<br>
+&lt;animate attributeName="x"<br>
+from="0" to="-500" begin="click" dur="0.01s" calcmode="discrete" fill="freeze"/><br>
+<br>
+&lt;/use><br></span>
+<br>
+&lt;!-- animation that makes door that can be unlocked appear after key in items gets clicked animation that makes door that can be unlocked disappear after selected key in items gets clicked and animation that makes door that can be unlocked disappear after it gets clicked above --><br>
+<br>
+<br>
+<br>
+&lt;!-- animation that makes opened door appear after door that can be unlocked is clicked and animation that makes opened door disappear after replay button is clicked below --><br>
+<br>
+<span>&lt;use id="door4" href="#opendoor" x="-500"><br>
+<br>
+&lt;animate attributeName="x"<br>
+from="-500" to="0" begin="door2.click" dur="0.01s" calcmode="discrete" fill="freeze"/><br>
+<br>
+&lt;animate attributeName="x"<br>
+from="0" to="-500" begin="replay.click" dur="0.1s" calcmode="discrete" fill="freeze"/><br>
+<br>
+&lt;/use><br></span>
+ <br>
+&lt;!-- animation that makes opened door appear after door that can be unlocked is clicked and animation that makes opened door disappear after replay button is clicked above --><br>
+<br>
+<br>
+<br>
+&lt;!-- animation that makes ending screen appear when opened door is clicked and animatiom that makes end screen disappear after replay button is clicked below --><br>
+<br>
+<span>&lt;use href="#endscreen" x="-500"><br>
+<br>
+&lt;animate attributeName="x"<br>
+from="-500" to="0" begin="door4.click" dur="0.01s" calcmode="discrete" fill="freeze"/><br>
+<br>
+&lt;animate attributeName="x"<br>
+from="0" to="-500" begin="replay.click" dur="0.1s" calcmode="discrete" fill="freeze"/><br>
+<br>
+&lt;/use><br></span>
+<br>
+&lt;!-- animation that makes ending screen appear when opened door is clicked and animatiom that makes end screen disappear after replay button is clicked above --><br>
+<br>
+<br>
+    <br>
+&lt;!-- key path below -->  <br>
+   <br>
+<span>&lt;defs><br>
+&lt;g id="key"><br>
+<br>
+&lt;path d="M100 250 h5 v-5 h10 v2 h1 v-2 h2 v2 h1 v-2 h2 v2 h1 v-5 h-23 v8 z M101 245.5 h2 v2.5 h-2 z" fill="yellow" stroke="black" /><br>
+<br>
+&lt;rect width="30" height="13" x="95" y="240" fill="red" style="opacity: 0"/><br>
+&lt;/g><br>
+&lt;/defs><br></span>
+    <br>
+&lt;!-- key paths above --><br>     
+   <br>
+   <br>
+   <br>
+&lt;!-- key as an item below --><br>
+    <br>
+<span>&lt;defs><br>
+&lt;g id="item"><br>
+<br>
+&lt;path d="M24 327 h42 v-44 h-42 z" stroke="none" fill="white" stroke-width="3"/><br>
+        <br>
+&lt;use href="#key" x="-65" y="60"/>     <br>
+   <br>
+&lt;/g><br>
+&lt;/defs><br></span>
+<br>
+&lt;!-- key as an item above --><br>
+  <br>
+  <br>
+                 <br>
+&lt;!-- door path below --><br>
+<br>
+<span>&lt;defs><br>
+&lt;g id="door">       <br>
+&lt;path d="M250 220 v-150 h-75 v150 M240 150 v10 h-10 v-10 z " fill="green" stroke="black" /><br>
+&lt;/g><br>
+&lt;/defs><br></span>
+<br>
+&lt;!-- door path above --><br>
+                 <br>
+ <br>
+                 <br>
+&lt;!-- open door path below --><br>
+<br>
+<span>&lt;defs><br>
+&lt;g id="opendoor">       <br>
+&lt;path d="M250 220 v-150 h-75 v150 M240 150 v10 " fill="black"" stroke="black" /><br>
+&lt;/g><br>
+&lt;/defs><br></span>
+<br>
+&lt;!-- open door path above --><br>
+<br>
+<br>
+<br>
+&lt;!-- ending screen below --><br>
+<br>
+<span>&lt;defs><br>
+&lt;g id="endscreen"><br>
+<br>
+&lt;rect x="0" y="0" width="340" height="340" fill="green" /><br>
+<br>
+&lt;text x="60" y="50"> Congratulations, you escaped! &lt;/text><br>
+<br>
+&lt;text x="20" y="75"> This game was made by using only HTML, &lt;tspan x="20" y="100">and its not the finished version of the game,&lt;/tspan> &lt;tspan x="10" y="125">it is just a test I made to try some of my ideas, &lt;/tspan> &lt;tspan x="20" y="150">like and follow if you want to support me.&lt;/tspan>&lt;/text><br>
+  <br>
+&lt;defs><br>
+&lt;g id="replaybutton">                     <br>
+&lt;rect width="100" height="50" fill="gray" x="120" y="200" stroke="black" /><br>
+<br>
+&lt;text x="145" y="230"> Replay &lt;/text><br>
+&lt;/g><br>
+&lt;/defs><br>
+<br>
+&lt;use id="replay" href="#replaybutton" y="10"/><br>
+<br>
+&lt;/g><br>
+&lt;/defs><br></span>
+<br>
+&lt;!-- ending screen above --><br>
+    <br>
+<span>&lt;/svg>    <br> 
+&lt;/p></span>
+
+
+
+
+<p style="text-align:left;">
+
+ 
+
+
+</p>
+
+
+
+
+<p style="text-align:left;">Outcome:</p>
+
+
+
+
+        
+<p align="center">
+<svg width="500" height="500" viewBox="0 0 340 340" style="border: 5px black solid; background-color:gray;" >
+      
+<!-- floor path below -->            
+             
+<path fill="brown" stroke="black" d="M0 220 h340 v120 h-340 v-120"/>
+    
+<!-- floor path above -->
+
+          
+          
+<!-- items bar path below -->     
+ 
+ 
+<path d="M20 330 v2.2" stroke="black" fill="white" stroke-width="5"/>
+        
+<path d="M20 330 h300 v-50 h-300 v50
+M70 330 v-50 M120 330 v-50 M170 330 v-50 M220 330 v-50 M270 330 v-50" stroke="black" fill="white" stroke-width="5"/>
+
+<!-- items bar path above -->
+
+
+
+<!-- animation that makes key disappear from ground when clicked and animation the makes key appear on ground when replay button clicked below -->
+ 
+<use id="key1" href="#key" transform="scale(2) translate(-50,-125)">
+
+<animate attributeName="x"
+from="0" to="-500" dur="0.1s" begin="click" calcmode="discrete" fill="freeze"/>
+
+<animate attributeName="x"
+from="-500" to="0" dur="0.1s" begin="replay.click" calcmode="discrete" fill="freeze"/>
+
+</use>       
+ 
+<!-- animation that makes key disappear from ground when clicked and animation the makes key appear on ground when replay button clicked when pressed above -->
+     
+
+
+<!-- animatiom that makes key on items appear when key on ground is pressed, animation that makes key on items disappear when it is pressed,animation that makes key on items appear again after the selected key on items is pressed and animation that makes key on items disappear when replay button is clicked below-->
+
+<use id="key2" href="#item" x="-500">
+
+<animate attributeName="x"
+from="-500" to="0" dur="0.1s" fill="freeze" begin="key1.click" calcmode="discrete"/>
+
+<animate attributeName="x" from="0"
+to="-500" begin="click" dur="0.1s"
+fill="freeze" calcmode="discrete"/>
+
+<animate attributeName="x"
+from="-500" to="0" dur="0.1s" fill="freeze" begin="key3.click" calcmode="discrete"/>
+
+<animate attributeName="x"
+from="0" to="-500" dur="0.1s" fill="freeze" begin="replay.click" calcmode="discrete"/>
+
+</use>
+  
+<!-- animatiom that makes key on items appear when key on ground is pressed, animation that makes key on items disappear when it is pressed,animation that makes key on items appear again after the selected key on items is pressed and animation that makes key on items disappear when replay button is clicked above -->
+
+
+
+<!-- animation that makes stroke around key on items become red after key on items is pressed, animation that makes stroke go back to normal after selected key on items is clicked and animation that makes stroke turn back to normal after replay button is clicked, also, animation that makes stroke turn to normal when door that can be unlocked is clicked and a bunch of stroke animations below-->
+ 
+<path d="M21 329 h48 v-48 h-49 z" stroke="black" fill="none" stroke-width="3" stroke-Dasharray="0">
+ 
+<animate attributeName="stroke" from="none" dur="0.1s"
+to="red" calcmode="discrete"
+begin="key2.click" fill="freeze"/> 
+
+<animate attributeName="stroke-dasharray" from="0" dur="0.1s"
+to="5" calcmode="discrete"
+begin="key2.click" fill="freeze"/>    
+
+<animate attributeName="stroke-dashoffset" from="0" dur="2s"
+to="100" 
+begin="key2.click" repeatCount="indefinite"/>    
+
+
+<animate attributeName="stroke-dasharray" from="5" dur="0.1s"
+to="0" calcmode="discrete"
+begin="key3.click;replay.click;door2.click" fill="freeze"/>    
+
+
+<animate attributeName="stroke" from="red" dur="0.1s"
+to="none" calcmode="discrete"
+begin="key3.click;replay.click;door2.click" 
+fill="freeze"/>
+
+<animate attributeName="stroke" from="red" dur="0.1s"
+to="none" calcmode="discrete"
+begin="replay.click;door2.click" 
+fill="freeze"/>
+
+<animate attributeName="stroke" from="red" dur="0.1s"
+to="none" calcmode="discrete"
+begin="door2.click" 
+fill="freeze"/>
+
+</path>
+<!-- animation that makes stroke around key on items become red after key on items is pressed, animation that makes stroke go back to normal after selected key on items is clicked and animation that makes stroke turn back to normal after replay button is clicked, also, animation that makes stroke turn to normal when door that can be unlocked is clicked and a bunch of stroke animations above -->
+
+
+
+<!-- animation that makes selected key on items appear when key on items is pressed, animation that makes selected key on items disappear when its clicked, animatiom that makes selected key on items disappear when replay button is clicked and animation that makes selected key on items disappear when door that can be unlocked is clicked below -->
+     
+<use id="key3" href="#item" x="-500">
+
+<animate attributeName="x"
+from="-500" to="0" dur="0.1s" fill="freeze" begin="key2.click" calcmode="discrete"/>
+
+<animate attributeName="x" from="0"
+to="-500" begin="click" dur="0.1s"
+fill="freeze" calcmode="discrete"/>
+
+<animate attributeName="x" from="0"
+to="-500" begin="replay.click" dur="0.1s"
+fill="freeze" calcmode="discrete"/>
+
+<animate attributeName="x" from="0"
+to="-500" begin="door2.click" dur="0.1s"
+fill="freeze" calcmode="discrete"/>
+</use>
+
+<!-- animation that makes selected key on items appear when key on items is pressed, animation that makes selected key on items disappear when its clicked, animatiom that makes selected key on items disappear when replay button is clicked and animation that makes selected key on items disappear when door that can be unlocked is clicked above-->    
+
+ 
+ 
+<!-- animation that makes the door disappear after key in items gets clicked, animation that makes the door appear again after selected key in items is clicked and animation hat make the door appears when replay button is clicked below -->
+
+<use href="#door">
+
+<animate attributeName="x"
+from="0" to="-500" begin="key2.click" dur="0.1s" calcmode="discrete" fill="freeze"/>
+
+<animate attributeName="x"
+from="-500" to="0" begin="key3.click" dur="0.1s" calcmode="discrete" fill="freeze"/>
+
+<animate attributeName="x"
+from="-500" to="0" begin="replay.click" dur="0.1s" calcmode="discrete" fill="freeze"/>
+
+</use>
+ 
+<!-- animation that makes the door disappear after key in items gets clicked, animation that makes the door appear again after selected key in items is clicked and animation hat make the door appears when replay button is clicked above -->
+ 
+ 
+ 
+<!-- animation that makes door that can be unlocked appear after key in items gets clicked animation that makes door that can be unlocked disappear after selected key in items gets clicked and animation that makes door that can be unlocked disappear after it gets clicked below -->
+
+<use id="door2" href="#door" x="-500">
+
+<animate attributeName="x"
+from="-500" to="0" begin="key2.click" dur="0.1s" calcmode="discrete" fill="freeze"/>
+
+<animate attributeName="x"
+from="0" to="-500" begin="key3.click" dur="0.1s" calcmode="discrete" fill="freeze"/>
+
+<animate attributeName="x"
+from="0" to="-500" begin="click" dur="0.01s" calcmode="discrete" fill="freeze"/>
+
+</use>
+
+<!-- animation that makes door that can be unlocked appear after key in items gets clicked animation that makes door that can be unlocked disappear after selected key in items gets clicked and animation that makes door that can be unlocked disappear after it gets clicked above -->
+
+
+
+<!-- animation that makes opened door appear after door that can be unlocked is clicked and animation that makes opened door disappear after replay button is clicked below -->
+
+<use id="door4" href="#opendoor" x="-500">
+
+<animate attributeName="x"
+from="-500" to="0" begin="door2.click" dur="0.01s" calcmode="discrete" fill="freeze"/>
+
+<animate attributeName="x"
+from="0" to="-500" begin="replay.click" dur="0.1s" calcmode="discrete" fill="freeze"/>
+
+</use>
+ 
+<!-- animation that makes opened door appear after door that can be unlocked is clicked and animation that makes opened door disappear after replay button is clicked above -->
+
+
+
+<!-- animation that makes ending screen appear when opened door is clicked and animatiom that makes end screen disappear after replay button is clicked below -->
+
+<use href="#endscreen" x="-500">
+
+<animate attributeName="x"
+from="-500" to="0" begin="door4.click" dur="0.01s" calcmode="discrete" fill="freeze"/>
+
+<animate attributeName="x"
+from="0" to="-500" begin="replay.click" dur="0.1s" calcmode="discrete" fill="freeze"/>
+
+</use>
+
+<!-- animation that makes ending screen appear when opened door is clicked and animatiom that makes end screen disappear after replay button is clicked above -->
+
+
+    
+<!-- key path below -->  
+   
+<defs>
+<g id="key">
+
+<path d="M100 250 h5 v-5 h10 v2 h1 v-2 h2 v2 h1 v-2 h2 v2 h1 v-5 h-23 v8 z M101 245.5 h2 v2.5 h-2 z" fill="yellow" stroke="black" />
+
+<rect width="30" height="13" x="95" y="240" fill="red" style="opacity: 0"/>
+</g>
+</defs>
+    
+<!-- key paths above -->     
+   
+   
+   
+<!-- key as an item below -->
+    
+<defs>
+<g id="item">
+
+<path d="M24 327 h42 v-44 h-42 z" stroke="none" fill="white" stroke-width="3"/>
+        
+<use href="#key" x="-65" y="60"/>     
+   
+</g>
+</defs>
+
+<!-- key as an item above -->
+  
+  
+                 
+<!-- door path below -->
+
+<defs>
+<g id="door">       
+<path d="M250 220 v-150 h-75 v150 M240 150 v10 h-10 v-10 z " fill="green" stroke="black" />
+</g>
+</defs>
+
+<!-- door path above -->
+                 
+ 
+                 
+<!-- open door path below -->
+
+<defs>
+<g id="opendoor">       
+<path d="M250 220 v-150 h-75 v150 M240 150 v10 " fill="black"" stroke="black" />
+</g>
+</defs>
+
+<!-- open door path above -->
+
+
+
+<!-- ending screen below -->
+
+<defs>
+<g id="endscreen">
+
+<rect x="0" y="0" width="340" height="340" fill="green" />
+
+<text x="60" y="50"> Congratulations, you escaped! </text>
+
+<text x="20" y="75"> This game was made by using only HTML, <tspan x="20" y="100">and its not the finished version of the game,</tspan> <tspan x="10" y="125">it is just a test I made to try some of my ideas, </tspan> <tspan x="20" y="150">like and follow if you want to support me.</tspan></text>
+  
+<defs>
+<g id="replaybutton">                     
+<rect width="100" height="50" fill="gray" x="120" y="200" stroke="black" />
+
+<text x="145" y="230"> Replay </text>
+</g>
+</defs>
+
+<use id="replay" href="#replaybutton" y="10"/>
+
+</g>
+</defs>
+
+<!-- ending screen above -->
+    
+</svg>      
+</p>
+
+<hr width="100%" size="10"/>
+
+</body>
+</html>

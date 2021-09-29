@@ -1,0 +1,2832 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title> Page twelve of my notes </title>
+<meta charset="UTF-8">
+<link href="../CSS-JavaScript-External-Files/HTMLnotes.css" rel="stylesheet">
+<Style>
+.left {
+    text-align: left;
+}
+
+.code10 {
+white-space: pre-line;
+background-color: lightgreen;
+}
+</style> 
+</head>
+<body>
+
+
+<hr>
+
+<header> 
+<h1> Page seven of my CSS notes </h1>
+</header>
+
+<article id="start-of-page"> 
+  
+    <div id="homepages">
+    
+        <h3>Home Pages:</h3>
+       
+    
+    </div>
+    
+    <nav data-notes="CSS" data-page="7">
+    
+    </nav>
+            
+    <h3> Informations included in this page:</h3>
+
+    <p> <a href="../CSS-Notes/Notes12.html#one">Creating Linear Gradients</a></p>
+    <p> <a href="../CSS-Notes/Notes12.html#two">Creating Radial Gradients</a></p>
+    <p> <a href="../CSS-Notes/Notes12.html#three">The opacity property</a></p>
+    <p> <a href="../CSS-Notes/Notes12.html#four">About transitions</a></p>
+    <p> <a href="../CSS-Notes/Notes12.html#five">CSS transforms</a></p>
+    <p> <a href="../CSS-Notes/Notes12.html#six"> 3D transforms</a></p>
+    <p> <a href="../CSS-Notes/Notes12.html#seven">Keyframes and Animations</a></p>
+    <p> <a href="../CSS-Notes/Notes12.html#eight">CSS filters Introduction</a></p>
+    <p> <a href="../CSS-Notes/Notes12.html#nine">Color Filters</a></p>
+    <p> <a href="../CSS-Notes/Notes12.html#ten">More CSS filters</a></p>
+    <p> <a href="../CSS-Notes/Notes12.html#eleven">The @media rule</a></p>
+
+    </article>
+    
+     <script src="../CSS-JavaScript-External-Files/nav.js"></script>
+ 
+
+
+
+<hr>
+
+<article id="one">
+
+    <header>
+
+        <h1>Creating Linear Gradients</h1>
+        
+    </header>
+
+<p><span>CSS3 gradients</span> enable you to display <Span>smooth transition</Span>
+between <Span>two</Span> or <Span>more</Span> specified <Span>colors</Span>. 
+<span>CSS3</span> defines <span>two</span> types of <Span>gradients</Span>:
+<span>Linear</span> and <Span>Radial</Span>.</p>
+
+<p>To create a <span>linear gradient</span> you must define at least 
+<span>two</span> color stops. <SpaN>Color stops</SpaN> are the 
+<span>colors</span> among which you want to render <span>smooth transition</span>.
+You can also set a <Span>starting point</Span> and a <Span>direction</Span> or 
+<Span>angle</Span>.</p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><span class="code10">&lt;div class="example">&lt;/div>
+
+    &lt;div class="example two">&lt;/div>
+    
+    &lt;div class="example three">&lt;/div>
+    </span></p>
+
+<p class="left">CSS Code:</p>
+
+<p class="left"><span class="code10">&lt;style>
+
+    .example {
+        width: 400px;
+        height: 200px;
+        margin: 20px auto 20px auto;
+        background: linear-gradient(
+        0deg,
+        red,
+    green,
+    blue );
+    }
+    
+    .two {
+        background: linear-gradient(
+        45deg,
+        red 0%,
+        red 30%,
+         green 40%,
+         green 60%,
+         blue 70%);
+    }
+    
+    .three {
+    background: linear-gradient(
+    90deg,
+    red 0%,
+        red 35%,
+        green 35%,
+        green 70%,
+        blue 70%);
+    }
+    
+    &lt;/style></span></p>
+
+<p class="left">Outcome:</p>
+
+<style>
+
+.example {
+    width: 400px;
+    height: 200px;
+    margin: 20px auto 20px auto;
+    background: linear-gradient(
+    0deg,
+    red,
+green,
+blue );
+}
+
+.two {
+    background: linear-gradient(
+    45deg,
+    red 0%,
+    red 30%,
+     green 40%,
+     green 60%,
+     blue 70%);
+}
+
+.three {
+background: linear-gradient(
+90deg,
+red 0%,
+    red 35%,
+    green 35%,
+    green 70%,
+    blue 70%);
+}
+
+.four {
+background: repeating-linear-gradient(
+red 0%,
+    red 10%,
+    green 10%,
+    green 20%);
+}
+
+</style>
+
+<div class="example"></div>
+
+<div class="example two"></div>
+
+<div class="example three"></div>
+
+<p>Another cool trick you can do is use <Span>repeating-linear-gradient</Span>, 
+which <Span>repeats</Span> your motivo over and over again to <Span>fill</Span> the <span>container</span>.</p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><span class="code10">&lt;div class="example four">&lt;/div></span></p>
+
+<p class="left">CSS Code:</p>
+
+<p class="left"><span class="code10">&lt;style>
+
+    .four {
+        background: repeating-linear-gradient(
+        red 0%,
+            red 10%,
+            green 10%,
+            green 20%);
+        }
+    
+    &lt;/style></span></p>
+
+<p class="left">Outcome:</p>
+
+<div class="example four"></div>
+
+</article>
+
+<hr>
+
+<article id="two">
+
+    <header>
+
+        <h1>Creating Radial Gradients</h1>
+
+    </header>
+
+<p>To create a <span>radial gradient</span> you must define at least 
+<span>two color stops</span>. The <Span>radial gradient</Span> is 
+defined by it's <Span>center</Span>, and it's <Span>syntax</Span> looks like
+this:</p>
+
+<p><span>background: radial-gradient(position, shape or size, color-stops);</span></p>
+
+<p>The <span>first value</span> defines the <span>gradient position</span>. We 
+can use a <Span>descriptive keyword</Span>, such as <Span>top</Span>, 
+<Span>bottom</Span>, <Span>center</Span>, or <span>left</span>, or we can specify, 
+for example, <Span>50% 50%</Span> to set the <Span>gradient</Span> at the <Span>center</Span> or
+<span>0% 0%</span> to set the <span>gradient</span> at the <Span>top left</Span>, 
+we can of course use px, em, etc as well. </p>
+
+<p>The <span>second value</span> defines the <span>shape</span> and 
+the <Span>gradient size</Span>. There are <Span>two</Span> arguments to <Span>shape</Span>
+gradients: the first is the <Span>ellipse</Span>, which is the <Span>default</Span>, 
+and the second is the <span>circle</span>.</p>
+
+<p>Lastly, the <Span>last value</Span> defines the <Span>color combination</Span>
+and <Span>color stops</Span> just like <span>linear-gradient</span>.</p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><span class="code10">&lt;div class="example five">&lt;/div>
+
+    &lt;div class="example six">&lt;/div>
+    
+    &lt;div class="example seven">&lt;/div>
+    
+    &lt;div class="example eight">&lt;/div></span></p>
+
+<p class="left">CSS Code:</p>
+
+<p class="left"><span class="code10">&lt;style>
+
+    .five {
+        background: radial-gradient(ellipse 200px 100px, red 0%,
+         red 20%, 
+         pink  30%,
+         pink 40%,
+         green 60%
+         );
+    }
+    
+    .six {
+        background: radial-gradient(ellipse 200px 200px, red 0%,
+         red 20%, 
+         pink  30%,
+         pink 40%,
+         green 60%
+         );
+    }
+    
+    .seven {
+        background: -webkit-radial-gradient(top left, circle, red 0%,
+         red 20%, 
+         pink  30%,
+         pink 40%,
+         green 45%
+         );
+    }
+    
+    .eight {
+        background: -webkit-radial-gradient(50% 100%, circle, red 0%,
+         red 20%, 
+         pink  30%,
+         pink 40%,
+         green 45%
+         );
+    }
+    
+    &lt;/style></span></p>
+
+<p class="left">Outcome:</p>
+
+<Style>
+
+.five {
+    background: radial-gradient(ellipse 200px 100px, red 0%,
+     red 20%, 
+     pink  30%,
+     pink 40%,
+     green 60%
+     );
+}
+
+.six {
+    background: radial-gradient(ellipse 200px 200px, red 0%,
+     red 20%, 
+     pink  30%,
+     pink 40%,
+     green 60%
+     );
+}
+
+.seven {
+    background: -webkit-radial-gradient(top left, circle, red 0%,
+     red 20%, 
+     pink  30%,
+     pink 40%,
+     green 45%
+     );
+}
+
+.eight {
+    background: -webkit-radial-gradient(50% 100%, circle, red 0%,
+     red 20%, 
+     pink  30%,
+     pink 40%,
+     green 45%
+     );
+}
+
+</Style>
+
+
+<div class="example five"></div>
+
+<div class="example six"></div>
+
+<div class="example seven"></div>
+
+<div class="example eight"></div>
+
+<p>I don't know why but <Span>position</Span> wasn't supported without the 
+<Span>prefix</Span> of the browser I'm using, I guess it's still new and 
+isn't very well supported, so if you even need to use <span>radial gradients</span>
+use <Span>multiple prefixes</Span> to make sure it works for all browsers, or the  
+majority of browsers at least.</p>
+
+</article>
+
+<hr>
+
+<article id="three">
+
+<header>
+
+    <h1>The opacity Property</h1>
+
+</header>
+
+<p>There really isn't much to say about it, you probably already know how it works,
+    <Span>opacity</Span> can change the <Span>opacity</Span> of an <Span>element</Span>,
+    <Span>0</Span> is transparent, <Span>1</Span> is visible, you can use
+    numbers between such as <Span>0.5</Span>, <Span>0.8</Span>, etc to 
+    make glass effect.
+</p>
+
+<p>The only reason I made a section for this property is because <span>Internet Explorer</span>, 
+as usually, is a jerk, and needs special treatment to work the way we want it to.</p>
+
+<p>In order for <Span>opacity</Span> property to work in all versions of <span>IE</span>, use
+the <Span>filter:alpha(opacity=x)</Span> along with the <span>opacity</span> property, 
+<Span>x</Span> can take any values from <Span>0</Span> to <span>100</span>, <span>0</span>
+is transparent, <Span>100</Span> is visible.</p>
+
+</article>
+
+<hr>
+
+<article id="four">
+
+    <header>
+
+        <h1>About Transitions</h1>
+
+    </header>
+
+<p><span>Transitions</span> allow us to <span>change</span> from <Span>one property value</Span>
+to <Span>another</Span> over a <Span>given duration</Span>.</p>
+
+<p>The <span>transition-property</span> specifies what <span>properties</span>
+should be <span>transitioned</span>, if you <span>don't use</span> this property 
+then <Span>all</Span> properties that change will be <Span>transitioned</Span>, 
+you can also use the <span>all</span> keyword to get the same result, but it 
+is not recommended to do this, because this way the <Span>browser</Span> checks 
+over <Span>all properties</Span> to find which ones change, and that 
+can <Span>reduce the performance</Span>, it is recommended to list the properties 
+that get changed by seperating these with <Span>commas</Span>, like this: <Span>width</Span>, <Span>height</Span>, etc.</p>
+
+<p>The <Span>transition-duration</Span> specifies how much <Span>time</Span> it will 
+take for the <Span>properties</Span> to be <Span>changed</Span>, this property can 
+take <span>seconds</span> and <Span>miliseconds</Span>, but in my opinion it's 
+better to use <Span>miliseconds</Span>, because <Span>JavaScript</Span> uses 
+<Span>miliseconds</Span> too, and it's also easier to define <Span>small durations</Span>, 
+since <Span>1000ms</Span> is <Span>1 second</Span>, you could just write 
+<Span>300ms</Span> for example to make the <Span>duration</Span> be <span>0.3 seconds</span>.</p>
+
+<p>The <span>transition-delay</span> specifies how much <Span>time</Span> it will 
+take for the <Span>transition</Span> to <Span>begin</Span>, for example, 
+if I wanted it to begin <Span>1 second</Span> after I hover my mouse 
+over the element I would write <span>transition-delay: 1000ms</span>.</p>
+
+<p>Lastly, <Span>transition-timing-function</Span> specifies how the <Span>pace</Span>
+of the <Span>transition</Span> changes over it's <Span>duration</Span>, it works 
+just like <Span>keysplines</Span> in <Span>SVG</Span>, it can use 
+<span>cubic-bazier</span> value, just like <span>SVG</span>, which is defined in 
+<Span>numerical values</Span> from <Span>0</Span> to <span>1</span>, I recommend you to check 
+out the explanation I gave in <a href="../HTML-Notes/Notes5.html#keysplines-attribute">page five of my notes</a>
+to understand better how it works, you may also want to check how <Span>bazier curves</Span> 
+are made. The syntax of <Span>transition-timing-function</Span> when used with <Span>cubic-bazier</Span>
+values looks like this: <span>transition-timing-function: cubic-bazier(0,0,1,1)</span>, you can 
+also use <span>keywords</span> such as <Span>ease</Span>, <Span>ease-in</Span>, 
+<Span>ease-out</Span>, <Span>ease-in-out</Span> and <Span>linear</Span> but I will 
+talk more about this later.</p>
+
+<p>So, lets start with some examples, here is a <Span>div</Span> with 
+a simple <Span>hover animation</Span>, I used <span>transform</span> property, 
+I will speak more about this property in later sections, but you don't really need to know 
+much about it for now.</p>
+
+
+<p class="left">HTML code: <br><br>
+
+<span class="code10">&lt;div class="transition-example">&lt;/div></span>
+
+</p>
+
+<p class="left">CSS code: <br><br>
+
+<span class="code10">&lt;style>
+
+    .transition-example {
+        width: 200px;
+        height: 100px;
+        background-color: red;
+        margin: 20px auto 20px auto;
+    }
+    
+    .transition-example:hover {
+        background-color: blue;
+        transform: rotate(45deg);
+    }
+    
+    &lt;/style></span>
+
+</p>
+
+<p class="left">Outcome:</p>
+
+<style>
+
+.transition-example {
+    width: 200px;
+    height: 100px;
+    background-color: red;
+    margin: 20px auto 20px auto;
+}
+
+.transition-example:hover {
+    background-color: blue;
+    transform: rotate(45deg);
+}
+
+
+</style>
+
+
+<div class="transition-example"></div>
+
+<p>If you want to make a <span>smooth transition</span>, and 
+not just have a <span>div</span> that changes like this, you 
+need to use at least the <Span>transition-property</Span> and 
+<Span>transition-duration</Span> properties, you can also 
+include the <Span>transition-delay</Span> and <Span>transition-timing-function</Span> 
+properties for extra effects.</p>
+
+<p class="left">HTML code: <br><br>
+
+    <span class="code10">&lt;div class="transition-example2">&lt;/div></span>
+    
+    </p>
+    
+    <p class="left">CSS code: <br><br>
+    
+    <span class="code10">&lt;style>
+    
+        .transition-example2 {
+            width: 200px;
+            height: 100px;
+            background-color: red;
+            margin: 20px auto 20px auto;
+            transition-property: background-color, transform;
+            transition-duration: 1000ms, 2000ms;
+            transition-delay: 0ms, 1000ms;
+        }
+        
+        .transition-example2:hover {
+            background-color: blue;
+            transform: rotate(180deg);
+        }
+        
+        &lt;/style></span>
+    
+    </p>
+    
+    <p class="left">Outcome:</p>
+
+<style>
+
+    .transition-example2 {
+        width: 200px;
+        height: 100px;
+        background-color: red;
+        margin: 20px auto 20px auto;
+        transition-property: background-color, transform;
+        transition-duration: 1000ms, 2000ms;
+        transition-delay: 0ms, 1000ms;
+    }
+    
+    .transition-example2:hover {
+        background-color: blue;
+        transform: rotate(180deg);
+    }
+    
+    
+    </style>
+
+<div class="transition-example2"></div>
+
+<p>So, the <span>transition-duration</span>, <Span>transition-delay</Span> and 
+<Span>transition-property</Span> properties are pretty simple, 
+there isn't much to explain really, so let's get to <Span>transition-timing-function</Span>
+already, I will first show you how each <Span>keyword</Span> behaves.</p>
+
+
+<p class="left">HTML code: <br><br>
+
+    <span class="code10">&lt;div id="main-div">
+
+        &lt;div class="example-transition linear">Linear &lt;/div>
+        
+        &lt;div class="example-transition ease"> Ease&lt;/div>
+        
+        &lt;div class="example-transition ease-in">Ease-in&lt;/div>
+        
+        &lt;div class="example-transition ease-out">Ease-out&lt;/div>
+        
+        &lt;div class="example-transition ease-in-out">Ease-in-out&lt;</div>
+        
+        &lt;/div></span>
+    
+    </p>
+    
+    <p class="left">CSS code: <br><br>
+    
+    <span class="code10">&lt;style>
+    
+        .example-transition {
+            width: 100px;
+            height: 50px;
+            background-color: green;
+            margin: 20px auto 20px auto;
+            color: white;
+            text-align: center;
+            line-height: 50px;
+            text-shadow: 1px 1px 0px black, 
+            -1px -1ox 0px black;
+            transition-property: width;
+            transition-duration: 2000ms;
+        }
+        
+        .linear {
+            transition-timing-function: linear;
+        }
+        
+        .ease {
+            transition-timing-function: ease;
+        }
+        
+        .ease-in {
+            transition-timing-function: ease-in;
+        }
+        
+        .ease-out {
+            transition-timing-function: ease-out;
+        }
+        
+        .ease-in-out{
+            transition-timing-function: ease-in-out;
+        }
+         
+        #main-div:hover div{
+            width: 500px;
+        }
+        
+        #main-div {
+            width: 500px;
+            margin: auto;
+            background-color: white;
+            border: 3px solid black;
+            border-radius: 20px;
+        }
+        
+        &lt;/style></span>
+    
+    </p>
+    
+    <p class="left">Outcome:</p>
+
+<style>
+
+.example-transition {
+    width: 100px;
+    height: 50px;
+    background-color: green;
+    margin: 20px auto 20px auto;
+    color: white;
+    text-align: center;
+    line-height: 50px;
+    text-shadow: 1px 1px 0px black, 
+    -1px -1ox 0px black;
+    transition-property: width;
+    transition-duration: 2000ms;
+}
+
+.linear {
+    transition-timing-function: linear;
+}
+
+.ease {
+    transition-timing-function: ease;
+}
+
+.ease-in {
+    transition-timing-function: ease-in;
+}
+
+.ease-out {
+    transition-timing-function: ease-out;
+}
+
+.ease-in-out{
+    transition-timing-function: ease-in-out;
+}
+ 
+#main-div:hover div{
+    width: 500px;
+}
+
+#main-div {
+    width: 500px;
+    margin: auto;
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 20px;
+}
+
+</style>
+
+<div id="main-div">
+
+<div class="example-transition linear">Linear </div>
+
+<div class="example-transition ease"> Ease</div>
+
+<div class="example-transition ease-in">Ease-in</div>
+
+<div class="example-transition ease-out">Ease-out</div>
+
+<div class="example-transition ease-in-out">Ease-in-out</div>
+
+</div>
+
+<p><Span>Linear</Span> keeps a straight speed throughout the animation, <Span>ease</Span>
+starts fast and slows down at the end, <Span>ease-in</Span> starts slow and 
+speeds up at the end, <Span>ease-out</Span> is like <span>ease</span> but I believe 
+it starts slower, <Span>ease-in-out</Span> is something between <span>ease-in</span>
+and <Span>ease-out</Span>.</p>
+
+<p>Now, about the <Span>cubic-bazier</Span> values, you can go read how it works 
+in <Span>page five of my notes</Span>, I talk about it in <span>animation attributes</span>, 
+in <Span>keysplines</Span>, however, I'm now gonna tell you a little tool you can use 
+to make your life way easier.</p>
+
+<p>First, <span>right click</span> on the <Span>element</Span> you are animating and press <Span>inspect</Span>, 
+a <Span>menu</Span> will open with a lot of stuff in it, go to <Span>filters</Span>
+and find <span>transition-timing-function</span>, press it, then click on whatever is inside,
+in my case it has some of the <span>keywords</span> I used before, I pressed on it, and at the 
+left of my screen it took me to the part of the code where I used this <Span>keyword</Span>, 
+and it also has a little <Span>icon</Span> next to the <Span>keyword</Span>, if you press it
+a tool will open, which lets you create your own <Span>bazier-curves</Span>, which you 
+then can copy and use in your code. This may be different depending on your browser, 
+I use google chrome, and it's pretty cool and easy tool to use for my transitions.
+</p>
+
+<p>Lastly, you can use <Span>transition</Span> property to merge <Span>all four transition properties</Span>
+together, <Span>first number</Span> you write is for <Span>duration</Span>, <Span>second number</Span> is 
+for <Span>delay</Span>.</p>
+
+</article>
+
+<hr>
+
+<article id="five">
+
+    <header>
+
+        <h1>CSS3 Transforms</h1>
+
+    </header>
+
+<p><Span>Transforms</Span> allow you to <Span>translate</Span>, <Span>rotate</Span>, 
+<Span>scale</Span> and <Span>skew</Span> elements, just like in <Span>SVG</Span>.</p>
+
+<p>A <Span>transformation</Span> is an <Span>effect</Span> that lets an <Span>element</Span>
+change <span>shape</span>, <Span>size</Span> and <span>position</span>, note that 
+the <Span>transformations</Span> do not effect the <Span>elements around it</Span>, just 
+like if it's <Span>position</Span> was set to <Span>relative</Span>.</p>
+
+<h3><ins>transform: rotate(Xdeg);</ins></h3>
+
+<p>The <span>rotate</span> transformation is used to <span>rotate</span> elements,
+it takes <span>degrees</span>, and it works just like in <span>SVG</span>, there really 
+isn't much to say about it, here is an example:</p>
+
+
+<p class="left">HTML code:</p>
+
+<p class="left"><span class="code10">&lt;div class="examplee-div">
+
+    &lt;div>&lt;/div>
+    
+    &lt;/div></span></p>
+
+<p class="left">CSS code:</p>
+
+<p class="left"><span class="code10">&lt;Style>
+
+    .examplee-div div {
+        width: 150px;
+        height: 50px;
+        background-color: orange;
+        margin: 60px auto 60px auto;
+        border: 3px solid black;
+        border-radius: 20px;
+        transform: rotate(45deg)
+    }
+    
+    &lt;/Style></span></p>
+
+<p class="left">Outcome:</p>
+
+<Style>
+
+.examplee-div div {
+    width: 150px;
+    height: 50px;
+    background-color: orange;
+    margin: 60px auto 60px auto;
+    border: 3px solid black;
+    border-radius: 20px;
+    transform: rotate(45deg)
+}
+
+</Style>
+
+
+<div class="examplee-div">
+
+<div></div>
+
+</div>
+
+<p>You can of course also use <Span>negative numbers</Span> to <span>rotate</span> it 
+the other way around, let's move to the next <Span>transformation</Span>.</p>
+
+<h3><ins>transform-origin: 50% 50%;</ins></h3>
+
+<p>The <span>transform-origin</span> property allows you to <Span>change</Span>
+the <Span>coordinates</Span> from which the <Span>element</Span> is <Span>turned</Span>.</p>
+
+<p>Think of it like this: by <Span>default</Span> elements are <Span>rotated</Span> from 
+the <span>center</span>, <Span>50%</Span> along the <Span>x axis</Span> and 
+<Span>50%</Span> down the <Span>y axis</Span>, get a paper and place your finger at 
+it's <Span>center</Span>, then try to <span>rotate</span> clockwise with your finger placed down, that's 
+how an <span>element</span> with <Span>transform-origin: 50% 50%;</Span> will <span>rotate</span>, 
+now place your finger at the <span>top right corner</span> of the paper and do the same, that's 
+how an <Span>element</Span> with <Span>transform-origin: 100% 0%;</Span> will <Span>rotate</Span>, 
+I hope you understand.</p>
+
+<p class="left">HTML code:</p>
+
+<p class="left"><span class="code10">&lt;div class="div699 empty-div-container">
+    &lt;div class="div699 aone">&lt;/div>
+    &lt;/div>
+    
+    &lt;div class="div699 empty-div-container">
+    &lt;div class="div699 atwo">&lt;/div>
+    &lt;/div></span></p>
+
+<p class="left">CSS code:</p>
+
+<p class="left"><span class="code10">&lt;Style>
+
+    .div699 {
+        width: 150px;
+        height: 50px;
+        background-color: orange;  
+        border: 3px solid black;
+        border-radius: 20px;
+    }
+    
+    .empty-div-container {
+        margin: 60px auto 60px auto;
+        background-color: unset;
+    }
+    
+    .aone {
+        transform: rotate(45deg);
+    }
+    
+    .atwo{
+         transform-origin: 100% 0%;
+         transform: rotate(-45deg);
+    }
+    
+    &lt;/Style></span></p>
+
+<p class="left">Outcome:</p>
+
+<style>
+
+.div699 {
+    width: 150px;
+    height: 50px;
+    background-color: orange;  
+    border: 3px solid black;
+    border-radius: 20px;
+}
+
+.empty-div-container {
+    margin: 60px auto 60px auto;
+    background-color: unset;
+}
+
+
+.aone {
+    transform: rotate(45deg);
+}
+
+.atwo{
+     transform-origin: 100% 0%;
+     transform: rotate(-45deg);
+}
+
+</style>
+
+<div class="div699 empty-div-container">
+<div class="div699 aone"></div>
+</div>
+
+<div class="div699 empty-div-container">
+<div class="div699 atwo"></div>
+</div>
+
+
+
+<div style="height: 50px; width: 100px;"></div>
+
+<h3>transform: translate(x, y)</h3>
+
+<p>The <Span>translate()</Span> method <Span>moves</Span> an <Span>element</Span>
+from it's <Spa>original position</Spa> (according to parameters given for x-axis and y-axis).
+<span>Positive values</span> will <Span>push</Span> the element <span>right</span> and <Span>down</Span>, 
+<span>negative values</span> will <span>push</span> the element <span>left</span> and <span>up</span>, 
+just like in <span>SVG</span>.</p>
+
+<p class="left">HTML code:</p>
+
+<p class="left"><span class="code10">&lt;div class="div-container">
+    &lt;div>&lt;/div>
+    &lt;/div></span></p>
+
+<p class="left">CSS code:</p>
+
+<p class="left"><span class="code10">&lt;Style>
+
+    .div-container {
+        width: 250px;
+        background-color: unset;
+        height: 100px;
+        border: 3px solid black;
+        border-radius: 20px;
+        margin: 20px auto 70px auto;
+        padding: 0px;
+    }
+    
+    .div-container div {
+        width: 250px;
+        background-color: orangered;
+        height: 100px;
+        border: 3px solid black;
+        border-radius: 20px;
+        margin: 0px;
+        transform: translate(50px, 50px);
+     }
+    
+    &lt;/Style></span></p>
+
+<p class="left">Outcome:</p>
+
+<Style>
+
+.div-container {
+    width: 250px;
+    background-color: unset;
+    height: 100px;
+    border: 3px solid black;
+    border-radius: 20px;
+    margin: 20px auto 70px auto;
+    padding: 0px;
+}
+
+.div-container div {
+    width: 250px;
+    background-color: orangered;
+    height: 100px;
+    border: 3px solid black;
+    border-radius: 20px;
+    margin: 0px;
+    transform: translate(50px, 50px);
+ }
+
+</Style>
+
+<div class="div-container">
+    <div></div>
+</div>
+
+<h3>transform: skewX(Xdeg) skewY(Ydeg);</h3>
+
+<p>The <span>skew()</span> method <Span>skews</Span>
+an <Span>element</Span> along the <Span>x-axis</Span>
+and the <Span>y-axis</Span> by the given <Span>angle</Span>, 
+I have talked more about it in <a href="../HTML-Notes/Notes5.html">page five of my notes</a> since 
+<span>skew</span> is also used in <Span>SVG</Span>, you can check this out if you want.</p>
+
+<p class="left">HTML code:</p>
+
+<p class="left"><span class="code10">&lt;div class="div-container2 bone">
+    &lt;div>&lt;/div>
+    &lt;/div>
+
+    &lt;div class="div-container2 btwo">
+    &lt;div>&lt;/div>
+    &lt;/div></span></p>
+
+<p class="left">CSS code:</p>
+
+<p class="left"><span class="code10">&lt;Style>
+
+    .div-container2 {
+        width: 250px;
+        background-color: unset;
+        height: 100px;
+        border: 3px solid black;
+        border-radius: 20px;
+        margin: 20px auto 70px auto;
+        padding: 0px;
+    }
+    
+    .div-container2 div {
+        width: 250px;
+        background-color: orangered;
+        height: 100px;
+        border: 3px solid black;
+        border-radius: 20px;
+        margin: 0px;
+     }
+    
+    .bone div{
+        transform: skewX(25deg);
+    }
+
+    .btwo div{
+        transform: skewY(25deg);
+    }
+    
+    &lt;/Style></span></p>
+
+<p class="left">Outcome:</p>
+
+<Style>
+
+    .div-container2 {
+        width: 250px;
+        background-color: unset;
+        height: 100px;
+        border: 3px solid black;
+        border-radius: 20px;
+        margin: 20px auto 70px auto;
+        padding: 0px;
+    }
+    
+    .div-container2 div {
+        width: 250px;
+        background-color: orangered;
+        height: 100px;
+        border: 3px solid black;
+        border-radius: 20px;
+        margin: 0px;
+     }
+    
+    .bone div{
+        transform: skewX(25deg);
+    }
+
+    .btwo div{
+        transform: skewY(25deg);
+    }
+
+    </Style>
+    
+    <div class="div-container2 bone">
+        <div></div>
+    </div>
+
+    <div class="div-container2 btwo">
+        <div></div>
+    </div>
+
+<p>I recommend you to play around with it in order to fully understand how it works.</p>
+
+
+<h3>transform: scale(x, y);</h3>
+
+<p>The <span>scale</span> method <Span>increases</Span> or <Span>decreases</Span> the 
+<Span>size</Span> of an <Span>element</Span> according to the parameters given for the <span>width</span>
+and <Span>height</Span>, <span>1</span> stands for <Span>original size</Span>, <span>2</span> stands for 
+<Span>twice original size</Span>, and so on.</p>
+
+
+<p class="left">HTML code:</p>
+
+<p class="left"><span class="code10">&lt;div class="div-container3">
+    &lt;div>&lt;/div>
+    &lt;/div></span></p>
+
+<p class="left">CSS code:</p>
+
+<p class="left"><span class="code10">&lt;Style>
+
+    .div-container3{
+        width: 250px; 
+        height: 100px;
+        background-color: unset;
+        border: 3px solid black;
+        border-radius: 20px;
+        margin: 20px auto 20px auto;
+    }
+    
+    .div-container3 div{
+        width: 250px;
+        height: 97px;
+        background-color: orangered;
+        border: 3px solid black;
+        border-radius: 20px;
+        transform: scale(0.5, 1);
+    }
+    
+    &lt;/Style></span></p>
+
+<p class="left">Outcome:</p>
+
+<Style>
+
+.div-container3{
+    width: 250px; 
+    height: 100px;
+    background-color: unset;
+    border: 3px solid black;
+    border-radius: 20px;
+    margin: 20px auto 20px auto;
+}
+
+.div-container3 div{
+    width: 250px;
+    height: 97px;
+    background-color: orangered;
+    border: 3px solid black;
+    border-radius: 20px;
+    transform: scale(0.5, 1);
+}
+
+</Style>
+
+<div class="div-container3">
+    <div></div>
+</div>
+
+<p>To add <Span>multiple transformations</Span> to an <Span>element</Span> simply 
+<Span>seperate them</Span> with <span>spaces</span>, don't use commas, or it won't work.</p>
+
+</article>
+
+<hr>
+
+<article id="six">
+
+    <header>
+
+        <h1>3D Transforms</h1>
+
+    </header>
+
+    <p>Along with <span>x</span> and <span>y</span> axes, <Span>3D Transforms</Span> introduce the 
+    <Span>Z-axis</Span>, which enables <Span>3D manipulations</Span>.</p>
+
+    <p><span>3D Transforms</span> are quite similar to <span>2D Transforms</span>: <Span>rotateX()</Span>, 
+        <span>rotateY()</span> and <Span>rotateZ()</Span> rotate an element in <span>3D space</span> around 
+            the corresponding axis at a given degree.
+       </p>
+
+       <p class="left">HTML code:</p>
+
+       <p class="left"><Span class="code10">&lt;div class="container-div">
+        I rotate around the X axis
+        &lt;/div>
+
+        &lt;div class="container-div2">
+    I rotate around the Y axis
+    &lt;/div>
+
+    &lt;div class="container-div3">
+      I rotate around the Z axis
+      &lt;/div></Span></p>
+
+       <p class="left">CSS code:</p>
+
+       <p class="left"><Span class="code10">&lt;style>
+
+        .container-div, .container-div2, .container-div3{
+            width:250px;
+            height: 100px;
+            background-color: green;
+            border: 3px solid black; 
+            border-radius: 20px;
+            margin: 20px auto 20px auto;
+
+           text-align: center;
+           line-height: 100px;
+           color: white;
+           font-size: 20px;
+           font-family: Arial, Helvetica, sans-serif;
+           text-shadow: 1px 1px 0px black, -1px -1px 0px black;
+           cursor: default;
+
+           transition-property: transform;
+           transition-duration: 3000ms;
+           transition-timing-function: ease;
+        }
+
+        .container-div:hover {
+            transform: rotateX(180deg);
+        }
+
+        .container-div2:hover {
+            transform: rotateY(180deg);
+        }
+
+        .container-div3:hover {
+            transform: rotateZ(180deg);
+        }
+
+
+        &lt;/style></Span></p>
+
+       <p class="left">Outcome:</p>
+
+
+       <style>
+
+         .container-div, .container-div2, .container-div3{
+             width:250px;
+             height: 100px;
+             background-color: green;
+             border: 3px solid black; 
+             border-radius: 20px;
+             margin: 20px auto 20px auto;
+
+            text-align: center;
+            line-height: 100px;
+            color: white;
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            text-shadow: 1px 1px 0px black, -1px -1px 0px black;
+            cursor: default;
+
+            transition-property: transform;
+            transition-duration: 3000ms;
+            transition-timing-function: ease;
+         }
+
+         .container-div:hover {
+             transform: rotateX(180deg);
+         }
+
+         .container-div2:hover {
+             transform: rotateY(180deg);
+         }
+
+         .container-div3:hover {
+             transform: rotateZ(180deg);
+         }
+
+
+       </style>
+
+
+       <div class="container-div">
+          I rotate around the X axis
+       </div>
+
+       <div class="container-div2">
+      I rotate around the Y axis
+    </div>
+
+    <div class="container-div3">
+        I rotate around the Z axis
+      </div>
+
+      <p>You can also use <Span>rotate3d()</Span> method which allows you to 
+    define <Span>rotateX</Span>, <sPAN>rotateY</sPAN> and <Span>rotateZ</Span> all 
+together.</p>
+
+<p><Span>3D translate</Span> method allows you to <span>move</span> the element 
+<Span>horizontally</Span> (translateX), <sPAN>vertically</sPAN> (translateY) and 
+<Span>into or out of the screen</Span> (translateZ), <Span>positive numbers</Span> move 
+it towards the viewer, <Span>negative numbers</Span> move it away.</p>
+
+<p>You can also use <span>translate3d()</span> method which allows you to 
+define <Span>translateX()</Span>, <Span>translateY()</Span> and <span>translateZ()</span>
+all at once.</p>
+
+<p class="left">HTML code:</p>
+
+<p class="left"><Span class="code10">&lt;div class="container-div4">
+Hello, I'm a div
+ &lt;/div></Span></p>
+
+<p class="left">CSS code:</p>
+
+<p class="left"><Span class="code10">&lt;style>
+
+    .container-div4{
+        width:250px;
+        height: 100px;
+        background-color: green;
+        border: 3px solid black; 
+        border-radius: 20px;
+        margin: 20px auto 20px auto;
+
+       text-align: center;
+       line-height: 100px;
+       color: white;
+       font-size: 20px;
+       font-family: Arial, Helvetica, sans-serif;
+       text-shadow: 1px 1px 0px black, -1px -1px 0px black;
+       cursor: default;
+
+       transition-property: transform;
+       transition-duration: 3000ms;
+       transition-timing-function: ease;
+    }
+
+    .container-div4:hover {
+        transform: translate3d(20px, 20px, -100px);
+    }
+
+
+ &lt;/style></Span></p>
+
+<p class="left">Outcome:</p>
+
+<style>
+
+    .container-div4{
+        width:250px;
+        height: 100px;
+        background-color: green;
+        border: 3px solid black; 
+        border-radius: 20px;
+        margin: 20px auto 20px auto;
+
+       text-align: center;
+       line-height: 100px;
+       color: white;
+       font-size: 20px;
+       font-family: Arial, Helvetica, sans-serif;
+       text-shadow: 1px 1px 0px black, -1px -1px 0px black;
+       cursor: default;
+
+       transition-property: transform;
+       transition-duration: 3000ms;
+       transition-timing-function: ease;
+    }
+
+    .container-div4:hover {
+        transform: translate3d(20px, 20px, -100px);
+    }
+
+
+  </style>
+
+
+  <div class="container-div4">
+    Hello, I'm a div
+  </div>
+
+  <h3>Perspective Property</h3>
+
+  <p>The <span>perspective</span> property defines how the <span>depth</span> of 
+the <Span>3D</Span> is <Span>rendered</Span>. Think of <Span>perspective</Span> as 
+a <Span>distance</Span> from the <span>viewer</span> to the <span>object</span>. 
+The <Span>greater</Span> the <span>value</span>, the <Span>further</Span> the <Span>distance</Span>, 
+so the <Span>less intense</Span> the <span>visual effect</span>.</p>
+
+<p>When defining the <span>perspective</span> property for an <Span>element</Span>, it is 
+the <span>child</span> elements that get the <Span>perspective</Span> view, <Span>not</Span> the 
+<Span>element</Span> itself, so you need to add <span>perspective</span> property 
+to the parent, or else you won't see any difference.</p>
+   
+<p class="left">HTML code:</p>
+
+<p class="left"><Span class="code10">&lt;div class="container-div5 container-decor">
+    &lt;div>Perspective: 100px;&lt;/div>
+    &lt;/div>
+
+    &lt;div class="container-div6 container-decor">
+    &lt;div>Perspective: 200px;&lt;/div>
+    &lt;/div>
+
+    &lt;div class="container-div7 container-decor">
+    &lt;div>Perspective: 100px;&lt;/div>
+    &lt;/div></Span></p>
+
+<p class="left">CSS code:</p>
+
+<p class="left"><Span class="code10">&lt;style>
+
+    .container-decor{
+        width:250px;
+            height: 100px;
+            background-color: unset;
+            border: 1px solid black; 
+            border-radius: 20px;
+            margin: 20px auto 20px auto;
+     }
+    
+        .container-div5{
+            perspective: 100px;
+        }
+    
+        .container-div6{
+          perspective: 200px;
+        }
+    
+        .container-div7{
+            perspective: 100px;
+        }
+    
+        .container-decor div{
+            width:250px;
+            height: 100px;
+            background-color: green;
+            border: 3px solid black; 
+            border-radius: 20px;
+    
+            text-align: center;
+           line-height: 100px;
+           color: white;
+           font-size: 20px;
+           font-family: Arial, Helvetica, sans-serif;
+           text-shadow: 1px 1px 0px black, -1px -1px 0px black;
+           cursor: default;
+    
+            transition-property: transform;
+           transition-duration: 3000ms;
+           transition-timing-function: ease;
+        }
+    
+    
+        .container-div5:hover div, .container-div6:hover div  {
+            transform: rotateX(180deg);
+        }
+    
+        .container-div7:hover div {
+            transform: translate3d(50px, 50px, 50px);
+        }
+
+ &lt;/style></Span></p>
+
+<p class="left">Outcome:</p>
+
+<style>
+
+ .container-decor{
+    width:250px;
+        height: 100px;
+        background-color: unset;
+        border: 1px solid black; 
+        border-radius: 20px;
+        margin: 20px auto 20px auto;
+ }
+
+
+    .container-div5{
+        perspective: 100px;
+    }
+
+    .container-div6{
+      perspective: 200px;
+    }
+
+    .container-div7{
+        perspective: 100px;
+    }
+
+
+
+    .container-decor div{
+        width:250px;
+        height: 100px;
+        background-color: green;
+        border: 3px solid black; 
+        border-radius: 20px;
+
+        text-align: center;
+       line-height: 100px;
+       color: white;
+       font-size: 20px;
+       font-family: Arial, Helvetica, sans-serif;
+       text-shadow: 1px 1px 0px black, -1px -1px 0px black;
+       cursor: default;
+
+        transition-property: transform;
+       transition-duration: 3000ms;
+       transition-timing-function: ease;
+    }
+
+
+    .container-div5:hover div, .container-div6:hover div  {
+        transform: rotateX(180deg);
+        
+    }
+
+    .container-div7:hover div {
+        transform: translate3d(50px, 50px, 50px);
+
+    }
+
+  </style>
+
+
+<div class="container-div5 container-decor">
+    <div>Perspective: 100px;</div>
+  </div>
+
+  <div class="container-div6 container-decor">
+    <div>Perspective: 200px;</div>
+  </div>
+
+  <div class="container-div7 container-decor">
+    <div>Perspective: 100px;</div>
+  </div>
+
+</article>
+
+<hr>
+
+<article id="seven">
+
+    <header>
+
+        <h1>Keyframes and Animations</h1>
+
+    </header>
+
+<p>An <span>animation</span> lets an <Span>element</Span> change 
+from <Span>one style</Span> to <Span>another</Span>, you can change as many <Span>CSS properties</Span>
+as you want to, as many times as you want to.</p>
+
+<p>When you specify <Span>CSS styles</Span> inside the <Span>@keyframe</Span>
+rule, the <span>animation</span> will gradually change from the current style to a new style 
+at cartain times. To get an <Span>animation</Span> to work you must <Span>bind</Span> the 
+<Span>animation</Span> to an <Span>element</Span>.</p>
+
+<p>There are a few <Span>animation properties</Span> out there, but you 
+are probably already familiar with most of them if you studied <Span>transitions</Span> in 
+the section before <Span>transformations</Span>.</p>
+
+<Style>
+
+.properties-list {
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 20px;
+    margin: 20px auto 20px auto;
+    width: 800px;
+    min-height: 0px;
+    display: grid;
+    padding: 10px;
+}
+
+.properties-list ul {
+justify-self: center;
+padding: 30px;
+}
+
+.properties-list li {
+    padding: 10px;
+    word-wrap: break-word;
+    line-height: 20px;
+}
+</Style>
+
+
+<div class="properties-list">
+    <ul>
+        <li><span>animation-name</span> - defines the name of the animation 
+            which should be used to bind the element with the 
+            animation defined in keyframes.
+        </li>
+        <li><span>animation-duration</span> - defines the duration of the animation.</li>
+        <li><span>animation-timing-function</span> - it works just like 
+            transition-timing-function, and takes the same values.
+        </li>
+        <li><span>animation-delay</span> - defines how much time it should take 
+            for the animation to start.
+        </li>
+        <li><span>animation-iteration-count</span> - defines how many times
+            the animation should replay, to make it replay forever
+            just write <span>infinite</span>. 
+        </li>
+        <li><span>animation-direction</span> - indicates how the keyframe should be applied, 
+            it takes the following values: <span>normal</span> (the default value, which means it 
+            plays forward from 0% to 100%) <span>reverse</span> (it's the reverse of normal, 
+            it plays keyframes in opposite direction from 100% to 0%) <span>alternate</span> (the 
+            animation first runs forward, then backward, then forward) and <span>alternate-reverse</span> 
+            (the animation first runs backward, then forward and then backward).
+        </li>
+        <li><span>animation</span> - it can merge all animation properties together to save time.
+        </li>
+    </ul>
+</div>
+
+<p>The following example will <Span>change</Span> the <Span>background-color</Span> 
+of a <Span>div</Span> three times, when the <span>animation</span> is <span>50%</span> complete, 
+<span>70%</span> complete and <Span>100%</Span> complete, then it will <Span>repeat</Span>
+it self over and over forever, <Span>each loop</Span> will take <span>5 seconds</span>, 
+and the <span>delay</span> for <Span>the first loop</Span> will be <span>2 seconds</span> 
+(it only takes 2 seconds to begin, it doesn't take 2 seconds for it to replay), 
+the <Span>animation-timing-function</Span> will be set to <Span>ease</Span> just 
+to make the <Span>animation</Span> feel more alive, and the <Span>animation-direction</Span>
+will be alternate.</p>
+
+<p class="left">HTML code:</p>
+
+<p class="left"><Span class="code10">&lt;div class="animation-example">&lt;/div></Span></p>
+
+<p class="left">CSS code:</p>
+
+<p class="left"><Span class="code10">&lt;style>
+
+    .animation-example {
+        width: 300px;
+        height: 150px;
+        background-color: gray;
+        margin: 20px auto 20px auto;
+        border: 3px solid black;
+        border-radius: 20px;
+        
+        animation-name: example;
+        animation-duration: 5000ms;
+        animation-delay: 2000ms;
+        animation-direction: alternate;
+        animation-timing-function: ease;
+        animation-iteration-count: infinite;
+    }
+    
+    @keyframes example {
+        0% {background-color: gray;}
+        50% {background-color: red;}
+        70% {background-color: blue;}
+        100% {background-color: purple;}
+    }
+    
+    &lt;/style></Span></p>
+
+<p class="left">Outcome:</p>
+
+
+<style>
+
+.animation-example {
+    width: 300px;
+    height: 150px;
+    background-color: gray;
+    margin: 20px auto 20px auto;
+    border: 3px solid black;
+    border-radius: 20px;
+    
+    animation-name: example;
+    animation-duration: 5000ms;
+    animation-delay: 2000ms;
+    animation-direction: alternate;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+}
+
+@keyframes example {
+    0% {background-color: gray;}
+    50% {background-color: red;}
+    70% {background-color: blue;}
+    100% {background-color: purple;}
+}
+
+</style>
+
+<div class="animation-example"></div>
+
+<p>That's pretty much everything I had to say, you can of course 
+    use <span>animations</span> for other <Span>properties</Span> too, 
+    and even <span>multiple properties</span> if you want, and you can 
+    do great things with this, there are also probably tricks and things I may have 
+    missed, because I rushed this section a little, if I find anything else about 
+    <span>animations</span> in the future that's worth mentioning I will come back 
+    to talk about it here.
+</p>
+
+</article>
+
+<hr>
+
+<article id="eight">
+
+    <header>
+
+        <h1>CSS Filters Introduction</h1>
+
+    </header>
+
+<p>The <Span>filter</Span> property lets you apply <span>graphical effects</span>
+like <span>blurring</span> or <Span>color shifting</Span> to an <span>element</span>.</p>
+
+<p><span>Filters</span> are commonly used to <Span>adjust the rendering</Span> of <span>images</span>, 
+<Span>backgrounds</Span> and <Span>borders</Span>.</p>
+
+<p><Span>Image filtering</Span> is useful when you want to have <Span>different styling</Span>
+for the <span>same image</span>. Instead of uploading multiple images to the website, you can 
+upload only one image and then define <span>visual effects</span> using the <span>filter</span>
+property.</p>
+
+<p><Span>Filter functions</Span> include <span>blur()</span>, <span>brightness</span>, 
+<Span>contrast()</Span>, <Span>drop-shadow</Span>, <span>grayscale()</span>, 
+<Span>hue-rotate()</Span>, <Span>invert()</Span>, <Span>opacity()</Span>, <Span>saturate()</Span>
+and <Span>sepia()</Span>.</p>
+
+<style>
+
+.small-hr {
+    height: 0px;
+    width: 100%;
+    border: 0px solid black;
+}
+
+</style>
+
+</article>
+
+<hr>
+
+<article id="nine">
+
+    <header>
+
+        <h1>Color Filters</h1>
+
+    </header>
+
+
+<h2><u>The drop-shadow Function:</u></h2>
+
+<p><Span>drop-shadow(w h b c)</Span> creates a <Span>shadow effect</Span> that 
+<Span>extends</Span> beyond an <Span>image</Span> for the width <Span>w</Span> and 
+height <span>h</span> with blur <span>b</span> and color <span>c</span>.</p>
+
+<p class="left">HTML code:</p>
+
+<p class="left"><span class="code10">&lt;img class="shadow-filter" src="../images/filter-example.jpg">
+</span></p>
+
+
+<p class="left">CSS code:</p>
+
+<p class="left"><span class="code10">&lt;style>
+
+    .shadow-filter {
+        display: block;
+        width: 200px;
+        height: 200px;
+        margin: 20px auto 20px;
+        filter: drop-shadow(5px 9px 2px blue) 
+        drop-shadow(0px -9px 2px green)
+        drop-shadow(-10px 0px 2px pink);
+    }
+    
+    &lt;/style></span></p>
+
+<p class="left">Outcome:</p>
+
+<style>
+
+.shadow-filter {
+    display: block;
+    width: 200px;
+    height: 200px;
+    margin: 20px auto 20px;
+    filter: drop-shadow(5px 9px 2px blue) 
+    drop-shadow(0px -9px 2px green)
+    drop-shadow(-10px 0px 2px pink);
+}
+
+</style>
+
+<img class="shadow-filter" src="../images/filter-example.jpg" alt="An image you for some reason cannot view">
+
+<hr class="small-hr">
+
+<h2><u>The grayscale Function:</u></h2>
+
+<p>The <Span>grayscale</Span> function converts an <span>image</span> to 
+<span>grayscale</span>. The only parameter defines the <span>portion</span>
+of the <Span>conversion</Span>.</p>
+
+<p><span>0%</span> grayscale is the <span>original image</span>, whereas <Span>100%</Span>
+makes the image <Span>completely grayscale</Span>.</p>
+
+<p class="left">HTML code:</p>
+
+<p class="left"><span class="code10">&lt;div class="images">
+
+    &lt;img class="grayscale-filter" src="../images/filter-example.jpg">
+    
+    &lt;img class="grayscale-filter twoo" src="../images/filter-example.jpg">
+    
+    &lt;img class="grayscale-filter three" src="../images/filter-example.jpg">
+    
+    &lt;/div></span></p>
+
+
+<p class="left">CSS code:</p>
+
+<p class="left"><span class="code10">&lt;style>
+
+    .images{
+        display: flex;
+        justify-content: space-around;
+        width: 70%;
+        margin: auto;
+    }
+    
+    .grayscale-filter {
+        display: block; 
+         width: 200px;
+        height: 200px;
+        filter: grayscale(0%);
+    }
+    
+    .twoo {
+        filter: grayscale(70%);
+    }
+    
+    .three {
+        filter: grayscale(100%);   
+    }
+    
+    &lt;/style></span></p>
+
+<p class="left">Outcome:</p>
+
+<Style>
+
+.images{
+    display: flex;
+    justify-content: space-around;
+    width: 70%;
+    margin: auto;
+}
+
+.grayscale-filter {
+    display: block; 
+     width: 200px;
+    height: 200px;
+    filter: grayscale(0%);
+}
+
+.twoo {
+    filter: grayscale(70%);
+}
+
+.three {
+    filter: grayscale(100%);   
+}
+
+</Style>
+
+<div class="images">
+
+<img class="grayscale-filter" src="../images/filter-example.jpg" alt="An image you for some reason cannot view">
+
+<img class="grayscale-filter twoo" src="../images/filter-example.jpg" alt="An image you for some reason cannot view">
+
+<img class="grayscale-filter three" src="../images/filter-example.jpg" alt="An image you for some reason cannot view">
+
+</div>
+
+<hr class="small-hr">
+
+<h2><u>The sepia Function:</u></h2>
+
+<p>The <span>sepia</span> function <Span>converts</Span> an <Span>image</Span>
+to <span>sepia</span>.</p>
+
+<p>This is <Span>similar</Span> to using <span>grayscale</span> but with 
+a <Span>reddish-brown</Span> color tone.</p>
+
+<p>The idea behind <span>sepia</span> filters is that they can make <Span>black</Span>
+and <Span>white</Span> photos look a bit more <span>eye-catching</span> than the basic <span>grayscale</span> version.</p>
+
+<p><Span>0%</Span> sepia is the <span>original image</span>, whereas <span>100%</span> converts the 
+image to <span>completely sepia</span>.</p>
+
+<p class="left">HTML code:</p>
+
+<p class="left"><span class="code10">&lt;div class="images2">
+
+    &lt;img class="sepia-filter" src="../images/filter-example.jpg">
+    
+    &lt;img class="sepia-filter twooo" src="../images/filter-example.jpg">
+    
+    &lt;img class="sepia-filter threee" src="../images/filter-example.jpg">
+    
+    &lt;/div></span></p>
+
+
+<p class="left">CSS code:</p>
+
+<p class="left"><span class="code10">&lt;style>
+
+    .images2{
+        display: flex;
+        justify-content: space-around;
+        width: 70%;
+        margin: auto;
+    }
+    
+    .sepia-filter {
+        display: block; 
+         width: 200px;
+        height: 200px;
+        filter: sepia(0%);
+    }
+    
+    .twooo {
+        filter: sepia(50%);
+    }
+    
+    .threee {
+        filter: sepia(100%);   
+    }
+    
+    &lt;/style></span></p>
+
+<p class="left">Outcome:</p>
+
+<Style>
+
+    .images2{
+        display: flex;
+        justify-content: space-around;
+        width: 70%;
+        margin: auto;
+    }
+    
+    .sepia-filter {
+        display: block; 
+         width: 200px;
+        height: 200px;
+        filter: sepia(0%);
+    }
+    
+    .twooo {
+        filter: sepia(50%);
+    }
+    
+    .threee {
+        filter: sepia(100%);   
+    }
+    
+    </Style>
+    
+    <div class="images2">
+    
+    <img class="sepia-filter" src="../images/filter-example.jpg" alt="An image you for some reason cannot view">
+    
+    <img class="sepia-filter twooo" src="../images/filter-example.jpg" alt="An image you for some reason cannot view">
+    
+    <img class="sepia-filter threee" src="../images/filter-example.jpg" alt="An image you for some reason cannot view">
+    
+    </div>
+
+    <hr class="small-hr">
+
+<h2><u>The saturate Function:</u></h2>
+
+<P>The <span>aturate</span> function controls the <span>color saturation</span> for 
+an <span>image</span>. The <Span>only parameter</Span> determines the 
+<Span>portion of the saturation</Span> that is applied to the <span>image</span>. 
+The <span>parameter</span> can be either a <span>percentage value</span> or a <Span>number</Span>.</P>
+
+<p><span>0%</span> creates a <span>completely unsaturated</span> image <span>(grayscale)</span>, 
+whereas <Span>100%</Span> is the <Span>original image</Span>. The <span>sature</span>
+function also accepts values <span>over 100%</span>.</p> 
+
+<p class="left">HTML code:</p>
+
+<p class="left"><span class="code10">&lt;div class="images3">
+
+    &lt;img class="saturate-filter" src="../images/filter-example.jpg">
+    
+    &lt;img class="saturate-filter twooo2" src="../images/filter-example.jpg">
+    
+    &lt;img class="saturate-filter threee2" src="../images/filter-example.jpg">
+    
+    &lt;/div></span></p>
+
+
+<p class="left">CSS code:</p>
+
+<p class="left"><span class="code10">&lt;style>
+
+    .images3{
+        display: flex;
+        justify-content: space-around;
+        width: 70%;
+        margin: auto;
+    }
+    
+    .saturate-filter {
+        display: block; 
+         width: 200px;
+        height: 200px;
+        filter: saturate(0%);
+    }
+    
+    .twooo2 {
+        filter: saturate(100%);
+    }
+    
+    .threee2 {
+        filter: saturate(900%);   
+    }
+    
+    &lt;/style></span></p>
+
+<p class="left">Outcome:</p>
+
+<Style>
+
+    .images3{
+        display: flex;
+        justify-content: space-around;
+        width: 70%;
+        margin: auto;
+    }
+    
+    .saturate-filter {
+        display: block; 
+         width: 200px;
+        height: 200px;
+        filter: saturate(0%);
+    }
+    
+    .twooo2 {
+        filter: saturate(100%);
+    }
+    
+    .threee2 {
+        filter: saturate(900%);   
+    }
+    
+    </Style>
+    
+    <div class="images3">
+    
+    <img class="saturate-filter" src="../images/filter-example.jpg" alt="An image you for some reason cannot view">
+    
+    <img class="saturate-filter twooo2" src="../images/filter-example.jpg" alt="An image you for some reason cannot view">
+    
+    <img class="saturate-filter threee2" src="../images/filter-example.jpg" alt="An image you for some reason cannot view">
+    
+    </div>
+
+<hr class="small-hr">
+
+<h2><u>The hue-rotate Function:</u></h2>
+
+<p>The <Span>hue-rotate</Span> function applies a <Span>hue rotation</Span> 
+(based on the <span>color circle</span>) to an <Span>image</Span>.</p>
+
+<p>The function takes an <Span>angle of rotation</Span> as it's parameter. The 
+<span>value angle</span> defines the number of <Span>degrees</Span> around the 
+<span>color circle</span> the input samples will be adjusted.</p>
+
+
+
+<Style>
+
+.colors-image {
+    display: block;
+    margin: 20px auto 20px auto;
+    border: 3px solid black;
+    border-radius: 100%;
+}
+
+</Style>
+
+<img class="colors-image" src="../images/colors.png" alt="it's an image you for some reason cannot view">
+
+<p>When you use <span>hue-rotate()</span> to <Span>rotate</Span> the <span>hue</span>, 
+    you are <Span>rotating</Span> around this <span>color circle</span>.</p>
+
+<p>If the <span>image</span> contains <span>cyan color</span>, which is at 
+<span>180 deg</span>, rotating the <span>hue</span> by <Span>180 deg</Span> will 
+make the <span>cyan</span> color <span>red</span>.</p>
+
+
+<p class="left">HTML code:</p>
+
+<p class="left"><span class="code10">&lt;img class="image4" src="../images/filter-example.jpg"></span></p>
+
+
+<p class="left">CSS code:</p>
+
+<p class="left"><span class="code10">&lt;style>
+
+    .image4 {
+        width: 200px;
+        height: 200px;
+        display: block;
+        margin: 20px auto 20px auto;
+        filter:hue-rotate(180deg);
+    }
+    
+    &lt;/style></span></p>
+
+<p class="left">Outcome:</p>
+
+<Style>
+
+.image4 {
+    width: 200px;
+    height: 200px;
+    display: block;
+    margin: 20px auto 20px auto;
+    filter:hue-rotate(180deg);
+}
+
+</Style>
+
+<img class="image4" src="../images/filter-example.jpg">
+
+<hr class="small-hr">
+
+<h2><u>The invert Function:</u></h2>
+
+<p>The <span>invert</span> function <span>inverts</span> the 
+<span>colors</span> of an <Span>image</Span> to make <Span>dark areas bright</Span>
+and <span>bright areas dark</span>. The function takes the <Span>proportion of the conversion</Span>
+as it's parameter.</p>
+
+<p>The parameter can be either a <span>percentage value</span> or a <span>number</span>. 
+<span>0% invert</span> leaves the image <Span>unchanged</Span>, whereas <span>100%</span>
+creates a <span>completely inverted</span> image that is similar to a photographic negative.</p>
+
+<p class="left">HTML code:</p>
+
+<p class="left"><span class="code10">&lt;div class="images5">
+
+    &lt;img class="invert-filter" src="../images/filter-example.jpg">
+    
+    &lt;img class="invert-filter twooo3" src="../images/filter-example.jpg">
+    
+    &lt;img class="invert-filter threee3" src="../images/filter-example.jpg">
+    
+    &lt;/div></span></p>
+
+
+<p class="left">CSS code:</p>
+
+<p class="left"><span class="code10">&lt;style>
+
+    .images5{
+        display: flex;
+        justify-content: space-around;
+        width: 70%;
+        margin: auto;
+    }
+    
+    .invert-filter {
+        display: block; 
+         width: 200px;
+        height: 200px;
+        filter: invert(0%);
+    }
+    
+    .twooo3 {
+        filter: invert(60%);
+    }
+    
+    .threee3 {
+        filter: invert(100%);   
+    }
+    
+    &lt;/style></span></p>
+
+<p class="left">Outcome:</p>
+
+<Style>
+
+    .images5{
+        display: flex;
+        justify-content: space-around;
+        width: 70%;
+        margin: auto;
+    }
+    
+    .invert-filter {
+        display: block; 
+         width: 200px;
+        height: 200px;
+        filter: invert(0%);
+    }
+    
+    .twooo3 {
+        filter: invert(60%);
+    }
+    
+    .threee3 {
+        filter: invert(100%);   
+    }
+    
+    </Style>
+    
+    <div class="images5">
+    
+    <img class="invert-filter" src="../images/filter-example.jpg" alt="An image you for some reason cannot view">
+    
+    <img class="invert-filter twooo3" src="../images/filter-example.jpg" alt="An image you for some reason cannot view">
+    
+    <img class="invert-filter threee3" src="../images/filter-example.jpg" alt="An image you for some reason cannot view">
+    
+    </div>
+
+</article>
+
+<hr>
+
+<article id="ten">
+
+    <header>
+
+        <h1>More CSS filters</h1>
+
+    </header>
+
+<h2><u>The opacity Function:</u></h2>
+
+<p>The <Span>opacity</Span> function sets the <Span>opacity</Span> of an 
+<span>image</span> to change it's <Span>transparency</Span.></p>
+
+<p><Span>0%</Span> opacity creates a <Span>completely transparent</Span> image,
+whereas <span>100%</span> is the <Span>original image</Span>.</p>
+
+<p class="left">HTML code:</p>
+
+<p class="left"><span class="code10">&lt;div class="images6">
+
+    &lt;img class="opacity-filter" src="../images/filter-example.jpg">
+    
+    &lt;img class="opacity-filter twooo4" src="../images/filter-example.jpg">
+    
+    &lt;img class="opacity-filter threee4" src="../images/filter-example.jpg">
+    
+    &lt;/div></span></p>
+
+
+<p class="left">CSS code:</p>
+
+<p class="left"><span class="code10">&lt;style>
+
+    .images6{
+        display: flex;
+        justify-content: space-around;
+        width: 70%;
+        margin: auto;
+    }
+    
+    .opacity-filter {
+        display: block; 
+         width: 200px;
+        height: 200px;
+        filter: opacity(10%);
+    }
+    
+    .twooo4 {
+        filter: opacity(60%);
+    }
+    
+    .threee4 {
+        filter: opacity(100%);   
+    }
+    
+    &lt;/style></span></p>
+
+<p class="left">Outcome:</p>
+
+<Style>
+
+    .images6{
+        display: flex;
+        justify-content: space-around;
+        width: 70%;
+        margin: auto;
+    }
+    
+    .opacity-filter {
+        display: block; 
+         width: 200px;
+        height: 200px;
+        filter: opacity(10%);
+    }
+    
+    .twooo4 {
+        filter: opacity(60%);
+    }
+    
+    .threee4 {
+        filter: opacity(100%);   
+    }
+    
+    </Style>
+    
+    <div class="images6">
+    
+    <img class="opacity-filter" src="../images/filter-example.jpg" alt="An image you for some reason cannot view">
+    
+    <img class="opacity-filter twooo4" src="../images/filter-example.jpg" alt="An image you for some reason cannot view">
+    
+    <img class="opacity-filter threee4" src="../images/filter-example.jpg" alt="An image you for some reason cannot view">
+    
+    </div>
+
+    <h2><u>The brightness Function:</u></h2>
+
+<p>The <span>brightness(ammount)</span> function adjusts the <span>brightness</span>
+of an <Span>image</Span>, making it appear <Span>brighter</Span> or <span>darker</span>. 
+The <Span>ammount</Span> parameter determines the <span>brightness level</span> of 
+the <span>image</span>. The parameter can take either a <span>percentage</span>
+value or a <span>number</span>.</p>
+
+<p>A value of <Span>0%</Span> results in an <Span>image</Span> that is <span>completely dark</span>, 
+a value of <span>100%</span> results in an <Span>image</Span> that is <Span>unchanged</Span>,
+anything <span>over 100%</span> results in an <Span>image</Span> that is <Span>brighter</Span>.</p>
+
+<p>A number value of <span>0.5</span> has the same effect as the percentage value of <Span>50%</Span>, 
+a value of <Span>1</Span> is same as <span>100%</span>.</p>
+
+<p class="left">HTML code:</p>
+
+<p class="left"><span class="code10">&lt;div class="images7">
+
+    &lt;img class="brightness-filter" src="../images/filter-example.jpg">
+    
+    &lt;img class="brightness-filter twooo5" src="../images/filter-example.jpg">
+    
+    &lt;img class="brightness-filter threee5" src="../images/filter-example.jpg">
+    
+    &lt;/div></span></p>
+
+
+<p class="left">CSS code:</p>
+
+<p class="left"><span class="code10">&lt;style>
+
+    .images7{
+        display: flex;
+        justify-content: space-around;
+        width: 70%;
+        margin: auto;
+    }
+    
+    .brightness-filter {
+        display: block; 
+         width: 200px;
+        height: 200px;
+        filter: brightness(10%);
+    }
+    
+    .twooo5 {
+        filter: brightness(100%);
+    }
+    
+    .threee5 {
+        filter: brightness(150%);   
+    }
+    
+    &lt;/style></span></p>
+
+<p class="left">Outcome:</p>
+
+<Style>
+
+    .images7{
+        display: flex;
+        justify-content: space-around;
+        width: 70%;
+        margin: auto;
+    }
+    
+    .brightness-filter {
+        display: block; 
+         width: 200px;
+        height: 200px;
+        filter: brightness(10%);
+    }
+    
+    .twooo5 {
+        filter: brightness(100%);
+    }
+    
+    .threee5 {
+        filter: brightness(150%);   
+    }
+    
+    </Style>
+    
+    <div class="images7">
+    
+    <img class="brightness-filter" src="../images/filter-example.jpg" alt="An image you for some reason cannot view">
+    
+    <img class="brightness-filter twooo5" src="../images/filter-example.jpg" alt="An image you for some reason cannot view">
+    
+    <img class="brightness-filter threee5" src="../images/filter-example.jpg" alt="An image you for some reason cannot view">
+    
+    </div>
+
+<h2><u>The contrast Function:</u></h2>
+
+<p>The <Span>contrast</Span> function adjusts the <Span>contrast</Span> of the 
+<Span>image</Span>. The <span>ammount</span> parameter can take 
+either <span>percentage value</span> or a <Span>number</Span>.</p>
+
+<p>A value <Span>under 100%</Span> will <span>decrease</span> the 
+<Span>contrast</Span>, while a value <span>over 100%</Span> 
+will <span>increase</span> the <span>contrast</span>.</p>
+
+<p>A value of <span>0%</span> will create an <span>image</span> that is <span>completely grey</span>, 
+while a value of <Span>100%</Span> will leave the image <Span>unchanged</Span>.</p>
+
+<p>A value of <Span>0.5</Span> corresponds to <span>50%</span>, a value of 
+<Span>1</Span> corresponds to <span>100%</span>.</p>
+
+<p class="left">HTML code:</p>
+
+<p class="left"><span class="code10">&lt;div class="images8">
+
+    &lt;img class="contrast-filter" src="../images/filter-example.jpg">
+    
+    &lt;img class="contrast-filter twooo6" src="../images/filter-example.jpg">
+    
+    &lt;img class="contrast-filter threee6" src="../images/filter-example.jpg">
+    
+    &lt;/div></span></p>
+
+
+<p class="left">CSS code:</p>
+
+<p class="left"><span class="code10">&lt;style>
+
+    .images8{
+        display: flex;
+        justify-content: space-around;
+        width: 70%;
+        margin: auto;
+    }
+    
+    .contrast-filter {
+        display: block; 
+         width: 200px;
+        height: 200px;
+        filter: contrast(10%);
+    }
+    
+    .twooo6 {
+        filter: contrast(100%);
+    }
+    
+    .threee6 {
+        filter: contrast(170%);   
+    }
+    
+    &lt;/style></span></p>
+
+<p class="left">Outcome:</p>
+
+<Style>
+
+    .images8{
+        display: flex;
+        justify-content: space-around;
+        width: 70%;
+        margin: auto;
+    }
+    
+    .contrast-filter {
+        display: block; 
+         width: 200px;
+        height: 200px;
+        filter: contrast(10%);
+    }
+    
+    .twooo6 {
+        filter: contrast(100%);
+    }
+    
+    .threee6 {
+        filter: contrast(170%);   
+    }
+    
+    </Style>
+    
+    <div class="images8">
+    
+    <img class=" contrast-filter" src="../images/filter-example.jpg" alt="An image you for some reason cannot view">
+    
+    <img class="contrast-filter twooo6" src="../images/filter-example.jpg" alt="An image you for some reason cannot view">
+    
+    <img class="contrast-filter threee6" src="../images/filter-example.jpg" alt="An image you for some reason cannot view">
+    
+    </div>
+
+    <h2><u>The blur Function:</u></h2>
+
+<p>The <span>blur</span> function applies a <span>blur effect</span> to an 
+<span>image</span>. The <Span>blur</Span> function has only <Span>one parameter</Span>, 
+the <span>radius</span>, which defines how many <Span>pixels</Span> on the 
+screen <Span>blend into each other</Span>. (a larger value creates more blur)</p>
+
+<p class="left">HTML code:</p>
+
+<p class="left"><span class="code10">&lt;div class="images9">
+
+    &lt;img class="blur-filter" src="../images/filter-example.jpg">
+    
+    &lt;img class="blur-filter twooo7" src="../images/filter-example.jpg">
+    
+    &lt;img class="blur-filter threee7" src="../images/filter-example.jpg">
+    
+    &lt;/div></span></p>
+
+
+<p class="left">CSS code:</p>
+
+<p class="left"><span class="code10">&lt;style>
+
+    .images9{
+        display: flex;
+        justify-content: space-around;
+        width: 70%;
+        margin: auto;
+    }
+    
+    .blur-filter {
+        display: block; 
+         width: 200px;
+        height: 200px;
+        filter: blur(0px);
+    }
+    
+    .twooo7 {
+        filter: blur(3px);
+    }
+    
+    .threee7 {
+        filter: blur(7px);   
+    }
+    
+    &lt;/style></span></p>
+
+<p class="left">Outcome:</p>
+
+<Style>
+
+    .images9{
+        display: flex;
+        justify-content: space-around;
+        width: 70%;
+        margin: auto;
+    }
+    
+    .blur-filter {
+        display: block; 
+         width: 200px;
+        height: 200px;
+        filter: blur(0px);
+    }
+    
+    .twooo7 {
+        filter: blur(3px);
+    }
+    
+    .threee7 {
+        filter: blur(7px);   
+    }
+    
+    </Style>
+    
+    <div class="images9">
+    
+    <img class=" blur-filter" src="../images/filter-example.jpg" alt="An image you for some reason cannot view">
+    
+    <img class="blur-filter twooo7" src="../images/filter-example.jpg" alt="An image you for some reason cannot view">
+    
+    <img class="blur-filter threee7" src="../images/filter-example.jpg" alt="An image you for some reason cannot view">
+    
+    </div>
+
+</article>
+
+<hr>
+
+<article id="eleven">
+
+    <header>
+
+        <h1>The @media rule</h1>
+
+    </header>
+
+<p>The <span>@media</span> rule allows us to define <Span>styling rules</Span> that 
+apply depending on the <Span>device type</Span>, <Span>screen size</Span>, etc.</p>
+
+<p>There are <Span>three device types</Span> I believe, without being 100% sure, 
+<Span>screen device</Span>, <Span>print device</Span> and <span>speech device</span>. </p>
+
+<p>Usually we just use the <span>all</span> keyword to target <Span>all devices</Span>, 
+then to specify the <Span>size of the screen</Span> you can add the 
+<span>and</span> keyword, which allows you to add requirements a device 
+needs to have for the <span>styling rules</span> to be applied, or 
+you can also use <Span>comma</Span> which however does not work 
+like <span>and</span>, the keyword <span>and</span> adds requirements, 
+the <Span>comma</Span> means <Span>or</Span>, so, I could for example say 
+if the screen has <span>less than 500px width</span> and <Span>more than 200px width</Span>
+text should be red, by simply writing <span>@media all and (max-width: 500px) and (min-width: 300px) { p { color: red; } }</span>, if 
+I had seperated these two <Span>requirements</Span> with <Span>comma</Span> that would mean 
+whenever the <Span>width</Span> is <Span>less than 500px</Span> or whenever the 
+<span>width</span> is <Span>more than 300px</Span> the <span>text</span> should be red, 
+so basically, the <span>text</span> would be <Span>red</Span> at all times.</p>
+
+<p class="left">HTML code:</p>
+
+<p class="left"><span class="code10">&lt;div class="div-one">
+
+    &lt;Span class="span-one">&lt;/Span>
+
+    &lt;Span class="span-one">&lt;/Span>
+
+    &lt;Span class="span-one">&lt;/Span>
+
+    &lt;Span class="span-one">&lt;/Span>
+
+    &lt;/div></span></p>
+
+<p class="left">CSS code:</p>
+
+<p class="left"><span class="code10">&lt;style>
+
+    .div-one {
+        min-height: 0px;
+        width: 1000px;
+        margin: auto;
+     }
+    
+    .span-one {
+        display: inline-block;
+        width: 100px; 
+        height: 200px;
+        background-color: white;
+        border: 3px solid black;
+        border-radius: 20px;
+        margin: 20px 70px 20px 70px;
+        transition-property: margin, background-color;
+        transition-duration: 1000ms;
+        transition-timing-function: ease;
+    }
+    
+    @media all and (max-width: 900px) {
+        .span-one {
+            background-color: red;
+            margin: 20px 50px 20px 50px
+        }
+    }
+    
+    @media all and (max-width: 750px) {
+        .span-one {
+            background-color: red;
+            margin: 20px 30px 20px 30px
+        }
+    }
+    
+    @media all and (max-width: 600px) {
+        .span-one {
+            background-color: red;
+            margin: 20px 10px 20px 10px
+        }
+    }
+
+    &lt;/style></span></p>
+
+<p class="left">Outcome:</p>
+
+
+<style>
+
+.div-one1 {
+    min-height: 0px;
+    width: 1000px;
+    margin: auto;
+ }
+
+.span-one1 {
+    display: inline-block;
+    width: 100px; 
+    height: 200px;
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 20px;
+    margin: 20px 70px 20px 70px;
+    transition-property: margin, background-color;
+    transition-duration: 1000ms;
+    transition-timing-function: ease;
+}
+
+@media all and (max-width: 900px) {
+    .span-one1 {
+        background-color: red;
+        margin: 20px 50px 20px 50px
+    }
+}
+
+@media all and (max-width: 750px) {
+    .span-one1 {
+        background-color: red;
+        margin: 20px 30px 20px 30px
+    }
+}
+
+@media all and (max-width: 600px) {
+    .span-one1 {
+        background-color: red;
+        margin: 20px 10px 20px 10px
+    }
+}
+
+</style>
+
+
+
+<div class="div-one1">
+
+<Span class="span-one1"></Span>
+
+<Span class="span-one1"></Span>
+
+<Span class="span-one1"></Span>
+
+<Span class="span-one1"></Span>
+
+</div>
+
+<p>In the example above, if you try to change the <Span>browser size</Span> you will see 
+the <Span>transition effect</Span>, if you are on <Span>mobile</Span>, maybe rotating 
+your phone will work too, it really depends on the screen size, and now that I spoke about 
+rotation, thats a great opportunity to talk about the <span>orientation</span> rule, which 
+allows us to define what <span>styling rules</span> to be applied on <span>landscape</span>
+(when the width of the screen is bigger than the height) and <Span>portrait</Span> 
+(when the height is bigger than the width).</p>
+
+<p class="left">HTML code:</p>
+
+<p class="left"><span class="code10">&lt;div class="div-two">
+
+    &lt;Span class="span-one">&lt;/Span>
+
+    &lt;Span class="span-one">&lt;/Span>
+
+    &lt;Span class="span-one">&lt;/Span>
+
+    &lt;Span class="span-one">&lt;/Span>
+
+    &lt;/div></span></p>
+
+<p class="left">CSS code:</p>
+
+<p class="left"><span class="code10">&lt;style>
+
+    .div-two {
+        min-height: 0px;
+        width: 1000px;
+        margin: auto;
+     }
+    
+    .span-one {
+        display: inline-block;
+        width: 100px; 
+        height: 200px;
+        background-color: white;
+        border: 3px solid black;
+        border-radius: 20px;
+        margin: 20px 70px 20px 70px;
+        transition-property: margin, background-color;
+        transition-duration: 1000ms;
+        transition-timing-function: ease;
+    }
+    
+    @media all and (orientation: landscape) {
+        .div-two .span-one {
+            background-color: white;
+         }
+    }
+    
+    @media all and (orientation: portrait) {
+        .div-two .span-one {
+            background-color: green;
+            margin: 20px 30px 20px 30px
+        }
+    }
+
+    &lt;/style></span></p>
+
+<p class="left">Outcome:</p>
+
+<style>
+
+    .div-two {
+        min-height: 0px;
+        width: 1000px;
+        margin: auto;
+     }
+    
+    .span-one {
+        display: inline-block;
+        width: 100px; 
+        height: 200px;
+        background-color: white;
+        border: 3px solid black;
+        border-radius: 20px;
+        margin: 20px 70px 20px 70px;
+        transition-property: margin, background-color;
+        transition-duration: 1000ms;
+        transition-timing-function: ease;
+    }
+    
+    @media all and (orientation: landscape) {
+        .div-two .span-one {
+            background-color: white;
+         }
+    }
+    
+    @media all and (orientation: portrait) {
+        .div-two .span-one {
+            background-color: green;
+            margin: 20px 30px 20px 30px
+        }
+    }
+    
+    </style>
+    
+    
+    
+    <div class="div-two">
+    
+    <Span class="span-one"></Span>
+    
+    <Span class="span-one"></Span>
+    
+    <Span class="span-one"></Span>
+    
+    <Span class="span-one"></Span>
+    
+    </div>
+
+<p>Remember, the <Span>@media</Span> rule should always come <span>after the original</span>, 
+or the <span>original</span> will <Span>overrun it</Span>, just like it would 
+to any other <Span>CSS</Span> property.</p>
+
+</article>
+
+<hr>
+
+</body>
+</html>

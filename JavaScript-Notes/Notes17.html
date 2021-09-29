@@ -1,0 +1,5165 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<title> Page seventeen of my notes </title>
+<meta charset="UTF-8"> 
+<link href="../CSS-JavaScript-External-Files/HTMLnotes.css" rel="stylesheet">
+<Style>
+    body{
+        overflow-x: hidden;
+        width: 100%;
+    }
+    .left {
+        text-align: left;
+    }
+
+    iframe {
+        width: 600px;
+        height: 350px;
+        border: 3px solid black;
+        margin: 20px auto 20px auto;
+        display: block;
+    }
+    .code10 {
+    white-space: pre-wrap;
+    background-color: lightgreen;
+    overflow-wrap: break-word;
+    }
+    
+    p {
+    text-align:center;
+    }
+    h1 {
+    text-align:center;
+    }
+    h2 {
+    text-align:center;
+    }
+    h3 {
+    text-align:center;
+    }
+    .c {
+    background-color:lightgreen;
+    }
+    hr {
+    width:100%;
+    height:15px;
+    background-color:black;
+    color:black;
+    border: black solid;
+    }
+    body {
+    background-color:rgb(165, 235, 235);
+    }
+    span {
+    background-color:lightgreen;
+    }
+    
+    a:link {
+    color: black;
+    text-shadow: 1px 0px 1px black;
+    
+    }
+    
+    a:visited {
+    color: black;
+    text-shadow: 1px 0px 1px rgb(22, 22, 22);
+    }
+    
+    a:hover {
+    text-decoration: underline;
+    color: red;
+    text-shadow: 1px 0px 1px black;
+    }
+     
+    </style> 
+</head>
+<body>
+
+<hr>
+
+    <header> 
+    <h1> Page five of my JavaScript notes </h1>
+    </header>
+    
+<article id="start-of-page"> 
+  
+<div id="homepages">
+
+    <h3>Home Pages:</h3>
+   
+
+</div>
+
+<nav data-notes="JavaScript" data-page="5">
+
+</nav>
+
+    <h3> Informations included in this page:</h3>
+    <p><a href="../JavaScript-Notes/Notes17.html#one">What is DOM?</a></p>
+    <p><a href="../JavaScript-Notes/Notes17.html#two">Selecting Elements</a></p>
+    <p><a href="../JavaScript-Notes/Notes17.html#three">Changing Attributes and CSS styles</a></p>
+    <p><a href="../JavaScript-Notes/Notes17.html#four">Creating Elements</a></p>
+    <p><a href="../JavaScript-Notes/Notes17.html#five">How to remove or replace elements</a></p>
+    <p><a href="../JavaScript-Notes/Notes17.html#six">More about Attributes</a></p>
+    <p><a href="../JavaScript-Notes/Notes17.html#seven">Creating Animations</a></p>
+    <p><a href="../JavaScript-Notes/Notes17.html#eight">Handling Events</a></p>
+    <p><a href="../JavaScript-Notes/Notes17.html#nine">Event Propagration</a></p>
+    <p><a href="../JavaScript-Notes/Notes17.html#ten">Image Slider</a></p>
+    <p><a href="../JavaScript-Notes/Notes17.html#eleven">Form Validation</a></p>
+    <p><a href="../JavaScript-Notes/Notes17.html#twelve">innerHTML vs textContent vs innerText</a></p> 
+    <p><a href="../JavaScript-Notes/Notes17.html#thirteen">All about classList</a></p> 
+    <p><a href="../JavaScript-Notes/Notes17.html#fourteen">Data Attributes</a></p> 
+    <p><a href="../JavaScript-Notes/Notes17.html#fifteen">More about Event Listeners</a></p> 
+    <p><a href="../JavaScript-Notes/Notes17.html#sixteen">window.getComputedStyle(element, pseudoElement)</a></p>
+    <p><a href="../JavaScript-Notes/Notes17.html#seventeen">More about CSS properties</a></p>
+    <p><a href="../JavaScript-Notes/Notes17.html#eighteen">Element.getBoundingClientRect()</a></p>
+    <P><a href="../JavaScript-Notes/Notes17.html#nineteen">clientY vs pageY vs screenY vs offsetY</a></P>
+    <p><a href="../JavaScript-Notes/Notes17.html#twenty">Mouse Events</a></p>
+    <p><a href="../JavaScript-Notes/Notes17.html#twentyone">Touch Screen Events</a></p>
+    <p><a href="../JavaScript-Notes/Notes17.html#twentytwo">Custom Events</a></p>
+    <p><a href="../JavaScript-Notes/Notes17.html#twentythree">Audio Object</a></p>
+
+</article>
+
+ <script src="../CSS-JavaScript-External-Files/nav.js"></script>
+
+<hr>
+   
+ <article id="one">
+ 
+ <header>
+ 
+<h1> What is DOM? </h1>
+
+</header>
+
+<p> When you open any <span>webpage</span>
+in a <span>browser</span>, the 
+<span>HTML</span> of the <span>webpage</span>
+is <span>loaded</span> and 
+<span>rendered</span> visually on 
+the <span>screen</span>.</p>
+
+<p>To accomplish that, the 
+<span>browser</span> builds 
+the <span>Document Object Model</span>
+of the <span>page</span>, wish is 
+an <span>object</span> oriented model
+of it's logical structure. The 
+<span>DOM</span> of an <span>HTML</span>
+document can be represented as a 
+nested set of boxes:</p>
+
+<img style="display: block; margin: 20px auto 20px auto;" src="https://api.sololearn.com/DownloadFile?id=2773">
+
+<p><span>JavaScript</span> can be used to <span>manipulate</span> the <span>DOM</span> of a page <span>dynamically</span> to <span>add</span>, <span>delete</span> and <span>modify</span> elements.</p>
+
+<p>The <span>DOM</span> represents a <span>document</span> as a <span>tree structure</span>.
+<span>HTML</span> elements become interrelated nodes in the tree.
+All those nodes in the tree have some kind of relations among each other. 
+Nodes can have <span>child</span> nodes. Nodes on the same tree level are called <span>siblings</span>.
+For example, consider the following structure:</p>
+
+ 
+<img style="display: block; margin: 20px auto 20px auto;" src="https://api.sololearn.com/DownloadFile?id=2773"> 
+ 
+ <p>For the example above:
+ <span>&lt;html></span> has <span>two children</span> <span>(&lt;head>, &lt;body>)</span>;
+ <span>&lt;head></span> has <span>one child</span> <span>(&lt;title>)</span> and <span>one parent</span> <span>(&lt;html>)</span>;
+ <span>&lt;title></span> has <span>one parent</span> <span>(&lt;head>)</span> and no children;
+ <span>&lt;body></span> has <span>two children</span> <span>(&lt;h1> and &lt;a>)</span> and <span>one parent</span> <span>(&lt;html>)</span>;</p>
+
+<p>There is a <span>predefined document object</span> in <span>JavaScript</span>, which can be used to access all elements on the <span>DOM</span>.
+In other words, the <span>document object</span> is the owner (or <span>root</span>) of all objects in your webpage.
+So, if you want to access objects in an <span>HTML</span> page, you always start with accessing the <span>document object</span>.</p>
+
+<p class="left"> Example: <br><br>
+<span class="code10">document.body.innerHTML = "Some text";</span>
+</script>
+
+<p>As body is an element of the DOM, we can access it using the document object and change the content of the innerHTML property.</p>
+
+</article>
+<hr>
+
+<Article id="two">
+
+    <header>
+
+        <h1>Selecting Elements</h1>
+
+    </header>
+
+<p>All <span>HTML</span> elements are <Span>objects</Span>, and as 
+we know every <span>object</span> has <Span>properties</Span> and 
+<Span>methods</Span>. The <span>document object</span> has <Span>methods</Span>
+that allow you to <Span>select</Span> the desired <Span>HTML element</Span>. 
+These <Span>three methods</Span> are the most commonly used for selecting 
+<Span>HTML</Span> elements.</p>
+
+<p><span>document.getElementById("id")</span> is used to find an element by id <br> <br>
+<Span>document.getElementsByClassName("name")</Span> is used to find an elements by class name  <br><br>
+<Span>document.getElementsByTagName("name")</Span> is used to find elements by tag name</p>
+
+<p>When you <Span>select</Span> an <Span>element</Span> by <Span>tag name</Span> or 
+<Span>class name</Span> it creates a <span>collection</span> of all the elements matching 
+this <Span>class/tag name</Span>, therefore, for it to work you have to use 
+<span>array syntax</span> to choose which element to select, like in the example below:</p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><span class="code10">&lt;p class="paragraph">Hello World!&lt;/p>
+    &lt;p class="paragraph">Hello World!&lt;/p></span></p>
+
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">// You can either write it like this in one line of code
+
+    document.getElementsByClassName("paragraph")[0].innerHTML = "Eample 1";
+   
+   // Or you can create a variety first so you can reference it later multiple times
+   
+   var paragraph = document.getElementsByClassName("paragraph");
+   
+   paragraph[1].innerHTML = "Example 2"</span></p>
+
+
+<p class="left">Outcome:</p>
+
+
+
+<p class="paragraph">Hello World!</p>
+<p class="paragraph">Hello World!</p>
+
+<script>
+
+    // You can either write it like this in one line of code
+    
+     document.getElementsByClassName("paragraph")[0].innerHTML = "Eample 1";
+    
+    // Or you can create a variety first so you can reference it later multiple times
+    
+    var paragraph = document.getElementsByClassName("paragraph");
+    
+    paragraph[1].innerHTML = "Example 2"
+     
+    </script>
+
+<p>When you select the element by <Span>id</Span> then since id is unique for each element 
+you simply write the code to select the element and that's it.</p>
+ 
+<p>Also, something I noticed is that if you write the <Span>script</Span> before 
+the <Span>HTML elements</Span> it won't be able to find these, since the <Span>script</span> 
+would run before the <Span>HTML elements</Span> run I guess that makes sense.</p>
+
+<P>By the way, remember the <Span>clock</Span> I made in <Span>page 16</Span> 
+of my notes? I still didn't know how to change <Span>HTML elements</Span> before 
+so I made it so the whole page gets rewritten in each loop by writing <Span>document.body.innerHTML</Span>, now that we 
+know how to select <Span>HTML elements</Span> let's remake it inside a <Span>heading</Span>.</P>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><span class="code10">&lt;h1 id="clock">I'm a heading&lt;/h1>
+</span></p>
+
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">function addZero(x){
+    if (x &lt; 10) {
+        return "0" + x;
+    } else { 
+        return x;
+    };
+};
+
+function clock(){
+var d = new Date();
+var hours = addZero( d.getHours() );
+var minutes = addZero( d.getMinutes() );
+var seconds = addZero( d.getSeconds() );
+
+document.getElementById("clock").innerHTML = hours + ":" + minutes + ":" + seconds;
+
+}
+
+setInterval( clock, 1000 );</span></p>
+
+
+<p class="left">Outcome:</p>
+
+<h1 id="clock">I'm a heading</h1>
+
+<script>
+
+function addZero(x){
+    if (x < 10) {
+        return "0" + x;
+    } else { 
+        return x;
+    }
+};
+
+function clock(){
+var d = new Date();
+var hours = addZero( d.getHours() );
+var minutes = addZero( d.getMinutes() );
+var seconds = addZero( d.getSeconds() );
+
+document.getElementById("clock").innerHTML = hours + ":" + minutes + ":" + seconds;
+
+}
+
+setInterval( clock, 1000 );
+
+</script>
+
+<p>Let's create another cool project, a counter, that will 
+    change <Span>headings</Span> one by one, and start all over 
+    again when it reaches the end.
+</p>
+
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><span class="code10">&lt;h1 class="counter">Idk&lt;/h1>
+    &lt;h1 class="counter">Idk&lt;/h1>
+    &lt;h1 class="counter">Idk&lt;/h1></span></p>
+
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">var MyArray = document.getElementsByClassName("counter");
+    var MyNumber = 0;
+    var x = 0;
+    
+    function count(){
+    MyArray[x].innerHTML = MyNumber;
+    
+    x++
+    MyNumber++
+    
+    if (x == MyArray.length) {
+        x = 0;
+    };
+    
+    };
+    
+    setInterval( count, 1000 );</span></p>
+
+
+<p class="left">Outcome:</p>
+
+<h1 class="counter666">Idk</h1>
+<h1 class="counter666">Idk</h1>
+<h1 class="counter666">Idk</h1>
+
+<script>
+
+var MyArray666 = document.getElementsByClassName("counter666");
+var MyNumber666 = 0;
+var x666 = 0;
+
+function count(){
+MyArray666[x666].innerHTML = MyNumber666;
+
+x666++
+MyNumber666++
+
+if (x666 == MyArray666.length) {
+    x666 = 0;
+};
+
+};
+
+function example(){
+
+setInterval( count, 1000 );
+
+};
+
+window.addEventListener("load", example());
+</script>
+
+<P>The way it works is simple actually, 
+    first it changes the <Span>x</Span> number
+ of <Span>MyArray</Span> which is <Span>0</Span> 
+ into <Span>MyNumber</Span> which is <Span>0</Span>, meaning, 
+ it changes the content of the <Span>first heading</Span>
+ into <span>0</span>, then I simple made it so for each 
+ loop <Span>MyArray</Span> and <Span>x</Span> get 
+ one number higher, and lastly I made it so 
+ when <Span>x</Span> reaches the final heading 
+ it returns to <Span>0</Span> (the first heading).
+ The <Span>x</Span> represents the <Span>array values</Span>, 
+ there are only <Span>three</Span>, (0, 1, 2), <Span>MyNumber</Span>
+ is the number of the counter.</P>
+
+<p>So as I said before, when you <span>select</span> an <span>element</span>
+by <Span>tag name</Span> or <Span>class name</Span> an <Span>array</Span> is 
+created, or to be more accurate a <Span>node list</Span> is created, 
+which is pretty similar to <span>arrays</span>. So, how do you make it 
+so that all <Span>elements</Span> with the chosen <Span>tag name</Span> or 
+<Span>class name</Span> are selected? To select an <Span>element</Span> 
+by <Span>class name</Span> or <span>tag name</span> you gotta specify 
+which one to select, if you want to select the <span>first</span> element 
+with the given <Span>tag name</span> for example you would write 
+<Span>getElementByTagName("p")[0]</Span>, if you didn't write <Span>[0]</Span> it 
+would not work. To <Span>select</Span> all <Span>paragraphs</Span> you would 
+have to simply create a <Span>loop</Span> so that all <Span>paragraphs</Span> 
+get selected, if you need to check how to create <Span>loops</Span> in 
+<Span>page 14</Span> of my notes, in the code below I made it so 
+all three paragraphs change by using <Span>for loop</Span>.</p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><span class="code10">&lt;p class="kok">Hello World!&lt;/p>
+    &lt;p class="kok">Hello World!&lt;/p>
+    &lt;p class="kok">Hello World!&lt;/p></span></p>
+
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">var arr = document.getElementsByClassName("kok");
+    var x = 0;
+    
+    for (x; x &lt; arr.length; x++){
+        arr[x].innerHTML = "New Text";
+    }</span></p>
+
+
+<p class="left">Outcome:</p>
+
+<p class="kok">Hello World!</p>
+<p class="kok">Hello World!</p>
+<p class="kok">Hello World!</p>
+
+<script>
+
+var arr = document.getElementsByClassName("kok");
+var x = 0;
+
+for (x; x < arr.length; x++){
+    arr[x].innerHTML = "New Text";
+}
+
+</script>
+
+<p>Each element in the <Span>DOM</Span> has a set of <Span>properties</Span>
+and <Span>methods</Span> that provide <Span>information</Span> about 
+their relationships in the <Span>DM</Span>:</p>
+
+<P><Span>element.childNodes</Span> - returns a <span>collection</span> of element's child nodes <br><br>
+<span>element.children</span> - returns a <span>collection</span> of the element's children elements<br><br>
+<span>element.firstChild</span> - returns the first child node of an element <br><br>
+<span>element.firstElementChild</span> - returns the first child element of an element<br><br>
+<Span>element.lastChild</Span> - returns the last child node of an element<br><br>
+<span>element.lastElementChild</span> - returns the last child element of an element<br><br>
+<Span>element.hasChildNodes</Span> - returns true if an element has any child nodes, otherwise false<br><br>
+<span>node.nextSibling</span> - returns the next node at the same tree level <br><br>
+<span>node.previousSibling</span> - returns the previous node at the same tree level <br><br>
+<span>element.nextElementSibling</span> - returns the next element at the same tree level <br><br>
+<Span>element.previousElementSibling</Span> - returns the previous element at the same tree level<br><br>
+<span>element.parentNode</span> - returns the parent node of an element. <br><br>
+<span>element.parentElement</span> - returns the parent element of an element.</p>
+
+<p>When you create a <span>node list</span> of the <Span>childs</Span> of an 
+<Span>element</Span> for example, you should remember that <span>elements</span> and 
+<span>text</span> are two different <Span>nodes</Span>, see the code below for example:</p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><span class="code10">&lt;div id="fr">
+
+    &lt;p>Hello&lt;/p>
+    &lt;p>Hello&lt;/p>
+    
+    &lt;/div></span></p>
+
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">// the arrays I created in previous codes still exist, so I should pick new names each time
+    var coolArray = document.getElementById("fr").childNodes;
+    coolArray[1].innerHTML = "First paragraph"; 
+    coolArray[3].innerHTML = "Second paragraph"; </span></p>
+
+
+<p class="left">Outcome:</p>
+
+<div id="fr">
+
+<p>Hello</p>
+<p>Hello</p>
+
+</div>
+
+<Script>
+
+ var coolArray = document.getElementById("fr").childNodes;
+coolArray[1].innerHTML = "First paragraph"; 
+coolArray[3].innerHTML = "Second paragraph"; 
+
+</Script>
+
+<p>Let me explain now what happened, <Span>[0]</Span> would choose the <span>first node</span>, 
+    which is the <Span>first paragraph</Span>, however, we want to change the <Span>text node</Span>, 
+    so that's why we wrote <Span>[1]</Span>, which chose the <span>second node</span>, the 
+    <Span>text</Span> inside the <Span>paragraph</Span>, for the same reason <Span>[3]</Span>
+    selected the <Span>second text</Span> inside the <Span>second paragraph</Span>, which was the <Span>fourth node</Span>. .</p>
+
+<p>I just learned there is another way to select the <span>children</span> 
+    of an element by creating an <Span>array</Span> of the <Span>children elements</Span>
+    and not the <span>children nodes</span>, you can do that by using <span>children</span> property, 
+see the code below for example:</p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><span class="code10">&lt;div id="fr2">
+
+    &lt;p>Hello&lt;/p>
+    &lt;p>Hello&lt;/p>
+    
+    &lt;/div></span></p>
+
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">var coolArray = document.getElementById("fr2").children;
+    coolArray[0].innerHTML = "First paragraph"; 
+    coolArray[1].innerHTML = "Second paragraph"; </span></p>
+
+
+<p class="left">Outcome:</p>
+
+<div id="fr2">
+
+<p>Hello</p>
+<p>Hello</p>
+
+</div>
+
+<Script>
+
+ var coolArray = document.getElementById("fr2").children;
+coolArray[0].innerHTML = "First paragraph"; 
+coolArray[1].innerHTML = "Second paragraph"; 
+
+</Script>
+
+<p>When you create a <Span>collection</Span> using <span>document.getElementsByClassName()</span>, <Span>element.children</Span>
+or whatever other method creates a <Span>collection</Span>, even though they may seem to 
+you like <Span>arrays</Span> they aren't linked to the <Span>array constructor</Span>
+in the <span>prototype tree</span>, so <Span>array methods</Span> like <Span>forEach</Span> can't 
+be used on them, to fix that, you can create an <Span>array</Span> out of the <Span>collection</Span>
+using <span>Array.from()</span> method, like this:</p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><span class="code10">&lt;p class="ducks_are_evil">Hello World&lt;/p>
+&lt;p class="ducks_are_evil">Hello World&lt;/p>
+&lt;p class="ducks_are_evil">Hello World&lt;/p>
+&lt;p class="ducks_are_evil">Hello World&lt;/p></span></p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let paragraphs = Array.from(document.getElementsByClassName("ducks_are_evil"));
+
+paragraphs.forEach((x) => x.innerHTML = "New Text");</Span></p>
+
+<p class="left">Outcome:</p>
+
+<p class="ducks_are_evil">Hello World</p>
+<p class="ducks_are_evil">Hello World</p>
+<p class="ducks_are_evil">Hello World</p>
+<p class="ducks_are_evil">Hello World</p>
+
+<script>
+
+if(true){
+
+let paragraphs = Array.from(document.getElementsByClassName("ducks_are_evil"));
+
+paragraphs.forEach((x) => x.innerHTML = "New Text");
+
+}
+
+
+</script>
+
+<p>Now I want to talk for few more <Span>selector methods</Span> that can be 
+useful, the <span>querySelector()</span>, <Span>querySelectorAll</Span>
+and <span>closest</span>.</p>
+
+<p>The <span>querySelector()</span> method returns the <Span>first element</Span>
+that <span>matches</span> a <Span>specified CSS selector</Span> in 
+the <Span>document</Span>:</p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><span class="code10">&lt;p id="you_suck">Hello guysssssss&lt;/p></span></p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">document.querySelector("#you_suck").style.color = "red";</span></p>
+
+<p class="left">Outcome:</p>
+
+<p id="you_suck">Hello guysssssss</p>
+
+<Script>
+
+if(true){
+
+document.querySelector("#you_suck").style.color = "red";
+
+}
+
+
+</Script>
+
+<p>The <Span>querySelectorAll()</Span> method works the same way, however, it 
+returns <span>all elements</span> in the document that <span>match</span>
+the specified <Span>CSS selector</Span>, as a <span>static NodeList object</span>.</p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><Span class="code10">&lt;p class="oh_yeah">Owwww YEEAAAAAAAAAAHHH&lt;/p>
+&lt;p class="oh_yeah">Owwww YEEAAAAAAAAAAHHH&lt;/p>
+&lt;p class="oh_yeah">Owwww YEEAAAAAAAAAAHHH&lt;/p></Span></p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let paragraphs = document.querySelectorAll(".oh_yeah");
+
+paragraphs[1].style.fontWeight = "bold";</Span></p>
+
+<p class="left">Outcome:</p>
+
+<p class="oh_yeah">Owwww YEEAAAAAAAAAAHHH</p>
+<p class="oh_yeah">Owwww YEEAAAAAAAAAAHHH</p>
+<p class="oh_yeah">Owwww YEEAAAAAAAAAAHHH</p>
+
+<script>
+
+if(true){
+
+let paragraphs = document.querySelectorAll(".oh_yeah");
+
+paragraphs[1].style.fontWeight = "bold";
+
+}
+
+</script>
+
+<p>And lastly, the <span>closest()</span> method <Span>traverses</Span>
+the <span>Element</span> and it's <span>parents</span> towards the <span>document root</span> until it finds a <span>node</span> that <span>matches</span>
+the provided <span>selector string</span>:</p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><span class="code10">&lt;div class="dame" style="padding: 40px">
+&lt;p class="dame" style="background-color: greenyellow">Text text text text&lt;/p>
+    &lt;div style="background-color: white">
+        &lt;p id="boom">Hello World!&lt/p>
+    &lt;/div>
+&lt;/div></span></p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">document.querySelector("#boom").closest(".dame").style.backgroundColor = "purple";</span></p>
+
+<p class="left">Outcome:</p>
+
+<div class="dame" style="padding: 40px">
+    <p class="dame" style="background-color: greenyellow">Text text text text</p>
+    <div style="background-color: white">
+        <p id="boom">Hello World!</p>
+    </div>
+</div>
+
+<script>
+
+if(true){
+
+document.querySelector("#boom").closest(".dame").style.backgroundColor = "purple";
+
+}
+
+</script>
+
+<p>As you can see, the <span>paragraph</span> was <Span>ignored</Span>, because as I said before, 
+<Span>closest</Span> method <span>climbs the document tree</span>, and checks it's <Span>parents</Span>, till 
+it finds the <span>closest match</span>, it doesn't check it's parent's childs.</p>
+
+<iframe src="https://www.youtube.com/embed/v7rSSy8CaYE?list=PLYxnDvM22X3NBARfD2aZcyUoKvfdHfygn" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</Article>
+
+<hr>
+
+<article id="three">
+
+<header>
+
+<h1>Changing attributes and CSS styles</h1>
+
+</header>
+
+<p>Once you have selected the <Span>element(s)</Span> you want to work with, 
+you can change their <Span>attributes</Span>. As we saw before, we can 
+change the <span>text content</span> of an <Span>element</Span> using the 
+<Span>innerHTML</Span> property, similarly, we can change the <Span>attributes</Span>
+of <Span>elements</Span>.</p>
+
+<p>For example, we can change the <span>href</span> attribute of a <Span>link</Span>, 
+let's try this:</p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><Span class="code10">&lt;p>
+    
+    &lt;a id="link" href="">link example&lt;/a>
+    
+    &lt;/p></Span></p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">var link = document.getElementById("link");
+    link.href = "Notes17.html";
+    link.innerHTML = "Notes17.html";</Span></p>
+
+<p class="left">Outcome:</p>
+
+<p><a id="link" href="">link example</a></p>
+
+<script>
+
+var link = document.getElementById("link");
+link.href = "Notes17.html";
+link.innerHTML = "Notes17.html";
+
+</script>
+ 
+<p>The <Span>style</Span> of <Span>HTML</Span> elements can also be changed using 
+<Span>JavaScript</Span>, all <Span>styles</Span> can be accessed using the 
+<Span>style object</Span> of the <Span>element</Span>, see code below for example:</p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><span class="code10">&lt;div class="some-div">&lt;/div>
+</span></p>
+
+<p class="left">CSS Code:</p>
+
+<p class="left"><span class="code10">&lt;Style>
+
+    .some-div{
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        margin: 20px auto 20px auto;
+    }
+    
+    &lt;/Style></span></p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">&lt;script>
+
+    document.getElementsByClassName("some-div")[0].style.backgroundColor = "green";
+    
+    &lt;/script></span></p>
+
+<p class="left">Outcome:</p>
+
+<Style>
+
+.some-div{
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    margin: 20px auto 20px auto;
+}
+
+</Style>
+
+<div class="some-div"></div>
+
+<script>
+
+document.getElementsByClassName("some-div")[0].style.backgroundColor = "green";
+
+</script>
+
+<p>As you probably noticed, if a <Span>CSS property</Span> uses <Span>dashes</Span>, 
+the <Span>(-)</Span> symbol, when you reference it in <Span>JavaScript</Span>
+you should remove the <Span>dash</Span> and <Span>capitalize</Span> the 
+first letter that's after the <Span>dash</Span>, for example, 
+<Span>background-color</Span> property should be referred to as 
+<Span>backgroundColor</Span>, you could also write <Span>x.style['background-color']</Span>, 
+that's good too.</p>
+
+<p>Anyway, it is not recommended to change <span>styles</span> with 
+<Span>JavaScript</Span>, so that your code is more organized, you could simply 
+use <span>JavaScript</span> to change the <Span>class</Span> of 
+an <Span>element</Span> and use only <Span>CSS</Span> for styling.</p>
+
+</article>
+
+<hr>
+
+<article id="four">
+
+    <header>
+
+        <h1>
+Creating Elements
+        </h1>
+
+    </header>
+
+<p>Use the follow <Span>methods</Span> to create new <Span>nodes</Span>: <br><br>
+<span>element.cloneNode()</span> - clones an element and returns the resulting node. <br><br>
+<span>document.createElement(element)</span> - creates a new element node. <br><br>
+<Span>document.createTextNode(text)</Span> - creates a new text node.</p>
+
+<p>In order to <Span>append</Span> the created <Span>elements</Span> or <Span>text nodes</Span> 
+in other <Span>elements</Span> you can use the following <span>methods</span>: <br><br>
+<span>element.appendChild(example)</span> - adds a new child to the selected element as the last child node. <br><br>
+<Span>element.append(example1, example2, "example3")</Span> - works just like appendChild, however, it can 
+also directly append DOMStrings, and can also append multiple items at once, something appendChild does not, 
+append is probably what you wanna use most of the time, since it can do everything 
+appendChild does and more. <br><br>
+<Span>element.instertBefore(example, node2)</Span> - inserts example as a child before</p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><span class="code10">&lt;div id="empty-container">&lt;/div></span></p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">function example(){
+
+    var paragraph = document.createElement("p");
+    var text = document.createTextNode("Hello World!");
+    
+    paragraph.appendChild(text);
+    
+    var div = document.getElementById("empty-container");
+     
+    div.appendChild(paragraph);
+    
+    };
+
+window.addEventListener("load", example());</span></p>
+
+<p class="left">Outcome:</p>
+
+
+<div id="empty-container"></div>
+
+<script>
+
+function example(){
+var paragraph = document.createElement("p");
+var text = document.createTextNode("Hello World!");
+
+paragraph.appendChild(text);
+
+var div = document.getElementById("empty-container");
+ 
+div.appendChild(paragraph);
+};
+
+window.addEventListener("load", example());
+
+</script>
+
+<p>Alright, let me do the explaining now, first of all, about the <Span>window.addEventListener("load", function())</Span>
+thing, it simply makes it so the <Span>example function</Span> I made gets 
+executed <Span>when window loads</Span>, when you edit the <Span>HTML</Span> of your 
+page, it's good to make the <Span>code</Span> run only after the <Span>window has oppened</Span>
+to avoid bugs.</p>
+
+<p>About the code now, first I created a <Span>paragraph</Span>
+and a <Span>text node</Span>, then I added the <Span>text node</Span>
+inside the <Span>paragraph</Span>, I could had actually added 
+text directly to the <SpaN>paragraph</SpaN> using <Span>innerHTML</Span>
+property, however, there is a difference, when using <Span>createTextNode</Span>
+everything you add as <Span>text</Span> will be displayed, so if you were 
+to type <Span>&lt;b> bold text &lt;b></Span> the <SpaN>bold tag</SpaN> wouldn't 
+work, and instead you would just get a <Span>paragraph</Span> displaying 
+the <Span>tags</Span> on the page as you wrote these, if in the other hand 
+you added the same text using <Span>innerHTML</span> the <Span>bold tags</Span>
+would work, see example below:</p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><span class="code10">&lt;div id="karak2">&lt;/div></span></p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">function example(){
+
+    var p = document.createElement("p");
+    p.innerHTML = "&lt;b> Added text by using innerHTML property. &lt;/b> &lt;br>"
+    
+    var text = document.createTextNode("&lt;b> Made this node by using createTextNode method. &lt;/b>");
+    p.appendChild(text);
+    
+    document.getElementById("karak2").appendChild(p);
+    
+    };
+
+window.addEventListener("load", example());</span></p>
+
+<p class="left">Outcome:</p>
+
+<div id="karak2"></div>
+
+<Script>
+
+function example(){
+var p = document.createElement("p");
+p.innerHTML = "<b> Added text by using innerHTML property. </b> <br>"
+
+var text = document.createTextNode("<b> Made this node by using createTextNode method. </b>");
+p.appendChild(text);
+
+document.getElementById("karak2").appendChild(p);
+};
+
+window.addEventListener("load", example());
+ 
+</Script>
+
+
+
+
+<p>Anyway, let's continue with the explanation, next I simply made 
+    a <Span>container</Span> div for my <Span>paragraph</Span>, 
+    I selected it by <SpaN>id</SpaN> and added the <span>paragraph</span>
+    inside it, that's all.
+</p>
+
+<p>Now, let's have an example of how we can use the <Span>insertBefore</Span> method:</p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><span class="code10">&lt;div id="container2">&lt;/div></span></p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">function example(){
+
+    var p = document.createElement("p");
+    var nodeOne = document.createTextNode("Node1");
+    var nodeTwo = document.createTextNode("Node2");
+    
+    p.appendChild(nodeOne);
+    p.appendChild(nodeTwo);
+    
+    var nodes = p.childNodes;
+    
+    var example = document.createTextNode("Example");
+    
+    // example, nodeTwo would also work
+    p.insertBefore(example, nodes[1]);
+    
+    document.getElementById("container2").appendChild(p);
+    
+    };
+
+    window.addEventListener("load", example());</span></p>
+
+<p class="left">Outcome:</p>
+
+<div id="container2"></div>
+
+<Script>
+
+function example(){
+var p = document.createElement("p");
+var nodeOne = document.createTextNode("Node1");
+var nodeTwo = document.createTextNode("Node2");
+
+p.appendChild(nodeOne);
+p.appendChild(nodeTwo);
+
+var nodes = p.childNodes;
+
+var example = document.createTextNode("Example");
+
+// example nodeTwo would also work
+p.insertBefore(example, nodes[1]);
+
+document.getElementById("container2").appendChild(p);
+};
+
+
+window.addEventListener("load", example());
+
+</Script>
+
+</article>
+
+<hr>
+
+<article id="five">
+
+<header>
+
+<h1>How to remove or replace Elements</h1>
+
+</header>
+
+<p>To remove an <Span>HTML element</Span> you must <Span>select</Span>
+the <Span>parent</Span> of the <Span>element</Span> and use the <Span>removeChild(node)</Span> method.</p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><span class="code10">&lt;div id="example1">
+
+    &lt;p>First Child&lt;/p>
+    &lt;p>Second Child&lt;/p>
+    &lt;p>Third Child&lt;/p>
+    
+    &lt;/div></span></p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">&lt;script>
+
+    var element = document.getElementById("example1");
+var children = element.children;
+
+element.removeChild(children[1]);
+    
+    &lt;/script></span></p>
+
+    <p class="left">Outcome:</p>
+
+<div id="example1">
+
+<p>First Child</p>
+<p>Second Child</p>
+<p>Third Child</p>
+
+</div>
+
+<Script>
+
+var element = document.getElementById("example1");
+var children = element.children;
+
+element.removeChild(children[1]);
+
+</Script>
+
+<p>To <Span>replace</Span> an <Span>HTML element</Span>, you can use the 
+<SpaN>element.replaceChild(newNode, oldNode)</SpaN> method, by the way, 
+in the code below I'm also going to use the <span>parentNode</span> property 
+which <Span>selects</Span> the <Span>parent</Span> of the selected element, 
+just because I wanted to include it in the notes since it is a cool property.</p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><span class="code10">&lt;div>
+    &lt;p id="old" >Old paragraph&lt;/p>
+    &lt;/div></span></p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">&lt;script>
+
+    var oldParagraph = document.getElementById("old");
+    var parent = oldParagraph.parentNode;
+    
+    var newParagraph = document.createElement("p");
+    var text = document.createTextNode("New Paragraph");
+    
+    newParagraph.appendChild(text);
+    
+    parent.replaceChild(newParagraph, oldParagraph);
+    
+    };
+    
+    &lt;/script></span></p>
+
+    <p class="left">Outcome:</p>
+
+<div>
+<p id="old" >Old paragraph</p>
+</div>
+
+<script>
+
+function example(){
+
+var oldParagraph = document.getElementById("old");
+var parent = oldParagraph.parentNode;
+
+var newParagraph = document.createElement("p");
+var text = document.createTextNode("New Paragraph");
+
+newParagraph.appendChild(text);
+
+parent.replaceChild(newParagraph, oldParagraph);
+
+};
+
+window.addEventListener("load", example());
+
+</script>
+
+
+</article>
+
+<hr>
+
+<Article id="six">
+
+<header>
+
+<h1>More about Attributes</h1>
+
+</header>
+
+<h2><u>How to remove or create attributes:</u></h2>
+
+<p>To create an <Span>HTML attribute</Span> you should use the <SpaN>createAttribute("attribute")</SpaN>
+method, then, to set it's value you can use the <span>attribute.value = "value"</span>
+method, lastly, to <Span>add the attribute</Span> to an <Span>element</Span> you should use the 
+<span>element.setAttributeNode(attribute)</span> method or <span>setAttribute(attribute, value)</span> method.</p>
+
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><Span class="code10">&lt;p id="example5">Hello World!&lt;/p></Span></p>
+
+<p class="left">CSS Code:</p>
+
+<p class="left"><Span class="code10">&lt;style>
+
+    .blue {
+        color:blue;
+    }
+    
+    &lt;/style></Span></p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">&lt;script>
+
+    var element = document.getElementById("example5");
+    
+    var att = document.createAttribute("class");
+    att.value = "blue";
+    
+    element.setAttributeNode(att);
+    
+    &lt;/script></Span></p>
+
+<p class="left">Outcome:</p>
+
+<style>
+
+.blue {
+    color:blue;
+}
+
+</style>
+
+<p id="example5">Hello World!</p>
+
+<script>
+
+var element = document.getElementById("example5");
+
+var att = document.createAttribute("class");
+att.value = "blue";
+
+element.setAttributeNode(att);
+
+</script>
+
+<p><span>setAttribute()</span> is better in my opinion, because it also 
+allows you simultaneously create an <span>attribute</span> and set 
+a <span>value</span> for it, while <span>setAttributeNode</span> only 
+lets you set an <span>attribute node</span> that was already precreated 
+using <span>createAttribute</span>.</p>
+
+<p>To <Span>remove</Span> an <span>attribute</span> simply use the <Span>removeAttribute("attribute")</Span>
+property, like in the code below:</p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><Span class="code10">&lt;p id="examplee" class="blue">Hello World!&lt;/p></Span></p>
+
+<p class="left">CSS Code:</p>
+
+<p class="left"><Span class="code10">&lt;style>
+
+    .blue {
+        color:blue;
+    }
+    
+    &lt;/style></Span></p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">&lt;script>
+
+    var element = document.getElementById("examplee");
+element.removeAttribute("class");
+    
+    &lt;/script></Span></p>
+
+<p class="left">Outcome:</p>
+
+<p id="examplee" class="blue">Hello World!</p>
+
+<script>
+
+var element = document.getElementById("examplee");
+element.removeAttribute("class");
+
+
+</script>
+
+<p>About how you can <SpaN>edit</SpaN> the <span>value</span> of 
+an <Span>attribute</Span> I talked about it before in <a href="#three">this section</a>, it's pretty easy actually.</p>
+
+<h2><u>How to check or read attributes:</u></h2>
+
+<p>There are few <Span>methods</Span> that can be used to <span>read</span>
+or <span>check</span> if an <span>attribute</span> exists in an <Span>element</Span>, 
+here are the most important ones I found online:</p>
+
+<style>
+
+.list_container{
+    width: fit-content;
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 20px;
+    margin: 20px auto 20px auto;
+}
+
+.list_container li{
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+</style>
+
+<div class="list_container">
+
+<ul>
+    <li>getAttribute() - returns the value of the selected attribute as a string</li>
+    <li>getAttributeNode() - returns an Attr object, representing the specified attribute node</li>
+    <li>hasAttribute() - returns true if the element has attributes, otherwise false</li>
+    <li>hasAttributes() - returns true if the specified node has any attributes, otherwise false, this method doesn't take any parameters</li>
+</ul>
+
+</div>
+
+</Article>
+
+<hr>
+
+<article id="seven">
+
+<header>
+
+    <h1>Creating Animations</h1>
+
+</header>
+
+<p>Now that we know how to <span>select</span>, <Span>change</Span> and 
+<Span>create</Span> <Span>DOM elements</Span>, we can use that knowledge 
+to create simple <Span>animations</span>. Let's first create two boxes using 
+<Span>CSS</Span>, the first box will be the <Span>container</Span>, and we 
+will set it's <Span>position</Span> to <SpaN>relative</SpaN>, second box 
+will be inside the first one, and it's <Span>position</Span> will be 
+<SpaN>absolute</SpaN>, meaning we can move it around without it 
+effecting the page stracture, since it's <Span>container</Span> will be set 
+to <Span>position relative</Span> we will be able to move our second box 
+<SpaN>relatively</SpaN> to it's <Span>parent</Span>, I have talked more about 
+how the <Span>position</Span> property works in my <Span>CSS notes</Span>, so 
+I recommend you to check this out in order to easier understand the animation I'm going 
+to create.</p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><span class="code10">&lt;div id="first-box">
+
+    &lt;div id="second-box">&lt;/div>
+
+&lt;/div></span></p>
+
+<p class="left">CSS Code:</p>
+
+<p class="left"><span class="code10">&lt;Style>
+
+    #first-box {
+        width: 200px;
+        height: 150px;
+        background-color: red;
+        margin: 20px auto 20px auto;
+        position: relative;
+    }
+    
+    #second-box {
+        width: 50px;
+        height: 50px;
+        background-color: blue;
+        position: absolute;
+        left: 0px;
+    }
+    
+    &lt;/style></span></p>
+
+<p class="left">Outcome:</p>
+
+<Style>
+
+#first-box {
+    width: 200px;
+    height: 150px;
+    background-color: red;
+    margin: 20px auto 20px auto;
+    position: relative;
+}
+
+#second-box {
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+    position: absolute;
+    left: 0px;
+}
+
+</Style>
+
+
+<div id="first-box">
+
+    <div id="second-box"></div>
+
+</div>
+
+<p>Now let's make it move around using simple knowledge we have already been taught:</p>
+
+<Style>
+
+    #first-box2 {
+        width: 200px;
+        height: 150px;
+        background-color: red;
+        margin: 20px auto 20px auto;
+        position: relative;
+    }
+    
+    #second-box2 {
+        width: 50px;
+        height: 50px;
+        background-color: blue;
+        position: absolute;
+        left: 0px;
+    }
+    
+    </Style>
+    
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">&lt;script>
+
+    // starting position:
+    
+    var position = 0;
+    
+    // box location:
+    
+    var box = document.getElementById("second-box");
+    
+    // function that makes box move right:
+    
+    function move_right(){
+    
+        function move(){
+        if (position <= 149){
+        position += 1;
+        box.style.left = position + "px";
+        } else {
+            clearInterval(interval);
+            move_left();
+        }
+      }
+    
+      var interval = setInterval( move, 50 );
+    
+    }
+    
+    // function that makes box move left:
+    
+    function move_left(){
+    
+        function move2(){
+        if (position >= 0 ){
+        position -= 1;
+        box.style.left = position + "px";
+        } else {
+            move_right();
+            clearInterval(interval2);
+        }
+       }
+    
+    var interval2 = setInterval(move2, 50);
+    
+    }
+    
+    move_right();
+    
+    &lt;/script></span></p>
+
+
+    <div id="first-box2">
+    
+        <div id="second-box2"></div>
+    
+    </div>
+
+<script>
+
+// starting position:
+
+var position = 0;
+
+// box location:
+
+var box = document.getElementById("second-box2");
+
+// function that makes box move right:
+
+function move_right(){
+
+    function move(){
+    if (position <= 149){
+    position += 1;
+    box.style.left = position + "px";
+    } else {
+        clearInterval(interval);
+        move_left();
+    }
+  }
+
+  var interval = setInterval( move, 50 );
+
+}
+
+// function that makes box move left:
+
+function move_left(){
+
+    function move2(){
+    if (position >= 0 ){
+    position -= 1;
+    box.style.left = position + "px";
+    } else {
+        move_right();
+        clearInterval(interval2);
+    }
+   }
+
+var interval2 = setInterval(move2, 50);
+
+}
+
+move_right();
+
+</script>
+
+
+</article>
+
+<hr>
+
+<article id="eight">
+
+<header>
+
+    <h1>Handling Events</h1>
+
+</header>
+
+<p>You can write <Span>JavaScript</Span> code that executes when an 
+<span>event</span> occurs, such as when a user <span>clicks</span> an 
+<Span>HTML element</Span>, <Span>moves the mouse</span>, <Span>submits a form</span>, etc. 
+When an <Span>event</Span> occurs on a <Span>targeted element</Span>, a <Span>handler</Span>
+function is executed. Here is a list of some <Span>common events</Span> you should 
+know, there are more, but these are the most used ones:</p>
+
+<img style="display: block; margin: 20px auto 20px auto;" src="https://api.sololearn.com/DownloadFile?id=2777">
+
+<p>These <spaN>events</spaN> can be added to <Span>HTML elements</Span> as 
+<Span>attributes</Span>, for example, you could write <Span>onclick="someFunc()"</Span> and 
+the chosen <Span>function</Span> would execute when the element was clicked, however, 
+using <Span>events</Span> as <Span>attributes</Span> is considered bad practice, 
+since it's way more organized to add the events in your <Span>JavaScript</Span> code.</p>
+
+<p>The correct way to add <Span>events</Span> is by using the <Span>addEventListener("event", function)</Span> method, 
+I already used it before to make it so the <Span>elements</Span> changed after the window loaded, 
+here you can see another simple example of a button.</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">&lt;script>
+
+    function main_function(){ 
+        var button = document.getElementById("mybutton");
+      
+      function example(){
+          alert("Hello World!");
+      }
+    
+    button.addEventListener("click", example);
+    
+    }
+    
+    window.addEventListener("load", main_function);
+    
+    &lt;/script></span></p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><span class="code10">&lt;button id="mybutton">Click Me&lt;/button></span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+function main_function(){ 
+    var button = document.getElementById("mybutton");
+  
+  function example(){
+      alert("Hello World!");
+  }
+
+button.addEventListener("click", example);
+
+}
+
+window.addEventListener("load", main_function);
+
+</script>
+
+<button id="mybutton">Click Me</button>
+
+<p>I used two <span>events</span> for this one, the reason I made the <Span>main function</Span>
+was so that the <Span>variety</Span> is created only after the <Span>window has loaded</Span>, since 
+if the code ran before the button was created it wouldn't be able to find the button, then 
+the second <span>event</span> I used was the <Span>onclick</Span> event which I added 
+to the <Span>button</Span>. One thing that you should remember is that when you use 
+the <Span>addEventListener</Span> method instead of writing <span>onclick</span>, <Span>onload</Span>, 
+etct you simply write <Span>click</Span>, <Span>load</Span>, etc.</p>
+
+<p>Let's make an example using the <Span>onchange</Span> event, after you type 
+something inside this <Span>input</Span> and focus is lost from the element everything 
+you have written will be capitalized:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">&lt;script>
+
+    function main_function(){
+        var input = document.getElementById("input");
+        
+        function example(){
+            input.value = input.value.toUpperCase();
+        }
+        
+        input.addEventListener("change", example);
+        
+        }
+        
+        window.addEventListener("load", main_function);
+    
+    &lt;/script></span></p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><span class="code10">&lt;input type="text" id="input" value="hello world">&lt;/input></span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+function main_function(){
+var input = document.getElementById("input");
+
+function example(){
+    input.value = input.value.toUpperCase();
+}
+
+input.addEventListener("change", example);
+
+}
+
+window.addEventListener("load", main_function);
+
+</script>
+
+
+<input type="text" id="input" value="hello world"></input>
+
+<p>If you <Span>change</Span> the <span>text</span> of the <Span>input</Span> 
+and press <Span>enter</Span> or click somewhere so the <Span>input</Span> loses 
+focus the <Span>text</Span> will be <Span>capitalized</Span>.</p>
+</article>
+
+<hr>
+
+<article id="nine">
+
+<header>
+
+    <h1>Event Propagration</h1>
+
+</header>
+
+<p>There are two ways of <Span>event propagation</Span> in the <span>HTML DOM</span>:
+<span>bubbling</span> and <Span>capturing</Span>.</p>
+
+<p><span>Event propagation</span> allows for the definition of the <Span>element order</Span>
+when an <Span>event</Span> occurs. If you have a <span>paragraph</span> inside a <span>div</span>
+element, and you have assigned <Span>click event</Span> to both of them, when you 
+click on the <Span>paragraph</Span>, which element's <Span>click event</Span> should be 
+handled first?</p>
+
+<p>In <Span>bubbling</Span>, the <Span>innermost element's event</Span> is handled
+<Span>first</Span> and then the <Span>outer element's event</Span> is handled. The 
+<span>&lt;p&gt;</span> element's <span>click event</span> is handled <Span>first</Span>, 
+followed by the <Span>&lt;div&gt;</Span> element's <Span>click event</Span>.</p>
+
+<p>In <span>capturing</span> the <Span>outermost element's event</Span> is handled <Span>first</Span>
+and then the <Span>inner</Span>. The <Span>&lt;div&gt;</Span> element's <Span>click event</Span> 
+is handled <span>first</span>, followed by the <Span>&lt;p&gt;</Span> element's 
+<span>click event</span>.</p>
+
+<p>To set the <span>event propagation</span> you simply add a <Span>third parameter</Span>
+inside the <Span>addEventListener()</Span> method, you should either write <Span>true</Span>
+or <Span>false</Span>, if you don't use that third parameter it is <Span>false</Span> by <Span>default</Span>, 
+<Span>false</Span> means <Span>bubbling</Span>, <Span>true</Span> means <span>capturing</span>.</p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><Span class="code10">&lt;div id="cool_div">
+
+    &lt;p id="cool_paragraph">Click Me!&lt;/p>
+
+&lt;/div></Span></p>
+
+<p class="left">CSS Code:</p>
+
+<p class="left"><Span class="code10">#cool_div{
+    background-color: red;
+    width: 200px;
+    height: 100px;
+}</Span></p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">var div = document.getElementById("cool_div");
+    var children = div.children;
+    
+    function click_div(){
+    
+        if ( children.length == 1 ){
+        var paragraph = document.createElement("p");
+        var text = document.createTextNode("Created Paragraph");
+        
+        paragraph.appendChild(text);
+        div.appendChild(paragraph);};
+    };
+    
+    function click_paragraph(){
+        children[1].style.color = "blue";
+    }
+    
+    div.addEventListener("click", click_div, false);
+    children[0].addEventListener("click", click_paragraph);</Span></p>
+
+<p class="left">Outcome:</p>
+
+<style>
+
+#cool_div{
+    background-color: red;
+    width: 200px;
+    height: 100px;
+}
+
+</style>
+
+<div id="cool_div">
+
+    <p id="cool_paragraph">Click Me!</p>
+
+</div>
+
+<script>
+
+var div = document.getElementById("cool_div");
+var children = div.children;
+
+function click_div(){
+
+    if ( children.length == 1 ){
+    var paragraph = document.createElement("p");
+    var text = document.createTextNode("Created Paragraph");
+    
+    paragraph.appendChild(text);
+    div.appendChild(paragraph);};
+};
+
+function click_paragraph(){
+    children[1].style.color = "blue";
+}
+
+div.addEventListener("click", click_div, false);
+children[0].addEventListener("click", click_paragraph);
+
+</script>
+
+<p>In the code above I used <Span>false</Span> which means <Span>bubbling</Span>, 
+so when you click the <Span>paragraph</Span>, the <Span>paragraph's event</Span> is handled 
+<span>first</span>, and the <Span>div's click event</Span> is handled second, therefore, 
+since the <Span>second child</Span> of the <Span>div</Span> is created <span>after</span>
+the <span>paragraph's click event</span> is handled, the <Span>click_paragraph</Span>
+function cannot find the <span>second child</span> and does nothing, if you click 
+the <Span>paragraph</Span> again after the <span>second child</span> is created 
+then you will see it will turn to blue.</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">var div2 = document.getElementById("cool_div2");
+    var children2 = div2.children;
+    
+    function click_div(){
+    
+        if ( children2.length == 1 ){
+        var paragraph = document.createElement("p");
+        var text = document.createTextNode("Created Paragraph");
+        
+        paragraph.appendChild(text);
+        div2.appendChild(paragraph);};
+    };
+    
+    function click_paragraph(){
+        children2[1].style.color = "blue";
+    }
+    
+    div2.addEventListener("click", click_div, true);
+    children2[0].addEventListener("click", click_paragraph);</Span></p>
+
+<p class="left">Outcome:</p>
+
+<style>
+
+#cool_div2{
+    background-color: red;
+    width: 200px;
+    height: 100px;
+}
+
+</style>
+
+<div id="cool_div2">
+
+    <p>Click Me!</p>
+
+</div>
+
+<Script>
+
+var div2 = document.getElementById("cool_div2");
+var children2 = div2.children;
+
+function click_div(){
+
+    if ( children2.length == 1 ){
+    var paragraph = document.createElement("p");
+    var text = document.createTextNode("Created Paragraph");
+    
+    paragraph.appendChild(text);
+    div2.appendChild(paragraph);};
+};
+
+function click_paragraph(){
+    children2[1].style.color = "blue";
+}
+
+div2.addEventListener("click", click_div, true);
+children2[0].addEventListener("click", click_paragraph);
+
+</script>
+
+<p>Now that the <span>Event Propagation</span> is set to <span>true</span> (capturing), 
+the <span>click_paragraph</span> function executes after the <Span>click_div</Span> function,
+when you click the <Span>paragraph</Span>, therefore the <Span>second child</Span> is found, 
+and the <Span>second paragraph</Span> turns to <Span>blue</Span> on the first click.</p>
+
+</article>
+
+<hr>
+
+<article id ="ten">
+
+<header>
+
+<h1>
+Image Slider
+</h1>
+
+</header>
+
+<p>Now that we know how to edit the DOM and use
+events lets make a fun project to pracrice, 
+I will make a simple image slider, here is 
+the code:</p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><span class="code10">&lt;img id="image" src="https://static.toiimg.com/photo/72975551.cms">
+      
+      &lt;div id="b-container">
+      &lt;button id="prev">Previous&lt;/button>
+      &lt;button id="next">Next&lt;/button>
+      &lt;/div></span></p>
+
+<p class="left">CSS Code:</p>
+
+<p class="left"><span class="code10">#image {
+    width: 343px;
+    height: 220px;
+    display: block;
+    margin: auto;
+    border: 2px solid gray;
+}
+
+#b-container{
+    display: grid;
+    grid-template-columns: 150px 150px;
+    grid-column-gap: 12%;
+    margin: auto;
+    width: 343px;
+}
+
+#prev, #next {
+    width: 150px;
+    height: 100px;
+    margin: 20px auto 20px auto;
+    background-color: green;
+    border: 2px solid gray;
+    color: white;
+    text-shadow: 1px 1px 1px black, 
+    -1px -1px 1px black;
+}</span></p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">function onload(){
+
+var image = document.getElementById("image");
+var prev = document.getElementById("prev");
+var next = document.getElementById("next");
+var num = 0;
+
+var urls = ["https://static.toiimg.com/photo/72975551.cms", "https://cdn.pixabay.com/photo/2015/02/24/15/41/dog-647528__340.jpg", "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQkjmUyRahAl-j_OOJFpM8jl2wbyQ0z7SI_0w&usqp=CAU"];
+
+function next_click(){
+
+num++
+
+if (num >= urls.length){ // num >= 3
+num = 0
+};
+
+image.src = urls[num];
+
+};
+
+next.addEventListener("click", next_click);
+
+function prev_click(){
+
+num--
+
+if ( num &lt; 0){ 
+num = urls.length-1; // 3 - 1 = 2
+};
+
+image.src = urls[num];
+
+};
+
+prev.addEventListener("click", prev_click);
+
+};
+
+window.addEventListener("load", onload);</span></p>
+
+<p class="left">Outcome:</p>
+
+<style>
+#image {
+    width: 343px;
+    height: 220px;
+    display: block;
+    margin: auto;
+    border: 2px solid gray;
+}
+
+#b-container{
+    display: grid;
+    grid-template-columns: 150px 150px;
+    grid-column-gap: 12%;
+    margin: auto;
+    width: 343px;
+}
+
+#prev, #next {
+    width: 150px;
+    height: 100px;
+    margin: 20px auto 20px auto;
+    background-color: green;
+    border: 2px solid gray;
+    color: white;
+    text-shadow: 1px 1px 1px black, 
+    -1px -1px 1px black;
+}
+</style>
+
+<img id="image" src="https://static.toiimg.com/photo/72975551.cms">
+      
+      <div id="b-container">
+      <button id="prev">Previous</button>
+      <button id="next">Next</button>
+      </div>
+      
+      
+<script>
+      function onload(){
+      
+      var image = document.getElementById("image");
+      var prev = document.getElementById("prev");
+      var next = document.getElementById("next");
+      var num = 0;
+      
+      var urls = ["https://static.toiimg.com/photo/72975551.cms", "https://cdn.pixabay.com/photo/2015/02/24/15/41/dog-647528__340.jpg", "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQkjmUyRahAl-j_OOJFpM8jl2wbyQ0z7SI_0w&usqp=CAU"];
+      
+      function next_click(){
+      
+      num++
+      
+      if (num >= urls.length){ // num >= 3
+      num = 0
+      };
+      
+      image.src = urls[num];
+      
+      };
+      
+      next.addEventListener("click", next_click);
+      
+      function prev_click(){
+      
+      num--
+      
+      if ( num < 0){ 
+      num = urls.length-1; // 3 - 1 = 2
+      };
+      
+      image.src = urls[num];
+      
+      };
+      
+      prev.addEventListener("click", prev_click);
+      
+      };
+      
+      window.addEventListener("load", onload);
+</script>
+      
+     <p>I think the code is pretty simple, 
+     there isn't much explaining to do, the 
+     urls.length method returns the number of values of the array,
+     in the example above we have 3 values, I did urls.length-1 in the 
+     second function because the third value of the array 
+     is chosen by writing images[2], since we start counting from 0.
+
+</article>
+
+<hr>
+
+<article id="eleven">
+
+<header>
+
+<h1>
+Form Validation
+</h1>
+
+</header>
+
+<p><span>HTML5</span> adds some <span>attriattributes</span> that allow <span>form validation</span>. For example, the <span>required attribute</span> can be added to an input field to make it mandatory to fill in.
+More complex <span>form validation</span> can be done using <span>JavaScript</span>.
+For example, let's create a form with two inputs and one button. The text in both fields should be the same and not blank to pass the validation.</p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><span class="code10">&lt;form id="form" action="https://www.google.com/">
+    
+    &lt;table>
+    &lt;tr>
+    
+    &lt;td>
+    &lt;label for="input1">Email:&lt;/label>
+    &lt;/td>
+    
+    &lt;td>
+    &lt;input type="text" id="input1"> 
+    &lt;/td>
+    
+    &lt;/tr>
+    &lt;tr>
+    
+    &lt;td>
+    &lt;label for="input2">Confirm Email:&lt;/label>
+    &lt;/td>
+    
+    &lt;td>
+    &lt;input type="text" id="input2">
+    &lt;/td>
+    
+    &lt;/tr>
+    &lt;tr>
+    
+    &lt;td class="submit-td" colspan="2">
+    &lt;input type="submit" value="submit" id="submit">
+    &lt;/td>
+    
+    &lt;/tr>
+    &lt;/table>
+    
+    </form></span></p>
+
+<p class="left">CSS Code:</p>
+
+<p class="left"><span class="code10">table{
+    border: 2px solid green;
+    margin: auto;
+    background-color: black;
+    color: lightgreen;
+}
+
+td{
+    border: 2px solid green;
+    text-align: right;
+}
+
+.submit-td{
+   padding: 5px;
+}</span></p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">function load69(){
+var form = document.getElementById("form");
+var input1 = document.getElementById("input1");
+var input2 = document.getElementById("input2");
+
+function submit(){
+if (input1.value != "" || input2.value != ""){
+if (input1.value == input2.value){
+return true;
+} else {
+alert("The two emails do not match");
+return false;
+}
+} else {
+alert("Please fill in your email adress")
+return false
+}
+
+};
+
+function check_submit(){
+if (submit() == false){
+event.preventDefault();
+}
+};
+
+form.addEventListener("submit", check_submit);
+
+};
+
+window.addEventListener("load", load69);</span></p>
+
+<p class="left">Outcome:</p>
+
+<style>
+table{
+    border: 2px solid green;
+    margin: auto;
+    background-color: black;
+    color: lightgreen;
+}
+
+td{
+    border: 2px solid green;
+    text-align: right;
+}
+
+.submit-td{
+   padding: 5px;
+}
+</style>
+
+
+<form id="form" action="https://www.google.com/">
+    
+    <table>
+    <tr>
+    
+    <td>
+    <label for="input1">Email:</label>
+    </td>
+    
+    <td>
+    <input type="text" id="input1"> 
+    </td>
+    
+    </tr>
+    <tr>
+    
+    <td>
+    <label for="input2">Confirm Email:</label>
+    </td>
+    
+    <td>
+    <input type="text" id="input2">
+    </td>
+    
+    </tr>
+    <tr>
+    
+    <td class="submit-td" colspan="2">
+    <input type="submit" value="submit" id="submit">
+    </td>
+    
+    </tr>
+    </table>
+    
+    </form>
+    
+    <script>
+    function load69(){
+    var form = document.getElementById("form");
+    var input1 = document.getElementById("input1");
+    var input2 = document.getElementById("input2");
+    
+    function submit(){
+    if (input1.value != "" || input2.value != ""){
+    if (input1.value == input2.value){
+    return true;
+    } else {
+    alert("The two emails do not match");
+    return false;
+    }
+    } else {
+    alert("Please fill in your email adress")
+    return false
+    }
+    
+    };
+    
+    function check_submit(){
+    if (submit() == false){
+    event.preventDefault();
+    }
+    };
+    
+    form.addEventListener("submit", check_submit);
+    
+    };
+    
+    window.addEventListener("load", load69);
+    </script>
+    
+    <p>The only thing I haven't explained before 
+    is the event.preventDefault(); method, which basically 
+    prevents the form from being submitted.</p>
+    
+</article>
+
+<hr>
+
+<article id="twelve">
+
+<header>
+    <h1>innerHTML vs textContent vs innerText</h1>
+</header>
+
+<p>First, lets understand the difference between <Span>textContent</Span>
+and <Span>innerText</Span>, while using these to <span>insert text</span> inside 
+an <Span>element</Span>, they work the same way:</p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><Span class="code10">&lt;p class="xample">&lt;/p>
+&lt;p class="xample">&lt;/p></Span></p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let body = document.body;
+let paragraphs = body.querySelectorAll("p.xample");
+
+paragraphs[0].innerText = "Hello World!";
+paragraphs[1].textContent = "Karak10 is stupid!";</span></p>
+
+<p class="left">Outcome:</p>
+
+<p class="xample"></p>
+<p class="xample"></p>
+
+<Script>
+
+if(true){
+
+let body = document.body;
+let paragraphs = body.querySelectorAll("p.xample");
+
+paragraphs[0].innerText = "Hello World!";
+paragraphs[1].textContent = "Karak10 is stupid!";
+
+}
+
+
+</Script>
+
+<p>However, when used to <span>view</span> content, in the <Span>console</Span> for example, 
+see how they two work differently:</p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><span class="code10">&lt;div class="xample2">
+&lt;span>Hello&lt;/span>
+&lt;span style="display: none;">Bye&lt;/span>
+&lt;/div></span></p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let div = document.body.querySelector(".xample2");
+
+console.log(div.innerText);
+console.log(div.textContent);</Span></p>
+
+<p class="left">Outcome:</p>
+
+<img src="../images/γ1.PNG" style="display: block; margin: auto; border: 2px solid black; border-radius: 20px;">;
+
+<p>As you can see, <span>innerText</span> only outputs the <span>text</span>
+that is <span>displayed</span> on the <span>DOM</span>, while 
+<span>textContent</span> looks inside the <span>HTML</span> and 
+copies the <Span>content</Span> as it is written inside the <span>HTML</span>, 
+even the <span>break line</span> in the code is rendered.</p>
+
+<p>About <span>innerHTML</span> now, I think I talked about it before, what's so cool about it 
+is that we can inert <span>HTML code</span> using it, if we wrote 
+<span>innerText = "&lt;p>Hello&lt;/p>"</span> for example the 
+paragraph elements would be rendered as text, and it wouldn't create 
+a paragraph, if we did the same thing with <span>innerHTML</span> though see what would happen:</p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><span class="code10">&lt;p class="xample3">&lt;/p>
+&lt;p class="xample3">&lt;/p></span></p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let body = document.body;
+let paragraphs = body.querySelectorAll(".xample3");
+
+paragraphs[0].innerText = "&lt;strong>Hello World!&lt;/strong>"; 
+paragraphs[1].innerHTML = "&lt;strong>Hello World!&lt;/strong>"; </span></p>
+
+<p class="left">Outcome:</p>
+
+<p class="xample3"></p>
+<p class="xample3"></p>
+
+<Script>
+
+if(true){
+
+let body = document.body;
+let paragraphs = body.querySelectorAll(".xample3");
+
+paragraphs[0].innerText = "<strong>Hello World!</strong>"; 
+paragraphs[1].innerHTML = "<strong>Hello World!</strong>"; 
+
+}
+
+
+</Script>
+
+</article>
+
+<hr>
+
+<article id="thirteen">
+
+<header>
+    <h1>Everything about classList</h1>
+</header>
+
+<h2><u>The Basics:</u></h2>
+
+<p>The most basic usage of <Span>classList</Span> is 
+for <span>adding</span> and <span>removing</span> the <Span>classes</Span>
+of <Span>HTML elements</Span>. As you can guess, this feauture could 
+be used pretty well with <span>CSS</span> to create changes in the 
+<span>DOM</span> very easily.</p>
+
+<p>When you access the <Span>classList</Span> of an <Span>element</Span>
+you can use the <span>add</span> method to <span>add</span> a 
+<span>class</span> and the <span>remove</span> method to <span>remove</span>
+a <span>class</span>. This is pretty straight forward, but something many people 
+don't know is that you can pass as many <Span>classes</Span> as you want to 
+these<Span>methods</Span> and they will <Span>add/remove</Span> the m all. </p>
+
+<P>You can also <Span>access</Span> the <Span>string</Span> of all <Span>classes</Span>
+by using the <Span>value</Span> property.</P>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let div = document.querySelector("#class-example");
+
+div.classList.add("new_class", "another_class");
+
+document.write(div.classList.value);
+
+div.classList.remove("another_class");
+
+document.write("&lt;br>" + div.classList.value);</Span></p>
+
+<p class="left">Outcome:</p>
+
+<div id="class-example"></div>
+
+<script>
+
+if(true){
+
+let div = document.querySelector("#class-example");
+
+div.classList.add("new_class", "another_class");
+
+document.write(div.classList.value);
+
+div.classList.remove("another_class");
+
+document.write("<br>" + div.classList.value);
+
+}
+
+
+</script>
+
+<p>If you take a look to it's <span>prototype tree</span> (I talk about what 
+the prototype tree is later in my notes) you can see the <span>value</span> proprety, 
+and all the <Span>methods</Span> I'm gonna speak about in this section.</p>
+
+<img src="../images/γ3.PNG" style="display: block; margin: auto; border: 3px solid black; border-radius: 20px;">
+
+<h2><u>classList.contains(string)</u></h2>
+
+<p>Sometimes you need to check to see if an <Span>element</Span> has 
+a <Span>specific class</Span> in <span>JavaScript</span> in order to 
+perform a certain operation. This is luckily very easy to do with <span>classList</span>. 
+You can just call the <span>contains</span> method and pass the 
+<Span>name</Span> of the <span>class</span> you want to check. This 
+<span>method</span> will return <Span>true</Span> if the <Span>element</Span>
+has that <Span>class</Span> and <span>false</span> if it doesn't.</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let div = document.querySelector("#class-example");
+
+document.write(div.classList.contains("new_class"));
+document.write(div.classList.contains("another_class"));</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let div = document.querySelector("#class-example");
+
+document.write(div.classList.contains("new_class"));
+document.write(div.classList.contains("another_class"));
+
+}
+
+</script>
+
+<h2><u>classList.toggle(string, boolean)</u></h2>
+
+<p>The <Span>toggle</Span> method lets you <Span>toggle</Span> a 
+<Span>class</Span> on/off depending on if the <Span>class</Span> 
+is already on the <Span>element</Span> or not, if you wanted to do this without 
+the <Span>toggle</Span> method you would do this like this: </p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let div = document.querySelector("#class-example");
+
+function toggle(x){
+if(div.classList.contains(x)){
+    div.classList.remove(x);
+} else { 
+    div.classList.add(x); 
+}
+}
+
+toggle("new_class");
+toggle("another_class");
+
+document.write(div.classList.value);</Span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let div = document.querySelector("#class-example");
+
+function toogle(x){
+if(div.classList.contains(x)){
+    div.classList.remove(x);
+} else { 
+    div.classList.add(x); 
+}
+}
+
+toogle("new_class");
+toogle("another_class");
+
+document.write(div.classList.value);
+
+}
+
+</script>
+
+<p>With the <Span>toggle</Span> method however we can easier 
+do the same thing like this:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let div = document.querySelector("#class-example");
+
+div.classList.toggle("another_class");
+div.classList.toggle("new_class");
+
+document.write(div.classList.value);</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let div = document.querySelector("#class-example");
+
+div.classList.toggle("another_class");
+div.classList.toggle("new_class");
+
+document.write(div.classList.value);
+
+}
+
+</script>
+
+<p>This is not the only use of <Span>toogle</Span> though. Sometimes you 
+need to <span>toggle</span> a <Span>class</Span> based on a <Span>boolean value</Span>. 
+For example if the <Span>boolean</Span> of a variable <Span>win</Span>
+is <span>true</span> you want to <Span>add</Span> the <span>win class</span> to an 
+<span>element</span>, otherwise if <Span>win</Span> is <Span>false</Span>
+you want to <span>remove</span> the <Span>win class</Span>. Doing so is as simple as below:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let div = document.querySelector("#class-example");
+
+let win = true;
+
+div.classList.toggle('win', win);
+
+document.write(div.classList.value);</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let div = document.querySelector("#class-example");
+
+let win = true;
+
+div.classList.toggle('win', win);
+
+document.write(div.classList.value);
+
+}
+
+
+</script>
+
+<h2><u>classList.forEach(function)</u></h2>
+
+<p>Sometimes you just want to <Span>loop</Span> through <Span>all the classes</Span>
+of an <Span>element</Span> to do some advanced checks or changes. This is easy to do 
+with the <Span>forEach</Span> method. The <Span>forEach</Span> method works 
+just like the <Span>array.forEach</Span> method.</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let div = document.querySelector("#class-example");
+div.classList.add("last_class");
+
+let i = 0;
+
+div.classList.forEach(x => {
+
+i++
+
+if(i < div.classList.length){
+    document.write(`${x}, `)
+} else {
+    document.write(`${x}.`)
+}
+
+})</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let div = document.querySelector("#class-example");
+
+div.classList.add("last_class");
+
+let i = 0;
+
+div.classList.forEach(x => {
+
+i++
+
+if(i < div.classList.length){
+document.write(`${x}, `)
+} else {
+   document.write(`${x}.`)
+}
+
+})
+
+}
+
+</script>
+
+<h2><u>classList.replace(string, string)</u></h2>
+
+<p>The <Span>replace</Span> method takes <Span>two class names</Span>
+and will <Span>replace</Span> the <Span>first class name</Span>
+with the <Span>second class name</Span> if the <Span>first class name</Span>
+is already on the <Span>element</Span>. This <Span>method</Span> will also 
+return <Span>true</Span> if the <Span>replace was successful</Span> 
+or <Span>false</Span> if the <Span>element</Span> did not contain the 
+<Span>first class name</Span>:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let div = document.querySelector("#class-example");
+
+document.write(div.classList.replace("win", "lost"));
+document.write("&lt;br>" + div.classList.value);</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let div = document.querySelector("#class-example");
+
+document.write(div.classList.replace("win", "lost"));
+document.write("<br>" + div.classList.value);
+
+}
+
+</script>
+
+<p>Many of the stuff I wrote in this section were taken from 
+    <a href="https://blog.webdevsimplified.com/2020-11/class-list/">this article</a> made by <span>Kyle Cook</span>, 
+    a great web developer who also has a YouTube channel called 
+    <span class="code10">Web Dev Simplified</span>.
+</p>
+
+</article>
+
+<hr>
+
+<article id="fourteen">
+
+<header>
+    <h1>Data Attributes</h1>
+</header>
+
+<p>One of the best ways to store <Span>data</Span> in <span>HTML</span>
+is with <span>data attributes</span>. These <span>data attributes</span>
+can be used to do some pretty cool thing in <span>CSS</span> as you can 
+see in <a href="https://blog.webdevsimplified.com/2019-10/use-data-attributes-in-css/" target="_blank">this article</a>, but <Span>data attributes</Span>
+are most useful when combined with <span>JavaScript</span>.</p>
+
+<h2><u>Data Attributes Introduction:</u></h2>
+
+<p>To get started talking about <span>data attributes</span> we need to 
+first have some <span>HTML</span> with <span>data attributes</span>. To create a 
+<span>data attribute</span> in <span>HTML</span>, we just need to add a 
+<Span>custom attribute</Span> to our <Span>HTML element</Span> that 
+starts with <Span>data-</Span>.</p>
+
+<p class="left">Example:</p>
+
+<p class="left"><span class="code10">&lt;div 
+  id="test-div"
+  data-first-name="Alex"
+  data-last-name="Gkiafis"
+  data-active 
+>&lt;/div>
+</span></p>
+
+<div 
+  id="test-div"
+  data-first-name="Alex"
+  data-last-name="Gkiafis"
+  data-active 
+></div>
+
+<h2><u>Reading Data Attributes</u></h2>
+
+<p>We now have a <Span>div</Span> with three <span>custom data attributes</span>. 
+Now let's move over to <Span>JavaScript</Span> and see how we would 
+access thse <span>data attributes</span>.</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let div = document.getElementById("test-div");
+
+console.log(div.dataset);</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let div = document.getElementById("test-div");
+
+console.log(div.dataset);
+
+}
+
+</script>
+
+<img src="../images/γ2.PNG" style="display: block; margin: auto; border: 3px solid black; border-radius: 20px;">
+
+<p>The <span>dataset</span> property on an <Span>element</Span> will 
+return a <span>DOMStringMap</span> which is essentially just 
+an <span>object</span> that contains all the <span>custom data attributes</span>
+of an <span>element</span>.</p>
+
+<p>In the image above you should notice two interesting things, firstly,
+all of our properties are converted from snake case, <Span>first-name</Span>,
+to camel case, <Span>firstName</Span>. This is because in <span>JavaScript</span> 
+object properties are primarily written as camel case so this just makes working with 
+the <span>JavaScript object</span> musch easier.
+</p>
+
+<p>Secondly, you will notice that our <Span>active</Span> property 
+has a <Span>value</Span> of <span>""</span>. This is because any 
+<Span>data attribute</Span> without a <Span>value</Span> is assumed to have an <Span>empty string</Span>
+as it's <Span>value</Span>.</p>
+
+<p>In order to <span>access</span> an <span>individual data attribute</span>
+we can just <span>access it</span> like a <span>property</span> on an <Span>object</Span> 
+since <span>dataset</span> is just an <span>object</span>.</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let div = document.getElementById("test-div");
+
+document.write(`${div.dataset.firstName} ${div.dataset.lastName}`);</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let div = document.getElementById("test-div");
+
+document.write(`${div.dataset.firstName} ${div.dataset.lastName}`);
+
+}
+
+
+</script>
+
+<h2><u>Writing Data Attributes:</u></h2>
+
+<p>In order to create a <Span>new data attribute</Span> using 
+<Span>JavaScript</Span> we just need to add a <Span>new property</Span>
+to the <span>dataset object</span> with a <span>value</span>, just like how 
+we would do it for a <Span>normal object</Span>:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let div = document.getElementById('test-div');
+
+div.dataset.test = "Hello World!";
+
+document.write(div.dataset.test);</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let div = document.getElementById('test-div');
+
+div.dataset.test = "Hello World!";
+
+document.write(div.dataset.test);
+
+}
+
+</script>
+
+<p>This will <span>update</span> the <span>dataset object</span> and 
+our <span>HTML</span> which means this could come in handy with <span>CSS</span>, 
+imagine, adding an <span>attribute</span> or changing the <Span>value</Span> 
+of one could immediately update the <span>CSS</span> of the <Span>element</Span>.</p>
+
+<h2><u>Updating Data Attributes:</u></h2>
+
+<P>To <span>update</span> the <span>value</span> of a <span>data attribute</span>
+you can easily do that just like you would in a <Span>normal object</Span>. We just 
+need to set the <span>value</span> of our <span>dataset property</span>
+to a <span>new value</span> and it will <span>update</span> the 
+<Span>HTML</Span> for us.</P>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let div = document.getElementById("test-div");
+
+div.dataset.active = "True";
+
+document.write(div.dataset.active);</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let div = document.getElementById("test-div");
+
+div.dataset.active = "True";
+
+document.write(div.dataset.active);
+
+}
+
+</script>
+
+<h2><u>Delete Data Attributes</u></h2>
+
+<p>Deleting <span>data attributes</span> is a bit different since we 
+need to actually <span>remove</span> the <Span>property</Span> from our <Span>object</Span>. 
+This is because if we try setting the <span>value</span> to <span>undefined</span>
+or <Span>null</Span> the <Span>dataset object</Span> will still have 
+a <Span>reference</Span> to that <Span>property</Span> and will 
+set the <span>value</span> of our <span>HTML data attribute</span> 
+to a <span>string</span> of <span>null</span> or <span>undefined</span>.</p>
+
+<p>To delete an <Span>object property</Span> we need to use the <span>delete</span>
+kayword to remove it completely from the <span>object</span> like in the example below:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let div = document.getElementById("test-div"); 
+
+delete div.dataset.active;
+
+document.write(div.dataset.active);</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let div = document.getElementById("test-div"); 
+
+delete div.dataset.active;
+
+document.write(div.dataset.active);
+}
+
+</script>
+
+<h2><u>Real World Example:</u></h2>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><span class="code10">&lt;button data-modal-id="modal-1">Open Modal 1&lt;/button>
+&lt;button data-modal-id="modal-2">Open Modal 2&lt;/button>
+
+&lt;div id="modal-1" class="hide">Modal 1&lt;/div>
+&lt;div id="modal-2" class="hide">Modal 2&lt;/div></span></p>
+
+<p class="left">CSS Code:</p>
+
+<p class="left"><span class="code10">.hide{
+    display: none;
+}
+
+.show{
+    display: unset;
+}</span></p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let buttons = document.querySelectorAll("[data-modal-id]");
+
+for(let button of buttons){
+
+let modalId = button.dataset.modalId;
+let div = document.getElementById(modalId);
+
+button.addEventListener("click", () => div.classList.toggle("show"));
+
+}</span></p>
+
+<p class="left">Outcome:</p>
+
+<style>
+
+.hide{
+    display: none;
+}
+
+.show{
+    display: unset;
+}
+
+</style>
+
+<button data-modal-id="modal-1">Open Modal 1</button>
+<button data-modal-id="modal-2">Open Modal 2</button>
+
+<div id="modal-1" class="hide">Modal 1</div>
+<div id="modal-2" class="hide">Modal 2</div>
+
+<script>
+
+if(true){
+
+let buttons = document.querySelectorAll("[data-modal-id]");
+
+for(let button of buttons){
+
+let modalId = button.dataset.modalId;
+let div = document.getElementById(modalId);
+
+button.addEventListener("click", () => div.classList.toggle("show"));
+
+}
+
+}
+
+
+</script>
+
+<p>To create this section I copied a lot of stuff from <a href="https://blog.webdevsimplified.com/2020-10/javascript-data-attributes/">this article</a>, 
+it was made by <Span>Kyle Cook</Span>, a really good web developer that creates 
+really cool YouTube tutorials and also has a great blog, as you can see by your self 
+if you read his articles, usually, when I find stuff online to study and 
+write about them in my notes I need to simplify the stuff using easier words and explanations, 
+for this article however, I couldn't possible make it more simple, his 
+nick name is Web Dev Simplified after all. </p>
+
+</article>
+
+<hr>
+
+<article id="fifteen">
+
+<header>
+    <h1>More about Event Listeners</h1>
+</header>
+
+<h2><u>The event object:</u></h2>
+
+<p>When you add an <span>event</span> to an <Span>element</Span> 
+you need to add a <Span>function</Span> to be <span>executed</span> 
+as the <Span>second parameter</span>, something you may not know however
+is that this <Span>function</span> can take a <span>parameter</span> 
+which will <Span>reference</Span> the <span>event object</span>:</p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><span class="code10">&lt;button id="testbutton">Click me dude&lt;/button></span></p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let button = document.querySelector("#testbutton");
+
+button.addEventListener("click", e => console.dir(e));</Span></p>
+
+<p class="left">Outcome:</p>
+
+<button id="testbutton">Click me dude</button>
+
+<script>
+
+if(true){
+
+let button = document.querySelector("#testbutton");
+
+button.addEventListener("click", e => console.dir(e));
+
+}
+
+</script>
+
+<img src="../images/δ1.PNG" style="display: block; margin: 20px auto 20px auto; border: 3px solid black; border-radius: 20px;">
+
+<p>As you can see, this <Span>object</Span> can be pretty useful, since 
+it contains a lot of information about the <Span>event</Span>, such as 
+which element has triggered it, etc.</p>
+
+<p>The <Span>even object</Span> has a lot of useful <Span>properties</Span> you can 
+use, however, the most common one that's used is probably the <span>target</span>
+property, which returns the <Span>element</Span> tha triggered the <Span>event</Span>.</p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><span class="code10">&lt;button id="buttontest2">Click me&lt;/button>
+
+&lt;div id="divtest" style="margin-top: 20px;">&lt;/div></span></p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let button = document.getElementById("buttontest2");
+let div = document.getElementById("divtest");
+
+button.addEventListener("click", e => {
+    div.textContent = e.target;
+})</Span></p>
+
+<p class="left">Outcome:</p>
+
+<button id="buttontest2">Click me</button>
+
+<div id="divtest" style="margin-top: 20px;"></div>
+
+<Script>
+
+if(true){
+
+let button = document.getElementById("buttontest2");
+let div = document.getElementById("divtest");
+
+button.addEventListener("click", e => {
+    div.textContent = e.target;
+})
+
+}
+
+</Script>
+
+<h2><u>Capture and Bubbling:</u></h2>
+
+<p>So, I already talked about this before in this page, but I 
+think I should probably explain these a little better, and in 
+more depth perhaps
+</p>
+
+<p>When an <Span>element</Span> is assigned a <Span>click event</Span>
+and it's <Span>parent</Span>, and <span>grandparent</span> also are 
+assigned <Span>click events</Span>, when the <span>child</span> 
+is <Span>clicked</Span>, the <Span>JavaScript</Span> will 
+read the <span>click events</span> from <Span>parent</Span> to <Span>child</Span>, 
+so it will start from the <span>grandparent</span>, 
+then to <Span>parent</Span> and then to the <span>child</span>, after that, 
+the <Span>events</Span>, by default, will be executed in 
+order from <span>child</span>, to <span>parent</span>, to <Span>grandfather</Span>, 
+that's what we call <Span>bubbling</Span>, to remember it, simple remember 
+that <Span>bubbles</Span> go <span>up</span>, just like how the <Span>events</Span>
+are triggered from the buttom to the top of the document tree.</p>
+
+<p>If you turned on <Span>capture mode</Span> for 
+the <span>parent's click event</span>, when <span>JavaScript</span> 
+checked the <span>click events</span> from <Span>grandparent</Span>, 
+to <span>parent</span> and finally to <span>child</span>, it would read that <span>parent's click event</span>
+is on <Span>capture mode</Span> and would <Span>execute it</Span> before 
+the <Span>child's click event</Span>, then, after <Span>child's click event</Span>
+was triggered it would start executing the <Span>other click events</Span>
+towards the <Span>document tree</Span>, so it would execute <Span>grandparent's click event</Span>|
+next, and at the end, the <Span>events</Span> would had be executed in this order: 
+<span>parent, child, grandparent</span>.</p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><span class="code10">&lt;div id="D-grandparent">
+&lt;div id="D-parent">
+&lt;div id="D-child"> 
+&lt;div style="font-weight: bold;">Click me&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div></span></p>
+
+<p class="left">CSS Code:</p>
+
+<p class="left"><span class="code10">#D-grandparent{
+    width: 200px;
+    height: 150px;
+    background-color: orange;
+    padding: 20px;
+    margin: 20px auto 20px auto;
+}
+
+#D-parent{
+    background-color: lightblue;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    justify-items: center;
+}
+
+#D-child{
+    background-color: yellow;
+    width: 75%;
+    height: 75%;
+    margin: auto;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}</span></p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let grandparent = document.getElementById("D-grandparent");
+let parent = document.getElementById("D-parent");
+let child = document.getElementById("D-child");
+
+document.addEventListener('click', e => console.log('Document Capture'), { capture: true});
+document.addEventListener('click', e => console.log('Document Bubble'));
+grandparent.addEventListener('click', e => console.log('Grandparent Capture'), { capture: true });
+grandparent.addEventListener('click', e => console.log('Grandparent Bubble'));
+parent.addEventListener('click', e => console.log('Parent Capture'), { capture: true });
+parent.addEventListener('click', e => console.log('Parent Bubble'));
+child.addEventListener('click', e => console.log('Child Capture'), { capture: true });
+child.addEventListener('click', e => console.log('Child Bubble'));</span></p>
+
+<p class="left">Outcome:</p>
+
+<style>
+
+#D-grandparent{
+    width: 200px;
+    height: 150px;
+    background-color: orange;
+    padding: 20px;
+    margin: 20px auto 20px auto;
+}
+
+#D-parent{
+    background-color: lightblue;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    justify-items: center;
+}
+
+#D-child{
+    background-color: yellow;
+    width: 75%;
+    height: 75%;
+    margin: auto;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+</style>
+
+<div id="D-grandparent">
+<div id="D-parent">
+<div id="D-child"> 
+<div style="font-weight: bold;">Click me</div>
+</div>
+</div>
+</div>
+
+<script>
+
+if(true){
+
+let grandparent = document.getElementById("D-grandparent");
+let parent = document.getElementById("D-parent");
+let child = document.getElementById("D-child");
+
+grandparent.addEventListener('click', e => console.log('Grandparent Capture'), { capture: true });
+grandparent.addEventListener('click', e => console.log('Grandparent Bubble'));
+parent.addEventListener('click', e => console.log('Parent Capture'), { capture: true });
+parent.addEventListener('click', e => console.log('Parent Bubble'));
+child.addEventListener('click', e => console.log('Child Capture'), { capture: true });
+child.addEventListener('click', e => console.log('Child Bubble'));
+
+}
+
+</script>
+
+<img src="../images/δ2.PNG" style="display: block; margin: 20px auto 20px auto; border: 3px solid black; border-radius: 20px;">
+
+<h2><u>The stopPropagation() method:</u></h2>
+
+<p>So, let's continue talking about <Span>bubbling</Span> 
+and <Span>capture</Span> a little more, if you wanted only 
+the <span>child's click event</span> to <Span>trigger</Span>
+and prevent the <Span>other click events</Span> how 
+exactly would you do this? The <span>stopPropagation()</span>
+method can solve this problem very easily, whenever 
+the <span>stopPropagation()</span> method is called, 
+the <span>event propagation</span> will <span>stop</span>:</p>
+
+<style>
+
+    #D-grandparent2{
+        width: 200px;
+        height: 150px;
+        background-color: orange;
+        padding: 20px;
+        margin: 20px auto 20px auto;
+    }
+    
+    #D-parent2{
+        background-color: lightblue;
+        width: 100%;
+        height: 100%;
+        display: grid;
+        justify-items: center;
+    }
+    
+    #D-child2{
+        background-color: yellow;
+        width: 75%;
+        height: 75%;
+        margin: auto;
+        display: grid;
+        justify-items: center;
+        align-items: center;
+    }
+    
+    </style>
+    
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let grandparent = document.getElementById("D-grandparent2");
+let parent = document.getElementById("D-parent2");
+let child = document.getElementById("D-child2");
+
+grandparent.addEventListener('click', e => console.log("Grandparent"));
+
+parent.addEventListener('click', e => console.log("Parent"));
+
+child.addEventListener('click', e => {
+console.log("Child") 
+e.stopPropagation();
+});</span></p>
+
+<p class="left">Outcome:</p>
+
+    <div id="D-grandparent2">
+    <div id="D-parent2">
+    <div id="D-child2"> 
+    <div style="font-weight: bold;">Click me</div>
+    </div>
+    </div>
+    </div>
+
+<script>
+
+if(true){
+
+let grandparent = document.getElementById("D-grandparent2");
+let parent = document.getElementById("D-parent2");
+let child = document.getElementById("D-child2");
+
+grandparent.addEventListener('click', e => console.log("Grandparent"));
+
+parent.addEventListener('click', e => console.log("Parent"));
+
+child.addEventListener('click', e => {
+console.log("Child") 
+e.stopPropagation();
+});
+
+}
+
+</script>
+
+<img src="../images/δ3.PNG" style="display: block; margin: 20px auto 20px auto; border: 3px solid black; border-radius: 20px;">
+
+<h2><u>How to remove an EventListener:</u></h2>
+
+<p>If you want an <Span>event listener</Span> to only 
+run <span>once</span> and then be removed, the easiest way to 
+do that is like this:</p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><span class="code10">&lt;div id="somethingb">
+&lt;button>Click Me</button>
+&lt;/div></span></p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let div = document.getElementById('somethingb');
+let button = document.querySelector('#somethingb button');
+
+button.addEventListener('click', e => div.append("Hello"), { once: true });</span></p>
+
+<p class="left">Outcome:</p>
+
+<div id="somethingb">
+<button>Click Me</button>
+</div>
+
+<script>
+
+if(true){
+
+let div = document.getElementById('somethingb');
+let button = document.querySelector('#somethingb button');
+
+button.addEventListener('click', e => div.append("Hello"), { once: true });
+
+}
+
+</script>
+
+<p>If you want the <span>event</span> to be <span>removed</span>
+under other circumstances you could use the <Span>removeEventListener(event, function)</Span>
+method, however, in order to do that, the <span>eventListener</span> should 
+be using an <span>external function reference</span> and not 
+an <span>anonymous function</span> so that we can use the 
+same <span>function</span> inside the <span>removeEventListener</span> 
+method, that's because an <span>element</span> could have multiple 
+<span>functions</span> executed by the same <span>event</span>, like 
+before that I made <span>click event</span> execute two different <span>functions</span>
+one to demonstrate <span>capture</span> and other to demonstrate <span>bubbling</span>, 
+anyway, that's why the <span>function</span> of the wanted <span>eventListener</span>
+should be able to be referenced, like in the example below:</p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><span class="code10">&lt;div id="diva">
+&lt;button>Click Me&lt;/button>
+&lt;/div></span></p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let div = document.getElementById("diva");
+let button = document.querySelector("#diva button");
+
+let i = 0;
+
+function example(){
+i++
+
+if(i <= 2){
+div.append("foo");
+} else { 
+div.removeEventListener('click', example);
+}
+
+}
+
+button.addEventListener('click', example);</span></p>
+
+<p class="left">Outcome:</p>
+
+<div id="diva"><button>Click Me</button></div>
+
+<script>
+
+if(true){
+
+let div = document.getElementById("diva");
+let button = document.querySelector("#diva button");
+
+let i = 0;
+
+function example(){
+i++
+
+if(i <= 2){
+div.append("foo");
+} else { 
+div.removeEventListener('click', example);
+}
+
+}
+
+button.addEventListener('click', example);
+
+}
+
+</script>
+
+<h2><u>Event Delegation:</u></h2>
+
+<p>Now I will show you a really cool way to 
+    <Span>deligate</Span> events, as we 
+    learned before, if we assign an <Span>event</Span>
+    to the <span>parent</span> of an <span>element</span>
+    and we <span>click</span> the <span>child</span>, 
+    the <span>parent's click event</span> will <Span>trigger</Span>
+    too, so, based on that, we could create a <span>function</span>
+    like the one below:
+</p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><span class="code10">&lt;div id="diva2">
+&lt;button>Click Me&lt;/button>
+&lt;/div></span></p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">function addGlobalEvent(type, selector, callback){
+    document.addEventListener(type, e =>{
+        if (e.target.matches(selector)){
+            callback(e);
+        }
+    })
+}
+
+addGlobalEvent('click', '#diva2 button', (x) =>{
+    document.getElementById("diva2").append("foo");
+});</span></p>
+
+<p class="left">Outcome:</p>
+
+<div id="diva2"><button>Click Me</button></div>
+
+<script>
+
+if(true){
+
+function addGlobalEvent(type, selector, callback){
+    document.addEventListener(type, e =>{
+        if (e.target.matches(selector)){
+            callback(e);
+        }
+    })
+}
+
+addGlobalEvent('click', '#diva2 button', (x) =>{
+    document.getElementById("diva2").append("foo");
+});
+
+}
+
+</script>
+
+<p>Let me explain now, <Span>e.target.matches(selector)</Span> method, 
+takes a <span>CSS selector</span> and returns <span>true</span> if 
+it <span>matches</span> with the <span>target element</span> (the element you clicked), 
+if not it returns <span>false</span>. Because of that, now, 
+if we wanted to add an <span>event listener</span> to <Span>many similar elements</Span>
+we could just give them a <Span>same class</Span> or something, and by 
+running a single <span>function</span> assign the <Span>event listener</Span>
+to all of them, without the need of a <span>loop</span>. Also, since 
+we are assigning the <span>event</span> to the <span>document</span>
+and what it does is simply check if a <Span>wanted selector</Span>
+it the <Span>target</Span> or not, if we <Span>created a new element</Span>
+later with <span>asynchronous code</span>, or we 
+created it later on the <span>script</span>, it wouldn't 
+have any problems, like it would if we had used <span>loops</span> to 
+simultaneously add the <span>event</span> to each <span>element</span> 
+since by the time the <span>new element</span> was created 
+the <Span>loop</Span> would had finished.</p>
+
+<p>Here is a video that helped me a lot, it goes over everything I 
+    include in this section, in 18 minutes, but he does it better of course:
+</p>
+
+<iframe src="https://www.youtube.com/embed/XF1_MlZ5l6M?list=PLYxnDvM22X3NBARfD2aZcyUoKvfdHfygn" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</article>
+
+<hr>
+
+<article id="sixteen">
+
+<header>
+    <h1>window.getComputedStyle(element, pseudoElement)</h1>
+</header>
+
+<p>The <span>getComputedStyle()</span> method gets all the 
+actualy (computed) <span>CSS properties and values</span> of 
+a <span>specified element</span>.</p>
+
+<p>The <Span>computed style</Span> is the <span>style</span> 
+actually used in <span>displaying the element</span>, 
+after <Span>styling</Span> from <Span>multiple sources</Span>
+has been <Span>applied</Span>. <span>Style sources</span> can include: 
+<span>internal style sheets</span>, <span>external style sheets</span>, 
+<Span>inherited styles</Span> and <Span>browser default styles</Span>.</p>
+
+<p>The <Span>getComputedStyle()</Span> method returns a <span>CSSStyleDeclaration object</span>.</p>
+
+<style>
+
+.haaa{
+background-color: rgb(250, 236, 36);
+width: 50px;
+}
+
+</style>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><Span class="code10">&lt;p class="haaa">Hello World!&lt;/p></Span></p>
+
+<p class="left">CSS Code:</p>
+
+<p class="left"><Span class="code10">.haaa{
+background-color: rgb(250, 236, 36);
+width: 50px;
+}</Span></p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let paragraph = document.querySelector(".haaa");
+
+console.log(window.getComputedStyle(paragraph));</Span></p>
+
+<p class="left">Outcome:</p>
+
+<p class="haaa">Hello World!</p>
+
+<script>
+
+if(true){
+
+let paragraph = document.querySelector(".haaa");
+
+console.log(window.getComputedStyle(paragraph));
+
+}
+
+</script>
+
+<img src="../images/ε1.PNG" style="border: 3px solid black; border-radius: 20px; display: block; margin: 20px auto 20px auto">
+
+<p>To get the <Span>value</Span> of a wanted <span>property</span> you can 
+use <span>getPropertyValue</span> method:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let paragraph = document.querySelector(".haaa");
+
+document.write(window.getComputedStyle(paragraph).getPropertyValue("background-color"));</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let paragraph = document.querySelector(".haaa");
+
+document.write(window.getComputedStyle(paragraph).getPropertyValue("background-color"));
+
+}
+
+
+</script>
+
+<p>The <span>second parameter</span> to <Span>getComputedStyle()</Span> method 
+can be used to specify a <span>pseudo-element</span> to <Span>match</Span> and it's 
+<Span>optional</Span>. A <Span>pseudo-element</Span> is a <span>keyword</span>
+added to a <span>selector</span> that lets you <span>style</span> specific 
+part of the <span>selected element(s)</span>, for example, <span>::first-line</span>
+can be used to change the <span>font</span> of the <Span>first line</Span> 
+of a <span>paragraph</span>.</p>
+
+<P>So, what's the different between <Span>window.getComputedStyle(element)</Span> 
+and <Span>element.style</Span>? First of all, the <Span>getComputedStyle</Span>
+method can be only used to <span>read</span> properties, while 
+<Span>style</Span> can be used to <Span>change</Span> or <span>set</span>
+properties too. Except from that, they have also one more difference, 
+<Span>getComputedStyle()</Span> method returns an <Span>object</Span> with all the 
+<span>styles</span> used to <Span>display the element</Span> from <Span>multiple sources</Span>, 
+while <Span>element.style</Span> returns an <span>object</span>
+that contains only the <Span>inline styles</Span> used on the <Span>element</Span>.
+</P>
+
+</article>
+
+<hr>
+
+<article id="seventeen">
+
+<header>
+    <h1>More about CSS properties</h1>
+</header>
+
+<p>The <Span>setProperty(propertyName, value, priority)</Span> method can be used 
+    to <Span>set a new property</Span> to an <span>element</span>. </p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><span class="code10">&lt;p class="ahh">Hello World!&lt;/p></span></p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let paragraph = document.querySelector(".ahh");
+
+paragraph.style.setProperty("background-color", "red");
+paragraph.style.setProperty("color", "white");
+paragraph.style.setProperty("width", "50px");</span></p>
+
+<p class="left">Outcome:</p>
+
+<p class="ahh">Hello World!</p>
+
+<script>
+
+if(true){
+
+let paragraph = document.querySelector(".ahh");
+
+paragraph.style.setProperty("background-color", "red");
+paragraph.style.setProperty("color", "white");
+paragraph.style.setProperty("width", "50px");
+
+}
+
+</script>
+
+<p>The <span>getPropertyValue(property)</span> method returns the <span>value</span>
+    of the <Span>specified property</Span>, however, as I explained in the pervious section, 
+    the <span>style</span> property returns an <span>object</span> that 
+    contains only the <span>inline style properties</span>, any <Span>properties</Span>
+    added from <span>external style sheets</span>, 
+    <span>inherited styles</span> and <span>browser default styles</span> will not
+    be found, to read these you will need to use <span>window.getComputedStyle(element)</span> instead:</p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><span class="code10">&lt;div class="okd" style="width: 50px;">Hello World!&lt;/div></span></p>
+
+<p class="left">CSS Code:</p>
+
+<p class="left"><span class="code10">.okd{
+    background-color: red;
+    color: white;
+    margin-bottom: 20px;
+}</span></p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let div = document.querySelector(".okd");
+
+document.write(div.style.getPropertyValue("color") === "");
+document.write(div.style.getPropertyValue("width"));</span></p>
+
+<p class="left">Outcome:</p>
+
+<style>
+
+.okd{
+    background-color: red;
+    color: white;
+    margin-bottom: 20px;
+}
+
+</style>
+
+<div class="okd" style="width: 50px;">Hello World!</div>
+
+<Script>
+
+if(true){
+
+let div = document.querySelector(".okd");
+
+document.write(div.style.getPropertyValue("color") === "");
+document.write(div.style.getPropertyValue("width"));
+
+}
+
+</Script>
+
+</article>
+
+<hr>
+
+<article id="eighteen">
+
+<header>
+    <h1>Element.getBoundingClientRect()</h1>
+</header>
+
+<p>The <span>Element.getBoundingClientRect()</span> method returns 
+a <Span>DOMRect object</Span> providing 
+<Span>information</span> about the <Span>size</span> 
+of an <span>element</span> and it's <span>position relative to the viewport</span>.
+What's the <span>viewport</span> you may wonder, well, the <Span>viewport</Span>
+represents the <Span>area</Span> of the <Span>page</Span> that is 
+<Span>currently visible</span>, it will not give you the <Span>position</Span>
+of it relative to the start of the page, it will give you the position 
+of it relative to the edges of the window, which means, if you scroll down 
+and the <span>element</span> is exactly at the edge of the top of the window 
+then the <span>Y position</span> is gonna be zero, since the offset 
+between the top of the window and the top of the element will be zero.</p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><span class="code10">&lt;button id="exx">Click me!&lt;/button>
+
+&lt;div id="ccontainer">&lt;/div></span>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let button = document.querySelector('#exx');
+let container = document.querySelector('#ccontainer');
+
+button.addEventListener('click', (e) => {
+    let box = button.getBoundingClientRect();
+    console.dir(box);
+    container.innerText = `${box.y} = ${box.top} = ${box.bottom - box.height}`;
+})</Span></p>
+
+<p class="left">Outcome:</p>
+
+<button id="exx">Click me!</button>
+
+<div id="ccontainer"></div>
+
+<script>
+
+if(true){
+
+let button = document.querySelector('#exx');
+let container = document.querySelector('#ccontainer');
+
+button.addEventListener('click', (e) => {
+    let box = button.getBoundingClientRect();
+    console.dir(box);
+    container.innerText = `${box.y} = ${box.top} = ${box.bottom - box.height}`;
+})
+
+}
+</script>   
+
+<img src="../images/ε2.PNG" style="border: 3px solid black; border-radius: 20px; margin: 20px auto 20px auto; display: block;">
+
+<p>The <Span>width</Span> and <span>height</span> properties of 
+the <span>DOMRect object</span> include the <Span>padding</Span>
+and <span>border-width</span> of the <Span>element</Span>, not only 
+the <span>content</span>.</p>
+
+<p>If you need the <span>bounding rectangle</span> relative to the <Span>top-left corner</span> of 
+the <Span>document</Span>, just add the <Span>current scrolling position</Span> 
+to the <Span>top</span> and <span>left</span> properties, these 
+can be obtained using <Span>window.scrollX</Span> and <Span>window.scrollY</Span>, 
+this way you get a <span>bounding rectangle</Span> which is 
+<Span>independent</Span> from the <Span>scrolling position</Span>.</p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><Span class="code10">&lt;button id="bttns">Click Me!&lt;/button>
+
+&lt;div id="ahooo">&lt;/div></Span></p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let button = document.querySelector('#bttns');
+let container = document.querySelector('#ahooo');
+
+button.addEventListener('click', (e) => {
+    let box = button.getBoundingClientRect();
+    container.innerText = box.top + window.scrollY;
+})</Span></p>
+
+<p class="left">Outcome:</p>
+
+<button id="bttns">Click Me!</button>
+
+<div id="ahooo"></div>
+
+<script>
+
+if(true){
+
+let button = document.querySelector('#bttns');
+let container = document.querySelector('#ahooo');
+
+button.addEventListener('click', (e) => {
+    let box = button.getBoundingClientRect();
+    container.innerText = box.top + window.scrollY;
+})
+
+}
+
+</script>
+
+</article>
+
+<hr>
+
+<article id="nineteen">
+
+<header>
+    <h1>clientY vs pageY vs screenY vs offsetY</h1>
+</header>
+
+<p>In this section I will point out the difference between those 
+    <Span>properties</Span> of the <Span>even object</span>. 
+Those properties can be used to take the <span>position</span>
+of the <span>cursor</span> of the <Span>client</Span>, however, 
+each works differently. 
+</p>
+
+<p><Span>clientY</Span> will return the <Span>distance</Span>
+between the <span>top of the window</span> and the <Span>cursor</Span>,
+<Span>pageY</Span> will returned the <span>distance</span> 
+between the <Span>top of the document</span> 
+and the <Span>cursor</Span>, <Span>screenY</Span> will 
+return the <span>distance</span> between the <span>edge of the device screen</span>
+and the <Span>cursor</Span>, and lastly, <Span>offsetY</Span>
+will return the <span>distance</span> between the <span>clicked element's top</span>
+and the <Span>cursor</Span>, just as demonstrated below:</p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><span class="code10">&lt;div id="clickme">&lt;/div></span></p>
+
+<p class="left">CSS Code:</p>
+
+<p class="left"><span class="code10">#clickme{
+    width: 200px;
+    height: 150px;
+    background-color: yellow;
+    border: 3px solid black;
+    margin: 20px auto 20px auto;
+    cursor: default;
+    user-select: none;
+}</span></p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let div = document.querySelector('#clickme');
+
+div.addEventListener('click', (e) => {
+    let [cY, pY, sY, oY] = [e.clientY, e.pageY, e.screenY, e.offsetY];
+    div.innerHTML = `clientY = ${cY}&lt;br>\
+    pageY = ${pY}&lt;br>\
+    screenY = ${sY}&lt;br>\
+    offsetY = ${oY}`;
+})</span></p>
+
+<p class="left">Outcome:</p>
+
+<Style>
+
+#clickme{
+    width: 200px;
+    height: 150px;
+    background-color: yellow;
+    border: 3px solid black;
+    margin: 20px auto 20px auto;
+    cursor: default;
+    user-select: none;
+}
+
+</Style>
+
+
+
+<div id="clickme"></div>
+
+<script>
+
+if(true){
+
+let div = document.querySelector('#clickme');
+
+div.addEventListener('click', (e) => {
+    let [cY, pY, sY, oY] = [e.clientY, e.pageY, e.screenY, e.offsetY];
+    div.innerHTML = `clientY = ${cY}<br>\
+    pageY = ${pY}<br>\
+    screenY = ${sY}<br>\
+    offsetY = ${oY}`;
+})
+
+}
+
+</script>
+
+<p>Here is a video that explains everything pretty well in under four minutes:</p>
+
+<iframe src="https://www.youtube.com/embed/dxADq_DlS-w?list=PLYxnDvM22X3NBARfD2aZcyUoKvfdHfygn" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</article>
+
+<hr>
+
+<article id="twenty">
+    <header>
+       <h1>Mouse events</h1>
+    <header>   
+        <h2><u>mouseenter and mouseleave vs mouseover and mouseout:</u></h2>
+
+<p>Many people 
+incorrectly assume that <Span>mouseleave & mouseenter</Span> work the same way
+with <Span>mouseout & mouseover</Span>, 
+while in reality they don't, in most cases the results they give 
+are the exact same, but the way they work behind the scenes is different.</p>
+
+<p>So, in order to understand the difference, let's try to compare 
+    the two, I will use <span>console.log()</span> so we can clearly 
+    see when each <span>event</span> is triggered:
+</p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><Span class="code10">&lt;div id="parentD">
+    &lt;div id="childD">mouseEnter and mouseLeave&lt;/div>
+&lt;/div>
+
+&lt;div id="containerD">&lt;/div></Span></p>
+
+<p class="left">CSS Code:</p>
+
+<p class="left"><Span class="code10">#parentD{
+    width: 400px;
+    height: 140px; 
+    background-color: #333;
+    border: 3px solid black;
+    margin: 20px auto 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#childD{
+    background-color: yellow;
+    width: 70%;
+    height: 70px;
+    border: 3px solid black;
+    text-align: center;
+    line-height: 70px;
+    font-weight: bold;
+}</Span></p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let parent = document.querySelector('#parentD');
+let child = document.querySelector('#childD');
+let container = document.querySelector('#containerD');
+
+parent.addEventListener('mouseenter', (e) => {
+    container.innerText += " {entered parent} ";
+});
+
+parent.addEventListener('mouseleave', (e) => {
+    container.innerText += " {left parent} "
+})
+
+child.addEventListener('mouseenter', (e) => {
+    container.innerText += " {entered child} ";
+});
+
+child.addEventListener('mouseleave', (e) => {
+    container.innerText += " {left child} "
+})
+
+document.addEventListener('click', (e) => {
+    container.innerText = "";
+})</Span></p>
+
+<p class="left">Outcome:</p>
+
+<style>
+#parentD{
+    width: 400px;
+    height: 140px; 
+    background-color: #333;
+    border: 3px solid black;
+    margin: 20px auto 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#childD{
+    background-color: yellow;
+    width: 70%;
+    height: 70px;
+    border: 3px solid black;
+    text-align: center;
+    line-height: 70px;
+    font-weight: bold;
+}
+</style>
+
+<div id="parentD">
+    <div id="childD">mouseEnter and mouseLeave</div>
+</div>
+
+<div id="containerD"></div>
+
+<script>
+
+if(true){
+let parent = document.querySelector('#parentD');
+let child = document.querySelector('#childD');
+let container = document.querySelector('#containerD');
+
+parent.addEventListener('mouseenter', (e) => {
+    container.innerText += " {entered parent} ";
+});
+
+parent.addEventListener('mouseleave', (e) => {
+    container.innerText += " {left parent} "
+})
+
+child.addEventListener('mouseenter', (e) => {
+    container.innerText += " {entered child} ";
+});
+
+child.addEventListener('mouseleave', (e) => {
+    container.innerText += " {left child} "
+})
+
+document.addEventListener('click', (e) => {
+    container.innerText = "";
+})
+}
+
+</script>
+
+<p>Hover your mouse over the elements above to see when 
+    each <Span>event</span> is triggered, to clear the logs 
+    just <Span>click</Span> anywhere on the <span>document</span>. 
+</p>
+
+<P>It works pretty much as we expected it to work, let's now 
+    however write the same code using <Span>mouseover</Span> 
+    and <Span>mouseout</Span>:
+</P>
+
+<style>
+    #parentD2{
+        width: 400px;
+        height: 140px; 
+        background-color: #333;
+        border: 3px solid black;
+        margin: 20px auto 20px auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    #childD2{
+        background-color: yellow;
+        width: 70%;
+        height: 70px;
+        border: 3px solid black;
+        text-align: center;
+        line-height: 70px;
+        font-weight: bold;
+    }
+    </style>
+    
+    <p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let parent = document.querySelector('#parentD');
+let child = document.querySelector('#childD');
+let container = document.querySelector('#containerD');
+
+parent.addEventListener('mouseover', (e) => {
+    container.innerText += " {entered parent} ";
+});
+
+parent.addEventListener('mouseout', (e) => {
+    container.innerText += " {left parent} "
+})
+
+child.addEventListener('mouseover', (e) => {
+    container.innerText += " {entered child} ";
+});
+
+child.addEventListener('mouseout', (e) => {
+    container.innerText += " {left child} "
+})
+
+document.addEventListener('click', (e) => {
+    container.innerText = "";
+})</Span></p>
+    
+    <p class="left">Outcome:</p>
+
+    <div id="parentD2">
+        <div id="childD2">mouseover and mouseout</div>
+    </div>
+    
+    <div id="containerD2"></div>
+    
+    <script>
+    
+    if(true){
+    let parent = document.querySelector('#parentD2');
+    let child = document.querySelector('#childD2');
+    let container = document.querySelector('#containerD2');
+    
+    parent.addEventListener('mouseover', (e) => {
+        container.innerText += " {entered parent} ";
+    });
+    
+    parent.addEventListener('mouseout', (e) => {
+        container.innerText += " {left parent} "
+    })
+    
+    child.addEventListener('mouseover', (e) => {
+        container.innerText += " {entered child} ";
+    });
+    
+    child.addEventListener('mouseout', (e) => {
+        container.innerText += " {left child} "
+    })
+    
+    document.addEventListener('click', (e) => {
+        container.innerText = "";
+    })
+    }
+    
+    </script>
+
+<p>So, I want you to hover your mouse over the element and notice 
+    what happens when you <Span>enter</Span> or <Span>leave</span> 
+   the <Span>child element</Span>, when you <Span>enter</Span> the 
+   <Span>child element</Span> the following <Span>events</Span> will trigger 
+   in order: <span>{left parent} {entered child} {entered parent}</span>, 
+   when you <Span>leave</Span> the <span>child element</span> the 
+   following <span>events</span> will trigger in order: <Span>{left child} {left parent} {entered parent}</Span>. </p>
+
+<p>So after your <Span>cursor</Span> moves to <span>a different element</span>, 
+the <Span>mouseout event</Span> is triggered for all the <Span>elements</Span>
+it was currently inside, then it checks and triggers the <span>mouseover event</span>
+for all the <span>elements</span> you hover your mouse over again.</p>
+
+<p>The outcome will in most cases be the same with the outcome 
+    <Span>mouseenter</Span> and <Span>mouseleave</Span> gives us, 
+    however, if used together with <span>bubbling</span>
+    and <Span>capture</Span> then <Span>mouseover</Span> and 
+    <Span>mouseout</Span> could come in handy when you need to 
+    create some more complicated behaviour with a lot of <Span>events</Span>
+    and stuff, for example, you could use <Span>stopPropagation()</Span>
+    method to make it so after you <Span>enter the child</Span> the 
+    <Span>propagation stops</Span>, this way only the <span>parent's mouseout</span> and <Span>child's mouseover</Span>
+    events would trigger.
+</p>
+
+<iframe src="https://www.youtube.com/embed/pzT4hAY82q4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<h2><u>mousedown & mouseup vs click, dblclick & contextmenu</u></h2>
+
+<p>First, let's talk about <span>mousedown</span>, it will trigger
+whenever a <Span>mouse button</Span> is <Span>pushed down</Span>
+on the <Span>specified element</Span>, it doesn't matter whether you 
+clicked the <Span>left mouse button</Span>, the <Span>right mouse button</Span>
+or the <Span>middle mouse button</Span> (the one used to scroll), it 
+will always trigger.</p>
+
+<p>The <Span>mouseup</Span> event will trigger whenever a 
+<Span>mouse button</Span> is released, it works for <span>all mouse buttons</span>
+as well, and it will work even if you <span>click outside the element</span>
+then <Span>mouve the cursor over the element</Span> and <Span>release after</Span>, 
+as long as a <Span>mouse button</Span> is <Span>released</Span> while the 
+<Span>cursor is over the element</Span> the <Span>event</Span>
+will <span>trigger</span>.</p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><Span class="code10">&lt;div id="cme">Click Me&lt;/div>
+&lt;div id="cntainera">&lt;/div></Span></p>
+
+<p class="left">CSS Code:</p>
+
+<p class="left"><Span class="code10">#cme{
+    width: 100px;
+    height: 90px;
+    text-align: center;
+    line-height: 90px;
+    background-color: yellow;
+    border: 3px solid black;
+    margin: auto;
+    user-select: none;
+}</Span></p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let button = document.querySelector('#cme');
+let container = document.querySelector('#cntainera');
+
+button.addEventListener('mousedown', (e) => {
+container.innerText = "mousedown";
+});
+
+button.addEventListener('mouseup', (e) => {
+container.innerText = "mouseup";
+});</Span></p>
+
+<p class="left">Outcome:</p>
+
+<style>
+    #cme{
+        width: 100px;
+        height: 90px;
+        text-align: center;
+        line-height: 90px;
+        background-color: yellow;
+        border: 3px solid black;
+        margin: auto;
+        user-select: none;
+    }
+</style>
+
+<div id="cme">Click Me</div>
+<div id="cntainera"></div>
+
+<script>
+
+if(true){
+
+let button = document.querySelector('#cme');
+let container = document.querySelector('#cntainera');
+
+button.addEventListener('mousedown', (e) => {
+container.innerText = "mousedown";
+});
+
+button.addEventListener('mouseup', (e) => {
+container.innerText = "mouseup";
+});
+
+}
+
+</script>
+
+<p>The <Span>click</span> event will only trigger when the 
+<Span>left mouse button</Span> is <span>pressed</span> 
+and <Span>released</Span> on the <Span>same object</Span>. 
+The <Span>contextmenu</Span> event will trigger when 
+the <span>right mouse button</span> is <Span>pressed</Span>
+and <span>released</span> on the <Span>same object</Span> and the <Span>context menu</Span> opens.
+Lastly, the <Span>dblclick</Span> event triggers when an <span>element</span>
+is <span>double clicked</span>, the <Span>clicks</Span> should be made 
+fast for it to work.</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let button = document.querySelector('#cme');
+let container = document.querySelector('#cntainera');
+
+button.addEventListener('click', (e) => {
+container.innerText = "click";
+});
+
+button.addEventListener('dblclick', (e) => {
+container.innerText = "dblclick";
+});
+
+button.addEventListener('contextmenu', (e) => {
+container.innerText = "contextmenu";
+});</Span></p>
+
+<p class="left">Outcome:</p>
+
+<style>
+    #cme2{
+        width: 100px;
+        height: 90px;
+        text-align: center;
+        line-height: 90px;
+        background-color: yellow;
+        border: 3px solid black;
+        margin: auto;
+        user-select: none;
+    }
+</style>
+
+<div id="cme2">Click Me</div>
+<div id="cntainera2"></div>
+
+<script>
+
+if(true){
+
+let button = document.querySelector('#cme2');
+let container = document.querySelector('#cntainera2');
+
+button.addEventListener('click', (e) => {
+container.innerText = "click";
+});
+
+button.addEventListener('dblclick', (e) => {
+container.innerText = "dblclick";
+});
+
+button.addEventListener('contextmenu', (e) => {
+container.innerText = "contextmenu";
+});
+
+}
+
+</script>
+
+<h2><u>The mousemove event:</u></h2>
+
+<p>This <Span>event</Span> is one of my favorites, because it 
+<Span>triggers</Span> every single time your <Span>cursor moves</Span>
+on the <Span>specified element</Span>, this <Span>event</Span>
+comes in very handy, if you want to create <Span>costum cursors</Span>, 
+or <span>cursor trails</span> that follow your cursor as it moves, 
+here is an example:</p>
+
+<style>
+    #Pcontainer{
+        box-sizing: border-box;
+        width: 303px;
+        height: 100px;
+        border: 3px solid black;
+        background-color: yellow;
+        margin: auto;
+        position: relative;
+        cursor: none;
+    }
+
+    #dio{
+        box-sizing: border-box;
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border: 3px solid black;
+        background-color: red;
+        border-radius: 50%;
+        cursor: none;
+    }
+</style>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><span class="code10">&lt;div id="Pcontainer">
+    &lt;div id="dio">&lt;/div>
+&lt;/div></span></p>
+
+<p class="left">CSS Code:</p>
+
+<p class="left"><span class="code10"> #Pcontainer{
+    box-sizing: border-box;
+    width: 303px;
+    height: 100px;
+    border: 3px solid black;
+    background-color: yellow;
+    margin: auto;
+    position: relative;
+    cursor: none;
+}
+
+#dio{
+    box-sizing: border-box;
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border: 3px solid black;
+    background-color: red;
+    border-radius: 50%;
+    cursor: none;
+}</span></p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let parent = document.querySelector('#Pcontainer');
+let circle = document.querySelector('#dio');
+let parent_width = parseFloat(getComputedStyle(parent).getPropertyValue('width'));
+let parent_height = parseFloat(getComputedStyle(parent).getPropertyValue('height'));
+let circle_width = parseFloat(getComputedStyle(circle).getPropertyValue('width'));
+let circle_height = parseFloat(getComputedStyle(circle).getPropertyValue('height'));
+let x_limit = parent_width - circle_width;
+let y_limit = parent_height - circle_height;  
+
+parent.addEventListener('mousemove', (e) => {
+    let x = e.offsetX;
+    let y = e.offsetY;
+    if( e.target === parent){
+        if( x &lt; x_limit ){
+            circle.style.left = x + 'px';
+        } if ( y &lt; y_limit ){
+            circle.style.top = y + 'px';
+        }
+    } 
+});</span></p>
+
+<p class="left">Outcome:</p>
+
+<div id="Pcontainer">
+    <div id="dio"></div>
+</div>
+
+<script>
+
+if(true){
+
+let parent = document.querySelector('#Pcontainer');
+let circle = document.querySelector('#dio');
+let parent_width = parseFloat(getComputedStyle(parent).getPropertyValue('width'));
+let parent_height = parseFloat(getComputedStyle(parent).getPropertyValue('height'));
+let circle_width = parseFloat(getComputedStyle(circle).getPropertyValue('width'));
+let circle_height = parseFloat(getComputedStyle(circle).getPropertyValue('height'));
+let x_limit = parent_width - circle_width;
+let y_limit = parent_height - circle_height;  
+ 
+parent.addEventListener('mousemove', (e) => {
+    let x = e.offsetX;
+    let y = e.offsetY;
+    if( e.target === parent){
+        if( x < x_limit ){
+            circle.style.left = x + 'px';
+        } if ( y < y_limit ){
+            circle.style.top = y + 'px';
+        }
+    } 
+ });
+
+}
+
+
+</script>
+
+</article>
+
+<hr>
+
+<article id="twentyone">
+
+<header>
+    <h1>Touch Screen Events</h1>
+</header>
+
+<p>There are <Span>four touch events</Span> you can use, and with 
+only those four events you should find ways to achieve whatever 
+it is you want to achieve, there are no rotate, zoom or swipe events, 
+to achieve such effects you will need to use <span>touchstart</span>, 
+<span>touchend</span>, <Span>touchmove</Span> and <Span>touchcancel</Span> events.</p>
+
+<p>Your best friend while working with such <Span>events</Span>, as 
+usually will be the <Span>event object</Span>, the <span>event object</span>
+while using <span>touch events</span> however provides you with some 
+<Span>extra properties</Span>, which are <span>touches</span>, <Span>targetTouches</Span> and 
+<Span>changedTouches</Span>.</p>
+
+<p>When you put your <Span>first finger</Span> down, <Span>all three properties</Span>
+will each create a <Span>list</Span> with <Span>information</Span>
+about the <Span>touch</Span>. When you put a <Span>second finger</Span> down,
+<Span>touches</Span> will have <Span>two items</Span>, each being an <Span>object</Span>
+containing <span>information</span> about <Span>each touch</Span>. 
+<span>targetTouches</span> will have <Span>two items</Span> only if the 
+<Span>touch</Span> was done in the <Span>same target</Span> as 
+the <span>first touch</span>. Lastly <Span>changedTouches</Span> will 
+have the <Span>information</Span> related to the <Span>second finger</Span>, 
+because that's what <Span>caused the event</Span>.</p>
+
+<p>If you put <Span>two fingers</Span> down at 
+<Span>exactly the same time</Span>, it's possible to have 
+<span>two items</span> in <Span>changedTouches</Span>, 
+one for each finger. If you <Span>put a finger down</Span>, 
+and then <span>move it</span>, the only list that 
+will change is <span>changedTouches</span> and will contain 
+<Span>information</Span> related to the finger that moved, if 
+more than one finger moved then it would contain <Span>information</Span>
+for all the <Span>touches</Span> which <Span>moved</Span>, each <Span>list</Span> would be 
+a different <Span>item</Span> in the <span>array</span>.</p>
+
+<p>When you <Span>lift a finger</Span>, it will be <span>removed</span>
+from <Span>touches</Span>, <Span>targetTouches</Span> and will 
+appear in <span>changedTouches</span> since it's what caused 
+the <span>event</span>. Lastly, <Span>removing</Span> my <Span>last finger</Span>
+will leave <Span>touches</Span> and <Span>targetTouches</Span>
+empty, while <span>changedTouches</span> will contain 
+<span>information</span> for the <Span>last finger</Span>.</p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><span class="code10">&lt;div id="touchme">Touch me&lt;/div></span></p>
+
+<p class="left">CSS Code:</p>
+
+<p class="left"><Span class="code10">#touchme{
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+    border: 3px solid black;
+    border-radius: 50%;
+    margin: 20px auto 20px auto;
+    text-align: center;
+    display: grid;
+    align-items: center;
+    font-weight: bold;
+}</Span></p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let div = document.querySelector('#touchme');
+
+div.addEventListener('touchstart', (e) => {
+    console.dir(e.touches);
+    console.dir(e.targetTouches);
+    console.dir(e.changedTouches);
+});
+
+}</Span></p>
+
+<p class="left">Outcome:</p>
+
+<Style>
+
+#touchme{
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+    border: 3px solid black;
+    border-radius: 50%;
+    margin: 20px auto 20px auto;
+    text-align: center;
+    display: grid;
+    align-items: center;
+    font-weight: bold;
+}
+
+</Style>
+
+<div id="touchme">Touch me</div>
+
+<script>
+
+if(true){
+
+let div = document.querySelector('#touchme');
+
+div.addEventListener('touchstart', (e) => {
+    console.dir(e.touches);
+    console.dir(e.targetTouches);
+    console.dir(e.changedTouches);
+});
+
+}
+
+</script>
+
+<img src="../images/εε3.PNG" style="display: block; margin: 20px auto 20px auto; border: 3px solid black; border-radius: 20px;">
+
+<p>All lists give the same results when only one simple touch is made, 
+I wanted to try more kind of touches but I don't think I can do this 
+on a computer, right now I'm using a chrome tool that allows me to 
+trigger touch events with mouse, but I don't know how to trigger 
+more than one touch ever at the same time, I will probably play around more 
+with the events later on my phone.
+</p>
+
+<p>Alright, so, <Span>touchstart</Span> triggers when you 
+<Span>put your finger on</Span> the <Span>screen</Span>, and 
+<Span>touchend</Span> happens when you <Span>lift your finger</Span>
+from the <Span>screen</Span>, that leaves us with the two last <Span>touch events</Span>, 
+the <Span>touchcancel</Span> event will trigger if for whatever 
+reason the <Span>touch</Span> gets <Span>cancelled</Span> without you 
+lifting your finger from the screen, that could happen because of a <Span>low battary warning</Span>
+for example or anything else I guess, the <Span>touchmove</Span> event 
+now is an <Span>event</Span> that <Span>continiously triggers</Span>
+as you <Span>move</span> your <Span>finger</Span> on the <span>screen</span>.</p>
+
+<p>I cannot test if the code bellow works as expected or not 
+since I'm not using a phone, but hopefully what I made bellow 
+demonstrates the difference between <Span>touches</Span>, 
+<Span>targetTouches</Span> and <Span>changedTouches</Span>,
+try using multiple fingers and stuff to see the results:
+
+<Style>
+
+.gray{
+    background-color: lightgray;
+}
+
+</Style>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let div = document.querySelector('#touchme2');
+let container = document.querySelector('#cotainer');
+
+<Span class="gray">// when you put a finger on the element</Span>
+
+div.addEventListener('touchstart', (e) => {
+    let [cT, T, tT] = ["", "", ""];
+
+for(let i of e.changedTouches){
+    cT += ` {clientY: ${i.clientY}}`;
+}
+for (let i of e.targetTouches){
+    tT += ` {clientY: ${i.clientY}}`;
+}
+for(let i of e.touches){
+    T += ` {clientY: ${i.clientY}}`;
+}
+
+container.innerHTML = `Touches: ${T} &lt;br> \
+ChangedTouches: ${cT} &lt;br> \
+TargetTouches: ${tT}`;
+});
+
+<span class="gray">// when you lift a finger from the element</span>
+
+div.addEventListener('touchend', (e) => {
+let [cT, T, tT] = ["", "", ""];
+
+for(let i of e.changedTouches){
+    cT += ` {clientY: ${i.clientY}}`;
+}
+for (let i of e.targetTouches){
+    tT += ` {clientY: ${i.clientY}}`;
+}
+for(let i of e.touches){
+    T += ` {clientY: ${i.clientY}}`;
+}
+
+container.innerHTML = `Touches: ${T} &lt;br> \
+ChangedTouches: ${cT} &lt;br> \
+TargetTouches: ${tT}`;
+});
+
+<Span class="gray">// when you move a finger on the element</Span>
+
+div.addEventListener('touchmove', (e) => {
+let [cT, T, tT] = ["", "", ""];
+
+for(let i of e.changedTouches){
+    cT += ` {clientY: ${i.clientY}}`; 
+}
+for (let i of e.targetTouches){
+    tT += ` {clientY: ${i.clientY}}`;
+}
+for(let i of e.touches){
+    T += ` {clientY: ${i.clientY}}`;
+}
+
+container.innerHTML = `Touches: ${T} &lt;br> \
+ChangedTouches: ${cT} &lt;br> \
+TargetTouches: ${tT}`;
+});</Span></p>
+
+<p class="left">Outcome:</p>
+
+
+<Style>
+
+    #touchme2{
+        width: 200px;
+        height: 200px;
+        background-color: yellow;
+        border: 3px solid black;
+        border-radius: 50%;
+        margin: 20px auto 20px auto;
+        text-align: center;
+        display: grid;
+        align-items: center;
+        font-weight: bold;
+    }
+    
+    </Style>
+    
+    <div id="touchme2">Touch me</div>
+    <div id="cotainer"></div>
+
+
+    <script>
+    
+    if(true){
+    
+    let div = document.querySelector('#touchme2');
+    let container = document.querySelector('#cotainer');
+
+    div.addEventListener('touchstart', (e) => {
+        let [cT, T, tT] = ["", "", ""];
+
+    for(let i of e.changedTouches){
+        cT += ` {clientY: ${i.clientY}}`;             
+    }
+    for (let i of e.targetTouches){
+        tT += ` {clientY: ${i.clientY}}`;
+    }
+    for(let i of e.touches){
+        T += ` {clientY: ${i.clientY}}`;
+    }
+
+    container.innerHTML = `Touches: ${T} <br> \
+    ChangedTouches: ${cT} <br> \
+    TargetTouches: ${tT}`;
+    });
+
+    div.addEventListener('touchend', (e) => {
+    let [cT, T, tT] = ["", "", ""];
+
+    for(let i of e.changedTouches){
+        cT += ` {clientY: ${i.clientY}}`;             
+    }
+    for (let i of e.targetTouches){
+        tT += ` {clientY: ${i.clientY}}`;
+    }
+    for(let i of e.touches){
+        T += ` {clientY: ${i.clientY}}`;
+    }
+
+    container.innerHTML = `Touches: ${T} <br> \
+    ChangedTouches: ${cT} <br> \
+    TargetTouches: ${tT}`;
+    });
+    
+    div.addEventListener('touchmove', (e) => {
+    let [cT, T, tT] = ["", "", ""];
+
+    for(let i of e.changedTouches){
+        cT += ` {clientY: ${i.clientY}}`;             
+    }
+    for (let i of e.targetTouches){
+        tT += ` {clientY: ${i.clientY}}`;
+    }
+    for(let i of e.touches){
+        T += ` {clientY: ${i.clientY}}`;
+    }
+
+    container.innerHTML = `Touches: ${T} <br> \
+    ChangedTouches: ${cT} <br> \
+    TargetTouches: ${tT}`;
+    });
+
+    }
+    
+    </script>
+
+<p>Let's actually try to use that knowledge to create something,
+let's try to make a simple <Span>swipe effect</Span> using pure 
+vinally <Span>JavaScript</Span>:
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><Span class="code10">&lt;div class="phone">
+&lt;div id="page1">&lt;span class="center">Page1&lt;/span>&lt;/div>
+&lt;div id="page2">&lt;span class="center">Page2&lt;/span>&lt;/div>
+&lt;/div></Span>
+
+<p class="left">CSS Code:</p>
+
+<p class="left"><Span class="code10">.phone{
+    width: 300px; 
+    height: 400px;
+    border: 3px solid black;
+    margin: 20px auto 20px auto;
+    overflow: hidden;
+    position: relative;
+    background-color: black;
+}
+
+#page1{
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    position: absolute;
+}
+
+#page2{
+    width: 100%;
+    height: 100%;
+    background-color: yellow;
+    position: absolute;
+    left: 100%;
+}
+
+.center{
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   font-size: 300%;
+   background-color: unset;
+}</Span>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">
+let phone = document.querySelector('.phone');
+let page1 = document.querySelector('#page1');
+let page2 = document.querySelector('#page2');
+
+let phone_width = parseFloat(getComputedStyle(phone).getPropertyValue("width"));
+let startPosition;
+
+<span style="background-color: lightgray">// page 1 touch events</Span>
+
+page1.addEventListener('touchstart', (e) => {
+    startPosition = e.touches[0].clientX;
+})
+
+page1.addEventListener('touchmove', (e) => {
+    let offset = startPosition - e.touches[0].clientX;
+    let p2_left = parseFloat(getComputedStyle(page2).getPropertyValue("left"));
+    if( offset > 0 && p2_left > 1){
+      page1.style.transition = "0s";
+      page2.style.transition = "0s";
+      page1.style.left = - offset + "px";
+      page2.style.left = phone_width - offset + "px";
+      e.preventDefault;
+    }
+})
+
+page1.addEventListener('touchend', (e) => {
+    let offset = startPosition - e.changedTouches[0].clientX;
+    let diff = phone_width / 2.5;
+    if ( offset >= diff) {
+        page1.style.transition = "1s";
+        page2.style.transition = "1s";
+        page1.style.left = "-" + 100 + "%";
+        page2.style.left = 0 + "px";
+    } else {
+        page1.style.transition = "1s";
+        page2.style.transition = "1s";
+        page1.style.left = 0 + "px";
+        page2.style.left = 100 + "%";
+    }
+})
+
+<span style="background-color: lightgray">// page2 touch events</Span>
+
+page2.addEventListener('touchstart', (e) => {
+    startPosition = e.touches[0].clientX;
+})
+
+page2.addEventListener('touchmove', (e) => {
+    let offset = startPosition - e.touches[0].clientX;
+    let p1_left = parseFloat(getComputedStyle(page1).getPropertyValue("left"));
+    if( offset < 0 && p1_left < 0){
+      page1.style.transition = "0s";
+      page2.style.transition = "0s";
+      page2.style.left = -1 * offset + "px";
+      page1.style.left = - phone_width - offset + "px";
+      e.preventDefault;
+    }
+})
+
+page2.addEventListener('touchend', (e) => {
+    let offset = e.changedTouches[0].clientX - startPosition;
+    let diff = phone_width / 2.5;
+    if ( offset >= diff ) {
+        page1.style.transition = "1s";
+        page2.style.transition = "1s";
+        page1.style.left = 0 + "px";
+        page2.style.left = 100 + "%";
+} else {
+        page1.style.transition = "1s";
+        page2.style.transition = "1s";
+        page1.style.left = "-" + 100 + "%";
+        page2.style.left = 0 + "px";
+    } 
+})</Span>
+
+<p class="left">Outcome:</p>
+<style>
+
+.phone{
+    width: 300px; 
+    height: 400px;
+    border: 3px solid black;
+    margin: 20px auto 20px auto;
+    overflow: hidden;
+    position: relative;
+    background-color: black;
+}
+
+#page1{
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    position: absolute;
+}
+
+#page2{
+    width: 100%;
+    height: 100%;
+    background-color: yellow;
+    position: absolute;
+    left: 100%;
+}
+
+.center{
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   font-size: 300%;
+   background-color: unset;
+}
+
+</style>
+
+<div class="phone">
+<div id="page1"><span class="center">Page1</span></div>
+<div id="page2"><span class="center">Page2</span></div>
+</div>
+
+<script>
+
+if(true){
+
+let phone = document.querySelector('.phone');
+let page1 = document.querySelector('#page1');
+let page2 = document.querySelector('#page2');
+
+let phone_width = parseFloat(getComputedStyle(phone).getPropertyValue("width"));
+let startPosition;
+
+// page 1 touch events
+
+page1.addEventListener('touchstart', (e) => {
+    startPosition = e.touches[0].clientX;
+})
+
+page1.addEventListener('touchmove', (e) => {
+    let offset = startPosition - e.touches[0].clientX;
+    let p2_left = parseFloat(getComputedStyle(page2).getPropertyValue("left"));
+    if( offset > 0 && p2_left > 1){
+      page1.style.transition = "0s";
+      page2.style.transition = "0s";
+      page1.style.left = - offset + "px";
+      page2.style.left = phone_width - offset + "px";
+      e.preventDefault;
+    }
+})
+
+page1.addEventListener('touchend', (e) => {
+    let offset = startPosition - e.changedTouches[0].clientX;
+    let diff = phone_width / 2.5;
+    if ( offset >= diff) {
+        page1.style.transition = "1s";
+        page2.style.transition = "1s";
+        page1.style.left = "-" + 100 + "%";
+        page2.style.left = 0 + "px";
+    } else {
+        page1.style.transition = "1s";
+        page2.style.transition = "1s";
+        page1.style.left = 0 + "px";
+        page2.style.left = 100 + "%";
+    }
+})
+
+// page touch events
+
+page2.addEventListener('touchstart', (e) => {
+    startPosition = e.touches[0].clientX;
+})
+
+page2.addEventListener('touchmove', (e) => {
+    let offset = startPosition - e.touches[0].clientX;
+    let p1_left = parseFloat(getComputedStyle(page1).getPropertyValue("left"));
+    if( offset < 0 && p1_left < 0){
+      page1.style.transition = "0s";
+      page2.style.transition = "0s";
+      page2.style.left = -1 * offset + "px";
+      page1.style.left = - phone_width - offset + "px";
+      e.preventDefault;
+    }
+})
+
+page2.addEventListener('touchend', (e) => {
+    let offset = e.changedTouches[0].clientX - startPosition;
+    let diff = phone_width / 2.5;
+    if ( offset >= diff ) {
+        page1.style.transition = "1s";
+        page2.style.transition = "1s";
+        page1.style.left = 0 + "px";
+        page2.style.left = 100 + "%";
+    } else {
+        page1.style.transition = "1s";
+        page2.style.transition = "1s";
+        page1.style.left = "-" + 100 + "%";
+        page2.style.left = 0 + "px";
+    } 
+})
+
+}
+
+</script>
+
+<iframe src="https://www.youtube.com/embed/bV9idMbioqg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</article>
+
+<hr>
+
+<article id="twentytwo">
+    <header>
+        <h1>Custom Events</h1>
+    </header>
+
+<p>Sometimes, you want to use an <Span>event</Span> that doesn't exist, for example, 
+you want something to happen when something else happens, that's when <span>custom events</span> 
+can be created and used to achieve such things.</p>
+
+<p>To create a <span>custom event</span> you should use the 
+<Span>CustomEvent constructor</Span>, by writing <span>new CustomEvent('name', {detail: value})</span>, the 
+<Span>first parameter</Span> of that event should be the <Span>name of the event</Span>, while the 
+<Span>second parameter</Span> is <Span>>optional</span> and allows you to <Span>pass information inside it</Span> to 
+<span>later use when event triggers</span>.</p>
+
+<p>To <span>trigger a custom event</span> you should use the <Span>dispatchEvent(event, target)</Span>
+method, the <span>target</span> lets you specify what <span>e.target</span> should be, so let's try this out now with a simple example to help us understand the syntax better:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let div = document.getElementById('cttainer');
+
+let changedColor = new CustomEvent('changed-color', {detail: Date.now()});
+
+let handlers = {
+    set: function(target, prop, value){
+        target[prop] = value;
+        if(prop == 'paragraphColor'){
+            console.log('red');
+            div.dispatchEvent(changedColor, div);
+        }
+    }
+}
+
+let divObj = new Proxy({
+    name: 'div',
+    id: 'cttainer',
+    source: div
+}, handlers);
+
+div.addEventListener('changed-color', (e) => {
+    console.log(e.target);
+    e.target.style.backgroundColor = divObj.paragraphColor;
+    e.target.innerHTML = e.detail;
+});
+
+divObj.paragraphColor = 'red';</span></p>
+
+<p class="left">Outcome:</p>
+
+<div id="cttainer" style="width: fit-content;">Hello World!</div>
+
+<script>
+    if(true){
+        let div = document.getElementById('cttainer');
+
+        let changedColor = new CustomEvent('changed-color', {detail: Date.now()})
+       
+        let handlers = {
+            set: function(target, prop, value){
+                target[prop] = value;
+                if(prop == 'paragraphColor'){
+                    console.log('red');
+                    div.dispatchEvent(changedColor, div);
+                }
+            }
+        }
+
+        let divObj = new Proxy({
+            name: 'div',
+            id: 'cttainer',
+            source: div
+        }, handlers);
+
+        div.addEventListener('changed-color', (e) => {
+            console.log(e.target);
+            e.target.style.backgroundColor = divObj.paragraphColor;
+            e.target.innerHTML = e.detail;
+        });
+
+        divObj.paragraphColor = 'red';
+    }
+</script>
+
+</article>
+
+<hr>
+
+<article id="twentythree">
+    <header>
+        <h1>Audio Object</h1>
+    </header>
+
+<p>You can either <span>add audio</span> to your 
+website using the <Span>&lt;audio> tag</Span> or 
+<Span>create it directly through JavaScript</Span>
+using the <Span>Audio() constructor</Span>.</p>
+
+<p>All you have to do is write <Span>new Audio(url)</Span> 
+and this will create an <span>audio object</span> for you to use. 
+The <Span>preload property</Span> of the <Span>audio object</Span>
+will be by default set to <Span>auto</Span>, and the <Span>src property</Span> 
+will be set to the <Span>url you used when making the object</Span> 
+or <Span>null</Span> if <Span>no URL was given</Span>. The <Span>browser</Span>
+begins to <Span>asychronously load the media source</Span> before returning the new object.</p>
+
+<p>There are <Span>three ways</span> you can tell when <Span>enough of the audio file has loaded</span> 
+to allow playback to begin:</p>
+
+<ul>
+    <li>Check the <Span>value</Span> of the 
+    <Span>readyState</span> property. If it's <Span>HTMLMediaElement.HAVE_FUTURE_DATA</Span>, 
+    there's <Span>enough data available to begin playback</Span> and <Span>play for at least a short time</Span>. 
+    If it's <Span>HTMLMediaElement.HAVE_ENOUGH_DATA</span>, then there's 
+    <Span>enough data available</span> that, given the current download rate, 
+    <Span>you should be able to play the audio through to the end without interruption</Span>.</li><br><br>
+    <li>Listen for the <Span>canplay event</Span>. It is sent to the 
+    <Span>&lt;audio></Span> element when there's <Span>enough audio available to begin playback</span>,
+        although <Span>interruptions may occur</Span>.
+    </li><br><br>
+    <li>Listen for the <Span>canplaythrough event</Span>. It is 
+    sent when it's <Span>estimated that the audio should be able to play to the end</Span>
+without interruptions.</li>
+</ul>
+
+<p>To <Span>play the audio</span> you should use the <Span>play() method</span>, 
+to <span>pause the audio</span> you should use the <span>pause() method</span>.
+Even if you <Span>remove every reference of the audio</span> then 
+<Span>element it self</Span> will <Span>continue to exist</span>, therefore, 
+<span>joining the garbage collection</span> and <Span>effecting the performance</Span>, 
+to <Span>remove the element</Span> you should do it as you would 
+to any other element, by using the <span>remove() method</span>.</p>
+
+<p>When an <Span>audio is playing</Span> it <Span>cannot play more than once at the same time</Span>, 
+so <Span>even if the play() method is called</Span>, if it's <Span>already playing</span> 
+nothing is gonna happen. This can be a problem when wanted to use 
+<Span>sound effects in games</Span> where <Span>you want the sound to be able to play multiple times</Span>
+at the <Span>same time</Span>. To fix that problem, we could use <Span>cloneNode()</Span> method 
+to <Span>clone the element</Span> and then <Span>use play() method</Span>.</p>
+
+<p>Lastly, I want to talk about <span>two properties</span> which
+are very important, the <Span>duration property</span> which <Span>returns the duration of the audio in seconds</span> 
+and the <Span>currentTime property</Span> which 
+can <Span>set or return the current position (in seconds)</span> of the 
+<Span>audio playback</span>. Also, one last property 
+is the <Span>volume property</span> which allows you to 
+<span>change the volume</span>, it takes a <Span>value between 0 and 1</span>, 
+where <Span>1 is 100%</span> and <Span>0 is 0%</span>. Those properties can be very 
+useful if you want to make <Span>custom audio controls</Span> 
+for example.</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let button = document.querySelector('#play-music');
+
+let audioObj = new Audio("https://dl.dropbox.com/s/ywsabqq6209qsrg/\
+Vine%20Boom%20Sound%20Effect%20%28Longer%20Verison%20For%20Real%29%20\
+%28Read%20Description%20Please%29.mp3?dl=0");
+
+let arr = new Array();
+
+audioObj.addEventListener('canplaythrough', (e)=>{
+    button.addEventListener('click', (e)=>{
+        arr.push(audioObj.cloneNode());
+        arr[0].currentTime = 0.5;
+        arr[0].play();
+        setTimeout(()=>{
+            arr[0].remove();
+            arr.splice(0, 1);
+        }, audioObj.duration);
+    });
+});</span></p>
+
+<p class="left">Outcome:</p>
+
+<button id="play-music" style="margin-left: 5px">Click to play music</button>
+
+<script>
+if(true){
+    let button = document.querySelector('#play-music');
+
+    let audioObj = new Audio("https://dl.dropbox.com/s/ywsabqq6209qsrg/\
+    Vine%20Boom%20Sound%20Effect%20%28Longer%20Verison%20For%20Real%29%20\
+    %28Read%20Description%20Please%29.mp3?dl=0");
+
+    let arr = new Array();
+
+    audioObj.addEventListener('canplaythrough', (e)=>{
+        console.log('audio is ready');
+        button.addEventListener('click', (e)=>{
+            arr.push(audioObj.cloneNode());
+            arr[0].currentTime = 0.5;
+            arr[0].play();
+            setTimeout(()=>{
+                arr[0].remove();
+                arr.splice(0, 1);
+            }, audioObj.duration);
+        });
+    });
+}
+</script>
+
+</article>
+
+<hr>
+</body>
+</html>

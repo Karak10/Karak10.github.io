@@ -1,0 +1,315 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link rel="stylesheet" href="../CSS-JavaScript-External-Files/HTMLnotes.css?version=1">
+<meta charset="UTF-8">
+<title> My  notes </title>
+<style>
+.code {
+background-color:lightgreen;
+}
+p {
+text-align:center;
+}
+h1 {
+text-align:center;
+}
+h3 {
+text-align:center;
+}
+h2 {
+text-align:center;
+}
+.hr {
+background:black;
+width:100%;
+height:15px;
+}
+span {
+background-color:lightgreen;
+}
+</style>
+<body>
+</head>
+<hr class="hr">
+
+<header>
+ 
+<h1> Page one of my HTML notes </h1> </p> 
+ 
+</header>
+
+<article id="start-of-page"> 
+  
+    <div id="homepages">
+    
+        <h3>Home Pages:</h3>
+       
+    
+    </div>
+    
+    <nav data-notes="html" data-page="1">
+    
+    </nav>
+            
+    <h2> Informations included in this page: </h2>
+    <p><a href="#one"> Introduction to HTML</a> </p>
+    <p><a href="#two"> Paragraphs, break line element, text decoration elements, head elements and horizontal lines</a></p>
+    <p><a href="#three"> How to add images and comments </a></p>
+    <p><a href="#four"> About links </a></p>
+  
+    </article>
+    
+     <script src="../CSS-JavaScript-External-Files/nav.js"></script>
+
+ 
+<hr class="hr">
+
+<article id="one">
+<header> 
+<h1> Introduction to HTML </h1>
+</header>
+<section>
+<header> 
+<h3> Whats HTML? </h3>
+</header>
+
+<p> <span>HTML</span> is a computer language devised to allow website creation. 
+These websites can then be viewed by anyone else connected to the Internet.</p>
+
+<p> The definition of <span>HTML</span> is <span>HyperText Markup Language</span>. </p>
+
+<p> 
+<ul>
+<li><span> HyperText</span> is the method by which you move around on the web — by clicking on special text called 
+<span>hyperlinks</span> which bring you to the next page. The fact that it is hyper just means it is not linear — i.e. 
+you can go to any place on the Internet whenever you want by clicking on links — there is no set order to 
+do things in.</li>
+<li><span>Markup</span> is what <Span>HTML</span> tags do to the text inside them. They mark it as a certain type of 
+text (italicised text, for example). </li>
+<li><span>HTML</span> is a <span>Language</span>, as it has code-words and syntax like any other language.</li>
+</ul>
+</p>
+
+<p> <span>HTML</span> is just the "skeleton" of the page, the "skin" is <span>CSS</span>, the "muscles" is <span>JavaScript</span>, and after that there are
+other languages and tools that help us create a website like <span>PHP</span> language and others. </p>
+
+<p> I now will be using decoration <Span>attributes</span> to decorate some <span>elements</span>, however, its not recommended to use 
+<span>HTML</span> to decorate, since the decoration is better done with <span>CSS</span>, if I'm correct some attributes and tags, like
+<span>&lt;frameset&gt;</span> element for example are not available for <span>HTML5</span>, but most of the things I have wrote in my notes do work, and I 
+include decoration attributes now at the beginning too, even tho you will mostly use <span>CSS</span> if you 
+decide to become a web developer, because its good to have some knowledge of these, just in 
+case you get to work on a site that uses them. </p>
+
+</section>
+</article>
+<hr class="hr">
+
+<article id="two">
+<header>
+<h1> Paragraphs, break line element, text decoration elements, head elements and horizontal lines.</h1>
+</header>
+<section>
+<header>
+<h2> How to change line and how to change paragraph: </h2>
+</header>
+<p>
+To change line you either close the paragraph by typing<span class="code"> &lt;/p&gt;</span> and open another paragraph by typing <span class="code">&lt;p&gt;</span>
+or break the line by typing <span class="code">&lt;br&gt;</span>, when you break the line you continue writing 
+right under the line, when you make another <span>paragraph</span> there is a bigger space between the 
+lines because you actually change the <span>paragraph</span>. </p>
+
+<p> Something I wanna add is the <span>&lt;pre&gt;</span> element, whatever is between
+<span>&lt;pre&gt;</span> and <Span>&lt;/pre&gt;</span> will be spaced like how
+it is spaced in the <Span>code</span>, for example, if you write a <Span>paragraph</span>
+and decide to change line, <span>&lt;pre&gt</span> element will make the line break
+in your site too. </p>
+</section>
+
+<section>
+<header>
+<h2> Text decoration elements: </h2>
+</header>
+<p> The text decoration elemenents are elements that are used to decorate text,<br> they all have a closing tag, for example,
+if we want to decorate a text with <span>&lt;strong&gt;</span> element we should write <Span>&lt;strong&gt; example &lt;/strong&gt;</span>, here is a list of some text decoration elements: </p>
+<p align = "center"> 
+These are the <strong> <span>&lt;strong</span> and <span>&lt;b&gt;</span> elements </strong>   <br>
+This is the <big> <Span>&lt;big&gt</span>; element </big><br>
+This is the <small> <span>&lt;small&gt;</span> element </small> <br>
+This is the <s> <span>&lt;s&gt;</span> element </s> <br> 
+These are the <em> <span>&lt;i&gt;</span> and <span>&lt;em&gt;</span> elements </em> <br>
+This is the <sub> <span>&lt;sub&gt;</span> element </sub><br>
+This is the <sup> <span>&lt;sup&gt;</span> element </sup> <br>
+This is the <ins> <span>&lt;ins&gt;</span> element </ins> <br>
+This is the <cite> <span>&lt;cite&gt;</span> element </cite> </p>
+</section>
+
+<section>
+<header>
+<h2> Head elements: </h2>
+</header>
+<p align = "center"> Head elements are used by typing <span>&lt;h1&gt;,&lt;h2&gt;,&lt;h3&gt;,&lt;h4&gt;,&lt;h5&gt;</span> or <span>&lt;h6&gt;</span>, <span>&lt;h1&gt;</span> is the biggest one, <Span>&lt;h6&gt;</span> is the smallest. </p>
+</section>
+
+<section>
+<header>
+<h2> Horizontal Lines: </h2>
+</header>
+<p align = "center"> You can create <span>horizontat lines</span> with the <span class="code">&lt;hr&gt; </span>tag, thats what a <span>horizontal line</span> looks like: </p> <hr class="something11">
+<p align = "center"> You can change it's size by typing <span class="code">size = "number"</span> attribute, it's place by typing <span class="code">align = "center/right/left"</span> attribute and it's width by typing <span class="code">width = "number or percent"</span> attribute, lets try to make a bigger red one now at the left by typing:</p>
+<p> <span class="code">&lt;hr size ="30" align="left" width="50%" color="red" &gt;</span></p>
+ <hr/ size = "30" align = "left" width = "50%" color = "red">
+
+</section>
+</article>
+<hr class="hr">
+
+
+<article id="three">
+<header> 
+<h1> How to add images and comments.</h1>
+</header>
+
+<section>
+<header>
+<h2> About images: </h2>
+</header>
+<p align = "center"> To put an <span>image</span> you need to have the <span>image</span> in the same folder with your <span>html document</span>,
+then simply write the following code: <span class="code">&lt;img src="../images/smile.jpg"&gt;</span> </p>
+<img src = "../images/smile.jpg" style="border: unset;"> 
+ 
+<p> You can costumize the <span>image</span> with <span>attributes</span> such as <span class="code">width, height, border and others</span>. </p>
+<p> <span class="code">Border</span> is the area around the picture, you can specify the size of the border by writing <span class="code">border="3px"</span> or whatever other number you want, there are of course other ways to count as well, but I prefer using pixels. </p>
+<p> To change the <Span>color</span> of the <Span>border</span>, without using <Span>CSS</span>, you can use this code: <br/> <br/>
+<span class="code">&lt;font color="red"&gt; <br/>
+&lt;img src="../images/smile.jpg" height="50%" width="50%" border="3px" alt="smile"&gt;<br />
+&lt;/font&gt;</span></p>
+<p style="text-align:left; color:gray;"> Important: the <span class="code">&lt;font&gt;</span> tag is not available in <span>HTML5</span>, <span class="code">&lt;span&gt;</span> and <span class="code">&lt;div&gt;</span> together with <span>CSS</span> should be used instead. </p>
+<font color = "red">
+<img src = "../images/smile.jpg" height = "50%" width = "50%" border = "3px" alt = "smile">
+</font>
+
+<p> The <span class="code">alt="smile"</span> attribute is what I want it to write if the image isn't supported
+by a browser, or if for some reason it doesn't load. </p>
+
+<p align = "center"> If you want to add a <span>figcaption</span> to your <span>image</span> you first type 
+<span class="code"> &lt;figure&gt;</span>, then <span class="code">&lt;img src="../images/smile.jpg" 
+etc etc&gt;</span>, then to add a <span>figcaption</span> in your <span>image</span> you put your <span>figcaption</span> between <span class="code"> 
+&lt;figcaption&gt;</span> and <span class="code">&lt;/figcaption&gt;</span>, you can put more <span>figaptions</span> 
+than one if you want, then you close <Span>figure</span> tag with <span class="code">&lt;/figure&gt;</span>, all this is put
+between <span class="code">&ltfont&gt;</span> and <span class="code">&lt;/font&gt;</span> if you wanna add <span>color</span> to your <span>image</span>, the <span>color</span> will also be added to the <span>figcaptions</span>. </p>
+<p style="text-align:left;"> Code: </p>
+
+<p style="text-align:left;"><span class="code">&lt;font color="red"&gt;<br />
+&lt;figure&gt;<br />
+&lt;img src="../images/smile.jpg" border="3px"&gt;<br />
+&lt;figcaption&gt; &lt;cite&gt;Smile&lt;/cite&gt; &lt;/figcaption&gt; <br/>
+&lt;figcaption&gt;By Karak10 &lt;/figcaption&gt; <br />
+&lt;/figure&gt;<br />
+&lt;/font&gt;</span></p>
+
+<p style="text-align:left;"> Outcome: </p>
+
+<font color = "red">
+<figure>
+<img src = "../images/smile.jpg" border = "3px">
+<figcaption>
+<cite>Smile</cite>  
+</figcaption>
+<figcaption>
+By Karak10
+</figcaption>
+
+</figure>
+</font>
+<p> To change the <span>position</span> of the <span>image</span> you have to put it in a <span>paragraph</span> like this: <span class="code">&lt;p align="center"&gt; &lt;img src="../images/smile.jpg" border="3px"&gt; &lt;/p&gt; </span></p>
+<p align="Center">  <img src="../images/smile.jpg" border="3px"> </p>
+
+ 
+</section>
+<section>
+<header>
+<h2> How to add a comment in your code: </h2>
+</header>
+<p> Something extra I wanna add, is about how you can write a <span>comment</span> in your <Span>code</span>, the <span>comment</span> is not visible
+on the page and its useful if you want to organize the <Span>code</span> by writing small descriptions of 
+what each part of the <span>code</span> does, to write a <span>comment</span> you simply type <span class="code">&lt;!-- example --&gt;</span> </p>
+</section>
+</article>
+
+<hr class="hr"> <!--Height doesn't work for hr for some reason, I put size instead-->
+
+<article id="four">
+<header>
+<h1> About links: </h1>
+</header>
+<p align = "center"> I just learned about <Span>links</span>, to put a <span>link</span> you type <span class="code">&lt;a href = "link"&gt;</span> <br/>
+you have to put <span>the whole url</span> or else it won't work, if you want however there are other stuff you can do with <span>links</span> as well,
+for example you can go to a <Span>paragraph</span> you have wrote at the <span>top of your website</span>, to do that write <span class="code">&lt;p id = "title"&gt;</span> and then you can type <span class="code">&lt;a href = "#title"&gt;</span> and it will take you at the <span>top of the page</span>, don't forget to close the <span class="code">&lt;a&gt;</span> tag by writing <span class="code">&lt;/a&gt;</span> tho, lets try this  </p>
+<p align = "center"> <a href="#top"> click it to get at the top of the page </a> </p>
+
+<p> If you want to make a <span>link</span> that takes you to a <Span>specific paragraph</span> on <span>another website</span> you can type <span>&lt;a href="../HTML-Notes/Notes2.html#three" target="_blank"&gt; Third section of the second page of my notes &lt;/a&gt;</span>, I put the <span>id</span> of the <span>paragraph</span> which is inside <span>the second page of my notes</span> right after the <span>document name</span>, and when you press that it takes you to that <span>paragraph</span> upon opening the <Span>second page of my notes</span>: </p>
+<p><a href="../HTML-Notes/Notes2.html#three" target="_blank"> Third section of the page two of my notes </a> </p>
+
+<p align = "center"> As you probably noticed it writes <span>"Third section of the page two of my notes"</span> and doesn't write the <span>link</span>, that happens because I wrote <span class="code">&lt;a href = "link"&gt; Press this to open page 2 of my notes &lt;/a&gt;</span>, I also put the <Span>link</span> inside a <span>paragraph</span> to <span>center it</span> just like images before. </p>
+<p align = "center"> You can also put the link in an <span>image</span> by typing the <span>&lt;image&gt;</span> element between the <span class="code">&lt;a&gt;</span> and <span class="code">&lt;/a&gt;</span> tags, like this: <span class="code">&lt;a href="#title"&gt; &lt;img src="../images/up.jpg" height="15%" width="15%"&gt; &lt;/a&gt; </span> <br>
+<br>
+<a href = "#top"> <img src = "../images/up.jpg" height = "15%" width = "15%" alt = "Press to get at the top of the page"> </a> </p>
+
+ 
+<p align = "center"> If you want to make a <span>link</span> that <span>transports you to another site</span> you can just put the url, however, if you want it to <span>open another tab</span> and not close your site in order to open the other one you should include the <span class="code">target = "_blank"</span> attribute inside <span class="code">&lt;a&gt;</span> tag, lets try this: <br>
+<br>
+<a href = "https://www.google.com/?gws_rd=ssl" target = "_blank"> https://www.google.com/?gws_rd=ssl
+ </a></p>
+<p> These are the target types you can use and what each does. </p>
+<table width="500" height="250" border="3px" align="center" bgcolor="white">
+<caption> Values of <span class="code">target</span> attribute: </caption>
+<tr>
+<th style="text-align:center;" width="20%"> Value </th>
+<th style="text-align:center;" > Description </th>
+</tr>
+<tr>
+<td style="text-align:center;"> _blank </td>
+<td style="text-align:center;"> Opens the linked document in a <span>new window or tab</span> <a href="../HTML-Notes/Notes2.html" target="_blank">example</a></td>
+</tr>
+<tr>
+<td style="text-align:center;"> _self </td>
+<td style="text-align:center;"> Opens the linked document in the <span>same frame as it was clicked</span> (this is default) <a href="../HTML-Notes/Notes2.html" target="_self">example</a></td>
+</tr>
+<tr>
+<td style="text-align:center;"> _parent</td>
+<td style="text-align:center;"> Opens the linked document in the <span>parent frame</span>, the result is the same with _self value, the difference is only visible when used with iframe. <a href="../HTML-Notes/Notes2.html" target="_parent">example</a></td>
+</tr>
+</tr>
+<tr>
+<td style="text-align:center;"> _top</td>
+<td style="text-align:center;"> Opens the linked document in the <span>full body of the window</span>, the result is the same with _self value, the difference is only visible when used with iframe. <a href="../HTML-Notes/Notes2.html" target="_top">example</a></td>
+</tr>
+</table>
+
+
+<p align = "center"> Now, lets say you want to make a big website, but you don't want it to be all in just one page, you can use <span>links</span> to change the page, and with that beign said, lets now make the <span>second page of my notes</span>, to do that I will use <span class="code">&lt;a&gt;</span> tag and instead of the url I will put the <span>name</span> of the new <span>html document</span> I will make, remember however that the two documents <Span>should be placed in the same file</span>, lets try this. <br>
+<br>
+<a href = "Notes2.html"> Press this to open page 2 of my notes </a> </p>
+<p align = "center"> Something I wanna add is how to create an <span>email hyperlink</span>, you write <span class="code">&lt;a href="mailto: blubluhbluh@gmail.com"&gt; Mail me! &lt;/a&gt; </span>, lets try this: <br />
+<br />
+<a href="mailto: alexisgiafis@gmail.com"> Mail me! </a></p>
+</article>
+
+<p>Also, something else I learned is how to create <span>download links</span>, you simple 
+    write <span>&lt;a href="../images/example.jpg" download&gt; Click to download the HTML document of the page &lt;/a&gt;</span>. 
+</p>
+
+<p>Another <span>element</span> used for <span>links</span> is the <span>base</span> element, this <span>element</span> ise inside the 
+<span>head</span> element and only one <span>base</span> element can be used in a document. The <span>base</span> tag specifies the base URL and/or arget 
+for all relative URLs in a document. The <span>base</span> element must have either an <Span>href</span> or a <span>target</span> attribute present, or both.</p>
+
+<p>For example, if I wrote <span>&lt;base target="_blank"&gt;</span> all <Span>hyperlinks</span> and <span>forms</span> in the page 
+would open in another pad when pressed. If all the <span>hyperlinks</span> I used were part of the same site, for example, my notes,
+I could write <span>&lt;base href="http://karak10notes.c1.biz/"&gt;</span> and then if I wanted to add another <span>link</span> that takes 
+you to the second page of my notes for example I could simply write <span>&lt;a href="../HTML-Notes/Notes2.html"&gt;</span>, without writing the 
+whole URL, which is <span>http://karak10notes.c1.biz/Notes2.html</span>, I hope you understand.</p>
+  
+<hr class="hr">
+</body>
+</html>

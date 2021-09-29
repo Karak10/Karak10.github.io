@@ -1,0 +1,1546 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<title> Page one of my Extra Notes</title>
+<meta charset="UTF-8"> 
+<link href="../CSS-JavaScript-External-Files/HTMLnotes.css" rel="stylesheet">
+<style>
+    body{
+        overflow-x: hidden;
+        width: 100%;
+    }
+    .left {
+        text-align: left;
+    }
+
+    iframe {
+        width: 600px;
+        height: 350px;
+        border: 3px solid black;
+        margin: 20px auto 20px auto;
+        display: block;
+    }
+    .code10 {
+    white-space: pre-wrap;
+    background-color: lightgreen;
+    overflow-wrap: break-word;
+    }
+    
+    p {
+    text-align:center;
+    }
+    h1 {
+    text-align:center;
+    }
+    h2 {
+    text-align:center;
+    }
+    h3 {
+    text-align:center;
+    }
+    .c {
+    background-color:lightgreen;
+    }
+    hr {
+    width:100%;
+    height:15px;
+    background-color:black;
+    color:black;
+    border: black solid;
+    }
+    body {
+    background-color:rgb(165, 235, 235);
+    }
+    span {
+    background-color:lightgreen;
+    }
+    
+    a:link {
+    color: black;
+    text-shadow: 1px 0px 1px black;
+    
+    }
+    
+    a:visited {
+    color: black;
+    text-shadow: 1px 0px 1px rgb(22, 22, 22);
+    }
+    
+    a:hover {
+    text-decoration: underline;
+    color: red;
+    text-shadow: 1px 0px 1px black;
+    }
+     
+    img{
+        display: block;
+        margin: 20px auto 20px auto;
+        border: 3px solid black;
+        border-radius: 10px;
+    }
+
+    </style> 
+</head>
+<body>
+
+<hr>
+
+    <header> 
+    <h1> Page one of Extra Notes </h1>
+    <p>In my extra notes I talk about web development skills and tools 
+        that a developer should know, as well as whatever else I find 
+        useful but doesn't fit in any other category of my notes.
+    </p>
+    </header>
+    
+<article id="start-of-page"> 
+  
+<div id="homepages">
+
+    <h3>Home Pages:</h3>
+   
+
+</div>
+
+<nav data-notes="Extranotes" data-page="1">
+
+</nav>
+
+    <h3>Informations included in this page:</h3>
+    <p><a href="../Extra-Notes/extranotes1.html#one">Terminal Commands</a></p>
+    <p><a href="../Extra-Notes/extranotes1.html#two">How to install VSC live server extension</a></p>
+    <p><a href="../Extra-Notes/extranotes1.html#three">Node Package Manager</a></p>
+    <p><a href="../Extra-Notes/extranotes1.html#four">Introduction to Module Bundlers</a></p>
+    <p><a href="../Extra-Notes/extranotes1.html#five">Parcel Module Bundler</a></p>
+    <p><a href="../Extra-Notes/extranotes1.html#six">dat.GUI API package:</a></p>
+    <p><a href="../Extra-Notes/extranotes1.html#seven">How to use Grunt task runner</a></p>
+
+</article>
+
+<script src="../CSS-JavaScript-External-Files/nav.js"></script>
+<hr>
+
+<article id="one">
+    <header>
+        <h1>Terminal Commands</h1>
+    </header>
+
+<h2>Introduction:</h2>
+<p>When you are using the <Span>command line</Span> in any computer, and you are writing 
+<Span>commands</Span> and <span>text appears on your screen</span>, that's what we call a 
+<Span>terminal application</Span>. This <Span>terminal application</Span> is <Span>sending your commands</Span> to 
+a <Span>Shell</Span>, and the <Span>Shell</Span> is responsible for <Span>understanding your commands</Span> and 
+<Span>executing the commands</Span> you request.</p>
+
+<p>On <Span>Linux and Mac</Span>, one of the most popular <Span>shells</Span> available is <span>Bash</span>, which allows you to 
+<Span>type in commands</Span>, and <Span>executes those commands</Span>, and then <Span>see those results on screen</Span>, and it also allows 
+you to <Span>take information from one application</Span> and <Span>pipe it or pass it into the next application</Span>, then <Span>pipe it into the next application</Span> and so on. 
+That <Span>information</Span> is passed as <Span>text</Span> and allows you to get the 
+<Span>output of one application</Span> and <Span>pipe it into the next</Span>.</p>
+
+<p>In <Span>Windows</Span>, we have the <Span>Cmds shell</Span>, which can also 
+<Span>execute commands</Span>, it can also <span>pass information from one command to the next</span>
+and that <Span>information</span> is <Span>passed as text</Span>, however, <Span>Cmd</Span> is 
+<Span>relatively limited</Span> in today's world, so we were introduced a <Span>new technology</Span> back 
+in around <Span>2005</Span> called <Span>PowerShell</Span>.</p>
+
+<p><Span>PowerShell</Span> is a whole new approach to
+<Span>command-line shell technology</Span>. It essentially still 
+provides you a <Span>command-line syntax</Span>, and 
+<Span>scripting syntax</Span> that you can 
+<Span>type commands into</Span> but it <Span>takes the information</Span>
+that you can <Span>pass from one application to the next</Span>, and 
+<Span>passes it as rich objects</Span> that you can <Span>query</Span> 
+and <Span>manipulate</Span> far more easily than you can process <span>text</span>. 
+<Span>PowerShell</Span> is now available on <Span>Mac</Span> and <Span>Linux</Span> 
+as well, and it's becoming very <Span>broadly adopted</Span>.</p>
+
+<h2>How and why to use Bash on windows10:</h2>
+
+<p><span>Bash</span> is much more <Span>applicable</Span> when it comes to 
+<Span>web development</Span>, being the <Span>default command line</Span> for 
+many <Span>Linux/*nix systems</Span>.</p>
+
+<p>In order to use <Span>bash</Span> in <span>Windows 10</span> you will have to use 
+<Span>Windows Subsystem for Linux</Span> (WSL), which you can do from 
+<Span>setting</Span> and then you have to <Span>download Ubuntu</Span> to use as 
+<Span>distribution</Span> for <Span>WSL</Span>, more information about how to do this 
+can be found in the following video:</p>
+
+<iframe src="https://www.youtube.com/embed/1ap3hL-UR9I" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<p>After you are done, open your <Span>terminal</Span> in <Span>VSC</Span> and 
+type <Span>bash</Span>, after you do that you should be able to run <span>bash commands</span>
+without a problem:</p>
+
+<img src="../images/terminal6.png">
+
+<h2><u>Introduction to Bash Terminal commands</u></h2>
+
+
+You are gonna be using <Span>terminal</Span> for a lot of tasks in your development life, such as, 
+<Span>updating your projects in git</Span>, <Span>create files</Span>, <Span>move files</Span>, 
+and in general <Span>manipulate files</Span>, the <Span>terminal</Span> is also used to 
+<Span>download JavaScript packages</Span> and many other things.</p>
+
+<p>So, the <Span>first command</Span> we are gonna see is <Span>pwd</Span>, which stands for 
+<Span>Present Working Directory</Span> and it returns the <Span>directory you are currently in</Span>, for 
+example, in <Span>VSC's terminal</Span>, when you <Span>open a new terminal window</Span> you will by default be 
+inside the <Span>folder you had opened in VSC</Span>, let's try this:</p>
+
+<img src="../images/terminal1.png">
+
+<p>As you can see, the <span>path</span> of my <Span>folder</Span> is returned, 
+if I wanted to <Span>go up one level</Span>, so, in other words, if I wanted to <span>leave the file</span>
+and <span>enter the Dekstop</span> I could write <Span>cd ..</Span> command, every time you write 
+<Span>cd ..</Span> you enter the <Span>previous directory of the one you are currently in</Span>, here is an example:</p>
+
+<img src="../images/terminal2.png">
+
+<p>To <Span>enter a file</Span> you can use <span>cd path\</span>, if you write 
+the <Span>path of the file</Span> followed by a <span>backslash</span> "\" then 
+it should work, let's try this:</p>
+
+<img src="../images/terminal3.png">
+
+<p>If the <span>terminal</span> is starting to get too full of <Span>commands</Span>, 
+then you can use the <span>clear</span> command to <Span>clear the terminal</Span>. If you 
+want to <Span>reuse a command</Span>, you can use the <Span>up and down arrow keys</Span> which will reference 
+to the <Span>commands history</Span>, the <Span>up arrow</Span> will <Span>return the previous commands</Span>, and if you go too back and 
+pass the wanted <Span>command</Span> you can use the <Span>down arrow</Span> to <Span>reverse</Span>, think of it as a <span>list of commands that were recently used</span>, 
+every time you press the <Span>up arrow key</Span> you go <Span>down the list</Span>, towards the <span>older used commands</span>, 
+every time you press the <Span>down arrow</Span> you go <Span>up the list</Span> towards the <Span>newer used commands</Span>.
+Another useful tip to save time is to use the <span>tab key</span> which will <Span>fill in the command</Span> for you, 
+if for example I wanted to access my <Span>for-terminal-testing</Span> file and I was inside <Span>Desktop</Span>
+I could write <Span>cd for-</Span> and then press <Span>tab</Span>, and if the <Span>for-terminal-testing file was the only file that starts with for-</Span> then
+the name would be filled automatically.
+</p>
+
+<p>The <Span>mkdir</Span> command stands for <Span>Make Directory</Span> and 
+it can be used to <Span>create files</Span>, if for example I wanted to 
+create a <span>folder called Steve</span> I could write <Span>mdkir Steve</Span>,
+let's try this out:</p>
+
+<img src="../images/terminal4.png">
+
+<p>The <span>ls</span> command <Span>returns a list</Span> of all the <Span>files inside the folder</Span>, 
+here is an example:</p>
+
+<img src="../images/terminal5.png">
+
+<p>If you wanted to create a <Span>file</Span>, such as an <Span>html file</Span> for example, 
+or <Span>any kind of file</Span> in general, you could use the <Span>touch</Span> command, followed by the 
+<Span>name of the file</Span>:</p>
+
+<img src="../images/terminal7.png">
+
+<p>The <span>ls -l</span> command also returns a <Span>list of the files</Span> inside 
+the <Span>present working directory</Span> however, the <Span>list</Span> contains 
+a little <Span>more information</Span> about the <span>files</span>:</p>
+
+<img src="../images/terminal8.png">
+
+<p>As you can see, the <Span>directories</Span> (folders) begin with <Span>dr</Span> while 
+the <Span>files</Span> begin with <Span>-r</Span>.</p>
+
+<p><span>Files</span> which their <Span>names</Span> start with a <Span>dot</Span> are 
+called <Span>hidden files</Span> and will <span>not be visible</span> 
+in the <Span>lists</Span>:</p>
+
+<img src="../images/terminal9.png">
+
+<p>If you want to see the <Span>hidden files</Span>, you can write <Span>ls -a</Span>, 
+which will show <Span>all the files</Span>, or, if you want to <Span>see all the files</Span>
+with <Span>more details about each file</Span> you can use <Span>ls -la</Span>:</p>
+
+<img src="../images/terminal10.png">
+
+<p>As you have probably noticed, there are also <Span>two directories</Span> I 
+dididn't add in my <Span>directory</Span>, one is <Span>..</Span>, the other is <Span>.</Span>, 
+as I said before, <Span>cd ..</Span> takes you to the <span>previous directory</span> of the <Span>path</Span>, so this 
+<span>.. directory</span> is the <span>parent directory</span>, while <Span>.</Span> is 
+the <Span>current directory</Span>:</p>
+
+<img src="../images/terminal11.png">
+
+<p>If you want to <Span>remove a directory</Span> (folder) you can use the 
+<span>rmdir</span> which stands for <Span>Remove Directory</Span>, like this:</p>
+
+<img src="../images/terminal12.png">
+
+<p>To <Span>remove a file</Span> you can use the <span>rm</span> command, followed by 
+the <Span>name of the file</Span> you want to <Span>remove</Span>:</p>
+
+<img src="../images/terminal13.png">
+
+<p>When you try to <Span>remove a directory</Span> that <Span>is not empty</Span>, an 
+<Span>error message</Span> will show up:</p>
+
+<img src="../images/terminal14.png">
+
+<p>To <Span>force a directory to be removed</Span> even if it 
+<Span>is not empty</Span> you can use <Span>rm -rf</Span> command, which 
+will <span>remove the directory and everything inside it</span>:</p>
+
+<img src="../images/terminal15.png">
+
+<p>The <Span>mv</Span> command stands for <span>move</span>, it can be used to 
+<Span>move files</Span> but also can be used to <Span>rename files</Span>, if you 
+want to <Span>rename a file</Span> you can do this like this: <Span>mv example.html newname.html</Span>,  
+if you want to <Span>move a file</Span> you can write: <Span>mv example.html path/</Span>. To 
+<Span>move and rename a file</Span> you can do something like this: <Span>mv file.html path/newname.html</Span> and 
+lastly if you want to 
+<span>move multiple files</span> then you can write <span>mv file1.html file2.html /path</span>, here is an example:</p>
+
+<img src="../images/terminal16.png">
+
+<p>The next <span>command</span> we are gonna learn is the <Span>cp</Span> command which stands for 
+<span>copy</span>, it lets you <Span>compy a file or folder</Span>, the <Span>syntax</Span> looks like this: 
+<Span>cp file.html path/copiedfile.html</Span>. If you want to <span>copy</span> the <span>file</span> at
+<Span>the same directory</Span> then you don't need to add a <Span>path</Span>, you can just write the <Span>name of the copied file</Span> like this: 
+<Span>cp file.html copiedfile.html</Span></p>
+
+<img src="../images/terminal17.png">
+
+<p>Here is a video that helped me a lot:</p>
+
+<iframe src="https://www.youtube.com/embed/YSj30jnvxKo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</article>
+
+<hr>
+
+<article id="two">
+    <header>
+        <h1>How to install VSC live server extension</h1>
+    </header>
+
+    <p>To <Span>install extensions</Span> to <Span>Visual Studio Code</Span> you can very easily access the your 
+    <Span>extensions</Span> or <Span>find and install new extensions</Span> by entering the <Span>extensions section</Span>
+which can be easily accessed by <Span>clicking here</Span>:</p>
+
+<img src="../images/extensions1.png">
+
+<p>If for whatever reason, <Span>you are not viewing this bar at the left</Span> you can also 
+<Span>access the extensions section</Span> another way, to do that, <Span>hold ctrl and shift and then press p</Span>, 
+this will open a <Span>search bar</Span>, there, <Span>type "install extensions"</Span> and click on <span>Install Extensions</span>,
+this will open the <span>extensions manager</span>.</p>
+
+<p>After you do that search for <Span>Live Server</Span>, and click on it:</p>
+
+<img src="../images/extensions2.png">
+
+<p>As expected, the next step is to <Span>begin the installation</Span>.</p>
+
+<p>After the <Span>installation is finished</span>
+you are all set to start using it, there are <Span>a few different ways</Span>
+to use it, and you can actually read the <Span>instructions</Span>
+in the <span>details of the extension</span>, but the easiest way to use it in my 
+opinion is to simple <Span>right click on the html file you wanna use</Span> and 
+<Span>click open with live server</Span>. After you have done it the 
+<span>server</span> will <Span>update</span> every time you 
+<span>save the file</span>.</p>
+</article>
+
+<hr>
+
+<article id="three">
+    <header>
+        <h1>Node Package Manager:</h1>
+    </header>
+
+    <h2><u>What is NPM:</u></h2>
+    
+    <p><span>NPM</span> stands for <span>Node Package Manager</span> that is installed with 
+    <Span>Node.js</Span>, without that necessarily meaning you need to know <span>Node.js</span> to use 
+    it.</p>
+
+    <p><span>NPM</span> is, as the name says, used to <span>manage packages</span>, what are <Span>packages</Span>? 
+    They are usually referred to as <Span>modules</Span>, or <Span>JavaScript libraries</Span>, and they are 
+    basically <span>JavaScript code</span> that <Span>somebody else made</Span> and <Span>shared with us</Span>, 
+    which can be used to <Span>simplify</Span> and <Span>speed up the process</Span> of specific <Span>tasks</Span>. For example, 
+    there is a <Span>package</Span> called <Span>moment</Span> which allows you to easily <Span>manipulate dates</Span> 
+    and stuff, with this <Span>package</Span> you can for example <Span>create a date object</Span> and with 
+<span>one method of the package</span> you could <Span>display the date in a wanted format</Span> without having to hand write the code for it.</p>
+
+<h2><u>How to install NPM:</u></h2>
+
+<p>To <Span>install NPM</Span> you should simple go to <a href="https://nodejs.org/en/">this site</a> 
+and <Span>download Node.js</span>, as I said before, <Span>NPM</Span> will be <Span>downloaded with Node.js</Span>,
+so after you are done downloading, <Span>NPM</Span> should have been downloaded too, and if you search for it you 
+should find it in the <span>nodejs folder</span>:</p>
+
+<img src="../images/for-npm1.png">
+
+<h2><u>About package.json and how to edit default answers:</u></h2>
+
+<p>To <Span>install packages</Span> in your 
+<Span>project</Span> you are gonna need a <span>package.json</span> file first, but what is 
+it used for? And why is it so important?</p>
+
+<P>The <Span>package.json file</Span> contains 
+<Span>information about your projects</Span>, such as 
+<span>name</span>, <span>description</span> and others, but what's more important is that it <Span>lists all the dependencies (name & version)</Span> 
+of your <Span>project</Span>, what are <span>dependencies</span> you may 
+wonder now, so let me explain. <Span>Dependencies</Span> are the 
+<Span>packages</Span> you are using, basically, 
+you are <Span>depending on those packages</Span>, since 
+if those <Span>packages</Span> were to be <span>removed</span> then 
+<Span>problems would be created to your project</Span> (since it's using
+those packages). The <Span>versions</Span> of those 
+<Span>packages</Span> are also included in the <span>package.json file</span>
+as well as <Span>instructions about how the versions should be updated</Span>, since <Span>versions</Span>
+could also create problems to your <Span>Project</Span> if they are changed. Lastly, 
+<Span>NPM scripts</Span> can be added in the <span>package.json file</span> but I will talk more about 
+those stuff later.</P>
+
+<p>When using <Span>one package</Span> by the way, you may only <Span>depend on that package</Span>, but 
+<Span>that package</Span> may <Span>depend on other packages</Span> that may <span>also depend on other packages</span>, 
+and that <Span>dependency chain</Span> goes deeper and deeper.</p>
+
+<p>Knowing all that is useful, because by only having this <Span>package.json</Span> file 
+in your possesion later allows you to <Span>download all packages to the specific versions the project needs them</Span> 
+all with <Span>one command</Span>. For example, I could <Span>share my files</Span> with 
+<span>another person</span>, but <Span>not send him the modules of the packages</Span>, and 
+<Span>only send him my files and the package.json file</Span>, with only that, he could then 
+with <span>one command</span> get <Span>everything downloaded</Span> by him self. Before we learn about that 
+however, let's first learn how to create a <Span>package.json file</Span> in the first place.</p>
+
+<p>You could <Span>hand write the file</Span>, however, that would be stupid, since you can 
+very easily <Span>automatically do this</Span> using the <Span>npm  init</Span> command:</p>
+
+<p>First I'm gonna <Span>change shell in my terminal</Span> to <Span>cmd</Span>, 
+and that's only because for some reason I am facing some problems while trying to 
+access <Span>npm commands with bash or PowerShell</Span>, I will find a solution and write 
+about it later, for now we are gonna use <span>cmd</span>:</p>
+
+<img src="../images/for-npm2.png">
+
+<p>Now, let's use the <Span>npm init</Span> command:</p>
+
+<img src="../images/for-npm3.png">
+
+<p>So, when I wrote <Span>npm init</Span> I were asked few <Span>questions</Span> which 
+I had to <Span>answer</Span>, some of those <Span>questions</Span> already had 
+a <Span>default answer</Span> that I could leave be by <Span>pressing enter</Span>, those 
+<Span>default answers</Span> were <Span>between ()</Span>, I could also use 
+<Span>enter</Span> to <Span>skip questions</Span>.</p>
+
+<p>If you want to, you can use <span>npm init --yes</span> or <Span>npm init -y</Span> 
+to <Span>skip the questioning</Span> and <Span>immediately make the package.json file</Span> 
+using the <Span>default answers</Span>, so let's <Span>remove package.json</Span> and 
+try to <Span>initialize it again</Span>:</p>
+
+<img src="../images/for-npm4.png">
+
+<p>If you want to <Span>edit the default options</Span> you can use 
+<Span>npm config set init-{the option} 'value'</Span>, you could also do this 
+<span>without the config</span> and as long as it had the keyword <Span>set</Span> it would still work. 
+To <Span>check the default value</Span> of an <Span>init option</Span> you can use <Span>npm config get init-{the option}</Span> or 
+just <span>npm get init-{the option}</span> without the <Span>config</Span>, here are some examples:</p>
+
+
+<img src="../images/for-npm5.png">
+
+<p>Let's now check if they are, in need, the <Span>default answers</Span>:</p>
+
+<img src="../images/for-npm6.png">
+
+<p>Alright, so now, let's take a quick look into the <Span>package.json</Span> file 
+it self, just so we see what it looks like:</p>
+
+<img src="../images/for-npm7.png">
+
+<h2><u>How to install and use packages:</u></h2>
+
+<p>To <Span>install packages</Span> I recommend checking out <a href="https://www.npmjs.com/">this site</a> where you 
+can find <Span>packages</Span>, which usually include the <Span>install command</Span> you have to use to 
+<Span>install them</Span> which you can <span>copy paste</span>, and they usually also contain 
+<Span>guides</Span> and <Span>instructions</Span> of how the <span>package</span> works and stuff.</p>
+
+<p>To <span>install a package</span> you should use the <span>npm install</span> command, 
+in the past, writing <Span>npm install package</Span> would <Span>only install the modules without updating the package.json file</Span>, 
+and to <Span>do both</Span> you had to use the <span>--save flag</span> like this: <Span>npm install package --save</Span>, however, 
+today it will <Span>update package.json</Span> even if you don't add that flag:</p>
+
+<img src="../images/for-npm8.png">
+
+<p>Alright, so, <span>node_modules folder</span> was added, which contains the 
+<Span>modules of the package</Span>, and a <Span>file called package-lock.json</Span> was 
+also created, this <Span>file</Span> is <Span>automatically generated</Span> for any 
+<Span>operations</Span> where <Span>npm modifies</Span> either the <Span>node_modules tree</Span>, 
+or <Span>package.json</Span>. It <Span>describes the exact tree</Span> that was <Span>generated</Span>, 
+such that <span>subsequent installs</span> are able to <Span>generate indentical trees</Span>, 
+regardless of <span>intermediate dependency updates</span>.</p>
+
+<p>The <Span>package.json</Span> file was also <Span>updated</Span>, since now it has 
+<Span>one dependency</Span>, let's take a look in both two files now:</p>
+
+<p>Here is the <Span>package-lock.json</Span> file:</p>
+
+<img src="../images/for-npm10.png">
+
+<p>And here is the <Span>package.json</Span> file:</p>
+
+<img src="../images/for-npm9.png">
+
+<p>Let's now <Span>install another package</Span> called 
+<span>moment</span>:</p>
+
+<img src="../images/for-npm11.png">
+
+<p>This will <Span>update</Span> both files, but I'm not gonna show that to you, the reason 
+I added this <Span>package</Span> is so that I try using it in my <Span>code</Span>, first,
+let's <Span>create a javascript file</Span> and <span>write the code</span>:</p>
+
+<img src="../images/for-npm12.png">
+
+<p>I used <Span>require()</Span> method to <span>add the package</span>, if I was 
+writing the code to be ran by a <Span>web browser</Span> I would had used 
+<Span>ES6 import keyword</Span>, but now, I'm just gonna run it with <Span>Node.js</Span>
+by writing <Span>node index.js</Span> in my <Span>terminal</Span>:</p>
+
+<img src="../images/for-npm13.png">
+
+<p>So, this <Span>package</Span> basically helped me create a <Span>beautiful date format</Span> which 
+I normally would have to write <span>few lines of code</span> to make, with <Span>just one method</Span>, 
+and it actually has many kind of different <span>formats</span> you can use, and it just saves you a lot of time, 
+since without it you would have to <Span>hand write</Span> everything from scratch.</p>
+
+<p>If I wanted to <Span>share this application</Span> I just created, under other circumstances, I could be 
+using <Span>twenty different packages</Span> for example, if it was a big project, and <span>sharing all my files with all those packages</span>
+would be hard, because <Span>twenty packages</Span> are a lot of content, the good thing is, as I had mentioned before, 
+you don't need to share the <Span>modules</Span>, as long as you have the <span>package.json</span> file in your possesion 
+you should be able to just type <Span>npm install</Span> in your <Span>terminal</Span>, and it will 
+<span>install everything for you</span>, let's <Span>remove package-lock.json file and node_modules folder</Span> now 
+and use <Span>npm install</Span> to see if it works:</p>
+
+<img src="../images/for-npm14.png">
+
+<h2><u>Dependencies/dev-dependencies and how to uninstall Packages:</u></h2>
+
+<p>Alright, so, to <Span>install the packages</Span> needed for the 
+<Span>application to run</Span> it looks at the <Span>dependencies</Span> of the 
+<Span>package.json file</Span>, since the <Span>application depends on those packages</Span>, but 
+what are those <Span>other dependencies</Span> called <Span>dev-dependencies</Span>?</p>
+
+<p>You are gonna <Span>install something</Span> as a <Span>dev-dependency</Span> if 
+it's <Span>only gonna be used for development</Span> without your <Span>application</Span> being 
+<Span>depending on it</Span>. One example I can think of is something like 
+<Span>gulp</Span> which is a <Span>task runner</Span>, so let's <Span>install gulp</Span> and 
+also let's <span>install gulp-sass</span> which is a <Span>plugin of gulp</Span>, you can actually 
+<span>install multiple stuff with one command</span>, at the end we are also gonna use the 
+<Span>--save-dev flag</Span> to let it know we want to <Span>install it as a dev-dependency</Span>, 
+this <Span>flag</Span> can be <Span>added after</Span> or <Span>before</Span> you <Span>type the packages names</Span>,
+like this: <Span>npm gulp gulp-sass --save-dev</Span> or this: <Span>npm --save-dev gulp gulp-sass</Span>.</p>
+
+<p>After I <Span>installed the packages</Span> the <Span>package.json</Span> was <Span>updated</Span>, and we can now 
+see that <Span>gulp and gulp-sass</Span> were indeed <Span>installed</Span> as <Span>dev-dependencies</Span>:</p>
+
+<img src="../images/for-npm15.png">
+
+<p>If we now <Span>removed the modules and package-lock.json</Span> like before, we could use the 
+<Span>npm install --production</Span> command and only the <Span>regular dependencies</Span> would be downloaded 
+without the <Span>dev-dependencies</Span> if you wanted to <Span>install both</Span> you can still just type 
+<Span>npm install</Span>, let's try this:</p>
+
+<img src="../images/for-npm16.png">
+
+<p>As you can see, only <Span>two packages</Span> were <Span>installed</Span>.</p>
+
+<p>To <Span>uninstall dependencies</Span> you have to use the <span>npm uninstall</span> command, to 
+<Span>uninstall a dev-dependency</Span> you also need to <Span>add the --save-dev</Span> flag or else it 
+will be <Span>uninstalled from modules</Span> but will <Span>remain in dev-dependencies</Span> inside the 
+<Span>package.json</Span>. Let's <Span>uninstall gulp and gulp-sass dev-dependencies</Span> now:</p>
+
+<img src="../images/for-npm17.png">
+
+<p>There are also a few <Span>alternatives to uninstall command</Span>, you can also use <span>remove</span>, 
+<Span>rm</Span> or even <span>un</span> to <Span>uninstall packages</Span>, but <Span>uninstall</Span> is just 
+easier to remember.</p>
+
+<h2><u>Versioning:</u></h2>
+
+<p>If you want to <span>install</span> a <Span>specific version of a package</Span> you can write
+<Span>npm install package@version</Span>. To <Span>update</Span> the <Span>version</Span> you 
+can write <Span>npm update package</Span>, let's try this out:</p>
+
+<p>First, lets download one of the <Span>earlier versions</Span> of 
+<Span>lodash</Span>:</p>
+
+<img src="../images/for-npm18.png">
+
+<p>Now, let's <Span>update</Span> it to it's <Span>newer version</Span>:</p>
+
+<img src="../images/for-npm19.png">
+
+<p>Let's talk a little about the <Span>version numbers</Span> and what 
+is <Span>each number</Span> used for:</p>
+
+<img src="../images/for-npm20.png">
+
+<p>Usually the <Span>last number</Span> is <Span>increased</Span> when 
+a <Span>bug is fixed</Span> so <Span>updating that</Span> is safe, since there 
+won't be any major changes that could break your code. The <Span>middle number</Span>
+is <Span>increased</Span> when a <Span>new feature is added</Span> and it's 
+<span>also safe to update</span> since no major changes that could break your code are 
+added. The <Span>first number</Span> is <Span>increased</Span> when a 
+<Span>major change</Span> happens, and it is <Span>unsafe to update</Span> since 
+<Span>it could break your code</Span>.</p>
+
+<p>Alright, so now, I want you to look at the <Span>image above</Span> and notice that 
+little <Span>^ symbol</Span> that is <Span>infront the version numbers</Span>, what does that mean? Before, I 
+talked about how you can <Span>share your package.json file</Span> and people can use 
+<Span>npm install</Span> to <Span>download all dependencies</Span>, the <Span>carrot symbol</Span> indicates 
+that the <Span>latest minor version should be installed</Span>, the <Span>first number of the version</Span> 
+will <Span>always be the same</Span>, but the <Span>two others can be increased</Span>. If 
+we added the <Span>~ symbol instead</Span> that would indicate that the <Span>lates patch version should be installed</Span>
+and the <Span>major and minor versions would stay the same</Span>. If you 
+<Span>didn't use any symbol</Span> then that would mean you want the <Span>exact version to be installed</Span> and 
+lastly, if you <Span>replace the version with the * symbol</Span> that indicates that 
+<Span>the latest version should be installed</Span>.</p>
+
+<h2><u>Local & global packages:</u></h2>
+
+<p>All the <Span>packages</Span> we have <span>installed</span> till now 
+were <Span>installed</Span> locally, meaning they were <Span>added inside the node_modules folder</Span> in 
+our <Span>project's folder</Span>, but what are <Span>global packages</Span>? A good example of a 
+<Span>global package</Span> is the <Span>live-server package</Span> which <Span>reloads your browser</Span>
+every time you <Span>update your files</Span>. To <Span>install a package globally</Span> you 
+should use the <Span>-g flag</Span>. Let's try to <Span>install</Span> it then:</p>
+
+<img src="../images/for-npm21.png">
+
+<p>Since it is <Span>global</Span> it <Span>isn't gonna go inside</Span> our 
+<Span>node_modules folder</Span> and it's not gonna be added in 
+<Span>package.json dependencies</Span>, it is being <Span>installed</Span> on 
+our <Span>computer</Span>. If you want to know <Span>where your global modules are</Span> you 
+can use <Span>npm root -g</Span> command, like this:</p>
+
+<img src="../images/for-npm22.png">
+
+<p>You can view the <Span>file</Span> too, as you can see, I only have 
+<Span>one package</Span> installed in my computer:</p>
+
+<img src="../images/for-npm23.png">
+
+<p>So, since it is a <Span>local package</Span> we can actually <Span>run it from anywhere</Span>
+but generally you wanna run it inside an <span>application directory</span>, let's try it, we are 
+also gonna need an <Span>html file</Span> so that you can actually display things on the screen:</p>
+
+<img src="../images/for-npm24.png">
+
+<p>If you want to <Span>uninstall a global package</Span> you can do that just like 
+I said before, but you should also use the <Span>-g flag</Span>, like this: 
+<span>npm uninstall live-server -g</span></p>
+
+<h2><u>Listing packages:</u></h2>
+
+<p>If you want to <Span>list all the dependencies</Span> of your 
+<Span>project</Span> you can use <Span>npm list</Span> command:</p>
+
+<img src="../images/for-npm25.png">
+
+<p>Let me <Span>install gulp</Span> now really quick, to show you something, 
+<Span>gulp</Span> actually has a lot of <Span>dependencies</Span> of it's own, and 
+many of it's <Span>dependencies</Span> have <span>other dependencies</span>, and so on,
+so take a look to the <span>list</span> with <span>gulp</span> inside:</p>
+
+<img src="../images/for-npm26.png">
+
+<p>As you can see, there is some kind of <Span>chain of dependencies</Span>, 
+and they are a lot. So, how could we only <span>list the top level</span> of <Span>dependencies</Span>? 
+If for example we <Span>only wanted to see our project's dependencies</Span>? To do that 
+we could use the <Span>--depth flag</Span>, for example, if we only wanted to 
+<Span>list the top levet</Span> we could write <span>npm list --depth 0</span> and that 
+would <span>list the dependencies of with a depth of 0</span>:</p>
+
+<img src="../images/for-npm27.png">
+
+<p>If we also wanted to <Span>list the dependencies of our project's dependencies</Span> we could 
+<Span>set the depth to 1</Span>:</p>
+
+<img src="../images/for-npm28.png">
+
+<h2><u>NPM Scripts:</u></h2>
+
+<p>Last thing I want to talk about are <Span>scripts</Span>, so, if you take 
+a look into the <span>package.json</span> you can see there is an <Span>object</Span> called 
+<Span>scripts</Span>. There you can create <Span>custom commands</Span>, for example, 
+I could write <Span>"greet": "node index.js"</Span> and whenever I wrote 
+<Span>npm run greet</Span> on my <Span>terminal</Span> the <Span>index.js would execute</Span>, 
+let's try this:</p>
+
+<p>In the <Span>index.js</Span> I'm gonna write something simple, let's just write 
+<Span>console.log('Hello World!')</Span>, then, I'm gonna create the <span>script</span>:</p>
+
+<img src="../images/for-npm29.png">
+
+<p>Now, let's try to run the <Span>script</Span> in the <Span>terminal</Span>:</p>
+
+<img src="../images/for-npm30.png">
+
+<p>There are also a few <Span>script names</Span> that <Span>do not require</Span> the 
+word <Span>run</Span> in order to work, for example, <span>start</span> and <Span>test</Span> and 
+probably a few more.</p>
+
+<h2><u>Tutorial:</u></h2>
+
+<p>Here is a really cool video that helped me a lot with <Span>Node Packet Manager</Span>, 
+I recommend watching it, even though it's a little long:</p>
+
+<iframe src="https://www.youtube.com/embed/jHDhaSSKmB0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<h2><u>How to use NPM with bash:</u></h2>
+
+<p>So, I just figured out how to use <Span>npm commands</Span> 
+with <Span>bash</Span>, to do so, you will need to get 
+<Span>Node</Span> on your <Span>Ubuntu</Span>, first 
+you should <Span>install NVM</Span>, which stands for 
+<Span>Node Version Manager</Span> and is a <Span>version manager for Node,js</Span>, 
+to do that, we should use the following <Span>command</Span>: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash</p>
+
+<img src="../images/for-npm31.png">
+
+<p>After you do this, you should <span>restart your terminal</span> and then <Span>install Node LTS version</Span>
+by using this <Span>nvm command</Span>: <Span>nvm install -lts</Span></p>
+
+<img src="../images/for-npm32.png">
+
+<p>After you have done that, you should be able to use <Span>npm commands</Span> without 
+a problem, let's try this out:</p>
+
+<img src="../images/for-npm33.png">
+
+<p>If for some reason you <Span>don't have curl</Span>, which is
+a <Span>bash script</Span> that lets you <Span>download files</Span>, 
+then you should use the following command: <span>sudo apt-get install curl</span></p>
+</article>
+
+<hr>
+
+<article id="four">
+
+    <header>
+        <h1>Introduction to Module Bundlers</h1>
+    </header>
+
+    <p><span>Module bundlers</span> are <Span>tools</Span> that 
+    <Span>frontend developers</Span> use to <span>bandle JavaScript modules</span>
+into a <Span>single JavaScript file</Span> that can be <Span>executed in the browser</Span>.</p>
+
+<p>Some <Span>modern module bundlers</Span> are <Span>webpack</Span>, <Span>rollup</Span>,
+<Span>fusebox</Span> and <Span>parcel</Span>. I'm actually going to talk about 
+<Span>parcel</Span> later in this page, because it's a pretty simple <Span>module bundler</Span>
+to use, and I may also talk about <Span>webpack</Span> later, which also is pretty popular, 
+probably more than <Span>parcel</Span> but it needs a little more effort to learn.</p>
+
+<p><span>Module bundlers</span> are required because:</p>
+
+<ul>
+    <li>Some browser do not support module system</li>
+    <li>It helps you manage dependency relationship of your code, it 
+        will load modules in dependency order for you
+    </li>
+    <li>It helps you to load your assets in dependency order, image asset, 
+        css aset, etc
+    </li>
+</ul>
+
+<p>To illustrate, imagine you are building a <Span>web application</Span>, 
+which is made up of <Span>multiple JavaScript files</Span>. You add <span>JavaScript files</span>
+into <Span>html</Span> via <Span>script tags</Span>:</p>
+
+<Style>
+    .code-example{
+        margin: auto; 
+        width: fit-content;
+        background-color: #20212c;
+        color: yellow;
+        padding-right: 70px;
+        box-shadow: 4px 4px 0px 1px #bd93f9;
+        padding-left: 30px;
+        padding-bottom: 30px;
+    }
+    .code-example div{
+        overflow-wrap: break-word;
+        white-space: pre-wrap;
+        text-align: left;
+    }
+    .code-example span{
+        background-color: unset;
+    }
+    .pink {
+        color: #dc689f;
+    }
+    .blue {
+        color: #51ba99;
+    }
+    .deep-blue{
+        color: #28408b;
+    }
+    .green {
+        color: #47fa7b; 
+    }
+    .white {
+        color: #c2cccc;
+    }
+</Style>
+
+<div class="code-example">
+<div>
+&lt;<span class="pink">html</span>>
+    &lt;<span class="pink">script src</span>="<Span class="blue">/src/foo.js</Span>"><span class="pink">&lt;/script</span>>
+    &lt;<Span class="pink">script src</span>="<Span class="blue">/src/bar.js</Span>"><span class="pink">&lt;/script</span>>
+    &lt;<Span class="pink">script src</span>="<Span class="blue">/src/baz.js</Span>"><span class="pink">&lt;/script</span>>
+    &lt;<Span class="pink">script src</span>="<Span class="blue">/src/qux.js</Span>"><span class="pink">&lt;/script</span>>
+    &lt;<Span class="pink">script src</span>="<Span class="blue">/src/quux.js</Span>"><span class="pink">&lt;/script</span>>
+&lt;<span class="pink">/html</span>>
+</div>
+</div>
+
+<p>Each <Span>file</Span> requires a <Span>seperate http requests</Span>, 
+which is 5 round trip requests in order to get your <Span>application</Span> started. 
+So it would be better if you can <Span>combine all five files</Span> into 
+<Span>one single file</Span>:</p>
+
+<div class="code-example">
+    <div>
+    &lt;<span class="pink">html</span>>
+    &lt;<Span class="pink">script src</span>="<Span class="blue">/dist/bundle.js</Span>"><span class="pink">&lt;/script</span>>
+    &lt;<span class="pink">/html</span>>
+    </div>
+    </div>
+
+<p>So how do we generate the <Span>dist/bundle.js</Span>?</p>
+
+<p>Several <Span>challenges</Span> arise in the process:</p>
+
+<ul>
+   <li>How do we <strong>maintain the order</strong> of the "files" 
+    to be included?
+   </li>
+   <li>How do we <Strong>prevent naming conflicts</Strong> between "files"?</li>
+   <li>How do we determine any unused "file" within the bundle?</li>
+</ul>
+
+<p>All of these can be solved if we know the <Span>relationship</Span> 
+among each <Span>files</Span>, such as:</p>
+
+<ul>
+    <li>Which file is depended on another?</li>
+    <li>What are the interface exposed from a file?</li>
+    <li>Which exposed interfaces are being used by another?</li>
+</ul>
+
+<p>These information can <Span>solve the challenges</Span> brought up. 
+So, what we need is a <Span>declarative method</Span> to 
+<Span>describe the relationship</Span> between <Span>files</Span>, which led us 
+to the <Span>JavaScript Module System</Span>.</p>
+
+<p><span>CommonJS</span> or <Span>ES6 Modules</Span> provide ways for us 
+to <Span>specify what files</span> we are <span>depending on</Span>, and 
+<Span>which of their interface</Span> we are <Span>using in our file</Span>.</p>
+
+<div class="code-example">
+    <div>
+        <span class="deep-blue">// CommonJS</span>
+        <span class="pink">const</span> <Span class="white">foo</Span> <Span class="blue">=</Span> <span class="green">require</span>('./foo');
+        <Span class="white">module.exports = bar</Span>;
+
+        <Span class="deep-blue"> ES6 Modules</Span>
+        <Span class="pink">import</Span> <Span class="white">foo</Span> <Span class="pink">from</Span> './foo';
+        <Span class="pink">export default</Span> <Span class="white">bar</Span>;
+    </div>
+</div>
+</article>
+
+<hr>
+
+<article id="five">
+    <header>
+        <h1>Parcel Module Bundler</h1>
+    </header>
+
+    <p><Span>Parcel</Span> is a <Span>web application bundler</Span>, 
+    which <Span>bundles your application</Span>, so what it basically does is that 
+    it takes all your <Span>JavaScript files</Span>, <span>HTML files</span>, 
+    <Span>CSS files</Span>, any of those different type of files you have and 
+    <Span>bundles them up</Span>, <Span>minifies them</Span> and <Span>puts them into a directory</Span>
+    for you. Also, a really cool thing about <Span>parcel</Span> is that is 
+makes your life even more easier, by doing <Span>automatic transforms</Span>, so 
+basically, it will take your <Span>sass</Span> and <Span>convert it to CSS</Span> it will 
+take your <Span>modules JavaScript</Span> and <Span>convert it to normal JavaScript</Span>, it will 
+use <Span>Babel</Span> to <Span>transpile your JavaScript</Span> so that you can use all 
+<Span>new feautures of JavaScript</Span> so that <Span>all browsers can use it</Span>. It does that, and a few more 
+stuff, and all this with <Span>zero config code</Span>, you <Span>run one line of code</Span> and 
+are ready to go, not like <span>webpack</span> which takes some time to set.</p>
+
+<p>First thing I am gonna do is <Span>set up an NPM project</Span>, by writing 
+<Span>npm init -y</Span> in my <Span>terminal</Span>, then I will 
+<span>install parcel</span> by writing <span>npm install parcel-bundler --save-dev</span>. 
+After that the very next thing I am gonna need is some basic <Span>project structure</Span> to use, 
+I'm gonna put all my <Span>files</Span> inside a <Span>folder</Span> called <Span>src</Span>. Let's finish with the preparations 
+so that we are ready to begin using <Span>parcel</Span>:</p>
+
+<img src="./../images/parcel1.png">
+
+<p>So, the <Span>JavaScript files</Span> have some pretty simple code inside, on 
+<Span>exports a function</Span>, the other <span>imports the function</span> and 
+<Span>uses it</Span>, then this <Span>index.js file</Span> which is the 
+<Span>file that imports the function</Span> is used inside <Span>index.html</Span>:</p>
+
+<img src="./../images/parcel2.png">
+
+<p>To make things more interesting, let's also add a 
+    <Span>CSS style sheet file</span> and an 
+        <Span>image</Span> to our project:
+</p>
+
+<img src="./../images/parcel4.png">
+
+<p>Alright, now, to <Span>bundle those files</Span> we are gonna create 
+<Span>two NPM scripts</Span>, you don't really need to create them, 
+it's for organization porpuses, so that I don't have to 
+hand write the <Span>commands</span> every time I want to run them, the <Span>first script</Span> will 
+simple run <Span>parcel src/index.html</Span> and the 
+<Span>second script</Span> will run <Span>parcel build src/index.html</Span>:</p>
+
+<img src="./../images/parcel3.png">
+
+<p>Now, all I really have to do is type <Span>npm run dev</Span> and 
+a <Span>folder</Span> with all my <Span>files bundled together</Span> will be created, 
+with just one command, couldn't be any simplier. However, there is a chance, you may 
+get some <Span>errors</Span>, like I did:</p>
+
+<img src="./../images/parcel5.png">
+
+
+<p>As usual, I get errors, like I always do, so annoying, anyway, I did my 
+    research, which took some time, and I found a solution, there are actually 
+    <Span>two solutions</Span>, one is to <Span>revert back to version 1.12.3 of parcel</Span>
+    or to <Span>update to version 2 of Parcel</Span>. To <Span>revert back to version 1.12.3</Span> you 
+    should <Span>uninstall parcel</Span> and then type <Span>npm i parcel-bundler@1.12.3 --save-dev</Span> to 
+    download the wanted version, to <Span>update to version 2</Span> you should write 
+    <Span>npm i parcel@next --save-dev</Span>.
+</p>
+
+<p>After you have fixed the problem, everything should work fine:</p>
+
+<img src="./../images/parcel6.png">
+
+<p>After you do this, you can <Span>click at the http link</Span> 
+and your <Span>page</Span> will <Span>open in a local server</Span>. 
+Another cool thing is that whenever 
+you <Span>update your files in src folder</Span> the <Span>files in dist folder</Span> 
+will <Span>also be updated</Span> automatically and your 
+<Span>local server</Span> will <Span>reload</Span>, just like how 
+<Span>online-server</Span> does.</p>
+
+<P>If you want to import <span>Sass</span> you should 
+<Span>import it</Span> through <Span>JavaScript</Span> and not 
+thorugh <Span>HTML</Span>, then <Span>parcel</Span> will do it's magic 
+and <Span>convert sass to CSS</Span>, let's try this:</P>
+
+<p>First, let's change our files to <Span>import SASS</Span> instead 
+of <Span>CSS</Span>:</p>
+
+<img src="./../images/parcel7.png">
+
+<p>Now let's <Span>bundle the files</Span> again:</p>
+
+<img src="./../images/parcel8.png">
+
+<p>Let's now press on the <Span>link</Span> to open the 
+<Span>local server</Span> that was created for us to do 
+our <Span>developing</Span>:</p>
+
+<img src="./../images/parcel9.png">
+
+<p>The background may seem white, but it is indeed <Span>lightcyan</Span>, I should had used a more obvious color I guess but I didn't because I'm stupid.</p>
+
+<p>Anyway, the main reason I ended up learning about <span>parcel</span> in the first place 
+was because I needed to to use <span>packages</span> on the <Span>browser</Span>, because without 
+it I was getting <Span>errors</Span>, so let's try <Span>installing moment package</Span> 
+really quick:</p>
+
+<img src="./../images/parcel10.png">
+
+<p>So, something I want to mention is that as you can see, 
+<Span>Sass</Span> has also been <Span>installed</Span> in my 
+<Span>dev-dependencies</Span>, it was actually <Span>automatically installed</Span>
+by <Span>parcel</Span>, and that's just so cool and I wanted to mention it, anyway. 
+Let's now continue and write some code to actually use <Span>moment package</Span>:
+
+<img src="./../images/parcel11.png">
+
+<p>Normally, if I had just opened the <Span>index.html</Span> on a 
+<Span>live server</Span> without <span>bundling the files</span> using 
+<Span>parcel</Span>, you would get an error, for my case at least, the 
+<Span>module can't be found</Span>, from what I understand, 
+the <Span>browser</Span> expects you to give it a <Span>file path</Span>, while 
+you are trying to access the <span>module</span> through <Span>NPM</Span>, and somehow 
+<Span>pascel</Span> takes care of this problem for you, here is the 
+<span>error</span> I got without using <span>pascel</span>:</p>
+
+<img src="./../images/parcel12.png">
+
+<p>When opened in the <Span>local server</Span> made by 
+<Span>pascel</Span> however everything worked just fine:</p>
+
+<img src="./../images/parcel13.png">
+
+<p>Alright, there is still one problem to discuss, we are only able to 
+    view the page through that <Span>local server</Span>, if we were to 
+    try and <Span>access the index.html file</Span> from inside the <Span>dist folder</Span> 
+    see what would happen:
+</p>
+
+<img src="./../images/parcel14.png">
+
+<p>After doing my research, I discovered the probem behind this 
+    weird behaviour, if you check your <Span>HTML document</Span>
+    inside the <Span>dist folder</Span> you will see that the <Span>paths of the files</Span>
+    are <Span>absolute</Span>:
+</p>
+
+<img src="./../images/parcel17.png">
+
+<p>To fix that, you should use <Span>relative paths</Span>, which you 
+can do by either <Span>removing the backslash</Span> or <Span>addint a dot before the backslash</Span>. 
+Doing that on your own however is time consuming, so we are gonna add 
+the following <Span>flag</Span> to the <Span>parcel commands</Span> inside your 
+<Span>scripts</Span>: <Span>--public-url ./</Span>. This will make the 
+src paths <Span>relative</Span> rather than <Span>absolute</Span>:
+</p>
+
+<img src="./../images/parcel16.png">
+
+<p>So now, what exactly does the <Span>build command</Span> do? It basically 
+<Span>minifies the files</Span> to <Span>take less space</Span>, but when used they will 
+<Span>no longer automatically update</Span>, so that's why I recommend using the 
+<Span>prod script</Span> only after you are done <Span>developing</Span> the files.</p>
+
+<img src="./../images/parcel15.png">
+
+<p>What if you didn't want to create the <Span>bundled files</Span> inside 
+the <Span>dist folder</Span>? What if you wanted to use a 
+<Span>custom folder</Span>? You can do that by using the 
+<Span>--out-dir path</Span> flag, let's create a <Span>folder</Span> called 
+<Span>bundled-files</Span> and use it to <Span>store our bundled files</Span>:</p>
+
+<img src="./../images/parcel18.png">
+
+<p>Here is a really cool tutorial you can watch, in my notes I included some more information 
+    that were not included in the video abou thow some bugs can be fixed, but in the video you will 
+    also learn about how you can add plugins if you want to, I don't really care about plugins at 
+    the moment, getting it to work was all I needed so that's why I didn't go more in depth.
+</p>
+
+<iframe src="https://www.youtube.com/embed/DYZTFooDB24" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</article>
+
+<hr>
+
+<article id="six">
+    <header>
+        <h1>dat.GUI API package:</h1>
+    </header>
+
+    <p>I think, now that I finally know how to 
+    <Span>install packages</Span> and 
+    <Span>make them work in browser</Span> I should 
+    try <Span>using one</Span> for real, and that's what 
+    we are gonna do in this section, I wanted to 
+    learn to use a <Span>package</Span> called 
+    <Span>dat.GUI API</Span> because it seems pretty 
+    useful for <Span>animations</Span>, and I'm 
+    currently learning <Span>canvas animations</Span>, 
+    and this <Span>package</Span> was actually the reason 
+    I ended up learning about <Span>terminal</Span>, 
+    <Span>NPM</Span>, <Span>module bundlers</Span> and all 
+    those stuff in the first place.
+    </p>
+
+    <p>This <Span>package</Span> creates a 
+    <Span>square</Span> on your <Span>screen</Span> 
+    in which you can <Span>add variables inside</Span>
+    to be able and <Span>change them</Span> without having 
+    to do so <span>through code</span>, which would take time. 
+    The best feauture I believe is that it even 
+    lets you set a <Span>range of numbers</Span> that 
+    can be set on a <Span>variable</Span>, which creates 
+    a <Span>scroll bar</Span> you can use, which means you don't 
+    even need to <Span>type the values</Span> with 
+this <Span>package</Span>.</p>
+
+<P>First thing I will do is <Span>initialize NPM</Span>, 
+then I will <Span>install parcel globally</Span>, since 
+I want to be able to use it on multiple projects from now on, 
+and then I will <Span>instal dat.gui</Span>:</P>
+
+<img src="./../images/dat1.png">
+
+<p>So, now, if I were to <span>create a JavaScript file</span> 
+and use it on <Span>this page you are currently viewing</Span>, if 
+I <Span>bundled this page</Span>, a mess would be created, it would 
+<Span>bundle all the images</Span>, and <Span>js files</Span> that 
+are being <Span>referenced in the page</Span>. To avoid that I am only going to 
+<Span>bundle the JavaScript file</Span> and <Span>link the bundled JavaScript file</Span>
+to this page:
+
+<img src="./../images/dat.png">
+
+<p>After I <Span>run the dev script</Span>, the <Span>example.js file</Span> should be 
+<Span>bundled</Span> and <Span>placed inside the bundled-files folder</Span>, 
+now we can <Span>reference the bundled example.js file</Span> inside 
+a <Span>script element</Span> in our <Span>HTML document</Span> and it should work.</p>
+
+
+<p>I will now <Span>reference the bundled example.js file</Span> to 
+<Span>this page</Span>, then I can edit the <Span>original example.js file</Span>
+and it <Span>will automatically update the bundled file too</Span>:</p>
+
+<script src="./../CSS-JavaScript-External-Files/dat/dat-example.12a7016c.js">
+</script>
+
+<img src="./../images/dat3.png">
+
+<p>From now on, I will be writing the <Span>code</Span> I want to 
+write inside the <Span>example.js</Span> file, which will <Span>automatically update</Span>
+the <Span>bundled example.js file</Span>, so, let's make a button that 
+<Span>activates the package</Span>, so that it is not open from the time you enter 
+the page:</p>
+
+<p class="left">[example.js] JavaScript Code:</p>
+
+<p class="left"><Span class="code10">import * as dat from 'dat.gui'
+
+window.addEventListener('load', (e)=>{
+    let button = document.getElementById('dat-button');
+
+    var gui;
+
+    button.addEventListener('click', (e)=>{
+        let div = document.querySelector('.close-button');
+        if(div == null){
+            gui = new dat.GUI();
+        } else {
+            gui = undefined;
+            div.remove();
+        }
+    });
+});</Span></p>
+
+<p class="left">Outcome:</p>
+
+<p class="left"><button id="dat-button">Click Me!</button></p>
+
+<p>Let's try to create a simple project now, we are gonna use 
+the <Span>gui.add(object, 'property', min, max)</Span> method to 
+<Span>add variables</Span>, the <Span>last two paremeters</Span> are 
+<Span>optional</Span>, if you don't add them you will simple have 
+to <Span>type in the values</Span>, if you use them 
+there will be a <Span>scroll bar you can drag</Span>.</p>
+
+<p>If you want to <span>seperate variables</span> in 
+<Span>folders</Span>, you can write <span>let folder = gui.addFolder('name')</span>
+and then use the <Span>add method</Span> to <Span>the wanted folder</Span>, 
+like this: <Span>folder.add(object, 'proeprty', min, max)</Span></p>
+
+<style>
+    .property-name{
+        background-color: gray !important;
+    }
+    .c{
+        background-color: gray !important;
+    }
+    span .orange{
+        background-color: lightcoral;
+    }
+    span .gray{
+        background-color: lightgray;
+    }
+</style>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><Span class="code10">&lt;canvas id="canvas-01">&lt;/canvas></Span></p>
+<p class="left">CSS Code:</p>
+
+<p class="left"><Span class="code10">
+#canvas-01{
+    border: 2px solid black; 
+    display: block; 
+    margin: auto;
+}
+
+<Span class="gray">/* Some custom decorations I wanted 
+to add to the variable changer */</span>
+
+.property-name{
+    background-color: gray !important;
+}
+.c{
+    background-color: gray !important;
+}
+</Span></p>
+<p class="left">[example.js] JavaScript Code:</p>
+
+<p class="left"><span class="code10">import * as dat from 'dat.gui'
+
+window.addEventListener('load', (e)=>{
+let button = document.getElementById('dat-button');
+
+    var gui;
+    
+    button.addEventListener('click', (e)=>{
+        let div = document.querySelector('.close-button');
+        if(div == null){
+            gui = new dat.GUI();
+        } else {
+            gui = undefined;
+            div.remove();
+        }
+    });
+
+    let canvas = document.querySelector('#canvas-01');
+    let c = canvas.getContext('2d');
+
+    canvas.width = 500;
+    canvas.height = 300;
+
+    let movement = {
+        dx: 1,
+        dy: 1,
+    }
+
+    let style = {
+        radius: 40,
+        color: 'red'
+    }
+
+    let c_gui;
+
+<span class="orange">    canvas.addEventListener('click', (e) =>{
+        let div = document.querySelector('.close-button');
+        if(div == null){
+            c_gui = new dat.GUI();
+            let movement_folder = c_gui.addFolder('Movement variables:');
+            movement_folder.add(movement, "dx", -20, 20);
+            movement_folder.add(movement, "dy", -20, 20);
+            let style_folder = c_gui.addFolder('Style variables:');
+            style_folder.add(style, "radius", 0, 100);
+            style_folder.add(style, "color");
+        } else {
+            div.remove();
+            let folders = document.querySelector('.dg ul');
+            folders.remove();
+        }
+    });</span>
+
+    let [x, y] = [canvas.width/2, canvas.height/2];
+
+    function animate(){
+        c.fillStyle = 'black';
+        c.fillRect(0, 0, canvas.width, canvas.height);
+
+        c.fillStyle = style.color;
+        c.beginPath();
+        c.arc(x, y, style.radius, 0, 2 * Math.PI);
+        c.fill();
+        c.stroke();
+
+        c.fillStyle = 'white';
+        c.font = 'normal 24px Arial';
+        c.textAlign = 'left';
+        c.fillText('Click to open variable changer', 5, 25);
+
+        if(x > canvas.width - style.radius){
+            movement.dx = (movement.dx < 0)? movement.dx: -movement.dx;
+        } else if(x - style.radius < 0){
+            movement.dx = Math.abs(movement.dx);
+        }
+
+        if(y > canvas.height - style.radius){
+            movement.dy = (movement.dy < 0)? movement.dy: -movement.dy;
+        } else if(y - style.radius < 0){
+            movement.dy = Math.abs(movement.dy);
+        }
+
+        x += movement.dx;
+        y += movement.dy;
+        requestAnimationFrame(animate);
+    }
+
+    animate();
+});</span></p>
+
+<p class="left">Outcome:</p>
+
+<canvas id="canvas-01" style="border: 2px solid black; display: block; margin: auto;"></canvas>
+
+<p>Alright, so, I did some <span>extra things</span>, like, I 
+<Span>changed the background color of the rows</Span> to make the 
+<span>font easier to read</span>, and I also figured out since I'm 
+<Span>making folders</Span> I have to <Span>also remove them</Span> when 
+<Span>clicked to close</Span>, to find out what the <Span>element's classes were</Span> 
+I simple <Span>inspected the page on browser</Span> and used the <Span>chrome tool</Span>
+that lets me <Span>click in an element to choose it</Span>.</p>
+
+<p>Anyway, now that we made our project, let's <Span>build the application</Span>, this 
+simple will <Span>minimies the files</Span> to <Span>take less space</Span> by 
+<Span>removing spaces in code</Span> and stuff like that:</p>
+
+<img src="./../images/dat5.png">
+
+<p>After that, we no longer need the <Span>original example.js</Span> we 
+can just remove it or keep it for later use, then we can place our <Span>bundled
+file</Span> anywhere we like an use it:</p>
+
+</article>
+
+<hr>
+
+<article id="seven">
+<header><h1><u>How to use Grunt task runner</u></h1></header>
+<h2>What is a task runner?</h2>
+<p>A task runner can perform repetitive tasks for you, for example:</p>
+<ul>
+    <li>Prefixing CSS rules</li>
+    <li>Compiling SASS files into CSS</li>
+    <li>Minifying JS / CSS files</li>
+    <li>Concatenating Files</li>
+</ul>
+<p>The most popular task runners out there at the moment are Grunt and Gulp, however
+in this section we will learn about Grunt.</p>
+<h2>How to install Grunt.js?</h2>
+<p>To install Grunt we are gonna use Node Package Manager, and there are few
+things you need to do before you are ready to start using it:</p>
+<ul>
+    <li>Install grunt-cli globally</li>
+    <li>Create a package.json file in your project</li>
+    <li>Install grunt locally</li>
+    <li>Create a Gruntfile.js</li>
+    <li>Install plugins</li>
+</ul>
+<p>The grunt-cli is the grunt command line interface which will allow us to
+use grunt commands in our terminal. The grunt we install locally is like a package,
+we will import it in oru file to use grunt inside our Gruntfile.js. I will talk about how to install and use
+plugins later in the section.</p>
+
+<p>So, let's first download grunt-cli globally, to do so we will write in our terminal
+the following command: <strong>npm install grunt-cli -g</strong></p>
+
+<img class="image" src="./../images/grunt1.PNG">
+
+<p>Because we installed this globally we will be able to now use
+grunt commands in our terminall any time from anywhere so there won't be the
+need to install it again when creating other projects.</p>
+
+<p>Let's now create a quick project folder, create a package.json file and install
+grunt locally. Firstly, to create the package.json file we will write npm init, like I have
+explained before in NPM section:</p>
+
+<img class="image" src="./../images/grunt2.PNG">
+
+<p>Now to install grunt you can simple write: <strong>npm install grunt --save-dev</strong></p>
+
+<img class="image" src="./../images/grunt3.PNG">
+
+<p>Alright, we are almost done with the preparations all that's left now
+is to create a Gruntfile.js file, there we will write our grunt code later:
+</p>
+
+<img class="image" src="./../images/grunt4.PNG">
+
+<h2>Creating a Gruntfile.js:</h2>
+
+<p>So, let's start by creating the basic structure of the file before
+we start filling it with stuff:
+</p>
+
+<img class="image" src="./../images/grunt5.PNG">
+
+<p>So, grunt is basically just a module at the end of the day, so we have
+to export it with Node.js. The function we export is split in three sections,
+configuration, plugins and tasks, you will unerstand how
+they work and interact with each other later.
+</p>
+<p>As you can see, I added one task called run, let's try running it:</p>
+
+<img class="image" src="./../images/grunt6.PNG">
+
+<p>It worked, it also threw a little warning because of the plugin example but don't mind it.</p>
+
+<p>So, now I used a function inside the registerTask method
+but this could also be a reference to a configuration or
+even an array, using an array you can run multiple tasks like this:
+</p>
+
+<p class='left'><span class='code10'>module.exports = function(grunt){
+
+<span class="gray">    // Configuration</span>
+    grunt.initConfig({
+<span class="gray">        // pass in options to plugins, references to files etc</span>
+    });
+
+<span class="gray">    // Load plugins
+    //grunt.loadNpmTasks('plugin-name');</span>
+
+<span class="gray">    // Register tasks</span>
+    grunt.registerTask('run', function(){
+        console.log('I am running');
+    });
+
+    grunt.registerTask('sleep', function(){
+        console.log('I am sleeping');
+    });
+
+    grunt.registerTask('all', ['sleep', 'run']);c
+
+}</span></p>
+
+<img class="image" src="./../images/grunt7.PNG">
+
+<header><h1>How to use plugins:</h1></header>
+
+<p>Let's now learn how to add and use plugins inside the 
+    Gruntfile. First thng you need to do is to find a plugin
+    you want to use in grunt web page: 
+    <a href='https://gruntjs.com/plugins' target='_blank'>https://gruntjs.com/plugins</a>
+</p>
+
+<img class="image" src="./../images/grunt8.PNG" style="width: 60%;">
+
+<p>Officially maintained "contrib" plugins are marked with a star icon, so those should be 
+    preferred. For this example I will use concat plugin, which basically can be used to
+    merge multiple files into one new file and can be very useful when working on big 
+    projects.
+</p>
+
+<p>Usually all good plugins will have instructions of how to install them and use them in the 
+    gruntjs webpage, as ou can see here are the installation instructionsfor 
+    concat plugin:
+</p>
+
+<img class="image" src="./../images/grunt9.PNG" style="width: 50%;">
+
+<p>So, first you install the plugin locally with NPM and then you add it in your Gruntfile so that you can
+then use it as you like. Naturally, there are well detailed instructions of how it's used in 
+the webpage but I will create an example here to show you how a Gruntfile truly works.</p>
+
+<p>For the sake of our examples let's create some files first:</p>
+<img class="image" src="./../images/grunt10.PNG" >
+
+<p>Concat plugin is fairly easy to use, here is an example:</p>
+
+<img class="image" src="./../images/grunt12.PNG" >
+
+<p>So, this is what the syntax for this specific plugin looks like,
+    concat property lets grunt know you are adding options for the concat plugin,
+    then you can add tasks you want to be done, for example, in my 
+    case I wanted to concat css and js files, the names of those properties 
+    however are optional, and you can have as many as you like,
+    lastly inside those properties go objects with src and dest properties
+    to let grunt know what files to concat and where, you can add 
+    them one by one in an array, or if you want to select all files of
+a kind writing '*.js' or '*.css' will do just that.</p>
+<p>The destination file will be created by grunt if it doesn't already exist, to 
+    run those tasks you can simple write grunt concat in your terminal:
+</p>
+
+<img class="image" src="./../images/grunt11.PNG" >
+
+<p>You can also run only one of the tasks if you want by specifying the 
+    task like this: 
+</p>
+
+<img class="image" src="./../images/grunt13.PNG" >
+
+<p>Or you could reference them in custom tasks:</p>
+
+<img class="image" src="./../images/grunt14.PNG" >
+
+<p>Anyway, here is a video that explains this section in more detail:</p>
+
+<iframe width="1350" height="480" src="https://www.youtube.com/embed/7g6jJu2yq7g?list=PL4cUxeGkcC9j85fkVyCzCMJDfteLtrl_y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<h1>How to compile SASS into CSS with grunt:</h1>
+
+<p>So, just like before we are going to install a plugin, grunt-contrib-sass is
+the first officially maintained plugin you will see however in order for it to work we 
+need to install ruby to our computer. To avoid that because I'm lazy and want the job to be done quickly
+and simple we are going to install another plugin called grunt-sass.
+</p>
+
+<p>The grunt-sass plugin uses Node Sass or Dart Sass packages to compile SASS so we need to install one of those in our project 
+as well with NPM, we will install Node Sass for this example, to install both this and grunt-sass plugin we can write the 
+following command in our terminal: npm install --save-dev node-sass grunt-sass
+</p>
+
+<p>After installation is complete, check your package.json file 
+to confirm that everything is installed:
+</p>
+
+<img class="image" src="./../images/grunt15.PNG" >
+
+<p>Let me show you an example of how it works now:</p>
+
+<img class="image" src="./../images/grunt16.PNG" style="width: 50%;">
+
+<p>So, let's talk about options property first, inside it we
+can choose wether we use Dart Sass or Node Sass by passing 
+the module to the implementation option. One implementation or the other must be passed.
+</p>
+
+<p>Now, about source maps, basically they are files that allow the browser to map 
+CSS generated by a pre-processor, such as Sass, back to the original source 
+file, including exactly which Sass mixin, placeholder or variable is responsible for a given line of CSS.
+Those are useful for DevTools that let you live-edit your preprocessor source files in the Sources panel, 
+and view the results without having to leave DevTools or refresh the page. When you inspect 
+an element whose styles are provided by a generated CSS file, the Elements panel displays a 
+link to the original source file, not the generated .css file. We don't care 
+about all that at the moment however so we leave it as false.</p>
+
+<p>The build property is a task, you can have as many tasks you want and name 
+them however you like, a task should be an object with a property called files, inside 
+the files property should be an array of objects with src, dest properties, src is used to select a 
+file and dest is used to select the place it should be compiled, very similar to concat 
+plugin but you can only pass one file in the src property.
+</p>
+
+<p>So, now let's combine concat and sass plugins and make a cool task to 
+do everything at once:
+</p>
+
+<img class="image" src="./../images/grunt17.PNG" style="width: 60%;">
+
+<h1>How to uglify JavaScript</h1>
+
+<p>To 'uglify' a JavaScript file is to minify it using Uglify. 
+Uglification improves performance while reducing readability.
+This however isn't all, when we uglify a JavaScript it will 
+also bundle our file, so, if for example it requires code from other JavaScript
+files this code will automatically be added to our uglified file 
+so that the performance is improved, since no server requests will need to be made.</p>
+
+<p>As expected we will use a plugin to do that, the grunt-contrib-uglify plugin,
+to install it simple write npm install grunt-contrib-uglify --save-dev, the way this 
+plugin works is similar to grunt-sass plugin so instead of explaining it to you let 
+me show you:
+</p>
+
+<img class="image" src="./../images/grunt18.PNG" style="width: 70%;">
+
+<p>You can also add an options property but for more details 
+about this you can visit grunt website: <a href='https://www.npmjs.com/package/grunt-contrib-uglify' target="_blank">https://www.npmjs.com/package/grunt-contrib-uglify</a>
+</p>
+
+</article>
+
+ 
+<hr>
+</body>
+</html>

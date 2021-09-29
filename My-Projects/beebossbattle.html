@@ -1,0 +1,1766 @@
+<!DOCTYPE HTML>
+<html>
+<head lang="en-US>
+<meta charset="UTF-8">
+<title> Bee Boss Battle </title>
+<link rel="stylesheet" href="../CSS-JavaScript-External-Files/HTMLnotes.css">
+</head>
+<body>
+ 
+<hr size="10" width="100%">
+
+
+<h1 align="center"> <ins>Bee Boss Battle</ins> </h1>
+
+<p><a href="../Home-Pages/myprojects.html">Click to go back</a></p>
+
+
+
+ 
+<p id="fanprojectt" style="text-align:left;">Code:</p>
+
+
+<Span>&lt;p align="center"><br>
+&lt;svg width="500" height="500" viewBox="0 0 340 340" style="border: 5px black solid; background-color:gray;"><br>
+<br></Span>
+&lt;!-- Health bar below --><br>
+<br>
+<Span>&lt;rect width="320" height="10" x="10" y="10" fill="black"/><br>
+<br>
+&lt;rect width="20" height="10" x="310" y="10" fill="green"><br>
+&lt;animate id="one" attributeName="width" from="20" to="0"<br>
+dur="1s" fill="freeze" begin="circle1.click" /><br>
+&lt;animate attributeName="width" from="00" to="20.5"<br>
+dur="0.01s" fill="freeze" begin="replay.click;replay2.click" /><br>
+&lt;/rect><br>
+<br>
+&lt;rect width="20.5" height="10" x="290" y="10" fill="green"><br>
+&lt;animate id="two" attributeName="width" from="20" to="0"<br>
+dur="1s" fill="freeze" begin="circle2.click"/><br>
+&lt;animate attributeName="width" from="00" to="20.5"<br>
+dur="0.01s" fill="freeze" begin="replay.click;replay2.click" /><br>
+&lt;/rect><br>
+<br>
+&lt;rect width="20.5" height="10" x="270" y="10" fill="green"><br>
+&lt;animate id="three" attributeName="width" from="20" to="0"<br>
+dur="1s" fill="freeze" begin="circle3.click"/>&lt;animate attributeName="width" from="00" to="20.5"<br>
+dur="0.01s" fill="freeze" begin="replay.click;replay2.click" /><br>
+&lt;/rect><br>
+<br>
+<br>
+&lt;rect width="20.5" height="10" x="250" y="10" fill="green"><br>
+&lt;animate id="four" attributeName="width" from="20" to="0"<br>
+dur="1s" fill="freeze" begin="circle4.click"/><br>
+&lt;animate attributeName="width" from="00" to="20.5"<br>
+dur="0.01s" fill="freeze" begin="replay.click;replay2.click" /><br>
+&lt;/rect><br>
+<br>
+&lt;rect width="20.5" height="10" x="230" y="10" fill="green"><br>
+&lt;animate id="five" attributeName="width" from="20" to="0"<br>
+dur="1s" fill="freeze" begin="circle5.click"/>&lt;animate attributeName="width" from="00" to="20.5"<br>
+dur="0.01s" fill="freeze" begin="replay.click;replay2.click" /><br>
+&lt;/rect><br>
+<br>
+<br>
+&lt;rect width="20.5" height="10" x="210" y="10" fill="green"><br>
+&lt;animate id="six" attributeName="width" from="20" to="0"<br>
+dur="1s" fill="freeze" begin="circle6.click"/>&lt;animate attributeName="width" from="00" to="20.5"<br>
+dur="0.01s" fill="freeze" begin="replay.click;replay2.click" /><br>
+&lt;/rect><br>
+<br>
+<br>
+&lt;rect width="20.5" height="10" x="190" y="10" fill="green"><br>
+&lt;animate id="seven" attributeName="width" from="20" to="0"<br>
+dur="1s" fill="freeze" begin="circle7.click"/>&lt;animate attributeName="width" from="00" to="20.5"<br>
+dur="0.01s" fill="freeze" begin="replay.click;replay2.click" /><br>
+&lt;/rect><br>
+<br>
+<br>
+&lt;rect width="20.5" height="10" x="170" y="10" fill="green"><br>
+&lt;animate id="eight" attributeName="width" from="20" to="0"<br>
+dur="1s" fill="freeze" begin="circle8.click"/>&lt;animate attributeName="width" from="00" to="20.5"<br>
+dur="0.01s" fill="freeze" begin="replay.click;replay2.click" /><br>
+&lt;/rect><br>
+<br>
+<br>
+&lt;rect width="20.5" height="10" x="150" y="10" fill="green"><br>
+&lt;animate id="nine" attributeName="width" from="20" to="0"<br>
+dur="1s" fill="freeze" begin="circle9.click"/>&lt;animate attributeName="width" from="00" to="20.5"<br>
+dur="0.01s" fill="freeze" begin="replay.click;replay2.click" /><br>
+&lt;/rect><br>
+<br>
+<br>
+<br>
+&lt;rect width="20.5" height="10" x="130" y="10" fill="green">&lt;animate attributeName="width" from="0" to="20.5"<br>
+dur="0.01s" fill="freeze" begin="replay.click;replay2.click" /><br>
+&lt;animate id="ten" attributeName="width" from="20" to="0"<br>
+dur="1s" fill="freeze" begin="circle10.click" /><br>
+&lt;/rect><br>
+<br>
+<br>
+&lt;rect width="20.5" height="10" x="110" y="10" fill="green"><br>
+&lt;animate id="eleven" attributeName="width" from="20" to="0"<br>
+dur="1s" fill="freeze" begin="circle11.click"/><br>
+&lt;animate attributeName="width" from="0" to="20.5"<br>
+dur="0.01s" fill="freeze" begin="replay.click;replay2.click" /><br>
+&lt;/rect><br>
+<br>
+<br>
+&lt;rect width="20.5" height="10" x="90" y="10" fill="green">&lt;animate attributeName="width" from="00" to="20.5"<br>
+dur="0.01s" fill="freeze" begin="replay.click;replay2.click" /><br>
+&lt;animate id="twelve" attributeName="width" from="20" to="0"<br>
+dur="1s" fill="freeze" begin="circle12.click"/><br>
+&lt;/rect><br>
+<br>
+<br>
+&lt;rect width="20.5" height="10" x="70" y="10" fill="green">&lt;animate attributeName="width" from="00" to="20.5"<br>
+dur="0.01s" fill="freeze" begin="replay.click;replay2.click" /><br>
+&lt;animate id="thirteen" attributeName="width" from="20" to="0"<br>
+dur="1s" fill="freeze" begin="circle13.click"/><br>
+&lt;/rect><br>
+<br>
+<br>
+&lt;rect width="20.5" height="10" x="50" y="10" fill="green">&lt;animate attributeName="width" from="00" to="20.5"<br>
+dur="0.01s" fill="freeze" begin="replay.click;replay2.click" /><br>
+&lt;animate id="fourteen" attributeName="width" from="20" to="0"<br>
+dur="1s" fill="freeze" begin="circle14.click"/><br>
+&lt;/rect><br>
+<br>
+<br>
+<br>
+&lt;rect width="20.5" height="10" x="30" y="10" fill="green">&lt;animate attributeName="width" from="00" to="20.5"<br>
+dur="0.01s" fill="freeze" begin="replay.click;replay2.click" /><br>
+&lt;animate id="fifteen" attributeName="width" from="20" to="0"<br>
+dur="1s" fill="freeze" begin="circle15.click"/><br>
+&lt;/rect><br>
+<br>
+<br>
+&lt;rect width="20.5" height="10" x="10" y="10" fill="green">&lt;animate attributeName="width" from="00" to="20.5"<br>
+dur="0.01s" fill="freeze" begin="replay.click;replay2.click" /><br>
+&lt;animate id="sixteen" attributeName="width" from="20" to="0"<br>
+dur="1s" fill="freeze" begin="circle16.click"/><br>
+&lt;/rect><br></Span>
+<br>
+&lt;!-- Health bar above --><br>
+<br>
+<br>
+<br>
+&lt;!-- Attack circle decoration below --><br>
+<br>
+<Span>&lt;defs><br>
+&lt;g id="music2"><br>
+<br>
+  <&lt;defs<br>
+      id="defs14793"<br>
+    ><br>
+    &lt;linearGradient<br>
+        id="linearGradient3068"<br>
+        x1="45.1"<br>
+        gradientUnits="userSpaceOnUse"<br>
+        x2="84.952"<br>
+        y1="61.154"<br>
+        y2="61.154"<br>
+      ><br>
+     &lt;stop<br>
+          id="stop15924-76"<br>
+          stop-color="#fff"<br>
+          offset="0"<br>
+      /><br>
+      &lt;stop<br>
+          id="stop15926-1"<br>
+          stop-color="#a2ffff"<br>
+          offset="1"<br>
+      /><br>
+    &lt;/linearGradient<br>
+    ><br>
+    &lt;linearGradient<br>
+        id="linearGradient3172"<br>
+        x1="45.1"<br>
+        gradientUnits="userSpaceOnUse"<br>
+        y1="61.154"<br>
+        gradientTransform="matrix(-1 0 0 1 94.032 -1.3066)"<br>
+        x2="84.952"<br>
+        y2="61.154"<br>
+      ><br>
+      &lt;stop<br>
+          id="stop15924-2"<br>
+          stop-color="#fff"<br>
+          offset="0"<br>
+      /><br>
+      &lt;stop<br>
+          id="stop15926-2"<br>
+          stop-color="#a2ffff"<br>
+          offset="1"<br>
+      /><br>
+    &lt;/linearGradient<br>
+    ><br>
+  &lt;/defs<br><br>
+  ><br>
+ &lt;g<br>
+      id="layer1"<br>
+    ><br>
+    &lt;g<br>
+        id="g3950"<br>
+      ><br>
+      &lt;rect<br>
+          id="rect15995"<br>
+          style="color:#000000"<br>
+          height="86.646"<br>
+          width="86.646"<br>
+          y="4.1769"<br>
+          x="4.1769"<br>
+          fill="none"<br>
+      /><br>
+     &lt;path<br>
+          id="path15590"<br>
+          stroke-width="1.8"<br>
+          stroke="#000"<br>
+          transform="matrix(-1.2212 0 0 1.2212 119.97 -17.864)"<br>
+          d="m75.2 43.2a10.4 10.4 0 1 1 -20.8 0 10.4 10.4 0 1 1 20.8 0z"<br>
+      /><br>
+      &lt;path<br>
+          id="path15590-7"<br>
+          stroke="#000"<br>
+          stroke-width="1.8"<br>
+          fill="#ff0"<br>
+          d="m39.599 58.252c2.651 12.903 14.854 24.579 27.255 26.078 12.401 1.5 20.305-7.744 17.654-20.648-2.652-12.903-14.854-24.578-27.256-26.078-12.401-1.499-20.304 7.745-17.653 20.648z"<br>
+      /><br>
+      &lt;path<br>
+          id="path14800"<br>
+          stroke="#000"<br>
+          stroke-width="1.8"<br>
+          fill="url(#linearGradient3172)"<br>
+          d="m48.032 44.493c-18.6 1.6-46.132 11.217-35.8 26s31-8.4 35.8-26z"<br>
+      /><br>
+      &lt;path<br>
+          id="path15630"<br>
+          style="block-progression:tb;color:#000000;text-transform:none;text-indent:0"<br>
+          d="m70.188 42.818c2.1876 1.5259 4.2297 3.3109 6.0625 5.3125-1.6387 0.12654-3.55 0.29768-5.7188 0.59375-5.408 0.73828-11.766 2.2611-14.781 4.3125l-0.125 0.09375c-2.9597 2.0849-6.8656 7.6626-9.7188 12.688-0.64133 1.1295-1.2095 2.1918-1.75 3.2188-1.4291-2.1934-2.6088-4.5238-3.4688-6.9375 2.0446-6.0895 4.5469-12.949 9.0312-16 4.5252-3.0791 12.419-3.3262 19.062-3.2812 0.8146 0.0055 0.65187-0.0039 1.4062 0zm10.281 10.906c1.1219 1.8295 2.0776 3.7435 2.8125 5.7188-1.1796 0.11523-2.4434 0.25486-3.7812 0.4375-5.6618 0.77294-12.312 2.3523-15.469 4.5l-0.15625 0.09375c-3.0986 2.1827-7.1692 8.0205-10.156 13.281-0.17312 0.3049-0.3019 0.57493-0.46875 0.875-1.8169-1.3304-3.5306-2.8346-5.0938-4.5 2.1553-6.434 4.8089-13.766 9.5625-17 4.7376-3.2236 12.982-3.4533 19.938-3.4062 1.6259 0.01099 1.4328-0.0051 2.8125 0zm4.2812 11.344c0.25363 1.6902 0.32088 3.3108 0.21875 4.8438-4.3964 0.61259-9.4961 1.8388-11.938 3.5l-0.09375 0.09375c-2.425 1.7082-5.6311 6.2579-7.9688 10.375-0.02442 0.043-0.03824 0.08211-0.0625 0.125-1.6152-<br>0.33228-3.2105-0.82464-4.7812-1.4688 0.16236-0.46518 0.30468-0.8847 0.46875-1.375 1.6925-5.0575 3.7568-10.859 7.5-13.406 3.7077-2.5228 10.182-2.7243 15.625-2.6875 0.59678 0.004 0.47333-0.0031 1.0312 0z"<br>
+      /><br>
+      &lt;path<br>
+          id="path14800-1"<br>
+          style="color:#000000"<br>
+          d="m48.729 45.412c-11.846 9.186-26.222 27.672-12.811 33.138s17.245-19.176 12.811-33.138z"<br>
+          stroke="#000"<br>
+          stroke-width="1.8"<br>
+          fill="url(#linearGradient3172)"<br>
+      /><br>
+      &lt;path<br>
+          id="path15841"<br>
+          stroke="#000"<br>
+          stroke-width="1px"<br>
+          d="m29.332 30.093c-9.875-0.2-11.102-1.0525-13.15 1.675-2.0477 2.7275-3.1495 7.2871-0.6 7.3 2.5495 0.01295 2.405-4.5076 3.1434-6.3622 0.73841-1.8546 5.5066-2.3003 10.607-2.6128z"<br>
+      /><br>
+      &lt;path<br>
+          id="path15841-2"<br>
+          stroke="#000"<br>
+          stroke-width="1px"<br>
+          d="m39.894 23.452c-0.000335-9.877-0.82783-11.121 1.9405-13.113 2.7683-1.9921 7.3492-3.0016 7.3106-0.45231-0.03859 2.5493-4.5553 2.3134-6.4244 3.0142-1.8691 0.70077-2.4112 5.459-2.8267 10.552z"<br>
+      /><br>
+      &lt;g<br>
+          id="g15882"<br>
+          style="color:#000000"<br>
+          transform="matrix(0 -1 1 0 18.347 73.949)"<br>
+          stroke="#000"<br>
+          stroke-width="1.8"<br>
+          fill="url(#linearGradient3068)"<br>
+        ><br>
+        &lt;path<br>
+            id="path14800-4"<br>
+            style="color:#000000"<br>
+            d="m29.702 30.083c18.6 1.6 46.132 11.217 35.8 26s-31-8.4-35.8-26z"<br>
+   /><br>
+&lt;path id="path14800-1-5"<br>
+style="color:#000000"<br>
+d="m29.005 31.002c11.846 9.186 26.222 27.671 12.811 33.137s-17.245-19.176-12.811-33.137z"/><br>
+&lt;/g><br>
+&lt;path id="path15886"<br>
+stroke-width="0"<br>
+d="m80.119 80.245 5.328 9.4599-8.1551-7.394z"/><br>
+    &lt;/g><br>
+  &lt;/g><br>
+  <br>
+     &lt;/g> <br>
+     &lt;/defs><br></Span>
+<br>
+&lt;!-- Attack Circle decoration above --><br>
+<br>
+<br>
+    <br>
+&lt;!-- Circle 1 below --><br>
+        <br>
+<Span> &lt;use id="circle1"href="#music2" x="-500" y="200"> <br>
+  <br>
+ &lt;animate attributeName="x" calcmode="discrete" dur="12" values="100;200;150;100;50" repeatCount="indefinite" begin="help.end" end="click;replay.click;replay2.click"/><br>
+ <br>
+  &lt;animate attributeName="y" calcmode="discrete" dur="10" values="200;100;200;50;200;100" repeatCount="indefinite" begin="help.end" end="click;replay.click;replay2.click"/><br>
+  <br>
+  <br>
+&lt;/use>      <br></Span>
+<br>
+&lt;!-- Circle 1 above -->  <br>
+<br>
+<br>
+<br>
+&lt;!-- Circle 2 below --> <br>
+<br>
+<Span>&lt;use id="circle2"href="#music2" x="-500" y="200"> <br>
+  <br>
+ &lt;animate attributeName="x" calcmode="discrete" dur="12" values="200;100;200;50;100" repeatCount="indefinite" begin="one.end" end="click;replay.click;replay2.click"/><br>
+  <br>
+ <br>
+  &lt;animate attributeName="y" calcmode="discrete" dur="10" values="50;200;50;200;150;100" repeatCount="indefinite" begin="one.end" end="click;replay.click;replay2.click"/><br>
+  <br>
+ <br>
+&lt;/use><br></Span>
+<br>
+&lt;!-- Circle 2 above --><br>
+<br>
+<br>
+<br>
+&lt;!-- Circle 3 below --> <br>
+<br>
+<Span>&lt;use id="circle3"href="#music2" x="-500" y="200"> <br>
+  <br>
+ &lt;animate attributeName="x" calcmode="discrete" dur="10" values="50;100;200;50;100" repeatCount="indefinite" begin="two.end" end="click;replay.click;replay2.click"/><br>
+  <br>
+ <br>
+  &lt;animate attributeName="y" calcmode="discrete" dur="8" values="100;100;150;200;50;100" repeatCount="indefinite" begin="two.end" end="click;replay.click;replay2.click"/><br>
+  <br>
+ <br>
+&lt;/use><br></Span>
+<br>
+&lt;!-- Circle 3 above --><br>
+<br>
+<br>
+<br>
+&lt;!-- Circle 4 below --> <br>
+<br>
+<Span>&lt;use id="circle4"href="#music2" x="-500" y="200"> <br>
+  <br>
+ &lt;animate attributeName="x" calcmode="discrete" dur="10" values="200;200;100;50;100" repeatCount="indefinite" begin="three.end" end="click;replay.click;replay2.click"/><br>
+  <br>
+ <br>
+  &lt;animate attributeName="y" calcmode="discrete" dur="8" values="50;150;200;100;200;100" repeatCount="indefinite" begin="three.end" end="click;replay.click;replay2.click"/><br>
+  <br>
+ <br>
+&lt;/use><br></Span>
+<br>
+&lt;!-- Circle 4 above --><br>
+<br>
+<br>
+<br>
+&lt;!-- Circle 5 below --> <br>
+<br>
+<Span>&lt;use id="circle5"href="#music2" x="-500" y="200"> <br>
+  <br>
+ &lt;animate attributeName="x" calcmode="discrete" dur="8" values="100;200;100;50;100" repeatCount="indefinite" begin="four.end" end="click;replay.click;replay2.click"/><br>
+  <br>
+ <br>
+  &lt;animate attributeName="y" calcmode="discrete" dur="6" values="200;150;200;100;200;100" repeatCount="indefinite" begin="four.end" end="click;replay.click;replay2.click"/><br>
+  <br>
+&lt;/use><br></Span>
+<br>
+&lt;!-- Circle 5 above --><br>
+<br>
+<br>
+<br>
+&lt;!-- Circle 6 below --> <br>
+<br>
+<Span>&lt;use id="circle6"href="#music2" x="-500" y="200"> <br>
+  <br>
+ &lt;animate attributeName="x" calcmode="discrete" dur="8" values="100;200;100;50;100" repeatCount="indefinite" begin="five.end" end="click;replay.click;replay2.click"/><br>
+  <br>
+ <br>
+  &lt;animate attributeName="y" calcmode="discrete" dur="6" values="100;150;200;100;200;100" repeatCount="indefinite" begin="five.end" end="click;replay.click;replay2.click"/><br>
+  <br>
+ <br>
+&lt;/use><br></Span>
+<br>
+&lt;!-- Circle 6 above --><br>
+<br>
+<br>
+<br>
+&lt;!-- Circle 7 below --> <br>
+<br>
+<Span>&lt;use id="circle7"href="#music2" x="-500" y="200"> <br>
+  <br>
+ &lt;animate attributeName="x" calcmode="discrete" dur="8" values="150;200;100;50;100" repeatCount="indefinite" begin="six.end" end="click;replay.click;replay2.click"/><br>
+  <br>
+ <br>
+  &lt;animate attributeName="y" calcmode="discrete" dur="6" values="150;150;200;100;200;100" repeatCount="indefinite" begin="six.end" end="click;replay.click;replay2.click"/><br>
+  <br>
+<br>
+&lt;/use><br></Span>
+<br>
+&lt;!-- Circle 7 above --><br>
+<br>
+<br>
+<br>
+&lt;!-- Circle 8 below --> <br>
+<br>
+<Span>&lt;use id="circle8" href="#music2" x="-500" y="200"> <br>
+  <br>
+ &lt;animate attributeName="x" calcmode="discrete" dur="8" values="80;200;100;50;100" repeatCount="indefinite" begin="seven.end" end="click;replay.click;replay2.click"/><br>
+  <br>
+ <br>
+  &lt;animate attributeName="y" calcmode="discrete" dur="6" values="50;150;200;100;200;100" repeatCount="indefinite" begin="seven.end" end="click;replay.click;replay2.click"/><br>
+  <br>
+&lt;/use><br></Span>
+<br>
+&lt;!-- Circle 8 above --><br>
+<br>
+<br>
+<br>
+&lt;!-- Circle 9 below --><br> 
+<br>
+<Span>&lt;use id="circle9" href="#music2" x="-500" y="200"> <br>
+  <br>
+ &lt;animate attributeName="x" calcmode="discrete" dur="8" values="200;150;100;50;100" repeatCount="indefinite" begin="eight.end" end="click;replay.click;replay2.click"/><br>
+  <br>
+ <br>
+  &lt;animate attributeName="y" calcmode="discrete" dur="6" values="100;150;200;100;200;100" repeatCount="indefinite" begin="eight.end" end="click;replay.click;replay2.click"/><br>
+  <br>
+&lt;/use><br></Span>
+<br>
+&lt;!-- Circle 9 above --><br>
+<br>
+<br>
+<br>
+&lt;!-- Circle 10 below --> <br>
+<br>
+<Span>&lt;use id="circle10" href="#music2" x="-500" y="200"> <br>
+  <br>
+ &lt;animate attributeName="x" calcmode="discrete" dur="8" values="50;200;100;50;100" repeatCount="indefinite" begin="nine.end" end="click;replay.click;replay2.click"/><br>
+  <br>
+ <br>
+  &lt;animate attributeName="y" calcmode="discrete" dur="6" values="200;150;200;100;200;100" repeatCount="indefinite" begin="nine.end" end="click;replay.click;replay2.click"/><br>
+  <br>
+&lt;/use><br></Span>
+<br>
+&lt;!-- Circle 10 above --><br>
+<br>
+<br>
+<br>
+&lt;!-- Circle 11 below --> <br>
+<br>
+<Span>&lt;use id="circle11" href="#music2" x="-500" y="200"> <br>
+<br>
+ &lt;animate attributeName="x" calcmode="discrete" dur="8" values="150;200;100;50;100" repeatCount="indefinite" begin="ten.end" end="click;replay.click;replay2.click"/><br>
+  <br>
+ <br>
+  &lt;animate attributeName="y" calcmode="discrete" dur="6" values="200;150;200;100;200;100" repeatCount="indefinite" begin="ten.end" end="click;replay.click;replay2.click"/><br>
+  <br>
+&lt;/use><br></Span>
+<br>
+&lt;!-- Circle 11 above --><br>
+<br>
+<br>
+<br>
+&lt;!-- Circle 12 below --> <br>
+<br>
+<Span>&lt;use id="circle12" href="#music2" x="-500" y="200"><br> 
+  <br>
+ &lt;animate attributeName="x" calcmode="discrete" dur="8" values="100;200;100;50;100" repeatCount="indefinite" begin="eleven.end" end="click;replay.click;replay2.click"/><br>
+  <br>
+ <br>
+  &lt;animate attributeName="y" calcmode="discrete" dur="6" values="100;150;200;100;200;100" repeatCount="indefinite" begin="eleven.end" end="click;replay.click;replay2.click"/><br>
+  <br>
+&lt;/use><br></Span>
+<br>
+&lt;!-- Circle 12 above --><br>
+<br>
+<br>
+<br>
+<br>
+&lt;!-- Circle 13 below --> <br>
+<br>
+<Span>&lt;use id="circle13" href="#music2" x="-500" y="200"> <br>
+  <br>
+ &lt;animate attributeName="x" calcmode="discrete" dur="8" values="100;200;100;50;100" repeatCount="indefinite" begin="twelve.end" end="click;replay.click;replay2.click"/><br>
+  <br>
+ <br>
+  &lt;animate attributeName="y" calcmode="discrete" dur="6" values="200;150;200;100;200;100" repeatCount="indefinite" begin="twelve.end" end="click;replay.click;replay2.click"/><br>
+  <br>
+&lt;/use><br></Span>
+<br>
+&lt;!-- Circle 13 above --><br>
+<br>
+<br>
+<br>
+&lt;!-- Circle 14 below --> <br>
+<br>
+<Span>&lt;use id="circle14" href="#music2" x="-500" y="200"> <br>
+  <br>
+ &lt;animate attributeName="x" calcmode="discrete" dur="8" values="200;200;100;50;100" repeatCount="indefinite" begin="thirteen.end" end="click;replay.click;replay2.click"/><br>
+  <br> 
+ <br>
+  &lt;animate attributeName="y" calcmode="discrete" dur="6" values="50;150;2p0;100;200;100" repeatCount="indefinite" begin="thirteen.end" end="click;replay.click;replay2.click"/><br>
+  <br>
+&lt;/use><br></Span>
+<br>
+&lt;!-- Circle 14 above --><br>
+<br>
+<br>
+<br>
+&lt;!-- Circle 15 below --> <br>
+<br>
+<Span>&lt;use id="circle15" href="#music2" x="-500" y="200"> <br>
+  <br>
+ &lt;animate attributeName="x" calcmode="discrete" dur="8" values="30;200;100;50;100" repeatCount="indefinite" begin="fourteen.end" end="click;replay.click;replay2.click"/><br>
+  <br>
+ <br>
+  &lt;animate attributeName="y" calcmode="discrete" dur="6" values="50;150;200;100;200;100" repeatCount="indefinite" begin="fourteen.end" end="click;replay.click;replay2.click"/><br>
+  <br>
+&lt;/use><br></Span>
+<br>
+&lt;!-- Circle 15 above --><br>
+<br>
+<br>
+<br>
+&lt;!-- Circle 16 below --> <br>
+<br>
+<Span>&lt;use id="circle16" href="#bee" x="-500" y="200"> <br>
+  <br>
+ &lt;animate attributeName="x" calcmode="discrete" dur="4" values="100;200;100;30;100" repeatCount="indefinite" begin="fifteen.end" end="click;replay.click;replay2.click"/><br>
+  <br>
+ <br>
+  &lt;animate attributeName="y" calcmode="discrete" dur="2" values="100;150;200;100;200;100" repeatCount="indefinite" begin="fifteen.end" end="click;replay.click;replay2.click"/><br>
+  <br>
+ <br>
+&lt;/use><br></Span>
+<br>
+&lt;!-- Circle 16 above --><br>
+<br>
+<br>
+<br>
+&lt;!-- your health bar below --><br>
+<br>
+<Span>&lt;rect width="320" height="10" x="10" y="320" fill="black"/><br>
+<br>
+&lt;rect width="320" height="10" x="10" y="320" fill="red">  <br>
+ <br>
+&lt;animate id="lose" attributeName="width" from="320" to="0" begin="help.end" dur="40s" fill="remove"/><br>
+<br>
+&lt;/rect><br></Span>
+<br>
+&lt;!-- your health bar above --><br>
+<br>
+<br>
+<br>
+&lt;!-- lose ending screen animation below --><br>
+<br>
+<Span>&lt;use href="#loseendscreen" x="-500"><br>
+&lt;animate attributeName="x" calcmode="discrete" dur="0.1" from="-500" to="0" begin="lose.end" fill="freeze" /><br>
+&lt;animate attributeName="x" calcmode="discrete" dur="0.001" from="0" to="-500" begin="replay2.click;replay.click" fill="freeze" /><br>
+&lt;/use><br></Span>
+<br>
+&lt;!-- lose ending screen animation above --><br>
+<br>
+<br>
+<br>
+&lt;!-- win ending screen animation below --><br>
+<br>
+<Span>&lt;use href="#endscreen" x="-500"><br>
+&lt;animate attributeName="x" calcmode="discrete" dur="0.1" from="-500" to="0" begin="sixteen.end" fill="freeze" /><br>
+&lt;animate id="testt" attributeName="x" calcmode="discrete" dur="0.1" from="0" to="-500" begin="replay.click" fill="freeze" /><br>
+&lt;/use><br></Span>
+<br>
+&lt;!-- win ending screen animation above --><br>
+<br>
+<br>
+<br>
+&lt;!-- win ending screen below --><br>
+<br>
+<Span>&lt;defs><br>
+&lt;g id="endscreen"><br>
+<br>
+&lt;rect x="0" y="0" width="340" height="340" fill="green" /><br>
+<br>
+&lt;text x="70" y="50"> Congratulations, you won! &lt;/text><br>
+<br>
+&lt;text x="20" y="75"> This game was made by using only HTML, &lt;tspan x="20" y="100">and its not the final version of the game,&lt;/tspan> &lt;tspan x="10" y="125">it is just a test I made to try some of my ideas, &lt;/tspan> &lt;tspan x="20" y="150">like and follow if you want to support me.&lt;/tspan>&lt;/text><br>
+<br>
+<br>
+  <br>
+&lt;defs><br>
+&lt;g id="replaybutton">   <br>                  
+&lt;rect width="100" height="50" fill="gray" x="120" y="200" stroke="black" /><br>
+<br>
+&lt;text x="145" y="230" style="pointer-events: none;"> Replay &lt;/text><br>
+&lt;/g><br>
+&lt;/defs><br>
+<br>
+&lt;defs><br>
+&lt;g id="loading">      <br>               
+&lt;rect width="250" height="50" fill="gray" x="40" y="200" stroke="black" /><br>
+<br>
+&lt;text x="45" y="230"> Loading replay <br>
+button please wait&lt;/text><br>
+<br>
+&lt;text x="45" y="230"> Loading replay <br>
+button please wait. <br>
+&lt;animate id="text1" attributeName="x" from="-500" to="45" dur="0.1s" calcmode="discrete" begin="1s;text6.end" fill="freeze"/><br>
+&lt;animate id="text2" attributeName="x" from="45" to="-500" dur="1s" calcmode="discrete" fill="freeze" begin="text1.end"/><br>
+&lt;/text><br>
+<br>
+&lt;text x="-500" y="230"> Loading replay <br>
+button please wait.. <br>
+&lt;animate id="text3" attributeName="x" from="-500" to="45" dur="0.1s" calcmode="discrete" fill="freeze"begin="text2.begin" /><br>
+&lt;animate id="text4" attributeName="x" from="45" to="-500" dur="1s" calcmode="discrete" fill="freeze" begin="text3.end" /><br>
+&lt;/text><br>
+<br>
+&lt;text x="-500" y="230"> Loading replay <br>
+button please wait...<br>
+&lt;animate id="text5" attributeName="x" from="-500" to="45" dur="0.1s" calcmode="discrete" fill="freeze"begin="text4.begin" /><br>
+&lt;animate id="text6" attributeName="x" from="45" to="-500" dur="1s" calcmode="discrete" fill="freeze" begin="text5.end" /><br>
+&lt;/text><br>
+&lt;/g><br>
+&lt;/defs><br>
+<br>
+&lt;use id="loadingtext"" href="#loading" y="10"><br>
+&lt;animate attributeName="y" from="10"<br>
+to="200" dur="0.1s" begin="lose.end" fill="freeze" calcmode="discrete"/><br>
+&lt;animate attributeName="y" from="200"<br>
+to="10" dur="0.1s" begin="replay.click;replay2.click" fill="freeze" calcmode="discrete"/><br>
+<br>
+&lt;/use><br>
+<br>
+&lt;use id="replay" href="#replaybutton" y="500"><br>
+&lt;animate attributeName="y" from="200"<br>
+to="10" dur="0.1s" begin="lose.end" fill="freeze" calcmode="discrete"/><br>
+&lt;animate attributeName="y" from="10"<br>
+to="200" dur="0.1s" begin="replay.click;replay2.click" fill="freeze" calcmode="discrete"/><br>
+<br>
+&lt;/use><br>
+<br>
+<br>
+&lt;/g><br>
+&lt;/defs><br></Span>
+<br>
+<br>
+&lt;!-- win ending screen above --><br>
+<br>
+<br>
+&lt;!-- lose ending screen below --><br>
+<br>
+<Span>&lt;defs><br>
+&lt;g id="loseendscreen"><br>
+<br>
+&lt;rect x="0" y="0" width="340" height="340" fill="red" /><br>
+<br>
+&lt;text x="70" y="50"> Congratulations, you lost! &lt;/text><br>
+<br>
+&lt;text x="20" y="75"> This game was made by using only HTML, <tspan x="20" y="100">and its not the final version of the game,</tspan> <tspan x="10" y="125">it is just a test I made to try some of my ideas, &lt;/tspan> &lt;tspan x="20" y="150">like and follow if you want to support me.&lt;/tspan>&lt;/text><br>
+  <br>
+<br>
+&lt;use id="replay2" href="#replaybutton" y="10"/><br>
+<br>
+&lt;/g><br>
+&lt;/defs><br></Span>
+<br>
+<br>
+&lt;!-- lose ending screen above --><br>
+<br>
+<br>
+&lt;!-- Start screen below --><br>
+<br>
+<Span>&lt;defs><br>
+&lt;g id="startscreen"><br>
+<br>
+&lt;rect x="0" y="0" width="340" height="340" fill="gray"/><br>
+<br>
+<br>
+&lt;defs><br>
+&lt;g id="bee"><br>
+ <br>
+  &lt;defs<br>
+      id="defs14793"<br>
+    ><br>
+    &lt;linearGradient<br>
+        id="linearGradient3068"<br>
+        x1="45.1"<br>
+        gradientUnits="userSpaceOnUse"<br>
+        x2="84.952"<br>
+        y1="61.154"<br>
+        y2="61.154"<br>
+      ><br>
+      &lt;stop<br>
+          id="stop15924-76"<br>
+          stop-color="#fff"<br>
+          offset="0"<br>
+      /><br>
+      &lt;stop<br>
+          id="stop15926-1"<br> 
+          stop-color="#a2ffff"<br>
+          offset="1"<br>
+      /><br>
+    &lt;/linearGradient<br>
+    ><br>
+    &lt;linearGradient<br>
+        id="linearGradient3172"<br>
+        x1="45.1"<br>
+        gradientUnits="userSpaceOnUse"<br>
+        y1="61.154"<br>
+        gradientTransform="matrix(-1 0 0 1 94.032 -1.3066)"<br>
+        x2="84.952"<br>
+        y2="61.154"<br>
+      ><br> 
+      &lt;stop<br>
+          id="stop15924-2"<br>
+          stop-color="#fff"<br>
+          offset="0"<br>
+      /><br>
+      &lt;stop<br>
+          id="stop15926-2"<br>
+          stop-color="#a2ffff"<br>
+          offset="1"<br>
+      /><br>
+    &lt;/linearGradient<br>
+    ><br>
+  &lt;/defs<br>
+  ><br>
+  &lt;g<br>
+      id="layer1"<br>
+    ><br>
+    &lt;g<br>
+        id="g3950"<br>
+      ><br>
+      &lt;rect<br>
+          id="rect15995"<br>
+          style="color:#000000"<br>
+          height="86.646"<br>
+          width="86.646"<br>
+          y="4.1769"<br>
+          x="4.1769"<br>
+          fill="none"<br>
+      /><br>
+       &lt;path<br>
+          id="path14800"<br>
+          stroke="#000"<br>
+          stroke-width="1.8"<br>
+          fill="url(#linearGradient3172)"<br>
+          d="m48.032 44.493c-18.6 1.6-46.132 11.217-35.8 26s31-8.4 35.8-26z"<br>
+      /><br>
+       &lt;path<br>
+          id="path14800-1"<br>
+          style="color:#000000"<br>
+          d="m48.729 45.412c-11.846 9.186-26.222 27.672-12.811 33.138s17.245-19.176 12.811-33.138z"<br>
+          stroke="#000"<br>
+          stroke-width="1.8"<br>
+          fill="url(#linearGradient3172)"<br>
+      /><br>
+      
+       &lt;g<br>
+          id="g15882"<br>
+          style="color:#000000"<br>
+          transform="matrix(0 -1 1 0 18.347 73.949)"<br>
+          stroke="#000"<br>
+          stroke-width="1.8"<br>
+          fill="url(#linearGradient3068)"<br>
+        ><br>
+        &lt;path<br>
+            id="path14800-4"<br>
+            style="color:#000000"<br>
+            d="m29.702 30.083c18.6 1.6 46.132 11.217 35.8 26s-31-8.4-35.8-26z"<br>
+   /><br>
+&lt;path id="path14800-1-5"<br>
+style="color:#000000"<br>
+d="m29.005 31.002c11.846 9.186 26.222 27.671 12.811 33.137s-17.245-19.176-12.811-33.137z"/><br>
+&lt;/g><br>
+<br>
+      &lt;path<br>
+          id="path15590"<br>
+          stroke-width="1.8"<br>
+          stroke="#000"<br>
+          transform="matrix(-1.2212 0 0 1.2212 119.97 -17.864)"<br>
+          d="m75.2 43.2a10.4 10.4 0 1 1 -20.8 0 10.4 10.4 0 1 1 20.8 0z"<br>
+      /><br>
+      &lt;path<br>
+          id="path15590-7"<br>
+          stroke="#000"<br>
+          stroke-width="1.8"<br>
+          fill="#ff0"<br>
+          d="m39.599 58.252c2.651 12.903 14.854 24.579 27.255 26.078 12.401 1.5 20.305-7.744 17.654-20.648-2.652-12.903-14.854-24.578-27.256-26.078-12.401-1.499-20.304 7.745-17.653 20.648z"<br>
+      /><br>
+     <br>
+      &lt;path<br>
+          id="path15630"<br>
+          style="block-progression:tb;color:#000000;text-transform:none;text-indent:0"<br>
+          d="m70.188 42.818c2.1876 1.5259 4.2297 3.3109 6.0625 5.3125-1.6387 0.12654-3.55 0.29768-5.7188 0.59375-5.408 0.73828-11.766 2.2611-14.781 4.3125l-0.125 0.09375c-2.9597 2.0849-6.8656 7.6626-9.7188 12.688-0.64133 1.1295-1.2095 2.1918-1.75 3.2188-1.4291-2.1934-2.6088-4.5238-3.4688-6.9375 2.0446-6.0895 4.5469-12.949 9.0312-16 4.5252-3.0791 12.419-3.3262 19.062-3.2812 0.8146 0.0055 0.65187-0.0039 1.4062 0zm10.281 10.906c1.1219 1.8295 2.0776 3.7435 2.8125 5.7188-1.1796 0.11523-2.4434 0.25486-3.7812 0.4375-5.6618 0.77294-12.312 2.3523-15.469 4.5l-0.15625 0.09375c-3.0986 2.1827-7.1692 8.0205-10.156 13.281-0.17312 0.3049-0.3019 0.57493-0.46875 0.875-1.8169-1.3304-3.5306-2.8346-5.0938-4.5 2.1553-6.434 4.8089-13.766 9.5625-17 4.7376-3.2236 12.982-3.4533 19.938-3.4062 1.6259 0.01099 1.4328-0.0051 2.8125 0zm4.2812 11.344c0.25363 1.6902 0.32088 3.3108 0.21875 4.8438-4.3964 0.61259-9.4961 1.8388-11.938 3.5l-0.09375 0.09375c-2.425 1.7082-5.6311 6.2579-7.9688 10.375-0.02442 0.043-0.03824 0.08211-0.0625 0.125-1.6152- <br>0.33228-3.2105-0.82464-4.7812-1.4688 0.16236-0.46518 0.30468-0.8847 0.46875-1.375 1.6925-5.0575 3.7568-10.859 7.5-13.406 3.7077-2.5228 10.182-2.7243 15.625-2.6875 0.59678 0.004 0.47333-0.0031 1.0312 0z"<br>
+      /><br>
+     
+      &lt;path<br>
+          id="path15841"<br>
+          stroke="#000"<br>
+          stroke-width="1px"<br>
+          d="m29.332 30.093c-9.875-0.2-11.102-1.0525-13.15 1.675-2.0477 2.7275-3.1495 7.2871-0.6 7.3 2.5495 0.01295 2.405-4.5076 3.1434-6.3622 0.73841-1.8546 5.5066-2.3003 10.607-2.6128z"<br>
+      /><br>
+      &lt;path<br>
+          id="path15841-2"<br>
+          stroke="#000"<br>
+          stroke-width="1px"<br>
+          d="m39.894 23.452c-0.000335-9.877-0.82783-11.121 1.9405-13.113 2.7683-1.9921 7.3492-3.0016 7.3106-0.45231-0.03859 2.5493-4.5553 2.3134-6.4244 3.0142-1.8691 0.70077-2.4112 5.459-2.8267 10.552z"<br>
+      /><br>
+     <br>
+&lt;path id="path15886"<br>
+stroke-width="0"<br>
+d="m80.119 80.245 5.328 9.4599-8.1551-7.394z"/><br>
+    &lt;/g><br>
+  &lt;/g><br>
+  <br>
+  &lt;circle r="3" fill="white" stroke="black" cx="42" cy="28"/><br>
+  <br>
+  &lt;circle r="1" fill="black" stroke="black" cx="42" cy="28"/><br>
+  <br>
+   &lt;circle r="3" fill="white" stroke="black" cx="33" cy="35"/><br>
+  <br>
+  &lt;circle r="1" fill="black" stroke="black" cx="33" cy="35"/><br>
+  <br>
+  &lt;path d="M38 40 c0 0, -2 -4, 8 -8" stroke="gray"/><br>
+  <br>
+  &lt;path d="M28 32 l8 -2 m6 -8 l-5 7" stroke="gray"/><br>
+&lt;/g><br>
+&lt;/defs><br>
+<br>
+&lt;use href="#music2" transform="translate(0 100)"/><br>
+<br>
+&lt;use href="#music2" transform="translate(235 100)"/><br>
+<br>
+&lt;use href="#music2" transform="translate(10 150)"/><br>
+<br>
+&lt;use href="#music2" transform="translate(225 150)"/><br>
+<br>
+&lt;use href="#bee" transform="rotate(40) scale(2) translate (60 -50)"&gt;<br>
+&lt;animate attributeName="y" values="0;5;0;-5;0" dur="2s" repeatCount="indefinite"/&gt;<br>
+&lt;animate attributeName="x" values="0;-5;0;5;0" dur="2s" repeatCount="indefinite"/&gt;<br>
+&lt;/use&gt;<br>
+<br>
+&lt;text x="72" y="25" font-size="1.5em"> We are gonna sting &lt;tspan x="78" y="60">the shit out of you&lt;/tspan>&lt;/text><br>
+<br>
+&lt;defs><br>
+&lt;g id="yesno"><br>
+&lt;rect x="130" y="273" width="85" height="37" fill="red" stroke="black"/><br>
+&lt;text x="133" y="300" font-size="2em" stroke="black" fill="white" style="pointer-events: none;"> Fight!&lt;/text><br>
+<br>
+&lt;/g><br>
+&lt;/defs><br>
+<br>
+&lt;use id="yesnobutton" href="#yesno"/><br>
+<br>
+&lt;/g><br>
+&lt;/defs><br>
+<br></span>
+&lt;!-- Start screen above --><br>
+<br>
+<br>
+<br>
+&lt;!-- Start screen animation below --><br>
+<br> 
+<span> &lt;use href="#startscreen"><br>
+<br>
+&lt;animate attributeName="x" from="0" to="-500" dur="0.1s" calcmode="discrete" fill="freeze" begin="yesnobutton.click"/><br>
+<br>
+&lt;animate attributeName="x" from="-500" to="0" dur="0.0001s" calcmode="discrete" fill="freeze" begin="replay.click;replay2.click"/><br>
+<br>
+&lt;/use><br></Span>
+<br>
+&lt;!-- Start screen animation above --><br>
+<br>
+<br>
+<br>
+&lt;!-- text tip animation below --><br>
+<br>
+<Span>&lt;text x="70" y="50" fill="red" stroke="black" font-size="1.5em" opacity="0" style="pointer-events: none;"><br>
+click on the bees to &lt;tspan x="80" y="80">defend your self!&lt;/tspan><br>
+&lt;animate  id="help" attributeName="opacity" values="0;0;5;0" dur="5s" begin="yesnobutton.click"/><br>
+&lt;/text><br></Span>
+<br>
+&lt;!-- text tip animation above --><br>
+<br>
+<Span>&lt;/svg> <br>
+&lt;/p></Span>
+
+
+<p style="text-align:left;">
+
+ 
+
+
+</p>
+
+
+
+
+<p style="text-align:left;">Outcome:</p>
+
+
+
+
+
+
+<p>
+<svg width="500" height="500" viewBox="0 0 340 340" style="border: 5px black solid; background-color:gray;">
+
+<!-- Health bar below -->
+
+<rect width="320" height="10" x="10" y="10" fill="black"/>
+
+<rect width="20" height="10" x="310" y="10" fill="green">
+<animate id="one" attributeName="width" from="20" to="0"
+dur="1s" fill="freeze" begin="circle1.click" />
+<animate attributeName="width" from="00" to="20.5"
+dur="0.01s" fill="freeze" begin="replay.click;replay2.click" />
+</rect>
+
+<rect width="20.5" height="10" x="290" y="10" fill="green">
+<animate id="two" attributeName="width" from="20" to="0"
+dur="1s" fill="freeze" begin="circle2.click"/>
+<animate attributeName="width" from="00" to="20.5"
+dur="0.01s" fill="freeze" begin="replay.click;replay2.click" />
+</rect>
+
+<rect width="20.5" height="10" x="270" y="10" fill="green">
+<animate id="three" attributeName="width" from="20" to="0"
+dur="1s" fill="freeze" begin="circle3.click"/><animate attributeName="width" from="00" to="20.5"
+dur="0.01s" fill="freeze" begin="replay.click;replay2.click" />
+</rect>
+
+
+<rect width="20.5" height="10" x="250" y="10" fill="green">
+<animate id="four" attributeName="width" from="20" to="0"
+dur="1s" fill="freeze" begin="circle4.click"/>
+<animate attributeName="width" from="00" to="20.5"
+dur="0.01s" fill="freeze" begin="replay.click;replay2.click" />
+</rect>
+
+<rect width="20.5" height="10" x="230" y="10" fill="green">
+<animate id="five" attributeName="width" from="20" to="0"
+dur="1s" fill="freeze" begin="circle5.click"/><animate attributeName="width" from="00" to="20.5"
+dur="0.01s" fill="freeze" begin="replay.click;replay2.click" />
+</rect>
+
+
+<rect width="20.5" height="10" x="210" y="10" fill="green">
+<animate id="six" attributeName="width" from="20" to="0"
+dur="1s" fill="freeze" begin="circle6.click"/><animate attributeName="width" from="00" to="20.5"
+dur="0.01s" fill="freeze" begin="replay.click;replay2.click" />
+</rect>
+
+
+<rect width="20.5" height="10" x="190" y="10" fill="green">
+<animate id="seven" attributeName="width" from="20" to="0"
+dur="1s" fill="freeze" begin="circle7.click"/><animate attributeName="width" from="00" to="20.5"
+dur="0.01s" fill="freeze" begin="replay.click;replay2.click" />
+</rect>
+
+
+<rect width="20.5" height="10" x="170" y="10" fill="green">
+<animate id="eight" attributeName="width" from="20" to="0"
+dur="1s" fill="freeze" begin="circle8.click"/><animate attributeName="width" from="00" to="20.5"
+dur="0.01s" fill="freeze" begin="replay.click;replay2.click" />
+</rect>
+
+
+<rect width="20.5" height="10" x="150" y="10" fill="green">
+<animate id="nine" attributeName="width" from="20" to="0"
+dur="1s" fill="freeze" begin="circle9.click"/><animate attributeName="width" from="00" to="20.5"
+dur="0.01s" fill="freeze" begin="replay.click;replay2.click" />
+</rect>
+
+
+
+<rect width="20.5" height="10" x="130" y="10" fill="green"><animate attributeName="width" from="0" to="20.5"
+dur="0.01s" fill="freeze" begin="replay.click;replay2.click" />
+<animate id="ten" attributeName="width" from="20" to="0"
+dur="1s" fill="freeze" begin="circle10.click" />
+</rect>
+
+
+<rect width="20.5" height="10" x="110" y="10" fill="green">
+<animate id="eleven" attributeName="width" from="20" to="0"
+dur="1s" fill="freeze" begin="circle11.click"/>
+<animate attributeName="width" from="0" to="20.5"
+dur="0.01s" fill="freeze" begin="replay.click;replay2.click" />
+</rect>
+
+
+<rect width="20.5" height="10" x="90" y="10" fill="green"><animate attributeName="width" from="00" to="20.5"
+dur="0.01s" fill="freeze" begin="replay.click;replay2.click" />
+<animate id="twelve" attributeName="width" from="20" to="0"
+dur="1s" fill="freeze" begin="circle12.click"/>
+</rect>
+
+
+<rect width="20.5" height="10" x="70" y="10" fill="green"><animate attributeName="width" from="00" to="20.5"
+dur="0.01s" fill="freeze" begin="replay.click;replay2.click" />
+<animate id="thirteen" attributeName="width" from="20" to="0"
+dur="1s" fill="freeze" begin="circle13.click"/>
+</rect>
+
+
+<rect width="20.5" height="10" x="50" y="10" fill="green"><animate attributeName="width" from="00" to="20.5"
+dur="0.01s" fill="freeze" begin="replay.click;replay2.click" />
+<animate id="fourteen" attributeName="width" from="20" to="0"
+dur="1s" fill="freeze" begin="circle14.click"/>
+</rect>
+
+
+
+<rect width="20.5" height="10" x="30" y="10" fill="green"><animate attributeName="width" from="00" to="20.5"
+dur="0.01s" fill="freeze" begin="replay.click;replay2.click" />
+<animate id="fifteen" attributeName="width" from="20" to="0"
+dur="1s" fill="freeze" begin="circle15.click"/>
+</rect>
+
+
+<rect width="20.5" height="10" x="10" y="10" fill="green"><animate attributeName="width" from="00" to="20.5"
+dur="0.01s" fill="freeze" begin="replay.click;replay2.click" />
+<animate id="sixteen" attributeName="width" from="20" to="0"
+dur="1s" fill="freeze" begin="circle16.click"/>
+</rect>
+
+<!-- Health bar above -->
+
+
+
+<!-- Attack circle decoration below -->
+
+<defs>
+<g id="music2">
+
+  <defs
+      id="defs14793"
+    >
+    <linearGradient
+        id="linearGradient3068"
+        x1="45.1"
+        gradientUnits="userSpaceOnUse"
+        x2="84.952"
+        y1="61.154"
+        y2="61.154"
+      >
+      <stop
+          id="stop15924-76"
+          stop-color="#fff"
+          offset="0"
+      />
+      <stop
+          id="stop15926-1"
+          stop-color="#a2ffff"
+          offset="1"
+      />
+    </linearGradient
+    >
+    <linearGradient
+        id="linearGradient3172"
+        x1="45.1"
+        gradientUnits="userSpaceOnUse"
+        y1="61.154"
+        gradientTransform="matrix(-1 0 0 1 94.032 -1.3066)"
+        x2="84.952"
+        y2="61.154"
+      >
+      <stop
+          id="stop15924-2"
+          stop-color="#fff"
+          offset="0"
+      />
+      <stop
+          id="stop15926-2"
+          stop-color="#a2ffff"
+          offset="1"
+      />
+    </linearGradient
+    >
+  </defs
+  >
+  <g
+      id="layer1"
+    >
+    <g
+        id="g3950"
+      >
+      <rect
+          id="rect15995"
+          style="color:#000000"
+          height="86.646"
+          width="86.646"
+          y="4.1769"
+          x="4.1769"
+          fill="none"
+      />
+      <path
+          id="path15590"
+          stroke-width="1.8"
+          stroke="#000"
+          transform="matrix(-1.2212 0 0 1.2212 119.97 -17.864)"
+          d="m75.2 43.2a10.4 10.4 0 1 1 -20.8 0 10.4 10.4 0 1 1 20.8 0z"
+      />
+      <path
+          id="path15590-7"
+          stroke="#000"
+          stroke-width="1.8"
+          fill="#ff0"
+          d="m39.599 58.252c2.651 12.903 14.854 24.579 27.255 26.078 12.401 1.5 20.305-7.744 17.654-20.648-2.652-12.903-14.854-24.578-27.256-26.078-12.401-1.499-20.304 7.745-17.653 20.648z"
+      />
+      <path
+          id="path14800"
+          stroke="#000"
+          stroke-width="1.8"
+          fill="url(#linearGradient3172)"
+          d="m48.032 44.493c-18.6 1.6-46.132 11.217-35.8 26s31-8.4 35.8-26z"
+      />
+      <path
+          id="path15630"
+          style="block-progression:tb;color:#000000;text-transform:none;text-indent:0"
+          d="m70.188 42.818c2.1876 1.5259 4.2297 3.3109 6.0625 5.3125-1.6387 0.12654-3.55 0.29768-5.7188 0.59375-5.408 0.73828-11.766 2.2611-14.781 4.3125l-0.125 0.09375c-2.9597 2.0849-6.8656 7.6626-9.7188 12.688-0.64133 1.1295-1.2095 2.1918-1.75 3.2188-1.4291-2.1934-2.6088-4.5238-3.4688-6.9375 2.0446-6.0895 4.5469-12.949 9.0312-16 4.5252-3.0791 12.419-3.3262 19.062-3.2812 0.8146 0.0055 0.65187-0.0039 1.4062 0zm10.281 10.906c1.1219 1.8295 2.0776 3.7435 2.8125 5.7188-1.1796 0.11523-2.4434 0.25486-3.7812 0.4375-5.6618 0.77294-12.312 2.3523-15.469 4.5l-0.15625 0.09375c-3.0986 2.1827-7.1692 8.0205-10.156 13.281-0.17312 0.3049-0.3019 0.57493-0.46875 0.875-1.8169-1.3304-3.5306-2.8346-5.0938-4.5 2.1553-6.434 4.8089-13.766 9.5625-17 4.7376-3.2236 12.982-3.4533 19.938-3.4062 1.6259 0.01099 1.4328-0.0051 2.8125 0zm4.2812 11.344c0.25363 1.6902 0.32088 3.3108 0.21875 4.8438-4.3964 0.61259-9.4961 1.8388-11.938 3.5l-0.09375 0.09375c-2.425 1.7082-5.6311 6.2579-7.9688 10.375-0.02442 0.043-0.03824 0.08211-0.0625 0.125-1.6152-0.33228-3.2105-0.82464-4.7812-1.4688 0.16236-0.46518 0.30468-0.8847 0.46875-1.375 1.6925-5.0575 3.7568-10.859 7.5-13.406 3.7077-2.5228 10.182-2.7243 15.625-2.6875 0.59678 0.004 0.47333-0.0031 1.0312 0z"
+      />
+      <path
+          id="path14800-1"
+          style="color:#000000"
+          d="m48.729 45.412c-11.846 9.186-26.222 27.672-12.811 33.138s17.245-19.176 12.811-33.138z"
+          stroke="#000"
+          stroke-width="1.8"
+          fill="url(#linearGradient3172)"
+      />
+      <path
+          id="path15841"
+          stroke="#000"
+          stroke-width="1px"
+          d="m29.332 30.093c-9.875-0.2-11.102-1.0525-13.15 1.675-2.0477 2.7275-3.1495 7.2871-0.6 7.3 2.5495 0.01295 2.405-4.5076 3.1434-6.3622 0.73841-1.8546 5.5066-2.3003 10.607-2.6128z"
+      />
+      <path
+          id="path15841-2"
+          stroke="#000"
+          stroke-width="1px"
+          d="m39.894 23.452c-0.000335-9.877-0.82783-11.121 1.9405-13.113 2.7683-1.9921 7.3492-3.0016 7.3106-0.45231-0.03859 2.5493-4.5553 2.3134-6.4244 3.0142-1.8691 0.70077-2.4112 5.459-2.8267 10.552z"
+      />
+      <g
+          id="g15882"
+          style="color:#000000"
+          transform="matrix(0 -1 1 0 18.347 73.949)"
+          stroke="#000"
+          stroke-width="1.8"
+          fill="url(#linearGradient3068)"
+        >
+        <path
+            id="path14800-4"
+            style="color:#000000"
+            d="m29.702 30.083c18.6 1.6 46.132 11.217 35.8 26s-31-8.4-35.8-26z"
+   />
+<path id="path14800-1-5"
+style="color:#000000"
+d="m29.005 31.002c11.846 9.186 26.222 27.671 12.811 33.137s-17.245-19.176-12.811-33.137z"/>
+</g>
+<path id="path15886"
+stroke-width="0"
+d="m80.119 80.245 5.328 9.4599-8.1551-7.394z"/>
+    </g>
+  </g>
+  
+     </g> 
+     </defs>
+
+<!-- Attack Circle decoration above -->
+
+
+    
+<!-- Circle 1 below -->
+        
+ <use id="circle1"href="#music2" x="-500" y="200"> 
+  
+ <animate attributeName="x" calcmode="discrete" dur="12" values="100;200;150;100;50" repeatCount="indefinite" begin="help.end" end="click;replay.click;replay2.click"/>
+ 
+  <animate attributeName="y" calcmode="discrete" dur="10" values="200;100;200;50;200;100" repeatCount="indefinite" begin="help.end" end="click;replay.click;replay2.click"/>
+  
+  
+</use>      
+
+<!-- Circle 1 above -->  
+
+
+
+<!-- Circle 2 below --> 
+
+<use id="circle2"href="#music2" x="-500" y="200"> 
+  
+ <animate attributeName="x" calcmode="discrete" dur="12" values="200;100;200;50;100" repeatCount="indefinite" begin="one.end" end="click;replay.click;replay2.click"/>
+  
+ 
+  <animate attributeName="y" calcmode="discrete" dur="10" values="50;200;50;200;150;100" repeatCount="indefinite" begin="one.end" end="click;replay.click;replay2.click"/>
+  
+ 
+</use>
+
+<!-- Circle 2 above -->
+
+
+
+<!-- Circle 3 below --> 
+
+<use id="circle3"href="#music2" x="-500" y="200"> 
+  
+ <animate attributeName="x" calcmode="discrete" dur="10" values="50;100;200;50;100" repeatCount="indefinite" begin="two.end" end="click;replay.click;replay2.click"/>
+  
+ 
+  <animate attributeName="y" calcmode="discrete" dur="8" values="100;100;150;200;50;100" repeatCount="indefinite" begin="two.end" end="click;replay.click;replay2.click"/>
+  
+ 
+</use>
+
+<!-- Circle 3 above -->
+
+
+
+<!-- Circle 4 below --> 
+
+<use id="circle4"href="#music2" x="-500" y="200"> 
+  
+ <animate attributeName="x" calcmode="discrete" dur="10" values="200;200;100;50;100" repeatCount="indefinite" begin="three.end" end="click;replay.click;replay2.click"/>
+  
+ 
+  <animate attributeName="y" calcmode="discrete" dur="8" values="50;150;200;100;200;100" repeatCount="indefinite" begin="three.end" end="click;replay.click;replay2.click"/>
+  
+ 
+</use>
+
+<!-- Circle 4 above -->
+
+
+
+<!-- Circle 5 below --> 
+
+<use id="circle5"href="#music2" x="-500" y="200"> 
+  
+ <animate attributeName="x" calcmode="discrete" dur="8" values="100;200;100;50;100" repeatCount="indefinite" begin="four.end" end="click;replay.click;replay2.click"/>
+  
+ 
+  <animate attributeName="y" calcmode="discrete" dur="6" values="200;150;200;100;200;100" repeatCount="indefinite" begin="four.end" end="click;replay.click;replay2.click"/>
+  
+</use>
+
+<!-- Circle 5 above -->
+
+
+
+<!-- Circle 6 below --> 
+
+<use id="circle6"href="#music2" x="-500" y="200"> 
+  
+ <animate attributeName="x" calcmode="discrete" dur="8" values="100;200;100;50;100" repeatCount="indefinite" begin="five.end" end="click;replay.click;replay2.click"/>
+  
+ 
+  <animate attributeName="y" calcmode="discrete" dur="6" values="100;150;200;100;200;100" repeatCount="indefinite" begin="five.end" end="click;replay.click;replay2.click"/>
+  
+ 
+</use>
+
+<!-- Circle 6 above -->
+
+
+
+<!-- Circle 7 below --> 
+
+<use id="circle7"href="#music2" x="-500" y="200"> 
+  
+ <animate attributeName="x" calcmode="discrete" dur="8" values="150;200;100;50;100" repeatCount="indefinite" begin="six.end" end="click;replay.click;replay2.click"/>
+  
+ 
+  <animate attributeName="y" calcmode="discrete" dur="6" values="150;150;200;100;200;100" repeatCount="indefinite" begin="six.end" end="click;replay.click;replay2.click"/>
+  
+
+</use>
+
+<!-- Circle 7 above -->
+
+
+
+<!-- Circle 8 below --> 
+
+<use id="circle8" href="#music2" x="-500" y="200"> 
+  
+ <animate attributeName="x" calcmode="discrete" dur="8" values="80;200;100;50;100" repeatCount="indefinite" begin="seven.end" end="click;replay.click;replay2.click"/>
+  
+ 
+  <animate attributeName="y" calcmode="discrete" dur="6" values="50;150;200;100;200;100" repeatCount="indefinite" begin="seven.end" end="click;replay.click;replay2.click"/>
+  
+</use>
+
+<!-- Circle 8 above -->
+
+
+
+<!-- Circle 9 below --> 
+
+<use id="circle9" href="#music2" x="-500" y="200"> 
+  
+ <animate attributeName="x" calcmode="discrete" dur="8" values="200;150;100;50;100" repeatCount="indefinite" begin="eight.end" end="click;replay.click;replay2.click"/>
+  
+ 
+  <animate attributeName="y" calcmode="discrete" dur="6" values="100;150;200;100;200;100" repeatCount="indefinite" begin="eight.end" end="click;replay.click;replay2.click"/>
+  
+</use>
+
+<!-- Circle 9 above -->
+
+
+
+<!-- Circle 10 below --> 
+
+<use id="circle10" href="#music2" x="-500" y="200"> 
+  
+ <animate attributeName="x" calcmode="discrete" dur="8" values="50;200;100;50;100" repeatCount="indefinite" begin="nine.end" end="click;replay.click;replay2.click"/>
+  
+ 
+  <animate attributeName="y" calcmode="discrete" dur="6" values="200;150;200;100;200;100" repeatCount="indefinite" begin="nine.end" end="click;replay.click;replay2.click"/>
+  
+</use>
+
+<!-- Circle 10 above -->
+
+
+
+<!-- Circle 11 below --> 
+
+<use id="circle11" href="#music2" x="-500" y="200"> 
+  
+ <animate attributeName="x" calcmode="discrete" dur="8" values="150;200;100;50;100" repeatCount="indefinite" begin="ten.end" end="click;replay.click;replay2.click"/>
+  
+ 
+  <animate attributeName="y" calcmode="discrete" dur="6" values="200;150;200;100;200;100" repeatCount="indefinite" begin="ten.end" end="click;replay.click;replay2.click"/>
+  
+</use>
+
+<!-- Circle 11 above -->
+
+
+
+<!-- Circle 12 below --> 
+
+<use id="circle12" href="#music2" x="-500" y="200"> 
+  
+ <animate attributeName="x" calcmode="discrete" dur="8" values="100;200;100;50;100" repeatCount="indefinite" begin="eleven.end" end="click;replay.click;replay2.click"/>
+  
+ 
+  <animate attributeName="y" calcmode="discrete" dur="6" values="100;150;200;100;200;100" repeatCount="indefinite" begin="eleven.end" end="click;replay.click;replay2.click"/>
+  
+</use>
+
+<!-- Circle 12 above -->
+
+
+
+
+<!-- Circle 13 below --> 
+
+<use id="circle13" href="#music2" x="-500" y="200"> 
+  
+ <animate attributeName="x" calcmode="discrete" dur="8" values="100;200;100;50;100" repeatCount="indefinite" begin="twelve.end" end="click;replay.click;replay2.click"/>
+  
+ 
+  <animate attributeName="y" calcmode="discrete" dur="6" values="200;150;200;100;200;100" repeatCount="indefinite" begin="twelve.end" end="click;replay.click;replay2.click"/>
+  
+</use>
+
+<!-- Circle 13 above -->
+
+
+
+<!-- Circle 14 below --> 
+
+<use id="circle14" href="#music2" x="-500" y="200"> 
+  
+ <animate attributeName="x" calcmode="discrete" dur="8" values="200;200;100;50;100" repeatCount="indefinite" begin="thirteen.end" end="click;replay.click;replay2.click"/>
+  
+ 
+  <animate attributeName="y" calcmode="discrete" dur="6" values="50;150;2p0;100;200;100" repeatCount="indefinite" begin="thirteen.end" end="click;replay.click;replay2.click"/>
+  
+</use>
+
+<!-- Circle 14 above -->
+
+
+
+<!-- Circle 15 below --> 
+
+<use id="circle15" href="#music2" x="-500" y="200"> 
+  
+ <animate attributeName="x" calcmode="discrete" dur="8" values="30;200;100;50;100" repeatCount="indefinite" begin="fourteen.end" end="click;replay.click;replay2.click"/>
+  
+ 
+  <animate attributeName="y" calcmode="discrete" dur="6" values="50;150;200;100;200;100" repeatCount="indefinite" begin="fourteen.end" end="click;replay.click;replay2.click"/>
+  
+</use>
+
+<!-- Circle 15 above -->
+
+
+
+<!-- Circle 16 below --> 
+
+<use id="circle16" href="#bee" x="-500" y="200"> 
+  
+ <animate attributeName="x" calcmode="discrete" dur="4" values="100;200;100;30;100" repeatCount="indefinite" begin="fifteen.end" end="click;replay.click;replay2.click"/>
+  
+ 
+  <animate attributeName="y" calcmode="discrete" dur="2" values="100;150;200;100;200;100" repeatCount="indefinite" begin="fifteen.end" end="click;replay.click;replay2.click"/>
+  
+ 
+</use>
+
+<!-- Circle 16 above -->
+
+
+
+<!-- your health bar below -->
+
+<rect width="320" height="10" x="10" y="320" fill="black"/>
+
+<rect width="320" height="10" x="10" y="320" fill="red">  
+ 
+<animate id="lose" attributeName="width" from="320" to="0" begin="help.end" dur="40s" fill="remove"/>
+
+</rect>
+
+<!-- your health bar above -->
+
+
+
+<!-- lose ending screen animation below -->
+
+<use href="#loseendscreen" x="-500">
+<animate attributeName="x" calcmode="discrete" dur="0.1" from="-500" to="0" begin="lose.end" fill="freeze" />
+<animate attributeName="x" calcmode="discrete" dur="0.001" from="0" to="-500" begin="replay2.click;replay.click" fill="freeze" />
+</use>
+
+<!-- lose ending screen animation above -->
+
+
+
+<!-- win ending screen animation below -->
+
+<use href="#endscreen" x="-500">
+<animate attributeName="x" calcmode="discrete" dur="0.1" from="-500" to="0" begin="sixteen.end" fill="freeze" />
+<animate id="testt" attributeName="x" calcmode="discrete" dur="0.1" from="0" to="-500" begin="replay.click" fill="freeze" />
+</use>
+
+<!-- win ending screen animation above -->
+
+
+
+<!-- win ending screen below -->
+<defs>
+<g id="endscreen">
+
+<rect x="0" y="0" width="340" height="340" fill="green" />
+
+<text x="70" y="50"> Congratulations, you won! </text>
+
+<text x="20" y="75"> This game was made by using only HTML, <tspan x="20" y="100">and its not the final version of the game,</tspan> <tspan x="10" y="125">it is just a test I made to try some of my ideas, </tspan> <tspan x="20" y="150">like and follow if you want to support me.</tspan></text>
+
+
+  
+<defs>
+<g id="replaybutton">                     
+<rect width="100" height="50" fill="gray" x="120" y="200" stroke="black" />
+
+<text x="145" y="230" style="pointer-events: none;"> Replay </text>
+</g>
+</defs>
+
+<defs>
+<g id="loading">                     
+<rect width="250" height="50" fill="gray" x="40" y="200" stroke="black" />
+
+<text x="45" y="230"> Loading replay 
+button please wait</text>
+
+<text x="45" y="230"> Loading replay 
+button please wait. 
+<animate id="text1" attributeName="x" from="-500" to="45" dur="0.1s" calcmode="discrete" begin="1s;text6.end" fill="freeze"/>
+<animate id="text2" attributeName="x" from="45" to="-500" dur="1s" calcmode="discrete" fill="freeze" begin="text1.end"/>
+</text>
+
+<text x="-500" y="230"> Loading replay 
+button please wait.. 
+<animate id="text3" attributeName="x" from="-500" to="45" dur="0.1s" calcmode="discrete" fill="freeze"begin="text2.begin" />
+<animate id="text4" attributeName="x" from="45" to="-500" dur="1s" calcmode="discrete" fill="freeze" begin="text3.end" />
+</text>
+
+<text x="-500" y="230"> Loading replay 
+button please wait...
+<animate id="text5" attributeName="x" from="-500" to="45" dur="0.1s" calcmode="discrete" fill="freeze"begin="text4.begin" />
+<animate id="text6" attributeName="x" from="45" to="-500" dur="1s" calcmode="discrete" fill="freeze" begin="text5.end" />
+</text>
+</g>
+</defs>
+
+<use id="loadingtext"" href="#loading" y="10">
+<animate attributeName="y" from="10"
+to="200" dur="0.1s" begin="lose.end" fill="freeze" calcmode="discrete"/>
+<animate attributeName="y" from="200"
+to="10" dur="0.1s" begin="replay.click;replay2.click" fill="freeze" calcmode="discrete"/>
+
+</use>
+
+<use id="replay" href="#replaybutton" y="500">
+<animate attributeName="y" from="200"
+to="10" dur="0.1s" begin="lose.end" fill="freeze" calcmode="discrete"/>
+<animate attributeName="y" from="10"
+to="200" dur="0.1s" begin="replay.click;replay2.click" fill="freeze" calcmode="discrete"/>
+
+</use>
+
+
+</g>
+</defs>
+
+
+<!-- win ending screen above -->
+
+
+<!-- lose ending screen below -->
+
+<defs>
+<g id="loseendscreen">
+
+<rect x="0" y="0" width="340" height="340" fill="red" />
+
+<text x="70" y="50"> Congratulations, you lost! </text>
+
+<text x="20" y="75"> This game was made by using only HTML, <tspan x="20" y="100">and its not the final version of the game,</tspan> <tspan x="10" y="125">it is just a test I made to try some of my ideas, </tspan> <tspan x="20" y="150">like and follow if you want to support me.</tspan></text>
+  
+
+<use id="replay2" href="#replaybutton" y="10"/>
+
+</g>
+</defs>
+
+
+<!-- lose ending screen above -->
+
+
+<!-- Start screen below -->
+
+<defs>
+<g id="startscreen">
+
+<rect x="0" y="0" width="340" height="340" fill="gray"/>
+
+
+<defs>
+<g id="bee">
+ 
+  <defs
+      id="defs14793"
+    >
+    <linearGradient
+        id="linearGradient3068"
+        x1="45.1"
+        gradientUnits="userSpaceOnUse"
+        x2="84.952"
+        y1="61.154"
+        y2="61.154"
+      >
+      <stop
+          id="stop15924-76"
+          stop-color="#fff"
+          offset="0"
+      />
+      <stop
+          id="stop15926-1"
+          stop-color="#a2ffff"
+          offset="1"
+      />
+    </linearGradient
+    >
+    <linearGradient
+        id="linearGradient3172"
+        x1="45.1"
+        gradientUnits="userSpaceOnUse"
+        y1="61.154"
+        gradientTransform="matrix(-1 0 0 1 94.032 -1.3066)"
+        x2="84.952"
+        y2="61.154"
+      >
+      <stop
+          id="stop15924-2"
+          stop-color="#fff"
+          offset="0"
+      />
+      <stop
+          id="stop15926-2"
+          stop-color="#a2ffff"
+          offset="1"
+      />
+    </linearGradient
+    >
+  </defs
+  >
+  <g
+      id="layer1"
+    >
+    <g
+        id="g3950"
+      >
+      <rect
+          id="rect15995"
+          style="color:#000000"
+          height="86.646"
+          width="86.646"
+          y="4.1769"
+          x="4.1769"
+          fill="none"
+      />
+       <path
+          id="path14800"
+          stroke="#000"
+          stroke-width="1.8"
+          fill="url(#linearGradient3172)"
+          d="m48.032 44.493c-18.6 1.6-46.132 11.217-35.8 26s31-8.4 35.8-26z"
+      />
+       <path
+          id="path14800-1"
+          style="color:#000000"
+          d="m48.729 45.412c-11.846 9.186-26.222 27.672-12.811 33.138s17.245-19.176 12.811-33.138z"
+          stroke="#000"
+          stroke-width="1.8"
+          fill="url(#linearGradient3172)"
+      />
+      
+       <g
+          id="g15882"
+          style="color:#000000"
+          transform="matrix(0 -1 1 0 18.347 73.949)"
+          stroke="#000"
+          stroke-width="1.8"
+          fill="url(#linearGradient3068)"
+        >
+        <path
+            id="path14800-4"
+            style="color:#000000"
+            d="m29.702 30.083c18.6 1.6 46.132 11.217 35.8 26s-31-8.4-35.8-26z"
+   />
+<path id="path14800-1-5"
+style="color:#000000"
+d="m29.005 31.002c11.846 9.186 26.222 27.671 12.811 33.137s-17.245-19.176-12.811-33.137z"/>
+</g>
+
+      <path
+          id="path15590"
+          stroke-width="1.8"
+          stroke="#000"
+          transform="matrix(-1.2212 0 0 1.2212 119.97 -17.864)"
+          d="m75.2 43.2a10.4 10.4 0 1 1 -20.8 0 10.4 10.4 0 1 1 20.8 0z"
+      />
+      <path
+          id="path15590-7"
+          stroke="#000"
+          stroke-width="1.8"
+          fill="#ff0"
+          d="m39.599 58.252c2.651 12.903 14.854 24.579 27.255 26.078 12.401 1.5 20.305-7.744 17.654-20.648-2.652-12.903-14.854-24.578-27.256-26.078-12.401-1.499-20.304 7.745-17.653 20.648z"
+      />
+     
+      <path
+          id="path15630"
+          style="block-progression:tb;color:#000000;text-transform:none;text-indent:0"
+          d="m70.188 42.818c2.1876 1.5259 4.2297 3.3109 6.0625 5.3125-1.6387 0.12654-3.55 0.29768-5.7188 0.59375-5.408 0.73828-11.766 2.2611-14.781 4.3125l-0.125 0.09375c-2.9597 2.0849-6.8656 7.6626-9.7188 12.688-0.64133 1.1295-1.2095 2.1918-1.75 3.2188-1.4291-2.1934-2.6088-4.5238-3.4688-6.9375 2.0446-6.0895 4.5469-12.949 9.0312-16 4.5252-3.0791 12.419-3.3262 19.062-3.2812 0.8146 0.0055 0.65187-0.0039 1.4062 0zm10.281 10.906c1.1219 1.8295 2.0776 3.7435 2.8125 5.7188-1.1796 0.11523-2.4434 0.25486-3.7812 0.4375-5.6618 0.77294-12.312 2.3523-15.469 4.5l-0.15625 0.09375c-3.0986 2.1827-7.1692 8.0205-10.156 13.281-0.17312 0.3049-0.3019 0.57493-0.46875 0.875-1.8169-1.3304-3.5306-2.8346-5.0938-4.5 2.1553-6.434 4.8089-13.766 9.5625-17 4.7376-3.2236 12.982-3.4533 19.938-3.4062 1.6259 0.01099 1.4328-0.0051 2.8125 0zm4.2812 11.344c0.25363 1.6902 0.32088 3.3108 0.21875 4.8438-4.3964 0.61259-9.4961 1.8388-11.938 3.5l-0.09375 0.09375c-2.425 1.7082-5.6311 6.2579-7.9688 10.375-0.02442 0.043-0.03824 0.08211-0.0625 0.125-1.6152-0.33228-3.2105-0.82464-4.7812-1.4688 0.16236-0.46518 0.30468-0.8847 0.46875-1.375 1.6925-5.0575 3.7568-10.859 7.5-13.406 3.7077-2.5228 10.182-2.7243 15.625-2.6875 0.59678 0.004 0.47333-0.0031 1.0312 0z"
+      />
+     
+      <path
+          id="path15841"
+          stroke="#000"
+          stroke-width="1px"
+          d="m29.332 30.093c-9.875-0.2-11.102-1.0525-13.15 1.675-2.0477 2.7275-3.1495 7.2871-0.6 7.3 2.5495 0.01295 2.405-4.5076 3.1434-6.3622 0.73841-1.8546 5.5066-2.3003 10.607-2.6128z"
+      />
+      <path
+          id="path15841-2"
+          stroke="#000"
+          stroke-width="1px"
+          d="m39.894 23.452c-0.000335-9.877-0.82783-11.121 1.9405-13.113 2.7683-1.9921 7.3492-3.0016 7.3106-0.45231-0.03859 2.5493-4.5553 2.3134-6.4244 3.0142-1.8691 0.70077-2.4112 5.459-2.8267 10.552z"
+      />
+     
+<path id="path15886"
+stroke-width="0"
+d="m80.119 80.245 5.328 9.4599-8.1551-7.394z"/>
+    </g>
+  </g>
+  
+  <circle r="3" fill="white" stroke="black" cx="42" cy="28"/>
+  
+  <circle r="1" fill="black" stroke="black" cx="42" cy="28"/>
+  
+   <circle r="3" fill="white" stroke="black" cx="33" cy="35"/>
+  
+  <circle r="1" fill="black" stroke="black" cx="33" cy="35"/>
+  
+  <path d="M38 40 c0 0, -2 -4, 8 -8" stroke="gray"/>
+  
+  <path d="M28 32 l8 -2 m6 -8 l-5 7" stroke="gray"/>
+</g>
+</defs>
+
+<use href="#music2" transform="translate(0 100)"/>
+
+<use href="#music2" transform="translate(235 100)"/>
+
+<use href="#music2" transform="translate(10 150)"/>
+
+<use href="#music2" transform="translate(225 150)"/>
+
+<use href="#bee" transform="rotate(40) scale(2) translate (60 -50)">
+  <animate attributeName="y" values="0;5;0;-5;0" dur="2s" repeatCount="indefinite"/>
+  <animate attributeName="x" values="0;-5;0;5;0" dur="2s" repeatCount="indefinite"/>
+</use>
+
+<text x="72" y="25" font-size="1.5em"> We are gonna sting <tspan x="78" y="60">the shit out of you</tspan></text>
+
+<defs>
+<g id="yesno">
+<rect x="130" y="273" width="85" height="37" fill="red" stroke="black"/>
+<text x="133" y="300" font-size="2em" stroke="black" fill="white" style="pointer-events: none;"> Fight!</text>
+
+</g>
+</defs>
+
+<use id="yesnobutton" href="#yesno"/>
+
+</g>
+</defs>
+
+<!-- Start screen above -->
+
+
+
+<!-- Start screen animation below -->
+
+<use href="#startscreen">
+
+<animate attributeName="x" from="0" to="-500" dur="0.1s" calcmode="discrete" fill="freeze" begin="yesnobutton.click"/>
+
+<animate attributeName="x" from="-500" to="0" dur="0.0001s" calcmode="discrete" fill="freeze" begin="replay.click;replay2.click"/>
+
+</use>
+
+<!-- Start screen animation above -->
+
+
+
+<!-- text tip animation below -->
+
+<text x="70" y="50" fill="red" stroke="black" font-size="1.5em" opacity="0" style="pointer-events: none;">
+click on the bees to <tspan x="80" y="80">defend your self!</tspan>
+<animate  id="help" attributeName="opacity" values="0;0;5;0" dur="5s" begin="yesnobutton.click"/>
+</text>
+
+<!-- text tip animation above -->
+
+</svg>
+</p>
+
+
+<hr size="10" width="100%">
+
+</body>
+</html>

@@ -1,0 +1,777 @@
+<!DOCTYPE HTML>
+<html>
+<head lang="en-US">
+<meta charset="UTF-8">
+<title> Audio custom controls </title>
+<style>
+       .left {
+        text-align: left;
+    }
+    
+    .code10 {
+    white-space: pre-wrap;
+    background-color: lightgreen;
+    }
+    
+    p {
+    text-align:center;
+    }
+    h1 {
+    text-align:center;
+    }
+    h2 {
+    text-align:center;
+    }
+    h3 {
+    text-align:center;
+    }
+    .c {
+    background-color:lightgreen;
+    }
+    hr {
+    width:100%;
+    height:15px;
+    background-color:black;
+    color:black;
+    border: black solid;
+    }
+    body {
+    background-color:rgb(165, 235, 235);
+    margin: 0;
+    height: 100vh;
+    }   
+    span {
+    background-color:lightgreen;
+    }
+    
+    a:link {
+    color: black;
+    text-shadow: 1px 0px 1px black;
+    
+    }
+    
+    a:visited {
+    color: black;
+    text-shadow: 1px 0px 1px rgb(22, 22, 22);
+    }
+    
+    a:hover {
+    text-decoration: underline;
+    color: red;
+    text-shadow: 1px 0px 1px black;
+    }
+    
+    .document{
+        width: 100vw;
+        height: 100vh;
+        overflow: auto;
+        overflow-x: hidden;
+    }
+    
+    .gray{
+        background-color: lightgray;
+    }
+    
+    .no-scroll{
+        overflow-y: hidden;
+    }
+</style> 
+<link rel="stylesheet" href="../CSS-JavaScript-External-Files/HTMLnotes.css?version=1">
+</head>
+<body>
+<hr>
+<article>
+
+<h1> Audio custom controls </h1>
+<p><a href="../Home-Pages/myprojects.html">Click to go back</a></p>
+ 
+<style>
+    :root{
+    --color-1: rgba(230, 230, 230, 0.6);
+    --controls-height: 50;
+    --audio-position: 0;
+    }
+
+    #audio-controls{
+        background-color: var(--color-1);
+        width: 300px;
+        height: calc(var(--controls-height) * 1px);
+        margin: auto;
+        position: relative;
+        border-radius: 
+        calc(var(--controls-height) / 2 * 1px);
+        display: grid;
+        align-items: center;
+        grid-template-columns: 
+        1fr 2.5fr 4.5fr 1.25fr;
+        grid-gap: 7px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    #audio-controls > div{    
+        height: 60%;
+        font-size: 0.9em;
+        overflow: visible;
+        display: grid;
+        align-items: center;
+        z-index: 1;
+    }
+    #bar{
+        overflow: visible !important;
+    }
+    #bar #container{
+        height: 5px;
+        width: 100%;
+        background-color: gray;
+        border-radius: 2.5px; 
+    }
+    #bar #container #filler{
+        height: 5px;
+        width: calc(var(--audio-position) * 1px);
+        background-color: black;
+        border-radius: 2.5px;
+        position: relative;
+    }
+    #bar #container #filler::after{
+        content: '';
+        display: block;
+        height: 10px;
+        width: 10px;
+        background-color: black;
+        border-radius: 50%;
+        position: absolute;
+        right: -1px;
+        transform: translate(50%, -25%);
+    }
+    img{
+        width: 25px;
+        max-width: 100%;
+        max-height: 100%;
+        border: unset !important;
+    }
+    #timer{
+        min-width: fit-content;
+        white-space: nowrap;
+    }
+    #play, #volume{
+        overflow: visible;
+    }
+    #background{
+        width: 500px;
+        height: 500px; 
+        display: flex;
+        align-items: center;
+        align-content: center;
+        margin: auto;
+        border: 3px solid black;
+        border-radius: 20px;
+        background-image: 
+        url(https://www.desktopbackground.org/download/1440x2560/2013/01/05/510051_country-cowboy-with-sunset-backgrounds-bing-images_2440x3660_h.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+</style>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><Span class="code10">&lt;div id="background">
+
+&lt;div id="audio-controls">
+
+&lt;div id="play">
+&lt;img src="https://dl.dropbox.com/s/y8i4eayztm3z5b3/unnamed%20%281%29.png?dl=0" alt="image not found">
+&lt;/div>
+
+&lt;div id="timer">0:00 / 0:00&lt;/div>
+
+&lt;div id="bar">
+&lt;div id="container">
+&lt;div id="filler">&lt;/div>
+&lt;/div>
+&lt;/div>
+
+&lt;div id="volume">
+&lt;img src="https://dl.dropbox.com/s/wkhpxzpf3bvjc6i/9Fl3EU.png?dl=0"> 
+&lt;/div>
+
+&lt;/div>
+
+&lt;/div></Span></p>
+
+<p class="left">CSS Code:</p>
+
+<p class="left"><Span class="code10">:root{
+--color-1: rgba(230, 230, 230, 0.6);
+--controls-height: 50;
+--audio-position: 0;
+}
+
+#audio-controls{
+    background-color: var(--color-1);
+    width: 300px;
+    height: calc(var(--controls-height) * 1px);
+    margin: auto;
+    position: relative;
+    border-radius: 
+    calc(var(--controls-height) / 2 * 1px);
+    display: grid;
+    align-items: center;
+    grid-template-columns: 
+    1fr 2.5fr 4.5fr 1.25fr;
+    grid-gap: 7px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#audio-controls > div{    
+    height: 60%;
+    font-size: 0.9em;
+    overflow: visible;
+    display: grid;
+    align-items: center;
+    z-index: 1;
+}
+#bar{
+    overflow: visible !important;
+}
+#bar #container{
+    height: 5px;
+    width: 100%;
+    background-color: gray;
+    border-radius: 2.5px; 
+}
+#bar #container #filler{
+    height: 5px;
+    width: calc(var(--audio-position) * 1px);
+    background-color: black;
+    border-radius: 2.5px;
+    position: relative;
+}
+#bar #container #filler::after{
+    content: '';
+    display: block;
+    height: 10px;
+    width: 10px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    right: -1px;
+    transform: translate(50%, -25%);
+}
+img{
+    width: 25px;
+    max-width: 100%;
+    max-height: 100%;
+    border: unset !important;
+}
+#timer{
+    min-width: fit-content;
+    white-space: nowrap;
+}
+#play, #volume{
+    overflow: visible;
+}
+#background{
+    width: 500px;
+    height: 500px; 
+    display: flex;
+    align-items: center;
+    align-content: center;
+    margin: auto;
+    border: 3px solid black;
+    border-radius: 20px;
+    background-image: 
+    url(https://www.desktopbackground.org/download/1440x2560/2013/01/05/510051_country-cowboy-with-sunset-backgrounds-bing-images_2440x3660_h.jpg);
+    background-size: cover;
+    background-position: center;
+}</Span></p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let song = new Audio("https://dl.dropbox.com/s/2bwn8k952sz81pq/Ring%20of%20Fire%20Johnny%20Cash.mp3?dl=0");
+
+let startButton = "https://dl.dropbox.com/s/y8i4eayztm3z5b3/unnamed%20%281%29.png?dl=0";
+
+let pauseButton = "https://dl.dropbox.com/s/3fa9jbz98r5xc05/unnamed%20%282%29.png?dl=0";
+
+let soundOff = "https://dl.dropbox.com/s/sx2oic9x0ee3fhc/unnamed%20%283%29.png?dl=0";
+
+let soundOn = "https://dl.dropbox.com/s/wkhpxzpf3bvjc6i/9Fl3EU.png?dl=0";
+
+let playing = false;
+let sound = true;
+
+let button1 = document.querySelector('#play');
+let button2 = document.querySelector('#volume');
+let timer = document.querySelector('#timer');
+let filler = document.querySelector('#filler');
+
+let container = document.querySelector('#container');
+let box = container.getBoundingClientRect();
+let widthIncrement = box.width / song.duration;
+
+let duration = '0:00'; 
+let currentTime = '0:00 / ';
+
+<Span class="gray">// function that sets the currentTime</Span>
+
+function setCurrentTime(){
+    let seconds = Math.floor(song.currentTime % 60);
+
+    if(seconds < 10){
+        seconds = '0' + seconds
+    }
+
+    let minutes = Math.floor(song.currentTime / 60)
+
+    currentTime = minutes + ':' + seconds + ' / ';
+
+    timer.innerHTML = currentTime + duration;
+}
+
+<span class="gray">// function that sets the duration</Span>
+
+function setDuration(){
+    let seconds = Math.floor(song.duration % 60);
+
+    if(seconds < 10){
+        seconds = '0' + seconds
+    }
+
+    let minutes = Math.floor(song.duration / 60)
+
+    duration = minutes + ':' + seconds;
+
+    timer.innerHTML = currentTime + duration;
+}
+
+<span class="gray">// function that sets progress bar width</span>
+
+function setWidth(){
+    filler.style.width = widthIncrement * Math.floor(song.currentTime) + 'px';
+}
+
+<Span class="gray">// event that sets timer when song is ready</Span>
+
+song.addEventListener('canplay', (e)=>{
+    setDuration();
+    widthIncrement = box.width / song.duration;
+});
+
+<Span class="gray">// event that runs when play/pause is pressed</Span>
+
+button1.addEventListener('click', (e)=>{
+
+<span class="gray">// if song isn't already playing</span>
+
+    if(playing == false){
+        button1.children[0].src = pauseButton;
+        song.play();
+        playing = true;
+
+        interval = setInterval(()=>{
+            setWidth();
+
+            setCurrentTime(); 
+
+            timer.innerHTML = currentTime + duration;
+        });
+
+    } 
+
+<span class="gray">    // if song is already playing</Span>
+
+    else {
+        button1.children[0].src = startButton;
+        song.pause();
+        playing = false;
+
+        clearInterval(interval);
+    }
+
+});
+
+<Span class="gray">// runs when volume button is pressed</span>
+button2.addEventListener('click', (e)=>{
+
+<Span class="gray">    // if volume is on</span>
+
+    if(sound == true){
+        button2.children[0].src = soundOff;
+        sound = false;
+
+        song.volume = 0;
+
+    } 
+
+<Span class="gray">    // if volume is off</span>
+
+    else{
+        button2.children[0].src = soundOn;
+        sound = true;
+
+        song.volume = 1;
+    }
+
+});
+
+<Span class="gray">// event runs when progress bar is clicked</Span>
+
+container.addEventListener('click', (e)=>{
+    song.currentTime = e.offsetX / widthIncrement;
+
+    setWidth();
+
+    setCurrentTime(); 
+
+    if(playing == true){
+        song.play();
+    }
+
+    timer.innerHTML = currentTime + duration;
+});
+
+<Span class="gray">// event that runs when touch is moved</Span>
+
+let bar = document.querySelector('#bar');
+
+bar.addEventListener('touchmove',(e)=>{
+    song.currentTime = e.touches[0].clientX - box.left
+
+    if(song.currentTime < 0){
+        song.currentTime = 0;
+    } else if(song.currentTime > song.duration){
+        song.currentTime = song.duration;
+    }
+
+    setWidth();
+
+    setCurrentTime(); 
+
+    if(playing == true){
+        song.play();
+    }
+
+    timer.innerHTML = currentTime + duration;
+});
+
+<Span class="gray">// event that runs when progress bar is 
+// dragged with the cursor</span>
+
+function drag(e){
+    song.currentTime = 
+    e.offsetX / widthIncrement;
+
+    if(song.currentTime < 0){
+        song.currentTime = 0;
+    } else if(song.currentTime > song.duration){
+        song.currentTime = song.duration;
+    }
+
+    setWidth();
+
+    setCurrentTime(); 
+
+    if(playing == true){
+        song.play();
+    }
+
+    timer.innerHTML = currentTime + duration;
+}   
+
+let box2 = document.querySelector('#audio-controls').getBoundingClientRect();    
+let border = {
+    x: box2.left + window.scrollX,
+    y: box2.top + window.scrollY
+}
+
+window.addEventListener('resize', ()=>{
+    box2 = document.querySelector('#audio-controls').getBoundingClientRect();    
+    border = {
+        x: box2.left + window.scrollX,
+        y: box2.top + window.scrollY
+    }
+});
+
+function removeM(e){
+    if(e.pageX < border.x | e.pageX > border.x + box2.width |
+    e.pageY < border.y | e.pageY > border.y + box2.height){
+        bar.removeEventListener('mousemove', drag);
+        window.removeEventListener('mousemove', removeM);
+    }
+}
+
+function removeM2(e){
+    bar.removeEventListener('mousemove', drag);
+    window.removeEventListener('mouseup', removeM2);
+}
+
+bar.addEventListener('mousedown', (e)=>{
+    e.preventDefault();
+
+    bar.addEventListener('mousemove', drag);
+
+    window.addEventListener('mousemove', removeM);
+    window.addEventListener('mouseup', removeM2);
+});</Span></p>
+
+<p class="left">Outcome:</p>
+
+<div id="background">
+
+<div id="audio-controls">
+
+<div id="play">
+<img src="https://dl.dropbox.com/s/y8i4eayztm3z5b3/unnamed%20%281%29.png?dl=0" alt="image not found">
+</div>
+
+<div id="timer">0:00 / 0:00</div>
+
+<div id="bar">
+<div id="container">
+<div id="filler"></div>
+</div>
+</div>
+
+<div id="volume">
+<img src="https://dl.dropbox.com/s/wkhpxzpf3bvjc6i/9Fl3EU.png?dl=0"> 
+</div>
+
+</div>
+
+</div>
+
+<Script>
+    let song = new Audio("https://dl.dropbox.com/s/2bwn8k952sz81pq/Ring%20of%20Fire%20Johnny%20Cash.mp3?dl=0");
+
+    let startButton = "https://dl.dropbox.com/s/y8i4eayztm3z5b3/unnamed%20%281%29.png?dl=0";
+    
+    let pauseButton = "https://dl.dropbox.com/s/3fa9jbz98r5xc05/unnamed%20%282%29.png?dl=0";
+    
+    let soundOff = "https://dl.dropbox.com/s/sx2oic9x0ee3fhc/unnamed%20%283%29.png?dl=0";
+    
+    let soundOn = "https://dl.dropbox.com/s/wkhpxzpf3bvjc6i/9Fl3EU.png?dl=0";
+    
+    let playing = false;
+    let sound = true;
+    
+    let button1 = document.querySelector('#play');
+    let button2 = document.querySelector('#volume');
+    let timer = document.querySelector('#timer');
+    let filler = document.querySelector('#filler');
+    
+    let container = document.querySelector('#container');
+    let box = container.getBoundingClientRect();
+    let widthIncrement = box.width / song.duration;
+    
+    let duration = '0:00'; 
+    let currentTime = '0:00 / ';
+    
+    // function that sets the currentTime 
+    
+    function setCurrentTime(){
+        let seconds = Math.floor(song.currentTime % 60);
+        
+        if(seconds < 10){
+            seconds = '0' + seconds
+        }
+        
+        let minutes = Math.floor(song.currentTime / 60)
+        
+        currentTime = minutes + ':' + seconds + ' / ';
+        
+        timer.innerHTML = currentTime + duration;
+    }
+    
+    // function that sets the duration 
+    
+    function setDuration(){
+        let seconds = Math.floor(song.duration % 60);
+        
+        if(seconds < 10){
+            seconds = '0' + seconds
+        }
+        
+        let minutes = Math.floor(song.duration / 60)
+        
+        duration = minutes + ':' + seconds;
+        
+        timer.innerHTML = currentTime + duration;
+    }
+    
+    // function that sets progress bar width 
+    
+    function setWidth(){
+        filler.style.width = widthIncrement * Math.floor(song.currentTime) + 'px';
+    }
+    
+    // event that sets timer when song is ready
+    
+    song.addEventListener('canplay', (e)=>{
+        setDuration();
+        widthIncrement = box.width / song.duration;
+    });
+    
+    // event that runs when play/pause is pressed
+    
+    button1.addEventListener('click', (e)=>{
+    
+    // if song isn't already playing
+    
+        if(playing == false){
+            button1.children[0].src = pauseButton;
+            song.play();
+            playing = true;
+            
+            interval = setInterval(()=>{
+                setWidth();
+                
+                setCurrentTime(); 
+                
+                timer.innerHTML = currentTime + duration;
+            });
+        
+        } 
+        
+        // if song is already playing 
+        
+        else {
+            button1.children[0].src = startButton;
+            song.pause();
+            playing = false;
+            
+            clearInterval(interval);
+        }
+     
+    });
+    
+    // runs when volume button is pressed
+    button2.addEventListener('click', (e)=>{
+        
+        // if volume is on 
+        
+        if(sound == true){
+            button2.children[0].src = soundOff;
+            sound = false;
+            
+            song.volume = 0;
+        
+        } 
+        
+        // if volume is off
+        
+        else{
+            button2.children[0].src = soundOn;
+            sound = true;
+            
+            song.volume = 1;
+        }
+    
+    });
+    
+    // event runs when progress bar is clicked
+    
+    container.addEventListener('click', (e)=>{
+        song.currentTime = e.offsetX / widthIncrement;
+      
+        setWidth();
+        
+        setCurrentTime(); 
+        
+        if(playing == true){
+            song.play();
+        }
+        
+        timer.innerHTML = currentTime + duration;
+    });
+        
+    // event that runs when touch is moved
+    
+    let bar = document.querySelector('#bar');
+    
+    bar.addEventListener('touchmove',(e)=>{
+        song.currentTime = e.touches[0].clientX - box.left
+        
+        if(song.currentTime < 0){
+            song.currentTime = 0;
+        } else if(song.currentTime > song.duration){
+            song.currentTime = song.duration;
+        }
+        
+        setWidth();
+        
+        setCurrentTime(); 
+        
+        if(playing == true){
+            song.play();
+        }
+        
+        timer.innerHTML = currentTime + duration;
+    });
+    
+    // event that runs when progress bar is 
+    // dragged with the cursor
+    
+    function drag(e){
+        song.currentTime = e.offsetX / widthIncrement;
+        
+        if(song.currentTime < 0){
+            song.currentTime = 0;
+        } else if(song.currentTime > song.duration){
+            song.currentTime = song.duration;
+        }
+        
+        setWidth();
+        
+        setCurrentTime(); 
+        
+        if(playing == true){
+            song.play();
+        }
+        
+        timer.innerHTML = currentTime + duration;
+    }   
+    
+    let box2 = document.querySelector('#audio-controls').getBoundingClientRect();    
+    let border = {
+        x: box2.left + window.scrollX,
+        y: box2.top + window.scrollY
+    }
+
+    window.addEventListener('resize', ()=>{
+        box2 = document.querySelector('#audio-controls').getBoundingClientRect();    
+        border = {
+        x: box2.left + window.scrollX,
+        y: box2.top + window.scrollY
+    }
+    });
+
+    function removeM(e){
+        if(e.pageX < border.x | e.pageX > border.x + box2.width |
+        e.pageY < border.y | e.pageY > border.y + box2.height){
+            bar.removeEventListener('mousemove', drag);
+            window.removeEventListener('mousemove', removeM);
+        }
+    }
+    
+    function removeM2(e){
+        bar.removeEventListener('mousemove', drag);
+        window.removeEventListener('mouseup', removeM2);
+    }
+    
+    bar.addEventListener('mousedown', (e)=>{
+        e.preventDefault();
+        
+        bar.addEventListener('mousemove', drag);
+        
+        window.addEventListener('mousemove', removeM);
+        window.addEventListener('mouseup', removeM2);
+    });
+
+</Script>
+
+
+ </article>
+ 
+<hr>
+</body>
+</html>

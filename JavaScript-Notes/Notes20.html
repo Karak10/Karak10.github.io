@@ -1,0 +1,2014 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<title> Page twenty of my notes </title>
+<meta charset="UTF-8"> 
+<link href="../CSS-JavaScript-External-Files/HTMLnotes.css" rel="stylesheet">
+<Style>
+    .left {
+        text-align: left;
+    }
+    
+    .code10 {
+    white-space: pre-wrap;
+    background-color: lightgreen;
+    
+    }
+    
+    p {
+    text-align:center;
+    }
+    h1 {
+    text-align:center;
+    }
+    h2 {
+    text-align:center;
+    }
+    h3 {
+    text-align:center;
+    }
+    .c {
+    background-color:lightgreen;
+    }
+    hr {
+    width:100%;
+    height:15px;
+    background-color:black;
+    color:black;
+    border: black solid;
+    }
+    body {
+    background-color:rgb(165, 235, 235);
+    }
+    span {
+    background-color:lightgreen;
+    }
+    
+    a:link {
+    color: black;
+    text-shadow: 1px 0px 1px black;
+    
+    }
+    
+    a:visited {
+    color: black;
+    text-shadow: 1px 0px 1px rgb(22, 22, 22);
+    }
+    
+    a:hover {
+    text-decoration: underline;
+    color: red;
+    text-shadow: 1px 0px 1px black;
+    }
+
+    .orange {
+        background-color: lightcoral;
+        font-weight: bold;
+    }
+
+    iframe {
+        width: 600px;
+        height: 350px;
+        border: 3px solid black;
+        margin: 20px auto 20px auto;
+        display: block;
+    }
+    
+    </style> 
+</head>
+<body>
+
+<hr>
+
+    <header> 
+    <h1> Page eight of my JavaScript notes </h1>
+    </header>
+    
+<article id="start-of-page"> 
+  
+<div id="homepages">
+
+    <h3>Home Pages:</h3>
+   
+
+</div>
+
+<nav data-notes="JavaScript" data-page="8">
+
+</nav>
+
+    <h3> Informations included in this page:</h3>
+     <p><a href="../JavaScript-Notes/Notes20.html#one">Iterators and Generators</a></p>
+   <p><a href="../JavaScript-Notes/Notes20.html#two">JavaScript Symbols</a></p>
+   <p><a href="../JavaScript-Notes/Notes20.html#three">parseInt and parseFloat global methods</a></p>
+   <p><a href="../JavaScript-Notes/Notes20.html#four">Array reduce() Method</a></p>
+   <p><a href="../JavaScript-Notes/Notes20.html#five">JavaScript async and defer attributes</a></p>
+   <p><a href="../JavaScript-Notes/Notes20.html#six">JavaScript ES6 Modules</a></p>
+   <p><a href="../JavaScript-Notes/Notes20.html#seven">Array find() method</a></p>
+   <p><a href="../JavaScript-Notes/Notes20.html#eight">Array findIndex() method</a></p>
+   <p><a href="../JavaScript-Notes/Notes20.html#nine">String repeat() Method</a></p>
+   <p><a href="../JavaScript-Notes/Notes20.html#ten">Searching Strings</a></p>
+   <p><a href="../JavaScript-Notes/Notes20.html#eleven">JavaScript Print</a></p>
+   <p><a href="../JavaScript-Notes/Notes20.html#twelve">Conditional (ternary) operator</a></p>
+   <p><a href="../JavaScript-Notes/Notes20.html#thirteen">The typeof operator</a></p>
+   <p><a href="../JavaScript-Notes/Notes20.html#fourteen">The instanceof operator</a></p>
+   <p><a href="../JavaScript-Notes/Notes20.html#fifteen">JavaScript Bitwise Operators</a></p>
+
+</article>
+
+ <script src="../CSS-JavaScript-External-Files/nav.js"></script>
+
+<hr>
+
+<article id="one">
+
+<header>
+
+    <h1>Iterators and Generators</h1>
+
+</header>
+
+<p>Hello, in this lesson I'm gonna talk again about <span>iterators</span> and also I'm gonna talk 
+about <span>generators</span>. So, lets get started.</p>
+
+<p><Span>Arrays</Span>, <Span>Strings</Span>, <Span>Maps</Span>, 
+<Span>Sets</Span>, <Span>NodeLists</Span>, etc, all have 
+<Span>built-in iterators</Span> that allow you to <span>iterate</span>
+through them easily. <span>Objects</span> however do not have 
+a built-in iterator, if you try to <Span>iterate</Span> through an 
+<Span>object</Span> using <span>for...of</span> loop it will return 
+an error, saying <span>object</span> is not <Span>iterable</Span>, in order 
+to <Span>iterate</Span> through the <span>object</span> you have to 
+build an <span>iterator</span> for it that can step through it's 
+<span>properties</span> and return these first.</p>
+
+<p><span>Generators</span> make <Span>iterators</Span> easier to use, while 
+they also allow us to play with the order we get things back, in simple words, <Span>generators</Span>
+give us better control over <Span>iterators</Span>. </p>
+
+<p>Let's now create a <span>generator</span> and use it to 
+return the <Span>elements</Span> of an <span>array</span>:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let arr = [1,2,3]
+
+    function* generator(){
+         yield arr[0];
+         yield arr[1];
+         yield arr[2];
+    }
+
+let iterator = generator();
+
+    document.write(`${iterator.next().value} &lt;br>
+    ${iterator.next().value} &lt;br> 
+    ${iterator.next().value} &lt;br>
+    ${iterator.next().value}`);</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let arr = [1,2,3]
+
+function* generator(){
+     yield arr[0];
+     yield arr[1];
+     yield arr[2];
+}
+
+let iterator = generator();
+
+document.write(`${iterator.next().value} <br>
+${iterator.next().value} <br> 
+${iterator.next().value} <br>
+${iterator.next().value}`);
+
+}
+
+</script>
+
+<p>Alright, let me explain now, by writing <span>function*</span>
+I let <span>JavaScript</span> know that the <span>function</span>
+is a <span>generator</span>, I then use <Span>yield</Span> keyword 
+to <Span>return</Span> stuff, then using the <span>next()</span> method 
+I return the <Span>{ value: &lt;value>, done : &lt;boolean> }</Span>
+object I spoke about before in the lesson about <span>iterators</span> 
+I made at <Span>page 19</Span> of my notes, this method <span>iterates</span>
+through the stuff I <Span>yield</Span> one by one, just like how it 
+works when I use it on <span>iterators</span>.</p>
+
+<p>Let's get back to <span>iterators</span> now, as I said before, to 
+<span>iterate</span> through an <span>object</span> you first need to create 
+it an <span>iterator</span>, we can do this like this:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let human = {
+    name: "Alex",
+    age: 16,
+    gender: "male"
+}
+
+let count = -1;
+
+let iterable = {
+    [Symbol.iterator]: function(){
+        return{
+        next: () => {
+           count++;
+           switch(count){
+               case 0: 
+                  return {
+                      value: human.age,
+                      done: false
+                  }
+               case 1: 
+                  return {
+                      value: human.gender,
+                      done: false
+                  }
+                case 2: 
+                  return {
+                      value: human.name,
+                      done: false
+                  }
+                default:
+                   return{
+                       value: undefined,
+                       done: true
+                   }
+               } 
+           } 
+        }
+    }
+}
+
+let itr = iterable[Symbol.iterator]();
+
+document.write(`${itr.next().value} &lt;br>
+${itr.next().value} &lt;br>
+${itr.next().value} &lt;br> 
+${itr.next().value}`)</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+if(true){
+let human = {
+    name: "Alex",
+    age: 16,
+    gender: "male"
+}
+
+let count = -1;
+
+let iterable = {
+    [Symbol.iterator]: function(){
+        return{
+        next: () => {
+           count++;
+           switch(count){
+               case 0: 
+                  return {
+                      value: human.age,
+                      done: false
+                  }
+               case 1: 
+                  return {
+                      value: human.gender,
+                      done: false
+                  }
+                case 2: 
+                  return {
+                      value: human.name,
+                      done: false
+                  }
+                default:
+                   return{
+                       value: undefined,
+                       done: true
+                   }
+               } 
+           } 
+        }
+    }
+}
+
+let itr = iterable[Symbol.iterator]();
+
+document.write(`${itr.next().value} <br>
+${itr.next().value} <br>
+${itr.next().value} <br> 
+${itr.next().value}`)
+
+}
+
+</script>
+
+<p>And this women and gentlemen is what an <Span>itrator</span> looks 
+    like. Let me explain, <span>iterable</span> is an <span>object</span>, which has 
+a <Span>method</Span> called <span>[Symbol.iterator]</span>, I explaiend in previous 
+lessons that we use <span>[]</span> in <span>property names</span> 
+to make a <span>name</span> using an <span>expression</span>, the 
+<Span>Symbol.iterator</Span> is basically a <span>unique value that will never be duplicated</span>, 
+to understand it better you should learn about <span>symbols</span>, just like 
+<span>boolean</span>, <Span>strings</Span> and <span>numbers</span> 
+JavaScript also has something called <Span>Symbols</Span>, but I will talk more about this 
+later, anyway, after this <Span>method</Span> is called an 
+<span>object</span> is returned, with one <span>method</span> called 
+<span>next</span>, and every time this <span>method</span> is called 
+the <span>count</span> numbers gets +1, then using the <span>switch</span>
+syntax I placed the <Span>object property values</Span> in the order 
+I want them to be returned and done, we now have an <Span>iterator</Span> of the <Span>human object</Span>, 
+</p> 
+
+<p>Do I have to write this whole thing for every single <span>object</span> I make? 
+Of course not, if I wanted to, I could write the <span>iterator</span> like this 
+to make it more flexible, and this way we could use the same <Span>iterator</Span>
+for many <Span>objects</Span>, only requirement is that the <Span>objects</Span>
+should be similar and share the same <Span>property names</Span>:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let human = {
+    name: "Alex",
+    age: 16,
+    gender: "male"
+}
+
+let count = -1;
+
+let iterable = {
+    [Symbol.iterator]: function(<span class="orange">x</span>){
+        return{
+        next: () => {
+           count++;
+           switch(count){
+               case 0: 
+                  return {
+                      value: <Span class="orange">x.age</span>,
+                      done: false
+                  }
+               case 1: 
+                  return {
+                      value: <span class="orange">x.gender</span>,
+                      done: false
+                  }
+                case 2: 
+                  return {
+                      value: <span class="orange">x.name</span>,
+                      done: false
+                  }
+                default:
+                   return{
+                       value: undefined,
+                       done: true
+                   }
+               } 
+           } 
+        }
+    }
+}
+
+let itr = iterable[Symbol.iterator](<span class="orange">human</span>);
+
+document.write(`${itr.next().value} &lt;br>
+${itr.next().value} &lt;br>
+${itr.next().value} &lt;br> 
+${itr.next().value}`)</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+let human = {
+    name: "Alex",
+    age: 16,
+    gender: "male"
+}
+
+let count = -1;
+
+let iterable = {
+    [Symbol.iterator]: function(x){
+        return{
+        next: () => {
+           count++;
+           switch(count){
+               case 0: 
+                  return {
+                      value: x.age,
+                      done: false
+                  }
+               case 1: 
+                  return {
+                      value: x.gender,
+                      done: false
+                  }
+                case 2: 
+                  return {
+                      value: x.name,
+                      done: false
+                  }
+                default:
+                   return{
+                       value: undefined,
+                       done: true
+                   }
+               } 
+           } 
+        }
+    }
+}
+
+let itr = iterable[Symbol.iterator](human);
+
+document.write(`${itr.next().value} <br>
+${itr.next().value} <br>
+${itr.next().value} <br> 
+${itr.next().value}`)
+
+}
+
+</script>
+
+<p>The same thing could also be written using <Span>generators</Span>
+to make code easier to use and read:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let human = {
+    name: "Alex",
+    age: 16,
+    gender: "male"
+}
+    
+let count = -1;
+    
+let iterable = {
+    [Symbol.iterator]: function* (x){
+    <Span class="orange">yield x.age; yield x.gender; yield x.name;</span>
+    } 
+}
+
+let itr = iterable[Symbol.iterator](human);
+
+document.write(`${itr.next().value} &lt;br>
+${itr.next().value} &lt;br>
+${itr.next().value} &lt;br> 
+${itr.next().value}`)</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+    if(true){
+    let human = {
+        name: "Alex",
+        age: 16,
+        gender: "male"
+    }
+    
+    let count = -1;
+    
+    let iterable = {
+        [Symbol.iterator]: function* (x){
+          yield x.age; yield x.gender; yield x.name;  
+               } 
+            }
+
+let itr = iterable[Symbol.iterator](human);
+    
+document.write(`${itr.next().value} <br>
+${itr.next().value} <br>
+${itr.next().value} <br> 
+${itr.next().value}`)
+    
+    }
+    
+    </script>
+
+
+<p><SPAN>Arrays</SPAN>, <Span>strings</Span>, etc already have 
+<span>built-in iterators</span> as I said before, which is the 
+reason we can <span>iterate</span> through their content with <Span>for...of</Span>
+loop, see below how an <Span>array iterator</Span> looks like:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let array = {
+        [Symbol.iterator]: function* (){
+            yield 1; yield 2; yield 3;
+        }
+    }
+    
+    for(let i of array){
+        document.write(i);
+    }</span></p>
+
+    <p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+let array = {
+    [Symbol.iterator]: function* (){
+        yield 1; yield 2; yield 3;
+    }
+}
+
+for(let i of array){
+    document.write(i);
+}
+}
+</script>
+
+<p>What does <Span>for...of</Span> loop do anyway? It simple 
+<Span>iterates</Span> through the <Span>values</Span> of the 
+<Span>objects</Span> that are returned by <Span>array[Symbol.iterate]().next()</Span>
+method. If I wanted to I could do it myself without using any loop:
+</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let array = {
+    [Symbol.iterator]: function* (){
+         yield 1; yield 2; yield 3;
+    }
+}
+    
+let itr = array[Symbol.iterator]();
+
+document.write(`${itr.next().value} &lt;br>
+${itr.next().value} &lt;br> 
+${itr.next().value} &lt;br>
+${itr.next().value}`);</span></p>
+
+    <p class="left">Outcome:</p>
+
+<script>
+
+    if(true){
+let array = {
+    [Symbol.iterator]: function* (){
+         yield 1; yield 2; yield 3;
+    }
+}
+    
+let itr = array[Symbol.iterator]();
+
+document.write(`${itr.next().value} <br>
+${itr.next().value} <br> 
+${itr.next().value} <br>
+${itr.next().value}`);
+
+    }
+
+</script>
+
+<p>Let's now try the same using a real <span>array</span> to 
+prove the <span>built-in iterator</span> does exist:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let array = [1,2,3]
+
+let itr = array[Symbol.iterator]();
+
+document.write(`${itr.next().value} &lt;br>
+${itr.next().value} &lt;br> 
+${itr.next().value} &lt;br>
+${itr.next().value}`);</span></p>
+
+    <p class="left">Outcome:</p>
+
+<script>
+
+    if(true){
+let array = [1,2,3]
+    
+let itr = array[Symbol.iterator]();
+
+document.write(`${itr.next().value} <br>
+${itr.next().value} <br> 
+${itr.next().value} <br>
+${itr.next().value}`);
+
+    }
+
+</script>
+
+</article>
+
+<hr>
+
+<article id="two">
+
+<header>
+
+<h1>JavaScript Symbols</h1>
+
+</header>
+
+<p>Before, when I spoke about <Span>iterators</Span> and <span>generators</span>
+we used <span>Symbol.iterator</span> as a <Span>property</Span>
+of our <span>costum iterators</span>. But what exactly are <span>symbols</span>? 
+That's what I'm gonna go through today, so let's get started.</p>
+
+<p>Before <Span>ES6</Span>, <span>JavaScript</span> had five 
+<Span>promitive data types</Span>, <span>number</span>, <span>string</span>, 
+<span>boolean</span>, <span>null</span> and <span>undefined</span>, 
+after <span>ES6</span> however another <span>primitive data type</span> was 
+added called <span>Symbol</span>.</p>
+
+<p><Span>Symbol</Span> was added so that things like <Span>objects</Span>
+could be <Span>iterated</Span> over, <Span>symbols</Span> are 
+<Span>unique values</Span> that can be <Span>generated</Span>. </p>
+
+<p>Every <Span>symbol value</Span> returned from <Span>Symbol()</Span>
+is <Span>unique</Span>. The main 
+porpuse of <Span>Symbol data type</Span> is 
+to use <span>symbol values</span> 
+as <Span>identifiers</Span> for <span>object properties</span>.</p>
+
+
+<p>Let's crete three <span>symbols</span> now to start experimenting:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let example1 = Symbol();
+let example2 = Symbol(123);
+let example3 = Symbol("Alex");</span></p>
+
+<p class="left">Outcome:</p>
+<Script>
+
+if(true){
+
+let example1 = Symbol();
+let example2 = Symbol(123);
+let example3 = Symbol("Alex");
+
+}
+
+</Script>
+
+<p>Inside the <span>brackets</span> you can 
+add a <Span>description</Span>, this <Span>description</Span>
+does not have any functional effect on the <Span>symbol</Span> 
+however, they are simply made for debugging porpuses, so that 
+you can write a description of what each symbol is supposed to be .</p>
+
+<p>As I said before, a <Span>symbol</Span> can be 
+imagined as like a <Span>container</Span> that contains a <span>unique value</span>
+inside it, to prove each <Span>symbol</Span> is <Span>unique</Span>
+I can simply try to compare them:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">document.write( Symbol(123) == Symbol(123) );</span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+if(true){
+
+document.write( Symbol(123) == Symbol(123) );
+
+}
+
+
+
+
+</Script>
+
+<p>Let's talk about some <Span>methods</Span> you can use, before 
+I said that whatever you write inside the <Span>brackets</Span> is 
+simple a <span>description</span> that does nothing, but when 
+used with the <Span>for</Span> method, this "description" works 
+as like a <span>key</span>, meaning, you can later <span>reference</span>
+to that specific <Span>symbol</Span> using it, like in the example below:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">document.write( Symbol.for(123) == Symbol.for(123) );
+</span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+if(true){
+
+document.write( Symbol.for(123) == Symbol.for(123) );
+
+}
+
+
+</Script>
+
+<p>So, when <span>JavaScript</span> reads <span>Symbol.for(123)</span>
+it <Span>searches</Span> for a <Span>symbol</Span> that has the <Span>123 key</Span>, 
+and if it doesn't find it, then it creates a <Span>symbol</Span> with this <Span>key</Span>, 
+careful tho, <span>123</span> is only treated as a <Span>key</Span> when created 
+with <Span>Symbol.for(123)</Span>, trying doing it like this won't work:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">document.write( Symbol(123) == Symbol.for(123) );
+
+</span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+document.write( Symbol(123) == Symbol.for(123) );
+
+</Script>
+
+<p>
+The <Span>first 123</Span> is treated as a <Span>description</Span>, 
+while the <Span>second symbol</Span> creates a <Span>new symbol</Span> 
+with <Span>123</Span> as it's <Span>key</Span>.</p>
+
+<p>Another <Span>method</Span> I wanna talk about is the <span>keyFor</span>
+method:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let example = Symbol.for(123);
+let example2 = Symbol(123);
+
+document.write( `${Symbol.keyFor(example)} ${Symbol.keyFor(example2)}` )</Span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let example = Symbol.for(123);
+let example2 = Symbol(123);
+
+document.write( `${Symbol.keyFor(example)} ${Symbol.keyFor(example2)}`  )
+
+
+}
+
+
+</script>
+
+<p>As you can see, <Span>keyFor</Span> method <span>returns</span>
+the <Span>key</Span> of a chosen <span>symbol</span>, <Span>example2</Span> 
+didn't have a <span>key</span> so <Span>undefined</Span> was returned.</p>
+
+<p>Now, let's see how <span>symbols</span> work when used in <Span>objects</Span>:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let object = {
+    prop1: "value1",
+    [Symbol()]: "value2",
+    [Symbol()]: "value3",
+    prop4: "value4",
+    prop5: "value5",
+}
+
+for(let i in object){
+    document.write(`${i}: ${object[i]} &lt;br>`);
+}</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let object = {
+    prop1: "value1",
+    [Symbol()]: "value2",
+    [Symbol()]: "value3",
+    prop4: "Value4",
+    prop5: "value5"
+}
+
+for(let i in object){
+    document.write(`${i}: ${object[i]} <br>`);
+}
+
+}
+
+
+</script>
+
+<p>As you can see, the <Span>for...in</Span> loop does not 
+include any <Span>property</Span> inside an <Span>object</Span> if 
+the <Span>key</Span> is a <Span>symbol</Span>.</p>
+
+<p>So yeah, that's some little stuff about <Span>symbols</Span>, 
+they are most commonly used to create <Span>costum iterators</Span> like 
+I did in the previous lesson, and they are intended to be used 
+as <Span>object properties</Span>, that's their porpuse, I may learn more 
+about <Span>symbols</Span> in the future, for now however just knowing they exist, 
+and having a basic knowledge about what they are is enough for me.</p>
+
+<p>Here is a video that helped me, it's pretty small, and the guy in the video explains 
+    what I just explained but better, so give it a try if you want to:
+</p>
+
+<iframe src="https://www.youtube.com/embed/PyyndIv4ABI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</article>
+
+<hr>
+
+<article id="three">
+
+<header>
+
+<h1>parseInt and parseFloat global methods</h1>
+
+</header>
+
+<p>Before I start explaining the methods, it's important to know
+    what an <Span>integer</Span> and a <Span>float</Span> is, 
+    an <Span>integer</Span> is a number such as <Span>123</Span>, 
+    while a <Span>float</Span> is a number such as <Span>1.5</Span>.
+</p>
+
+<p>The <Span>parseInt()</Span> function <Span>parses</Span> a 
+    <Span>string</Span> or a <Span>float number</Span> and 
+    <span>returns</span> it as an <Span>integer</Span>:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let a = parseInt("123") + "&lt;br>";
+let b = parseInt("023 lalala 1") + "&lt;br>";
+let c = parseInt(14.5) + "&lt;br>";
+let d = parseInt("I'm 15 years old") + "&lt;br>";
+let e = parseInt("13.5") + "&lt;br>";
+let f = parseInt("   60   ") + "&lt;br>";
+let g = parseInt("34 45 60") + "&lt;br>";
+
+document.write(a + b + c + d + e + f + g);</span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+if(true){
+
+let a = parseInt("123") + "<br>";
+let b = parseInt("023 lalala 1") + "<br>";
+let c = parseInt(14.5) + "<br>";
+let d = parseInt("I'm 15 years old") + "<br>";
+let e = parseInt("13.5") + "<br>";
+let f = parseInt("   60   ") + "<br>";
+let g = parseInt("34 45 60") + "<br>";
+
+document.write(a + b + c + d + e + f + g);
+
+}
+
+
+
+</Script>
+
+<p>As you can see, <Span>JavaScript</Span> starts 
+reading the <Span>number</Span> inside the <Span>string</Span> 
+and finishes whenever it meets a <Span>space break</Span>
+or a <Span>dot</Span>, then it returns the <span>number</span>, if 
+the <span>number</span> is <Span>not</Span> at the <Span>start</Span>
+of the <span>string</span> then <Span>NaN</Span> will be returned, however, 
+if the <Span>first characters</Span> in the <span>string</span> are <span>space bars</span>
+and the <span>number</span> is followed, then it ignores the <span>space bars</span>
+and reads the <span>number</span>.</p>
+
+<p>The <Span>parseInt()</Span> can also take a <span>second parameter</span>
+named <span>radix parameter</span>, this parameter is used to specify 
+which <Span>numeral system</Span> to be used, for example, 
+if you write <Span>16</Span>, then the <Span>string</Span> is <span>parsed</span>
+from a <Span>hexademical number</Span> to a <span>demical number</span>, to 
+understand the parameter better watch the first 11 minutes of this video, it 
+explains the different <span>numeral systems</span> that exist 
+and how you can convert a <span>decimal</span> number to 
+each of these:</p>
+
+<iframe src="https://www.youtube.com/embed/L2zsmYaI5ww" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let a = parseInt("101011100", 2) + "&lt;br>"; // converts from Binary to Demical
+let b = parseInt("534", 8) + "&lt;br>"; // converts from Octal to Demical
+let c = parseInt("15C", 16) + "&lt;br>"; // converts from Hexademical to Demical
+
+document.write(a + b + c);</Span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let a = parseInt("101011100", 2) + "<br>"; // converts from Binary to Demical
+let b = parseInt("534", 8) + "<br>"; // converts from Octal to Demical
+let c = parseInt("15C", 16) + "<br>"; // converts from Hexademical to Demical
+
+document.write(a + b + c);
+
+}
+
+
+</script>
+
+<p>Now, there are few things you need to know, if a <Span>string</Span> 
+begins with <span>"0x"</span>, the <Span>radix</Span> is automatically 
+considered to be <Span>16</Span> (hexademical), and for older browsers, 
+if a <Span>string</Span> starts with <span>0</span> then the <span>radix</span>
+is automatically considered to be <Span>8</Span> (Octal), for 
+most browsers however the <span>default</span> is <Span>10</Span>, 
+just to be 100% sure however that for all browsers it works the same, 
+if you are converting a <Span>string</Span> that starts with <Span>0</Span>
+to a <Span>number</Span> do it like this: <Span>parseInt("010", 10);</Span></p>
+
+<p>About <Span>parseFloat()</Span> method now, it works the exact same way, with two differences, firstly, 
+it allows <Span>float numbers</Span>, and secondly, it doesn't take a <span>radix parameter</span>, 
+since (forgive me if I'm wrong but) I don't believe any <Span>numeral system</Span> 
+uses <Span>float numbers</Span>.</p>
+
+<iframe  src="https://www.youtube.com/embed/OXpTBQtL4nY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</article>
+
+<hr>
+
+<article id="four">
+
+<header>
+
+<h1>Array reduce() Method</h1>
+
+</header>
+
+<p>The <span>reduce()</span> method is similar to <Span>map()</Span> 
+method in a way, it however takes a <Span>function</Span> with <Span>two parameters</span> 
+instead of one, and that's because while <Span>map()</Span> method performs a 
+specific action to all of the <span>array elements</span>, the 
+<Span>reduce()</Span> method takes all the <Span>array elements</Span>
+and creates one sinlge <Span>result</Span>.</p>
+
+<p>For example, if I wanted to take the <span>sum</span> of all 
+the <span>array items</span> I could do something like this:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let arr = [2, 3, 2, 3];
+
+let sum = 0;
+
+for(let i of arr){
+sum += i;
+}
+
+document.write(sum);</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let arr = [2, 3, 2, 3];
+
+let sum = 0;
+
+for(let i of arr){
+sum += i;
+}
+
+document.write(sum);
+
+}
+
+</script>
+
+<p>The same thing could be written using <Span>reduce()</Span> method, 
+like this:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let arr = [2, 3, 2, 3];
+
+let sum = arr.reduce((passedIn, item) => { return passedIn += item}, 0)
+
+document.write(sum);</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let arr = [2, 3, 2, 3];
+
+let sum = arr.reduce((passedIn, item) => { return passedIn += item}, 0)
+
+document.write(sum);
+
+}
+
+
+</script>
+
+<p>So, let me do the explainingnow, <Span>item</Span> parameter 
+is assigned the <Span>array items</Span> one by one in order, the 
+<Span>passedIn</Span> parameter is assigned whatever was 
+<Span>returned</Span> in the previous run, or if it's the first run, 
+then it is assigned whatever you add for the <span>second parameter</span>
+of the <Span>reduce()</Span> method, I added zero, so <Span>passedIn</Span> starts 
+as 0, then becomes 2, and so on. Here is an example to help you understand:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let arr = [2, 3, 2, 3];
+
+let sum = arr.reduce((passedIn, item) => {
+    document.write(`${passedIn} + ${item} = ${passedIn + item} &lt;br>`)
+    return passedIn += item;
+}, 0)
+
+document.write(`The final result is ${sum}`);</Span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let arr = [2, 3, 2, 3];
+
+let sum = arr.reduce((passedIn, item) => {
+    document.write(`${passedIn} + ${item} = ${passedIn + item} <br>`)
+    return passedIn += item;
+}, 0)
+
+document.write(`The final result is ${sum}`);
+
+
+}
+
+
+
+</script>
+
+<p>See what happens if you don't add a <Span>second parameter</Span> in 
+the <span>reduce()</span> method:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let arr = [2, 3, 2, 3];
+
+let sum = arr.reduce((passedIn, item) => {
+    document.write(`${passedIn} + ${item} = ${passedIn + item} &lt;br>`)
+    return passedIn += item;
+})
+
+document.write(`The final result is ${sum}`);</Span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let arr = [2, 3, 2, 3];
+
+let sum = arr.reduce((passedIn, item) => {
+    document.write(`${passedIn} + ${item} = ${passedIn + item} <br>`)
+    return passedIn += item;
+})
+
+document.write(`The final result is ${sum}`);
+
+
+}
+
+
+
+</script>
+
+<p>As you can see, the <span>passedIn</span> parameter was firstly 
+assigned the <Span>value</Span> of the <Span>first item</Span> of the 
+<span>array</span> and the <Span>item</Span> parameter was assigned 
+the <Span>value</Span> of the <Span>second item</Span> of the <Span>array</Span>, 
+everything after that worked as expected.</p>
+
+<p>I want to make one last example, in this example we will be comparing 
+    <span>strings</span>, if you didn't know when you compare two 
+    strings, if one string starts with <Span>A</Span> and the other with <Span>B</Span>
+    then the one that starts with <span>B</span> is greater than the 
+    one that starts with <Span>A</Span>, if both start with <Span>A</Span> 
+    then their second letter is compared, if again the same then the third letter and so on, 
+    taking advantage of this I'm gonna make a simple code that will look 
+    into an array of my favorite anime shows and return me to first alphabetically 
+    title: 
+</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let animes = ["Noragami", "FullMetal Alchemist Brotherhood", "DeathNote",
+"Code Geass", "Steins;Gate", "Death Parade", "Monster", "Devilman Crybaby",
+"Dr Stone", "JoJo", "Tanya the evil", "Kill La Kill", "Blood of Zeus",
+"Sword Art Online", "Attack on Titans", "Parasyte", "Beyblade", "Pokemon",
+"Blue Exorcist", "Soul Eater", "Castelvania", "Kakegurui"];
+
+let first = animes.reduce((passedIn, item) => {
+    document.write(`${passedIn} to ${item} &lt;br>`);
+    if(item &lt; passedIn){
+        return item;
+    } else { return passedIn };
+});
+
+document.write(`&lt;br> Final result: ${first}`);</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+
+    let animes = ["Noragami", "FullMetal Alchemist Brotherhood", "DeathNote", "Code Geass", "Steins;Gate", "Death Parade", "Monster", "Devilman Crybaby",
+"Dr Stone", "JoJo", "Tanya the evil", "Kill La Kill", "Blood of Zeus", "Sword Art Online", "Attack on Titans", "Parasyte", "Beyblade", "Pokemon", "Blue Exorcist", "Soul Eater", "Castelvania", "Kakegurui"];
+
+let first = animes.reduce((passedIn, item) => {
+    document.write(`${passedIn} to ${item} <br>`);
+    if(item < passedIn){
+        return item;
+    } else { return passedIn };
+});
+
+document.write(`<br> Final result: ${first}`);
+
+}
+
+
+</script>
+
+
+</article>
+
+<hr>
+
+<article id="five">
+
+<header>
+
+    <h1>JavaScript async and defer attributes</h1>
+
+</header>
+
+
+<p>In this section I will talk about two <span>HTML attribtues</span>
+used inside the <span>&lt;script></span> tag and how they effect 
+they way <Span>JavaScript</Span> is loaded into the page.</p>
+
+<p>First, let me explain how <Span>HTML</Span> is parsed, 
+as you probably know, an <span>HTML</span> document is rendered 
+from the top to the bottom, whenever a <Span>source</Span> 
+is met, such as an <Span>image</Span> or a <Span>video</Span>, 
+it has to be <Span>downloaded</Span>, however, the
+<Span>HTML</Span> doesn't stop loading to wait for the <Span>source</Span>
+to be downlaoded, it continues loading normally while the <Span>source</Span>
+is downloading at the same time at the background.</p>
+
+<p>Whenever a <span>&lt;script></span> element with a 
+<span>src</span> attribute is met however, 
+by default <Span>HTML</Span> waits for <Span>JavaScript</Span> to download, 
+then <Span>execute</Span> and only after it continues loading. 
+That's the reason you see so many people adding their <Span>&lt;script></Span>
+elements at the bottom of the page.</p>
+<img style="display: block; margin: 20px auto 20px auto;" src="../images/attributes.png">
+
+<p>As you can see in the image above, if the <Span>async</Span> attribute 
+is added to the <Span>&lt;script></Span> element, then the <Span>downloading</Span>
+of the <span>JavaScript file</span> happens at the background while 
+<span>HTML</span> is still loading, and then after it's done 
+<span>HTML</span> stops parsing and waits for <Span>JavaScript</Span>
+to <span>execute</span> before it continues the parsing.</p>
+
+<p>When <Span>defer</Span> atrribute is used, <span>JavaScript file</span> 
+is downloaded at the background, and only <span>executes</span> after 
+<Span>HTML</Span> has finished loading.</p>
+
+<p>To better educate your self about these two attributes, I recommend 
+    watching the following video, don't forget to subscribe to the guy, 
+    his videos have helped me a lot in my journey, he always explains things 
+    in a simple to undertstand way, and his videos are pretty short too, he 
+    is my favorite teacher so far, because ha makes the web simplified for 
+    people like me who are beginners. 
+</p>
+
+<iframe src="https://www.youtube.com/embed/BMuFBYw91UQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</article>
+
+<hr>
+
+<article id="six">
+
+<header>
+
+<h1>JavaScript ES6 Modules</h1>
+
+</header>
+
+<P>Another great feauture that was added with <Span>ES6</Span>
+are <span>modules</span> which allow us to <Span>export</span> code 
+from other <Span>JavaScript</Span> files and <Span>import</Span>
+it in other files.</P>
+
+<p>Let's talk about how to <Span>export</Span> code first, there are two 
+ways to do that, you can either do it like this:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">function example(){
+document.write("idk")
+}
+
+var x = 1;
+
+export { example, x }</span></p>
+
+<p>Or, you could do this like that:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">export function example(){
+document.write("idk")
+}
+
+export var x = 1;</span></p>
+
+<p>You can also use the <Span>export default</Span> keyword to 
+export the default code of the file, I don't really know if 
+the default code is treated differently or something, from what I 
+saw it works pretty much the same way export works, with one exception, 
+you can only export one thing as default, the syntax looks like this:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">function example(){
+document.write("idk")
+}
+
+export default example</span><span class="code10" style="background-color: unset;">
+
+Could also be written like this:
+
+</span><span class="code10">export default function example(){
+document.write("idk")
+}</span></p>
+
+<p>How do we import code now from one <Span>JavaScript file</Span>
+to another? Firstly, you should make sure the <span>script</span>
+element you are writing in has the <Span>type="module"</Span>
+attribute or else it won't work, then, you do import the code 
+like this:</p>
+
+<p class="left">Notes20.html file code:</p>
+
+<p class="left"><span class="code10">&lt;script type="module">
+import human, {getName, getAge} from './module.js'
+
+let person = new human("Alex", 15);
+
+getName(person);
+getAge(person);
+
+&lt;/script>
+
+&lt;div id="idkdude"></div></span></p>
+
+<p class="left">module.js file code:</p>
+
+<p class="left"><span class="code10">export default class User{
+    constructor(n,a){
+        this.name = n;
+        this.age = a;
+    }
+}
+
+export function getName(user){
+    document.getElementById("idkdude").innerHTML += user.name;
+}
+
+export function getAge(user){
+    document.getElementById("idkdude").innerHTML += user.age;
+}</span></p>
+
+<p class="left">Outcome:</p>
+
+<script type="module">
+import human, {getName, getAge} from './module.js'
+
+let person = new human("Alex", 15);
+
+getName(person);
+getAge(person);
+
+</script>
+
+<div id="idkdude"></div>
+
+<p>Alright, before I continue, I wanna mention that it took me quite some 
+time to create the example above, and that's because I faced few problems, 
+first problem I faced was that for some reason the <span>modules</span> wouldn't 
+work when I opened the page, and from what I understood, the reason that happened 
+was because of some kind of cors policy or something, to fix that I had to 
+open the page online with a server so it has a normal url, because however updating 
+the server every single time I make a change would be tiring I downloaded 
+a google chrome extension that hosts a local server for me and with this 
+the problem was solved. Another problem I faced was that document.write wouldn't work, 
+I didn't know that but it seems that while using modules the script works 
+asynchronously, I guess it's because it has to load code from other files, 
+anyway, because of that, document.write wouldn't work after the page had loaded 
+when the code was executed so I had to create a container for it 
+and use innerHTML to edit the DOM. 
+
+</p>
+
+<p>Anyway, to continue, take a look to this amazing cheatseet made by 
+    samanthaming, it contains all the different kind of ways you can 
+    export and import code:
+</p>
+
+<img src="../images/modules.png" style="display: block; margin: 20px auto 20px auto">
+
+<p>As you can see, you can use the <span>as</span> keyword to 
+<Span>rename</Span>, this can be done either while exporting or 
+even while importing.</p>
+
+<P>Lastly, youcan use <span>* as name</span> to target everything, and 
+then import the code like this:</P>
+
+<p class="left">Notes20.html file code:</p>
+
+<p class="left"><span class="code10">&lt;script type="module">
+import* as module2 from './module2.js'
+
+let person2 = new module2.User2("Christina", 18);
+
+module2.getName2(person2);
+module2.getAge2(person2);
+
+&lt;/script>
+
+&lt;div id="emptydiv"></div></span></p>
+
+<p class="left">module2.js file code:</p>
+
+<p class="left"><span class="code10">export class User2{
+constructor(n,a){
+        this.name = n;
+        this.age = a;
+    }
+}
+
+export function getName2(user){
+    document.getElementById("emptydiv").innerHTML += user.name;
+}
+
+export function getAge2(user){
+    document.getElementById("emptydiv").innerHTML += user.age;
+}</span></p>
+
+<p class="left">Outcome:</p>
+
+<script type="module">
+
+import* as module2 from './module2.js'
+
+let person2 = new module2.User2("Christina", 18);
+
+module2.getName2(person2);
+module2.getAge2(person2);
+
+</script>
+
+<div id="emptydiv"></div>
+
+<iframe src="https://www.youtube.com/embed/cRHQNNcYf6s" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/qgRUr-YUk1Q" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+</article>
+
+<hr>
+
+<article id="seven">
+
+<header>
+
+<h1>Array find() method</h1>
+
+</header>
+
+<p>The <Span>find()</Span> method <Span>returns</Span>
+the <Span>value</Span> of the <Span>first element</Span> in 
+an <Span>array</Span> that <Span>passes</span> a chosen 
+<Span>test</span>, it's similar to how <Span>filter()</span> works, 
+but it only <Span>returns</Span> the <Span>first element</Span>
+to pass the test.</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let arr = [1, 2, 3, 4];
+
+document.write(arr.find(x => x > 2));</span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+if(true){
+
+let arr = [1, 2, 3, 4];
+
+document.write(arr.find(x => x > 2));
+
+
+}
+
+
+</Script>
+
+<p>If no element passes the test <Span>undefined</Span> is returned, and 
+that's actually everything there is about this cool method.</p>
+
+</article>
+
+<hr>
+
+<article id="eight">
+
+<header>
+
+<h1>Array findIndex() method</h1>
+
+</header>
+
+<p>The <Span>findIndex()</Span> method works the same way 
+<Span>find()</Span> method works, however, instead of returning 
+the <span>value</span> of the element that passed the 
+test first it return the <Span>index</Span> of the element, 
+for example, let's say the <Span>second item</Span> passed the test, 
+then <span>findIndex()</span> method would return <span>1</span> 
+(since we start counting from 0).</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let arr = [1, 2, 3, 4];
+
+document.write(arr.findIndex(x => x > 2));</Span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let arr = [1, 2, 3, 4];
+
+document.write(arr.findIndex(x => x > 2));
+
+}
+    
+</script>
+
+<p>As you can see <Span>2</Span> was returned, and that's because our 
+<Span>third item</Span> passed the test first, since <Span>3 > 2</Span>, 
+and the <span>index number</span> of the <span>third item</span> of an <Span>array</Span>
+is <Span>2</Span> (since we start counting from 0).</p>
+
+</article>
+
+<hr>
+
+<article id="nine">
+
+<header>
+
+<h1>String repeat() Method</h1>
+
+</header>
+
+<p>Prior to <span>ES6</span> if we wanted to 
+<span>repeat</span> a string there were plenty of 
+little tricks we could use to achieve this, for example, 
+we could do something like this:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">document.write(Array(4).join("foo"));</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+document.write(Array(4).join("foo"));
+
+}
+
+
+
+</script>
+
+<p>What does the code do? <span>Array(4)</span> creates an <span>array</span>
+with <span>4 empty elements</span>, then <Span>join</Span> method merges the 
+<Span>elements</Span> into <Span>one string</Span> using <Span>foo</Span> as 
+seperation, that's why we only get three foo.</p>
+
+<p><span>ES6</span> introduce a new <span>method</span> called 
+<Span>repeat</Span> that lets us <Span>repeat</Span> a <span>string</span>
+easier like this:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">document.write("foo".repeat(3));
+</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+document.write("foo".repeat(3));
+
+}
+
+
+
+</script>
+
+<p>The one and only <Span>parameter</Span> it takes specifies 
+how many times we want the <Span>string</Span> to be repeated.</p>
+
+</article>
+
+<hr>
+
+<article id="ten">
+
+<header>
+
+<h1>Searching Strings</h1>
+
+</header>
+
+<p>Prior to <span>ES6</span> if we find the <Span>position</Span>
+of a <Span>text</Span> inside a <Span>string</Span> we only used 
+the <Span>indexOf()</Span> method, I have talked about this method 
+is a previous lesson.</p>
+
+<p><span>ES6</span> has replaced this with a version that has 
+cleaner and more simplified syntax, now you can search <Span>strings</Span>
+using the following <span>methods</span>:</p>
+
+<style>
+
+.list_container{
+    display:block;
+    width: fit-content;
+    margin: 20px auto 20px auto;
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 20px;
+    padding: 30px;
+    padding-left: 15px;
+    padding-top: 20px;
+    font-weight: bold;
+}
+
+.list_container li{
+    padding-top: 10px;
+}
+
+</style>
+
+<div class="list_container">
+<ul>
+    <li>startsWith("text", position to start the search)</li>
+    <li>endsWith("text", position to stop the search)</li>
+    <li>includes("text", position to start the text)</li>
+</ul>
+</div>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let string = "JavaScript";
+
+let one = string.startsWith("Ja");
+let two = ", " + string.startsWith("Scr", 4);
+let three = ", " + string.endsWith("ipt");
+let four = ", " + string.endsWith("va", 4);
+let five = ", " + string.includes("rip");
+let six = ", " + string.includes("ava", 4);
+
+document.write(one, two, three, four, five, six);</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+    
+let string = "JavaScript";
+
+let one = string.startsWith("Ja");
+let two = ", " + string.startsWith("Scr", 4);
+let three = ", " + string.endsWith("ipt");
+let four = ", " + string.endsWith("va", 4);
+let five = ", " + string.includes("rip");
+let six = ", " + string.includes("ava", 4);
+
+document.write(one, two, three, four, five, six);
+
+}
+
+
+</script>
+
+</article>
+
+<hr>
+
+
+<article id="eleven">
+
+    <header>
+    
+        <h1>JavaScript Print</h1>
+    
+    </header>
+    
+    <p><Span>JavaScript</Span> does not have any <Span>print object</Span>
+    or <Span>print methods</Span>, you cannot output devices from <Span>JavaScript</Span>. 
+    The only exception is that you can call the <Span>window.print()</Span> 
+    method in the <Span>browser</Span> to <Span>print</Span> the <Span>content</Span>
+    of the <Span>current window</Span>.</p>
+    
+    <p class="left">Code:</p>
+    
+    <p class="left"><span class="left">&lt;button id="print">Click</button>
+    
+    &lt;script>
+    
+    document.getElementById("print").addEventListener("click", () => window.print());
+    
+    </script></span></p>
+    
+    <p class="left">Outcome:</p>
+    
+    <button id="print">Click</button>
+    
+    <script>
+    
+    document.getElementById("print").addEventListener("click", () => window.print());
+    
+        
+    </script>
+    
+    <p>However, since <Span>window</Span> is the <Span>global object</Span> writing 
+    <Span>window</Span> is optional, you could as well just write it like this:</p>
+    
+    <p class="left">Code:</p>
+    
+    <p class="left"><span class="left">&lt;button id="print">Click</button>
+    
+    &lt;script>
+    
+    document.getElementById("print").addEventListener("click", () => <Span class="orange">print()</span>);
+    
+    </script></span></p>
+    
+    <p class="left">Outcome:</p>
+    
+    <button id="print2">Click</button>
+    
+    <script>
+    
+    document.getElementById("print2").addEventListener("click", () => print());
+    
+        
+    </script>
+    
+</article>
+
+<hr>
+
+<article id="twelve">
+    
+    <header>
+    
+        <h1>Conditional (ternary) operator</h1>
+    
+    </header>
+    
+    <p>I have used <Span>conditional operator</Span> before, mostly in my 
+    first pages if I remember correctly, the <Span>Conditional (ternary) operator</Span>
+    is the only <span>JavaScript operator</span> that takes <Span>three operands</Span>: 
+    First it takes a <Span>condition</Span>, for example, <Span>5>0</Span>, this is followed by a 
+    <Span>question mark</Span> (?), whatever is written after the <Span>question mark</Span>
+    is executed if the previous <Span>cindition</Span> returned <Span>true</Span>, this 
+    code is followed by a <Span>colon</Span> (:), which is followed by another 
+    <Span>expression</Span> to execute if the <Span>condition</Span> 
+    is <Span>falsy</Span>.</p>
+    
+    <p class="left">JavaScript Code:</p>
+    
+    <p class="left"><Span class="code10">let x = -5;
+    
+    let y = (x > 0)? `${x} is greater than 0`: `${x} is less than 0`;
+    
+    document.write(y);</Span></p>
+    
+    <p class="left">Outcome:</p>
+    
+    <script>
+    
+    if(true){
+    
+    let x = -5;
+    
+    let y = (x > 0)? `${x} is greater than 0`: `${x} is less than 0`;
+    
+    document.write(y);
+    
+    }
+    
+    
+    </script>
+    
+    <p>This operator is frequently used as a <span>shortcut</span> for 
+    <Span>if</Span> statement. The <Span>ternary operator</Span> 
+    can also be used similarly to how <Span>if</Span> statement is used 
+    with <Span>else if</Span> statement, if <span>colon</span> is used 
+    <Span>more than once</Span> all <Span>middle colons</Span> work 
+    similarly to <Span>else if</Span> statement, while the <Span>last colon</Span>
+    works like the final <span>else</span> statement, see example below:</p>
+    
+    <p class="left">JavaScript Code:</p>
+    
+    <p class="left"><Span class="code10">let x = -1;
+    
+    let y = (x == 1)? `${x} is 1`: 
+    (x == -1)? `${x} is -1`: 
+    `${x} is not 1 or -1`;
+    
+    document.write(y);</Span></p>
+    
+    <p class="left">Outcome:</p>
+    
+    <script>
+    
+    if(true){
+    
+    let x = -1;
+    
+    let y = (x == 1)? `${x} is 1`: 
+    (x == -1)? `${x} is -1`: 
+    `${x} is not 1 or -1`;
+    
+    document.write(y);
+    
+    }
+    
+    
+    </script>
+    
+    <p>Besides <Span>false</Span>, possible <span>falsy expressions</span> are
+    <Span>null</Span>, <span>NaN</span>, <Span>0</Span>, the empty 
+    string <Span>""</Span> and <Span>undefined</Span>. If <span>condition</span>
+    is any of these, the result of the conditional expression will be treated as it 
+    would if it was <Span>false</Span>, so the expression after the colon 
+    would be executed.</p>
+    
+    <p class="left">JavaScript Code:</p>
+    
+    <p class="left"><Span class="code10">let greet = (name) => {
+    return name? `Hello ${name}!`: `Hello stranger!`; 
+    }
+    
+    document.write(greet());</Span></p>
+    
+    <p class="left">Outcome:</p>
+    
+    <Script>
+    
+    if(true){
+    
+    let greet = (name) => {
+    return name? `Hello ${name}!`: `Hello stranger!`; 
+    }
+    
+    document.write(greet());
+    
+    }
+    
+    
+    
+    </Script>
+    
+    
+    
+</article>
+
+<hr>
+
+<article id="thirteen">
+    
+        <header>
+    
+            <h1>The typeof operator</h1>
+    
+        </header>
+    
+    <p>You can use the <span>typeof</span> operator to 
+    find the <Span>type</Span> of a <Span>variable</Span>, the 
+    <Span>typeof</Span> operator <Span>returns</Span> the <span>data type</span>
+    of a <Span>variable</Span> or <Span>expression</Span>:</p>
+    
+    <p class="left">JavaScript Code:</p>
+    
+    <p class="left"><Span class="code10">let a = "a";
+    let b = "a" + 2;
+    let c = 3.5;
+    let d = true;
+    let e = Symbol();
+    let f = [1, 2, 3];
+    let g = {name: "alex"};
+    
+    let arr = [a,b,c,d,e,f,g];
+    
+    for(let i of arr){
+        document.write(typeof(i) + "&lt;br>")
+    }</Span></p>
+    
+    <p class="left">Outcome:</p>
+    
+    <script>
+    
+    if(true){
+    
+    let a = "a";
+    let b = "a" + 2;
+    let c = 3.5;
+    let d = true;
+    let e = Symbol();
+    let f = [1, 2, 3];
+    let g = {name: "alex"};
+    
+    let arr = [a,b,c,d,e,f,g];
+    
+    for(let i of arr){
+        document.write(typeof(i) + "<br>")
+    }
+    
+    }
+    
+    
+    
+    </script>
+    
+</article>
+
+<hr>
+
+<article id="fourteen">
+    
+    <header>
+        <h1>The instanceof operator</h1>
+    </header>
+    
+    <p>The <Span>instanceof operator</Span> tests to see if the 
+    <Span>prototype</Span> property of a <Span>constructor</Span> appears 
+    anywhere in the <Span>prototype chain</Span> of an <Span>object</Span>. 
+    The <Span>return value</Span> is a <Span>boolean value</Span>.</p>
+    
+    <p class="left">JavaScript Code:</p>
+    
+    <p class="left"><span class="code10">let human = function(n,a){
+    this.name = n;
+    this.age = a;
+    }
+    
+    let person1 = new human("Alex", 16);
+    
+    document.write(person1 instanceof human);</span></p>
+    
+    <p class="left">Outcome:</p>
+    
+    <Script>
+    
+    if(true){
+    
+    let human = function(n,a){
+        this.name = n;
+        this.age = a;
+    }
+    
+    let person1 = new human("Alex", 16);
+    
+    document.write(person1 instanceof human);
+    
+    }
+    
+    
+    </Script>
+    
+    <p>Of course this also works with <Span>classes</Span> the same way:</p>
+    
+    <p class="left">JavaScript Code:</p>
+    
+    <p class="left"><span class="code10">let human = class{
+    constructor(n,a){
+        this.name = n;
+        this.age = a;
+    }
+    }
+    
+    let person1 = new human("Alex", 16);
+    
+    document.write(person1 instanceof human);</span></p>
+    
+    <p class="left">Outcome:</p>
+    
+    <Script>
+    
+    if(true){
+    
+    let human = class{
+    constructor(n,a){
+        this.name = n;
+        this.age = a;
+    }
+    }
+    
+    let person1 = new human("Alex", 16);
+    
+    document.write(person1 instanceof human);
+    
+    }
+    
+    
+    </Script>
+    
+    
+</article>
+
+<hr>
+
+<article id="fifteen">
+    
+    <header>
+    
+    <h1>JavaScript Bitwise Operators</h1>
+    
+    </header>
+    
+    <p>Bit operators work on 32 bits numbers.</p>
+    
+    <p>Any <span>numeric operand</span> in the operation is converted into a 
+    <span>32 bit number</span>. The result is converted back to a <span>JavaScript</span> number.
+    </p>
+    
+    <img src="../images/operator.png" style="display: block; margin: auto">
+    
+    <p>I'm not gonna go very deep into the way these operators work, it's just 
+    good to know they exist, and perhaps know the basics of how they are used, 
+    I did my research and understood them a little, here is a really good 
+    video that explains the first two operators of the list in an easy to understand 
+    way.
+    </p>
+    
+    <iframe width="1211" height="480" src="https://www.youtube.com/embed/mesu75PTDC8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    
+     
+</article>
+
+<hr>
+
+</body>
+</html>

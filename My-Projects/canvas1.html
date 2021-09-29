@@ -1,0 +1,392 @@
+<!DOCTYPE HTML>
+<html>
+<head lang="en-US">
+<meta charset="UTF-8">
+<title> Canvas mouse/touch effect project </title>
+<style>
+       .left {
+        text-align: left;
+    }
+    
+    .code10 {
+    white-space: pre-wrap;
+    background-color: lightgreen;
+    }
+    
+    p {
+    text-align:center;
+    }
+    h1 {
+    text-align:center;
+    }
+    h2 {
+    text-align:center;
+    }
+    h3 {
+    text-align:center;
+    }
+    .c {
+    background-color:lightgreen;
+    }
+    hr {
+    width:100%;
+    height:15px;
+    background-color:black;
+    color:black;
+    border: black solid;
+    }
+    body {
+    background-color:rgb(165, 235, 235);
+    margin: 0;
+    height: 100vh;
+    }   
+    span {
+    background-color:lightgreen;
+    }
+    
+    a:link {
+    color: black;
+    text-shadow: 1px 0px 1px black;
+    
+    }
+    
+    a:visited {
+    color: black;
+    text-shadow: 1px 0px 1px rgb(22, 22, 22);
+    }
+    
+    a:hover {
+    text-decoration: underline;
+    color: red;
+    text-shadow: 1px 0px 1px black;
+    }
+    
+    .document{
+        width: 100vw;
+        height: 100vh;
+        overflow: auto;
+        overflow-x: hidden;
+    }
+    
+    .gray{
+        background-color: lightgray;
+    }
+    
+    .no-scroll{
+        overflow-y: hidden;
+    }
+</style> 
+<link rel="stylesheet" href="../CSS-JavaScript-External-Files/HTMLnotes.css?version=1">
+</head>
+<body>
+ <hr>
+<article>
+
+<h1> Canvas mouse/touch effect project </h1>
+<p><a href="../Home-Pages/myprojects.html">Click to go back</a></p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><Span class="code10">&lt;canvas id="canvas-project1" style="background-color: black; margin: auto; display: block; border: 3px solid black;">&lt;/canvas></Span></p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">window.addEventListener('load', (e) => {
+    var canvas = document.querySelector('#canvas-project1');
+    var c = canvas.getContext('2d');
+
+    canvas.width = 500;
+    canvas.height = 300;
+
+    var points = new Array();
+
+<Span class="gray">    // function to be used for all touch events</Span>
+    function getTouchOffset(e){
+        points = [];
+        let canvas_box = canvas.getBoundingClientRect();
+        let coords = {
+            x: canvas_box.left,
+            y: canvas_box.top 
+        }
+        Array.from(e.touches).forEach((touch) =>{
+            points.push({x: touch.clientX - coords.x, y: touch.clientY - coords.y});
+        });
+    }
+
+<Span class="gray">    // touch events that update x and y points</Span>
+    canvas.addEventListener('touchstart', (e) =>{     
+        getTouchOffset(e);
+    });
+
+    canvas.addEventListener('touchmove', (e) =>{
+        getTouchOffset(e);
+    });
+
+    canvas.addEventListener('touchend', (e) =>{
+        getTouchOffset(e);
+    });
+
+<span class="gray">    // mouse events that update x and y points</span>
+    canvas.addEventListener('mousemove', (e) =>{
+        points = [];
+        points.push({
+            x: e.offsetX,
+            y: e.offsetY
+        });
+    });
+
+    canvas.addEventListener('mouseout', (e) =>{
+        points = [{
+            x: Number.POSITIVE_INFINITY,
+            y: Number.POSITIVE_INFINITY
+        }]
+    });
+
+<Span class="gray">    // constructor that creates circles</Span>
+    var circleMaker = function(x,y,r,dx,dy,cl){
+        this.x = x;
+        this.y = y;
+        this.r = r;
+        this.r2 = r;
+        this.dx = dx;
+        this.dy = dy;
+        this.randomColor = cl;
+        this.draw = function(){
+            c.fillStyle = this.randomColor;
+            c.beginPath()
+            c.arc(this.x, this.y, this.r, 0, 2 * Math.PI);
+            c.stroke();
+            c.fill();
+        }
+        this.update = function(){
+
+            let range = 30;
+            let arr;
+
+<Span class="gray">            // checks if any of the (x, y) coordinates inside the points array are inside the wanted range of the circle, 
+            // the reason I am using an array for the points is so that multi-touches are supported for touchscreens</Span>
+            arr = points.filter((point) => {
+                if(point.x - this.x < range && point.x - this.x > -range){
+                    if(point.y - this.y < range && point.y - this.y > -range){
+                        return true;
+                    }
+                }        
+            });
+
+<Span class="gray">            // if the filter method above returned at least one item then it
+            // increases the radius, else it decreases it</Span>
+            if(arr.length == 0){
+                if(this.r > this.r2){
+                    this.r -= 1;
+                }
+            } else{
+                if(this.r < 30){
+                    this.r += 5;
+                }
+            }
+
+<Span class="gray">            // checks if the circle has met or passed the edges of the canvas,
+            // if it has passed the right edge then I make sure dx is converted to a negative number else if it 
+            // is less than 0 I make sure it is a positive number, I didn't do it like in the tutorial because 
+            // problems would occur while scaling the circles, since if it was scaled and surpassed the edge then 
+            // it would get stuck, that would happen because with the code in the video it would multiple dx with - every time 
+            // x was higher than the width of the canvas, if x was heigher than 100 pixels from the edge for example
+            // (something that could happen due to fast scaling while near the edge) then dx would become -dx and would increase 
+            // like 4 pixels for example but would still be higher than the width of the canvas so it would change back to dx and 
+            // that would go on forever causing it get stuck there.</Span>
+            if(this.x - this.r < 0){
+                this.dx = Math.abs(this.dx);
+            } else if(this.x + this.r > canvas.width){
+                this.dx = (this.dx < 0)? this.dx: -this.dx;
+            }
+
+            if(this.y - this.r < 0){
+                this.dy = Math.abs(this.dy);
+            } else if(this.y + this.r > canvas.height){
+                this.dy = (this.dy < 0)? this.dy: -this.dy;
+            }
+
+<span class="gray">            // updates x and y of the circle and then executes the draw method</span>
+            this.x += this.dx;
+            this.y += this.dy;
+            this.draw();
+        }
+    }
+
+    var circles = new Array();
+
+    var clrs = ["#F2EBEC", "#C8C1D9", "#5D84A6", "#485159", "#F2D4AE"];
+
+<span class="gray">    // loop that creates circles using the constructor made earlier</span>
+    for(let i = 1; i <= 400; i++){
+        let r = Math.random() * 3 + 1;
+        let x = Math.random() * 
+        (canvas.width - r * 2) + r;
+        let y = Math.random() * 
+        (canvas.height - r * 2) + r;
+        let dx = (Math.random() - 0.5) * 3;
+        let dy = (Math.random() - 0.5) * 3;
+        let cl = clrs[Math.floor(Math.random() * clrs.length)];
+    circles.push(new circleMaker(x, y, r, dx, dy, cl));
+    }
+
+<span class="gray">    // function that executes again and again to animate the canvas</span>
+    function animate(){
+    c.clearRect(0,0,canvas.width,canvas.height);
+    circles.forEach((circle) => {
+        circle.update();
+    });
+    requestAnimationFrame(animate);
+    }
+
+    animate();
+
+});</span></p>
+
+<p class="left">Outcome:</p>
+
+    <canvas id="canvas-project1" style="background-color: black; margin: auto; display: block; border: 3px solid black;"></canvas>
+
+    <script>
+        if(true){
+        window.addEventListener('load', (e) => {
+            var canvas = document.querySelector('#canvas-project1');
+            var c = canvas.getContext('2d');
+
+            canvas.width = 500;
+            canvas.height = 300;
+             
+            var points = new Array();
+            
+            function getTouchOffset(e){
+                points = [];
+                let canvas_box = canvas.getBoundingClientRect();
+                let coords = {
+                    x: canvas_box.left,
+                    y: canvas_box.top 
+                }
+                Array.from(e.touches).forEach((touch) =>{
+                    points.push({x: touch.clientX - coords.x, y: touch.clientY - coords.y});
+                });
+            }
+
+            canvas.addEventListener('touchstart', (e) =>{     
+                getTouchOffset(e);
+            });
+            
+            canvas.addEventListener('touchmove', (e) =>{
+                getTouchOffset(e);
+            });
+            
+            canvas.addEventListener('touchend', (e) =>{
+                getTouchOffset(e);
+            });
+            
+            canvas.addEventListener('mousemove', (e) =>{
+                points = [];
+                points.push({
+                    x: e.offsetX,
+                    y: e.offsetY
+                });
+            });
+            
+            canvas.addEventListener('mouseout', (e) =>{
+                points = [{
+                    x: Number.POSITIVE_INFINITY,
+                    y: Number.POSITIVE_INFINITY
+                }]
+            });
+            
+            var circleMaker = function(x,y,r,dx,dy,cl){
+                this.x = x;
+                this.y = y;
+                this.r = r;
+                this.r2 = r;
+                this.dx = dx;
+                this.dy = dy;
+                this.randomColor = cl;
+                this.draw = function(){
+                    c.fillStyle = this.randomColor;
+                    c.beginPath()
+                    c.arc(this.x, this.y, this.r, 0, 2 * Math.PI);
+                    c.stroke();
+                    c.fill();
+                }
+                this.update = function(){
+                    
+                    let range = 30;
+                    let arr;
+                 
+                    arr = points.filter((point) => {
+                        if(point.x - this.x < range && point.x - this.x > -range){
+                            if(point.y - this.y < range && point.y - this.y > -range){
+                                return true;
+                            }
+                        }        
+                    });
+                       
+                    if(arr.length == 0){
+                        if(this.r > this.r2){
+                            this.r -= 1;
+                        }
+                    } else{
+                        if(this.r < 30){
+                            this.r += 5;
+                        }
+                    }
+                    
+                    if(this.x - this.r < 0){
+                        this.dx = Math.abs(this.dx);
+                    } else if(this.x + this.r > canvas.width){
+                        this.dx = (this.dx < 0)? this.dx: -this.dx;
+                    }
+                       
+                    if(this.y - this.r < 0){
+                        this.dy = Math.abs(this.dy);
+                    } else if(this.y + this.r > canvas.height){
+                        this.dy = (this.dy < 0)? this.dy: -this.dy;
+                    }
+                             
+                    this.x += this.dx;
+                    this.y += this.dy;
+                    this.draw();
+                }
+            }
+            
+            var circles = new Array();
+            
+            var clrs = ["#F2EBEC", "#C8C1D9", "#5D84A6", "#485159", "#F2D4AE"];
+            
+            for(let i = 1; i <= 400; i++){
+                let r = Math.random() * 3 + 1;
+                let x = Math.random() * 
+                (canvas.width - r * 2) + r;
+                let y = Math.random() * 
+                (canvas.height - r * 2) + r;
+                let dx = (Math.random() - 0.5) * 3;
+                let dy = (Math.random() - 0.5) * 3;
+                let cl = clrs[
+                Math.floor(Math.random() * clrs.length)
+                ];
+            circles.push(new circleMaker(x, y, r, dx, dy, cl));
+            }
+            
+            function animate(){
+            c.clearRect(0,0,canvas.width,canvas.height);
+            circles.forEach((circle) => {
+                circle.update();
+            });
+            requestAnimationFrame(animate);
+            }
+            
+            animate();
+            
+        });
+        }
+    </script>
+
+ </article>
+ 
+<hr>
+ </body>
+</html>

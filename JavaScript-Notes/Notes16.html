@@ -1,0 +1,894 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<title> Page sixteen of my notes </title>
+<meta charset="UTF-8"> 
+<link href="../CSS-JavaScript-External-Files/HTMLnotes.css" rel="stylesheet">
+<Style>
+    .left {
+        text-align: left;
+    }
+    
+    .code10 {
+    white-space: pre-line;
+    background-color: lightgreen;
+    }
+    
+    p {
+    text-align:center;
+    }
+    h1 {
+    text-align:center;
+    }
+    h2 {
+    text-align:center;
+    }
+    h3 {
+    text-align:center;
+    }
+    .c {
+    background-color:lightgreen;
+    }
+    hr {
+    width:100%;
+    height:15px;
+    background-color:black;
+    color:black;
+    border: black solid;
+    }
+    body {
+    background-color:rgb(165, 235, 235);
+    }
+    span {
+    background-color:lightgreen;
+    }
+    
+    a:link {
+    color: black;
+    text-shadow: 1px 0px 1px black;
+    
+    }
+    
+    a:visited {
+    color: black;
+    text-shadow: 1px 0px 1px rgb(22, 22, 22);
+    }
+    
+    a:hover {
+    text-decoration: underline;
+    color: red;
+    text-shadow: 1px 0px 1px black;
+    }
+    
+    </style> 
+</head>
+<body>
+
+<hr>
+
+    <header> 
+    <h1> Page four of my JavaScript notes </h1>
+    </header>
+    
+    <article id="start-of-page"> 
+  
+        <div id="homepages">
+        
+            <h3>Home Pages:</h3>
+           
+        
+        </div>
+        
+        <nav data-notes="JavaScript" data-page="4">
+        
+        </nav>
+                
+            <h3> Informations included in this page:</h3>
+     <p> <a href="../JavaScript-Notes/Notes16.html#one">JavaScript Arrays</a></p>
+     <p> <a href="../JavaScript-Notes/Notes16.html#two">Other Ways to Create Arrays</a></p>
+     <p> <a href="../JavaScript-Notes/Notes16.html#three">Array Properties and Methods</a></p>
+     <p> <a href="../JavaScript-Notes/Notes16.html#four">Associative Arrays</a></p>
+     <p> <a href="../JavaScript-Notes/Notes16.html#five">The Math Object</a></p>
+     <p> <a href="../JavaScript-Notes/Notes16.html#six">The setInterval() method</a></p>
+     <p> <a href="../JavaScript-Notes/Notes16.html#seven">The Date Object</a></p>
+
+        </article>
+        
+         <script src="../CSS-JavaScript-External-Files/nav.js"></script>
+
+<hr>
+ 
+<article id="one">
+
+<header>
+    <h1>JavaScript Arrays</h1>
+</header>
+
+<p><span>Arrays</span> can store <Span>multiple values</Span> in 
+a single <Span>variable</Span>. For example, I could make a 
+<span>variable</span> named <Span>colors</Span> and 
+give it <Span>multiple</Span> values, like <Span>red</Span>, 
+<span>brown</span>, etc, the <Span>syntax</Span> would look like this:</p>
+
+<p><span class="code10">var colors = new Array("Red", "Brown", "Blue");</span></p>
+
+<p>You refer to an <Span>array</Span> element by referring to the <span>index number</span>, 
+written in <span>square bracket</span>, the <span>first value</span> is <Span>0</Span>, 
+the <Span>second value</Span> is <span>1</span>, the <Span>third value</Span> is <span>2</span>,
+etc, let's test this out:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">&lt;Script>
+
+    var colors = new Array("Red", "Brown", "Pink");
+    
+    colors[2] = "Blue";
+    
+    document.write( colors[1], " ", colors[2] );
+    
+    &lt;/Script></span></p>
+
+<p class="left">Outcome:</p>
+
+
+<Script>
+
+var colors = new Array("Red", "Brown", "Pink");
+
+colors[2] = "Blue";
+
+document.write( colors[1], " ", colors[2] );
+
+</Script>
+
+<p>If you attempt to access an <Span>index outside of the array</Span>, it will 
+return <Span>undefined</Span>:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">&lt;Script>
+
+    var colors = new Array("Red", "Brown", "Pink");
+
+document.write( colors[10] );
+    
+    &lt;/Script></span></p>
+
+<p class="left">Outcome:</p>
+
+
+<Script>
+
+var colors = new Array("Red", "Brown", "Pink");
+
+document.write( colors[10] );
+
+</Script>
+
+</article>
+
+<hr>
+
+<article id="two">
+
+<header>
+
+    <h1>Other Ways to Create Arrays</h1>
+
+</header>
+
+<p>You can also <Span>declare an array</Span>, tell the <Span>number of elements</Span>
+it will <span>store</span> and add the elements later, like this:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10"> &lt;Script>
+
+    var colors = new Array(3);
+    
+    colors[1] = "Red";
+    colors[2] = " Brown";
+    colors[3] = " Pink.";
+    
+    document.write( colors );
+    
+    &lt;/script></span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+var colors = new Array(3);
+
+colors[1] = "Red";
+colors[2] = " Brown";
+colors[3] = " Pink.";
+
+document.write( colors );
+
+</script>
+
+<p>However, there really isn't a limitation to the number of values you can add,
+    even tho you have wrote <Span>3</Span> if you were to add a <Span>fourth value</Span>
+    it would still do it, so let's try the same thing, but not specify the number 
+    of values we are going to add:
+</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10"> &lt;Script>
+
+    var colors = new Array();
+    
+    colors[1] = "Red";
+    colors[2] = " Brown";
+    colors[3] = " Pink.";
+    
+    document.write( colors );
+    
+    &lt;/script></span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+var colors = new Array();
+
+colors[1] = "Red";
+colors[2] = " Brown";
+colors[3] = " Pink.";
+
+document.write( colors );
+
+</script>
+
+<p>Now, I still am not sure why, but from what I read using <span>new Array()</span> is 
+not recommended, for greater simplicity, readability and execution speed you 
+can declare <Span>arrays</Span> using the <Span>array literal syntax</Span>, like this:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10"> &lt;Script>
+
+    var colors = ["Brown", "Red", "Pink"];
+
+document.write( colors[0], " ", colors[2] );
+    
+    &lt;/script></span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+var colors = ["Brown", "Red", "Pink"];
+
+document.write( colors[0], " ", colors[2] );
+
+</script>
+</article>
+
+<hr>
+
+<article id="three">
+
+<header>
+
+    <h1>Array Properties and Methods</h1>
+
+</header>
+ 
+<p><span>JavaScript arrays</span> have useful built-in <Span>properties</Span> and <Span>methods</Span>, 
+an <Span>array's length</Span> property for example returns the <Span>number of it's elements</Span>. </p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">&lt;script>
+
+    var colors = ["Red", "Pink", "Brown"];
+    
+    document.write( colors.length );
+    
+    &lt;/script></span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+var colors = ["Red", "Pink", "Brown"];
+
+document.write( colors.length );
+
+</script>
+
+<p><span>JavaScript's</span> <Span>contact()</Span> method allows you to <Span>join arrys</Span>
+and create an <Span>entirely new array</Span>, like in the example below:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">&lt;script>
+
+    var colors1 = ["Brown", "Red"],
+colors2 = ["Green", "Blue"];
+
+var all_colors = colors1.concat(colors2);
+
+document.write( all_colors );
+    
+    &lt;/script></span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+var colors1 = ["Brown", "Red"],
+colors2 = ["Green", "Blue"];
+
+var all_colors = colors1.concat(colors2);
+
+document.write( all_colors );
+
+</script>
+
+<p>You can also <Span>contact</Span> only <Span>some of the elements</Span> of choice 
+by specifying them inside the <Span>array</Span>, using <Span>[]</Span>.</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">&lt;script>
+
+    var colors1 = ["Brown", "Red"],
+colors2 = ["Green", "Blue"];
+
+var all_colors = colors1.concat(colors2[0]);
+
+document.write( all_colors );
+    
+    &lt;/script></span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+var colors1 = ["Brown", "Red"],
+colors2 = ["Green", "Blue"];
+
+var all_colors = colors1.concat(colors2[0]);
+
+document.write( all_colors );
+
+</script>
+
+</article>
+
+<hr>
+
+<article id="four">
+
+<header>
+
+<h1>Associative Arrays</h1>
+
+</header>
+
+<p>While many programming languages support <span>arrays</span> with <Span>named indexes</Span> (text instead of numbers), 
+the so called <Span>associative arrays</Span>, Javascript <span>does not</span>. However, there is a 
+way to do something similar to <Span>associative arrays</Span>, by using the following <span>syntax</span>: 
+</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">&lt;script>
+
+    var person = [];
+    person["name"] = "John";
+    person["age"] = 45;
+      
+    document.write(person["age"]);
+    
+    &lt;/script></span></p>
+
+<script>
+
+var person = [];
+person["name"] = "John";
+person["age"] = 45;
+
+
+document.write(person["age"]);
+
+</script>
+
+<p>It's not really recommended to use this method tho, use <span>objects</span> instead.
+</p>
+
+</article>
+
+<hr>
+
+<article id="five">
+
+<header>
+
+<h1>The Math Objects</h1>
+
+</header>
+
+<p>The <Span>math objects</Span> allow you to perform <Span>mathematical tasks</Span>, and include
+several properties, it's okay if you don't understand what every property does, not everyone 
+is good at math, I'm only 15 years old so I also don't understand everything, because 
+I have never seen most of these mathimatical concepts before in school, I will however 
+list the properties here so we know they exist, in the future 
+you may need to learn your math better if you got to work on anything that needs math, don't 
+worry too much tho, because math isn't necessary for programming, you can still do great things 
+even without much math knowledge.</p>
+
+<img src="https://api.sololearn.com/DownloadFile?id=2767" style="display: block; margin: 20px auto 20px auto;">
+
+<p>What exactly do these properties do? I have no idea, because I'm dumb, if you want to really 
+    learn about logarithms and mathematical constants you could look it up I guess, I'm fine just 
+    being aware that JS can do these things for now, I may get to learn more about this 
+    in the future.
+</p>
+
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">&lt;script>
+    
+    document.write( "E = ", Math.E, "&lt;br>",
+    " LN2 = ", Math.LN2, "&lt;br>",
+    " LN10 = ", Math.LN10, "&lt;br>",
+    " LOG2E = ", Math.LOG2E, "&lt;br>",
+    " LOG10E = ", Math.LOG10E, "&lt;br>",
+    " PI = ", Math.PI );
+    
+    &lt;/script></span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+document.write( "E = ", Math.E, "<br>",
+" LN2 = ", Math.LN2, "<br>",
+" LN10 = ", Math.LN10, "<br>",
+" LOG2E = ", Math.LOG2E, "<br>",
+" LOG10E = ", Math.LOG10E, "<br>",
+" PI = ", Math.PI );
+
+</script>
+
+<p>Let's now talk about <span>Math Object Methods</span>, the 
+<Span>math object</Span> contains a number of <Span>methods</Span> that are used for 
+<span>calculations</span>, here is a list of all the <Span>methods</Span>, it's okay if you don't 
+understand everything, I played around with these a little which helped, 
+and in my opinion the most important and simple ones are the following: <Span>ceil(x)</Span>, 
+<Span>floor(x)</Span>, <Span>max(x,y,z,....,n)</Span>, <Span>min(x,y,z,...,n)</Span>, 
+<span>random()</span>, <Span>round(x)</Span> and <span>sqrt(x)</span>, of course other 
+<Span>methods</Span> are used for their own porpuses, and can be very useful too I guess, 
+but I don't really know yet how to use these, because as I said before I'm not 
+very good at math.</p>
+
+<img src="https://api.sololearn.com/DownloadFile?id=2769" style="display: block; margin: 20px auto 20px auto;">
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">&lt;script>
+    
+    var number = Math.sqrt(81)
+
+document.write( number );
+
+// it outputs 9 because 9 * 9 = 81
+    
+    &lt;/script></span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+var number = Math.sqrt(81)
+
+document.write( number );
+
+// it outputs 9 because 9 * 9 = 81
+
+</script>
+
+<p>Let's make a code, that will pick a <span>random number</span> btween <Span>1-10</Span>, to 
+do that we will use <Span>Math.random()</Span> which gives us a number btween <Span>0-1</Span>, then 
+we will simply <span>multiply the number by 10</span>, and <Span>round it</Span> to the nearest integer. </p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">&lt;script>
+    
+    var number = Math.round( Math.random() * 10 ); 
+
+document.write( number );
+    
+    &lt;/script></span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+var number = Math.round( Math.random() * 10 ); 
+
+document.write( number );
+
+</script>
+
+<p>Nice, isn't that cool, try to reaload the page and you will see each time you do so a new random number 
+    between 1 and 10 will be picked.
+</p>
+
+<p>Let's try to make another code, this one will give you the square of a a number you choose, I will 
+    also use <Span>CSS</Span> to decorate the button, which is good I guess since I have stopped using 
+    it lately, and I feel like I start to forget it.
+</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">&lt;script>
+    
+    function example69(){ 
+        var number = prompt("Enter a number");
+        alert( "The square of "+ number+ " is "+ Math.sqrt(number) );
+      };      
+    
+    &lt;/script></span></p>
+
+    <p class="left">CSS Code:</p>
+
+    <p class="left"><span class="code10">&lt;Style>
+
+        .jsbutton {
+        width: 100px; 
+        height: 50px; 
+        display: block;
+        margin: auto;
+        background-color: red; 
+        text-align: center;
+        line-height: 50px;
+        font-weight: bold; 
+        color: white;
+        text-shadow: 1px 1px 0px black,
+        -1px -1px 0px black; 
+        font-size: 20px;
+        cursor: pointer;
+        }
+        
+        &lt;/Style></span></p>
+
+        <p class="left">HTML Code:</p>
+
+<p class="left"><span class="code10">&lt;script>
+    
+    &lt;button onclick="example69()" class="jsbutton">Click me&lt;/button>
+    
+    &lt;/script></span></p>
+
+<p class="left">Outcome:</p>
+
+<Style>
+
+.jsbutton {
+width: 100px; 
+height: 50px; 
+display: block;
+margin: auto;
+background-color: red; 
+text-align: center;
+line-height: 50px;
+font-weight: bold; 
+color: white;
+text-shadow: 1px 1px 0px black,
+-1px -1px 0px black; 
+font-size: 20px;
+cursor: pointer;
+}
+
+</Style>
+
+<button onclick="example69()" class="jsbutton">Click me</button>
+
+<Script>
+
+function example69(){ 
+  var number = prompt("Enter a number");
+  alert( "The square of "+ number+ " is "+ Math.sqrt(number) );
+};
+
+</Script>
+
+</article>
+
+<hr>
+
+<article id="six">
+
+<h1>The setInterval() method</h1>
+
+<p>The <Span>setInterval()</Span> method calls a 
+<span>function</span> or <Span>evaluates</Span> an <Span>expression</Span>
+at <Span>specified intervals</span> (in miliseconds). It will 
+continue calling the <Span>function</Span> until <Span>clearInterval()</Span> is 
+called or the window is closed.</p>
+    
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">&lt;Script>
+    
+    function fu(){
+        alert("Hello World!"); 
+    };
+
+    function example8(){
+        this.start = function(){
+           alertInterval = setInterval( fu, 6000);
+        };
+        this.stop = function(){
+            clearInterval(alertInterval);
+        };
+    };
+
+var alerts = new example8();
+     
+    &lt;/Script></Span></p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><Span class="code10"> &lt;button onclick="alerts.start()" class="jsbutton">Start&lt;/button> &ltbr>&lt;br>
+    
+    &lt;button onclick="alerts.stop()" class="jsbutton">Stop&lt;/button></Span></p>
+
+<p class="left">Outcome:</p>
+
+    <button onclick="alerts.start()" class="jsbutton">Start</button> <br><br>
+    
+    <button onclick="alerts.stop()" class="jsbutton">Stop</button>
+
+
+    <Script>
+    
+    function fu(){
+        alert("Hello World!"); 
+    };
+
+    function example8(){
+        this.start = function(){
+           alertInterval = setInterval( fu, 6000);
+        };
+        this.stop = function(){
+            clearInterval(alertInterval);
+        };
+    };
+
+var alerts = new example8();
+
+    </Script>
+    
+
+   <p>What I created is a simple <span>object constructor</span> that contains 
+<span>two methods</span>, the <Span>first</Span> method is called <span>start</span> 
+and it basically makes the <Span>setInterval</Span> activate which repeats the 
+<span>fu fuction</span> every <Span>three seconds</span>, I also mentioned that 
+this will be <span>equal</span> to <Span>alertInterval</span> which doesn't mean anything, 
+it's just a name I gave it so I can referense it later inside the <span>stop method</span>, 
+which <Span>clears</Span> the <Span>alertInterval</Span> therefore stopping the loop. I 
+am not the best at explaining, it would be better if you played around with it a little 
+to understand it better.</p> 
+
+</article>
+
+<hr>
+
+<article id="seven">
+
+    <h1>The Date Object</h1>
+
+<p> The <Span>date object</Span> enables us to work with <Span>dates</Span>, a 
+<Span>date</Span> consists of a <Span>year</Span>, a <Span>month</Span>, a <Span>day</Span>, 
+an <Span>hour</Span>, a <Span>minute</Span> and <Span>milliseconds</Span>. </p>
+
+<p>By using the <Span>new Date()</Span> you can create a <Span>new date object</Span> with 
+the <Span>current date and time</Span>, isn't that cool?</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">&lt;script>
+
+    var today = new Date(); 
+    
+    document.write( today );
+    
+    &lt;/script></Span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+var today = new Date(); 
+
+document.write( today );
+
+</script>
+
+<p>The other ways to <Span>initialize dates</Span> allow for the creation of <Span>new date objects</Span>
+from the <Span>specified date and time</Span>.</p>
+
+<p class="left"><Span class="code10">&lt;script>
+
+    //Fri Jan 02 1970 00:00:00
+var d1 = new Date(86400000); 
+
+//Fri Jan 02 2015 10:42:00
+var d2 = new Date("January 2, 2015 10:42:00");
+
+//Sat Jun 11 1988 11:42:00
+var d3 = new Date(88,5,11,11,42,0,0);
+
+var br = "&lt;br>";
+
+document.write( d1, br, d2, br, d3);
+    
+    &lt;/script></Span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+//Fri Jan 02 1970 00:00:00
+var d1 = new Date(86400000); 
+
+//Fri Jan 02 2015 10:42:00
+var d2 = new Date("January 2, 2015 10:42:00");
+
+//Sat Jun 11 1988 11:42:00
+var d3 = new Date(88,5,11,11,42,0,0);
+
+var br = "<br>";
+
+document.write( d1, br, d2, br, d3);
+
+</script>
+
+<p> When a <span>date object</span> is created 
+a number of <span>methods</span> can be 
+used to perform operations on it, here is 
+a list: </p> 
+
+<img style="display: block; margin: 20px auto 20px auto;" src="https://api.sololearn.com/DownloadFile?id=2772">
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">&lt;script>
+
+var date = new Date();
+
+document.write( date.getHours() );
+
+&lt;/script></span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+var date = new Date();
+
+document.write( date.getHours() );
+
+</script>
+
+<p class="left">Now that we know how to 
+use <span>methods</span> let's make 
+a real life time clock.</p>
+
+<p class="left">Code</p>
+
+<p class="left">
+<span class="code10">&lt;script>
+
+function clock(){
+var d = new Date();
+
+document.body.innerHTML = d.getHours() 
++ ":" + d.getMinutes() + ":" +
+d.getSeconds();
+
+setInterval( clock, 1000 );
+};
+
+&lt;/script>
+
+&lt;button class="jsbutton" onclick="clock()">Click&lt;/button></span></p>
+
+<p class="left">Outcome</p>
+
+<script>
+
+function clock(){
+var d = new Date();
+
+document.body.innerHTML = d.getHours() 
++ ":" + d.getMinutes() + ":" +
+d.getSeconds();
+
+setInterval( clock, 1000 );
+};
+
+</script>
+
+<button class="jsbutton" onclick="clock()">Click</button>
+
+<p>If you now let our little clock 
+work for a while you will notice that 
+when a number gets under 10 it will write 1, 2,
+etc, instead of 01, 02, 03, like in a real clock, 
+lets create a function which will check if 
+the number is under 10 and fix this problem
+using simple if else statement.</p>
+
+<p class="left">Code</p>
+
+<p class="left">
+<span class="code10">&lt;script>
+
+function addZero(x){
+if ( x < 10 ) { return "0" + x }
+else { return x };
+}
+
+function clock2(){
+var d = new Date();
+
+var hour = addZero( d.getHours() );
+var min = addZero( d.getMinutes() );
+var sec = addZero( d.getSeconds() ) ;
+
+document.body.innerHTML = hour +
+":" + min + ":" + sec;
+ 
+setInterval( clock2, 1000);
+
+};
+
+&lt;/script>
+
+&lt;button class="jsbutton" onclick="clock2()">Click&lt;/button></span>
+
+<p class="left">Outcome</p>
+
+<script>
+
+function addZero(x){
+if ( x < 10 ) { return "0" + x }
+else { return x };
+}
+
+function clock2(){
+var d = new Date();
+
+var hour = addZero( d.getHours() );
+var min = addZero( d.getMinutes() );
+var sec = addZero( d.getSeconds() ) ;
+
+document.body.innerHTML = hour +
+":" + min + ":" + sec;
+ 
+setInterval( clock2, 1000);
+
+};
+
+</script>
+
+<button class="jsbutton" onclick="clock2()">Click</button>
+
+</article>
+
+<hr>
+
+</body>
+</html>

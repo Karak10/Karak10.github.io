@@ -1,0 +1,803 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../CSS-JavaScript-External-Files/HTMLnotes.css?version=1">
+<title> My notes page 2 </title>
+</head>
+<body>
+<hr>
+
+<header>
+<h1> Page two of my HTML notes </h1>
+</header>
+
+<article id="start-of-page"> 
+  
+  <div id="homepages">
+  
+      <h3>Home Pages:</h3>
+     
+  
+  </div>
+  
+  <nav data-notes="html" data-page="2">
+  
+  </nav>
+          
+  <h3> Informations included in this page: </h3>
+<p><a href="#one"> About lists </a></p>
+<p><a href="#two"> About tables </a></p>
+<p><a href="#three"> About iframe element</a></p>
+<p><a href="#four"> About map element</a></p>
+<p><a href="#five"> About inline and block elements:</a></p>
+
+  </article>
+  
+   <script src="../CSS-JavaScript-External-Files/nav.js"></script>
+
+ 
+<hr>
+
+<article id="one">
+<header>
+<h1> About lists</h1>
+</header>
+
+<section>
+<header>
+<h2> Ordered lists: </h2>
+</header>
+<p align = "center"> <span class="c">&lt;ol&gt;</span> tag stands for <span>ordered list</span>, and its used to create a list,
+to <span>put an item</span> in the list you use <span class="c">&lt;li&gt;</span> tag which stands for <span>listed item</span>, this tag needs a <span>closing tag</span> too, 
+you put the <span>name</span> of the <span>listed item</span> between the <span class="c">&lt;li&gt;</span> and <span class="c">&lt;/li&gt;</span> tags, after you have added
+as many <Span>items</span> as you like you close <span class="c">&lt;ol&gt;</span> tag with <span class="c">&lt;/ol&gt;</span>,
+to change the <span>position</span> of the list you simply use <span class="c">align="center/left/right"</span> attribute, you can use it in both <span class="c">&lt;ol&gt;</span> and <span class="c">&lt;li&gt;</span>
+tags, you may want only <span>one item</span> to be <span>aligned</span> to the <span>right</span>, in which case you use it in <span class="c">
+&lt;li&gt;</span> tag of the <span>selected item</span>, or you may want <span>all items</span> to be <span>aligned</span> to the <span>right</span>, in which case
+instead of writing the <span>align attribute</span> over and over again you simply type it once in <span class="c">&lt;ol&gt;</span> tag, 
+it is recommended to use <span>CSS</span> for decoration tho.</p>
+
+<p style="text-align:left;">Code:</p>
+
+<p style="text-align:left;">
+<span class="c">&lt;ol&gt;<br>
+&lt;li&gt; Red &lt;/li&gt;<br>
+&lt;li&gt; Blue &lt;/li&gt;<br>
+&lt;li&gt; Green &lt;/li&gt;<br>
+&lt;/ol&gt;
+</p>
+
+<p style="text-align:left;">Outcome:</p>
+
+<p>
+<ol>
+<li> Red </li>
+<li> Blue </li>
+<li> Green </li>
+</ol> </p>
+
+<p>The <span class="c">type=""</span> attribute lets you change the <span>type of the list</span>, you can put it inside both <span class="c">&lt;ol&gt;</span> and <span class="c">&lt;li&gt;</span> tags, 
+<span>another attribute</span> thats used in <span>ordered lists</span> is the <span class="c">start="number"</span> attribute, which is used inside the <span class="c">&lt;ol&gt;</span> tag.
+</p>
+
+<p> There are many <span>types</span> of lists, here is a list of all the <span>basic types</span> you need to know: </p>
+
+<table width="500" height="250" border="3px" align="center" bgcolor="white">
+<caption> Values of <span class="c">type</span> attribute: </caption>
+<tr>
+<th style="text-align:center;" width="20%"> Value </th>
+<th style="text-align:center;" > Description </th>
+</tr>
+<tr>
+<td style="text-align:center;"> 1 </td>
+<td style="text-align:center;"> <Span>Default</span>. Decimal numbers (<span>1, 2, 3, 4</span>) </td>
+</tr>
+<tr>
+<td style="text-align:center;"> a </td>
+<td style="text-align:center;"> Alphabetically ordered list, lowercase (<span>a, b, c, d</span>) </td>
+</tr>
+<tr>
+<td style="text-align:center;"> A </td>
+<td style="text-align:center;"> Alphabetically ordered list, uppercase (<span>A, B, C, D</span>) </td>
+</tr>
+</tr>
+<tr>
+<td style="text-align:center;"> i </td>
+<td style="text-align:center;"> Roman numbers, lowercase (<span>i, ii, iii, iv</span>) </td>
+</tr>
+<tr>
+<td style="text-align:center;"> I </td>
+<td style="text-align:center;"> Roman numbers, uppercase (<span>I, II, III, IV</span>) </td>
+</tr>
+</table>
+
+
+<p align = "center">The <span class="c">start</span> attribute defines from what <span>number/alphabetical letter/roman number</span> the list will <span>start</span>, for example,
+if I wrote <span class="c">start="3"</span> and <span class="c">type="I"</span> the first item would be like this: <span>III. first item</span>, the second would be <span>IV. second item</span>, and so on, lets now have an example. </p>
+
+<p style="text-align:left;">Code:</p>
+
+<p style="text-align:left;">
+<span class="c">&lt;ol type="A" start="3"&gt;<br />
+&lt;li&gt; Red &lt;/li&gt; <br />
+&lt;li type="1"&gt; Blue &lt;/li&gt; <br />
+&lt;li type="I"&gt; Green &lt;/li&gt; <br />
+&lt;/ol&gt; </p>   
+
+<p style="text-align:left;">Outcome:</p>
+<p>
+<ol type = "A" start = "3">
+<li> Red </li>
+<li type="1"> Blue </li>
+<li type="I"> Green </li>
+</ol> </p>
+
+</section>
+
+<section>
+<header>
+<h2> Unordered lists: </h2>
+</header>
+<p align = "center"> The <span class="c"> &lt;ul&gt;</span> tag stands for <Span>unordered list</span> and it does exactly what the name says, makes an <Span>unordered list</span>. 
+It works pretty much the same way with <span class="c"> &lt;ol&gt;</span> tag, the <span class="c">start</span> attribute however is <span>not used</span>, since it is <span>unordered</span>, and there 
+are <span>different values</span> for the <span class="c">type</span> attribute. <p>
+
+<p style="text-align:left;">Code:</p>
+
+<p style="text-align:left;">
+<span class="c">&lt;ul&gt;<br />
+&lt;li&gt; Red &lt;/li&gt; <br />
+&lt;li&gt; Blue &lt;/li&gt; <br />
+&lt;li&gt; Green &lt;/li&gt; <br />
+&lt;/ul&gt; </p>   
+
+<p style="text-align:left;">Outcome:</p>
+
+
+<p>
+<ul>
+<li> Red </li>
+<li> Blue </li>
+<li> Green </li>
+</ul> </p>
+
+
+
+<p align = "center"> As I said before, <span>unordered lists</span> have <span>other values</span> for <span class="c">type</span> attribute, the <span>most basic</span> types are: <span class="c">circle, disc and square</span>.</p>
+
+
+<p style="text-align:left;">Code:</p>
+
+<p style="text-align:left;">
+<span class="c">&lt;ul&gt;<br />
+&lt;li type="circle"&gt; Red &lt;/li&gt; <br />
+&lt;li type="disc"&gt; Blue &lt;/li&gt; <br />
+&lt;li type="square"&gt; Green &lt;/li&gt; <br />
+&lt;/ul&gt; </p>   
+
+<p style="text-align:left;">Outcome:</p>
+
+
+
+<ul>
+<li type="circle"> Circle </li>
+<li type="dic"> Disc </li>
+<li type="square"> Square </li>
+</ul>
+
+</section>
+
+<section>
+<header>
+<h2> Description list: </h2>
+</header>
+
+<p>The <span class="c">&lt;dl&gt;</span> tag stands for <span>description list</span>, this list allows you to add a <span>description</span>
+of each <span>item</span> by using <span class="c">&lt;dt&gt; Item &lt;/dt&gt;</span> to add the <span>item</span> in the <span>description list</span>, and then 
+<span class="c">&lt;dd&gt; Description &lt;/dd&gt;</span> to add the <span>description</span>. </p>
+
+<p style="text-align:left;">Code:</p>
+
+<p style="text-align:left;">
+<span class="c"> &lt;dl&gt;<br />
+&lt;dt&gt; Red &lt;/dt&gt; <br />
+&lt;dd&gt; its a color &lt;/dd&gt;<br />
+&lt;dt&gt; Blue &lt;/dt&gt; <br />
+&lt;dd&gt; its a cooler color &lt;/dd&gt;<br />
+&lt;dt&gt; Green &lt;/dt&gt; <br />
+&lt;dd&gt; its the color of nature &lt;/dd&gt; <br />
+&lt;/dl&gt;
+</p>
+<p style="text-align:left;">Outcome:</p>
+
+<p>
+<dl>
+<dt> Red </dt>
+<dd> its a color </dd>
+<dt> Blue </dt>
+<dd> its a cooler color </dd>
+<dt> Green </dt>
+<dd> its the color of nature </dd>
+</dl> </p>
+<p align = "center"> You can also put <span>links</span> in <span>lists</span> by writing <span class="c">&lt;a href="url"&gt; example &lt;/a&gt;</span> between the <span class="c">&lt;li&gt; &lt;/li&gt;</span>, <span class="c">&lt;dt&gt; &lt;/dt&gt;</span> or <span class="c">&lt;dd&gt; &lt;/dd&gt;</span>, lets make a <span>description list</span> of the <span>two pages of notes</span> I currently have: </p>
+
+<p style="text-align:left;">Code:</p>
+
+<p style="text-align:left;">
+<span class="c"> &lt;dl&gt;<br />
+&lt;dt&gt;&lt;a href="../HTML-Notes/Notes.html" target="_blank"&gt; First page of my notes &lt;/a&gt;&lt;/dt&gt; <br />
+&lt;dd&gt; Its the first page of my html notes  &lt;/dd&gt;<br />
+&lt;dt&gt;&lt;a href="../HTML-Notes/Notes2.html" target="_blank"&gt; Second page of my notes &lt;/a&gt;&lt;/dt&gt; <br />
+&lt;dd&gt; Its the second page of my html notes &lt;/dd&gt;<br />
+&lt;/dl&gt;
+</p>
+<p style="text-align:left;">Outcome:</p>
+
+<p>
+<dl>
+<dt> <a href = "Notes.html" target = "_blank"> First page of my notes </a> </dt>
+<dd> Its the first page of my html notes </dd>
+<dt> <a href = "Notes2.html" target = "_blank"> Second page of my notes </a> </dt>
+<dd> Its the second page of my html notes </dd>
+</dl> </p>
+
+</section>
+
+<section>
+
+<h2> How to nest lists:</h2>
+
+<p> I just learned about how I can <Span>nest</span> lists, and I decided to write about it in my notes, <Span>nesting</span> lists is pretty easy, lets have
+a simple <span>demonstration</span> of what a <Span>nested</span> list is:</p>
+
+
+<p style="text-align:left;">Code:</p>
+
+<p style="text-align:left;">
+<pre>
+<span>
+&lt;p align="center'&gt; 
+&lt;ul></span> 
+ 
+<span>&lt;li> Last names</span> 
+ 
+  <span>&lt;ol&gt;</span> 
+     <span>&lt;li&gt; Gkiafis &lt;/li&gt;</span> 
+     <span>&lt;li&gt; Gkiafis &lt;/li&gt;</span> 
+  <span>&lt;/ol&gt;</span> 
+ 
+<span>&lt;/li&gt;</span> 
+ 
+<span>&lt;li> First names</span>  
+ 
+  <span>&lt;ol&gt;</span>
+     <span>&lt;li&gt; Alex &lt;/li&gt;</span> 
+     <span>&lt;li&gt; Fotis &lt;/li&gt;</span> 
+  <span>&lt;/ol&gt;</span> 
+ 
+<span>&lt;/li&gt;</span> 
+ 
+<span>&lt;li&gt; Favorite food</span>
+ 
+  <span>&lt;ol&gt;</span> 
+     <span>&lt;li&gt; Pizza &lt;/li&gt;</span> 
+     <span>&lt;li&gt; Bannanas &lt;/li&gt;</span> 
+  <span>&lt;/ol&gt;</span> 
+ 
+<span>&lt;/li&gt;</span> 
+ 
+<span>&lt;/ul&gt; 
+&lt;/p&gt;</span></pre>
+
+</p>
+<p style="text-align:left;">Outcome:</p>
+
+<p>
+<ul>
+<li> Last names
+<ol>
+<li> Gkiafis </li>
+<li> Gkiafis </li>
+</ol>
+</li>
+<li> First names 
+<ol>
+<li> Alex </li>
+<li> Fotis </li>
+</ol>
+</li>
+<li> Favorite food
+<ol>
+<li> Pizza </li>
+<li> Bannanas </li>
+</ol>
+</li>
+</ul>
+
+</p>
+
+<p> You can continue the <span>nesting</span> as much as you like, see this for example: </p>
+
+<p style="text-align:left;">Code:</p>
+
+<p style="text-align:left;">
+<pre> 
+<span>&lt;p&gt;
+&lt;ul&gt;
+
+&lt;li&gt; products</span> 
+
+ <span>&lt;ul&gt;</span>
+
+    <span>&lt;li&gt; Cars</span>
+
+        <span>&lt;ol&gt;</span>
+
+          <span>&lt;li&gt; Colors</span> 
+
+               <span>&lt;ol&gt;</span> 
+                 <span>&lt;li> red &lt;/li&gt;</span>
+                 <span>&lt;li> yellow &lt;/li&gt;</span>
+                 <span>&lt;li> white &lt;/li&gt;</span>
+               <span>&lt;/ol&gt;</span>
+
+          <span>&lt;/li&gt;</span>
+
+          <span>&lt;li&gt; Prices</span> 
+
+               <span>&lt;ol&gt;</span>
+                 <span>&lt;li&gt; 15.000 &lt;/li&gt;</span>
+                <span> &lt;li&gt; 16.000 &lt;/li&gt;</span>
+                <span> &lt;li&gt; 13.000 &lt;/li&gt;</span>
+               <span>&lt;/ol&gt;</span>
+
+           <span>&lt;/li&gt;</span>
+
+         <span>&lt;/ol&gt;</span>
+
+       <span>&lt;/li&gt;</span>
+
+    <span>&lt;/ul&gt;</span>
+
+<span>&lt;/li&gt;
+
+&lt;/ul&gt;
+&lt;/p&gt;</span> </pre>
+
+</p>
+<p style="text-align:left;">Outcome:</p>
+
+<p>
+<ul>
+
+<li>products 
+  <ul>
+    <li> Cars
+        <ol>
+          <li> Colors 
+               <ol> 
+                 <li> red </li>
+                 <li> yellow </li>
+                 <li> white </li>
+               </ol>
+          </li>
+           <li> Prices 
+               <ol>
+                 <li> 15.000 </li>
+                 <li> 16.000 </li>
+                 <li> 13.000 </li>
+               </ol>
+            </li>
+         </ol>
+       </li>
+    </ul>
+</li>
+
+</ul>
+</p>
+
+<p> I hope you understand, its not very hard once you understand how it work. </p>
+</article>
+ 
+<hr size = "15" width = "100%" color = "black">
+
+<article id="two">
+
+<header>
+<h1> About tables </h1>
+</header>
+
+<p align = "Center"> I just learned about <span>tables</span>, they are a little complicated when you first learn them but if you understand these they are easy. </p>
+
+<p>The <span class="c">&lt;table&gt;</span> tag allows you to make a <span>table</span>, you can <span>change it's position</span> with 
+<span class="c">align</span> attribute, and in order to make the <span>table visible</span> you should also add the 
+<span class="c">border</span> attribute, the <span class="c">&lt;table&gt;</span> tag should be closed with
+<span class="c">&lt;/table&gt;</span>. </p>
+
+<p> Now, between <span class="c">&lt;table&gt; &lt;/table&gt;</span> there are some tags you need to use in order
+to create <span>table rows</span> and <span>table cells</span>, the <span class="c">&lt;tr&gt;</span> tag creates a <span>table row</span>, to create a <span>table cell</span> inside this <span>row</span>, you write
+the <span class="c">&lt;td&gt;</span> tag which stands for <span>table data</span>, it should close with <span class="c">&lt;/td&gt;</span> and you write 
+the text that you want the <span>cell</span> to have <span>between</span> the <span class="c">&lt;td&gt;</span> and <span class="c">&lt;/td&gt;</span> tags, after you have 
+added as many <Span>cells</span> as you like you close the <span class="c">&lt;tr&gt;</span> tag with <span class="c">&lt;/tr&gt;</span>, then you can
+create <Span>another row</span> if you want with more <span>cells</span> and after you are done you close the <span>table</span> with <span class="c">&lt;/table&gt;</span>.</p>
+
+<p> A <span>cell</span> <Span>under</span> <span>another cell</span> will take the same size as the one <span>above</span> it, or if its <span>bigger</span> than the one <span>above</span> it, then the one <Span>above</span> it will take
+the <Span>same size</span> as it, the <span>size</span> of the <span>cell</span> changes <span>depending</span> on how much <span>you write</span> inside the <span>cell</span>, a <span>cell</span> with <span>just one letter</span> will be <span>small</span>, a <span>cell</span> with <span>ten letters</span> will be <span>bigger</span>, a <span>cell</span> with <span>no letters</span> at all will be <Span>extremely thin</span>, so if you want the <span>first cell</span> of <span>each row</span> to be <Span>empty</span>, but you also want it to <span>have some space</span> and not be <span>thin</span>, you can use
+<span class="c">width</span> attribute. The <span>cells</span> will take the <span>width</span> of the <span>biggest cell</span> in their <span>column</span>, and they also
+take the <span>height</span> of the <span>tallest cell</span> in their <span>row</span>, so if <span>one row</span> has <span>no text</span>, just <span>cells</span>, the <span>cells</span> will be <span>extremely short</span>, to change that, you <span>either</span> use the <span class="c">height</span> attribute, or you can write <span class="c">&lt;br&gt;</span> inside <span>one of the cells</span>, so it's <span>size</span> change, then <span>all the cells</span> in the <Span>same row</span> with it
+will get the <span>same size</span>.</p>
+
+<p style="text-align:left;">Code:</p>
+
+<p style="text-align:left;"> <span class="c"> &lt;table align="center" border="3"&gt; <br/>
+&lt;tr&gt;<br/>
+&lt;td width="100"&gt; &lt;/td&gt;</span>   &lt;!-- Changes width of the first column to 100 --&gt; <br /> <span class="c">
+&lt;td width="100"&gt; &lt;/td&gt;</span>    &lt;!-- Changes width of the second column to 100 --&gt; <br /> <span class="c">
+&lt;td&gt; Yellow is cool &lt;/td&gt;</span>   &lt;!-- The text changes the height of the first row to the default height --&gt; <br /> <span class="c">
+&lt;/tr&gt; <br />
+&lt;tr&gt;  <br />
+&lt;td&gt; &lt;/td&gt; <br />
+&lt;td&gt; &lt;/td&gt; <br />
+&lt;td&gt; &lt;br&gt; &lt;/td&gt;</span>   &lt;!-- The br changes the height of the second row to the default height &gt;<span class="c"> <br />
+&lt;/tr&gt; <br />
+&lt;tr&gt; <br />
+&lt;td&gt; &lt;/td&gt; <br />
+&lt;td&gt; &lt;/td&gt; <br />
+&lt;td height="15"&gt; &lt;/td&gt;</span>   &lt;!-- Changes the height of the third row to 15 --&gt; <span class="c"><br />
+&lt;/tr&gt; <br />
+&lt;tr height="15"&gt;</span>   &lt;!-- Changes the height of the fourth row to 15 --&gt;<span class="c"> <br />
+&lt;td&gt; &lt;/td&gt; <br />
+&lt;td&gt; &lt;/td&gt; <br /> 
+&lt;/tr&gt; <br />
+&lt;/table&gt; </span>  
+
+</p>
+
+<p style="text-align:left;">Output:</p>
+
+<table align = "Center" border = "3">
+<tr>
+<td width="100"> </td>
+<td width="100"> </td>
+<td> Yellow is cool </td>
+</tr>
+<tr>
+<td>  </td>
+<td> </td>
+<td> <br> </td>
+</tr> 
+<tr>
+<td>  </td>
+<td></td>
+<td height="15"> </td>
+</tr>
+<tr height="15">
+<td></td>
+<td></td>
+</tr>
+</table> 
+
+
+<p>The <span class="c">colspan</span> and <span class="c">rowspan</span> attributes are used to <span>change the columns</span> and 
+<span>rows</span> a <span>cell</span> takes, for example, I may want the <span>first cell</span> to take <span>all three columns</span>, lets say there are <span>three columns</span>, I would write
+<span class="c">&lt;td colspan="3"&gt; example &lt;/td&gt;</span>, if there was a <span>fourth column</span>, the next
+<span>table data</span> I added would get to the <Span>fourth column</span>, lets try an example so you understand it better, I will make a <span>table</span> to which 
+the <span>second cell</span> of the <span>first row</span> will take <span>three columns</span> and the <span>first cell</span> of the <span>second row</span> will take <span>three rows</span>, lets do this.     </p>
+
+<p style="text-align:left;">Code:</p>
+
+<p style="text-align:left;"><span class="c"> 
+&lt;table align="center" border="3"&gt; <br/>
+&lt;tr&gt; <br />
+&lt;td&gt; &lt;/td&gt; <br />
+&lt;td colspan="3"&gt; Example &lt;/td&gt; <br />
+&lt;/tr&gt; <br />
+&lt;td rowspan="3"&gt; Example &lt;/td&gt; <br />
+&lt;td&gt; example &lt;/td&gt; <br />
+&lt;td&gt; example &lt;/td&gt; <br />
+&lt;td&gt; example &lt;/td&gt; <br />
+&lt;/tr&gt; <br />
+&lt;tr&gt; <br />
+&lt;td&gt; example &lt;/td&gt; <br />
+&lt;td&gt; example &lt;/td&gt; <br />
+&lt;td&gt; example &lt;/td&gt; <br />
+&lt;/tr&gt;<br /> 
+&lt;tr&gt; <br />
+&lt;td&gt; example &lt;/td&gt; <br />
+&lt;td&gt; example &lt;/td&gt; <br />
+&lt;td&gt; example &lt;/td&gt; <br />
+&lt;/tr&gt; <br />
+&lt;/table&gt;
+
+</span></p>
+
+<p style="text-align:left;">Output:</p>
+
+<p> 
+<table align = "center" border = "3">
+<tr>
+<td> </td>
+<td colspan="3"> Example </td>
+</tr>
+<td rowspan="3"> Example </td>
+<td> example </td>
+<td> example </td>
+<td> example </td>
+</tr>
+<tr>
+<td> example </td>
+<td> example </td>
+<td> example </td>
+</tr>
+<tr>
+<td> example </td>
+<td> example </td>
+<td> example </td>
+</tr>
+</table>
+</p>
+
+<p align = "center"> The <span class="c">bgcolor</span> attribute is used to change the <span>background color</span>, its not used
+only for <span>tables</span>, you can also use it on <span>&lt;body&gt;</span> to change the <span>background</span> of the <span>whole page</span>, and it also can be used on <Span>other elements</span>
+as well, you can use this <span>attribute</span>, and <span>other attributes</span> too such as <span>align</span>, etc, to <span>costumize</span> the <span>whole table</span>, <span>a row of the table</span>, or just <span>a cell of the table</span>, also, another <Span>element</span> 
+I didn't mention before is the <span class="c">&lt;th&gt;</span> tag, which stands for <Span>table header</span>, it works like
+a <span>table data</span>, but the text inside it is <span>bolded</span>, since its a <Span>header</span>, lets try this:   </p>
+
+
+<p style="text-align:left;">Code:</p>
+
+
+<p style="text-align:left;"> <span class="c">
+&lt;table height="200" width="250" align="center" border="3" &gt;<br />
+&lt;tr&gt;<br />
+&lt;th bgcolor="red"&gt; Red &lt;/th&gt;<br />
+&lt;th bgcolor="blue"&gt; Blue &lt;/th&gt;<br />
+&lt;th bgcolor="yellow"&gt; Yellow &lt;/th&gt;  <br />
+&lt;/tr&gt;<br />
+&lt;tr&gt;<br />
+&lt;td rowspan="2"&gt; one &lt;/td&gt;<br />
+&lt;td colspan="2"&gt; two &lt;/td&gt;<br />
+&lt;/tr&gt;<br />
+&lt;tr bgcolor="grey"&gt;<br />
+&lt;td&gt; three &lt;/td&gt;<br />
+&lt;td&gt; four &lt;/td&gt;<br />
+&lt;/tr&gt;<br />
+&lt;/table&gt; <br />
+
+</span></p>
+
+
+<p style="text-align:left;">Outcome:</p>
+<p>
+<table height="200" width="250" align = "center" border = "3">
+<tr>
+<th bgcolor = "red"> Red </th>
+<th bgcolor = "blue"> Blue </th>
+<th bgcolor = "yellow"> Yellow </th>
+</tr>
+<tr bgcolor = "grey">
+<td rowspan = "2"> one </td>
+<td colspan = "2"> two </td>
+</tr>
+<tr bgcolor = "grey"> 
+<td> three </td>
+<td> four </td>
+</tr>
+</table> </p><br><br>
+
+<p align = "center"> As I said before, there are many <span>attributes</span> you can use, if you want the <span>text</span> in a <span>cell</span> to
+be <span>at the center</span> of the <span>cell</span> for example you use <span>align</span> attribute, now, lets try to put an <span class="c">image"</span>
+inside the <span class="c">&lt;a&gt;</span> tag just like I did in the <span>page one of my notes</span>, so when I press the
+<span>image</span> it opens another website, we will put these <span>images</span> inside the <span>cells</span> of the <span>table</span>, lets try this out:</p>
+
+<p style="text-align:left;">Code:</p>
+
+<p style="text-align:left;"><span class="c">
+&lt;table width="400" height="400" align="center" border="3" bgcolor="yellow"&gt;<br />
+&lt;tr&gt;<br />
+&lt;th&gt; First page of my notes &lt;/th&gt;<br />
+&lt;th&gt; Second page of my notes &lt;/th&gt;<br />
+&lt;/tr&gt;<br />
+&lt;td align="center"&gt; &lt;a href="../HTML-Notes/Notes.html" target="_blank"&gt; &lt;img src="../images/up.jpg" width="400" height="400"&gt; &lt;/a&gt; &lt;/td&gt;<br />
+&lt;td align="center"&gt; &lt;a href="../HTML-Notes/Notes2.html" target="_blank"&gt; &lt;img src="../images/up.jpg" width="400" height="400"&gt; &lt;/a&gt; &lt;/td&gt;<br />
+&lt;/tr&gt;<br />
+&lt;/table&gt; 
+</span></p>
+
+<p style="text-align:left;">Outcome:</p>
+
+<table width = "400" height = "400" align = "center" border = "3">
+<tr bgcolor = "yellow">
+<th> First page of my notes </th>
+<th> Second page of my notes </th>
+</tr>
+<tr bgcolor = "yellow">
+<td align = "Center"> <a href = "Notes.html" target = "_blank"> <img src = "../images/up.jpg" height = "400" width = "400"> </a> </td>
+<td align = "center"> <a href = "Notes2.html" target = "_blank"> <img src = "../images/up.jpg" width = "400" height = "400"> </a> </td>
+</tr>
+</table> <br><br>
+
+<p align="center"> Something I wanna add is that you can put a <span>title</span> to your <span>table</span> by using the <span class="c">&lt;caption&gt;</span> tag right after the <span class="c">&lt;table&gt;</span> tag, this tag needs to <span>be closed</span> after you write the <span>text</span> you want to use as the <span>title</span>, it looks like this: 
+<span class="c"> &lt;table&gt; &lt;caption&gt; your title &lt;/caption&gt; &lt;tr&gt; etc,etc &lt;/table&gt;</span></p>
+<table align="center" border="3" width="300" height="100" bgcolor="white">
+<caption> Red Green Blue - RGB</caption> 
+<tr> 
+<td> One </td>
+<td> Two </td>
+<td> Three </td>
+</tr>
+<tr>
+<td> Red </td>
+<td> Green </td>
+<td> Blue </td>
+</td>
+<table>
+
+</article>
+
+
+<p>There are some extra <span>elements</span> you can use, like <span>&lt;thead&gt;</span>, 
+<span>&lt;tbody&gt;</span> and <span>&lt;tfooter&gt;</span>, these elements are mostly used 
+for <span>structuring</span> but they are also useful for other reasons, browsers for example 
+could use these elements to enable <Span>scrolling</Span> of the <span>table body</span>
+independently of the <span>header</span> and <span>footer</span>. Also, when <Span>printing</Span>
+a <Span>large table</Span> that spans multiple pages, these elements can <span>enable</span> the 
+<span>table header</span> and <span>footer</span> to be printed at the <Span>top</Span> and <span>bottom</span>
+of each page.</p>
+
+<p>Two last <Span>elements</Span> I want to talk about are <span>&lt;colgroup&gt;</span> and <Span>&lt;col&gt;</Span>,
+  these tags are useful for applying styles to entire columns, see this example: </p>
+</p>
+
+<p style="text-align: left;">Code:</p> 
+
+
+<p style="text-align: left;">
+
+  <span>&lt;table width="350" height="200" align="center" border="3px"><br>
+  &lt;colgroup><br>
+  &lt;col span="2" style="background-color:red"><br>
+  &lt;col style="background-color:blue"><br>
+  &lt;/colgroup><br>
+  &lt;tr><br>
+  &lt;th>ISBN</th><br>
+  &lt;th>Title</th><br>
+  &lt;th>Price</th><br>
+  &lt;/tr><br>
+  &lt;tr><br>
+  &lt;td>3476896</td><br>
+  &lt;td>My first HTML</td><br>
+  &lt;td>$53</td><br>
+  &lt;/tr><br>
+  &lt;/table></span>
+  
+</p> 
+
+
+<p style="text-align: left;">Outcome:</p> 
+
+<table width="350" height="200" align="center" border="3px">
+  <colgroup>
+    <col span="2" style="background-color:red">
+    <col style="background-color: blue">
+  </colgroup>
+  <tr>
+    <th>ISBN</th>
+    <th>Title</th>
+    <th>Price</th>
+  </tr>
+  <tr>
+    <td>3476896</td>
+    <td>My first HTML</td>
+    <td>$53</td>
+  </tr>
+</table>
+ 
+<p><span>Note</span>: The <span>&lt;colgroup></span> tag must be a child of a <span>&lt;table></span> element, after any <span>&lt;caption></span> elements and before any <span>&lt;thead></span>, <span>&lt;tbody></span>, <span>&lt;tfoot></span>, and <span>&lt;tr&gt;</span> elements. </p>
+<hr size = "15 size = "15" width = "100%" color = "black"> 
+
+<article id="three">
+<header>
+<h1> About iframe element: </h1>
+</header>
+<p align = "center"> I just learned about <span>iframe</span>, it allows you to put <span>another website's window</span> in your website, to do that you simply write <span class="c">&lt;iframe src = "url"  width = "700" height = "400"&gt; &lt;/iframe&gt;</span>, we will also put it in a <span>paragraph</span> in order to <span>place it at the center</span> of our page, it will look like this: </p>
+<p align = "center"> <iframe src = "Notes.html" width = "700" height = "400"> </iframe> </p>
+
+<p> You can find <Span>more informations</span> about the <Span>iframe</span> element in the <a href="../HTML-Notes/Notes4.html#five">fourth page of my notes</a>.</p>
+</article>
+
+ 
+<hr size = "15" width = "100%" color = "black"/>
+
+<article id="four">
+<header>
+<h1> About map element: </p>
+</header>
+<p> I just learned about <span>maps</span>, you know how in <span>maps</span> you can press in an <span>area</span> and it opens a description of that <span>area</span>, right? thats what <span>maps</span> are, however, it can be used for many things, it basically allows you to put <span>clickable areas</span> on an <span>image</span>.</p>
+<p> To use <span>&lt;map&gt;</span> element you first should add your <span>image</span>, just like how we learned in <span>page one of the notes</span>, one <span>new attribute</span>
+however should now be used, in order to <spa>connect</span> the <span>&lt;image&gt;</span> with the <span>&lt;map&gt;</span> later, this attribute is <span class="c">usemap="#name"</span> attribute, I will explain in a moment what
+you put for the <span>name</span>, however, remember, you have to put the <span class="c">#</span> before the <span>name</span> or it won't work. </p>
+<p> The <span class="c">&lt;map name="name"&gt;</span> tag is used to create the <span>map</span>, before I spoke about the
+<span class="c">usemap="#name"</span> attribute, this attribute is used to <span>connect</span> the <span>image</span> with the <span>map</span>, and it should have the same 
+<span>value</span> with the <span>name</span> of the <span class="c">&lt;map name="name"&gt;</span> tag, if for example the the tag had this name: <span class="c">&lt;map name="example"&gt;</span> then in order 
+to connect the <span>map</span> with the <span>image</span> the <span>image</span> should had this <span>attribute</span> inside it: <span class="c">usemap="#example"</span>, I hope you understand.</p>
+<p><span class="c">&lt;map&gt;</span> tag should be closed with <span class="c">&lt;/map&gt;</span>, inside it we add the <span class="c">&lt;area&gt;</span> tag,
+this is used to create a <Span>clickable area</span>, and three <span>main attributes</span> should be used inside this tag, <span class="c">shape="ract/circle/poly", coords="depends on the shape", href="url or file name"</span>. 
+There are other <span>attributes</span> you can add too like <span class="c">title</span> attribute which will make a <span>title</span>
+appear whenever you <span>point your mouse</span> on that <span>area</span>, and others, but the <span>three I wrote</span> before are the <Span>main ones</span> that are needed in order for the <span>area</span> to work. </p> 
+
+<p> I now will make an example using the <span>ract shape</span>, to find the <span>coords</span> you can put
+the <span>image</span> in any <span>painting software</span>, put your mouse and the <Span>left upper corner</span> of the <span>area</span> you want to use, write 
+down the <span>x and y coordinates</span>, then put your mouse at the <span>down right corner</span> and write down the <span>x and y coordinates</span> again, it
+should be like this: <span class="c">coords="x y,x y"</span>.</p>
+
+<p style="text-align:left;">Code:</p>
+
+<p style="text-align:left;">
+<span class="c">&lt;p align="center"&gt;<br>
+&lt;img src="../images/something.jpg" alt="something" usemap="#mynotes"&gt;<br>
+&lt;/p&gt;<br>
+&lt;map name="mynotes"&gt;<br> 
+&lt;area shape="ract" title="Click this to open the first page of my notes" href="../HTML-Notes/Notes.html" coord="49 95, 330 261" target="_blank"&gt;<br>
+&lt;area shape="ract" title="Click this to open the second page of my notes" href="../HTML-Notes/Notes2.html" coord="404 95,749 259" target="_blank"&gt;<br>
+&lt;/map&gt;
+</span></p>
+
+<p style="text-align:left;">Outcome:</p>
+ 
+<p align = "center"><img src = "../images/mynotes.jpg" alt = "my notes" usemap = "#mynotes"> </p>
+<map name="mynotes">
+<area shape = "ract" title = "Click this to open the first page of my notes" href = "Notes.html" coords = "45 95,330 261" target = "_blank">
+<area shape = "ract" title = "Click this to open the second page of my notes" href = "Notes2.html" target = "_blank" coords = "404 95,749 259">
+</map> 
+<p align = "center"> If I remember correctly the <span>coords</span> of the <span>circle</span> are <span class="c">coords="cx cy,r"</span>
+and you can find these <span>firstly</span> by pointing your mouse at the <span>center of the circle area</span> you want in a <span>painting 
+software</span>, write the <span>x and y coordinates</span>, then point your mouse at the <span>top of the circle</span>, write down the <span>y number</span>, then point
+your mouse at the <span>bottom of your circle</span>, write again the <Span>y number</span>, then you do <span>y1-y2</span> and find how much is the <span>radius</span> of the circle.</p>
+<p> For the <Span>poly</span> the <span>coordinates</span> look like this I believe <span class="c">coords="x y,x y,x y,x y,...."</span>, you simply describe
+that <span>path</span> of the <span>lines</span> by writing from what <span>x y position they start</span>, at what <span>x y position it goes next</span>, etc, etc. </p>
+
+<p> Here is a <span>tutorial</span> that helped me a lot with the <span>coordinates</span>, watch it any time for reference: </p>
+<p> <iframe width="754" height="400" src="https://www.youtube.com/embed/QpGXIGYclO4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+
+</article> 
+
+<hr size = "15" width = "100%" color = "black"/> 
+<article id="five">
+<header>
+<h1> Inline and block elements: </h1>
+</header>
+
+<p align = "center"> The <span class="c">block elements</span> are the ones that <span>start a new line</span> and take the <span>whole line</span>, for example,<span class="c"> &lt;h1&gt;, &lt;p&gt;, &lt;li&gt;, &lt;ol&gt;, &lt;ul&gt;</span>, these kind of stuff, <span class="c">inline elements</span> are elements that usually are used inside the <span class="c">block elements</span>, for example, when I want to put a <Span>link</span> inside a <span>paragraph</span>, or when I want to make a word <span>strong</span> with <span>&lt;strong&gt;</span> element, these kind of stuff </p>
+<p align = "center">The <span class="c">&lt;div&gt;</span> element is a <span>block-level element</span> that is often used as a <span>container</span> for other <span>HTML elements</span>, its used together with some <span>CSS</span> styling, the <span class="c">&lt;div&gt;</span> element can be used to style <span>many blocks together</span>, like, <span>ten paragraphs</span> all together for example if the <span>paragraphs</span> are between <span class="c">&lt;div&gt;</span> and <span class="c">&lt;/div&gt;</span> elements. </p>
+<p align = "center"> The <span class="c">&lt;span&gt;</span> element is an <span>inline element</span> that is used as a <span>container</span> for some <span>text</span>. When used together with <Span>CSS</span>, the <span>&lt;span&gt;</span> element can be used to style <span>parts of the text</span>, for example, it can change the <Span>color</span> of a word inside a <span>paragraph</span> if the word is between <span class="c">&lt;span&gt;</span> and <span class="c">&lt;/span&gt;</span> elements. </p>
+</article>
+<hr size = "15" width = "100%" color = "black"/>
+
+</body>
+</html> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

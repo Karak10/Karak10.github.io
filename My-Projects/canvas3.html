@@ -1,0 +1,389 @@
+<!DOCTYPE HTML>
+<html>
+<head lang="en-US">
+<meta charset="UTF-8">
+<title> Canvas collision effect </title>
+<style>
+       .left {
+        text-align: left;
+    }
+    
+    .code10 {
+    white-space: pre-wrap;
+    background-color: lightgreen;
+    }
+    
+    p {
+    text-align:center;
+    }
+    h1 {
+    text-align:center;
+    }
+    h2 {
+    text-align:center;
+    }
+    h3 {
+    text-align:center;
+    }
+    .c {
+    background-color:lightgreen;
+    }
+    hr {
+    width:100%;
+    height:15px;
+    background-color:black;
+    color:black;
+    border: black solid;
+    }
+    body {
+    background-color:rgb(165, 235, 235);
+    margin: 0;
+    height: 100vh;
+    }   
+    span {
+    background-color:lightgreen;
+    }
+    
+    a:link {
+    color: black;
+    text-shadow: 1px 0px 1px black;
+    
+    }
+    
+    a:visited {
+    color: black;
+    text-shadow: 1px 0px 1px rgb(22, 22, 22);
+    }
+    
+    a:hover {
+    text-decoration: underline;
+    color: red;
+    text-shadow: 1px 0px 1px black;
+    }
+    
+    .document{
+        width: 100vw;
+        height: 100vh;
+        overflow: auto;
+        overflow-x: hidden;
+    }
+    
+    .gray{
+        background-color: lightgray;
+    }
+    
+    .no-scroll{
+        overflow-y: hidden;
+    }
+</style> 
+<link rel="stylesheet" href="../CSS-JavaScript-External-Files/HTMLnotes.css?version=1">
+</head>
+<body>
+<hr>
+<article>
+
+<h1> Canvas collision effect </h1>
+<p><a href="../Home-Pages/myprojects.html">Click to go back</a></p>
+
+<p class="left">JavaScript:</p>
+
+<p class="left"><span class="code10">let canvas = document.getElementById('canvas-031');
+let c = canvas.getContext('2d');
+
+canvas.width = 500;
+canvas.height = 300;
+
+let getDistance = function(x1, y1, x2, y2){
+    let Vx = x2 - x1;
+    let Vy = y2 - y1;
+    return Math.hypot(Vx, Vy);
+}
+
+let rotate = function(velocity, angle){
+    let rotatedVelocities = {
+        x: velocity.x * Math.cos(angle) - velocity.y * Math.sin(angle),
+        y: velocity.x * Math.sin(angle) + velocity.y * Math.cos(angle)
+    }
+    return rotatedVelocities;
+}
+
+let particle = function(x, y, r, cl, velocities, mass){
+    this.x = x;
+    this.y = y; 
+    this.r = r;
+    this.cl = cl; 
+    this.velocity = velocities;
+    this.m = mass;
+    this.draw = function(){
+        c.fillStyle = this.cl;
+        c.beginPath();
+        c.arc(this.x, this.y, this.r, 0, 2 * Math.PI);
+        c.fill();
+        c.stroke();
+    }
+    this.changeVelocities = function(thisParticle, otherParticle){
+        let [x1, y1, v1, m1] = [thisParticle.x, thisParticle.y, thisParticle.velocity, thisParticle.m];
+        let [x2, y2, v2, m2] = [otherParticle.x, otherParticle.y, otherParticle.velocity, otherParticle.m];
+
+        let xVelocityDiff = v1.x - v2.x;
+        let yVelocityDff = v1.y - v2.y;
+
+        let xDist = x2- x1;
+        let yDist = y2 - y1;
+
+        if(xVelocityDiff * xDist + yVelocityDff * yDist >= 0){
+            let angle = -Math.atan2(y2 - y1, x2 - x1);
+
+            let rotatedV1 = rotate(v1, angle);
+            let rotatedV2 = rotate(v2, angle);
+
+            let rotatedV1final = {x: rotatedV1.x * (m1 - m2) / (m1 + m2) + rotatedV2.x * 2 * m2 / (m1 + m2), y: rotatedV1.y};
+            let rotatedV2final = {x: rotatedV2.x * (m1 - m2) / (m1 + m2) + rotatedV1.x * 2 * m2 / (m1 + m2), y: rotatedV2.y};
+
+            let finalV1 = rotate(rotatedV1final, -angle);
+            let finalV2 = rotate(rotatedV2final, - angle);
+
+            thisParticle.velocity = finalV1; 
+            otherParticle.velocity = finalV2;
+        }
+    }
+    this.update = function(particles){
+        if(this.x + this.r > canvas.width){
+            this.velocity.x = (this.velocity.x < 0)? this.velocity.x: -this.velocity.x;
+        } else if(this.x - this.r < 0){
+            this.velocity.x = Math.abs(this.velocity.x);
+        }
+
+        if(this.y + this.r > canvas.height){
+            this.velocity.y = (this.velocity.y < 0)? this.velocity.y: -this.velocity.y;
+        } else if(this.y - this.r < 0){
+            this.velocity.y = Math.abs(this.velocity.y);
+        }
+
+        for(let j = 0; j < particles.length; j++){
+            if(this == particles[j]){
+                continue;
+            } else {
+                let distance = getDistance(this.x, this.y, particles[j].x, particles[j].y) - r * 2;
+                if(distance < 0){
+                    this.changeVelocities(this, particles[j]);
+                }
+            }
+        }
+
+        this.x += this.velocity.x;
+        this.y += this.velocity.y;
+        this.draw();
+    }
+}
+
+let particles = new Array();
+
+let colors = ["#F2EBEC", "#C8C1D9", "#5D84A6", "#485159", "#F2D4AE"];
+
+function int(){
+    particles = [];
+    for(let i = 0; i < 30; i++){
+        let r = 15;
+        let x = Math.random() * (canvas.width - r * 2) + r;
+        let y = Math.random() * (canvas.height - r * 2) + r;
+        let cl = colors[Math.floor(Math.random() * colors.length)];
+        let dx = (Math.random() - 0.5) * 3;
+        let dy = (Math.random() - 0.5) * 3;
+
+        if(i !== 0){
+            for(let j = 0; j < particles.length; j++){
+                let distance = getDistance(x, y, particles[j].x, particles[j].y) - r * 2;
+                if(distance < 0){
+                    x = Math.random() * (canvas.width - r * 2) + r;
+                    y = Math.random() * (canvas.height - r * 2) + r;
+                    j = -1;
+                }
+            }
+        }    
+
+        particles.push(new particle(x, y, r, cl, {x: dx, y: dy}, 1));
+    }
+}
+
+int();
+
+canvas.addEventListener('click', (e) => {
+    int();
+});
+
+function animate(){
+    c.fillStyle = 'black';
+    c.fillRect(0, 0, canvas.width, canvas.height);
+    particles.forEach((x) => {
+        x.update(particles);
+    });
+    requestAnimationFrame(animate);
+}
+
+animate();</span></p>
+
+<p class="left">Outcome:</p>
+
+<canvas id="canvas-031" style="display: block; margin: auto; border: 3px solid black;"></canvas>
+
+    <script>
+        if(true){
+            let canvas = document.getElementById('canvas-031');
+            let c = canvas.getContext('2d');
+    
+            canvas.width = 500;
+            canvas.height = 300;
+    
+            let getDistance = function(x1, y1, x2, y2){
+                let Vx = x2 - x1;
+                let Vy = y2 - y1;
+                return Math.hypot(Vx, Vy);
+            }
+
+            let rotate = function(velocity, angle){
+                let rotatedVelocities = {
+                    x: velocity.x * Math.cos(angle) - velocity.y * Math.sin(angle),
+                    y: velocity.x * Math.sin(angle) + velocity.y * Math.cos(angle)
+                }
+                return rotatedVelocities;
+            }
+    
+            let particle = function(x, y, r, cl, velocities, mass){
+                this.x = x;
+                this.y = y; 
+                this.r = r;
+                this.cl = cl; 
+                this.velocity = velocities;
+                this.m = mass;
+                this.draw = function(){
+                    c.fillStyle = this.cl;
+                    c.beginPath();
+                    c.arc(this.x, this.y, this.r, 0, 2 * Math.PI);
+                    c.fill();
+                    c.stroke();
+                }
+                this.changeVelocities = function(thisParticle, otherParticle){
+                    let [x1, y1, v1, m1] = [thisParticle.x, thisParticle.y, thisParticle.velocity, thisParticle.m];
+                    let [x2, y2, v2, m2] = [otherParticle.x, otherParticle.y, otherParticle.velocity, otherParticle.m];
+                    
+                    let xVelocityDiff = v1.x - v2.x;
+                    let yVelocityDff = v1.y - v2.y;
+
+                    let xDist = x2- x1;
+                    let yDist = y2 - y1;
+
+                    if(xVelocityDiff * xDist + yVelocityDff * yDist >= 0){
+                        let angle = -Math.atan2(y2 - y1, x2 - x1);
+
+                        let rotatedV1 = rotate(v1, angle);
+                        let rotatedV2 = rotate(v2, angle);
+
+                        let rotatedV1final = {x: rotatedV1.x * (m1 - m2) / (m1 + m2) + rotatedV2.x * 2 * m2 / (m1 + m2), y: rotatedV1.y};
+                        let rotatedV2final = {x: rotatedV2.x * (m1 - m2) / (m1 + m2) + rotatedV1.x * 2 * m2 / (m1 + m2), y: rotatedV2.y};
+
+                        let finalV1 = rotate(rotatedV1final, -angle);
+                        let finalV2 = rotate(rotatedV2final, - angle);
+
+                        thisParticle.velocity = finalV1; 
+                        otherParticle.velocity = finalV2;
+                    }
+                }
+                this.update = function(particles){
+                    if(this.x + this.r > canvas.width){
+                        this.velocity.x = (this.velocity.x < 0)? this.velocity.x: -this.velocity.x;
+                    } else if(this.x - this.r < 0){
+                        this.velocity.x = Math.abs(this.velocity.x);
+                    }
+
+                    if(this.y + this.r > canvas.height){
+                        this.velocity.y = (this.velocity.y < 0)? this.velocity.y: -this.velocity.y;
+                    } else if(this.y - this.r < 0){
+                        this.velocity.y = Math.abs(this.velocity.y);
+                    }
+
+                    for(let j = 0; j < particles.length; j++){
+                        if(this == particles[j]){
+                            continue;
+                        } else {
+                            let distance = getDistance(this.x, this.y, particles[j].x, particles[j].y) - r * 2;
+                            if(distance < 0){
+                                this.changeVelocities(this, particles[j]);
+                            }
+                        }
+                    }
+
+                    this.x += this.velocity.x;
+                    this.y += this.velocity.y;
+                    this.draw();
+                }
+            }
+    
+            let particles = new Array();
+    
+            let colors = ["#F2EBEC", "#C8C1D9", "#5D84A6", "#485159", "#F2D4AE"];
+
+            function int(){
+                particles = [];
+                for(let i = 0; i < 30; i++){
+                    let r = 15;
+                    let x = Math.random() * (canvas.width - r * 2) + r;
+                    let y = Math.random() * (canvas.height - r * 2) + r;
+                    let cl = colors[Math.floor(Math.random() * colors.length)];
+                    let dx = (Math.random() - 0.5) * 3;
+                    let dy = (Math.random() - 0.5) * 3;
+    
+                    if(i !== 0){
+                        for(let j = 0; j < particles.length; j++){
+                            let distance = getDistance(x, y, particles[j].x, particles[j].y) - r * 2;
+                            if(distance < 0){
+                                x = Math.random() * (canvas.width - r * 2) + r;
+                                y = Math.random() * (canvas.height - r * 2) + r;
+                                j = -1;
+                            }
+                        }
+                    }    
+    
+                    particles.push(new particle(x, y, r, cl, {x: dx, y: dy}, 1));
+                }
+            }
+    
+            int();
+    
+            canvas.addEventListener('click', (e) => {
+                int();
+            });
+    
+            function isScrolledIntoView(el) {
+                var rect = el.getBoundingClientRect();
+                var elemTop = rect.top;
+                var elemBottom = rect.bottom;
+            
+                // Only completely visible elements return true:
+                var isVisible = (elemTop >= 0) && (elemBottom <= window.innerHeight);
+                // Partially visible elements return true:
+                //isVisible = elemTop < window.innerHeight && elemBottom >= 0;
+                return isVisible;
+        } 
+
+            function animate(){
+                if(isScrolledIntoView(canvas)){
+                    c.fillStyle = 'black';
+                    c.clearRect(0, 0, canvas.width, canvas.height);
+                    c.fillRect(0, 0, canvas.width, canvas.height);
+                    particles.forEach((x) => {
+                        x.update(particles);
+                    });
+                }
+                requestAnimationFrame(animate);
+            }
+    
+            animate();
+        }
+    </script>
+
+ </article>
+ 
+<hr>
+</body>
+</html>

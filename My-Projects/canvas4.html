@@ -1,0 +1,257 @@
+<!DOCTYPE HTML>
+<html>
+<head lang="en-US">
+<meta charset="UTF-8">
+<title> Canvas color picker </title>
+<style>
+       .left {
+        text-align: left;
+    }
+    
+    .code10 {
+    white-space: pre-wrap;
+    background-color: lightgreen;
+    }
+    
+    p {
+    text-align:center;
+    }
+    h1 {
+    text-align:center;
+    }
+    h2 {
+    text-align:center;
+    }
+    h3 {
+    text-align:center;
+    }
+    .c {
+    background-color:lightgreen;
+    }
+    hr {
+    width:100%;
+    height:15px;
+    background-color:black;
+    color:black;
+    border: black solid;
+    }
+    body {
+    background-color:rgb(165, 235, 235);
+    margin: 0;
+    height: 100vh;
+    }   
+    span {
+    background-color:lightgreen;
+    }
+    
+    a:link {
+    color: black;
+    text-shadow: 1px 0px 1px black;
+    
+    }
+    
+    a:visited {
+    color: black;
+    text-shadow: 1px 0px 1px rgb(22, 22, 22);
+    }
+    
+    a:hover {
+    text-decoration: underline;
+    color: red;
+    text-shadow: 1px 0px 1px black;
+    }
+    
+    .document{
+        width: 100vw;
+        height: 100vh;
+        overflow: auto;
+        overflow-x: hidden;
+    }
+    
+    .gray{
+        background-color: lightgray;
+    }
+    
+    .no-scroll{
+        overflow-y: hidden;
+    }
+</style> 
+<link rel="stylesheet" href="../CSS-JavaScript-External-Files/HTMLnotes.css?version=1">
+</head>
+<body>
+<hr>
+<article>
+
+<h1> Canvas color picker </h1>
+<p><a href="../Home-Pages/myprojects.html">Click to go back</a></p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><Span class="code10">&lt;table id="colorpicker-project">
+    &lt;tr>
+        &lt;th>Source&lt;/th>
+        &lt;th>Hovered color&lt;/th>
+        &lt;th>Selected Color&lt;/th>
+    &lt;/tr>
+    &lt;tr>
+        &lt;td>&lt;canvas id="canvas-colorpicker">&lt;/canvas>&lt;/td>
+        &lt;td>&lt;div id="hoveredcolor">&lt;/div>&lt;/td>
+        &lt;td>&lt;div id="selectedcolor">&lt;/div>&lt;/td>
+    &lt;/tr>
+&lt;/table></Span></p>
+
+<p class="left">CSS Code:</p>
+
+<p class="left"><Span class="code10">#colorpicker-project{
+    border: 3px solid lightcyan;
+    border-collapse: collapse;
+    margin: auto;
+    background-color: black;
+    color: lightcyan;
+}
+#colorpicker-project th, #colorpicker-project td{
+    border: 2px solid lightcyan;
+    padding: 5px;
+}
+#selectedcolor, #hoveredcolor{
+    height: 150px;
+    width: 100%;
+}</Span></p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let canvas = document.getElementById('canvas-colorpicker');
+let c = canvas.getContext('2d');
+let hoveredColor = document.getElementById('hoveredcolor');
+let selectedColor = document.getElementById('selectedcolor');
+
+let gradient = c.createLinearGradient(0, 0, canvas.width, canvas.height);
+gradient.addColorStop(0, 'red');
+gradient.addColorStop(0.5, 'green');
+gradient.addColorStop(1, 'blue');
+
+c.fillStyle = gradient;
+c.fillRect(0, 0, canvas.width, canvas.height);
+
+let mouse = {
+    x: undefined,
+    y: undefined
+}
+
+function colorPicker(event, target){
+    mouse.x = event.offsetX;
+    mouse.y = event.offsetY;
+
+    let imageData = c.getImageData(0, 0, canvas.width, canvas.height);
+    
+    function getColorIndices(x, y, width){
+        let red = (x + y * width) * 4;
+        return [red, red + 1, red + 2, red + 3];
+    }
+
+    let colorIndices = getColorIndices(mouse.x, mouse.y, canvas.width);
+
+    let RGBA = colorIndices.map((x) => {
+        return imageData.data[x];
+    });
+
+    target.style.backgroundColor = `rgba(${RGBA})`;
+}
+
+canvas.addEventListener('mousemove', (e) => {
+    colorPicker(e, hoveredColor);
+});
+
+canvas.addEventListener('click', (e) => {
+    colorPicker(e, selectedColor);
+});</Span></p>
+
+<p class="left">Outcome:</p>
+
+<Style>
+    #colorpicker-project{
+        border: 3px solid lightcyan;
+        border-collapse: collapse;
+        margin: auto;
+        background-color: black;
+        color: lightcyan;
+    }
+    #colorpicker-project th, #colorpicker-project td{
+        border: 2px solid lightcyan;
+        padding: 5px;
+    }
+    #selectedcolor, #hoveredcolor{
+        height: 150px;
+        width: 100%;
+    }
+</Style>
+
+<table id="colorpicker-project">
+    <tr>
+        <th>Source</th>
+        <th>Hovered color</th>
+        <th>Selected Color</th>
+    </tr>
+    <tr>
+        <td><canvas id="canvas-colorpicker"></canvas></td>
+        <td><div id="hoveredcolor"></div></td>
+        <td><div id="selectedcolor"></div></td>
+    </tr>
+</table>
+
+<script>
+    if(true){
+        let canvas = document.getElementById('canvas-colorpicker');
+        let c = canvas.getContext('2d');
+        let hoveredColor = document.getElementById('hoveredcolor');
+        let selectedColor = document.getElementById('selectedcolor');
+        
+        let gradient = c.createLinearGradient(0, 0, canvas.width, canvas.height);
+        gradient.addColorStop(0, 'red');
+        gradient.addColorStop(0.5, 'green');
+        gradient.addColorStop(1, 'blue');
+        
+        c.fillStyle = gradient;
+        c.fillRect(0, 0, canvas.width, canvas.height);
+
+        let mouse = {
+            x: undefined,
+            y: undefined
+        }
+
+        function colorPicker(event, target){
+            mouse.x = event.offsetX;
+            mouse.y = event.offsetY;
+
+            let imageData = c.getImageData(0, 0, canvas.width, canvas.height);
+            
+            function getColorIndices(x, y, width){
+                let red = (x + y * width) * 4;
+                return [red, red + 1, red + 2, red + 3];
+            }
+
+            let colorIndices = getColorIndices(mouse.x, mouse.y, canvas.width);
+
+            let RGBA = colorIndices.map((x) => {
+                return imageData.data[x];
+            });
+
+            target.style.backgroundColor = `rgba(${RGBA})`;
+        }
+
+        canvas.addEventListener('mousemove', (e) => {
+            colorPicker(e, hoveredColor);
+        });
+
+        canvas.addEventListener('click', (e) => {
+            colorPicker(e, selectedColor);
+        });
+    }
+</script>
+ 
+
+ </article>
+ 
+<hr>
+</body>
+</html>

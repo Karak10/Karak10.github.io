@@ -1,0 +1,340 @@
+<!DOCTYPE HTML>
+<html>
+<head lang="en-US">
+<meta charset="UTF-8">
+<title> Canvas fireworks </title>
+<style>
+       .left {
+        text-align: left;
+    }
+    
+    .code10 {
+    white-space: pre-wrap;
+    background-color: lightgreen;
+    }
+    
+    p {
+    text-align:center;
+    }
+    h1 {
+    text-align:center;
+    }
+    h2 {
+    text-align:center;
+    }
+    h3 {
+    text-align:center;
+    }
+    .c {
+    background-color:lightgreen;
+    }
+    hr {
+    width:100%;
+    height:15px;
+    background-color:black;
+    color:black;
+    border: black solid;
+    }
+    body {
+    background-color:rgb(165, 235, 235);
+    margin: 0;
+    height: 100vh;
+    }   
+    span {
+    background-color:lightgreen;
+    }
+    
+    a:link {
+    color: black;
+    text-shadow: 1px 0px 1px black;
+    
+    }
+    
+    a:visited {
+    color: black;
+    text-shadow: 1px 0px 1px rgb(22, 22, 22);
+    }
+    
+    a:hover {
+    text-decoration: underline;
+    color: red;
+    text-shadow: 1px 0px 1px black;
+    }
+    
+    .document{
+        width: 100vw;
+        height: 100vh;
+        overflow: auto;
+        overflow-x: hidden;
+    }
+    
+    .gray{
+        background-color: lightgray;
+    }
+    
+    .no-scroll{
+        overflow-y: hidden;
+    }
+</style> 
+<link rel="stylesheet" href="../CSS-JavaScript-External-Files/HTMLnotes.css?version=1">
+</head>
+<body>
+<hr>
+<article>
+
+<h1> Canvas fireworks </h1>
+<p><a href="../Home-Pages/myprojects.html">Click to go back</a></p>
+
+<style>
+    .canvvaas{
+        display: block; 
+        margin: auto;
+        border: 3px solid black;
+    }
+    .blk{
+        background-color: black;
+    }
+</style>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let canvas = document.querySelector('#canvvaas13');
+let c = canvas.getContext('2d');
+
+canvas.width = 500;
+canvas.height = 300;
+
+let particle = class{
+    constructor(x, y, r, cl, velocity, previousCoords){
+        this.x = x;
+        this.y = y;
+        this.r = r;
+        this.cl = cl;
+        this.velocity = velocity;
+        this.previousCoords = previousCoords;
+        this.friction = 0.99;
+        this.gravity = 0.05;
+        this.alpha = 1;
+    }
+
+    draw(){
+        c.save();
+        c.globalAlpha = this.alpha;
+        c.strokeStyle = this.cl;
+        c.lineJoin = 'round';
+        c.lineCap = 'round';
+        c.lineWidth = this.r; 
+
+        c.beginPath();
+        c.moveTo(this.previousCoords.x, this.previousCoords.y);
+        c.lineTo(this.x, this.y);
+        c.stroke();
+        c.restore();
+    }
+
+    update(){
+        if(this.previousCoords.x == undefined){
+            this.previousCoords.x = this.x;
+            this.previousCoords.y = this.y;
+        }
+
+        this.velocity.x *= this.friction;
+        this.velocity.y *= this.friction;
+        this.velocity.y += this.gravity;
+
+        this.x += this.velocity.x; 
+        this.y += this.velocity.y;
+
+        this.draw();
+
+        this.alpha -= 0.005;
+
+        this.previousCoords.x = this.x;
+        this.previousCoords.y = this.y;
+    }
+} 
+
+let particles = new Array();
+
+canvas.addEventListener('click', (e)=>{
+    let particlesCount = 200;
+    let angleIncrement = Math.PI * 2 / particlesCount;
+
+    for(let i = 0; i < particlesCount; i++){
+        let x = e.offsetX;
+        let y = e.offsetY;
+        let cl = `hsl(${Math.random() * 360}, 50%, 50%`;
+        let velocity = {
+            x: Math.cos(angleIncrement * i) * Math.random() * 8,
+            y: Math.sin(angleIncrement * i) * Math.random() * 8
+        }
+        let r = 6;
+
+        particles.push(new particle(x, y, r, cl, velocity, {x: undefined, y: undefined}));
+    }
+});
+
+function isScrolledIntoView(el) {
+    var rect = el.getBoundingClientRect();
+    var elemTop = rect.top;
+    var elemBottom = rect.bottom;
+    var isVisible = (elemTop >= 0) && (elemBottom <= window.innerHeight);
+    return isVisible;
+}
+
+let animate = function(){
+    let imageData = c.getImageData(0, 0, canvas.width, canvas.height);
+    let data = imageData.data;
+    for(let i = 3; i < data.length; i += 4){
+        data[i] = data[i] * 0.9;
+        if(data[i] / 255 < 0.09){
+            data[i] = data[i] * 0;
+        }
+    }
+    c.clearRect(0, 0, canvas.width, canvas.height);
+    c.putImageData(imageData, 0, 0);
+
+    c.fillStyle = 'white';
+    c.font = 'normal 25px Arial';
+    c.textAlign = 'left';
+    c.fillText('Click to make fireworks go boom', 10, 20);
+
+    particles.forEach((particle, i)=>{
+        if(particle.alpha > 0){
+            particle.update();
+        } else{
+            particles.splice(i, 1);
+        }
+    });
+    requestAnimationFrame(animate);
+}
+
+animate();</Span></p>
+
+<p class="left">Outcome:</p>
+
+<canvas class="canvvaas blk" id="canvvaas13"></canvas>
+
+<script>
+if(true){
+    let canvas = document.querySelector('#canvvaas13');
+    let c = canvas.getContext('2d');
+
+    canvas.width = 500;
+    canvas.height = 300;
+
+    let particle = class{
+        constructor(x, y, r, cl, velocity, previousCoords){
+            this.x = x;
+            this.y = y;
+            this.r = r;
+            this.cl = cl;
+            this.velocity = velocity;
+            this.previousCoords = previousCoords;
+            this.friction = 0.99;
+            this.gravity = 0.05;
+            this.alpha = 1;
+        }
+
+        draw(){
+            c.save();
+            c.globalAlpha = this.alpha;
+            c.strokeStyle = this.cl;
+            c.lineJoin = 'round';
+            c.lineCap = 'round';
+            c.lineWidth = this.r; 
+
+            c.beginPath();
+            c.moveTo(this.previousCoords.x, this.previousCoords.y);
+            c.lineTo(this.x, this.y);
+            c.stroke();
+            c.restore();
+        }
+
+        update(){
+            if(this.previousCoords.x == undefined){
+                this.previousCoords.x = this.x;
+                this.previousCoords.y = this.y;
+            }
+
+            this.velocity.x *= this.friction;
+            this.velocity.y *= this.friction;
+            this.velocity.y += this.gravity;
+
+            this.x += this.velocity.x; 
+            this.y += this.velocity.y;
+
+            this.draw();
+
+            this.alpha -= 0.005;
+
+            this.previousCoords.x = this.x;
+            this.previousCoords.y = this.y;
+        }
+    } 
+
+    let particles = new Array();
+
+    canvas.addEventListener('click', (e)=>{
+        let particlesCount = 200;
+        let angleIncrement = Math.PI * 2 / particlesCount;
+
+        for(let i = 0; i < particlesCount; i++){
+            let x = e.offsetX;
+            let y = e.offsetY;
+            let cl = `hsl(${Math.random() * 360}, 50%, 50%`;
+            let velocity = {
+                x: Math.cos(angleIncrement * i) * Math.random() * 8,
+                y: Math.sin(angleIncrement * i) * Math.random() * 8
+            }
+            let r = 6;
+
+            particles.push(new particle(x, y, r, cl, velocity, {x: undefined, y: undefined}));
+        }
+    });
+
+    function isScrolledIntoView(el) {
+        var rect = el.getBoundingClientRect();
+        var elemTop = rect.top;
+        var elemBottom = rect.bottom;
+        var isVisible = (elemTop >= 0) && (elemBottom <= window.innerHeight);
+        return isVisible;
+    }
+
+    let animate = function(){
+        let imageData = c.getImageData(0, 0, canvas.width, canvas.height);
+        let data = imageData.data;
+        for(let i = 3; i < data.length; i += 4){
+            data[i] = data[i] * 0.9;
+            if(data[i] / 255 < 0.09){
+                data[i] = data[i] * 0;
+            }
+        }
+        c.clearRect(0, 0, canvas.width, canvas.height);
+        c.putImageData(imageData, 0, 0);
+
+        c.fillStyle = 'white';
+        c.font = 'normal 25px Arial';
+        c.textAlign = 'left';
+        c.fillText('Click to make fireworks go boom', 10, 20);
+
+        particles.forEach((particle, i)=>{
+            if(particle.alpha > 0){
+                particle.update();
+            } else{
+                particles.splice(i, 1);
+            }
+        });
+        requestAnimationFrame(animate);
+    }
+
+    animate();
+}
+</script>
+ 
+
+ </article>
+ 
+<hr>
+</body>
+</html>

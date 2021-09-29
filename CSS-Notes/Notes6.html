@@ -1,0 +1,547 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<title> Page six of my notes </title>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../CSS-JavaScript-External-Files/HTMLnotes.css?version=1">
+<style>
+#intro {
+color: white;
+background-color: gray;
+}
+#blue {
+color: blue;
+}
+.blue2 {
+color: blue;  
+}
+.blue3{
+color: blue !important;
+}
+.white {
+color:white;
+background-color: gray;
+}
+.red {
+color: red;
+}
+.blue {
+color: blue;
+}
+#example1 .secondp em {
+color: pink;
+}
+.secondp {
+background-color: gray;
+color: white;
+}
+</style>
+</head>
+<body>
+
+<hr>
+<header> 
+<h1> Page one of my CSS notes </h1>
+</header>
+
+<article id="start-of-page"> 
+  
+    <div id="homepages">
+    
+        <h3>Home Pages:</h3>
+       
+    
+    </div>
+    
+    <nav data-notes="CSS" data-page="1">
+    
+    </nav>
+    
+    
+    <h3> Informations included in this page: </h3>
+<p><a href="#introduction"> Introduction to CSS </a></p>
+<p><a href="#CSStypes"> Inline, Embedded, External CSS</a></p>
+<p><a href="#three"> CSS Syntax </a></p>
+<p><a href="#four"> Class and id Selectors</a></p>
+<p><a href="#five">  Descendant Selectors</a></p>
+<p><a href="#six"> How to make CSS comments</a></p>
+<p><a href="#seven"> Style Cascade and Inheritance</a></p>
+
+    </article>
+    
+     <script src="../CSS-JavaScript-External-Files/nav.js"></script>
+
+
+ 
+<hr>
+
+<article id="introduction"> <!-- Introduction to CSS -->
+
+<header>
+<h1> Introduction to CSS </h1>
+</header>
+
+<section> <!-- What is CSS? -->
+
+<header>
+<h2> <ins>What is CSS?</ins> </h2>
+</header>
+
+<p> <span class="c">CSS</span> stands for <span>C</span>ascading <span>S</span>tyle <span>S</span>heets. </p>
+<p><dl align="center"> 
+<dt> <span>Cascading</span> refers to the way <span class="c">CSS</span> applies one style on top of another. </dt>
+<dt> <span>Style Sheets</span> control the look and feel of web documents. </dt>
+</dl></p>
+<p><span class="c">CSS</span> and <span class="c">HTML</span> work hand in hand:</p>
+<p><dl align="center">
+<dt> <span class="c">HTML</span> sorts out the page structure. </dt>
+<dt> <Span class="c">CSS</span> defines how <span class="c">HTML</span> elements are displayed. </dt>
+</dl></p>
+
+</section>
+
+<section> <!-- Why use CSS? -->
+
+<header>
+
+<h2> <ins>Why use CSS?</ins> </h2>
+
+</header>
+
+<p> <span class="c">CSS</span> allows you to apply specific styles to specific <span class="c">HTML</span> elements. </p>
+<p> The main benefit of <span class="c">CSS</span> is that it allows you to seperate <span>style</span> from <span>content</span>.</p>
+<p> Using just <span class="c">HTML</span>, all the styles and formatting are in the same place, which becomes rather difficult to maintain as the page grows. </p>
+
+</article>
+
+<hr>
+
+<article id="CSStypes"> <!-- Inline, Embedded, External CSS -->
+
+<header>
+<h1> Inline, Embedded, External CSS </h1
+</header>
+
+<section> <!-- Inline CSS -->
+
+<header>
+
+<h2> <ins>Inline CSS:</ins></h2>
+
+</header>
+
+<p> Using an <span>inline style</span> is one of the ways to insert a 
+<span>style sheet</span>. With an <span>inline style</span>, an <span>unique style</span> is applied to a <span>single element</span>. </p>
+
+<p> In order to use an <span>inline style</span>, add the <span class="c">style attribute</span> to the <strong>relevant tag</strong>.</p>
+
+<p>The example bellow shows how to create a <span>paragraph</span> with a <span>gray background</span> and <span>white text</span>: </p>
+
+<p> <strong>Code:</strong></p>
+<p> <span class="c">&lt;p style="color:white; background-color:gray;"&gt; This is an example of inline styling. &lt;p&gt;</span> </p>
+<p><strong>Outcome:</strong> </p>
+<p style="color:white; background-color:gray;"> This is an example of inline styling. </p>
+
+</section>
+
+<section> <!-- Embedded/Internal CSS -->
+
+<header>
+
+<h2> <ins>Embedded/Internal CSS:</ins> </h2>
+
+</header>
+
+<p> <span>Internal styles</span> are defined with the <span class="c">&lt;style&gt;</span> element, inside the <span class="c">&lt;head&gt;</span> section
+of an <span class="c">HTML</span> page. </p>
+<p> For example, the following code styles all <span>paragraphs</span>: </p>
+<p><span class="c">&lt;head&gt;<br />
+&lt;style&gt; <br />
+p { <br />
+color:white;<br />
+background-color:gray; <br />
+}<br />
+&lt;/style&gt; <br />
+&lt;head&gt;</span></p>
+
+</section>
+
+<section> <!-- External CSS -->
+
+<header>
+
+<h2> <ins>External CSS:</ins> </h2>
+
+</header>
+
+<p> With this method, all <span>styling rules</span> are contained in a <Span>single text file</span>, which is saved with the 
+<strong>.css</strong> extension. </p>
+<p>This <span class="c">CSS</span> file is then referenced in the <span class="c">HTML</span> using the <span class="c">&lt;link&gt;</span> tag. The 
+<span class="c">&lt;link&gt;</span> element goes inside the <span class="c">&lt;head&gt;</span> section.</p>
+<p> Here is an example: </p>
+<p><span class="c"> &lt;head&gt; <br />
+&lt;link rel="stylesheet" href="example.css"&gt;<br />
+&lt;head&gt; </span></p>
+<p> <span>Rel</span> stands for <span>relationship</span>, so you specify whats the <span>relationship</span> with the file, in which case its a <span>stylesheet</span>. </p>
+<p> The <span>other file</span> uses the same type of <span>code</span> I described before in the <span>embedded/internal</span> section, the only 
+difference is that <span>instead</span> of typing it inside the <span>style tag</span> in head we type it in <span>another file</span>. </p>
+
+<p> Something else I want to add is that when you have updeaded an <span>external CSS file</span> to your <span>server</span> in an
+<span>online website</span> the <span>cache</span> saves your <span>CSS file</span> and when you <span>update</span> your file
+it still uses the <span>old one</span>, to force it read the <span>new one</span> you can write <Span>name.css?version=1</span>,
+<span>name.css?version=2</span> etc, you only write it in <Span>code</span>, you <Span>don't need</span> to
+change the <span>name</span> of your <span>file</span>, you could actually write <span>anything</span>, not just <span>version</span>, this
+lets the <span>browser</span> know the <Span>file</span> has changed, so
+it looks for the <span>CSS file</span> and <span>updates</span> it.</p>
+
+<p> <strong> The <span class="c">External CSS style</span> can be overran by an <span class="c">Embedded/Internal CSS style</span>, which can be overran by an <span class="c">inline CSS style</span>, they
+all can be overran by the <span class="c">!important</span> attribute.</strong> </p>
+</section>
+
+</article>
+
+<hr>
+
+<article id="three">
+
+ 
+<header>
+<h1> CSS Syntax </h1>
+</header>
+
+<p><span>CSS</span> is composed of <span>style rules</span> that the <span>browser</span>
+<span>interprets</span> and then <span>applies</span> to the <span>corresponding</span> 
+elements in your <span>document</span>.</p>
+
+<p>A <span>style rule</span> has three parts: <span>selector</span>, <span>property</span> and <span>value</span>.</p>
+
+<p>For example, the <span>headline</span> color can be defined as:</p>
+
+<p><span>h1 { color: orange; }</p>
+
+<p> The <Span>most common</span> and <span>easy</span> to understand <Span>selectors</span>
+are the <span>type selectors</span>. This <span>selector</span> targets <span>element types</span>
+on the <span>page</span>.
+
+<p>For example, to <span>target</span> all the <Span>paragraphs</span> on the page:</p>
+
+<p><span> p {<br>
+           color: red;<br>
+           font-size: 130%;<br>
+}</span> </p>
+
+<p> A <span>styling rule</span> written <span>after</span> another can <span>overrun</span> the <Span>previous</span>
+rule, any <span>styling rule</span> in which you write <span>!important</span> can <Span>overrun</span> another <Span>styling rule</span>
+no matter it's position. </p>
+
+</article>
+
+<hr>
+
+<article id="four">
+
+<header>
+<h1>Class and id Selectors </h1>
+</header>
+
+<p><span>id selectors</span> allow you to style an <span>HTML</span>
+element that has an <span>id</span> attribute, regardless of their <span>position</span> in the <span>document</span> tree.
+Here is an <span>example</span> of an <span>id selector</span>:</p>
+
+<p style="text-align:left;">HTML code:</p>
+ 
+<p style="text-align:left;"> 
+<span>&lt;p id="intro"&gt; This paragraph is in the intro section. &lt;/p&gt;<br>
+&lt;p&gt; This paragraph is not in the intro section. &lt;/p&gt;</span>
+</p>
+
+<p style="text-align:left;">CSS code:</p>
+
+<p style="text-align:left;">
+<Span>#intro {<br>
+color: white;<br>
+background-color: gray; <br>
+}</span>
+</p>
+
+
+<p style="text-align:left;">Outcome:</p>
+
+<p id="intro"> This paragraph is in the intro section. </p>
+<p> This paragraph is not in the intro section. </p>
+
+<p><span>Class selectors</span> work in a <span>similar way</span>. The <Span>major difference</span> is that <span>IDs</span> can
+only be applied <span>once</span>, while <Span>classes</span> can be used as many times on <Span>page</span> as needed. Why use <span>ids</span> then?
+Well, <span>id</span> is mostly used to <span>reference</span> an <Span>element</span> while using <Span>JavaScript</span>, <Span>ids</span> are also
+more <span>important</span> than <span>classes</span>, therefore, an <Span>id</span> will <Span>overrun</span> a <span>class</span>, let me give you an <span>example</span>:</p>
+
+<p style="text-align:left;">HTML code:</p>
+ 
+<p style="text-align:left;"> 
+<span>
+&lt;p class="white"&gt;  This is a paragraph. &lt;/p&gt;<br>
+&lt;p class="white" id="blue"&gt; This is a paragraph. &lt;/p&gt;<br>
+</p>
+
+<p style="text-align:left;">CSS code:</p>
+
+<p style="text-align:left;">
+<Span>#blue {<br>
+color: blue;<br>
+}<br>
+.white {<br>
+color: white;<br>
+background-color: gray;<br>
+}</span>
+</p>
+
+
+<p style="text-align:left;">Outcome:</p>
+
+<p class="white"> This is a paragraph. </p>
+<p class="white" id="blue"> This is a paragraph. </p>
+
+
+<p>As you can see, to reference an <Span>id</span> I write <Span>#name</span>, to reference a <span>class</span> I write <Span>.name</span>.</p>
+ 
+<p> You could do the <Span>same thing</span> using <span>multiple classes</span>, to use <Span>multiple classes</span> you simply
+make a <Span>space</span> and write the <Span>name</span> of your <Span>second class</span>, lets try this: </p>
+
+<p style="text-align:left;">HTML code:</p>
+ 
+<p style="text-align:left;"> 
+<span>
+&lt;p class="white"&gt;  This is a paragraph. &lt;/p&gt;<br>
+&lt;p class="white blue"&gt; This is a paragraph. &lt;/p&gt;<br>
+</p>
+
+<p style="text-align:left;">CSS code:</p>
+
+<p style="text-align:left;">
+<Span>.white {<br>
+color: white;<br>
+background-color: gray;<br>
+}<br>
+.blue {<br>
+color: blue;<br>
+}</span>
+</p>
+
+
+<p style="text-align:left;">Outcome:</p>
+
+<p class="white"> This is a paragraph. </p>
+<p class="white blue"> This is a paragraph. </p>
+
+<p>It <Span>only works</span> because the <Span>styling rule</span> for <span>blue class</span>
+was written <span>after</span> the <span>styling rule</span> for <span>white class</span>, 
+if we had done the <Span>opposite</span> the <Span>blue class</span> would not overrun
+the <span>styling rules</span> of <span>white class</span>, while <Span>id</span> would
+regardless it's <span>position</span> in the <span>document</span> tree, thats because <span>id</span> is more important than <span>class</span>. </p>
+
+<p style="text-align:left;">HTML code:</p>
+ 
+<p style="text-align:left;"> 
+<span>
+&lt;p class="white"&gt;  This is a paragraph. &lt;/p&gt;<br>
+&lt;p class="white blue"&gt; This is a paragraph. &lt;/p&gt;<br>
+</p>
+
+<p style="text-align:left;">CSS code:</p>
+
+<p style="text-align:left;">
+<Span>.blue {<br>
+color: blue;<br>
+}<br>
+.white {<br>
+color: white;<br>
+background-color: gray;<br>
+}<br>
+</span>
+</p>
+
+
+<p style="text-align:left;">Outcome:</p>
+
+<p class="white"> This is a paragraph. </p>
+<p class="white blue2"> This is a paragraph. </p>
+
+<p> These <Span>styling rules</span>, when used on a bigger extend can be confusing, thats
+why you can write <span>!important</span> inside the <span>styling rule</span> to force it
+overrun any other <span>styling rules</span>.</p>
+
+
+<p style="text-align:left;">HTML code:</p>
+ 
+<p style="text-align:left;"> 
+<span>
+&lt;p class="white"&gt;  This is a paragraph. &lt;/p&gt;<br>
+&lt;p class="white blue"&gt; This is a paragraph. &lt;/p&gt;<br>
+</p>
+
+<p style="text-align:left;">CSS code:</p>
+
+<p style="text-align:left;">
+<Span>.blue {<br>
+color: blue !imporant;<br>
+}<br>
+.white {<br>
+color: white;<br>
+background-color: gray;<br>
+}<br>
+</span>
+</p>
+
+
+<p style="text-align:left;">Outcome:</p>
+
+<p class="white"> This is a paragraph. </p>
+<p class="white blue3"> This is a paragraph. </p>
+
+</article>
+<hr>
+
+<article id="five">
+
+<header>
+
+<h1> Descendant Selectors </h1>
+
+</header>
+
+<p>These <span>selectors</span> are used to <span>select</span> elements that are <span>descendants</span>
+of another element. When <span>selecting</span> levels, you can <span>select</span> as many levels deep as you need to.</p>
+
+<p>For example, see the <Span>code below</span>, I will <span>target</span> only the <Span>&lt;em&gt;</span>
+element inside the <span>second</span> paragraph inside the <span>&lt;div&gt;</span>:</p>
+
+<p style="text-align:left;">HTML code:</p>
+
+<p style="text-align:left;">
+<span>&lt;div id="example1"&gt;<br>
+<br>
+&lt;p&gt; This is a &lt;em&gt;paragraph&lt;/em&gt;.&lt;/p&gt;<br>
+<br>
+&lt;p class="secondp"&gt;This is a &lt;em&gt;second paragraph&lt;/em&gt;.&lt;/p&gt;<br>
+<br>
+&lt;/div&gt;<br>
+<br>
+&lt;p class="secondp"&gt; This is a &lt;em&gt;third paragraph&lt;/em&gt;.&lt;/p&gt;</span>
+</p>
+
+<p style="text-align:left;">CSS code:</p>
+
+<p style="text-align:left;"> 
+<span>#example1 .secondp em { <br>
+color: pink;<br>
+}<br>
+.secondp {<br>
+background-color: gray;<br>
+color: white;<br>
+}</span>
+</p>
+
+<p style="text-align:left;">Outcome:</p>
+
+<div id="example1">
+<p> This is a <em>paragraph</em>.</p>
+<p class="secondp">This is a <em>second paragraph</em>.</p>
+</div>
+<p class="secondp"> This is a <em>third paragraph</em>.</p>
+
+
+ 
+</article>
+
+<hr>
+
+<article id="six">
+
+<header>
+<h1> How to make CSS comments </h1>
+</header>
+
+<p><span>Comments</span> are used to <Span>explain</span> your <span>code</span>, and
+my help you when you <Span>edit</span> the <Span>code</span> later, if you work
+with a team <Span>comments</span> should always be written, so your team
+can read your <span>code</span> and understand it <Span>easier</span> and <span>faster</span>.</p>
+
+<p>A <span>CSS comment</span> looks like this:</p>
+
+<p><span>/* Comment goes here */</span></p>
+
+<p> The <span>comments</span> do not appear in the <span>browser</span>, they <Span>are readable</span> however
+through the <span>code</span>, and the <Span>code</span> can be easily be seen by visitors,
+so <span>don't</span> include important informations in the <span>comments</span>, simply use these to
+<span>describe</span> what each <span>part of the code</span> is supposed to does. </p>
+
+</article>
+
+<hr>
+
+<article id="seven">
+
+<header>
+<h1>Style Cascade and Inheritance</h1>
+</header>
+
+<section>
+
+<header>
+<h2><ins>Cascade:</ins></h2>
+</header>
+
+<p>The <Span>final appearance</span> of a <span>web page</span>
+is a result of <span>different styling rules</span>.</p>
+
+<p>The <span>three main</span> sources of <span>style information</span> that
+<Span>form</span> a <Span>cascade</span> are:</p>
+
+<p>-The <span>stylesheet</span> created by the <span>author of the page</span>.<br><br>
+-The <Span>browser's default styles</span><br><br>
+-And <span>styles</span> specified <span>by the user</span></p>
+
+</section>
+
+<section>
+
+<header>
+<h2><ins>Inheritance:</ins></h2>
+</header>
+
+<p><span>Inheritance</span> refers to the way <span>properties</span> flow through the <span>page</span>.
+A <span>child element</span> will <Span>usually</span> take the <span>characteristics</span> of the <span>parent element</span>
+unless <span>otherwise defined</span>.</p>
+
+<p> See the following <span>example</span> to understand what I mean:</p>
+
+<p style="text-align:left;">Code:</p>
+
+<p style="text-align:left;"> 
+<span>&lt;head&gt;<br>
+&lt;meta charset="UTF-8"&gt;<br>
+&lt;title&gt; Example &lt;/title&gt;<br>
+&lt;style&gt;<br>
+body {<br>
+color: green;<br>
+font-family: Arial;<br>
+}<br>
+&lt;/style&gt;<br>
+&lt;/head&gt;</span>
+</p>
+
+<p> With this <span>code</span>, if we now added a <span>paragraph</span> without <span>specifying</span> what <span>color</span> or
+<span>font-family</span> we want it to be, it would get the <span>characteristics</span> of it's <Span>parent lement</span>, and it would be <span>green</span>
+with <Span>Arial font-family</span>.</p>
+
+</section>
+
+</article>
+
+
+<hr>
+
+<footer>
+</footer>
+</body>
+</html>

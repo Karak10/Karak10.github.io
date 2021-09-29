@@ -1,0 +1,215 @@
+<!DOCTYPE HTML>
+<html>
+<head lang="en-US">
+<meta charset="UTF-8">
+<title> Music Circle </title>
+<link rel="stylesheet" href="../CSS-JavaScript-External-Files/HTMLnotes.css?version=1">
+<Style>
+    body{
+        background-color: rgb(165, 235, 235);
+        background: rgb(165, 235, 235);
+    }
+</Style>
+</head>
+<body>
+ 
+
+<article>
+    <hr>
+<h1> Music Cirlce </h1>
+<p><a href="../Home-Pages/myprojects.html">Click to go back</a></p>
+
+
+ <p style="text-align:left;">Code:</p>
+
+<p style="text-align:left;">
+
+<Span>&lt;p align="Center"&gt; <br>
+    <br>
+    &lt;svg width="350" height="300" viewBox="-195 -110 400 200"&gt;</Span><br>
+    <br>
+&lt;!-- Circle's fill color below --&gt;<br>
+<br>
+    <Span>&lt;defs&gt;<br>
+&lt;linearGradient id="color"&gt;<br>
+<br>
+&lt;stop offset="0%" stop-color="red" /&gt;<br>
+&lt;stop offset="45%" stop-color="pink" /&gt;<br>
+&lt;stop offset="49%" stop-color="pink"/&gt;<br>
+&lt;stop offset="51%" stop-color="cyan"/&gt;<br>
+&lt;stop offset="55%" stop-color="cyan""/&gt; <br>
+&lt;stop offset="100%" stop-color="blue"/&gt;  <br>
+<br>
+&lt;/linearGradient&gt;<br>
+    &lt;/defs&gt;</Span><br>
+    <br>
+&lt;!-- Circle's fill color above --&gt; <br>
+<br>
+<br>
+&lt;!-- Circle's fill rotation animation below --&gt;<br>
+<br>
+  <Span>  &lt;defs&gt;<br>
+    &lt;g id="music"&gt;<br>
+    <br>
+    &lt;circle cx="0" cy="0" r="100" fill="url(#color)" stroke="black" stroke-width="0" stroke-opacity="0"&gt;<br>
+    &lt;animateTransform attributeName="transform"<br>
+    type="rotate" from="0 0 0" to="360 0 0" dur="5s" repeatCount="indefinite" fill="remove" /&gt;<br>
+    &lt;/circle&gt;</Span><br>
+<br>
+&lt;!-- Circle's fill rotation animation above --&gt;<br>
+<br>
+<br>
+<br>
+&lt;!-- Stroke animation below --&gt;<br>
+<br>
+   <Span> &lt;circle cx="0" cy="0" r="100" fill="none" stroke="yellow" stroke-width="10" stroke-dasharray="10 20 10 20" stroke-dashoffset="0"&gt;<br>
+    &lt;animate attributeName="stroke-dashoffset"<br>
+    values="0;1250" dur="5s" repeatCount="indefinite" fill="remove"/&gt;<br>
+    &lt;animateTransform attributeName="transform"<br>
+    type="rotate" from="0 0 0" to="360 0 0" dur="10s" repeatCount="indefinite" fill="remove" /&gt;<br>
+    &lt;/circle&gt;</Span><br>
+    <br>
+&lt;!-- Stroke animation above --&gt;<br>
+ <br>
+        <br>
+&lt;!-- Text below --&gt;<br>
+    <br>
+   <Span> &lt;text fill="url(#color)" stroke="black" x="0" y="10" text-anchor="middle" font-size="2em"&gt;KARAK10&lt;/text&gt;</Span><br>
+    <br>
+&lt;!-- Text above --&gt;   <br>
+       <br>
+   <Span> &lt;/g&gt;<br>
+    &lt;/defs&gt;<br>
+ <br>
+    &lt;defs&gt;</Span><br>
+    <br>
+&lt;!-- Scale animation below --&gt;<br>
+    <br>
+  <Span>  &lt;g id="music2"&gt; <br>
+    &lt;use href="#music" transform="scale(1.5)"&gt;<br>
+    &lt;animateTransform attributeName="transform" type="scale" values="1.5;1;1.5" dur="0.65s" repeatCount="indefinite" /&gt;<br>
+    &lt;/use&gt;<br>
+    &lt;/g&gt;</Span><br>
+    <br>
+ &lt;!-- Scale animation above --&gt;   <br>
+      <br>
+  <Span> &lt;/defs&gt;<br>
+             <br>
+    &lt;use href="#music2"&gt;<br>
+         <br>
+    &lt;/svg&gt;<br>
+&lt;/p&gt;<br>
+<br>
+<br>
+&lt;p align="Center"&gt; <br>
+<br>
+ &lt;br&gt;<br>
+      <br>
+   &lt;audio controls autoplay loop&gt;<br>
+      &lt;source src="https://dl.dropbox.com/s/5qaa5ncqgxa3u66/Earthbound%20Winters%20Vector%20U%20Remix?dl=0" type="audio/mp3"/&gt;<br>
+      &lt;/audio&gt;<br>
+ <br>
+      <br>
+ &lt;/p&gt;  </Span>
+ 
+
+</p>
+
+
+
+
+<p style="text-align:left;">Outcome:</p>
+ <br><br>
+
+ 
+    <p>
+    
+    <svg width="350" height="300" viewBox="-195 -110 400 200">
+    
+<!-- Circle's fill color below -->
+
+    <defs>
+<linearGradient id="color">
+<stop offset="0%" stop-color="red" />
+<stop offset="45%" stop-color="pink" />
+<stop offset="49%" stop-color="pink"/>
+<stop offset="51%" stop-color="cyan"/>
+<stop offset="55%" stop-color="cyan""/> 
+<stop offset="100%" stop-color="blue"/>  
+
+</linearGradient>
+    </defs>
+    
+<!-- Circle's fill color above --> 
+
+
+<!-- Circle's fill rotation animation below -->
+
+    <defs>
+    <g id="music">
+    
+    <circle cx="0" cy="0" r="100" fill="url(#color)" stroke="black" stroke-width="0" stroke-opacity="0">
+    <animateTransform attributeName="transform"
+    type="rotate" from="0 0 0" to="360 0 0" dur="5s" repeatCount="indefinite" fill="remove" />
+    </circle>
+
+<!-- Circle's fill rotation animation above -->
+
+
+
+<!-- Stroke animation below -->
+
+    <circle cx="0" cy="0" r="100" fill="none" stroke="rgb(165, 235, 235)" stroke-width="10" stroke-dasharray="10 20 10 20" stroke-dashoffset="0">
+    <animate attributeName="stroke-dashoffset"
+    values="0;1250" dur="5s" repeatCount="indefinite" fill="remove"/>
+    <animateTransform attributeName="transform"
+    type="rotate" from="0 0 0" to="360 0 0" dur="10s" repeatCount="indefinite" fill="remove" />
+    </circle>
+    
+<!-- Stroke animation above -->
+ 
+        
+<!-- Text below -->
+    
+    <text fill="url(#color)" stroke="black" x="0" y="10" text-anchor="middle" font-size="2em">KARAK10</text>
+    
+<!-- Text above -->   
+       
+    </g>
+    </defs>
+
+    
+    <defs>
+    
+<!-- Scale animation below -->
+    
+    <g id="music2">
+    <use href="#music" transform="scale(1.5)">
+    <animateTransform attributeName="transform" type="scale" values="1.5;1;1.5" dur="0.65s" repeatCount="indefinite" />
+    </use>
+    </g>
+    
+ <!-- Scale animation above -->   
+      
+    </defs>
+             
+    <use href="#music2">
+         
+    </svg>
+</p>
+
+
+<p>
+ 
+      <br> 
+   <audio controls autoplay loop>
+      <source src="https://dl.dropbox.com/s/5qaa5ncqgxa3u66/Earthbound%20Winters%20Vector%20U%20Remix?dl=0" type="audio/mp3"/>
+      </audio>
+ 
+       
+ </p>   
+ <hr>
+</article>
+
+</body>
+</html>

@@ -1,0 +1,971 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<title> Page two of my Extra Notes</title>
+<meta charset="UTF-8"> 
+<link href="../CSS-JavaScript-External-Files/HTMLnotes.css" rel="stylesheet">
+<style>
+    .red {
+        color: white;
+        background-color: unset;
+        text-shadow: 1px 1px 0px black,
+                     -1px -1px 0px black,
+                     1px 0px 0px black,
+                     -1px 0px 0px black;
+        font-size: 1.1em;
+        letter-spacing: 1px;
+        background-color: black;
+        padding: 3px;
+        border-radius: 10%;
+        border: 1px solid black;
+    }
+    .syntax{
+        white-space: pre-wrap;
+        background-color: black;
+        color: white;
+        padding: 10px;
+        width: fit-content;
+        border-radius: 7px;
+        margin-left: 10px;
+        padding-right: 100px;
+        position: relative;
+        font-size: 1em;
+    }
+    .syntax::after{
+        content: attr(name);
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        color: white;
+        display: block;
+        width: fit-content;
+        background-color: orangered;
+        padding: 5px 10px;
+        border-radius: 25%;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 0.7em;
+    }
+    header h1{
+        font-size: 2em;
+    }
+    body{
+        overflow-x: hidden;
+        width: 100%;
+    }
+    .left {
+        text-align: left;
+    }
+
+    iframe {
+        width: 600px;
+        height: 350px;
+        border: 3px solid black;
+        margin: 20px auto 20px auto;
+        display: block;
+    }
+    .code10 {
+    white-space: pre-wrap;
+    background-color: lightgreen;
+    overflow-wrap: break-word;
+    }
+    
+    p {
+    text-align:center;
+    }
+    h1 {
+    text-align:center;
+    }
+    h2 {
+    text-align:center;
+    }
+    h3 {
+    text-align:center;
+    }
+    .c {
+    background-color:lightgreen;
+    }
+    hr {
+    width:100%;
+    height:15px;
+    background-color:black;
+    color:black;
+    border: black solid;
+    }
+    body {
+    background-color:rgb(165, 235, 235);
+    }
+    span {
+    background-color:lightgreen;
+    }
+    
+    a:link {
+    color: black;
+    text-shadow: 1px 0px 1px black;
+    
+    }
+    
+    a:visited {
+    color: black;
+    text-shadow: 1px 0px 1px rgb(22, 22, 22);
+    }
+    
+    a:hover {
+    text-decoration: underline;
+    color: red;
+    text-shadow: 1px 0px 1px black;
+    }
+     
+    img{
+        display: block;
+        margin: 20px auto 20px auto;
+        border: 3px solid black;
+        border-radius: 10px;
+    }
+    .blue{
+       background-color: unset;
+       color: rgb(38, 127, 228);
+   }
+   .green{
+       background-color: unset;
+       color: rgb(30, 206, 14);
+   }
+
+    </style> 
+</head>
+<body>
+
+<hr>
+
+    <header> 
+    <h1> Page two of my Extra Notes </h1>
+    <p>This page is dedicated to just Git and Github, because I just started learning
+    it today and I was like, where do I write this shit? And then I started just writing it
+    in the previous page, but I realized that there are quite a few stuff we gonna talk about so I decided to
+    make a new page and fill it with everything about Git and Github I learn, and that's how
+    I created this page basically.</p>
+    </header>
+    
+<article id="start-of-page"> 
+  
+<div id="homepages">
+
+    <h3>Home Pages:</h3>
+   
+
+</div>
+
+<nav data-notes="Extranotes" data-page="1">
+
+</nav>
+
+    <h3>Informations included in this page:</h3>
+
+</article>
+
+<script src="../CSS-JavaScript-External-Files/nav.js"></script>
+<hr>
+
+<article id="one">
+     <h1 style="font-size: 2em">Git Intro</h1> 
+    <p>In this section we will learn what Git and Github are as well as how we can use them
+    with our projects.</p>
+    
+    <h2><u>What is Git?</u></h2>
+    
+    <p>Git is a popular version control system. It was created by Linus Torvalds in 2005, and has been maintained by Junio Hamano since then.</p>
+    
+    <p class="left"><Strong>Git is used for:</Strong></p>
+    
+    <ul>
+        <li>Tracking code changes</li>
+        <li>Tracking who made changes</li>
+        <li>Coding collaboration</li>
+    </ul>
+    
+    <h2><u>What does Git do?</u></h2>
+    
+    <ul>
+       <li>Manage projects with Repositories</li>
+       <li>Clone a project to work on a local copy</li>
+       <li>Control and track changes with Staging and Committing</li>
+       <li>Branch and Merge to allow for work on different parts and versions of a project</li>
+       <li>Pull the latest version of the project to a local copy</li>
+       <li>Push local updates to the main project</li>    
+    </ul>
+    
+    <h2><u>Working with Git</u></h2>
+    
+    <ul>
+        <li>Initialize Git on a folder, making it a Repository</li>
+        <li>Git now creates a hidden folder to keep track of changes in that folder</li>
+        <li>When a file is changed, added or deleted, it is considered modified</li>
+        <li>You select the modified files you want to Stage</li>
+        <li>The Staged files are Committed, which prompts Git to store a permanent snapshot of the files</li>
+        <li>Git allows you to see the full history of every commit.</li>
+        <li>You can revert back to any previous commit.</li>
+        <li>Git does not store a separate copy of every file in every commit, but keeps track of changes made in each commit!</li>
+    </ul>
+    
+    <h2><u>Why Git?</u></h2>
+    
+    <ul>
+       <li>Over 70% of developers use Git!</li>          
+       <li>Developers can work together from anywhere in the world.</li>     
+       <li>Developers can see the full history of the project.</li>               
+       <li>Developers can revert to earlier versions of a project.</li>    
+    </ul>
+    
+    <h2><u>What is GitHub?</u></h2>
+    
+    <ul>
+        <li>Git is not the same as GitHub.</li>
+        <li>GitHub makes tools that use Git.</li>
+        <li>GitHub is the largest host of source code in the world, and has been owned by Microsoft since 2018.</li>
+        <li>In this tutorial, we will focus on using Git with GitHub.</li>
+    </ul>
+</article>
+
+<hr>
+
+<article id="two">
+<header><h1>Git Getting Started</h1></header>
+<p>In this section we will learn how to install and use git
+in our computer.</p>
+
+
+<h2><u>Git Install</u></h2>
+
+<p>You can download Git for free from the following website: <a href="https://git-scm.com/" target="_blank">https://www.git-scm.com/</a></p>
+<p>If you need help installing it you can watch the following video:</p>
+<iframe width="1264" height="720" src="https://www.youtube.com/embed/nbFwejIsHlY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<h2><u>Using Git with Command Line</u></h2>
+
+<p>To start using Git, we are first going to open up our Command shell.
+For Windows, you can use Git bash, which comes included in Git for Windows. For Mac and Linux you can use the built-in terminal.
+The first thing we need to do, is to check if Git is properly installed:</p>
+
+<div class="syntax" name="cmd"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi</span>$ git --version
+git version 2.25.1</div>
+
+<p>If Git is installed, it should show something like git version X.Y</p>
+
+<h2><u>Configure Git</u></h2>
+
+<p>Now let Git know who you are. This is important for version control systems, as each Git commit uses this information:</p>
+
+<div class="syntax" name="cmd"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi</span>$ git config --global user.name "karak10"
+<span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi</span>$ git config --global user.email "karak10@gmail.com"</div>
+
+<p>Change the user name and e-mail address to your own. You will probably also want to use this when registering to GitHub later on.</p>
+
+<p><Strong>Note:</Strong> Use global to set the username and e-mail for every repository on your computer.
+If you want to set the username/e-mail for just the current repo, you can remove global. Git repository are the folders we add in our projects that keep track of the project's history,
+but here is a video to help you better understand how they work:</p>
+
+<iframe width="580" height="340" src="https://www.youtube.com/embed/A-4WltCTVms" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<h2><u>Creating Git Folder</u></h2>
+<p>Now, let's create a new folder for our project:</p>
+
+<div class="syntax" name="cmd"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop</span>$ mkdir myproject
+<span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop</span>$ cd myproject</div>
+
+<p>mkdir makes a new directory.
+cd changes the current working directory.
+Now that we are in the correct directory. We can start by initializing Git!</p>
+
+<div class="syntax" name="cmd"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git init 
+jnhmInitialized empty Git repository in /Users/alexi/myproject/.git/
+</article>
+
+<hr>
+
+<article id="three">
+<header><h1>Git Adding New Files</h1></header>
+<p>We just created our first local Git repo. But it is empty.
+So let's add some files. For this example I will use a simple HTML file like this:</p>
+
+<div class="syntax" name="html">&lt;!DOCTYPE html>
+&lt;html>
+&lt;head>
+&lt;title>Hello World!&lt;/title>
+&lt;/head>
+&lt;body>
+
+&lt;h1>Hello world!&lt;/h1>
+&lt;p>This is the first file in my new Git Repo.&lt;/p>
+
+&lt;/body>
+&lt;/html></div>
+
+<p>And save it to our new folder as index.html.
+Let's go back to the terminal and list the files in our current working directory</p>
+
+<div class="syntax" name="cmd"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ ls -la
+.
+..
+.git
+index.html</div>
+
+<p>ls will list the files in the directory, I used
+the -l property so that the files are listed one under the other
+and the -a property so that all files are shown, even hidden ones, as you can
+see .git folder is hidden. We can also see that index.html is there.
+Let's now check the Git status and see if index.html is a part of our repo:</p>
+
+<div class="syntax" name="cmd"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add ..." to include in what will be committed)
+    index.html
+
+nothing added to commit but untracked files present (use "git add" to track)</div>
+
+<p>Now Git is aware of the file, but has not added it to our repository!
+Files in your Git repository folder can be in one of 2 states:</p>
+
+<ul>
+    <li>Tracked - files that Git knows about and are added to the repository</li>
+    <li>Untracked - files that are in your working directory, but not added to the repository</li>
+</ul>
+
+<p>When you first add files to an empty repository, they are all untracked. To get Git to track them, you need to stage them, or add them to the staging environment.
+We will cover the staging environment in the next chapter.</p>
+</article>
+
+<hr>
+
+<article id="four">
+<header><h1>Git Staging Environment</h1></header>
+<p>One of the core functions of Git is the concepts of the Staging Environment, and the Commit.
+As you are working, you may be adding, editing and removing files. But whenever you hit a milestone or finish a part of the work, you should add the files to a Staging Environment.</p>
+
+<p><strong>Staged</strong> files are files that are ready to be <strong>committed</strong> 
+to the repository you are working on. We will learn more about <span class="red">commit</span> shortly.</p>
+
+<p>For now, we are done working with index.html. So we can add it to the Staging Environment:</p>
+
+<div class="syntax" name="cmd"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git add index.html</div>
+
+<p>The file should be Staged. Let's check the status:</p>
+
+<div class="syntax" name="cmd"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached ..." to unstage)
+    new file: index.html</div>
+
+<p>Now the file has been added to the Staging Environment.</p>
+
+<h2><U>Git Add More than One File</U></h2>
+
+<p>You can also stage more than one file at a time. Let's add 2 more files to our working folder.</p>
+
+<p>A README.md file that describes the repository (recommended for all repositories):</p>
+
+<div class="syntax" name="md"># hello-world
+Hello World repository for this tutorial.
+This is an example repository for my notes.
+
+This repository is built step by step in my notes</div>
+
+<p>A basic external style sheet (bluestyle.css):</p>
+
+<div class="syntax" name="css">body {
+background-color: lightblue;
+}
+
+h1 {
+color: navy;
+margin-left: 20px;
+}</div>
+
+<p>And update index.html to include the stylesheet:</p>
+
+<div class="syntax" name="html">&lt;!DOCTYPE html>
+&lt;html>
+&lt;head>
+&lt;title>Hello World!&lt;/title>
+&lt;link rel="stylesheet" href="bluestyle.css">
+&lt;/head>
+&lt;body>
+
+&lt;h1>Hello world!&lt;/h1>
+&lt;p>This is the first file in my new Git Repo.&lt;/p>
+
+&lt;/body>
+&lt;/html></div>
+
+<p>Now add all files in the current directory to the Staging Environment:</p>
+
+<div class="syntax" name="cmd"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git add --all</div>
+
+<p>Using --all instead of individual filenames will stage all changes (new, modified, and deleted) files.</p>
+
+<div class="syntax" name="cmd"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached ..." to unstage)
+        new file:   README.md
+        new file:   bluestyle.css
+        new file:   index.html</div>
+
+<p>Now all 3 files are added to the Staging Environment, and we are ready to do our first commit.
+<br><strong>Note:</strong> The shorthand command for git add --all is git add -A</p>
+
+</article>
+
+<hr>
+
+<article id="five">
+<header><h1>Git Commit</h1></header>
+<p>Since we have finished our work, we are ready move from stage to commit for our repo.</p>
+
+<p>Adding commits keep track of our progress and changes as we work. Git considers each commit change point or "save point". It is a point in the project you can go back to if you find a bug, or want to make a change.
+When we commit, we should always include a message.
+By adding clear messages to each commit, it is easy for yourself (and others) to see what has changed and when.</p>
+
+<div class="syntax" name="cmd"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git commit -m "First release of Hello World!"
+[master (root-commit) 221ec6e] First release of Hello World!
+ 3 files changed, 26 insertions(+)
+ create mode 100644 README.md
+ create mode 100644 bluestyle.css
+ create mode 100644 index.html</div>
+
+<p>The commit command performs a commit, and the -m "message" adds a message.
+The Staging Environment has been committed to our repo, with the message:
+"First release of Hello World!"</p>
+
+<h2><u>Git Commit without Stage</u></h2>
+
+<p>Sometimes, when you make small changes, using the staging environment seems like a waste of time. It is possible to commit changes directly, skipping the staging environment. The -a option will automatically stage every changed, already tracked file.
+Let's add a small update to index.html:</p>
+
+<div class="syntax" name="html">&lt;!DOCTYPE html>
+&lt;html>
+&lt;head>
+&lt;title>Hello World!&lt;/title>
+&lt;link rel="stylesheet" href="bluestyle.css">
+&lt;/head>
+&lt;body>
+
+&lt;h1>Hello world!&lt;/h1>
+&lt;p>This is the first file in my new Git Repo.&lt;/p>
+&lt;p>A new line in our file!&lt;/p>
+
+&lt;/body>
+&lt;/html></div>
+
+<p>And check the status of our repository. But this time, we will use the --short option to see the changes in a more compact way:</p>
+
+
+<div class="syntax" name="cmd"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git status --short
+ M index.html</div>
+
+<p>Short status flags are:</p>
+
+<ul>
+    <li>?? - Untracked files</li>
+    <li>A - Files added to stage</li>
+    <li>M - Modified files</li>
+    <li>D - Deleted files</li>
+</ul>
+
+<p>We see the file we expected is modified. So let's commit it directly:</p>
+<div class="syntax" name="cmd"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git commit -a -m "Updated index.html with a new line"
+[master 09f4acd] Updated index.html with a new line
+ 1 file changed, 1 insertion(+)</div>
+
+<p>The -a parameter on commit says to add all changes of tracked files and commit them.</p>
+
+<p>To choose specific files to commit you can simple do this like this: git commit file1 file2 file5 -m "commit message"</p>
+
+<h2><u>So what is "stage" and what's "commit" anyway?</u></h2>
+
+<p>To "stage" is to do git add file. ext for a specific file, or git add . to affect all modified and untracked files. Files that have been added in this way are said to be "staged" and they will be included in the next "commit". The commit is a snapshot of your work created e.g. with git commit -m "I wrote something" .</p>
+
+<img src="./../images/git1.png" style="border: none">
+
+<P>So what should you expect when working with git? After you add git to your project, you will
+create your first file, when you do this, if you are using VSC editor the color of the file in
+your editor will be blue I think, I'm not really sure but it will be colored, and there will be the
+letter U next to it, which stands for "Untracked". After you edit and save your file, the file
+will change color and the letter next to it will change to M, which stands for "Modified",
+after that happens you should use the (git add) command to stage the file, and then the (git commit) to 
+commit the file. After you have commited the file it will change it's color back to normal white color
+without any letter next to it, until you make changes to the file again. So, your main project has
+been saved after your first commit, the directory you have your files inside is not where your project is
+saved, your project is kept saved by git, you can do anything to those files you have in your directory, it
+doesn't matter, because you can always restore back to what your project was when you made your first commit.
+After changing the files in your directory, you will have to stage them again before you can commit them again.</P>
+</article>
+
+<hr>
+
+<article id="six">
+<header><h1>Git Help</h1></header>
+
+<p>If you are having trouble remembering commands or options for commands, you can use Git help.
+There are a couple of different ways you can use the help command in command line:</p>
+
+<ul>
+    <li><span class="red" style="border-radius: 10px">git command -help</span> - See all the available options for the specific command</li>
+    <br><li><Span class="red" style="border-radius: 10px">git help -all</Span> - See all possible commands</li>
+</ul>
+
+<p>You can also use --help instead of -help to open the relevant Git manual page.
+<br><br>Using the help --all command will display a very long list of commands. If you find yourself stuck in the list view, SHIFT + G to jump to the end of the list, then q to exit the view.
+</p>
+</article>
+
+<hr>
+
+<article id="seven">
+<header><h1>Working with Git Branches</h1></header>
+<p>In Git, a branch is a new/separate version of the main repository.
+Let's say you have a large project, and you need to update the design on it.
+How would that work without and with Git?</p>
+
+<h2 class="left" style="margin-left: 10px;">Without Git:</h2>
+
+<ul>
+    <li>Make copies of all the relevant files to avoid impacting the live version</li>
+    <li>Start working with the design and find that code depend on code in other files, that also need to be changed!</li>
+    <li>Make copies of the dependant files as well. Making sure that every file dependency references the correct file name</li>
+    <li>EMERGENCY! There is an unrelated error somewhere else in the project that needs to be fixed ASAP!</li>
+    <li>Save all your files, making a note of the names of the copies you were working on</li>
+    <li>Work on the unrelated error and update the code to fix it</li>
+    <li>Go back to the design, and finish the work there</li>
+    <li>Copy the code or rename the files, so the updated design is on the live version</li>
+    <li>(2 weeks later, you realize that the unrelated error was not fixed in the new design version because you copied the files before the fix)</li>
+</ul>
+
+<h2 class="left" style="margin-left: 10px;">With Git:</h2>
+
+<ul>
+    <li>With a new branch called new-design, edit the code directly without impacting the main branch</li>
+    <li>EMERGENCY! There is an unrelated error somewhere else in the project that needs to be fixed ASAP!</li>
+    <li>Create a new branch from the main project called small-error-fix</li>
+    <li>Fix the unrelated error and merge the small-error-fix branch with the main branch</li>
+    <li>You go back to the new-design branch, and finish the work there</li>
+    <li>Merge the new-design branch with main (getting alerted to the small error fix that you were missing)</li>
+</ul>
+
+<p>Branches allow you to work on different parts of a project without impacting the main branch.
+When the work is complete, a branch can be merged with the main project.
+You can even switch between branches and work on different projects without them interfering with each other.
+Branching in Git is very lightweight and fast!</p>
+
+<h2><u>New Git Branch</u></h2>
+
+<p>Lets add some new features to our index.html page.
+We are working in our local repository, and we do not want to disturb or possibly wreck the main project.
+So we create a new branch:</p>
+
+<div class="syntax" name="cmd"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git branch hello-world-images</div>
+
+<p>Now we created a new branch called "hello-world-images"
+Let's confirm that we have created a new branch:</p>
+
+<div class="syntax" name="cmd"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git branch
+    hello-world-images
+*  master</div>
+  
+<p>Git creates a master branch once you've done your first commit. You cannot create a branch if the
+master branch doesn't first exist, 
+you need to do your first commit, else there's nothing to have a branch for if there's no code in the repository.</p>
+
+<p>We can see the new branch with the name "hello-world-images", but the * beside master specifies that we are currently on that branch.
+checkout is the command used to check out a branch. Moving us from the current branch, to the one specified at the end of the command:</p>
+
+<div class="syntax" name="cmd"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git checkout hello-world-images
+Switched to branch 'hello-world-images'</div>
+
+<p>Now we have moved our current workspace from the master branch, to the new branch
+Open your favourite editor and make some changes.
+For this example, we added an image (img_hello_world.jpg) to the working folder and a line of code in the index.html file:</p>
+
+<div class="syntax" name="html">&lt;!DOCTYPE html>
+&lt;html>
+&lt;head>
+&lt;title>Hello World!&lt;/title>
+&lt;link rel="stylesheet" href="bluestyle.css">
+&lt;/head>
+&lt;body>
+
+&lt;h1>Hello world!&lt;/h1>
+&lt;div>&lt;img src="img_hello_world.jpg" alt="Hello World from Space"
+style="width:100%;max-width:960px">&lt;/div>
+&lt;p>This is the first file in my new Git Repo.&lt;/p>
+&lt;p>A new line in our file!&lt;/p>
+
+&lt;/body>
+&lt;/html></div>
+
+<p>We have made changes to a file and added a new file in the working directory (same directory as the main branch).
+Now check the status of the current branch:</p>
+
+<div class="syntax" name="cmd"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git status
+On branch hello-world-images
+Changes not staged for commit:
+  (use "git add ..." to update what will be committed)
+  (use "git restore ..." to discard changes in working directory)
+        modified:   index.html
+
+Untracked files:
+  (use "git add ..." to include in what will be committed)
+        img_hello_world.jpg
+
+no changes added to commit (use "git add" and/or "git commit -a")</div>
+
+<p class="left" style="margin-left: 10px;">So let's go through what happens here:</p>
+
+<ul>
+    <li>There are changes to our index.html, but the file is not staged for commit</li>
+    <li>img_hello_world.jpg is not tracked</li>
+</ul>
+
+<p class="left" style="margin-left: 10px;">So we need to add both files to the Staging Environment for this branch:</p>
+
+<div class="syntax" name="cmd"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git add --all</div>
+
+<p>Using --all instead of individual filenames will Stage all changed (new, modified, and deleted) files.
+Lets check the status of the branch:</p>
+
+<div class="syntax" name="cmd"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git status
+On branch hello-world-images
+Changes to be committed:
+  (use "git restore --staged ..." to unstage)
+    new file: img_hello_world.jpg
+    modified: index.html</div>
+
+<p>We are happy with our changes. So we will commit them to the branch:</p>
+
+<div class="syntax" name="cmd"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git commit -m "Added image to Hello World"
+[hello-world-images 0312c55] Added image to Hello World
+2 files changed, 1 insertion(+)
+create mode 100644 img_hello_world.jpg</div>
+
+<p>Now we have a new branch, that is different from the master branch.</p>
+
+<p><Strong>Note:</Strong> Using the -b option on checkout will create a new branch, and move to it, if it does not exist</p>
+
+<h2><u>Switching Between Branches</u></h2>
+
+<p>Now let's see just how quick and easy it is to work with different branches, and how well it works.
+We are currently on the branch hello-world-images. We added an image to this branch, so let's list the files in the current directory:</p>
+
+<div class="syntax" name="cmd"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ ls
+README.md  bluestyle.css  img_hello_world.jpg  index.html</div>
+
+<p>We can see the new file img_hello_world.jpg, and if we open the html file, we can see the code has been altered. All is as it should be.
+Now, let's see what happens when we change branch to master</p>
+
+<div class="syntax" name="cmd"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git checkout master
+Switched to branch 'master'</div>
+
+<p>The new image is not a part of this branch. List the files in the current directory again:</p>
+
+<div class="syntax" name="cmd"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ ls
+README.md  bluestyle.css  index.html</div>
+
+<p>img_hello_world.jpg is no longer there! And if we open the html file, we can see the code reverted to what it was before the alteration.
+See how easy it is to work with branches? And how this allows you to work on different things?</p>
+
+<h2><u>Emergency Branch</u></h2>
+
+<p>Now imagine that we are not yet done with hello-world-images, but we need to fix an error on master.
+I don't want to mess with master directly, and I do not want to mess with hello-world-images, since it is not done yet.
+So we create a new branch to deal with the emergency:</p>
+
+<div class="syntax" name="cmd"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git checkout -b emergency-fix
+Switched to a new branch 'emergency-fix'</div>
+
+<p>Now we have created a new branch from master, and changed to it. We can safely fix the error without disturbing the other branches.
+Let's fix our imaginary error:</p>
+
+<div class="syntax" name="html">&lt;!DOCTYPE html>
+&lt;html>
+&lt;head>
+&lt;title>Hello World!&lt;/title>
+&lt;link rel="stylesheet" href="bluestyle.css">
+&lt;/head>
+&lt;body>
+
+&lt;h1>Hello world!&lt;/h1>
+&lt;p>This is the first file in my new Git Repo.&lt;/p>
+&lt;p>This line is here to show how merging works.&lt;/p>
+
+&lt;/body>
+&lt;/html></div>
+
+<p>We have made changes in this file, and we need to get those changes to the master branch.
+Check the status:</p>
+
+<div class="syntax" name="cmd"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git status
+On branch emergency-fix
+Changes not staged for commit:
+  (use "git add ..." to update what will be committed)
+  (use "git restore ..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")</div>
+
+<p>stage the file, and commit:</p>
+
+<div class="syntax" name="cmd"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git add index.html
+git commit -m "updated index.html with emergency fix"
+[emergency-fix dfa79db] updated index.html with emergency fix
+ 1 file changed, 1 insertion(+), 1 deletion(-)</div>
+
+<p>Now we have a fix ready for master, and we need to merge the two branches.
+And that's what we will be learning in the next section, how to merge branches.
+</p>
+</article>
+
+<hr>
+
+<article id="eight">
+<header><h1>Git Branch Merge</h1></header>
+<p>We have the emergency fix ready, and so let's merge the master and emergency-fix branches.
+First, we need to change to the master branch:</p>
+
+<div class="syntax" name="cmd"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git checkout master
+Switched to branch 'master'</div>
+
+<p>Now we merge the current branch (master) with emergency-fix:</p>
+
+<div class="syntax" name="cmd"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git merge emergency-fix
+Updating 09f4acd..dfa79db
+Fast-forward
+ index.html | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)</div>
+
+ <p>Since the emergency-fix branch came directly from master, and no other changes had been made to master while we were working, Git sees this as a continuation of master. So it can "Fast-forward", just pointing both master and emergency-fix to the same commit.</p>
+
+<p>As master and emergency-fix are essentially the same now, we can delete emergency-fix, as it is no longer needed:</p>
+
+<div class="syntax" name="cmd"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git branch -d emergency-fix
+Deleted branch emergency-fix (was dfa79db).</div>
+
+<h2><u>Merge Conflict</u></h2>
+
+<p>Now we can move over to hello-world-images and keep working. Add another image file (img_hello_git.jpg) and change index.html, so it shows it:</p>
+
+<div class="syntax" name="cmd"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git checkout hello-world-images
+Switched to branch 'hello-world-images'</div>
+
+<br>
+<div class="syntax" name="html">&lt;!DOCTYPE html>
+&lt;html>
+&lt;head>
+&lt;title>Hello World!</title>
+&lt;link rel="stylesheet" href="bluestyle.css">
+&lt;/head>
+&lt;body>
+
+&lt;h1>Hello world!&lt;/h1>
+&lt;div>&lt;img src="img_hello_world.jpg" alt="Hello World from Space" style="width:100%;max-width:960px">&lt;/div>
+&lt;p>This is the first file in my new Git Repo.&lt;/p>
+&lt;p>A new line in our file!&lt;/p>
+&lt;div>&lt;img src="img_hello_git.jpg" alt="Hello Git" style="width:100%;max-width:640px">&lt;/div>
+
+&lt;/body>
+&lt;/html></div>
+
+<p>Now, we are done with our work here and can stage and commit for this branch:</p>
+
+<div class="syntax" name="cmd"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git add --all
+git commit -m "added new image"
+[hello-world-images 1f1584e] added new image
+ 2 files changed, 1 insertion(+)
+ create mode 100644 img_hello_git.jpg</div>
+
+<p>We see that index.html has been changed in both branches. Now we are ready to merge hello-world-images into master. But what will happen to the changes we recently made in master?</p>
+
+<div class="syntax" name="cmd"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git checkout master
+git merge hello-world-images
+Auto-merging index.html
+CONFLICT (content): Merge conflict in index.html
+Automatic merge failed; fix conflicts and then commit the result.</div>
+
+<p>The merge failed, as there is conflict between the versions for index.html. Let us check the status:</p>
+
+<div class="syntax" name="cmd"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git status
+On branch master
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+        new file:   img_hello_git.jpg
+        new file:   img_hello_world.jpg
+
+Unmerged paths:
+  (use "git add ..." to mark resolution)
+        both modified:   index.html</div>
+
+<p>This confirms there is a conflict in index.html, but the image files are ready and stagedto be committed.
+So we need to fix that conflict. Open the file in our editor:</p>
+
+<style>
+    .green-color{
+        background-color:rgb(64, 196, 145);
+        width: 100%;
+        display: inline-block;
+    }
+    .darker-green-color{
+        background-color: rgb(24, 85, 62);
+        width: 100%;
+        display: inline-block;
+    }
+    .blue-color{
+        background-color: rgb(48, 129, 223);
+        width: 100%;
+        display: inline-block;
+    }
+    .darker-blue-color{
+        background-color: rgb(16, 68, 128);     
+        width: 100%;
+        display: inline-block;
+    }
+    .options{
+        background-color: unset;
+        color: gray;
+    }
+</style>
+<div class="syntax" name="html">&lt;!DOCTYPE html>&lt;<html>
+    
+&lt;head>
+&lt;title>Hello World!&lt;/title>
+&lt;link rel="stylesheet" href="bluestyle.css">
+&lt;/head>
+&lt;body>
+
+&lt;h1>Hello world!&lt;/h1>
+&lt;div>&lt;img src="img_hello_world.jpg" alt="Hello World from Space" style="width:100%;max-width:960px">&lt;/div>
+&lt;p>This is the first file in my new Git Repo.&lt;/p>
+<span class="options">Accept Current Change | Accept Incoming Change | Accept Both Changes | Compare Changes</span>
+<span class="green-color">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD (Current Change)</span>
+<span class="darker-green-color">&lt;p>This line is here to show how merging works.&lt;/p></span>
+=======
+<span class="darker-blue-color">&lt;p>A new line in our file!&lt;/p>
+&lt;div>&lt;img src="img_hello_git.jpg" alt="Hello Git" style="width:100%;max-width:640px">&lt;/div></span>
+<span class="blue-color">&gt;&gt;&gt;&gt;&gt;&gt;&gt; hello-world-images (Incoming Change)</span>
+
+&lt;/body>
+&lt;/html></div>
+
+<p>That's what your file should look like if you are using VSC editor, if you are using something
+else it may not have those options at the top and you will probably have to make the changes your
+self. So, let's accept both changes:
+</p>
+
+<div class="syntax" name="html">&lt;!DOCTYPE html>
+&lt;html>
+&lt;head>
+&lt;title>Hello World!&lt;/title>
+&lt;link rel="stylesheet" href="bluestyle.css">
+&lt;/head>
+&lt;body>
+
+&lt;h1>Hello world!&lt;/h1>
+&lt;div>&lt;img src="img_hello_world.jpg" alt="Hello World from Space" style="width:100%;max-width:960px">&lt;/div>
+&lt;p>This is the first file in my new Git Repo.&lt;/p>
+&lt;p>This line is here to show how merging works.&lt;/p>
+&lt;p>A new line in our file!&lt;/p>
+&lt;div>&lt;img src="img_hello_git.jpg" alt="Hello Git" style="width:100%;max-width:640px">&lt;/div>
+
+&lt;/body>
+&lt;/html></div>
+
+<p>Now we can stage index.html and check the status:</p>
+
+<div class="syntax" name="cmd"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git add index.html
+git status
+On branch master
+All conflicts fixed but you are still merging.
+  (use "git commit" to conclude merge)
+
+Changes to be committed:
+        new file:   img_hello_git.jpg
+        new file:   img_hello_world.jpg
+        modified:   index.html</div>
+
+<p>The conflict has been fixed, and we can use commit to conclude the merge:</p>
+
+<div class="syntax" name="cmd"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git commit -m "merged with 
+hello-world-images after fixing conflicts"
+[master e0b6038] merged with hello-world-images after fixing conflicts</div>
+
+<p>And delete the hello-world-images branch:</p>
+
+<div class="syntax" name="cmd"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git branch -d hello-world-images
+Deleted branch hello-world-images (was 1f1584e).</div>
+
+<p>Now that you have a better understanding of how branches and merging works, it's time to start working with a remote repository!</p>
+ </article>
+<hr>
+
+<article id="nine">
+<header><h1>Git GitHub Getting Started</h1></header>
+<p>So, first thing you gotta do is create an account in <a href="https://www.github.com/" target="_blank">Github</a>.
+Remember to use the same e-mail address you used in the Git config. After you do this, you need to create a Repository
+inside Github:</p>
+
+<img src="./../images/git2.png" style="width: 70%">
+
+<p>While creating your repository there are few options you can choose,
+we may go over those options in more detail later, but for now they don't really matter.
+Just choose if you want you project to be public or not, and you can also add a README file
+if you want, this file is used to write information about the project or could also be used
+to keep notes and other stuff inside, it's good to have a file like this in all your repositories.</p>
+
+<h2><u>Push Local Repository to GitHub</u></h2>
+
+<p>Since we have already set up a local Git repo, we are going to push that to GitHub:</p>
+
+<img src="./../images/git3.png" style="width: 70%">
+
+<p>Copy the URL, or click the clipboard marked in the image above.
+Then paste it in the following command:
+</p>
+
+<div class="syntax" name="cmd" style=""><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git remote add origin url</div>
+
+<p>git remote add origin URL specifies that you are adding a remote repository, with the specified URL, as an origin to your local Git repo.
+Now we are going to push our master branch to the origin url, and set it as the default remote branch (which also is named master):</p>
+
+<div class="syntax" name="cmd" style=""><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git push --set-upstream origin master
+Enumerating objects: 22, done.
+Counting objects: 100% (22/22), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (22/22), done.
+Writing objects: 100% (22/22), 92.96 KiB | 23.24 MiB/s, done.
+Total 22 (delta 11), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (11/11), done.
+To https://github.com/w3schools-test/hello-world.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.</div>
+
+<p>Since this is the first time you are connecting to GitHub, you will get some kind of notification you to authenticate this connection.</p>
+
+<p>Now, go back into GitHub and see that the repository has been updated:</p>
+
+<img src="./../images/git4.png" style="width: 70%">
+
+</article>
+
+<hr>
+</body>
+</html>

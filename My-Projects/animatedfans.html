@@ -1,0 +1,151 @@
+<!DOCTYPE HTML>
+<html>
+<head lang="en-US>
+<meta charset="UTF-8">
+<title> Animated Fans </title>
+<link rel="stylesheet" href="../CSS-JavaScript-External-Files/HTMLnotes.css?version=1">
+</head>
+<body>
+
+<hr>
+
+<article>
+
+<h1> Animated Fans </h1>
+<p><a href="../Home-Pages/myprojects.html">Click to go back</a></p>
+
+
+
+ 
+<p id="fanprojectt" style="text-align:left;">Code:</p>
+
+
+
+
+
+<p style="text-align:left;">
+
+<Span>&lt;p align="center"&gt;<br>
+&lt;svg width="800" height="400" viewBox="-100 0, 400 200" style="border: black solid; background-color:cyan;"&gt;<br>
+<br>
+&lt;path d="M-200 150 L500 150 L500 300 L-200 300 Z" fill="green" stroke="black" /&gt;<br>
+<br>
+&lt;defs&gt;<br> 
+<br>
+&lt;g id="fan"&gt;<br>
+<br>
+&lt;title&gt; Fan &lt;/title&gt;<br>
+<br>
+&lt;desc&gt; Its an animated fan &lt;/desc&gt;<br>
+<br>
+&lt;g id="body"&gt;<br>
+<br>
+&lt;path d="M70 180 l50 0 l-15 -15 m-35 15 l15 -15 l5 -65 l10 0 l5 65" fill="black" stroke="black" /&gt;<br>
+&lt;circle cx="95" cy="90" r="13" fill="black" /&gt;<br>
+<br>
+&lt;/g&gt; <br>
+<br>
+&lt;defs&gt;<br>
+<br>
+&lt;g id="rectangles"&gt;<br>
+<br>
+&lt;rect y="104" x="88" width="14" height="33" fill="lightgray" stroke="black"/&gt;<br>
+<br>
+&lt;rect y="82" x="48" width="33" height="14" fill="lightgray" stroke="black"/&gt;<br>
+<br>
+&lt;rect y="82" x="109" width="33" height="14" fill="lightgray" stroke="black"/&gt;<br>
+<br>
+&lt;rect y="43" x="88" width="14" height="33" fill="lightgray" stroke="black"/&gt;<br>
+<br>
+&lt;/g&gt;<br>
+<br>
+&lt;/defs&gt;<br>
+<br>
+&lt;use xlink:href="#rectangles"&gt;<br>
+<br>
+&lt;animateTransform attributeName="transform" type="rotate" <br>
+values="0 95 90;360 95 90" repeatCount="indefinite" dur="2s" fill="remove" /&gt;<br>
+<br>
+&lt;/use&gt;<br>
+<br>
+&lt;/g&gt;<br>
+<br>
+&lt;/defs&gt;<br>
+<br>
+&lt;use xlink:href="#fan" x="-100" /&gt;<br>
+<br>
+&lt;use xlink:href="#fan" x="0" /&gt;<br>
+<br>
+&lt;use xlink:href="#fan" x="100" /&gt;<br>
+<br>
+&lt;/svg&gt;<br>
+&lt;/p&gt; </span>
+
+
+</p>
+
+
+
+
+<p style="text-align:left;">Outcome:</p>
+ 
+<p>
+<svg width="800" height="400" viewBox="-100 0, 400 200" style="border: black solid; background-color:cyan;">
+
+
+<path d="M-200 150 L500 150 L500 300 L-200 300 Z" fill="green" stroke="black" />
+
+<defs>
+
+<g id="fan">
+
+<title> Fan </title>
+
+<desc> Its an animated fan </desc>
+
+<g id="body">
+
+<path d="M70 180 l50 0 l-15 -15 m-35 15 l15 -15 l5 -65 l10 0 l5 65" fill="black" stroke="black" />
+<circle cx="95" cy="90" r="13" fill="black" />
+
+</g> 
+
+<defs>
+
+<g id="rectangles">
+
+<rect y="104" x="88" width="14" height="33" fill="lightgray" stroke="black"/>
+
+<rect y="82" x="48" width="33" height="14" fill="lightgray" stroke="black"/>
+
+<rect y="82" x="109" width="33" height="14" fill="lightgray" stroke="black"/>
+
+<rect y="43" x="88" width="14" height="33" fill="lightgray" stroke="black"/>
+
+</g>
+
+</defs>
+
+<use xlink:href="#rectangles">
+<animateTransform attributeName="transform" type="rotate" 
+values="0 95 90;360 95 90" repeatCount="indefinite" dur="2s" fill="remove" />
+</use>
+
+</g>
+
+</defs>
+
+<use xlink:href="#fan" x="-100" />
+
+<use xlink:href="#fan" x="0" />
+
+<use xlink:href="#fan" x="100" />
+
+</svg>
+</p> 
+
+ 
+<hr>
+</article>
+</body>
+</html>

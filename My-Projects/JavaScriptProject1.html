@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<title> JavaScript project one </title>
+<meta charset="UTF-8"> 
+<link href="../CSS-JavaScript-External-Files/HTMLnotes.css" rel="stylesheet">
+<Style>
+    body {
+        background-color: black;
+        color: lightgreen;
+    }
+</Style>
+</head>
+<body>
+
+<script>
+
+var money = prompt("Enter how much money you have");
+var price = 20;
+var answer = ( money - price < 0 ) ? "you cannot buy the product, in order to buy it you will need ": 
+ "if you buy the product you will be left with ";
+var result = ( money - price < 0 ) ? price - money: money - price;
+
+document.write( "The price of the the product is ", price, "$ therefore, since you have ", 
+money,"$ ", answer, result, "$");  
+ 
+</script>
+   
+</body>
+</html>

@@ -1,0 +1,694 @@
+<!DOCTYPE HTML>
+<html>
+<head lang="en-US">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<title> Home Page </title>
+<link rel="stylesheet" href="./CSS-JavaScript-External-Files/HTMLnotes.css">
+<style>
+#fontfix {
+    font:0px Luckiest Guy;
+    opacity:0;
+    position:absolute;
+    left:-100px;
+    top:-100px;
+}
+body {
+background: linear-gradient(
+90deg, 
+#40007F 0%, 
+#6000BF 20%,
+#8000FF 50%, 
+#6000BF 70%,
+#2f025c 100%
+);
+color: yellow;
+text-shadow: 5px 0px 2px black;
+margin: 0px;
+overflow-x: hidden;
+margin-bottom: -11px;
+}
+iframe{
+    width: 80vw !important;
+    height: calc(80vw / 1.5);
+    max-width: 900px;
+    max-height: 500px;
+    box-shadow: 5px 5px 0px 2px black,
+    5px -5px 0px 2px black, 
+    -5px 5px 0px 2px black,
+    -5px -5px 0px 2px black;
+}
+#diaryiframe{
+    width: 50vw !important;
+}
+
+</style>
+</head>
+<body>
+
+<Style>
+    #canvas-029{
+        border: 3px solid black;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        pointer-events: none;
+    }
+</Style>
+
+    <canvas id="canvas-029" style="border: none;"></canvas>
+        
+
+<hr style="margin-top: -1px;">
+
+<div id="fontfix">&nbsp;</div>
+
+
+<canvas class="canvvaas" id="ccaannvvaass20" style="border-radius: 50px; border: 3px solid yellow; display: block; margin: auto;"></canvas>
+
+<style>
+    .container{
+        width: 90vw;
+        margin: auto;
+        height: 25vh;
+        border: 3px solid yellow;
+        border-radius: 40px;
+        background-color: black;
+        margin-top: 20px;
+        overflow: hidden;
+     }
+    .idk{
+        overflow-y: scroll;
+        width: 100%;
+        height: 100%;
+    }
+</style>
+
+<script>
+    window.addEventListener('load', (e)=>{
+        let canvas = document.getElementById('ccaannvvaass20');
+        let c = canvas.getContext('2d');
+        canvas.style.backgroundColor = 'black';
+
+        canvas.width = 800;
+        canvas.height = 180;
+
+        let text = 'Karak10'
+        c.font = 'normal 36px Luckiest Guy';
+        let measurements = c.measureText(text);
+        let textColor = 'yellow';
+        c.fillStyle = textColor;
+        c.fillText(text, 10, 50);
+        let height = Math.floor(measurements.actualBoundingBoxAscent + 60);
+        let width = Math.floor(measurements.width + 20);
+
+        let imageData = c.getImageData(0, 0, width, height);
+        let data = imageData.data;
+
+        let distanceRadius = 30;
+
+        let mouse = {
+            x: undefined,
+            y: undefined
+        }
+
+        let touches = new Array();
+
+        window.addEventListener('mousemove', (e)=>{
+            let box = canvas.getBoundingClientRect();
+            let x = box.left;
+            let y = box.top;
+            mouse = {
+                x: e.clientX - x,
+                y: e.clientY - y
+            }
+        });
+
+        function setTouches(e){
+            touches = [];
+            let box = canvas.getBoundingClientRect();
+            let x = box.left;
+            let y = box.top;
+            for(let i = 0; i < e.touches.length; i++){
+                touches.push({
+                    x: e.touches[i].clientX - x,
+                    y: e.touches[i].clientY - y,
+                });
+            }
+        }
+    
+        function resetTouches(e){
+            if (e.cancelable) {
+               e.preventDefault();
+            }
+            let box = canvas.getBoundingClientRect();
+            let x = box.left;
+            let y = box.top;
+            try{
+                for(let i = 0; i < e.changedTouches.length; i++){
+                    let differences = [];
+                    touches.forEach((touch, i)=>{
+                        differences.push(touch.x - (e.changedTouches[i].clientX - x));
+                    });
+                    let min = Math.min.apply(Math, differences);
+                    let index = differences.indexOf(min);
+                    touches.splice(index, 1);
+                }
+            } catch{}
+        }
+
+        canvas.addEventListener('touchstart', setTouches);
+        canvas.addEventListener('touchmove', setTouches);
+        canvas.addEventListener('touchend', resetTouches);
+        canvas.addEventListener('touchcancel', resetTouches);
+
+        let particlesArray = [];
+
+        let particleConstructor = class{
+            constructor(x, y, size, color){
+                this.x = x;
+                this.y = y;
+                this.originalX = this.x;
+                this.originalY = this.y;
+                this.size = size;
+                this.color = color;
+                this.velocity = (Math.random() * 30) + 1;
+            }
+            draw(){
+                c.fillStyle = this.color;
+                c.beginPath();
+                c.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                c.fill();
+            }
+            update(){
+               let dx = mouse.x - this.x;
+               let dy = mouse.y - this.y;
+               let mouseDistance = Math.hypot(dx, dy);
+               let mouseDifference = {
+                   dx: dx,
+                   dy: dy
+               }
+               let touchesDistances = new Array();
+               let minTouchDistance;
+               let minTouchDifference;
+               if(touches.length > 0){
+                   touches.forEach((touch)=>{
+                       let x = touch.x - this.x;
+                       let y = touch.y - this.y;
+                       touchesDistances.push(Math.hypot(x, y));
+                   });
+                   minTouchDistance = Math.min.apply(Math, touchesDistances);
+                   let minTouchIndex = touchesDistances.indexOf(minTouchDistance);
+                   minTouchDifference = {
+                       dx: touches[minTouchIndex].x - this.x, 
+                       dy: touches[minTouchIndex].y - this.y
+                   }
+               } else {
+                   minTouchDistance = Number.POSITIVE_INFINITY;
+               }
+               if(mouseDistance < distanceRadius || minTouchDistance < distanceRadius){
+                   let moveParticle = (distance, difference)=>{
+                       let angle = Math.atan2(difference.dy, difference.dx);
+                       let forceDirectionX = Math.cos(angle);
+                       let forceDirectionY = Math.sin(angle);
+                       let maxDistance = distanceRadius;
+                       let force = (maxDistance - distance) / maxDistance;
+                       let directionX = forceDirectionX * force * this.velocity;
+                       let directionY = forceDirectionY * force * this.velocity;
+                       this.x -= directionX;
+                       this.y -= directionY;
+                   }
+                   if(mouseDistance < distanceRadius){
+                       moveParticle(mouseDistance, mouseDifference);
+                   }
+                   if(minTouchDistance < distanceRadius){
+                       moveParticle(minTouchDistance, minTouchDifference);
+                   }
+               } else if(mouseDistance > distanceRadius + 5 || (minTouchDistance > distanceRadius + 5 && minTouchDistance != 'Infinity')){
+                   if(this.x != this.originalX){
+                       let dx = this.x - this.originalX;
+                       this.x -= dx / 10;
+                   }
+                   if(this.y != this.originalY){
+                       let dy = this.y - this.originalY;
+                       this.y -= dy / 10;
+                   }
+               }
+               this.draw();
+            }
+        }
+
+        let init = function(){
+            particlesArray = [];
+            for(let y = 0; y < height; y += 2){
+                for(let x = 0; x < width; x += 2){
+                    if(data[(x + y * width) * 4 + 3] > 254){
+                        let red = data[(x + y * width) * 4];
+                        let green = data[(x + y * width) * 4 + 1];
+                        let blue = data[(x + y * width) * 4 + 2];
+                        let color = `rgb(${red}, ${green}, ${blue})`;
+                        let scale = 5;
+                        let distance =  canvas.width - (20 + measurements.width) * scale;
+                        let offset = {x: (distance / 2) / scale, y: -20};
+                        particlesArray.push(new particleConstructor((x + offset.x) * scale, (y + offset.y) * scale, 1, color));
+                    }
+                }
+            }
+        }
+
+        console.log(data);
+
+        init();
+
+        function connectParticles(){
+            for(let a = 0; a < particlesArray.length; a++){
+                let opacity = 1;
+                for(let b = a; b < particlesArray.length; b++){
+                    let particle1 = particlesArray[a];
+                    let particle2 = particlesArray[b];
+                    if(particle1 != particle2){
+                        let dx = particle1.x - particle2.x;
+                        let dy = particle1.y - particle2.y;
+                        let distance = Math.hypot(dx, dy);
+                        let num = 31;
+                        if(distance < num){
+                            opacity = 1 - (distance / num);
+                            c.globalAlpha = opacity;
+                            c.strokeStyle = textColor;
+                            c.lineWidth = 0.5;
+                            c.beginPath();
+                            c.moveTo(particle1.x, particle1.y);
+                            c.lineTo(particle2.x, particle2.y);
+                            c.stroke();
+                            c.globalAlpha = 1;
+                        }
+                    }
+                }
+            }
+        }
+
+        let animate = function(){
+            c.clearRect(0, 0, canvas.width, canvas.height);
+            particlesArray.forEach((particle)=>{
+                particle.update();
+            });
+            connectParticles();
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+    });
+</script>
+
+<hr>
+
+<article>
+
+<header>
+<h1>My HTML notes:</h1>
+
+<p><a href="./Home-Pages/myhtmlnotes.html" target="_self">Click to open fullscreen</a></p>
+
+<p>
+<iframe src="./Home-Pages/myhtmlnotes.html" width="900" height="500"></iframe>
+<p>
+
+</article>
+
+
+<hr>
+
+<article>
+
+<header>
+<h1>My CSS notes:</h1>
+</header>
+
+<p><a href="./Home-Pages/mycssnotes.html" target="_self">Click to open fullscreen</a></p>
+<p>
+<iframe src="./Home-Pages/mycssnotes.html" width="900" height="500"></iframe>
+<p> 
+
+</article>
+
+<hr>
+
+<article>
+
+    <header>
+    <h1>My JavaScript notes:</h1>
+    </header>
+    
+    <p><a href="./Home-Pages/javascriptnotes.html" target="_self">Click to open fullscreen</a></p>
+    <p>
+    <iframe src="./Home-Pages/javascriptnotes.html" width="900" height="500"></iframe>
+    <p> 
+    
+    </article>
+
+ 
+<hr>
+
+<article>
+
+    <header>
+    <h1>My responsive web design notes:</h1>
+    </header>
+    
+    <p><a href="./Home-Pages/frontendnotes.html" target="_self">Click to open fullscreen</a></p>
+    <p>
+    <iframe src="./Home-Pages/frontendnotes.html" width="900" height="500"></iframe>
+    <p> 
+    
+    </article>
+
+ 
+<hr>
+
+<article>
+
+<header>
+<h1>My diary:</h1>
+</header>
+
+<p><a href="./Other-Stuff/diary.html" target="_self">Click to open fullscreen</a></p>
+<p>
+<iframe src="./Other-Stuff/diary.html" id="diaryiframe" width="300" height="500"></iframe>
+<p>
+
+</article>
+<hr>
+
+<article>
+
+<header>
+<h1>My projects:</h1>
+</header>
+
+<p><a href="./Home-Pages/myprojects.html" target="_self">Click to open fullscreen</a></p>
+<p>
+<iframe src="./Home-Pages/myprojects.html" width="900" height="500"></iframe>
+<p>
+
+</article>
+
+<hr>
+
+<article>
+    <header>
+        <h1>Tools and other programming related stuff:
+        </h1>
+    </header>
+
+    <p><a href="./Home-Pages/extrastuff.html" target="_self">Click to open fullscreen</a></p>
+        <p>
+        <iframe src="./Home-Pages/extrastuff.html" width="900" height="500"></iframe>
+        <p> 
+
+</article>
+
+<hr>
+
+<article>
+    <header>
+        <h1>Backend Web Development:
+        </h1>
+        <p>Here I will keep notes about stuff I learn for backend web development,
+        it will have a variety of things probably, like Databases, backend programming
+        languages, and I don't even know what else I may add in the future.   
+        </p>
+    </header>
+
+    <p><a href="./Home-Pages/backend.html" target="_self">Click to open fullscreen</a></p>
+        <p>
+        <iframe src="./Home-Pages/backend.html" width="900" height="500"></iframe>
+        <p> 
+
+</article>
+
+<hr>
+
+<article>
+    <header>
+        <h1>Computer Science and stuff:
+        </h1>
+        <p>In the pages bellow I keep notes about Computer Science, Networking 
+        and more, some stuff I like too keep notes of while others I just learn and don't 
+        add in my notes, so not everything I know is documented here.
+        </p>
+    </header>
+
+    <p><a href="./Home-Pages/computer.html" target="_self">Click to open fullscreen</a></p>
+        <p>
+        <iframe src="./Home-Pages/computer.html" width="900" height="500"></iframe>
+        <p> 
+
+</article>
+
+<hr>
+
+<article>
+
+    <header>
+    <h1>Math and Physics Notes</h1>
+    </header>
+    
+    <p><a href="./Home-Pages/mathnotes.html" target="_self">Click to open fullscreen</a></p>
+        <p>
+        <iframe src="./Home-Pages/mathnotes.html" width="900" height="500"></iframe>
+        <p> 
+    
+    </article>
+
+
+
+<hr>
+
+<article>
+<h1 style="font-size: xx-large;">My certificates:</h1>
+
+<style>
+
+h1 {
+    font-size: xx-large;
+}
+
+</style>
+
+<style>
+
+.certificate {
+    width: 60vw;
+    height: 30vw;
+    max-width: 600px;
+    max-height: 300px;
+    display: block; 
+    margin: 20px auto 20px auto;
+    border: 2px solid black; 
+     border: 2px solid black; 
+     box-shadow: 5px 5px 0px 2px black,
+    5px -5px 0px 2px black, 
+    -5px 5px 0px 2px black,
+    -5px -5px 0px 2px black;
+ }
+
+
+iframe {
+    border: 2px solid black; 
+     /*box-shadow: 10px 10px 0px 0px red, 
+    -10px -10px 0px 0px blue,
+    10px -10px 0px 0px  black,
+    -10px 10px 0px 0px black;*/
+}
+
+</style>
+
+ 
+<h3><u>HTML certificate:</u></h3>
+
+<img class="certificate" src="./images/Capture.jpg" width="600" height="300">
+ 
+<h3><u>CSS certificate:</u></h3>
+ 
+<img class="certificate" src="./images/CSS.jpeg" width="600" height="300">
+ 
+<h3><u>JavaScript certificate:</u></h3>
+
+<img class="certificate" src="./images/javascriptcertificate.jpg" style="width: 50vw; height: 40vw; max-width: 450px; max-height: 350px;">
+
+
+<h3><u>jQuery certificate:</u></h3>
+<img class="certificate" src="./images/jQuery.jfif" style="width: 50vw; height: 40vw; max-width: 450px; max-height: 350px;">
+
+</article>
+
+
+<script>
+    if(true){
+        let canvas = document.getElementById('canvas-029');
+        let c = canvas.getContext('2d');
+        let canvas2 = document.getElementById('ccaannvvaass20');
+
+        let mouse = {
+            x: Number.POSITIVE_INFINITY,
+            y: Number.POSITIVE_INFINITY
+        }
+
+        var iframes = document.querySelectorAll('iframe');
+
+        function bindIFrameMousemove(iframe){
+            iframe.contentWindow.addEventListener('mousemove', function(event) {
+                var clRect = iframe.getBoundingClientRect();
+         
+                let x = event.clientX + clRect.left;
+                let y = event.clientY + clRect.top;
+                
+                mouse.x = x;
+                mouse.y = y;
+             });
+         
+            iframe.addEventListener('load', (e) => {
+                    iframes = document.querySelectorAll('iframe');
+                    iframes.forEach((iframe) => {
+                        bindIFrameMousemove(iframe)
+                    });
+            });
+        };
+
+        window.addEventListener('load', (e) => {
+            try{
+            iframes.forEach((iframe) => {
+                bindIFrameMousemove(iframe);
+            });
+            } catch{
+                console.log('Error');
+            }
+        });
+    
+        canvas.width = window.innerWidth - 25;
+        canvas.height = window.innerHeight;
+
+        window.addEventListener('resize', (e) => {
+            canvas.width = window.innerWidth -25;
+            canvas.height = window.innerHeight;
+        });
+
+        let overcanvas2 = false;
+
+        window.addEventListener('mousemove', (e) => {
+            mouse.x = e.clientX;
+            mouse.y = e.clientY;
+            if(mouse.x > window.innerWidth -25 || overcanvas2){
+                mouse.x = Number.POSITIVE_INFINITY;
+                mouse.y = Number.POSITIVE_INFINITY;
+            }
+        });
+
+        canvas2.addEventListener('mousemove', (e) => {
+            mouse.x = Number.POSITIVE_INFINITY;
+            mouse.y = Number.POSITIVE_INFINITY;
+            overcanvas2 = true;
+        });
+        
+        canvas2.addEventListener('mouseout', (e) => {
+            overcanvas2 = false;
+        });
+
+        window.addEventListener('mouseout', (e) => {
+            mouse.x = Number.POSITIVE_INFINITY;
+            mouse.y = Number.POSITIVE_INFINITY;
+        });
+
+        window.addEventListener('touchstart', (e) => {
+            mouse.x = Number.POSITIVE_INFINITY;
+            mouse.y = Number.POSITIVE_INFINITY;
+            canvas.style.display = 'none';
+        });
+
+        window.addEventListener('touchmove', (e) => {
+            mouse.x = Number.POSITIVE_INFINITY;
+            mouse.y = Number.POSITIVE_INFINITY;
+            canvas.style.display = 'none';
+        });
+
+        window.addEventListener('touchend', (e) => {
+            mouse.x = Number.POSITIVE_INFINITY;
+            mouse.y = Number.POSITIVE_INFINITY;
+            canvas.style.display = 'none';
+        });
+
+        let createParticle = function(x, y, r, cl){
+            this.x = x;
+            this.y = y; 
+            this.r = r;
+            this.cl = cl;
+            this.velocity = 0.05;
+            this.radians = Math.random() * Math.PI * 2;
+            this.distance = Math.random() * 50 + 15;
+            this.lastMouse = {x: x, y: y};
+            this.draw = function(previous){
+                c.strokeStyle = this.cl;
+                c.lineWidth = this.r;
+                c.beginPath();
+                c.moveTo((previous.x == x)? this.x: previous.x, (previous.y == y)? this.y: previous.y);
+                c.lineTo(this.x, this.y);
+                c.stroke();
+                c.closePath();
+            }
+            this.update = function(){
+                let previousPoints = {
+                    x: this.x, 
+                    y: this.y
+                }
+
+                this.radians += this.velocity;
+
+                if(mouse.x != Number.POSITIVE_INFINITY){
+                    this.lastMouse.x += (mouse.x - this.lastMouse.x) * 0.09;
+                    this.lastMouse.y += (mouse.y - this.lastMouse.y) * 0.09;
+
+                    this.x = this.lastMouse.x + Math.cos(this.radians) * this.distance;
+                    this.y = this.lastMouse.y + Math.sin(this.radians) * this.distance;
+
+                    this.draw(previousPoints);
+                }
+            }
+        }
+
+        let colors = ["#F2EBEC", "#C8C1D9", "#5D84A6", "#485159", "#F2D4AE"];
+
+        let particles = new Array();
+        
+        function int(){
+            particles = [];
+            for(let i = 1; i <= 80; i++){
+                let r = Math.random() * 3 + 1;
+                let cl = colors[Math.floor(Math.random() * colors.length)];
+                particles.push(new createParticle(canvas.width / 2, canvas.height / 2, r, cl));
+            }
+        }
+
+        int();
+
+        function animate(){
+                let imageData = c.getImageData(0, 0, canvas.width, canvas.height);
+                let data = imageData.data;
+                for(i = 3; i < data.length; i += 4){
+                    data[i] = data[i] * 0.9
+                }
+                c.clearRect(0, 0, canvas.width, canvas.height);
+                c.putImageData(imageData, 0, 0);
+                particles.forEach((particle) => {
+                    particle.update();
+                });
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+    }
+</script>
+
+<hr style="margin-top: 1px">
+</body>
+</html>

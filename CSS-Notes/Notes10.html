@@ -1,0 +1,588 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> Page ten of my notes  </title>
+<link rel="stylesheet" href="../CSS-JavaScript-External-Files/HTMLnotes.css">
+<Style>
+
+    .code10 {
+    white-space: pre-line;
+    background-color:lightgreen;
+    }
+    
+    .left {
+        text-align: left;
+    }
+    
+</style>
+</head>
+<body>
+
+ <hr>
+<header> 
+<h1> Page five of my CSS notes </h1>
+</header>
+
+<article id="start-of-page"> 
+  
+    <div id="homepages">
+    
+        <h3>Home Pages:</h3>
+       
+    
+    </div>
+    
+    <nav data-notes="CSS" data-page="5">
+    
+    </nav>
+            
+    <h3> Informations included in this page:</h3>
+<p> <a href="../CSS-Notes/Notes10.html#one">About the position property</a></p>
+<p> <a href="../CSS-Notes/Notes10.html#two">The float property</a></p>
+<p> <a href="../CSS-Notes/Notes10.html#three">The clear property</a></p>
+<p> <a href="../CSS-Notes/Notes10.html#four">The overflow property</a></p>
+<p> <a href="../CSS-Notes/Notes10.html#five">The z-index property</a></p>
+
+    </article>
+    
+     <script src="../CSS-JavaScript-External-Files/nav.js"></script> 
+
+
+ 
+<hr>
+
+<article id="one">
+
+    <header>
+
+        <h1>About the position property</h1>
+
+    </header>
+
+<p>There are <Span>four</Span> different <Span>position values</Span> you can use,
+<Span>static</Span> which is the default one, <Span>relative</Span>, <span>absolute</span>, <span>fixed</span> and <span>sticky</span>.</p>
+
+
+<p>The <span>static</span> position is the position we are all more familiar with, 
+since it's the <span>defaul position</span>, every <Span>HTML</Span> element gets 
+positioned one under another and no element can be place one over the other.</p>
+
+<p>The <span>relative</span> position works pretty much like the <Span>static</Span>
+position, with one exception, you can use the <Span>top</Span>, <span>right</span>, 
+<span>bottom</span> and <span>left</span> properties to <Span>move the element</Span>
+relatively to it's <Span>original position</Span>.</p>
+
+<p>Lets make a <span>fake table</span> for example to use for our examples: </p>
+
+<p class="left">HTML Code:
+</p>
+
+
+<p class="left"><span class="code10">&lt;div class="parent">
+
+    &lt;div class="row">
+    &lt;div class="title"> Parent &lt;/div>
+    &lt;/div>
+    
+    &lt;div class="row">
+    &lt;div class="one"> One &lt;/div>
+        &lt;/div>
+    
+    &lt;div class="row">
+    &lt;div class="two"> Two &lt;/div>
+    &lt;/div>
+    
+    &lt;div class="row">
+    &lt;div class="three"> Three &lt;/div>
+    &lt;/div>
+    
+    &lt;/div></span></p>
+
+<p class="left">CSS Code:</p>
+
+<p class="left"><Span class="code10">&lt;Style>
+
+    .parent {
+        display: table; 
+        background-color: rgb(0, 162, 255);
+          font-weight: bold; 
+          font-size: 30px; 
+          border-collapse: collapse; 
+          margin-left: auto; 
+        margin-right: auto;  
+    }
+    
+    .row {
+        display: table-row;
+    }
+    
+    .title {
+        display: inline-block; 
+        background-color: rgb(0, 162, 255); 
+        border: 10px solid  rgb(0, 162, 255); 
+        border-bottom: 0px solid blue; 
+        height: 50px;
+        width: 580px;
+    }
+    
+    .one {
+        vertical-align: middle; 
+        padding-left: 10px;
+        display: inline-block;
+        background-color: rgb(155, 221, 129); 
+        border: 10px solid  rgb(0, 162, 255); 
+        border-top: 0px solid blue; 
+        height: 50px; 
+        border-bottom: 0px solid blue; 
+        width: 580px;
+    }
+    
+    .two { 
+        vertical-align: middle; 
+        padding-left: 10px;  
+        display: inline-block;
+        background-color: rgb(245, 91, 91); 
+        border: 10px solid  rgb(0, 162, 255); 
+        border-top: 0px solid blue; 
+        height: 50px; 
+        border-bottom: 0px solid blue; 
+        width: 580px;
+    }
+    
+    .three {
+        vertical-align: middle; 
+        padding-left: 10px; 
+        display: inline-block;
+        background-color: pink; 
+        border: 10px solid  rgb(0, 162, 255); 
+        border-top: 0px solid blue; 
+        height: 50px; 
+        width: 580px;
+    }
+    
+    &lt;/Style></Span></p>
+
+<p class="left">Outcome:</p>
+
+<Style>
+
+.parent {
+    display: table; 
+    background-color: rgb(0, 162, 255);
+      font-weight: bold; 
+      font-size: 30px; 
+      border-collapse: collapse; 
+      margin-left: auto; 
+    margin-right: auto;  
+}
+
+.row {
+    display: table-row;
+}
+
+.title {
+    display: inline-block; 
+    background-color: rgb(0, 162, 255); 
+    border: 10px solid  rgb(0, 162, 255); 
+    border-bottom: 0px solid blue; 
+    height: 50px;
+    width: 580px;
+}
+
+.one {
+    vertical-align: middle; 
+    padding-left: 10px;
+    display: inline-block;
+    background-color: rgb(155, 221, 129); 
+    border: 10px solid  rgb(0, 162, 255); 
+    border-top: 0px solid blue; 
+    height: 50px; 
+    border-bottom: 0px solid blue; 
+    width: 580px;
+}
+
+.two { 
+    vertical-align: middle; 
+    padding-left: 10px;  
+    display: inline-block;
+    background-color: rgb(245, 91, 91); 
+    border: 10px solid  rgb(0, 162, 255); 
+    border-top: 0px solid blue; 
+    height: 50px; 
+    border-bottom: 0px solid blue; 
+    width: 580px;
+}
+
+.three {
+    vertical-align: middle; 
+    padding-left: 10px; 
+    display: inline-block;
+    background-color: pink; 
+    border: 10px solid  rgb(0, 162, 255); 
+    border-top: 0px solid blue; 
+    height: 50px; 
+    width: 580px;
+}
+
+</Style>
+
+
+<div class="parent">
+
+<div class="row">
+<div class="title"> Parent </div>
+</div>
+
+<div class="row">
+    <div class="one"> One </div>
+</div>
+
+<div class="row">
+    <div class="two"> Two </div>
+</div>
+
+<div class="row">
+    <div class="three"> Three </div>
+</div>
+
+</div>
+
+<p>Lets try to move the <span>first cell</span> using <span>position: relative</span>, I will 
+move it <span>20 pixels down</span> by writing <span>top: 20px</span>.</p>
+
+<p><span>&lt;div class="one" style="position: relative; top: 20px;"&gt;</span></p>
+<div class="parent">
+
+    <div class="row">
+    <div class="title"> Parent </div>
+    </div>
+    
+    <div class="row">
+        <div class="one" style="position: relative; top: 20px;"> One </div>
+    </div>
+    
+    <div class="row">
+        <div class="two"> Two </div>
+    </div>
+    
+    <div class="row">
+        <div class="three"> Three </div>
+    </div>
+    
+    </div>
+
+<p>As you can see it moved <Span>over the second cell</Span> without effecting 
+the other <span>elements</span> in any way.</p>
+
+<p>The <span>absolute</span> position works like <span>relative</span>, however, 
+the <span>original position</span> of the <span>element</span> is not rendered at all, 
+and you will have to <span>position the element</span> relatively to the <span>start of the page</span>, 
+since it doesn't have an original position.</p>
+
+<p>The <span>page</span> however may be big, and it also can change, therefore,
+we can also use a trick to <span>position an absolute element</span> relatively to <span>it's parent</span>,
+simple by making <span>it's parent</span> relative.</p>
+
+<p><span>&lt;div class="parent" style="position: relative;"&gt;... <br>
+...&lt;div class="one" style="position: absolute; top: 40px;"&gt; </span></p>
+
+<div class="parent" style="position: relative;">
+
+    <div class="row">
+    <div class="title"> Parent </div>
+    </div>
+    
+    <div class="row">
+        <div class="one" style="position: absolute; top: 40px;"> One </div>
+    </div>
+    
+    <div class="row">
+        <div class="two"> Two </div>
+    </div>
+    
+    <div class="row">
+        <div class="three"> Three </div>
+    </div>
+    
+</div>
+
+<p>As you can see the <span>second and third cells</span> have filled the <span>empty space</span> of the 
+<span>first cell</span>, just like if the <Span>first cell</Span> wasn't there.</p>
+
+<p>The <span>fixed position</span> works like <span>absolute</span>, meaning that 
+you <Span>position the element</Span> relatively to the <Span>start of the page</Span>, 
+the difference is that when an <span>element</span> is <Span>fixed</Span> it will 
+stay at the <span>same position</span> as you <span>scroll</span>, useful if you need a 
+<span>navigation bar</span> or something.</p>
+
+<p>The <Span>sticky position</Span> works like <span>realative</span> and <span>fixed together</span>, meaning, 
+the <Span>element</Span> will be <Span>positioned</Span> relatively to it's <span>original position</span>, and it 
+will also <span>follow your screen while scrolling</span>, if you for example 
+write <span>top: 0px</span> it will start following the <Span>screen</Span> while scrolling 
+only after you have <span>scrolled over it</span> and it has met the <span>start of the page</span>, since we wrote <Span>top: 0px</Span>, 
+it will then only <Span>stop following</Span> the screen after it <Span>meets</Span> it's <span>original position</span> again.</p>
+
+<p>You need to remember one thing about <span>sticky position</span>, it will only <span>stick on the page</span> and <span>follow the screen</span> till
+it reaches the <span>end of it's parent</span>, if the <span>parent</span> is the <span>body</span> then 
+it will not have an end.<p>
+
+<p>Also, only <span>50%</span> of the <span>browsers</span> support the <Span>sticky position</Span>, 
+to increase that number to <span>90%</span> you can simply just add the follow <span>positions</span> which work 
+as <Span>alternatives</Span> if a <span>browser</span> doesn't support <span>position: sticky</span>: </p>
+
+<p>position: -webkit-sticky; <br>
+position: -moz-sticky; <br>
+position: -ms-sticky;  <br>
+position: -o- sticky;  <br>
+position: sticky;</p>
+
+<p>If you want to have an <span>alternative</span> behavior in case a <span>browser</span> doesn't support any 
+of these <span>positions</span> you can write the following code:</p>
+
+<p class="left">
+    <span class="code10">&lt;style&gt;
+
+    .example {
+        position: relative/absolute/static or whatever you want; 
+    }
+
+    @supports (position: sticky) {
+        .example {
+            position: -webkit-sticky;  
+position: -moz-sticky;  
+position: -ms-sticky;  
+position: -o- sticky;
+             position: sticky;
+             top:0;
+        }
+    }
+
+    &lt;style&gt;</span>
+</p>
+
+<p>This will make the <span>element</span> have a specific <span>position</span> unless 
+<Span>position: sticky;</Span> is supported, in which case the <Span>position</Span> will be <span>sticky</span>.</p>
+
+<p>I created a project using the <span>sticky position</span>, you can check that here: <a href="https://code.sololearn.com/WzkGOcAzJXFn/#html" target="_blank">https://code.sololearn.com/WzkGOcAzJXFn/#html</a></p>
+
+<iframe width="1325" height="480" style=" margin-top: 30px; display: block; margin-left: auto; margin-right: auto; width: 750px; height: 400px;" src="https://www.youtube.com/embed/jx5jmI0UlXU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="1339" height="480"  style=" margin-top: 30px; display: block; margin-left: auto; margin-right: auto; width: 750px; height: 400px;" src="https://www.youtube.com/embed/NzjU1GmKosQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</article>
+
+<hr>
+
+<article id="two">
+
+    <header>
+        
+        <h1>The float property</h1>
+
+    </header>
+
+<p> With <span>float</span> property, we can <span>position</span> elements
+one afer another, or, even allow <span>inline elements</span> such as <span>text</span> wrap around a specific
+<Span>element</Span>, such as an <Span>image</Span> for example.</p>
+
+<p>The <span>values</span> for the <span>float property</span> are <span>left</span>, <span>right</span> and <Span>none</Span>. </p>
+
+<p><span>Left</span> and <Span>right</Span> float <Span>elements</Span> in those <Span>directions</Span>, respectively, <Span>none</Span>
+(the default) ensures that the <Span>element</Span> will <span>not float</span>.</p>
+
+<p>Below is an <span>example</span> of an <Span>image</Span> that is <span>floated</span> to the <span>right</span>.</p>
+
+
+<p class="left">Code:</p>
+
+<p class="left"><span class="code10">&lt;p style=" 
+    width: 450px;
+    margin: auto;
+    background-color: cyan;
+    border: 3px solid black;
+    border-radius: 10px;
+    padding: 0px 0px 10px 10px;
+    text-align: justify;">
+    
+    &lt;img src="../images/background.jpg" style=" 
+    float: right;
+    margin-left: 10px;"> 
+    
+    This paragraph has an image that is floated to the <strong>right.</strong> 
+    It is highly recommended to add a margin to images so that the text does 
+    not get too close to the image. If you want your text to be easily read, you 
+    should always add a few pixels between words and borders, images, 
+    and other content. 
+     
+    &lt;/p></span></p>
+
+
+
+<p class="left">Outcome:</p>
+
+
+<p style=" 
+width: 450px;
+margin: auto;
+background-color: cyan;
+border: 3px solid black;
+border-radius: 10px;
+padding: 0px 0px 10px 10px;
+text-align: justify;">
+
+<img src="../images/background.jpg" style=" 
+float: right;
+margin-left: 10px;"> 
+
+This paragraph has an image that is floated to the <strong>right.</strong> 
+It is highly recommended to add a margin to images so that the text does 
+not get too close to the image. If you want your text to be easily read, you 
+should always add a few pixels between words and borders, images, 
+and other content. 
+ 
+</p>
+
+<p>As you can see the <span>text</span> has wrap around the <span>image</span>.</p>
+
+
+<p>In the <Span>video</Span> below you can see how <Span>block elements</Span> get effected by <Span>float</Span>, and also 
+how <Span>multiple floating elements</Span> interact with each other.</p>
+
+    <iframe width="853" height="480" style="display: block; margin: 30px auto 10px auto;  width: 750px; height: 400px;" src="https://www.youtube.com/embed/xara4Z1b18I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+</article>
+
+<hr>
+
+<article id="three">
+
+    <header>
+
+        <h1>The clear property</h1>
+
+    </header>
+
+<p>So, normally, as it's explained in the <Span>video</Span> above, when an <Span>element</Span> floats, the <Span>elements</Span>
+below it <Span>moves up</Span> under it to fill the <span>empty space</span>, it's explained in the video that the <span>clear</span>
+property can be used to set some kind of <span>invisible wall</span> over the <span>elements</span>, which <Span>wall</Span> hits
+with the <span>floating elements</span> no allowing the <Span>element</Span> to <span>move under</span> the <Span>floating elements</Span>.</p>
+
+<p>The <span>clear</span> property works together with <span>float</span> property, and it takes <Span>three values</Span>, 
+<span>right</span>, <span>left</span> and <span>both</span>. If you set the <span>invisible wall</span> at the <span>left side</span>
+of an <span>element</span> no <Span>floating element</Span> can be at it's <Span>left</Span>, same goes for the <span>right</span> values,
+but the <span>opposite direction</span>, usually you just use the <span>both</span> value, which means that the 
+<Span>element</Span> cannot <Span>move under</Span> any <span>floating elements</span>.</p>
+
+</article>
+
+<hr>
+
+<article id="four">
+
+    <header>
+
+        <h1>The overflow Property</h1>
+
+    </header>
+
+<p>There are <Span>three</Span> overflow properties, the <span>overflow-x</span>, the <span>overflow-y</span> and 
+the <span>overflow</span> properties.</p>
+
+<p>So, some times, the <span>content</span> of an <span>element</span> is <Span>bigger</span> than 
+the <span>size</span> of the <Span>element</Span>, as a result, the <span>content</span> goes beyond the <span>borders</span>
+of it's <span>element</span>, see this <span>paragraph</span> for example:</p>
+
+
+<p class="left">Code:</p>
+
+<p class="left"><span class="code10">&lt;p style=" 
+    width: 200px;
+    border: 3px solid black;
+    margin: auto;
+    background-color: white;"> 
+    
+    AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    
+    &lt;/p></span></p>
+
+
+
+<p class="left">Outcome:</p>
+
+<p style=" 
+width: 200px;
+border: 3px solid black;
+margin: auto;
+background-color: white;"> 
+
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+</p>
+
+<p>To fix that, we can use the <span>overflow-x</span> property, there are actually <span>four value</span> the 
+<SpaN>overflow</SpaN> properties can get, <span>visible</span> which is the dafault, meaning that the <span>content</span>
+outside the <span>border</span> is <span>visible</span>, <span>scroll</span> which hides the <span>content</span> 
+that's <Span>outside the border</Span> and adds a <span>scroll bar</span> that allows us to <Span>scroll</Span>, 
+<Span>hidden</Span> that just hides the <span>content</span> that surpasses the <span>border</span>, and <span>auto</span>,
+which is useful when you use <span>percentage</span> to set the <Span>width</Span> or <span>height</span>
+of an <span>element</span>, since for some <span>screens</span> the <Span>content</Span> will fit and for 
+some it won't, using the <Span>auto</Span> value will make a <Span>scroll bar</Span> appear only when it's needed.</p>
+
+<p class="left">Code:</p>
+
+<p class="left"><span class="code10">&lt;p style=" 
+    width: 200px;
+    border: 3px solid black;
+    margin: auto;
+    background-color: white;
+    overflow-x: scroll;"> 
+    
+    AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    
+    &lt;/p></span></p>
+
+
+
+<p class="left">Outcome:</p>
+
+<p style=" 
+width: 200px;
+border: 3px solid black;
+margin: auto;
+background-color: white;
+overflow-x: scroll;"> 
+
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+</p>
+
+<p>The <Span>overflow-y</Span> property works the same way, its just used for the <span>y axis</span>, 
+the <span>overflow</span> property is for both.</p>
+
+</article>
+
+<hr>
+
+<article id="five">
+
+    <header>
+
+        <h1>The z-index property</h1>
+
+    </header>
+
+<p>The <span>z-index</span> property is used to create <span>layers</span>, for example, normally, an <Span>element</Span>
+added <Span>after</Span> another in <span>HTML</span> will be <span>infront</span> if moved by <Span>position</Span> property, 
+if we wanted to change that we could set <Span>layers</Span>, an element with <span>z-index: 1</span> is infront an element with 
+<Span>z-index: 0</Span> and behind an element with <Span>z-index: 2</Span>.</p>
+
+<p>Thats pretty much everything about it, I already have used it few times, in the project I made for example using the <span>position-sticky</span> I needed to use it
+so the <span>list headers</span> didn't hide the <span>navigation bar</span>, it's a pretty useful property in my opinion, and pretty simple too.</p>
+
+</article>
+
+<hr>
+
+</body>
+</html>

@@ -1,0 +1,879 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<title> Page one of my Math notes </title>
+<meta charset="UTF-8"> 
+<link href="../CSS-JavaScript-External-Files/HTMLnotes.css" rel="stylesheet">
+<Style>
+    body{
+        overflow-x: hidden;
+        width: 100%;
+    }
+    .left {
+        text-align: left;
+    }
+
+    iframe {
+        width: 600px;
+        height: 350px;
+        border: 3px solid black;
+        margin: 20px auto 20px auto;
+        display: block;
+    }
+    .code10 {
+    white-space: pre-wrap;
+    background-color: lightgreen;
+    overflow-wrap: break-word;
+    }
+    
+    p {
+    text-align:center;
+    }
+    h1 {
+    text-align:center;
+    }
+    h2 {
+    text-align:center;
+    }
+    h3 {
+    text-align:center;
+    }
+    .c {
+    background-color:lightgreen;
+    }
+    hr {
+    width:100%;
+    height:15px;
+    background-color:black;
+    color:black;
+    border: black solid;
+    }
+    body {
+    background-color:rgb(165, 235, 235);
+    }
+    span {
+    background-color:lightgreen;
+    }
+    
+    a:link {
+    color: black;
+    text-shadow: 1px 0px 1px black;
+    
+    }
+    
+    a:visited {
+    color: black;
+    text-shadow: 1px 0px 1px rgb(22, 22, 22);
+    }
+    
+    a:hover {
+    text-decoration: underline;
+    color: red;
+    text-shadow: 1px 0px 1px black;
+    }
+     
+    img{
+        display: block;
+        margin: 20px auto 20px auto;
+        border: 3px solid black;
+        border-radius: 10px;
+    }
+
+    </style> 
+</head>
+<body>
+
+<hr>
+
+    <header> 
+    <h1> Page one of my Math and Physics notes </h1>
+    </header>
+    
+<article id="start-of-page"> 
+  
+<div id="homepages">
+
+    <h3>Home Pages:</h3>
+   
+
+</div>
+
+<nav data-notes="Math" data-page="1">
+
+</nav>
+
+    <h3>Informations included in this page:</h3>
+    <p><a href="../Math-and-Physics-Notes/math1.html#one">Vectors</a></p>
+    <p><a href="../Math-and-Physics-Notes/math1.html#two">The Physics of an Elastic Collision</a></p>
+
+</article>
+
+<script src="../CSS-JavaScript-External-Files/nav.js"></script>
+
+<hr>
+   
+<article id="one">
+
+<header>
+    <h1>Vectors</h1>
+</header>
+
+<p>In this section I will speak about <span>vectors</span>, don't 
+expect me to explain everything correctly, many of the words I'm gonna use
+were unknown to me till today, because english isn't my native language, 
+I have to use english sources however to study stuff because there 
+aren't many good videos or articles out there written in my language.</p>
+
+<p>First, let's understand the difference between a <span>scalar quantity</span>
+and a <Span>vector quantity</Span>, a <span>scalar quantity</span> has 
+<span>magnitude</span> only, while a <span>vector quantity</span>
+has <Span>magnitude</Span> and <Span>direction</Span>. For example, 
+<Span>mass</Span> is a <span>scalar quantity</span>, while 
+<Span>force</Span> is a <span>vector quantity</span>, you can't say 
+an object has 30kg mass towards east, but you can say 
+you are moving a object with a force of 200N towards north. </p>
+
+<p>Let's now say we have a point <Span>A(1, 2)</Span> and <span>B(4, 6)</span>,
+how do we find the <Span>magnitude</Span> of the <span>vector AB</span>? We can 
+easily do this like this:</p>
+
+<img src="../images/math1.jpg">
+
+<p>So, all you need to remember is that <span>Vx = x2 - x1</span> and 
+<Span>Vy = y2 - y1</Span>, after that to find the <Span>magnitude</Span> 
+of a <Span>vector</Span> you simple do <span>|v| = square of Vx^2 + Vy^2</span></p>
+
+<p>What if you know the <Span>vector AB</Span> and <Span>point A</Span>
+but not <span>point B</span>? You could find <span>point B</span> like this:</p>
+
+<img src="../images/math2.jpg">
+
+<p>Notice something? <Span>Bx = Ax + Vx</Span> and 
+<Span>By = Ay + Vy</Span>!</p>
+
+<p>If we knew <Span>point B</Span> but not <span>point A</span> then 
+we could find <Span>point A</Span> like this:</p>
+
+<img src="../images/math3.jpg">
+
+<p>Notice something? <Span>Ax = Bx - Vx</Span> and 
+<Span>Ay = By - Vy</Span>!</p>
+
+<p>Alright, so now, how could we find the <Span>angle</Span>
+of a <span>vector</span>? Here is how we do it:</p>
+
+<img src="../images/math4.jpg">
+
+<p>To actually find tan^-1(6/4) you need to use a <Span>calculator</Span>, 
+the result will be the <span>degrees</span>. So by knowing the <Span>Vx</Span> and <Span>Vy</Span>
+we can find the <span>angle</span> of the <Span>vector</Span>, something I actually needed for 
+a project I wanted to make, I wanted to make a div rotate based on 
+the position of the cursor, so if the div is the <Span>point A</Span>
+and the cursor is the <span>point B</span> now I know how I can 
+calculate the <span>degrees</span> as the cursor moves. </p>
+
+<p>A problem appears when <Span>Vx &lt; 0</Span> however,
+doing <span>tan^-1(Vy/Vx)</span> will give us the angle 
+messured from the <span>negatice x axis</span>, if we wanted to get the 
+angle messured from the <Span>positive x axies</Span> we would simple have 
+to do <Span>180 - tan^-1(Vy/Vx)</Span>, like in the image below:</p>
+
+<img src="../images/math5.jpg">
+
+<p>But doing this for all 4 cases possible (up right, up left, down right, down left) would
+be very time consuming in programming, and that's where the <span>Math.atan2(Vx, Vy)</span>
+property comes to make our lives easier:</p>
+
+<p>The <Span>math.atan2(Vx, Vy)</Span> method messures the angle from the <span>positive x axis</span> to the 
+<span>negative x axis</span> whenever the <Span>Vy</Span> is <Span>positive</Span>, else if it is <span>negative</span>
+it will do the same but the <span>angle</span> that is returned will be <Span>negative</Span>, and it will again 
+be messured from the <span>positive x axis</span> to the <Span>negative x axis</Span> like this:</p>
+
+<img src="../images/math7.png" style="width: 90vw">
+
+</article>
+
+<hr>
+
+<article id="two">
+    <header>
+        <h1>The Physics of an Elastic Collision</h1>
+    </header>
+
+<h2>Pop Quiz:</h2>
+<p>Let's think about a few basic <Span>collisions</Span> involving an 
+<span>elephant</span> and <Span>myself</Span>. Supposed I'm <Span>standing still</Span> (valocity = 0) and 
+an <Span>elephant runs directly into me</Span>. What will happen to me? In particular, <span>what will happen to my valocity</span>? And 
+<span>what will happen to the elephant's valocity</span>? If <Span>I run directly into a stationary elephat</Span> (valocity = 0) <Span>what will happen to my valocity</Span>? And <Span>what will happen to the valocity of the elephant</Span> who's <Span>valocity was 0</Span>? 
+An <Span>elephant and I run straight at one another</Span>, <Span>what happens to our valocities</Span>? An <Span>elephant is chasing me</Span>, and 
+<Span>hits me</Span> while we <Span>both run towards the same direction</Span>, because <span>his valocity is heigher</span>, 
+<Span>how will our valocities interact</Span>? Those are some problems we are going to learn how to solve in 
+this section.</p>
+
+<h2>Momentum:</h2>
+
+<p>We'll get the <Span>answers</Span> for the <span>pop quiz</span>, but first let me  introduce the 
+term <span>momentum</span>, which is rather valued commodity in the world of physics. <span>Momentum</span>
+(generally abbreviated as <Span>P</Span>) is defined to be the <span>mass of an object multiplied by the valocity of the object</span>. This can be written as:</p>
+
+<img src='../images/physics1.png'></img>
+
+<p><Span>Momentum</Span> can be <Span>large or small</Span>, as well as <span>positive or negative</span>. This is known as 
+a <Span>vector</Span>, it has a <Span>magnitude</Span> (size), and a <Span>direction</Span>. <Span>Valocity</Span> is also a <Span>vector</Span>
+(i.e. I'm driving North at 55 miles per hour). In <Span>Equation 1</Span> the <Span>vector</Span> is 
+<Span>indicated by</Span> the <span>small line above P and v</span>. 
+<Span>Mass</Span> is <Span>not</Span> a <Span>vector</Span> (it only has a <Span>magnitude</Span>, <Span>not</Span> a 
+<span>direction</span>).</p>
+
+<p>In a <Span>collision</Span>, the <span>momentum of a system</span> is 
+<Span>conserved</Span> (i.e. the <Span>total momentum of the system</Span> is the <Span>same</Span> 
+<Span>after</Span> the <span>collision</span> as it was <span>before</span> the <span>collision</span>). A 
+<Span>system</Span> consists of the <span>two particles</span> that are <span>colliding</span>. We can write this as:</p>
+
+<img src="../images/physics2.png"></img>
+
+<p>Where the <Span>i</Span> and <Span>f</Span> indicate <Span>initial</Span>
+and <Span>final</Span> (recall the <span>P</span> is <span>momentum</span>).</p>
+
+<p>Here are several examples of <Span>momentum</Span>:</p>
+
+<img src="../images/physics3.png"></img>
+
+<h2>Back to the quiz:</h2>
+
+<p>For <Span>question 1</Span>, I think that if an 
+<Span>elephant ran directly in to me</Span> while I had a <span>valocity of 0</span> 
+I would probably go flying backwards, and the <Span>elephant</Span> wouldn't really notice the <span>collision</span>. 
+There are <Span>two things</Span> in our <span>system</span>, the <Span>elephant</Span> and <Span>me</Span>. I am <Span>not moving</Span>, 
+so <Span>my momentum is 0</Span>. The <Span>elephant</Span> is <Span>running at me</Span>, let's say the 
+<Span>elephant</Span> is moving with a <Span>valocity of 5 m/s</Span>, and has a 
+<Span>mass of 1000 kg</Span>. The <Span>initial momentum of the system = Pme + Pelephant = 0 + 5000 = 5000</Span> (the <Span>total mementum before the collision</Span>).</p>
+
+<p><Span>After the collision</Span> the <Span>total momentum</Span> must be 
+<Span>equal</Span> to <span>5000</span> due to the <span>Law of Momentum Conservation</span>. Since I think I will be moving with a <Span>high valocity to the right</Span>
+I can say that I have some <Span>positive momentum</Span> which is <Span>greater than my initial momentum of zero</Span>. Thus, the 
+<span>elephant</span> must now have <span>less momentum</span> (it got <Span>slowed down</Span> a bit when it <span>collided with me</span>). <span>How much did it slow down</span>? And <Span>how much did I speed up</Span>? 
+To answer those questions we need to introduce one more <span>physics term</span>, which is <Span>Energy</Span>.</p>
+
+<h2>Energy:</h2>
+
+<p>The term <span>energy</span> is used in many ways ranging from people showing up for work on Monday morning saying "I have no energy", to chemists discussing the energy 
+levels of a newly discovered element. For <span>introductory physics</span> (and this section) we only need to know about 
+<Span>kinetic energy</Span> (<span>KE</span>), which is often referred to as the <Span>energy of motion</Span>. If something is <Span>moving</Span>, it 
+<Span>has kinetic energy</Span>, and if it is <Span>not moving</Span> it <Span>has no kinetic energy</Span>. It is defined as:</p>
+
+<img src='../images/physics4.png'></img>
+
+<p>Where <Span>m</Span> is the <span>mass of the particle</span>, and <span>v</span> is the <span>velocity</span> of the <span>particle</span>. 
+<span>Kinetic energy</span> is <Span>not a vector</Span> (it can be <span>large or small</span>, but <span>does not have a direction</span> associated with it). 
+In an <span>elastic collision</span> the <span>kinetic energy is conserved</span>: the <span>initial kinetic energy</span> of 
+the <span>system</span> is <Span>equal to the final kinetic energy</Span>.
+We now have <Span>two conservation equations</Span> that will let us <Span>determine the final velocities</Span> and <Span>masses</Span>.</p>
+
+<h2>Back to the quiz:</h2>
+
+<p>So far, we know that <Span>Pi = Rf</Span> and <Span>KEi = KEf</Span>, so 
+from that we get those <Span>two equations</Span> we can use to find the <Span>final velocities</Span>:</p>
+
+<img src="../images/physics5.png"></img>
+
+<p>By doing a bit of <Span>algebra</Span> using those <Span>two equations</Span>, we can find that the 
+<Span>final velocities</Span> of the <Span>particles</Span> can also be given by: </p>
+
+<img src="../images/physics6.png"></img>
+
+<p>So, with <Span>this equations</Span> I created, as long as I know the 
+<Span>initial valocities</Span> and <span>masses</span> of my <Span>particles</Span> I can now 
+easily determine their <Span>final valocities</Span> after they <Span>collide</Span>.</p>
+
+<p>I will now attempt to find out what a <Span>collision</Span> between 
+<Span>me</Span> and an <Span>elephant</Span> would look like using <Span>JavaScript</Span>, since <Span>1000kg</Span> is kind 
+of a lot let's use a <Span>smaller elephant</Span> with <span>half the mass of the previous one</span> to keep the 
+<Span>velocities</Span> in a speed that gives us time to observe (you can click the canvas to restart the animation):</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let canvas = document.getElementById('canvas1');
+let c = canvas.getContext('2d');
+
+canvas.width = 500;
+canvas.height = 200;
+
+function getDistance(x1, x2){
+    return Math.abs(x2 - x1);
+}
+
+let v2, v1, m2, m1, x1, x2;
+
+let rect = function(x, y, w, h, cl, velocity, m){
+    this.x = x;
+    this.y = y;
+    this.w = w;
+    this.h = h;
+    this.cl = cl;
+    this.m = m;
+    this.velocity = velocity;
+    this.draw = function(){
+        c.fillStyle = this.cl;
+        c.fillRect(this.x, this.y, this.w, this.h);
+        c.font = 'normal 20px Arial'
+        c.fillStyle = 'white';
+        c.textAlign = 'center';
+        c.fillText(this.velocity, this.x + this.w / 2, this.y + this.w /2)
+    }
+    this.update = function(otherParticle){
+        let distance = getDistance(this.x + this.w / 2, otherParticle.x + otherParticle.w / 2);
+        
+       
+        if(distance < this.w / 2 + otherParticle.w / 2){
+            let v2 = otherParticle.velocity;
+            let v1 = this.velocity;
+            let m2 = otherParticle.m;
+            let m1 = this.m;
+            let x1 = this.x;
+            let x2 = otherParticle.x;
+
+            let xVelocityDiff = v1 - v2;
+            let xDist = x2 - x1;
+            
+            if(xDist * xVelocityDiff >= 0){
+                setTimeout(() => {
+                    this.velocity = (m1 - m2) / (m1 + m2) * v1 + (2 * m2) / (m1 + m2) * v2;
+                }, 1);
+            }
+        } 
+
+        this.x += this.velocity;
+        this.draw();
+    }
+}
+
+let elephant;
+let me;
+
+function int(){
+elephant = new rect(50, 50, 100, 140, 'blue', 5, 500);
+me = new rect(300, 118, 50, 70, 'orange', 0, 100);
+}
+
+int();
+
+canvas.addEventListener('click', int);
+
+function animate(){
+    c.fillStyle = 'black';
+    c.fillRect(0, 0, canvas.width, canvas.height);
+    me.update(elephant);
+    elephant.update(me);
+        requestAnimationFrame(animate);
+}
+
+animate();</span></p>
+
+<p class="left">Outcome:</p>
+
+<canvas id="canvas1" style="border: 3px solid black; margin: auto; display: block;"></canvas>
+
+<Script>
+    if(true){
+        let canvas = document.getElementById('canvas1');
+        let c = canvas.getContext('2d');
+
+        canvas.width = 500;
+        canvas.height = 200;
+
+        function getDistance(x1, x2){
+            return Math.abs(x2 - x1);
+        }
+
+        let v2, v1, m2, m1, x1, x2;
+        
+        let rect = function(x, y, w, h, cl, velocity, m){
+            this.x = x;
+            this.y = y;
+            this.w = w;
+            this.h = h;
+            this.cl = cl;
+            this.m = m;
+            this.velocity = velocity;
+            this.draw = function(){
+                c.fillStyle = this.cl;
+                c.fillRect(this.x, this.y, this.w, this.h);
+                c.font = 'normal 20px Arial'
+                c.fillStyle = 'white';
+                c.textAlign = 'center';
+                c.fillText(this.velocity, this.x + this.w / 2, this.y + this.w /2);
+                c.textAlign = 'left';
+                c.fillText('Click to restart Animation', 5, 20);
+            }
+            this.update = function(otherParticle){
+                let distance = getDistance(this.x + this.w / 2, otherParticle.x + otherParticle.w / 2);
+                
+               
+                if(distance < this.w / 2 + otherParticle.w / 2){
+                    let v2 = otherParticle.velocity;
+                    let v1 = this.velocity;
+                    let m2 = otherParticle.m;
+                    let m1 = this.m;
+                    let x1 = this.x;
+                    let x2 = otherParticle.x;
+
+                    let xVelocityDiff = v1 - v2;
+                    let xDist = x2 - x1;
+                    
+                    if(xDist * xVelocityDiff >= 0){
+                        setTimeout(() => {
+                            this.velocity = (m1 - m2) / (m1 + m2) * v1 + (2 * m2) / (m1 + m2) * v2;
+                        }, 1);
+                    }
+                } 
+
+                this.x += this.velocity;
+                this.draw();
+            }
+        }
+
+        let elephant;
+        let me;
+
+        function int(){
+        elephant = new rect(50, 50, 100, 140, 'blue', 5, 500);
+        me = new rect(300, 118, 50, 70, 'orange', 0, 100);
+        }
+
+        int();
+
+        canvas.addEventListener('click', int);
+
+        function animate(){
+            c.fillStyle = 'black';
+            c.fillRect(0, 0, canvas.width, canvas.height);
+            me.update(elephant);
+            elephant.update(me);
+                requestAnimationFrame(animate);
+        }
+
+        animate();
+
+    }
+</Script>
+
+<p>So, why did I add that <Span>if statement</Span> that <Span>checks if xValocityDiff * xDist >= 0</Span>? 
+I added it to fix some bugs, so, to understand it, let's analyze in which cases can the <Span>condition</Span> 
+be <Span>true</Span>, for the <Span>condition to be true</Span>, either <Span>xDist and xVelocityDigg will both be negative</Span>, or 
+<span>both will be positive</span>. Which means, <Span>v1 - v2</Span> and <Span>x2 - x1</Span> should 
+either both be <Span>positive numbers</Span> or <Span>negative</Span> for the <Span>codition</Span>
+to be <Span>true</Span>.</p>
+
+<p>Alright, so, if <Span>the particles are heading towards each other</Span>, then 
+<Span>they will collid head to head</Span>. In that case, for <Span>one of the two particles xDist is negative</Span>, more specifically, for the 
+<Span>particle at the right xDist is negative</Span>, so for it to <Span>collid</Span>, <Span>xVelocityDiff = v1 -v2 should also be negative</Span>, 
+<Span>v1</Span> will be <Span>negative</Span> since it's <Span>moving west</Span>, and <Span>v2</Span> will also be <Span>negative</Span> since it's 
+<span>moving east but multiplied with -</span>, therefore, in that case, <span>xValocityDiff is negative too</span>, so the 
+<Span>collision occurs</Span>, the <Span>collision will also occur for the left particle</Span>, with 
+<Span>bot xVelocityDiff and xDist being positive</Span>.</p>
+
+<p>What if <Span>both particles headed east</Span>? But <Span>the left particle had higher velocity</Span>? 
+For the <Span>particle at the right</Span>, <span>xDist would be negative</span>, and <Span>xVelocityDiff would also have to be negative</Span>, 
+since to <span>v2 would be heigher from v1 for them to collid</span>. For the <Span>particle at the left</Span>, <Span>xDist would be positive</Span>, and <Span>xVelocityDiff would also be positive</Span>.</p>
+
+<p>So, we have explored the posibility of the <span>two particles</span> moving <span>towards each other</span>, and 
+the posibility of the <span>two particles</span> moving <span>towards the same direction</span>, and we have came to one conclusion, 
+for the <Span>right particle</Span>, both <Span>xVelocityDiff and xDist should be negative</Span> and 
+for the <Span>left particle</Span> both <Span>xVelocityDiff and xDist should be positive</Span>, so that brings us to 
+the final question, why is that peace of code necessary? How does it fix any bugs?</p>
+
+<p>The bug that would sometimes occur was that the <span>two particles would get stuck together</span>, that <Span>bug</Span> 
+from what I understand occured because of the <Span>colission code</Span>. When the <Span>practicles collided</Span>
+some times they would <Span>go through each other just a little</Span>, and because of that, the <span>condition that 
+checks if the particles collid would run twice</span>, after running the code <Span>for the second time</Span> though, 
+their <span>velosities would return to their original</span>, so they would <Span>collid again</Span>, and that 
+process would go on again and again making them get stuck together. This problem was solved by the <span>second codition</span>, because now
+it also checks their <span>velosities</span>, if after the <Span>collision</Span> they both 
+<Span>continue heading east</Span>, then the <Span>particle at the right</Span> should have 
+<Span>heigher velocity</Span>, it's only logical it will, so since it will have <span>heigher velocity</span>, the 
+<Span>xVelocityDiff will become positive</Span>, and the <span>colission will not occur twice</span>, that's the explanation I came up with at least.</p>
+
+<p>Lastly, why did I add the <span>setTimeout()</span> at the end? I did that because when the <Span>velosity</Span> of 
+<Span>one particle was 0</Span>, when <span>colission</span> occured, after the <Span>first iteration through the code of the first particle occured</Span> the 
+<Span>particle that would run it's code first</Span>, would <Span>change velocity before the second particle's code runs</Span>, 
+this may be a matter of miliseconds but a problem would occur, in which case when the <span>second's particle code ran</span> the 
+<span>distance between them wasn't less than 0 anymore</span>, therefore the <Span>collision codition wouldn't come true</Span>, the 
+<Span>setTimeout</Span> will <Span>wait for 1 milisecond</Span> before changing the <Span>velocity</Span>, and just like that 
+I fixed the issue.</p>
+
+<p>Anyway, I really recommend checking out my <a href="../JavaScript-Notes/Notes23.html">canvas notes</a> to better 
+understand the code above, I'm not doing an overall explanation of the code because the structure of the code 
+is similar to many others I have made and explained in my <Span>canvas notes</Span>, I'm only going to focus on 
+<Span>collisions</Span> in this section.</p>
+
+<h2>The 2D World:</h2>
+
+<p>So, before we learned how to find the <span>final valocities</span> when 
+<Span>two particles collid</Span> on the <span>x axis</span>, if however we have 
+<span>two particles</span> moving in <Span>both x and y dimensions</Span>, then when 
+they <Span>collid</Span> like in the picture, what happens?</p>
+
+<img src="../images/physics8.png">
+
+<p>The <span>equation 5</span> will not work, because the <Span>collision</Span> has 
+an <span>angle</span>, to find their <Span>final velocities</span> we should first get the <Span>angle</span> 
+that the <Span>vector from one's particle center to the other forms</span>, I talked about how this is done 
+before in this page when I talked about <Span>vectors</span>.</p>
+
+<p>So, we have <Span>two points</Span>, to get the <span>angle of the vector</span>, we first should find the 
+<span>Vx</span>, and <Span>Vy</Span>. To find <span>Vx</span> we do <span>x2 - x1</span>, to 
+find <span>Vy</span>, we do <Span>y2 - y1</Span>, after we have those, to get the <Span>angle</Span>, we 
+do <span>Math.atan2(Vy, Vx)</span>. However, we will also <Span>multiple the angle we get</Span> 
+with <span>-</span> to make it <span>negative</span>, why is that? Because we will then use this to <Span>rotate the angle</Span>, 
+if the <Span>angle</Span> it gave us was <Span>-90</Span> it's logical we are gonna want to 
+<Span>rotate it 90 degrees</Span> in order to <Span>make the line verticle</span>.</p>
+
+<p>I'm not gonna go in much details about why, but to get the <Span>points</Span> of 
+a <span>rotated axis by an angle of θ</span>, you can use the following equations:</p>
+
+<Style>
+    .list-container{
+        width: 500px; 
+        background: white;
+        border: 3px solid black;
+        border-radius: 20px;
+        margin: auto;
+        font-weight: bold;
+    }
+    .list-container li{
+        padding: 10px;
+    }
+</Style>
+
+<div class="list-container">
+<ul>
+    <li>x = x' cos θ - y' sin θ</li>
+    <li>y = x' sin θ + y' cos θ</li>
+</ul> 
+</div>
+
+<p>Alright, so, since it's the <Span>velocities</Span> we want to change, those will be the 
+<span>(x, y) points</span> we are gonna use the <Span>angle</Span> on, for example, we have 
+a <Span>velocity object</Span>, like this one: <Span>velocity = {x: 5, y: 3}</Span>, and the <Span>angle</Span> we got was <span>-0.7 radians</span>, 
+to <Span>rotate the points</Span> we will do <Span>velocity.x = velocity.x * Math.cos(-45) - velocity.y * Math.sin(-45)</Span> and 
+<Span>velocity.y = velocity.x * Math.sin(-0.7) + velocity.y * Math.cos(-0.7)</Span>. Here you can see 
+a picture that demostrates the process I just explained:</p>
+
+<p class="left">function rotate(velocity, angle){ <br>
+velocity.x = velocity.x * Math.cos(angle) - velocity.y * Math.sin(angle); <br>
+velocity.y = velocity.x * Math.sin(angle) + velocity.y * Math.cos(angle);<br>
+} <br><br>
+let angle = - Math.aton2(otherParticle.y - thisParticle.y, otherParticle.x - thisParticle.x); <br><br>
+let v1 = rotate(thisParticle.velocity, angle);<br>
+let v2 = rotate(otherParticle.velocity, angle);</p>
+
+<img src="../images/physics9.png">
+
+<p>Now that we <span>rotated them</span>, we are able to use the <span>equation 5</span> on them to get 
+their <Span>new velocities</Span>, we only need to change the <span>x velocities</span>, since they 
+are <Span>colliding on the x axis</Span>. Here is a picture of the <span>particles</span> after 
+we <Span>change their velocities</Span>:</p>
+
+<p class="left">v1 = { x: u1.x * (m1 - m2) / (m1 + m2) + u2.x * 2 * m2 / (m1 + m2), y: u1.y }; <br>
+v2 = { x: u2.x * (m1 - m2) / (m1 + m2) + u1.x * 2 * m2 / (m1 + m2), y: u2.y };</p>
+
+<img src="../images/physics10.png">
+
+<p>So now, since we have determined the <span>final velocities</span> of our <Span>particles</span>, 
+all that's left is to <span>rotate back the points</span>, we can do this by 
+using the <Span>opposite angle we used before</Span>, so if before we used <Span>-0.7 radians</span>, if we now use 
+<span>-1 * (-0.7) = 0.7</span> it's going to <Span>rotate them back to their original state</span>:
+
+<p class='left'>let finalV1 = rotate(v1, -angle);<br>
+let finalV2 = rotate(v2, -angle);<br>
+<br>
+thisParticle.velocity.x = finalV1.x;<br>
+thisParticle.velocity.y = finalV1.y;<br>
+<br>
+otherParticle.velocity.x = finalV2.x;<br>
+otherParticle.velocity.y = finalV2.y;
+</p>
+
+<img src="../images/physics11.png">
+
+<h2>Trying out what we learned:</h2>
+
+<style>
+    .orange{
+        background-color: lightgray;
+    }
+    .canvas{
+        border: 3px solid black;
+        display: block;
+        margin: auto;
+    }
+</style>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let canvas = document.getElementById('canvas2');
+let c = canvas.getContext('2d');
+
+canvas.width = 500;
+canvas.height = 300;
+
+function getDistance(x1, y1, x2, y2){
+    let Vx = x2 - x1;
+    let Vy = y2 - y1;
+    return Math.hypot(Vx, Vy);
+}
+
+let circle = function(x, y, r, dx, dy, cl, m){
+    this.x = x;
+    this.y = y; 
+    this.r = r;
+    this.dx = dx;
+    this.dy = dy; 
+    this.cl = cl;
+    this.m = m;
+    this.draw = function(){
+        c.fillStyle = this.cl;
+        c.beginPath();
+        c.arc(this.x, this.y, this.r, 0, 2 * Math.PI);
+        c.stroke();
+        c.fill();
+
+        c.font = 'normal 20px Arial';
+        c.fillStyle = 'white';
+        c.textAlign = 'center';
+        c.fillText(`dx: ${this.dx}`, this.x, this.y);
+        c.fillText(`dy: ${this.dy}`, this.x, this.y + 22);
+    }
+    this.update = function(otherParticle){
+        let distance = getDistance(this.x, this.y, otherParticle.x, otherParticle.y);
+        
+        if(distance < this.r + otherParticle.r){
+            let v1 = {x: this.dx, y: this.dy};
+            let v2 = {x: otherParticle.dx, y: otherParticle.dy};
+            let x1 = this.x;
+            let y1 = this.y;
+            let m1 = this.m;
+            let x2 = otherParticle.x;
+            let y2 = otherParticle.y;
+            let m2 = otherParticle.m;
+
+            let xVelocityDiff = v1.x - v2.x; 
+            let yVelocityDiff = v1.y - v2.y;
+
+            let xDist = x2 - x1;
+            let yDist = y2 - y1; 
+            <span class="orange">// Prevent accidental overlap of particles</span>
+            if(xVelocityDiff * xDist + yVelocityDiff * yDist >= 0){
+                
+                <span class="orange">// Grab angle between two colliding particles</span>
+                const angle = -Math.atan2(y2 - y1, x2 - x1);
+                
+                let rotate = function(velocity, angle){
+                    let rotatedVelocities = {
+                        x: velocity.x * Math.cos(angle) - velocity.y * Math.sin(angle),
+                        y: velocity.x * Math.sin(angle) + velocity.y * Math.cos(angle)
+                    }
+                    return rotatedVelocities;
+                };
+                
+                <Span class="orange">// Rotates axes</Span>
+                const rotatedV1 = rotate(v1, angle);
+                const rotatedV2 = rotate(v2, angle);
+                
+                <Span class="orange">// Calculates their final velocities </Span>
+                const u1 = {x: rotatedV1.x * (m1 - m2) / (m1 + m2) + rotatedV2.x * 2 * m2 / (m1 + m2), y: rotatedV1.y};
+                const u2 = {x: rotatedV2.x * (m1 - m2) / (m1 + m2) + rotatedV1.x * 2 * m2 / (m1 + m2), y: rotatedV2.y};
+                
+                <Span class="orange">// rotates the axes for the final velocities calculated before back to their original angle</Span>
+                const finalV1 = rotate(u1, -angle);
+                const finalV2 = rotate(u2, -angle);
+
+                <span class="orange">// changes the dx and dy to the final velocities</span>
+                otherParticle.dx = finalV2.x;
+                otherParticle.dy = finalV2.y; 
+
+                this.dx = finalV1.x;
+                this.dy = finalV1.y;
+            }
+        }
+
+        <Span class="orange">// Prevents particles from passing the edges of the canvas</Span>
+        if(this.x + this.r > canvas.width){
+            this.dx = (this.dx < 0)? this.dx: -this.dx;
+        } else if(this.x - this.r < 0){
+            this.dx = Math.abs(this.dx);
+        }
+        if(this.y + this.r > canvas.height){
+            this.dy = (this.dy < 0)? this.dy: -this.dy;
+        } else if(this.y - this.r < 0){
+            this.dy = Math.abs(this.dy);
+        }
+
+        <Span class="orange">// increases/decreases x and y</Span>
+        this.x += this.dx;
+        this.y += this.dy;
+        this.draw();
+    }
+}
+
+let particle1, particle2;
+
+function int(){
+    particle1 = new circle(300, 60, 50, -3, 3, 'red', 1);
+    particle2 = new circle(100, 200, 50, 2, -2, 'blue', 1);
+}
+
+int();
+
+canvas.addEventListener('click', (e) => {
+    int();
+});
+
+function animate(){
+    c.fillStyle = 'black';
+    c.fillRect(0, 0, canvas.width, canvas.height);
+    particle1.update(particle2);
+    particle2.update(particle1);
+    requestAnimationFrame(animate);
+}
+
+animate();</span></p>
+
+<p class="left">Outcome:</p>
+
+<canvas class="canvas" id="canvas2"></canvas>
+<p id="container"></p>
+
+<Script>
+    if(true){
+        let canvas = document.getElementById('canvas2');
+        let c = canvas.getContext('2d');
+
+        canvas.width = 500;
+        canvas.height = 300;
+
+        function getDistance(x1, y1, x2, y2){
+            let Vx = x2 - x1;
+            let Vy = y2 - y1;
+            return Math.hypot(Vx, Vy);
+        }
+
+        let circle = function(x, y, r, dx, dy, cl, m){
+            this.x = x;
+            this.y = y; 
+            this.r = r;
+            this.dx = dx;
+            this.dy = dy; 
+            this.cl = cl;
+            this.m = m;
+            this.draw = function(){
+                c.fillStyle = this.cl;
+                c.beginPath();
+                c.arc(this.x, this.y, this.r, 0, 2 * Math.PI);
+                c.stroke();
+                c.fill();
+
+                c.font = 'normal 20px Arial';
+                c.fillStyle = 'white';
+                c.textAlign = 'center';
+                c.fillText(`dx: ${this.dx}`, this.x, this.y);
+                c.fillText(`dy: ${this.dy}`, this.x, this.y + 22);
+            }
+            this.update = function(otherParticle){
+                let distance = getDistance(this.x, this.y, otherParticle.x, otherParticle.y);
+                
+                if(distance < this.r + otherParticle.r){
+                    let v1 = {x: this.dx, y: this.dy};
+                    let v2 = {x: otherParticle.dx, y: otherParticle.dy};
+                    let x1 = this.x;
+                    let y1 = this.y;
+                    let m1 = this.m;
+                    let x2 = otherParticle.x;
+                    let y2 = otherParticle.y;
+                    let m2 = otherParticle.m;
+
+                    let xVelocityDiff = v1.x - v2.x; 
+                    let yVelocityDiff = v1.y - v2.y;
+
+                    let xDist = x2 - x1;
+                    let yDist = y2 - y1; 
+                
+                    if(xVelocityDiff * xDist + yVelocityDiff * yDist >= 0){
+                        const angle = -Math.atan2(y2 - y1, x2 - x1);
+
+                        let rotate = function(velocity, angle){
+                            let rotatedVelocities = {
+                                x: velocity.x * Math.cos(angle) - velocity.y * Math.sin(angle),
+                                y: velocity.x * Math.sin(angle) + velocity.y * Math.cos(angle)
+                            }
+                            return rotatedVelocities;
+                        };
+
+                        const rotatedV1 = rotate(v1, angle);
+                        const rotatedV2 = rotate(v2, angle);
+                        
+                        const u1 = {x: rotatedV1.x * (m1 - m2) / (m1 + m2) + rotatedV2.x * 2 * m2 / (m1 + m2), y: rotatedV1.y};
+                        const u2 = {x: rotatedV2.x * (m1 - m2) / (m1 + m2) + rotatedV1.x * 2 * m2 / (m1 + m2), y: rotatedV2.y};
+
+                        const finalV1 = rotate(u1, -angle);
+                        const finalV2 = rotate(u2, -angle);
+
+                        otherParticle.dx = finalV2.x;
+                        otherParticle.dy = finalV2.y; 
+                        
+                        this.dx = finalV1.x;
+                        this.dy = finalV1.y;
+                    }
+                }
+
+                if(this.x + this.r > canvas.width){
+                    this.dx = (this.dx < 0)? this.dx: -this.dx;
+                } else if(this.x - this.r < 0){
+                    this.dx = Math.abs(this.dx);
+                }
+                if(this.y + this.r > canvas.height){
+                    this.dy = (this.dy < 0)? this.dy: -this.dy;
+                } else if(this.y - this.r < 0){
+                    this.dy = Math.abs(this.dy);
+                }
+
+                this.x += this.dx;
+                this.y += this.dy;
+                this.draw();
+            }
+        }
+
+        let particle1, particle2;
+
+        function int(){
+            particle1 = new circle(300, 60, 50, -3, 3, 'red', 1);
+            particle2 = new circle(100, 200, 50, 2, -2, 'blue', 1);
+        }
+
+        int();
+        
+        canvas.addEventListener('click', (e) => {
+            int();
+        });
+
+        function animate(){
+            c.fillStyle = 'black';
+            c.fillRect(0, 0, canvas.width, canvas.height);
+            particle1.update(particle2);
+            particle2.update(particle1);
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+    }
+</Script>
+
+<p>Want to learn how to <Span>detect collision for multiple circles</Span>? And how to <span>randomly position them on the canvas
+without overlapping</span>? Check my <a href="../JavaScript-Notes/Notes23.html#fifteen">collision lesson</a> in my <a href="../JavaScript-Notes/Notes23.html">canvas notes</a> 
+for more information.</p>
+</article>
+
+<hr>
+</body>
+</html>

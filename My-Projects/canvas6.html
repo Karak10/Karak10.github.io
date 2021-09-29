@@ -1,0 +1,380 @@
+<!DOCTYPE HTML>
+<html>
+<head lang="en-US">
+<meta charset="UTF-8">
+<title> Canvas particles move around the cursor </title>
+<style>
+       .left {
+        text-align: left;
+    }
+    
+    .code10 {
+    white-space: pre-wrap;
+    background-color: lightgreen;
+    }
+    
+    p {
+    text-align:center;
+    }
+    h1 {
+    text-align:center;
+    }
+    h2 {
+    text-align:center;
+    }
+    h3 {
+    text-align:center;
+    }
+    .c {
+    background-color:lightgreen;
+    }
+    hr {
+    width:100%;
+    height:15px;
+    background-color:black;
+    color:black;
+    border: black solid;
+    }
+    body {
+    background-color:rgb(165, 235, 235);
+    margin: 0;
+    height: 100vh;
+    }   
+    span {
+    background-color:lightgreen;
+    }
+    
+    a:link {
+    color: black;
+    text-shadow: 1px 0px 1px black;
+    
+    }
+    
+    a:visited {
+    color: black;
+    text-shadow: 1px 0px 1px rgb(22, 22, 22);
+    }
+    
+    a:hover {
+    text-decoration: underline;
+    color: red;
+    text-shadow: 1px 0px 1px black;
+    }
+    
+    .document{
+        width: 100vw;
+        height: 100vh;
+        overflow: auto;
+        overflow-x: hidden;
+    }
+    
+    .gray{
+        background-color: lightgray;
+    }
+    
+    .no-scroll{
+        overflow-y: hidden;
+    }
+</style> 
+<link rel="stylesheet" href="../CSS-JavaScript-External-Files/HTMLnotes.css?version=1">
+</head>
+<body>
+<hr>
+<article>
+
+<h1> Canvas particles move around the cursor </h1>
+<p><a href="../Home-Pages/myprojects.html">Click to go back</a></p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><span class="code10">&lt;canvas id="canvas-029">&lt;/canvas></span></p>
+
+<p class="left">CSS Code:</p>
+
+<p class="left"><span class="code10">#canvas-029{
+    border: 0px solid transparent;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    pointer-events: none;
+}</span></p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let canvas = document.getElementById('canvas-029');
+let c = canvas.getContext('2d');       
+
+let mouse = {
+    x: Number.POSITIVE_INFINITY,
+    y: Number.POSITIVE_INFINITY
+}
+
+var iframes = document.querySelectorAll('iframe');
+
+function bindIFrameMousemove(iframe){
+    iframe.contentWindow.addEventListener('mousemove', function(event) {
+        var clRect = iframe.getBoundingClientRect();
+ 
+        let x = event.clientX + clRect.left;
+        let y = event.clientY + clRect.top;
+        
+        mouse.x = x;
+        mouse.y = y;
+     });
+ 
+    iframe.addEventListener('load', (e) => {
+            iframes = document.querySelectorAll('iframe');
+            iframes.forEach((iframe) => {
+                bindIFrameMousemove(iframe)
+            });
+    });
+};
+
+window.addEventListener('load', (e) => {
+    try{
+    iframes.forEach((iframe) => {
+        bindIFrameMousemove(iframe);
+    });
+    } catch{
+        console.log('Error');
+    }
+});
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+window.addEventListener('resize', (e) => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+});
+
+window.addEventListener('mousemove', (e) => {
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
+});
+
+window.addEventListener('mouseout', (e) => {
+    mouse.x = Number.POSITIVE_INFINITY;
+    mouse.y = Number.POSITIVE_INFINITY;
+});
+
+let createParticle = function(x, y, r, cl){
+    this.x = x;
+    this.y = y; 
+    this.r = r;
+    this.cl = cl;
+    this.velocity = 0.05;
+    this.radians = Math.random() * Math.PI * 2;
+    this.distance = Math.random() * 50 + 30;
+    this.lastMouse = {x: x, y: y};
+    this.draw = function(previous){
+        c.strokeStyle = this.cl;
+        c.lineWidth = this.r;
+        c.beginPath();
+        c.moveTo((previous.x == x)? this.x: previous.x, (previous.y == y)? this.y: previous.y);
+        c.lineTo(this.x, this.y);
+        c.stroke();
+        c.closePath();
+    }
+    this.update = function(){
+        let previousPoints = {
+            x: this.x, 
+            y: this.y
+        }
+
+        this.radians += this.velocity;
+
+        if(mouse.x != Number.POSITIVE_INFINITY){
+            this.lastMouse.x += (mouse.x - this.lastMouse.x) * 0.09;
+            this.lastMouse.y += (mouse.y - this.lastMouse.y) * 0.09;
+
+            this.x = this.lastMouse.x + Math.cos(this.radians) * this.distance;
+            this.y = this.lastMouse.y + Math.sin(this.radians) * this.distance;
+
+            this.draw(previousPoints);
+        }
+    }
+}
+
+let colors = ["#40007F", "#6000BF", "#8000FF", "#200040", "#7300E5"];
+
+let particles = new Array();
+
+function int(){
+    particles = [];
+    for(let i = 1; i <= 80; i++){
+        let r = Math.random() * 3 + 1;
+        let cl = colors[Math.floor(Math.random() * colors.length)];
+        particles.push(new createParticle(canvas.width / 2, canvas.height / 2, r, cl));
+    }
+}
+
+int();
+
+function animate(){
+        let imageData = c.getImageData(0, 0, canvas.width, canvas.height);
+        let data = imageData.data;
+        for(i = 3; i < data.length; i += 4){
+            data[i] = data[i] * 0.9
+        }
+        c.clearRect(0, 0, canvas.width, canvas.height);
+        c.putImageData(imageData, 0, 0);
+        particles.forEach((particle) => {
+            particle.update();
+        });
+    requestAnimationFrame(animate);
+}
+
+animate();</span></p>
+
+<p class="left">Outcome:</p>
+
+<Style>
+    #canvas-029{
+        border: 0px solid transparent;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        pointer-events: none;
+    }
+</Style>
+
+<canvas id="canvas-029"></canvas>
+
+<script>
+    if(true){
+        let canvas = document.getElementById('canvas-029');
+        let c = canvas.getContext('2d');       
+
+        let mouse = {
+            x: Number.POSITIVE_INFINITY,
+            y: Number.POSITIVE_INFINITY
+        }
+
+        var iframes = document.querySelectorAll('iframe');
+
+        function bindIFrameMousemove(iframe){
+            iframe.contentWindow.addEventListener('mousemove', function(event) {
+                var clRect = iframe.getBoundingClientRect();
+         
+                let x = event.clientX + clRect.left;
+                let y = event.clientY + clRect.top;
+                
+                mouse.x = x;
+                mouse.y = y;
+             });
+         
+            iframe.addEventListener('load', (e) => {
+                    iframes = document.querySelectorAll('iframe');
+                    iframes.forEach((iframe) => {
+                        bindIFrameMousemove(iframe)
+                    });
+            });
+        };
+
+        window.addEventListener('load', (e) => {
+            try{
+            iframes.forEach((iframe) => {
+                bindIFrameMousemove(iframe);
+            });
+            } catch{
+                console.log('Error');
+            }
+        });
+        
+
+    
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        window.addEventListener('resize', (e) => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+
+        window.addEventListener('mousemove', (e) => {
+            mouse.x = e.clientX;
+            mouse.y = e.clientY;
+        });
+
+        window.addEventListener('mouseout', (e) => {
+            mouse.x = Number.POSITIVE_INFINITY;
+            mouse.y = Number.POSITIVE_INFINITY;
+        });
+
+        let createParticle = function(x, y, r, cl){
+            this.x = x;
+            this.y = y; 
+            this.r = r;
+            this.cl = cl;
+            this.velocity = 0.05;
+            this.radians = Math.random() * Math.PI * 2;
+            this.distance = Math.random() * 50 + 30;
+            this.lastMouse = {x: x, y: y};
+            this.draw = function(previous){
+                c.strokeStyle = this.cl;
+                c.lineWidth = this.r;
+                c.beginPath();
+                c.moveTo((previous.x == x)? this.x: previous.x, (previous.y == y)? this.y: previous.y);
+                c.lineTo(this.x, this.y);
+                c.stroke();
+                c.closePath();
+            }
+            this.update = function(){
+                let previousPoints = {
+                    x: this.x, 
+                    y: this.y
+                }
+
+                this.radians += this.velocity;
+
+                if(mouse.x != Number.POSITIVE_INFINITY){
+                    this.lastMouse.x += (mouse.x - this.lastMouse.x) * 0.09;
+                    this.lastMouse.y += (mouse.y - this.lastMouse.y) * 0.09;
+
+                    this.x = this.lastMouse.x + Math.cos(this.radians) * this.distance;
+                    this.y = this.lastMouse.y + Math.sin(this.radians) * this.distance;
+
+                    this.draw(previousPoints);
+                }
+            }
+        }
+
+        let colors = ["#40007F", "#6000BF", "#8000FF", "#200040", "#7300E5"];
+
+        let particles = new Array();
+        
+        function int(){
+            particles = [];
+            for(let i = 1; i <= 80; i++){
+                let r = Math.random() * 3 + 1;
+                let cl = colors[Math.floor(Math.random() * colors.length)];
+                particles.push(new createParticle(canvas.width / 2, canvas.height / 2, r, cl));
+            }
+        }
+
+        int();
+
+        function animate(){
+                let imageData = c.getImageData(0, 0, canvas.width, canvas.height);
+                let data = imageData.data;
+                for(i = 3; i < data.length; i += 4){
+                    data[i] = data[i] * 0.9
+                }
+                c.clearRect(0, 0, canvas.width, canvas.height);
+                c.putImageData(imageData, 0, 0);
+                particles.forEach((particle) => {
+                    particle.update();
+                });
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+    }
+</script>
+
+ </article>
+ 
+<hr>
+</body>
+</html>

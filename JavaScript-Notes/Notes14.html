@@ -1,0 +1,621 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<title> Page fourteen of my notes </title>
+<meta charset="UTF-8"> 
+<link href="../CSS-JavaScript-External-Files/HTMLnotes.css" rel="stylesheet">
+<Style>
+    .left {
+        text-align: left;
+    }
+    
+    .code10 {
+    white-space: pre-line;
+    background-color: lightgreen;
+    }
+    </style> 
+</head>
+<body>
+
+<hr>
+
+    <header> 
+    <h1> Page two of my JavaScript notes </h1>
+    </header>
+    
+    <article id="start-of-page"> 
+  
+        <div id="homepages">
+        
+            <h3>Home Pages:</h3>
+           
+        
+        </div>
+        
+        <nav data-notes="JavaScript" data-page="2">
+        
+        </nav>
+                
+        <h3> Informations included in this page:</h3>
+    <p> <a href="../JavaScript-Notes/Notes14.html#one">The if, else if and else Statements </a></p>
+    <p> <a href="../JavaScript-Notes/Notes14.html#two">The switch Statement </a></p>
+    <p> <a href="../JavaScript-Notes/Notes14.html#three">The For Loop </a></p>
+    <p> <a href="../JavaScript-Notes/Notes14.html#four">The While Loop </a></p>
+    <p> <a href="../JavaScript-Notes/Notes14.html#five">The Do...While Loop </a></p>
+    <p> <a href="../JavaScript-Notes/Notes14.html#six">Break and Continue </a></p>
+
+        </article>
+        
+         <script src="../CSS-JavaScript-External-Files/nav.js"></script>
+
+<hr>
+
+ <article id="one">
+
+    <header>
+        
+        <h1>The if, else if and else Statements</h1>
+
+    </header>
+    
+<p>Very often when you write code, you want to perform <Span>different actions</Span>
+based on <Span>different conditions</Span>, you can do this by using <Span>conditional statements</Span>
+in your code, such as <span>if</span>, <Span>else</Span> and <Span>else if</Span>. Before 
+in some of my examples I did use <Span>conditional statements</Span>, I basically 
+used <Span>if</Span>, <Span>if else</Span> and <Span>else</Span> all together by using 
+symbols to save me time, it's pretty easy actually, see this code for example: </p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">&lt;script>
+
+    var x = '10';
+    
+    (x &lt; 5)? document.write('x &lt; 5'): 
+    (x === 10)? document.write('x = 10'): 
+    document.write('Example');
+    
+    &lt;/script></Span></p>
+
+<p class="left">Outcome:</p>
+
+
+<script>
+
+var x = '10';
+
+(x < 5)? document.write('x < 5'): 
+(x === 10)? document.write('x = 10'): 
+document.write('Example');
+
+</script>
+
+<p>This exact same code could also be written like this:</p>
+
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">&lt;script>
+
+    var x = '10';
+    
+    if (x &lt; 5) {
+        document.write('x &lt; 5');
+    }  else if (x === 10) {
+        document.write('x = 10');
+    }  else {
+        document.write('Example');
+    }
+    
+    &lt;/script></Span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+var x = '10';
+
+if (x < 5) {
+    document.write('x < 5');
+}  else if (x === 10) {
+    document.write('x = 10');
+}  else {
+    document.write('Example');
+}
+     
+</script>
+
+ </article>
+
+ <hr>
+
+ <article id="two">
+
+<header>
+
+    <h1>The switch Statement</h1>
+
+</header>
+
+<p>In case when you need to test for <span>multiple conditions</span>, 
+    writing <Span>if elese</Span> statements for <Span>each condition</Span>
+    might not be the best solution. The <Span>switch statement</Span> is used to perform 
+    <Span>different actions</Span> based on <Span>different conditions</Span>.</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">&lt;Script>
+
+    var day = 2;
+    
+    switch (day) {
+    case 1: 
+        document.write("Mondey"); 
+        break;
+    case 2: 
+        document.write("Tuesday");
+        break;
+    case 3: 
+        document.write("Wednesday");
+        break;
+    default: 
+        document.write("Another day");
+     }
+    
+     &lt;/Script></span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+var day = 2;
+
+switch (day) {
+case 1: 
+    document.write("Mondey"); 
+    break;
+case 2: 
+    document.write("Tuesday");
+    break;
+case 3: 
+    document.write("Wednesday");
+    break;
+default: 
+    document.write("Another day");
+ }
+
+</Script>
+
+<p>After <span>switch</span> keyword you specify the name of the <Span>veriety</Span> 
+you are checking, then, each <Span>case</Span> targets a <Span>value</Span>, 
+if the <Span>variety</Span> has none of the <Span>values</Span> you specified then 
+the <Span>default</Span> option is chosen.</p>
+
+<p>Onced a match has been found <Span>all the code following it</Span> will 
+also be <Span>executed</Span>, that's why we use the <Span>break</Span> keyword,
+it tells the compiler to <Span>stop executing</Span> the code in the current block and proceed to the next one.
+For example, see what happens if I remove all the <span>break</span> keywords from the code I wrote above:</p>
+
+<p class="left"><span class="code10">&lt;Script>
+
+    var day = 2;
+    
+    switch (day) {
+    case 1: 
+        document.write("Mondey"); 
+     case 2: 
+        document.write("Tuesday");
+     case 3: 
+        document.write("Wednesday");
+     default: 
+        document.write("Another day");
+     }
+    
+     &lt;/Script></span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+    var day = 2;
+    
+    switch (day) {
+    case 1: 
+        document.write("Mondey"); 
+     case 2: 
+        document.write("Tuesday");
+     case 3: 
+        document.write("Wednesday");
+     default: 
+        document.write("Another day");
+     }
+    
+    </Script>
+
+<p>Now, let's for example put <Span>break</Span> after <span>wednesday</span>:</p>
+
+<p class="left"><span class="code10">&lt;Script>
+
+    var day = 2;
+    
+    switch (day) {
+    case 1: 
+        document.write("Mondey"); 
+     case 2: 
+        document.write("Tuesday");
+     case 3: 
+        document.write("Wednesday");
+        break;
+     default: 
+        document.write("Another day");
+     }
+    
+     &lt;/Script></span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+    var day = 2;
+    
+    switch (day) {
+    case 1: 
+        document.write("Mondey"); 
+     case 2: 
+        document.write("Tuesday");
+     case 3: 
+        document.write("Wednesday");
+        break;
+     default: 
+        document.write("Another day");
+     }
+    
+    </Script>
+
+ </article>
+
+ <hr>
+
+ <article id="three">
+
+    <header>
+
+        <h1>The For Loop</h1>
+
+    </header>
+
+<p><span>Loops</span> can <SpaN>execute</SpaN> a <span>block of code</span> a 
+<Span>number of times</Span>. They are handy in cases in which you want 
+to run the <Span>same code repeatedly</Span>, adding a <Span>different value</Span>
+each time.</p>
+
+<p><span>JavaScript</span> has <Span>three</Span> types of <span>loops</span> that 
+you can use: <span>for</span>, <span>while</span> and <Span>do while</Span>.</p>
+
+<p>The <Span>syntax</Span> goes like this: <span>for (initialization; condition; afterthoguht) { code block to be executed }</span></p>
+
+<p>Let's make a simple example, and then I will explain how it works:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">&lt;Script>
+
+    for (x = 1; x&lt;=5; x = x+1) {
+        document.write(x);
+    }
+    
+    &lt;/Script></span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+for (x = 1; x<=5; x = x+1) {
+    document.write(x);
+}
+
+</Script>
+
+<p>Alright so, firstly, the easiest to understand, is the <span>first statement</span>, 
+which simply defines what the <span>value of x</span> should be at the beginning, this 
+statement is <Span>optional</Span> since we could set the <Span>value of x</Span> before, like this:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">&lt;Script>
+
+    var x = 1;
+
+    for (; x&lt;=5; x = x+1) {
+        document.write(x);
+    }
+    
+    &lt;/Script></span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+var x = 1;
+
+for (; x<=5; x = x+1) {
+    document.write(x);
+}
+
+</Script>
+
+<p>Let's skip the <Span>second statement</Span> for now and move to the 
+<Span>third statement</Span>, which defines what should happen for <Span>each loop</Span>, 
+I wrote <span>x = x+1</span> so <Span>x</Span> always <span>increases by one</span>, 
+we could remove this statement too, and write the same thing like this:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">&lt;Script>
+
+    var x = 1;
+
+    for (; x&lt;=5;) {
+    document.write(x++);
+    }
+    
+    &lt;/Script></span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+var x = 1;
+
+for (; x<=5;) {
+    document.write(x++);
+}
+
+</Script>
+
+<p>The <span>second statement</span> defines when should the <Span>loop</Span> stop, 
+for example, I wrote <Span>x&lt;=5</Span> so the <span>loop</span> stops 
+after it goes beyond <Span>5</Span>, if we wanted, we could remove this statement as 
+well, and write it like this:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">&lt;Script>
+
+    var x = 1;
+
+for(;;){
+    if (x&lt;5) break;
+    document.write( x++ );
+}
+    
+    &lt;/Script></span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+var x = 1;
+
+for(;;){
+    if (x>5) break;
+    document.write( x++ );
+}
+
+
+</Script>
+
+ </article>
+
+<hr>
+
+<article id="four">
+
+<header>
+
+<h1>The While Loop</h1>
+
+</header>
+
+<p>The <span>while</span> loop repeats through a <Span>block of code</Span>, as long as 
+a specified <Span>condition</Span> is <Span>true</Span>, see the code below for example:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">&lt;Script>
+
+    var x = 1;
+    
+    while ( x &lt; 6 ) {
+        document.write( x++ );
+    }
+    
+    &lt;/Script></span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+var x = 1;
+
+while ( x < 6 ) {
+    document.write( x++ );
+}
+
+</Script>
+
+<p>By the way, some people, (me being one of them), when they see this code, they 
+    will assume that the final value of <Span>x</Span> is <Span>5</Span>, but that's false, 
+    <Span>x</Span> first becomes <span>6</span> and then the system goes like <span>Hauh? x shouldn't be 6 or bigger</span>
+    and stops the loop, if we now wrote <Span>document.write(x)</Span> for example we would get
+    <Span>6</Span>. 
+</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">&lt;Script>
+
+    var x = 1;
+    
+    while ( x &lt; 6 ) {
+        x++
+    }
+    
+    document.write(6);
+    
+    &lt;/Script></span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+    var x = 1;
+    
+    while ( x < 6 ) {
+        x++
+    }
+    
+    document.write(6);
+
+    </Script>
+
+<p>Remove the <Span>x++</Span> from the code, and the <Span>browser</Span> will 
+crash, since the <Span>loop</Span> will be <Span>infinite</Span>, since <Span>x</Span>
+will not increase, there is no way it's ever gonna get past <Span>5</Span>.</p>
+
+</article>
+
+<hr>
+
+<article id="five">
+
+<header>
+
+<h1>The Do...While Loop</h1>
+
+</header>
+
+<p>The <Span>do...while</Span> loop is a variant of <Span>while loop</Span>. This <Span>loop</Span>
+works basically the <Span>same way</Span> with <Span>while loop</Span>, however, it 
+executes the <Span>code block</Span> once and then checks the <Span>condition</Span>, which means,
+even if the <Span>condition</Span> is <Span>false</Span> the <span>code block</span>
+will still be <Span>executed</Span> once.</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">&lt;Script>
+
+    var x = 7;
+
+do {
+    document.write( x++ )
+}
+while( x &lt; 6 );
+    
+    &lt;/Script></span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+var x = 7;
+
+do {
+    document.write( x++ )
+}
+while( x < 6 );
+
+</script>
+
+</article>
+
+<hr>
+
+<article id="six">
+
+<header>
+
+<h1>Break and Continue</h1>
+
+</header>
+
+<p>I think I already used <span>break</span> before when I demostrated how to 
+create a <span>for loop</span> without adding any <Span>statements</Span>, let me now 
+explain how it works.</p>
+
+<p>The <span>break</span> statement is usually used together with <Span>if</Span> keyword,
+and it's used to <Span>"jump out"</Span> of the <Span>loop</Span> and continue 
+executing the code <Span>after</Span> the <span>loop</span>, here is an example:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">&lt;Script>
+
+    var x = 1;
+
+    for (;;x++) {
+        if ( x > 5 ){
+            break;
+        }
+        document.write( x )
+    }    
+    
+    &lt;/Script></span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+var x = 1;
+
+for (;;x++) {
+    if ( x > 5 ){
+        break;
+    }
+    document.write( x )
+}
+
+</Script>
+
+<p>The <span>continue</span> statement <Span>breaks</Span> only <Span>one iteration</Span>
+in the <Span>loop</Span>, and <Span>continues</Span> with the <span>next iretation</span>, 
+in the code below for example, number <Span>5 and 6</Span> will be <Span>skipped</Span>.</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">&lt;Script>
+
+    var x = 1;
+
+for(; x &lt;= 10; x++){
+    if( x > 4 && x &lt; 7) {
+        continue;
+    }
+    document.write( x );
+}
+    
+    &lt;/Script></span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+var x = 1;
+
+for(; x <= 10; x++){
+    if( x > 4 && x < 7) {
+        continue;
+    }
+    document.write( x );
+}
+
+
+</Script>
+
+
+</article>
+
+<hr>
+
+</body>
+</html>

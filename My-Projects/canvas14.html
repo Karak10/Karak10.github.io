@@ -1,0 +1,541 @@
+<!DOCTYPE HTML>
+<html>
+<head lang="en-US">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<title> First Canvas Game </title>
+<style>
+    .no-scroll{
+        height: 100vh;
+        overflow: hidden;
+    }
+    .left {
+        text-align: left;
+    }
+    
+    .code10 {
+    white-space: pre-wrap;
+    background-color: lightgreen;
+    }
+    
+    p {
+    text-align:center;
+    }
+    h1 {
+    text-align:center;
+    }
+    h2 {
+    text-align:center;
+    }
+    h3 {
+    text-align:center;
+    }
+    .c {
+    background-color:lightgreen;
+    }
+    hr {
+    width:100%;
+    height:15px;
+    background-color:black;
+    color:black;
+    border: black solid;
+    }
+    body {
+    background-color:rgb(165, 235, 235);
+    margin: 0;
+    height: 100vh;
+    }   
+    span {
+    background-color:lightgreen;
+    }
+    
+    a:link {
+    color: black;
+    text-shadow: 1px 0px 1px black;
+    
+    }
+    
+    a:visited {
+    color: black;
+    text-shadow: 1px 0px 1px rgb(22, 22, 22);
+    }
+    
+    a:hover {
+    text-decoration: underline;
+    color: red;
+    text-shadow: 1px 0px 1px black;
+    }
+    
+    .document{
+        width: 100vw;
+        height: 100vh;
+        overflow: auto;
+        overflow-x: hidden;
+    }
+    
+    .gray{
+        background-color: lightgray;
+    }
+    
+    .no-scroll{
+        overflow-y: hidden;
+    }
+</style> 
+<link rel="stylesheet" href="../CSS-JavaScript-External-Files/HTMLnotes.css?version=1">
+</head>
+<body>
+<hr>
+<article>
+
+<h1>Text Effect</h1>
+<p><a href="../Home-Pages/myprojects.html">Click to go back</a></p>
+
+<Style>
+    .canvvaas{
+        display: block;
+        margin: auto;
+        border: 3px solid black;
+        margin-bottom: 40px;
+        margin-top: 25px
+    }
+</Style>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let canvas = document.getElementById('ccaannvvaass20');
+let c = canvas.getContext('2d');
+canvas.style.backgroundColor = 'black';
+
+canvas.width = 800;
+canvas.height = 180;
+
+let text = 'Karak10'
+c.font = 'normal 36px Luckiest Guy';
+let measurements = c.measureText(text);
+let textColor = 'yellow';
+c.fillStyle = textColor;
+c.fillText(text, 10, 50);
+let height = Math.floor(measurements.actualBoundingBoxAscent + 60);
+let width = Math.floor(measurements.width + 20);
+
+let imageData = c.getImageData(0, 0, width, height);
+let data = imageData.data;
+
+let distanceRadius = 30;
+
+let mouse = {
+    x: undefined,
+    y: undefined
+}
+
+let touches = new Array();
+
+window.addEventListener('mousemove', (e)=>{
+    let box = canvas.getBoundingClientRect();
+    let x = box.left;
+    let y = box.top;
+    mouse = {
+        x: e.clientX - x,
+        y: e.clientY - y
+    }
+});
+
+function setTouches(e){
+    touches = [];
+    let box = canvas.getBoundingClientRect();
+    let x = box.left;
+    let y = box.top;
+    for(let i = 0; i < e.touches.length; i++){
+        touches.push({
+            x: e.touches[i].clientX - x,
+            y: e.touches[i].clientY - y,
+        });
+    }
+}
+
+function resetTouches(e){
+    if (e.cancelable) {
+       e.preventDefault();
+    }
+    let box = canvas.getBoundingClientRect();
+    let x = box.left;
+    let y = box.top;
+    try{
+        for(let i = 0; i < e.changedTouches.length; i++){
+            let differences = [];
+            touches.forEach((touch, i)=>{
+                differences.push(touch.x - (e.changedTouches[i].clientX - x));
+            });
+            let min = Math.min.apply(Math, differences);
+            let index = differences.indexOf(min);
+            touches.splice(index, 1);
+        }
+    } catch{}
+}
+
+canvas.addEventListener('touchstart', setTouches);
+canvas.addEventListener('touchmove', setTouches);
+canvas.addEventListener('touchend', resetTouches);
+canvas.addEventListener('touchcancel', resetTouches);
+
+let particlesArray = [];
+
+let particleConstructor = class{
+    constructor(x, y, size, color){
+        this.x = x;
+        this.y = y;
+        this.originalX = this.x;
+        this.originalY = this.y;
+        this.size = size;
+        this.color = color;
+        this.velocity = (Math.random() * 30) + 1;
+    }
+    draw(){
+        c.fillStyle = this.color;
+        c.beginPath();
+        c.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        c.fill();
+    }
+    update(){
+       let dx = mouse.x - this.x;
+       let dy = mouse.y - this.y;
+       let mouseDistance = Math.hypot(dx, dy);
+       let mouseDifference = {
+           dx: dx,
+           dy: dy
+       }
+       let touchesDistances = new Array();
+       let minTouchDistance;
+       let minTouchDifference;
+       if(touches.length > 0){
+           touches.forEach((touch)=>{
+               let x = touch.x - this.x;
+               let y = touch.y - this.y;
+               touchesDistances.push(Math.hypot(x, y));
+           });
+           minTouchDistance = Math.min.apply(Math, touchesDistances);
+           let minTouchIndex = touchesDistances.indexOf(minTouchDistance);
+           minTouchDifference = {
+               dx: touches[minTouchIndex].x - this.x, 
+               dy: touches[minTouchIndex].y - this.y
+           }
+       } else {
+           minTouchDistance = Number.POSITIVE_INFINITY;
+       }
+       if(mouseDistance < distanceRadius || minTouchDistance < distanceRadius){
+           let moveParticle = (distance, difference)=>{
+               let angle = Math.atan2(difference.dy, difference.dx);
+               let forceDirectionX = Math.cos(angle);
+               let forceDirectionY = Math.sin(angle);
+               let maxDistance = distanceRadius;
+               let force = (maxDistance - distance) / maxDistance;
+               let directionX = forceDirectionX * force * this.velocity;
+               let directionY = forceDirectionY * force * this.velocity;
+               this.x -= directionX;
+               this.y -= directionY;
+           }
+           if(mouseDistance < distanceRadius){
+               moveParticle(mouseDistance, mouseDifference);
+           }
+           if(minTouchDistance < distanceRadius){
+               moveParticle(minTouchDistance, minTouchDifference);
+           }
+       } else if(mouseDistance > distanceRadius + 5 || (minTouchDistance > distanceRadius + 5 && minTouchDistance != 'Infinity')){
+           if(this.x != this.originalX){
+               let dx = this.x - this.originalX;
+               this.x -= dx / 10;
+           }
+           if(this.y != this.originalY){
+               let dy = this.y - this.originalY;
+               this.y -= dy / 10;
+           }
+       }
+       this.draw();
+    }
+}
+
+let init = function(){
+    particlesArray = [];
+    for(let y = 0; y < height; y += 2){
+        for(let x = 0; x < width; x += 2){
+            if(data[(x + y * width) * 4 + 3] > 254){
+                let red = data[(x + y * width) * 4];
+                let green = data[(x + y * width) * 4 + 1];
+                let blue = data[(x + y * width) * 4 + 2];
+                let color = `rgb(${red}, ${green}, ${blue})`;
+                let scale = 5;
+                let distance =  canvas.width - (20 + measurements.width) * scale;
+                let offset = {x: (distance / 2) / scale, y: -20};
+                particlesArray.push(new particleConstructor((x + offset.x) * scale, (y + offset.y) * scale, 1, color));
+            }
+        }
+    }
+}
+
+console.log(data);
+
+init();
+
+function connectParticles(){
+    for(let a = 0; a < particlesArray.length; a++){
+        let opacity = 1;
+        for(let b = a; b < particlesArray.length; b++){
+            let particle1 = particlesArray[a];
+            let particle2 = particlesArray[b];
+            if(particle1 != particle2){
+                let dx = particle1.x - particle2.x;
+                let dy = particle1.y - particle2.y;
+                let distance = Math.hypot(dx, dy);
+                let num = 31;
+                if(distance < num){
+                    opacity = 1 - (distance / num);
+                    c.globalAlpha = opacity;
+                    c.strokeStyle = textColor;
+                    c.lineWidth = 0.5;
+                    c.beginPath();
+                    c.moveTo(particle1.x, particle1.y);
+                    c.lineTo(particle2.x, particle2.y);
+                    c.stroke();
+                    c.globalAlpha = 1;
+                }
+            }
+        }
+    }
+}
+
+let animate = function(){
+    c.clearRect(0, 0, canvas.width, canvas.height);
+    particlesArray.forEach((particle)=>{
+        particle.update();
+    });
+    connectParticles();
+    requestAnimationFrame(animate);
+}
+
+animate();</Span></p>
+
+<p class="left">Outcome:</p>
+<canvas class="canvvaas" id="ccaannvvaass20" style="border-radius: 50px; border: 3px solid yellow; display: block; margin: auto;"></canvas>
+
+<script>
+    if(true){
+        let canvas = document.getElementById('ccaannvvaass20');
+        let c = canvas.getContext('2d');
+        canvas.style.backgroundColor = 'black';
+
+        canvas.width = 800;
+        canvas.height = 180;
+
+        let text = 'Karak10'
+        c.font = 'normal 37px Luckiest Guy';
+        let measurements = c.measureText(text);
+        let textColor = 'yellow';
+        c.fillStyle = textColor;
+        c.fillText(text, 10, 50);
+        let height = Math.floor(measurements.actualBoundingBoxAscent + 60);
+        let width = Math.floor(measurements.width + 20);
+
+        let imageData = c.getImageData(0, 0, width, height);
+        let data = imageData.data;
+
+        let distanceRadius = 30;
+
+        let mouse = {
+            x: undefined,
+            y: undefined
+        }
+
+        let touches = new Array();
+
+        window.addEventListener('mousemove', (e)=>{
+            let box = canvas.getBoundingClientRect();
+            let x = box.left;
+            let y = box.top;
+            mouse = {
+                x: e.clientX - x,
+                y: e.clientY - y
+            }
+        });
+
+        function setTouches(e){
+            touches = [];
+            let box = canvas.getBoundingClientRect();
+            let x = box.left;
+            let y = box.top;
+            for(let i = 0; i < e.touches.length; i++){
+                touches.push({
+                    x: e.touches[i].clientX - x,
+                    y: e.touches[i].clientY - y,
+                });
+            }
+        }
+    
+        function resetTouches(e){
+            if (e.cancelable) {
+               e.preventDefault();
+            }
+            let box = canvas.getBoundingClientRect();
+            let x = box.left;
+            let y = box.top;
+            try{
+                for(let i = 0; i < e.changedTouches.length; i++){
+                    let differences = [];
+                    touches.forEach((touch, i)=>{
+                        differences.push(touch.x - (e.changedTouches[i].clientX - x));
+                    });
+                    let min = Math.min.apply(Math, differences);
+                    let index = differences.indexOf(min);
+                    touches.splice(index, 1);
+                }
+            } catch{}
+        }
+
+        canvas.addEventListener('touchstart', setTouches);
+        canvas.addEventListener('touchmove', setTouches);
+        canvas.addEventListener('touchend', resetTouches);
+        canvas.addEventListener('touchcancel', resetTouches);
+
+        let particlesArray = [];
+
+        let particleConstructor = class{
+            constructor(x, y, size, color){
+                this.x = x;
+                this.y = y;
+                this.originalX = this.x;
+                this.originalY = this.y;
+                this.size = size;
+                this.color = color;
+                this.velocity = (Math.random() * 30) + 1;
+            }
+            draw(){
+                c.fillStyle = this.color;
+                c.beginPath();
+                c.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                c.fill();
+            }
+            update(){
+               let dx = mouse.x - this.x;
+               let dy = mouse.y - this.y;
+               let mouseDistance = Math.hypot(dx, dy);
+               let mouseDifference = {
+                   dx: dx,
+                   dy: dy
+               }
+               let touchesDistances = new Array();
+               let minTouchDistance;
+               let minTouchDifference;
+               if(touches.length > 0){
+                   touches.forEach((touch)=>{
+                       let x = touch.x - this.x;
+                       let y = touch.y - this.y;
+                       touchesDistances.push(Math.hypot(x, y));
+                   });
+                   minTouchDistance = Math.min.apply(Math, touchesDistances);
+                   let minTouchIndex = touchesDistances.indexOf(minTouchDistance);
+                   minTouchDifference = {
+                       dx: touches[minTouchIndex].x - this.x, 
+                       dy: touches[minTouchIndex].y - this.y
+                   }
+               } else {
+                   minTouchDistance = Number.POSITIVE_INFINITY;
+               }
+               if(mouseDistance < distanceRadius || minTouchDistance < distanceRadius){
+                   let moveParticle = (distance, difference)=>{
+                       let angle = Math.atan2(difference.dy, difference.dx);
+                       let forceDirectionX = Math.cos(angle);
+                       let forceDirectionY = Math.sin(angle);
+                       let maxDistance = distanceRadius;
+                       let force = (maxDistance - distance) / maxDistance;
+                       let directionX = forceDirectionX * force * this.velocity;
+                       let directionY = forceDirectionY * force * this.velocity;
+                       this.x -= directionX;
+                       this.y -= directionY;
+                   }
+                   if(mouseDistance < distanceRadius){
+                       moveParticle(mouseDistance, mouseDifference);
+                   }
+                   if(minTouchDistance < distanceRadius){
+                       moveParticle(minTouchDistance, minTouchDifference);
+                   }
+               } else if(mouseDistance > distanceRadius + 5 || (minTouchDistance > distanceRadius + 5 && minTouchDistance != 'Infinity')){
+                   if(this.x != this.originalX){
+                       let dx = this.x - this.originalX;
+                       this.x -= dx / 10;
+                   }
+                   if(this.y != this.originalY){
+                       let dy = this.y - this.originalY;
+                       this.y -= dy / 10;
+                   }
+               }
+               this.draw();
+            }
+        }
+
+        let init = function(){
+            particlesArray = [];
+            for(let y = 0; y < height; y += 2){
+                for(let x = 0; x < width; x += 2){
+                    if(data[(x + y * width) * 4 + 3] > 254){
+                        let red = data[(x + y * width) * 4];
+                        let green = data[(x + y * width) * 4 + 1];
+                        let blue = data[(x + y * width) * 4 + 2];
+                        let color = `rgb(${red}, ${green}, ${blue})`;
+                        let scale = 5;
+                        let distance =  canvas.width - (20 + measurements.width) * scale;
+                        let offset = {x: (distance / 2) / scale, y: -20};
+                        particlesArray.push(new particleConstructor((x + offset.x) * scale, (y + offset.y) * scale, 1, color));
+                    }
+                }
+            }
+        }
+
+        console.log(data);
+
+        init();
+
+        function connectParticles(){
+            for(let a = 0; a < particlesArray.length; a++){
+                let opacity = 1;
+                for(let b = a; b < particlesArray.length; b++){
+                    let particle1 = particlesArray[a];
+                    let particle2 = particlesArray[b];
+                    if(particle1 != particle2){
+                        let dx = particle1.x - particle2.x;
+                        let dy = particle1.y - particle2.y;
+                        let distance = Math.hypot(dx, dy);
+                        let num = 31;
+                        if(distance < num){
+                            opacity = 1 - (distance / num);
+                            c.globalAlpha = opacity;
+                            c.strokeStyle = textColor;
+                            c.lineWidth = 0.5;
+                            c.beginPath();
+                            c.moveTo(particle1.x, particle1.y);
+                            c.lineTo(particle2.x, particle2.y);
+                            c.stroke();
+                            c.globalAlpha = 1;
+                        }
+                    }
+                }
+            }
+        }
+
+        let animate = function(){
+            c.clearRect(0, 0, canvas.width, canvas.height);
+            particlesArray.forEach((particle)=>{
+                particle.update();
+            });
+            connectParticles();
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+    }
+</script>
+
+ </article>
+ 
+<hr>
+</body>
+</html>

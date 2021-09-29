@@ -1,0 +1,162 @@
+<!DOCTYPE HTML>
+<html>
+<head lang="en-US">
+<meta charset="UTF-8">
+<title> setInterval and clearInterval of JavaScript </title>
+<style>
+       .left {
+        text-align: left;
+    }
+    
+    .code10 {
+    white-space: pre-line;
+    background-color: lightgreen;
+    }
+    
+    p {
+    text-align:center;
+    }
+    h1 {
+    text-align:center;
+    }
+    h2 {
+    text-align:center;
+    }
+    h3 {
+    text-align:center;
+    }
+    .c {
+    background-color:lightgreen;
+    }
+    hr {
+    width:100%;
+    height:15px;
+    background-color:black;
+    color:black;
+    border: black solid;
+    }
+    body {
+    background-color:rgb(165, 235, 235);
+    }
+    span {
+    background-color:lightgreen;
+    }
+    
+    a:link {
+    color: black;
+    text-shadow: 1px 0px 1px black;
+    
+    }
+    
+    a:visited {
+    color: black;
+    text-shadow: 1px 0px 1px rgb(22, 22, 22);
+    }
+    
+    a:hover {
+    text-decoration: underline;
+    color: red;
+    text-shadow: 1px 0px 1px black;
+    }
+    
+    </style> 
+<link rel="stylesheet" href="../CSS-JavaScript-External-Files/HTMLnotes.css?version=1">
+</head>
+<body>
+<hr>
+<article>
+
+<h1> setInterval and clrearInterval of JavaScript </h1>
+<p><a href="../Home-Pages/myprojects.html">Click to go back</a></p>
+
+<p style="font-size: large;">When you press start an alert will appear every five seconds, when you press stop alerts will stop, this is a project I made in order to better understand setInterval and clearInterval methods.</p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><span class="code10">&lt;button onclick="alerts.start()" class="jsbutton">Start&lt;/button> &lt;br>&lt;br>
+
+    &lt;button onclick="alerts.stop()" class="jsbutton">Stop&lt;/button></span></p>
+
+<p class="left">CSS Code:</p>
+
+<p class="left"><span class="code10">  .jsbutton {
+    width: 100px; 
+    height: 50px; 
+    display: block;
+    margin: auto;
+    background-color: red; 
+    text-align: center;
+    line-height: 50px;
+    font-weight: bold; 
+    color: white;
+    text-shadow: 1px 1px 0px black,
+    -1px -1px 0px black; 
+    font-size: 20px;
+    cursor: pointer;
+    border: 2px solid black;
+    border-radius: 20px;
+    }</span></p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">function fu(){
+    alert("Hello World!"); 
+};
+
+function example8(){
+    this.start = function(){
+      alertInterval = setInterval( fu, 5000);
+    };
+    this.stop = function(){
+        clearInterval(alertInterval);
+    };
+};
+
+var alerts = new example8();</span></p>
+
+<p class="left">Outcome:</p>
+
+<button onclick="alerts.start()" class="jsbutton">Start</button> <br><br>
+
+<button onclick="alerts.stop()" class="jsbutton">Stop</button>
+
+<script>
+function fu(){
+        alert("Hello World!"); 
+    };
+
+    function example8(){
+        this.start = function(){
+          alertInterval = setInterval( fu, 5000);
+        };
+        this.stop = function(){
+            clearInterval(alertInterval);
+        };
+    };
+
+var alerts = new example8();
+</script>
+
+<style>
+    .jsbutton {
+width: 100px; 
+height: 50px; 
+display: block;
+margin: auto;
+background-color: red; 
+text-align: center;
+line-height: 50px;
+font-weight: bold; 
+color: white;
+text-shadow: 1px 1px 0px black,
+-1px -1px 0px black; 
+font-size: 20px;
+cursor: pointer;
+border: 2px solid black;
+border-radius: 20px;
+}
+</style>
+
+<hr>
+</body>
+</html>

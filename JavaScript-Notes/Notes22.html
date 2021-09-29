@@ -1,0 +1,3041 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<title> Page twenty-two of my notes </title>
+<meta charset="UTF-8"> 
+<link href="../CSS-JavaScript-External-Files/HTMLnotes.css" rel="stylesheet">
+<Style>
+    .left {
+        text-align: left;
+    }
+    
+    .code10 {
+    white-space: pre-wrap;
+    background-color: lightgreen;
+    
+    }
+    
+    p {
+    text-align:center;
+    }
+    h1 {
+    text-align:center;
+    }
+    h2 {
+    text-align:center;
+    }
+    h3 {
+    text-align:center;
+    }
+    .c {
+    background-color:lightgreen;
+    }
+    hr {
+    width:100%;
+    height:15px;
+    background-color:black;
+    color:black;
+    border: black solid;
+    }
+    body {
+    background-color:rgb(165, 235, 235);
+    }
+    span {
+    background-color:lightgreen;
+    }
+    
+    a:link {
+    color: black;
+    text-shadow: 1px 0px 1px black;
+    
+    }
+    
+    a:visited {
+    color: black;
+    text-shadow: 1px 0px 1px rgb(22, 22, 22);
+    }
+    
+    a:hover {
+    text-decoration: underline;
+    color: red;
+    text-shadow: 1px 0px 1px black;
+    }
+
+    .pink {
+        background-color: lightcoral;
+        font-weight: bold;
+    }
+
+    iframe {
+        width: 600px;
+        height: 350px;
+        border: 3px solid black;
+        margin: 20px auto 20px auto;
+        display: block;
+    }
+    
+    .list_container{
+       width: fit-content;
+       max-width: 600px;
+       background-color: white;
+       border: 3px solid black;
+       border-radius: 20px;
+       margin: 20px auto 20px auto;
+       padding: 20px;
+       font-weight: bold;
+   }
+
+   .list_container2{
+       width: fit-content;
+       max-width: 600px;
+       background-color: black;
+       border: 3px solid black;
+       border-radius: 20px;
+       margin: 20px auto 20px auto;
+       padding: 10px;
+       font-weight: bold;
+   }
+
+   .list-item{
+       border: 2px solid black;
+       padding: 20px;
+       border-top: 0px;
+       background-color: white;
+   }
+
+   .list-item:nth-child(2n+1){
+       background-color: lightgray;
+   }
+   
+   .list-item:nth-child(1){
+       border-top: 2px solid black;
+   }
+
+   .gray{
+       background-color: lightgray;
+   }
+
+    </style> 
+</head>
+<body>
+
+<hr>
+
+    <header> 
+    <h1> Page ten of my JavaScript notes </h1>
+    </header>
+    
+<article id="start-of-page"> 
+  
+<div id="homepages">
+
+    <h3>Home Pages:</h3>
+   
+
+</div>
+
+<nav data-notes="JavaScript" data-page="10">
+
+</nav>
+
+    <h3> Informations included in this page:</h3>
+    <p><a href="../JavaScript-Notes/Notes22.html#one">Composition Vs Inheritance</a></p>
+    <p><a href="../JavaScript-Notes/Notes22.html#two">Array slice() Method</a></p>
+    <p><a href="../JavaScript-Notes/Notes22.html#three">String replace() Method</a></p>
+    <p><a href="../JavaScript-Notes/Notes22.html#four">Drag and Drop</a></p>
+    <p><a href="../JavaScript-Notes/Notes22.html#five">Web Storage API</a></p>
+    <p><a href="../JavaScript-Notes/Notes22.html#six">Geolocation API</a></p>
+    <p><a href="../JavaScript-Notes/Notes22.html#seven">Proxy Object</a></p>
+    <p><a href="../JavaScript-Notes/Notes22.html#eight">JavaScript Reflect Object</a></p>
+    <p><a href="../JavaScript-Notes/Notes22.html#nine">new.target pseudo-property</a></p>
+
+</article>
+
+ <script src="../CSS-JavaScript-External-Files/nav.js"></script>
+
+<hr>
+
+<article id="one">
+
+<header>
+    <h1>Composition Vs Inheritance</h1>
+</header>
+
+<P>In this section, I'm gonna talk about <span>composition</span> 
+and <span>inheritance</span> knowing the difference between the two 
+will help you write better code, and in my opinion <span>composition</span>
+is more flexible, and should be prefered, when you are writing complex code at 
+least, and I'm gonna explain why now. First, let's look at a simple example 
+of <Span>inheritance</Span>:</P>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let monster = class{
+    constructor(n){
+        this.name = n;
+    }
+    attack(){
+        document.write(`${this.name} attacked`);
+    }
+    walk(){
+        document.write(`${this.name} walked`);
+    }
+    die(){
+        document.write(`${this.name} died`);
+    }
+}
+
+let swimingMonster = class extends monster{
+    swim(){
+        document.write(`${this.name} swam`)
+    }
+}
+
+let flyingMonster = class extends monster{
+    fly(){
+        document.write(`${this.name} flew`)
+    }
+}
+
+let shark = new swimingMonster("Shark");
+let eagle = new flyingMonster("Eagle");
+
+shark.attack();
+document.write(`&lt;br>`)
+shark.swim();
+document.write(`&lt;br>`)
+eagle.fly();
+document.write(`&lt;br>`)
+eagle.die();</Span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let monster = class{
+    constructor(n){
+        this.name = n;
+    }
+    attack(){
+        document.write(`${this.name} attacked`);
+    }
+    walk(){
+        document.write(`${this.name} walked`);
+    }
+    die(){
+        document.write(`${this.name} died`);
+    }
+}
+
+let swimingMonster = class extends monster{
+    swim(){
+        document.write(`${this.name} swam`)
+    }
+}
+
+let flyingMonster = class extends monster{
+    fly(){
+        document.write(`${this.name} flew`)
+    }
+}
+
+
+
+let shark = new swimingMonster("Shark");
+let eagle = new flyingMonster("Eagle");
+
+ 
+ shark.attack();
+ document.write(`<br>`)
+ shark.swim();
+ document.write(`<br>`)
+ eagle.fly();
+ document.write(`<br>`)
+ eagle.die();
+
+
+}
+
+
+
+</script>
+
+<p>At first, it seems like <Span>classes</Span> work pretty fine for what we are trying to make, 
+however, what would you do if you wanted to make a new <Span>flying_swimmingMonster</Span> class 
+that contains both <Span>swim</Span> and <Span>fly</Span> methods? You would 
+have to <Span>rewrite</Span> the methods, and that takes space and time, that's 
+where <Span>composition</Span> could be better to use.
+</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let canWalkAndTalk = function({ name }){
+    return {
+        walk(){
+            document.write(`${name} walked`)
+        },
+        attack(){
+            document.write(`${name} attacked`)
+        }
+    }
+}
+
+let swimmer = function({ name }){
+    return {
+        swim(){
+            document.write(`${name} swam`)
+        }
+    }
+}
+
+let canFly = function({ name }){
+    return {
+        fly(){
+            document.write(`${name} flew`)
+        }
+    }
+}
+
+let SwimingMonsterCreator = function(name){
+    let monster = {name: name}
+    return {
+     ...monster,
+     ...canWalkAndTalk(monster),
+     ...swimmer(monster),
+     ...canFly(monster)
+    }
+}
+
+let weird_fish = SwimingMonsterCreator("Flying fish with legs");
+
+weird_fish.walk();
+document.write(`&lt;br>`)
+weird_fish.fly();
+document.write(`&lt;br>`)
+weird_fish.swim();</Span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let canWalkAndTalk = function({ name }){
+    return {
+        walk(){
+            document.write(`${name} walked`)
+        },
+        attack(){
+            document.write(`${name} attacked`)
+        }
+    }
+}
+
+let swimmer = function({ name }){
+    return {
+        swim(){
+            document.write(`${name} swam`)
+        }
+    }
+}
+
+let canFly = function({ name }){
+    return {
+        fly(){
+            document.write(`${name} flew`)
+        }
+    }
+}
+
+let SwimingMonsterCreator = function(name){
+    let monster = {name: name}
+
+    return {
+     ...monster,
+     ...canWalkAndTalk(monster),
+     ...swimmer(monster),
+     ...canFly(monster)
+    }
+}
+
+let weird_fish = SwimingMonsterCreator("Flying fish with legs");
+
+weird_fish.walk();
+document.write(`<br>`)
+weird_fish.fly();
+document.write(`<br>`)
+weird_fish.swim();
+}
+
+
+</script>
+
+<p>So, let me do the explaining now, first of all, you 
+    need to be familiar with the <Span>spread operator</Span>
+    and <Span>object destructuring</Span>.
+</p>
+
+<p>Using <Span>spread operator</Span> you can add 
+all the <Span>properties</Span> and <span>values</span> of an <Span>object</Span>
+to <Span>another object</Span>:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let person = {name: "alex", age: 15}
+let animal = {color: "white", legs: 4};
+
+let example = {...person, ...animal};
+
+document.write(`${example.color} ${example.age}`)</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let person = {name: "alex", age: 15}
+let animal = {color: "white", legs: 4};
+
+let example = {...person, ...animal};
+
+document.write(`${example.color} ${example.age}`)
+
+}
+
+
+</script>
+
+<p>With <span>object destructuring</span> we can take an <span>object</span>
+and create a <Span>variable</Span> of a wanted <span>property</span> of the <span>object</span>, 
+here is an example:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let obj = {name: "Alex", age: 15};
+
+let {name} = obj;
+
+let {age, name: name2} = obj;
+
+document.write(name2, name, age);</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let obj = {name: "Alex", age: 15};
+
+let {name} = obj;
+
+let {age, name: name2} = obj;
+
+document.write(name2, name, age);
+
+}
+
+
+</script>
+
+<P>I have talked more about <span>ES6 destructuring</span> in one of 
+the previous lessons, and about <span>spread operator</span>, so I recommend 
+you go check these out if needed.</P>
+
+<p>I will explain the code now, the <Span>SwimingMonsterCreator</Span> 
+has a <span>name parameter</span>, this <Span>name parameter</Span> creates 
+the <span>name: name</span> object, then it <span>returns</span> a <Span>new object</Span>, 
+using <Span>spread operators</Span> you can <Span>add</Span> and <span>remove</span>
+objects easily, the <Span>objects</Span> that contain the <span>function methods</span>
+are <span>returned</span> by <span>functions</span>, which <Span>functions</Span>
+take a <Span>parameter</Span>, I have used <span>destructuring syntax</span>
+to that <span>parameter</span>, so when you write <span>swimer(monster)</span>
+it creates a <Span>name</Span> variable of the object <span>name: name</span> that was created before, 
+which then is used inside the <span>method</span> that is added using the 
+<Span>spread operator</Span>, anyway, I will now try to remake the first code I wrote at the 
+start of the section using only functions:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let basic_skills = function({ name }){
+    return {
+        attack(){
+            document.write(`${name} attacked`);
+        },
+        walk(){
+            document.write(`${name} walked`);
+        },
+        die(){
+            document.write(`${name} died`);
+        }
+    }
+}
+
+let fly_skill = function({ name }){
+    return{
+        fly(){
+            document.write(`${name} flew`);
+        }
+    }
+}
+
+let swim_skill = function({ name }){
+    return{
+        swim(){
+            document.write(`${name} swam`);
+        }
+    }
+}
+
+let swim_monster = function(name){
+    let monster = {name: name};
+    return {
+        ...monster,
+        ...basic_skills(monster),
+        ...swim_skill(monster)
+    }
+}
+
+let fly_monster = function(name){
+    let monster = {name: name};
+    return {
+        ...monster, 
+        ...basic_skills(monster), 
+        ...fly_skill(monster)
+    }
+}
+
+let shark = swim_monster("Shark");
+let eagle = fly_monster("Eagle");
+
+shark.attack();
+document.write(`&lt;br>`) 
+shark.swim();
+document.write(`&lt;br>`) 
+eagle.fly();
+document.write(`&lt;br>`) 
+eagle.die();</span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+if(true){
+
+let basic_skills = function({ name }){
+    return {
+        attack(){
+            document.write(`${name} attacked`);
+        },
+        walk(){
+            document.write(`${name} walked`);
+        },
+        die(){
+            document.write(`${name} died`);
+        }
+    }
+}
+
+let fly_skill = function({ name }){
+    return{
+        fly(){
+            document.write(`${name} flew`);
+        }
+    }
+}
+
+let swim_skill = function({ name }){
+    return{
+        swim(){
+            document.write(`${name} swam`);
+        }
+    }
+}
+
+let swim_monster = function(name){
+    let monster = {name: name};
+    return {
+        ...monster,
+        ...basic_skills(monster),
+        ...swim_skill(monster)
+    }
+}
+
+let fly_monster = function(name){
+    let monster = {name: name};
+    return {
+        ...monster, 
+        ...basic_skills(monster), 
+        ...fly_skill(monster)
+    }
+}
+
+let shark = swim_monster("Shark");
+let eagle = fly_monster("Eagle");
+
+shark.attack();
+document.write(`<br>`) 
+shark.swim();
+document.write(`<br>`) 
+eagle.fly();
+document.write(`<br>`) 
+eagle.die();
+}
+
+
+</Script>
+
+<p>I don't know about you but I like this syntax way more, you have 
+    all <Span>monster skills</Span> prodefined, and whenever you want 
+    to define a new monster you just add the skills you want, it's simple, 
+    and this way you don't need to rewrite the methods.
+</p>
+
+<iframe src="https://www.youtube.com/embed/nnwD5Lwwqdo?list=PLYxnDvM22X3NBARfD2aZcyUoKvfdHfygn" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</article>
+
+<hr>
+
+<article id="two">
+
+<header>
+    <h1>Array slice() Method</h1>
+</header>
+
+<p>The <span>array slice()</span> method selects <Span>elements</Span> from an array:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let arr = [0, 1, 2, 3, 4]
+let sliced_arr = arr.slice(1, 4);
+
+document.write(sliced_arr);</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+if(true){
+    let arr = [0, 1, 2, 3, 4]
+    let sliced_arr = arr.slice(1, 4);
+    
+    document.write(sliced_arr);
+}
+</script>
+
+<p>The <span>slice()</span> method returns the <span>selected elements</span>
+of an <Span>array</Span> as a <Span>new array object</Span> without changing 
+the <Span>original array</Span>. The <Span>first parameter</Span> defines 
+the <span>beginning</span> and the <span>second parameter</span> the 
+<span>end</span>, however, it <span>ending element</span> is <span>not included</span>
+in the <Span>new array</Span>.</p>
+
+<p>The <Span>slice()</Span> method can also be used on <Span>strings</Span>:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let string = "Red Pink Blue";
+
+let pink = string.slice(4,8);
+
+document.write(pink);</span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+if(true){
+
+let string = "Red Pink Blue";
+
+let pink = string.slice(4,8);
+
+document.write(pink);
+
+}
+
+
+</Script>
+
+</article>
+
+<hr>
+
+<article id="three">
+
+<header>
+    <h1>String replace() Method</h1>
+</header>
+
+<p>The <span>replace()</span> method can be used to <span>replace</span> 
+a <Span>chosen part of a string</Span> with <Span>a new one</Span>:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let string = "I don't know JavaScript, and I don't know PHP.";
+
+let string2 = string.replace("don't know", "know");
+
+document.write(string2);</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let string = "I don't know JavaScript, and I don't know PHP.";
+
+let string2 = string.replace("don't know", "know");
+
+document.write(string2);
+
+}
+
+</script>
+
+<p>As you can see, it only <span>replaced</span> the <span>first match</span>
+it found, to <Span>replace</Span> the <Span>second match</Span> I would have 
+to use the <span>method</span> again.</p>
+
+</article>
+
+<hr>
+
+<article id="four">
+
+<head>
+    <h1>Drag and Drop</h1>
+</head>
+
+<p>In this section I'm gonna talk about how you can create <Span>daggable</Span>
+elements. Doing so can be pretty easy, as long as what you are willing to 
+create is simple, but it can get a little more complicated, and you will see why
+later in the section, for now let's start with something simple, 
+the first thing you need to do to make an element <Span>draggable</Span>
+is to add the <span>draggable="true"</span> attribute inside it:</p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><span class="code10">&lt;div class="container">
+    &lt;div class="draggable" draggable="true">1&lt;/div>
+    &lt;div class="draggable" draggable="true">2&lt;/div>
+&lt;/div>
+ 
+&lt;div class="container">
+    &lt;div class="draggable" draggable="true">3&lt;/div>
+    &lt;div class="draggable" draggable="true">4&lt;/div>
+&lt;/div></span></p>
+
+<p class="left">CSS Code:</p>
+
+<p class="left"><Span class="code10">.container{
+    background-color: #333;
+    padding: 60px 20px 30px 20px;
+    padding-top: 10px;
+    width: 500px;
+    margin: 10px auto;    
+    border: 3px solid black;  
+}
+
+.draggable{
+    background-color: white;
+    border: 3px solid black;
+    padding: 15px;
+    margin-top: 15px;
+    cursor: move;
+}</Span></p>
+
+<p class="left">Outcome:</p>
+
+<style>
+
+.container{
+    background-color: #333;
+    padding: 60px 20px 30px 20px;
+    padding-top: 10px;
+    width: 500px;
+    margin: 10px auto;    
+    border: 3px solid black;
+}
+
+.draggable{
+    background-color: white;
+    border: 3px solid black;
+    padding: 15px;
+    margin-top: 15px;
+    cursor: move;
+}
+
+</style>
+
+<div class="container">
+   <div class="draggable" draggable="true">1</div>
+   <div class="draggable" draggable="true">2</div>
+</div>
+
+<div class="container">
+   <div class="draggable" draggable="true">3</div>
+   <div class="draggable" draggable="true">4</div>
+</div>
+
+<p>So, as you can see, we are already half way there, the 
+<Span>elements</Span> can already be <Span>dragged</Span>,
+they they can't yet be <span>dropped</span>, to allow them 
+to be <Span>dropped</Span> we are going to need 
+a little <Span>JavaScript</Span>:
+</p>
+
+<p class="left">CSS Code:</p>
+
+<p class="left"><span class="code10">.draggable.dragging{
+    opacity: 0.5;
+}</span></p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let elements = Array.from(document.querySelectorAll(".draggable"));
+let containers = Array.from(document.querySelectorAll(".container"));
+
+elements.forEach((elements) => {   
+    elements.addEventListener("dragstart", (e) => {
+        elements.classList.add("dragging");
+    });
+    elements.addEventListener("dragend", (e) => {
+        elements.classList.remove("dragging");
+    })
+})
+
+containers.forEach((containers) => {
+    containers.addEventListener("dragover", (e) => {
+        e.preventDefault();
+        const element = document.querySelector('.dragging');
+        containers.append(element);
+    })
+})
+</span></p>
+
+<p class="left">Outcome:</p>
+
+<style>
+
+    .container2{
+        background-color: #333;
+        padding: 60px 20px 30px 20px;
+        padding-top: 10px;
+        width: 500px;
+        margin: 10px auto;    
+        border: 3px solid black;
+    }
+    
+    .draggable2{
+        background-color: white;
+        border: 3px solid black;
+        padding: 15px;
+        margin-top: 15px;
+        cursor: move;
+    }
+
+    .draggable2.dragging{
+        opacity: 0.5;
+    }
+    
+    </style>
+    
+    <div class="container2">
+       <div class="draggable2" draggable="true">1</div>
+       <div class="draggable2" draggable="true">2</div>
+    </div>
+    
+    <div class="container2">
+       <div class="draggable2" draggable="true">3</div>
+       <div class="draggable2" draggable="true">4</div>
+    </div>
+
+<script>
+
+if(true){
+
+let elements = Array.from(document.querySelectorAll(".draggable2"));
+let containers = Array.from(document.querySelectorAll(".container2"));
+
+elements.forEach((elements) => {   
+    elements.addEventListener("dragstart", (e) => {
+        elements.classList.add("dragging");
+    });
+    elements.addEventListener("dragend", (e) => {
+        elements.classList.remove("dragging");
+    })
+})
+
+containers.forEach((containers) => {
+    containers.addEventListener("dragover", (e) => {
+        e.preventDefault();
+        const element = document.querySelector('.dragging');
+        containers.append(element);
+    })
+})
+
+}
+
+</script>
+
+<p>Let me explain now, we added <Span>dragstart EventListener</Span> 
+to <Span>all draggable elements</Span> that <Span>adds dragging class</Span>
+to them whenever they are <span>dragged</span>, this <Span>class</Span>
+is used to know which <Span>element</span> is <Span>dragged</Span> later, 
+and it also is used for decoration porpuses. We also added 
+<span>dragend EventListener</span> which <Span>removes dragging class</Span>
+after the <Span>elements</Span> is <Span>dropped</Span>. For the 
+<Span>containers</Span> now we added <Span>dragover EventListener</Span>
+which will <Span>continiously trigger</Span>
+again and again really fast whenever an <Span>element</Span>
+is <span>dragged over it</span>, when that happens the <Span>element</Span>
+with the <Span>dragging class</Span> will be <Span>appended</Span> to it, 
+and the <Span>default event listener</Span> that would 
+change the <Span>cursor</Span> to the <span>stop sign</span>
+will be <Span>prevented</Span>.</p>
+
+<p>That's cool so far, however, there is a problem, 
+the <Span>elements</Span> are always <Span>appended to the end</Span>
+of the <span>container</span>, what if I wanted to make it so 
+that it can check the <span>cursore position</span> and determine 
+before which <Span>element</Span> it should be inserted to? To do that you will need to use a little more 
+complicated code:
+</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let elements = Array.from(document.querySelectorAll(".draggable3"));
+let containers = Array.from(document.querySelectorAll(".container3"));
+
+elements.forEach((elements) => {   
+    elements.addEventListener("dragstart", (e) => {
+        elements.classList.add("dragging");
+    });
+    elements.addEventListener("dragend", (e) => {
+        elements.classList.remove("dragging");
+    })
+})
+
+<span class="pink">function getElementAfter(container, y){
+const elements = Array.from(container.querySelectorAll('.draggable:not(.dragging)'));
+
+return elements.reduce((closest, child) => {
+const box = child.getBoundingClientRect();
+const offset = y - box.top - box.height / 2;
+
+if(offset < 0 && offset > closest.offset){
+    return { offset: offset, element: child};
+} else {
+    return closest;
+}
+
+}, { offset: Number.NEGATIVE_INFINITY } ).element;
+
+}</span>
+
+containers.forEach((containers) => {
+    containers.addEventListener("dragover", (e) => {
+        e.preventDefault();
+<Span class="pink">        const elementAfter = getElementAfter(containers, e.clientY);
+        const element = document.querySelector('.dragging');
+        if(elementAfter == null){
+        containers.append(element);
+        } else {
+        containers.insertBefore(element, elementAfter);
+        }</Span>
+    })
+})</Span></p>
+
+<p class="left">Outcome:</p>
+
+<style>
+
+    .container3{
+        background-color: #333;
+        padding: 60px 20px 30px 20px;
+        padding-top: 10px;
+        width: 500px;
+        margin: 10px auto;    
+        border: 3px solid black;
+    }
+    
+    .draggable3{
+        background-color: white;
+        border: 3px solid black;
+        padding: 15px;
+        margin-top: 15px;
+        cursor: move;
+    }
+
+    .draggable3.dragging{
+        opacity: 0.5;
+    }
+    
+    </style>
+    
+    <div class="container3">
+       <div class="draggable3" draggable="true">1</div>
+       <div class="draggable3" draggable="true">2</div>
+    </div>
+    
+    <div class="container3">
+       <div class="draggable3" draggable="true">3</div>
+       <div class="draggable3" draggable="true">4</div>
+    </div>
+
+<script>
+
+if(true){
+
+let elements = Array.from(document.querySelectorAll(".draggable3"));
+let containers = Array.from(document.querySelectorAll(".container3"));
+
+elements.forEach((elements) => {   
+    elements.addEventListener("dragstart", (e) => {
+        elements.classList.add("dragging");
+    });
+    elements.addEventListener("dragend", (e) => {
+        elements.classList.remove("dragging");
+    })
+})
+
+function getElementAfter(container, y){
+const elements = Array.from(container.querySelectorAll('.draggable3:not(.dragging)'));
+
+return elements.reduce((closest, child) => {
+const box = child.getBoundingClientRect();
+const offset = y - box.top - box.height / 2;
+
+if(offset < 0 && offset > closest.offset){
+    return { offset: offset, element: child};
+} else {
+    return closest;
+}
+
+}, { offset: Number.NEGATIVE_INFINITY } ).element;
+
+}
+
+containers.forEach((containers) => {
+    containers.addEventListener("dragover", (e) => {
+        e.preventDefault();
+        const elementAfter = getElementAfter(containers, e.clientY);
+        const element = document.querySelector('.dragging');
+        if(elementAfter == null){
+        containers.append(element);
+        } else {
+        containers.insertBefore(element, elementAfter);
+        }
+    })
+})
+
+}
+
+</script>
+
+<p>Let me explain now, the <Span>getElementAfter</Span> function 
+<Span>continiously loops</Span> through the <Span>draggable elements</Span>
+inside the <Span>container</Span> 
+you are <Span>dragging over</Span>, this <Span>loop</Span>
+is <Span>continiously made</Span> again and again, 
+always returning the <Span>element</Span> after 
+your <span>cursor</span>, to make that happen, I used 
+<Span>reduce</Span> array method, this <Span>reduce method</Span>
+does the <Span>loop through the draggable elements</Span>, 
+to make the <Span>array</Span> however I used <span>.draggable:not(.dragging)</span>
+CSS selector, so the <span>dragging element</span> 
+is not selected. Anyway, for each <Span>draggable element</Span>
+we get it's <span>boudningClientRect</span>, which is an <span>object</span>
+that contains <span>information</span> such as <span>height</span> 
+and <Span>position</Span>, we use this <Span>object</Span>
+to <Span>calculate</Span> the <span>offset</span> between 
+the <Span>element</Span> and our <Span>cursor</Span>, 
+to do that we simple do <Span>our cursor position - element's position</Span>, 
+if the <Span>element</Span> is <span>after our cursor</span>
+then the result will be <span>negative</span>, else it will be <Span>positive</Span>, 
+to be more specific, we wanted to calculate the <Span>offset</Span> between 
+our <Span>cursor y position</Span> and the <Span>y position of the center of the elements</Span>, 
+to get the <Span>y position</Span> of the <Span>center of the elements</Span>
+we did <Span>top - height/2</Span>, therefore, that's why the 
+final calculation of the <span>offset</span> is 
+<Span>y - box.top - box.height / 2</Span>. </p>
+
+<p>Anyway, so, now, remember how the <Span>reduce method</Span>
+works, first we make the <Span>closest parameter</Span>
+get an <Span>infinity negative value</Span>, so that 
+the <span>first child</span> that returns an 
+<span>offset</span> of <Span>negative value</Span>
+is always <Span>closer to 0</Span> than the <span>first closest.offset</Span>, 
+when that happens an <Span>object</Span> will be returned 
+with the <Span>current offset</Span> and the <Span>current element</Span>
+and it will be assigned to be the <Span>closest</Span> of the <Span>next loop</Span>
+which will check if the <Span>next element's offset</Span>
+is <Span>negative</Span> and if yes then if it's <span>closer to 0 than the current closest</span>, 
+if this returns true then another <Span>object</Span> will be returned to be the <Span>closest</Span>
+with the <span>current offset</span> and <span>element</span>, anyway, 
+this loop takes miliseconds to happen, and at the end the <Span>element</Span>
+with the <Span>closest to 0 but negative offset</Span> is returned 
+to be the <Span>value</Span> of the <Span>elementAfter variable</Span>, 
+if your <Span>cursor</Span> is <Span>after all elements</Span> only 
+<span>positive offsets</span> will be returned, so <Span>reduce(...).element</Span>
+will return <Span>null</Span> since an <Span>object</Span>
+with the <Span>element property</Span> will not have been returned. All this 
+process continiously happens while the element is being dragged over 
+the container, so even if you see no change while keeping the 
+element at one place, behind the scenese this whole process I'm just 
+explaining happens again and again and the element is appeded 
+at the position you view it again and again, without this being visible 
+seen, unless of course if you move it behind another element which will 
+change the element returned by the reduce method.</p>
+
+<p>I made this section with the help of the following video, 
+I believe it will be easier to understand the code I just wrote 
+above if you first watch this video, since <span>Kyle Cook</span> is a very 
+good teacher and explains it really well, you also will be able 
+to see the code being written in order while he explains 
+what each line does, something I am not able to do here very easily.
+</p>
+
+<iframe src="https://www.youtube.com/embed/jfYWwQrtzzY?list=PLYxnDvM22X3NBARfD2aZcyUoKvfdHfygn" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<p>Now, there is a problem, <Span>drag and drop</Span> does not 
+work property for <Span>touch screens</Span>, in order to make 
+the list usable for touch screens too you will need to use 
+<span>touch events</span>, there isn't one and only way to create 
+the list, there are multiple different ways one can do this, here 
+is my attempt to make that happen:</p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><span class="code10">&lt;div class="container4">
+   &lt;div class="draggable4" draggable="false">1&lt;/div>
+   &lt;div class="draggable4" draggable="false">2&lt;/div>
+&lt;/div>
+ 
+&lt;div class="container4">
+   &lt;div class="draggable4" draggable="false">3&lt;/div>
+   &lt;div class="draggable4" draggable="false">4&lt;/div>
+&lt;/div></span></p>
+
+<p class="left">CSS Code:</p>
+
+<p class="left"><span class="code10">.container4{
+    background-color: #333;
+    padding: 60px 20px 30px 20px;
+    padding-top: 10px;
+    max-width: 500px;
+    width: 50vw;
+    margin: 10px auto;    
+    border: 3px solid black;
+}
+
+.draggable4{
+    background-color: white;
+    border: 3px solid black;
+    padding: 15px;
+    margin-top: 15px;
+    cursor: move;
+}
+
+.draggable4.dragging{
+    opacity: 0.5;
+}
+
+.no-scroll{
+    height: 100vh;
+    overflow: hidden;
+}</span></p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10"><span class="gray">// this makes sure that the code will run only 
+// after the window has fully loaded</span>
+window.addEventListener('load', (e) => {
+
+<span class="gray">    // this gets the draggable elements 
+    // and the two containers</span>
+    let elements = Array.from(document.querySelectorAll(".draggable4"));
+    let containers = Array.from(document.querySelectorAll(".container4"));    
+
+<span class="gray">    // function that gets the element next of your cursor/touch</span>
+    function getElementAfter(container, y){
+        const elements = Array.from(container.querySelectorAll('.draggable4:not(.dragging)'));
+        
+        return elements.reduce((closest, child) => {
+            const box = child.getBoundingClientRect();
+            const offset = y - box.top - box.height / 2;
+            
+            if(offset &lt; 0 && offset > closest.offset){
+                return { offset: offset, element: child};
+            } else {
+                return closest;
+            }
+        
+        }, { offset: Number.NEGATIVE_INFINITY } ).element;
+     
+    }    
+
+<span class="gray">    // loop that makes sure all events 
+    // created below are added on all 
+    // the draggable elements</span>
+    elements.forEach((elements) => {    
+
+<span class="gray">        // this sets draggable attribute to true
+        // the reason I didn't have it set to 
+        // true from the start is to prevent 
+        // possible bugs that can occur, so
+        // that users can only drag the elements
+        // after the window has fully loaded.</span>
+        elements.draggable = "true";    
+
+<span class="gray">        //function that triggers when toucmove event is added
+        //I needed to use a named function so I can remove the 
+        //toucmove event later after touchend event triggers</span>
+        function touchmove(e){
+            let box1 = containers[0].getBoundingClientRect();
+            let y1 = box1.top + box1.height;
+            let container;
+            let y2 = e.touches[0].clientY;
+<span class="gray">            // this finds at which container 
+            // the element should be placed, 
+            // we then use that container on 
+            // getElementAfter function to 
+            // get the element after our cursor, 
+            // if any, else we just append the 
+            // element in the end of the container</span>
+            if(y2 &lt; y1){
+                container = containers[0];
+            } else if(y2 > y1){
+                container = containers[1];
+            }
+            let elementAfter = getElementAfter(container, y2);
+            if(elementAfter == null){
+            container.append(elements);
+            } else {
+            container.insertBefore(elements, elementAfter);
+            }                
+        }
+       
+<span class="gray">        // this triggers when a touch is made</span>
+        elements.addEventListener('touchstart', (e) => {
+            elements.draggable = "false";
+<span class="gray">            // touch should be hold for 1 second before</span>
+            // the element can be moved
+            let timeout = setTimeout(function(){
+                elements.classList.add('dragging');
+                document.body.classList.add('no-scroll');
+<span class="gray">                // after you hold a touch for 1 second on 
+                // the element then touchmove event is 
+                // added to the document, which triggers
+                // the function i made before</span>
+                document.addEventListener('touchmove', touchmove);     
+            }, 1000);    
+
+            elements.addEventListener('touchend', (e) => {
+<span class="gray">                // after touch ends everything is returned
+                // to normal and the touchmove event is 
+                // removed from the document, also
+                // the timout is cleared so if the 
+                // touch was not held for 1 second 
+                // then the code that was supposed to 
+                // trigger after the timeout will not run</span>
+                elements.draggable = "true";
+                clearTimeout(timeout);
+                elements.classList.remove('dragging');
+                document.body.classList.remove('no-scroll');
+                document.removeEventListener('touchmove', touchmove);
+            })    
+
+            elements.addEventListener('touchcancel', (e) => {
+<span class="gray">                // if touch is canceled everything is returned
+                // to normal and the touchmove event is 
+                // removed from the document</span>
+                elements.draggable = "true";
+                clearTimeout(timeout);
+                elements.classList.remove('dragging');
+                document.body.classList.remove('no-scroll');
+                document.removeEventListener('touchmove', touchmove);
+            })
+        });    
+
+<span class="gray">        // drag events, these will not trigger 
+        // on mobile, and I make sure they won't 
+        // by turning draggable attribute to false 
+        // when a touch occurs, because of devices that 
+        // support both touch and mouse I also 
+        // return the attribute back to true
+        // after the touch ends/cancels</span>
+
+<span class="gray">        // when an element is dragged the dragging 
+        // class is added to it, when it is dropped 
+        // the dragging class is removed from it</span>
+        elements.addEventListener("dragstart", (e) => {
+            elements.classList.add("dragging");
+        });
+        elements.addEventListener("dragend", (e) => {
+            elements.classList.remove("dragging");
+        });
+    });    
+
+<span class="gray">    // this adds the dragover event to both 
+    // containers, when an element is dragged over 
+    // a container it will call the getElementAfter 
+    // function which will return the element that's 
+    // right after the cursor, if any, else it 
+    // will append the element with the draggin class 
+    // to the end of the container</span>
+    containers.forEach((containers) => {
+        containers.addEventListener("dragover", (e) => {
+            e.preventDefault();
+            const elementAfter = getElementAfter(containers, e.clientY);
+            const element = document.querySelector('.dragging');
+            if(elementAfter == null){
+            containers.append(element);
+            } else {
+            containers.insertBefore(element, elementAfter);
+            }
+        });
+    });
+});</span></p>
+
+<p class="left">Outcome:</p>
+
+<style>
+
+    .container4{
+        background-color: #333;
+        padding: 60px 20px 30px 20px;
+        padding-top: 10px;
+        max-width: 500px;
+        width: 50vw;
+        margin: 10px auto;    
+        border: 3px solid black;
+    }
+    
+    .draggable4{
+        background-color: white;
+        border: 3px solid black;
+        padding: 15px;
+        margin-top: 15px;
+        cursor: move;
+    }
+
+    .draggable4.dragging{
+        opacity: 0.5;
+    }
+
+    .no-scroll{
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    </style>
+    
+    <div class="container4">
+       <div class="draggable4" draggable="false">1</div>
+       <div class="draggable4" draggable="false">2</div>
+    </div>
+    
+    <div class="container4">
+       <div class="draggable4" draggable="false">3</div>
+       <div class="draggable4" draggable="false">4</div>
+    </div>
+
+<script>
+
+// this makes sure that the code will run only 
+// after the window has fully loaded
+window.addEventListener('load', (e) => {
+    
+    // this gets the draggable elements 
+    // and the two containers 
+    let elements = Array.from(document.querySelectorAll(".draggable4"));
+    let containers = Array.from(document.querySelectorAll(".container4"));    
+
+    // function that gets the element next of your cursor/touch
+    function getElementAfter(container, y){
+        const elements = Array.from(container.querySelectorAll('.draggable4:not(.dragging)'));
+        
+        return elements.reduce((closest, child) => {
+            const box = child.getBoundingClientRect();
+            const offset = y - box.top - box.height / 2;
+            
+            if(offset < 0 && offset > closest.offset){
+                return { offset: offset, element: child};
+            } else {
+                return closest;
+            }
+        
+        }, { offset: Number.NEGATIVE_INFINITY } ).element;
+     
+    }    
+
+    // loop that makes sure all events 
+    // created below are added on all 
+    // the draggable elements
+    elements.forEach((elements) => {    
+
+        // this sets draggable attribute to true
+        // the reason I didn't have it set to 
+        // true from the start is to prevent 
+        // possible bugs that can occur, so
+        // that users can only drag the elements
+        // after the window has fully loaded.
+        elements.draggable = "true";    
+    
+
+        //function that triggers when toucmove event is added
+        //I needed to use a named function so I can remove the 
+        //toucmove event later after touchend event triggers
+        function touchmove(e){
+            let box1 = containers[0].getBoundingClientRect();
+            let y1 = box1.top + box1.height;
+            let container;
+            let y2 = e.touches[0].clientY;
+            // this finds at which container 
+            // the element should be placed, 
+            // we then use that container on 
+            // getElementAfter function to 
+            // get the element after our cursor, 
+            // if any, else we just append the 
+            // element in the end of the container
+            if(y2 < y1){
+                container = containers[0];
+            } else if(y2 > y1){
+                container = containers[1];
+            }
+            let elementAfter = getElementAfter(container, y2);
+            if(elementAfter == null){
+            container.append(elements);
+            } else {
+            container.insertBefore(elements, elementAfter);
+            }                
+        }
+       
+        // this triggers when a touch is made    
+        elements.addEventListener('touchstart', (e) => {
+            elements.draggable = "false";
+            // touch should be hold for 1 second before 
+            // the element can be moved
+            let timeout = setTimeout(function(){
+                elements.classList.add('dragging');
+                document.body.classList.add('no-scroll');
+                // after you hold a touch for 1 second on 
+                // the element then touchmove event is 
+                // added to the document, which triggers
+                // the function i made before
+                document.addEventListener('touchmove', touchmove);     
+            }, 1000);    
+
+            elements.addEventListener('touchend', (e) => {
+                // after touch ends everything is returned
+                // to normal and the touchmove event is 
+                // removed from the document, also
+                // the timout is cleared so if the 
+                // touch was not held for 1 second 
+                // then the code that was supposed to 
+                // trigger after the timeout will not run
+                elements.draggable = "true";
+                clearTimeout(timeout);
+                elements.classList.remove('dragging');
+                document.body.classList.remove('no-scroll');
+                document.removeEventListener('touchmove', touchmove);
+            })    
+
+            elements.addEventListener('touchcancel', (e) => {
+                // if touch is canceled everything is returned
+                // to normal and the touchmove event is 
+                // removed from the document
+                elements.draggable = "true";
+                clearTimeout(timeout);
+                elements.classList.remove('dragging');
+                document.body.classList.remove('no-scroll');
+                document.removeEventListener('touchmove', touchmove);
+            })
+        });    
+
+        // drag events, these will not trigger 
+        // on mobile, and I make sure they won't 
+        // by turning draggable attribute to false 
+        // when a touch occurs, because of devices that 
+        // support both touch and mouse I also 
+        // return the attribute back to true  
+        // after the touch ends/cancels    
+
+        // when an element is dragged the dragging 
+        // class is added to it, when it is dropped 
+        // the dragging class is removed from it
+        elements.addEventListener("dragstart", (e) => {
+            elements.classList.add("dragging");
+        });
+        elements.addEventListener("dragend", (e) => {
+            elements.classList.remove("dragging");
+        });
+    });    
+
+    // this adds the dragover event to both 
+    // containers, when an element is dragged over 
+    // a container it will call the getElementAfter 
+    // function which will return the element that's 
+    // right after the cursor, if any, else it 
+    // will append the element with the draggin class 
+    // to the end of the container
+    containers.forEach((containers) => {
+        containers.addEventListener("dragover", (e) => {
+            e.preventDefault();
+            const elementAfter = getElementAfter(containers, e.clientY);
+            const element = document.querySelector('.dragging');
+            if(elementAfter == null){
+            containers.append(element);
+            } else {
+            containers.insertBefore(element, elementAfter);
+            }
+        });
+    });
+});
+
+</script>
+        
+
+</article>
+
+<hr>
+
+<article id="five">
+
+<header>
+    <h1>Web Storage API</h1>
+</header>
+
+<p>Let's now talk about how you can store data from a user 
+    and save it for later use, something really important, 
+    before <span>HTML5</span> to do so you would have to use 
+    cookies or something, since I'm new to web development 
+    I don't really know much about this, anyway, from what I 
+    studied <span>HTML5</span> introduced us the <Span>localStorage</Span>
+    and <Span>sessionStorage</Span> window objects, and in this section I will go over 
+    the different methods they have and ways you can use them.
+</p>
+
+<p>What's the difference between <span>sessionStorage</span> and 
+<Span>localStorage</Span>? When data is stored in <Span>sessionStorage</Span> 
+it only is kept stored for as long as the tab is open, after exiting the 
+website it is removed, while when data is stored in <Span>localStorage</Span> it 
+is kept stored there even after you leave the website, and can only be removed 
+by the user if he deletes it through the browser settings or it can also be 
+removed by one of the methods that can be used to delete stored data. </p>
+
+<p>Let's try now to store data and see if it gets stored or not, to view the stored data, 
+    right click on the browser and press inspect, then go to the <Span>application tab</Span> 
+    and there you can see the <span>localStorage</span> and <Span>sessionStorage</Span> 
+    files, where <Span>strings</Span> are stored in <Span>key</Span>, <Span>value</Span>
+    pairs, remember, the <Span>value</Span> can only be <Span>strings</Span>, no 
+    objects or arrays can be used, I will talk about how you can do store objects 
+    and arrays later using <span>JSON</span>.
+</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">window.sessionStorage.setItem("Name", "Alex");
+window.sessionStorage.setItem("Age", "16");</Span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+window.sessionStorage.setItem("Name", "Alex");
+window.sessionStorage.setItem("Age", "16");
+
+</script>
+
+<style>
+    img{
+        margin: 20px auto 20px auto;
+        display: block;
+        border: 3px solid black;
+        border-radius: 20px;
+    }
+</style>
+
+<img src="../images/εε4.PNG" >
+
+<P>There are four methods I know of that can be used for both <span>sessionStorage</span>
+and <Span>localStorage</Span>, and these are the following:</P>
+
+<div class="list_container" style="width: 500px">
+    <ul>
+        <li>setItem - takes two parameters, one sets the key of the item the other the value.</li>
+        <li>removeItem - takes one parameter, it removes to specified item picked by key.</li>
+        <li>getItem - takes one parameter, it returns the specified item picked by key.</li>
+        <li>keys - takes one parameter, put the index of the key you want to be returned, for example, key(0) will return the key of the first item, this is 
+            good because it allows you to easily iterate through all the items using loops.</li>
+    </ul>
+</div>
+
+<p>Let's create a simple project:</p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><Span class="code10">&lt;div id="form-container">
+&lt;form id="setdata">
+       &lt;table class="test-table">
+         &lt;tr>
+               &lt;td>&lt;label>Key:&lt;/label></td>
+               &lt;td>&lt;input id="setkey" type="text" autocomplete="off" required>&lt;/td>
+           &lt;/tr>
+           &lt;tr>
+               &lt;td>&lt;label>Value:&lt;/label>&lt;/td>
+               &lt;td>&lt;input id="setvalue" type="text" autocomplete="off" required>&lt;/td>
+           &lt;/tr>    
+           &lt;tr>
+               &lt;td colspan="2">&lt;input type="submit" value="Submit">&lt;/td>
+           &lt;/tr>    
+       &lt;/table>
+&lt;/form>
+&lt;form id="getdata">
+       &lt;table class="test-table">
+           &lt;tr>
+               &lt;td>&lt;label>Key: &lt;/label>&lt;/td>
+               &lt;td>&lt;input id="getkey" type="text" autocomplete="off" required>&lt;td>
+           &lt;/tr>
+           &lt;tr>
+               &lt;td>&lt;input type="submit" value="Get Value">&lt;/td>
+               &lt;td>&lt;input id="showvalue" type="text" disabled>&lt;/td>
+           &lt;/tr>
+       &lt;/table>
+&lt;/form>
+&lt;/div></Span></p>
+
+<p class="left">CSS Code:</p>
+
+<p class="left"><Span class="code10">.test-table{
+    border: 3px solid black;
+    border-collapse: collapse;
+    background-color: lightcoral;
+    font-weight: bold;
+}
+.test-table td{
+    border: 2px solid black;
+}
+.test-table td:last-child{
+    text-align: right;
+}
+
+#form-container{
+    width: fit-content;
+    height: 100px;
+    padding: 20px;
+    margin: auto;
+    background-color: gray;
+    border: 3px solid black;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    align-items: center;
+}</Span></p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let setkey = document.querySelector(`#setkey`);
+let setvalue = document.querySelector(`#setvalue`);
+let setdata = document.querySelector(`#setdata`)
+
+let getkey = document.querySelector(`#getkey`);
+let showvalue = document.querySelector(`#showvalue`)
+let getdata = document.querySelector(`#getdata`);
+
+setkey.addEventListener('input', (e) => {
+    if(setkey.value == " "){
+    setkey.value = setkey.value.trim();
+    }
+});
+
+setvalue.addEventListener('input', (e) => {
+    if(setvalue.value == " "){
+    setvalue.value = setvalue.value.trim();
+    }
+});    
+
+getkey.addEventListener('input', (e) => {
+    if(getkey.value == " "){
+    getkey.value = getkey.value.trim();
+    }
+});  
+
+setdata.addEventListener('submit', (e) => {
+    let key = setkey.value;
+    let value = setvalue.value;
+
+    if(key != "" && value != ""){
+    e.preventDefault();
+    window.localStorage.setItem(key.trim(), value.trim());
+    window.alert(`${key} saved to the local storage!`)
+    } 
+});
+
+getdata.addEventListener('submit', (e) =>{
+    let key = getkey.value;
+
+    if(key != ""){
+    e.preventDefault();
+    showvalue.value = window.localStorage.getItem(key);
+    } 
+});</Span></p>
+
+<p class="left">Outcome:</p>
+
+<style>
+
+    .test-table{
+        border: 3px solid black;
+        border-collapse: collapse;
+        background-color: lightcoral;
+        font-weight: bold;
+    }
+    .test-table td{
+        border: 2px solid black;
+    }
+    .test-table td:last-child{
+        text-align: right;
+    }
+
+    #form-container{
+        width: fit-content;
+        height: 100px;
+        padding: 20px;
+        margin: auto;
+        background-color: gray;
+        border: 3px solid black;
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        align-items: center;
+    }
+
+</style>
+
+<div id="form-container">
+<form id="setdata">
+    <table class="test-table">
+      <tr>
+            <td><label>Key:</label></td>
+            <td><input id="setkey" type="text" autocomplete="off" required></td>
+        </tr>
+        <tr>
+            <td><label>Value:</label></td>
+            <td><input id="setvalue" type="text" autocomplete="off" required></td>
+        </tr>    
+        <tr>
+            <td colspan="2"><input type="submit" value="Submit"></td>
+        </tr>    
+    </table>
+</form>
+
+<form id="getdata">
+    <table class="test-table">
+        <tr>
+            <td><label>Key: </label></td>
+            <td><input id="getkey" type="text" autocomplete="off" required></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Get Value"></td>
+            <td><input id="showvalue" type="text" disabled></td>
+        </tr>
+    </table>
+</form>
+</div>
+
+<Script>
+    if(true){
+        let setkey = document.querySelector(`#setkey`);
+        let setvalue = document.querySelector(`#setvalue`);
+        let setdata = document.querySelector(`#setdata`)
+
+        let getkey = document.querySelector(`#getkey`);
+        let showvalue = document.querySelector(`#showvalue`)
+        let getdata = document.querySelector(`#getdata`);
+        
+        setkey.addEventListener('input', (e) => {
+            if(setkey.value == " "){
+            setkey.value = setkey.value.trim();
+            }
+        });
+
+        setvalue.addEventListener('input', (e) => {
+            if(setvalue.value == " "){
+            setvalue.value = setvalue.value.trim();
+            }
+        });    
+
+        getkey.addEventListener('input', (e) => {
+            if(getkey.value == " "){
+            getkey.value = getkey.value.trim();
+            }
+        });  
+
+        setdata.addEventListener('submit', (e) => {
+            let key = setkey.value;
+            let value = setvalue.value;
+
+            if(key != "" && value != ""){
+            e.preventDefault();
+            window.localStorage.setItem(key.trim(), value.trim());
+            window.alert(`${key} saved to the local storage!`)
+            } 
+        });
+
+        getdata.addEventListener('submit', (e) =>{
+            let key = getkey.value;
+
+            if(key != ""){
+            e.preventDefault();
+            showvalue.value = window.localStorage.getItem(key);
+            } 
+        });
+    }
+</Script>
+
+<p>So, as I said before, the <Span>values</Span> can only be 
+<Span>strings</Span>, so what if you want to add an <Span>object</Span> or an 
+<Span>array</Span>? You could do so by using <span>JSON</span>, which basically 
+allows you to convert <span>objects</span> to <span>strings</span> and vise versa, 
+using <span>JSON.stringify()</span> and <Span>JSON.parse()</Span> methods, just like this:</p>
+
+<p class="left">JavaScript Notes:</p>
+
+<p class="left"><Span class="code10">let object = {
+    "name": "Alex",
+    "age": 16,
+    "fav_anime": ["Code Geass", "Steins;Gate", "DeathNote"],
+}
+
+window.sessionStorage.setItem("myself", JSON.stringify(object));
+document.write(JSON.parse(window.sessionStorage.getItem("myself")).fav_anime[1]);</Span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+if(true){
+
+let object = {
+    "name": "Alex",
+    "age": 16,
+    "fav_anime": ["Code Geass", "Steins;Gate", "DeathNote"],
+}
+
+window.sessionStorage.setItem("myself", JSON.stringify(object));
+document.write(JSON.parse(window.sessionStorage.getItem("myself")).fav_anime[1]);
+}
+
+</Script>
+
+<iframe src="https://www.youtube.com/embed/hOCYNdgsUfs?list=PLYxnDvM22X3NBARfD2aZcyUoKvfdHfygn" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</article>
+
+<hr>
+
+<article id="six">
+
+    <header>
+        <h1>Geolocation API</h1>
+    </header>
+
+<p><Span>Geolocation API</Span> allows you to get the <Span>location</Span> of a user, 
+if granted permission by the user first of course. You can access <Span>geolocation</Span>
+through the <Span>navigator object</Span>, the <Span>navigator object</Span> is an 
+<Span>object</Span> that contains information about the browser, I may speak more 
+about it in later sections, anyway, since some <Span>older browsers</Span> may not 
+support <Span>geolocation</Span>, it is recommended to use an <Span>if, else</Span> 
+statement while working with <Span>geolocation</Span> to check if the browser 
+has a <Span>geolocation property</Span> inside the <Span>navigator object</Span> or not.</p>
+
+<p>Anyway, let's get started with the most common method of <Span>geolocation object</Span>, 
+the <Span>getCurrentPosition()</Span> method, when this method is used, the 
+<Span>page</Span> will ask for <Span>permission to get the position</Span>, the 
+<Span>method</Span> can take <Span>three parameters</Span>, the <Span>first two</Span>
+are <Span>required</Span>, the <Span>first parameter</Span> should be a <Span>function</Span>
+to be executed if <span>permission</span> is <Span>granted</Span>
+and the <Span>second parameter</Span> should be a <span>function</span> to be 
+executed when <Span>permission</Span> is <Span>denied</Span>. I will talk about the <Span>third parameter</Span>
+later. </p>
+
+<p>About these <Span>two functions</Span> now, each can be assigned a <Span>parameter</Span>, 
+for the <Span>function</Span> that is executed when <span>permission is granted</span>
+the <Span>parameter</Span> returns an <Span>object</Span> which can later be used 
+to acces information about the <Span>position</Span> and <Span>time</Span>, this 
+<Span>object</span> contains <Span>two properties</span>, the first is <Span>coords</Span> which 
+is an <Span>object</Span> that contains other many <Span>properties</span> about the 
+<span>position</span>, the second is <Span>timestamp</Span> which returns the <Span>time</Span>. </p>
+
+<p>The <Span>parameter</Span> of the <Span>function</Span> that is executed when 
+<Span>permission is not granted</Span> returns an <Span>object</Span>
+with <Span>two properties</Span>, the <Span>first proeprty</Span>
+is called <Span>code</Span> and contains a <Span>number</Span>, the <Span>second property</Span>
+is called <Span>message</Span> and contains a <span>string</span>, the <span>code</span>
+will be <Span>1</Span> if <span>permission is denied</span>, <Span>2</Span> if 
+browser is <Span>unable to determine</Span> wether the user <Span>gave permission or not</Span>, 
+this can happen due to network problems, and lastly, it will be <Span>3</Span> if it takes 
+too long for the user to grant or deny the permission, the <Span>message</Span> 
+property will always contain a <Span>description</Span> as to why the 
+browser can't take the user's location.</p>
+
+<p class='left'>HTML Code:</p>
+
+<p class="left"><Span class="code10">&lt;div class="position-details">
+    &lt;p id="get-position">&lt;button>Get Position&lt;/button>&lt;/p>
+    &lt;p id="failed-position">&lt;/p>
+    &lt;p>LAT: &lt;span class="position">&lt;/span>&lt;/p>
+    &lt;p>LNG: &lt;span class="position">&lt;/span>&lt;/p>
+    &lt;p>ACCURACY: &lt;span class="position">&lt;/span>&lt;/p>
+    &lt;p>TIME: &lt;span class="position">&lt;/span>&lt;/p>
+&lt;/div></Span>
+
+<p class='left'>CSS Code:</p>
+
+<p class="left"><Span class="code10">.position-details p{
+    text-align: left;
+}</Span>
+
+<p class='left'>JavaScript Code:</p>
+
+<p class="left"><Span class="code10">if(navigator.geolocation){
+    let button = document.querySelector('#get-position button');
+    let spans = Array.from(document.querySelectorAll('.position'));
+    let failed_reason = document.querySelector('#failed-position');
+    button.addEventListener('click', (e) => {
+        navigator.geolocation.getCurrentPosition((position) => {
+            failed_reason.innerText = "";
+            spans[0].innerText = position.coords.latitude;
+            spans[1].innerText = position.coords.longitude;
+            spans[2].innerText = position.coords.accuracy;
+            spans[3].innerText = position.timestamp;
+        }, (error) => {
+            failed_reason.innerText = error.message;
+            spans.forEach((span) => {
+                span.innerText = "";
+            });
+        });
+    });
+} else{
+    let button = document.querySelector('#get-position button');
+    let failed_reason = document.querySelector('#failed-position');
+    button.addEventListener('click', (e) => {
+        failed_reason.innerText = "Browser cannot take your position"
+    });
+}</Span>
+
+<p class="left">Outcome:</p>
+
+<Style>
+    .position-details p{
+        text-align: left;
+    }
+    .position{
+        background-color: unset;
+    }
+</Style>
+
+<div class="position-details">
+    <p id="get-position"><button>Get Position</button></p>
+    <p id="failed-position"></p>
+    <p>LAT: <span class="position"></span></p>
+    <p>LNG: <span class="position"></span></p>
+    <p>ACCURACY: <span class="position"></span></p>
+    <p>TIME: <span class="position"></span></p>
+</div>
+
+<script>
+    if(true){
+        if(navigator.geolocation){
+            console.log(navigator.geolocation)
+            let button = document.querySelector('#get-position button');
+            let spans = Array.from(document.querySelectorAll('.position'));
+            let failed_reason = document.querySelector('#failed-position');
+            button.addEventListener('click', (e) => {
+                navigator.geolocation.getCurrentPosition((position) => {
+                    failed_reason.innerText = "";
+                    spans[0].innerText = position.coords.latitude;
+                    spans[1].innerText = position.coords.longitude;
+                    spans[2].innerText = position.coords.accuracy;
+                    spans[3].innerText = position.timestamp;
+                }, (error) => {
+                    failed_reason.innerText = error.message;
+                    spans.forEach((span) => {
+                        span.innerText = "";
+                    });
+                });
+            });
+        } else{
+            let button = document.querySelector('#get-position button');
+            let failed_reason = document.querySelector('#failed-position');
+            button.addEventListener('click', (e) => {
+                failed_reason.innerText = "Browser cannot take your position";
+            });
+        }
+    }
+</script>
+
+<p>There are more <Span>properties</Span> inside the <Span>coords</Span> object, like 
+<Span>speed</Span>, <span>altitude</span>, <Span>heading</Span> and more, but not all are 
+supported by all devices. Anyway, I think it's time now to talk about the <Span>third parameter</Span>
+for the <Span>getCurrentPosition()</Span> method.</p>
+
+<P>The <Span>third parameter</Span> should be an <Span>object</Span>, which object 
+can be assigned <Span>three properties</Span>, <Span>enableHighAccuracy: boolean</Span>, 
+<Span>timeout: number</Span> and <Span>maximumAge: number</Span>. The <span>enableHighAccuracy</span>
+is used to decide wether or not you want the browser to try and use <span>GPS</span>
+or not, if <Span>true</Span> then it will try, else it will not. The <span>timeout</span> sets 
+the ammount of <span>time</span> till the <Span>browser gives up</Span> trying to get 
+the <Span>position</Span> of the <Span>user</Span>, and lastly, the <Span>maximumAge</Span>
+property sets the ammount of <Span>time</Span> the <Span>location</Span> is 
+<Span>attached to the browser</Span>, if for example you want it to be attached to 
+the browser for an hour, when you make another <Span>request</Span> the browser will 
+go back to the <Span>cache</Span> and get that information.</P>
+
+<iframe src="https://www.youtube.com/embed/NIAqR34eg7I" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</article>
+
+<hr>
+
+<article id="seven">
+
+    <header>
+        <h1>Proxy Object</h1>
+    </header>
+    
+ <p>Let's talk about the <Span>proxy object</Span> now, a really cool feauture 
+that was added in <Span>ES6</Span>. So, what is the <Span>proxy object</Span>? 
+From what I understand, the <Span>proxy object</Span> 
+lets you create <Span>custom behaviours</Span> for all the different 
+kind of <Span>object operations</Span> that exist, just like 
+<Span>events</Span>, for example, you can have a <Span>function</Span> 
+get executed every time you <Span>access a property</Span> 
+of a <Span>specified object</Span> or a <Span>function</Span> 
+to execute every time you <Span>set a property</Span> to an <Span>object</Span>.</p>
+
+<p>Anyway, there are many different <Span>object operators</Span> out there, 
+I will try to cover as many of them as possible in this section, so let's start 
+with the most basics one, the <Span>get</Span> and <Span>Set</Span>.</p>
+
+<h2><u>Get and Set Handlers:</u></h2>
+
+<p>So, the <Span>proxy object</Span> takes <Span>two parameters</Span>, 
+the <Span>first</Span> is your <Span>object</Span> and the <Span>second</Span>
+is an <Span>object</Span> with all the different <Span>handlers</Span>, such as 
+<Span>get</Span>, <Span>set</Span>, etc.</p>
+
+<p>The <Span>get</Span> method will be executed every time 
+you <Span>access a property</Span> of the <Span>object</Span>, 
+the <Span>method</Span> can take <Span>two parameters</Span>, 
+the <span>first parameter</span> is the <Span>target</Span>, 
+it returns the <Span>object</Span>, the <Span>second parameter</Span> is 
+the <Span>property</Span> you are trying to access, if for example 
+you wrote <Span>obj.name</Span> then the <span>second parameter</span>
+would return <Span>"name"</Span> in the <Span>method</Span>, here 
+is a quick example of the <span>get handler</span>, I made it so 
+it keeps track of how many times the <Span>name property</Span> is accessed:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let obj = { name: "Alex" }
+
+let nameCount = 0;
+
+let handlers = {
+    get: function(target, prop){
+        if(prop === 'name'){
+            nameCount++
+            return target.prop;
+        }
+    }
+}
+
+let proxyObject = new Proxy(obj, handlers);
+
+proxyObject.name
+proxyObject.name 
+document.write(nameCount);</Span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+    if(true){
+        let obj = { name: "Alex" }
+
+        let nameCount = 0;
+
+        let handlers = {
+            get: function(target, prop){
+                if(prop === 'name'){
+                    nameCount++
+                    return target.prop;
+                }
+            }
+        }
+
+        let proxyObject = new Proxy(obj, handlers);
+
+        proxyObject.name
+        proxyObject.name 
+        document.write(nameCount);
+    }
+</script>
+
+<p>The <Span>set</Span> method is executed every time 
+you <Span>set a property</Span> to the <Span>object</Span> 
+and takes <Span>three parameters</Span>, the <Span>first two</Span> are 
+<Span>target and property</Span> which work just like the ones in 
+the <Span>get method</Span> I explained above, the <Span>third parameter</Span>
+returns the <Span>value</Span> that you are trying to <Span>set</Span>, 
+if for example you write <Span>obj.age = 16</Span> the <Span>third parameter</Span> 
+will return <Span>16</Span>, here is a quick example that prevents you 
+from adding the the word <Span>shit</Span> as a <Span>value</Span>:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let handlers = {
+    set: function(target, prop, value){
+        if (value == "shit"){
+            console.log('you are not allowed to set this value');
+        } else {
+            target[prop] = value;
+        }
+    },
+    get: function(target, prop){
+        if(prop in target){
+            return target[prop];
+        } else {
+            return "property not found";
+        }
+    }
+}
+
+let proxyObj = new Proxy({}, handlers);
+
+proxyObj.name = "Alex";
+proxyObj.poop = "shit";
+
+document.write(`${proxyObj.name} &lt;br> ${proxyObj.poop}`);</Span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+    if(true){
+        let handlers = {
+            set: function(target, prop, value){
+                if (value == "shit"){
+                    console.log('you are not allowed to set this value');
+                } else {
+                    target[prop] = value;
+                }
+            },
+            get: function(target, prop){
+                if(prop in target){
+                    return target[prop];
+                } else {
+                    return "property not found";
+                }
+            }
+        }
+
+        let proxyObj = new Proxy({}, handlers);
+
+        proxyObj.name = "Alex";
+        proxyObj.poop = "shit";
+
+        document.write(`${proxyObj.name} <br> ${proxyObj.poop}`);
+    }
+</script>
+
+<h2><u>Getters and Setters with methods:</u></h2>
+
+<p>So, as we saw before, the <Span>get</Span> handler only takes 
+<Span>two parameters</Span>, so if we try to access a <Span>method</Span>, 
+which takes <Span>arguments</Span>, how could we access the <Span>arguments</Span>
+that were typed while accessing the <Span>method</Span> and manipulate them?</p>
+
+<p>So, normally, you would write <Span>return target[prop]</Span>, which 
+would return the <Span>object's method</Span>, we can however return an 
+<Span>anonymous function</Span> instead, with <Span>parameters</Span>, doing so, will 
+asign the <Span>method parameters</Span> to that <Span>anonymous function</Span> 
+first, behind the scenes, since <Span>obj.propName</Span> will now <Span>return</Span> the 
+<Span>anonymous function</Span> writing <Span>obj.propName(x, y)</Span> will execute 
+the <Span>anonymous function</Span>, then, inside the <Span>anonymous function</Span>, you can 
+manipulate the <span>parameters</span> however you wish, and then <Span>execute</Span>
+the <Span>real method</Span>, and pass it the manipulated <Span>parameters</Span>, 
+by writing <Span>target[prop].apply(target, parameters)</Span>, 
+you could also do the same thing writing <Span>target[prop](parameters)</Span>, 
+I just use <Span>apply</Span> to also se the <Span>this keyword</Span>, of 
+course you only want that <Span>anonymous function</Span> to run only if 
+the <Span>property</Span> you try to access is a <Span>function</Span> so use 
+<Span>else/if statemet</Span> to determine this, here is an example:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let obj = {
+    name: "Alex",
+    example(x){
+        return x;
+    }
+}
+
+let proxy = new Proxy(obj, {
+    get: function(target, prop){
+        if(typeof(target[prop]) === "function"){
+            return function(...x){
+                x = x.map(x => x.toUpperCase());
+                return target[prop].apply(target, x);
+            }
+        } else {
+            return target[prop];
+        }
+    }
+});
+
+document.write(proxy.name);
+document.write(proxy.example(' says Hello World!'));</Span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+    if(true){
+        let obj = {
+            name: "Alex",
+            example(x){
+                return x;
+            }
+        }
+
+        let proxy = new Proxy(obj, {
+            get: function(target, prop){
+                if(typeof(target[prop]) === "function"){
+                    return function(...x){
+                        x = x.map(x => x.toUpperCase());
+                        return target[prop].apply(target, x);
+                    }
+                } else {
+                    return target[prop];
+                }
+            }
+        });
+
+        document.write(proxy.name);
+        document.write(proxy.example(' says Hello World!'));
+    }
+</script>
+
+
+
+
+
+
+
+
+
+
+<h2><u>Apply Handler:</u></h2>
+
+<p>The <Span>proxy object</Span> doesn't necessarily have to be used 
+with <Span>normal objects</Span>, you could use it with <Span>functions too</Span>.
+The <Span>apply</Span> method is executed every time the wanted <Span>function</Span>
+is used, and it takes <Span>three parameters</Span>, the <Span>first parameter</Span>
+is the <Span>target</Span> and returns the <span>function</span>, the 
+<span>second parameter</span> is the <Span>this argument</Span>, it returns 
+the <Span>object</Span> which the <Span>function is inside</Span>, and lastly, 
+the <span>third parameter</span> returns the <Span>arguments</Span> 
+that are passed to the <Span>function</Span>:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let obj = {
+    country: "Greece",
+    proxy: new Proxy(function(x, y){
+        return `${x} ${y}`;
+    }, {
+        apply: function(target, thisArg, args){
+            return `I'm ${target(args[0], args[1])} and \ 
+            I'm from ${thisArg.country}`.toUpperCase();
+        }
+    })
+}
+
+document.write(obj.proxy("Alex", "Gkiafis"));</Span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+    if(true){    
+        let obj = {
+            country: "Greece",
+            proxy: new Proxy(function(x, y){
+                return `${x} ${y}`;
+            }, {
+                apply: function(target, thisArg, args){
+                    return `I'm ${target(args[0], args[1])} and \ 
+                    I'm from ${thisArg.country}`.toUpperCase();
+                }
+            })
+        }
+
+        document.write(obj.proxy("Alex", "Gkiafis"));
+
+    }
+</script>
+
+<h2><u>Construct Handler:</u></h2>
+
+<p>The <Span>constructor</Span> handler is a trap for the 
+<Span>new</Span> operator, see the example below:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let proxy = new Proxy(Array, {
+    construct: function(target, originalArray){
+        let arr = originalArray.map(function(x){
+            return x * 10;
+        });
+
+        return new target(...arr);
+    }
+})
+
+let array = new proxy(1, 2, 3, 4, 5);
+
+document.write(array);</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+    let proxy = new Proxy(Array, {
+        construct: function(target, originalArray){
+            let arr = originalArray.map(function(x){
+                return x * 10;
+            });
+
+            return new target(...arr);
+        }
+    })
+
+    let array = new proxy(1, 2, 3, 4, 5);
+
+    document.write(array);
+}
+
+</script>
+
+<p>As you can see, the <Span>first parameter</Span> 
+is the <Span>target object</Span>, in which case it's the <span>Array object</span>, and 
+the <Span>second parameter</Span> are the <span>arguments</span>.</p>
+
+<h2><u>Conclusion:</u></h2>
+
+<p>You can find more <Span>handlers</Span> in <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy/Proxy">this site</a>, 
+to end this section I would like to show you two clever ways <Span>proxy object</Span> 
+can be used, the first project allows you to easily combine <span>object properties</span> together 
+using <Span>_</Span> so that you don't have to add each <Span>property</Span> seperately:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let person = {
+    first: "Phoenix",
+    last: "Wright"
+}
+
+let cleverLawyer = new Proxy(person, {
+    get: function(target, prop){
+        if(prop in target){
+            return target[prop];
+        } else {
+            return prop.split('_').map(function(x){
+                return target[x];
+            }).join(" ");
+        }
+    }
+});
+
+document.write(cleverLawyer.first_last_first_last_last_first_last_first);</Span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+    if(true){
+        let person = {
+            first: "Phoenix",
+            last: "Wright"
+        }
+
+        let cleverLawyer = new Proxy(person, {
+            get: function(target, prop){
+                if(prop in target){
+                    return target[prop];
+                } else {
+                    return prop.split('_').map(function(x){
+                        return target[x];
+                    }).join(" ");
+                }
+            }
+        });
+
+        document.write(cleverLawyer.first_last_first_last_last_first_last_first);
+    }
+</script>
+
+<P>Alright, so, for the <Span>second example</Span> I need to introduce you a 
+problem, which we are then going to solve using <span>proxy object</span>, so,
+let's say we have an <Span>array</Span> of <Span>objects</Span>, and <Span>each object</Span> has 
+an <Span>id</Span>, how do we <Span>select</Span> an <Span>object</Span> by 
+it's <Span>id</Span>? At first, you could think of using <Span>loop</Span> to find 
+the <Span>object</Span> that <Span>mathces</Span> the id, like this:</P>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let obj = [
+    {
+        id: 1,
+        name: 'grizzly'
+    }, 
+    {
+        id: 2, 
+        name: 'black'
+    }, 
+    {
+        id: 3,
+        name: 'polar'
+    }
+]
+
+for(let x of obj){
+    if(x.id === 2){
+        document.write(x.name);
+    }
+}</Span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+    if(true){
+        let obj = [
+            {
+                id: 1,
+                name: 'grizzly'
+            }, 
+            {
+                id: 2, 
+                name: 'black'
+            }, 
+            {
+                id: 3,
+                name: 'polar'
+            }
+        ]
+
+        for(let x of obj){
+            if(x.id === 2){
+                document.write(x.name);
+            }
+        }
+    }
+</Script>
+
+<p>So, I guess this code could work well, if you only needed to 
+    get the <Span>object</Span> once, if you howver needed to use those 
+    <Span>objects</Span> multiple time, using <Span>loops</Span> for each 
+    <Span>object</Span> would take time and space, that's why it would be better to 
+    do something like this instead:
+</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let obj = [
+    {
+        id: 1,
+        name: 'grizzly'
+    }, 
+    {
+        id: 2, 
+        name: 'black'
+    }, 
+    {
+        id: 3,
+        name: 'polar'
+    }
+]
+
+let index = {};
+
+obj.forEach( (object) => {
+    index[object.id] = object;
+});
+
+document.write(index[1].name, index[2].name, index[3].name);</Span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+    if(true){
+        let obj = [
+            {
+                id: 1,
+                name: 'grizzly'
+            }, 
+            {
+                id: 2, 
+                name: 'black'
+            }, 
+            {
+                id: 3,
+                name: 'polar'
+            }
+        ]
+
+        let index = {};
+
+        obj.forEach( (object) => {
+            index[object.id] = object;
+        });
+
+        console.log(index);
+
+        document.write(index[1].name, index[2].name, index[3].name);
+    }
+</Script>
+
+<p>Alright, that works pretty well, however, there is still a problem there, 
+    any <Span>array item</Span> we <Span>add after the loop</Span> will not be 
+    added to the <Span>index object</Span>, so that's where <Span>proxy object</Span> can be useful, 
+    we can make it so that when we <Span>add a new item</Span> using <Span>push</Span>
+    method it gets automatically added to the <Span>index object</Span>, like this: 
+</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let indexedArray = new Proxy(Array, {
+    construct: function(target, args){
+        let index = {};
+
+        args.forEach(obj => {
+            index[obj.id] = obj;
+        })
+
+        let array = new target(...args);
+
+        return new Proxy(array, {
+            get: function(target, prop){
+                if(prop === "push"){
+                    return function(...item){
+                        item.forEach(x => {
+                            index[x.id] = x;
+                        });
+                        return target[prop].apply(target, item);
+                    }
+                } else if(prop === "findById"){
+                    return function(x){
+                        return index[x];
+                    }
+                } else {
+                    return target[prop];
+                }
+            }
+        });
+    }
+});
+
+let bears = new indexedArray(
+    {
+        id: 1,
+        name: 'gizzly'
+    },
+    {
+        id: 2, 
+        name: "black"
+    },
+    {
+        id: 3,
+        name: "polar"
+    }
+);
+
+bears.push({
+    id: 4, 
+    name: "John"
+}, 
+{
+    id: 5,
+    name: "Christina"
+})
+
+document.write(`${bears.findById(1).name} ${bears.findById(4).name} ${bears.findById(5).name}`);</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+    if(true){
+let indexedArray = new Proxy(Array, {
+    construct: function(target, args){
+        let index = {};
+
+        args.forEach(obj => {
+            index[obj.id] = obj;
+        })
+
+        let array = new target(...args);
+
+        return new Proxy(array, {
+            get: function(target, prop){
+                if(prop === "push"){
+                    return function(...item){
+                        item.forEach(x => {
+                            index[x.id] = x;
+                        });
+                        return target[prop].apply(target, item);
+                    }
+                } else if(prop === "findById"){
+                    return function(x){
+                        return index[x];
+                    }
+                } else {
+                    return target[prop];
+                }
+            }
+        });
+    }
+});
+
+let bears = new indexedArray(
+    {
+        id: 1,
+        name: 'gizzly'
+    },
+    {
+        id: 2, 
+        name: "black"
+    },
+    {
+        id: 3,
+        name: "polar"
+    }
+);
+
+bears.push({
+    id: 4, 
+    name: "John"
+}, 
+{
+    id: 5,
+    name: "Christina"
+})
+
+document.write(`${bears.findById(1).name} ${bears.findById(4).name} ${bears.findById(5).name}`);
+
+    }
+</script>
+
+<p>So, what does this do? When you <Span>create the array</Span> using <Span>new operator</Span> the 
+<Span>construct trap</Span> will create an <Span>index object</Span> in which 
+all the <Span>array items</Span> will be added by <Span>id: object</Span> pairs, 
+then it will create the <Span>new array</Span> and return a <Span>proxy object</Span> of 
+that <span>array</span>, which <Span>proxy object</Span> will have a <Span>get handler</Span>, 
+this <Span>get handler</SPan> is made so that it checks when the <Span>push</Span> method is used 
+and <Span>index the new items</Span> in the <Span>index object</Span>, and we also have a <Span>custom method</Span>
+called <Span>findById</Span>, which when used it looks for the <SPan>object</SPan> by searching 
+the <span>index object</span> by the <Span>given id</Span>. It's not a very simple code to understand 
+at first, it took me some time to fully understand it, it does have a weird structure, but it 
+is a cool code that can be helpful to know.</p>
+
+<iframe src="https://www.youtube.com/embed/gZ4MCb2nlfQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</article>
+
+<hr>
+
+<article id="eight">
+    <header>
+        <h1>JavaScript Reflect Object</h1>
+    </header>
+
+    <p>The <span>Reflect Object</span> is a <Span>built-in object</Span> that 
+    provides <Span>methods</Span> for <Span>interceptable JavaScript operations</Span>. The <Span>methods</Span> are the same 
+as those of <Span>proxy handlers</Span> (construct, apply, defineProperty, etc). <span>Reflect</span>
+is <Span>not</Span> a <Span>function object</Span>, so it's <Span>not constructible</Span>.</p>
+
+<p>Unline most global objects, <Span>Reflect</Span> is <Span>not</Span> a 
+<Span>constructor</Span>. You <Span>cannot</Span> use it with a <Span>new operator</Span> 
+or <Span>invoke</Span> the <Span>Reflect object</Span> as a <Span>function</Span>. All <Span>properties</Span>
+and <span>methods</span> of <span>Reflect</span> are <Span>static</Span>, just like the <Span>Math Object</Span>.</p>
+
+<p>The <Span>Reflect Object</Span> provides the following <Span>static functions</Span> which have the same 
+names as the <span>proxy handler methods</span>, some of these <Span>methods</Span> 
+are also the same as corresponding <Span>methods</Span> on <Span>Object</Span>, although 
+they do have some subtle differences between them:</p>
+
+<div class="list_container2">
+    <dl>
+        <div class="list-item"> 
+        <dt><Span>Reflect.apply(target, thisArgument, argumentsList)</Span></dt>
+        <dd>Calls a target function with arguments as specified by the argumentsList parameter.</dd>
+        </div>
+        <div class="list-item"> 
+        <dt><span>Reflect.construct(target, argumentsList[, newTarget])</span></dt>
+        <dd>The new operator as a function. Equivalent to calling new target(...agumentsList). Also 
+            provides the option to specify a different prototype.
+        </dd>
+    </div>
+    <div class="list-item"> 
+        <dt><span>Reflect.defineProperty(target, propertyKey, attributes)</span></dt>
+        <dd>Similar to Object.defineProperty(). Returns a Boolean that is true if the 
+            property was successfully defined, the attributes parameter should be a property 
+            descriptors object.
+        </dd>
+    </div>
+    <div class="list-item"> 
+        <dt><Span>Reflect.deleteProperty(target, propertyKey)</Span></dt>
+        <dd>The delete operation as a function. Equivalent to calling delete target[propertyKey].</dd>
+    </div>
+    <div class="list-item"> 
+        <dt><Span>Reflect.get(target, propertyKey[, receiver])</Span></dt>
+        <dd>Returns the value of the property. Works like getting a property from an object (target[propertyKey]) as a function. I put the 
+            last parameter between [] because it's optional, it's the value of this provided 
+            for the call to target if a getter is encountered. It can actually come quite handy 
+            when used with Proxy, it can be an object that inherits from target.
+        </dd>
+    </div>
+    <div class="list-item"> 
+        <dt><span>Reflect.getOwnPropertyDescriptor(target, propertyKey)</span></dt>
+        <dd>Similar to Object.getOwnPropertyDescriptor(). Returns a 
+        property descriptor of the given property if it exists on the object,
+        undefined otherwise.</dd>
+    </div>
+    <div class="list-item"> 
+        <dt><span>Reflect.getPrototypeOf(target)</span></dt>
+        <dd>Same as Object.getPrototypeOf().</dd>
+    </div>
+    <div class="list-item"> 
+        <dt><Span>Reflect.has(target, propertyKey)</Span></dt>
+        <dd>Returns a Boolean indicating wheter the target has the property. Either as own or inherited. Works like 
+            the in operator as a function.
+        </dd>
+    </div>
+    <div class="list-item"> 
+        <dt><Span>Reflect.isExtensible(target)</Span></dt>
+        <dd>Same as Object.isExtensible(). Returns a Boolean that is true if the target 
+            is extensible.
+        </dd>
+    </div>
+    <div class="list-item"> 
+        <dt><Span>Reflect.ownKeys(target)</Span></dt>
+        <dd>Returns an array of the target object's own (not inherited) property keys.</dd>
+    </div>
+    <div class="list-item"> 
+        <dt><span>Reflect.preventExtensions(target)</span></dt>
+        <dd>Similar to Object.preventExtensions(). Returns a Boolean that is true 
+            if the update was successful.
+        </dd>
+    </div>
+    <div class="list-item"> 
+        <dt><span>Reflect.set(target, propertyKey, value[,receiver])</span></dt>
+        <dd>A function that assigns values to properties. Returns a Boolean that is true if the 
+            update was successful. The last parameter is optional, that's why I put it between 
+            [], it is the value of this provided for the call to target if a setter is encountered, and 
+            it can also come in handy when used with proxy objects.
+        </dd>
+    </div>
+    <div class="list-item"> 
+        <dt><Span>Reflect.setPrototypeOf(target, prototype)</Span></dt>
+        <dd>A function that sets the prototype of an object. Returns a Boolean that is true 
+            if the update was successful.
+        </dd>
+    </div>
+    </dl>
+</div>
+
+<p>Let's try some of these, first, let's try out the <Span>Reflect.get()</Span> 
+method, which can be used to <Span>get</Span> the <Span>value</Span> of a <Span>object property</Span>, 
+through this example I am going to demonstrate how the <Span>last parameter</Span> changes the 
+<Span>this</Span> value:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let obj = {
+    first_name: "John",
+    last_name: "Smith",
+    get full_name(){
+        return `${this.first_name} ${this.last_name}`;
+    }
+}
+
+let obj2 = {
+    first_name: "Jane",
+    last_name: "Doe"
+}
+
+document.write(Reflect.get(obj, "full_name") + "&lt;br>");
+document.write(Reflect.get(obj, "full_name", obj2));</Span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+    if(true){
+        let obj = {
+            first_name: "John",
+            last_name: "Smith",
+            get full_name(){
+                return `${this.first_name} ${this.last_name}`;
+            }
+        }
+
+        let obj2 = {
+            first_name: "Jane",
+            last_name: "Doe"
+        }
+
+        document.write(Reflect.get(obj, "full_name") + "<br>");
+        document.write(Reflect.get(obj, "full_name", obj2));
+
+    }
+</script>
+
+<p>The <Span>Reflect.set()</Span> method is used to <Span>set</Span> the 
+<Span>value</Span> of a wanted <Span>property</Span>, through the following 
+example I'm gonna demonstrate how the <Span>last parameter</Span> changes 
+the <Span>this</Span> parameter:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let obj1 = {
+    name: "Alex",
+    example: "", 
+    set country(x){
+        this.example = `${this.name} is from ${x}`;
+    }
+} 
+
+let obj2 = {
+    name: "Ryan",
+    example: ""
+}
+
+Reflect.set(obj1, 'country', 'Greece');
+Reflect.set(obj1, 'country', 'England', obj2);
+
+document.write(Reflect.get(obj1, 'example') + '&lt;br>')
+document.write(Reflect.get(obj2, 'example'));</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+    if(true){
+        let obj1 = {
+            name: "Alex",
+            example: "", 
+            set country(x){
+                this.example = `${this.name} is from ${x}`;
+            }
+        } 
+
+        let obj2 = {
+            name: "Ryan",
+            example: ""
+        }
+        
+        Reflect.set(obj1, 'country', 'Greece');
+        Reflect.set(obj1, 'country', 'England', obj2);
+        
+        document.write(Reflect.get(obj1, 'example') + '<br>')
+        document.write(Reflect.get(obj2, 'example'));
+
+    }
+</script>
+
+<p>The <Span>Reflect.get()</Span> method won't work on <Span>object methods</Span>, to 
+execute an <Span>object method</Span> you will need to use <Span>Reflect.apply()</Span>:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let obj1 = {
+    name: "Alex",
+    greet(x, y){
+        return `G'day ${this.name}, here are some random stuff: ${x} ${y}`;
+    }
+}
+
+let obj2 = {
+    name: "Christina"
+}
+
+document.write(Reflect.apply(obj1.greet, obj1, ['potato', 'Karate']) + '&lt;br>')
+document.write(Reflect.apply(obj1.greet, obj2, ['kitten', 'math']));</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+    if(true){
+        let obj1 = {
+            name: "Alex",
+            greet(x, y){
+                return `G'day ${this.name}, here are some random stuff: ${x} ${y}`;
+            }
+        }
+
+        let obj2 = {
+            name: "Christina"
+        }
+
+        document.write(Reflect.apply(obj1.greet, obj1, ['potato', 'Karate']) + '<br>')
+        document.write(Reflect.apply(obj1.greet, obj2, ['kitten', 'math']));
+    }
+</script>
+
+<p>One last thing I want to talk about is the <Span>Reflect.construct()</Span> method, it's 
+<Span>last parameter</Span> may be hard to understand at first, to do so you will need to have 
+a decent understanding of the <span>prototype tree</span>, when you create an 
+<Span>object</Span> using a <Span>constructor</Span>, the <Span>object</Span> will 
+be connected to the <Span>constructor</Span> in a way, if you write <Span>object.__proto__</Span> the 
+<Span>prototype</Span> of the <Span>function constructor</Span> you used to create the <Span>object</Span> will be 
+returned, by using the <Span>last parameter</Span>, you can choose a <Span>new function prototype</Span> to be connected 
+to the <span>object</span>, 
+here is an example:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">function constructor(f,l){
+    this.first_name = f;
+    this.last_name = l;
+}
+
+function constructor2(n){
+}
+
+constructor2.prototype.full_name = function(){
+    return this.first_name + this.last_name;
+}
+
+let obj = Reflect.construct(constructor, ["John", "Smith"], constructor2);
+
+document.write(obj.full_name());</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+    if(true){
+        function constructor(f,l){
+            this.first_name = f;
+            this.last_name = l;
+        }
+
+        function constructor2(n){
+        }
+
+        constructor2.prototype.full_name = function(){
+            return this.first_name + this.last_name;
+        }
+
+        let obj = Reflect.construct(constructor, ["John", "Smith"], constructor2);
+
+        document.write(obj.full_name());
+
+    }
+</script>
+
+<p>At first it may doesn't seem very useful, because you have to add the 
+    <Span>method/properties</Span> to the <Span>function prototype</Span> by hand, 
+    however, for <Span>classes</Span> the <Span>methods</Span> get automatically 
+    added to it's <Span>prototype</Span>:
+</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">class human{
+    constructor(f, l){
+        this.first_name = f;
+        this.last_name = l;
+    }
+}
+
+class example{
+    full_name(){
+        return `${this.first_name} ${this.last_name}`;
+    }
+}
+
+let obj = Reflect.construct(human, ["Jane", "Doe"], example);
+
+document.write(obj.full_name());</span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+    if(true){
+        class human{
+            constructor(f, l){
+                this.first_name = f;
+                this.last_name = l;
+            }
+        }
+
+        class example{
+            full_name(){
+                return `${this.first_name} ${this.last_name}`;
+            }
+        }
+
+         let obj = Reflect.construct(human, ["Jane", "Doe"], example);
+
+        document.write(obj.full_name());
+    }
+</Script>
+
+<iframe  src="https://www.youtube.com/embed/X7qXJRU6qyM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</article>
+
+<hr>
+
+<article id="nine">
+    <header>
+        <h1>new.target pseudo-property</h1>
+    </header>
+
+    <p>The <Span>new.target</Span> pseudo property lets you detect 
+    wether a <Span>function</Span> or <span>constructor</span> was called 
+using the <Span>new</Span> operator. In <Span>constructors</Span> and 
+<Span>functions</Span> invoked using the <Span>new</Span> operator, <Span>new.target</Span> returns a <Span>reference</Span> to the 
+<Span>constructor</Span> or <Span>function</Span>. In <Span>normal function calls</Span>, 
+it will return <span>undefined</span>:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">function constructor(){
+    return new.target;
+}
+
+document.write(new constructor("Alex", 16) + '&lt;br>');
+document.write(constructor("Alex", 16));</Span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+    if(true){
+        function constructor(){
+            return new.target;
+        }
+
+        document.write(new constructor("Alex", 16) + '<br>');
+        document.write(constructor("Alex", 16));
+    }
+</script>
+
+
+</article>
+
+<hr>
+</body>
+</html>

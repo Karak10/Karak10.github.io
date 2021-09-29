@@ -1,0 +1,3571 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<title> Page twenty-one of my notes </title>
+<meta charset="UTF-8"> 
+<link href="../CSS-JavaScript-External-Files/HTMLnotes.css" rel="stylesheet">
+<Style>
+    .left {
+        text-align: left;
+    }
+    
+    .code10 {
+    white-space: pre-wrap;
+    background-color: lightgreen;
+    
+    }
+    
+    p {
+    text-align:center;
+    }
+    h1 {
+    text-align:center;
+    }
+    h2 {
+    text-align:center;
+    }
+    h3 {
+    text-align:center;
+    }
+    .c {
+    background-color:lightgreen;
+    }
+    hr {
+    width:100%;
+    height:15px;
+    background-color:black;
+    color:black;
+    border: black solid;
+    }
+    body {
+    background-color:rgb(165, 235, 235);
+    }
+    span {
+    background-color:lightgreen;
+    }
+    
+    a:link {
+    color: black;
+    text-shadow: 1px 0px 1px black;
+    
+    }
+    
+    a:visited {
+    color: black;
+    text-shadow: 1px 0px 1px rgb(22, 22, 22);
+    }
+    
+    a:hover {
+    text-decoration: underline;
+    color: red;
+    text-shadow: 1px 0px 1px black;
+    }
+
+    .orange {
+        background-color: lightcoral;
+        font-weight: bold;
+    }
+
+    iframe {
+        width: 600px;
+        height: 350px;
+        border: 3px solid black;
+        margin: 20px auto 20px auto;
+        display: block;
+    }
+    
+   .list_container{
+       width: fit-content;
+       background-color: white;
+       border: 3px solid black;
+       border-radius: 20px;
+       margin: 20px auto 20px auto;
+       padding: 20px;
+       font-weight: bold;
+   }
+    
+   .list_container li{
+       margin-top: 15px;
+   }
+
+   .gray{
+       background-color: lightgray;
+   }
+
+    </style> 
+</head>
+<body>
+
+<hr>
+
+    <header> 
+    <h1> Page nine of my JavaScript notes </h1>
+    </header>
+    
+<article id="start-of-page"> 
+  
+<div id="homepages">
+
+    <h3>Home Pages:</h3>
+   
+
+</div>
+
+<nav data-notes="JavaScript" data-page="9">
+
+</nav>
+
+    <h3> Informations included in this page:</h3>
+   <p><a href="../JavaScript-Notes/Notes21.html#one">Object getters and setters</a></p>
+   <p><a href="../JavaScript-Notes/Notes21.html#two">Object Property Descriptors</a></p>
+   <p><a href="../JavaScript-Notes/Notes21.html#three">Objects can be Extensible, Frozen or Sealed</a></p>
+   <p><a href="../JavaScript-Notes/Notes21.html#four">JavaScript Prototype Chain</a></p>
+   <p><a href="../JavaScript-Notes/Notes21.html#five">Classes behind the scenes</a></p>
+   <p><a href="../JavaScript-Notes/Notes21.html#six">Immediately Invoked Function Expressions</a></p>
+   <p><a href="../JavaScript-Notes/Notes21.html#seven">Closures in JavaScript</a></p>
+   <p><a href="../JavaScript-Notes/Notes21.html#eight">Function Currying</a></p>
+   <p><a href="../JavaScript-Notes/Notes21.html#nine">More about the console</a></p>
+   <p><a href="../JavaScript-Notes/Notes21.html#ten">Array pop() and shift() methods</a></p>
+   <p><a href="../JavaScript-Notes/Notes21.html#eleven">Array find() method</a></p>
+   <p><a href="../JavaScript-Notes/Notes21.html#twelve">Array some() method</a></p>
+   <p><a href="../JavaScript-Notes/Notes21.html#thirteen">Array every() method</a></p>
+   <p><a href="../JavaScript-Notes/Notes21.html#fourteen">Array includes() method</a></p>
+
+</article>
+
+ <script src="../CSS-JavaScript-External-Files/nav.js"></script>
+
+<hr>
+
+<article id="one">
+
+<header>
+
+<h1>Object getters and setters</h1>
+
+</header>
+
+<p><span>Getters</span> and <Span>setters</Span> were introduced in 
+<span>ES5</span> and they allow you to difine <span>object accessors</span> (Computed Properties).</p>
+
+<p>To use them you should either add the <Span>get</Span> 
+or <Span>set</Span> keyword infront of a <Span>property</Span>, 
+let's create an example of a <span>getter</span> first:</p>
+
+<p class="left">JavaScript</p>
+
+<p class="left"><span class="code10">let obj = {
+    language: "Greek",
+    get lang(){
+       return `The language is ${this.language}`;
+    }
+}
+
+document.write(obj.lang);</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let obj = {
+    language: "Greek",
+    get lang(){
+       return `The language is ${this.language}`;
+    }
+}
+
+document.write(obj.lang);
+
+}
+
+
+</script>
+
+<p>As you can see, it works similarly to <span>methods</span>, however, 
+with a <Span>normal method</Span> you have to write <Span>obj.lang()</Span>
+to call it, with the <Span>get</Span> keyword infront you can simple 
+write <Span>obj.lang</Span>.</p>
+
+<p>Here is an example of a <Span>setter</Span> now:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let obj = {
+    language: "",
+    set lang(x){
+        this.language = `The language is ${x}`;
+    }
+}
+
+obj.lang = "Greek";
+
+document.write(obj.language);</Span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+if(true){
+
+let obj = {
+    language: "",
+    set lang(x){
+        this.language = `The language is ${x}`;
+    }
+}
+
+obj.lang = "Greek";
+
+document.write(obj.language);
+
+}
+
+
+
+</Script>
+
+<p>As you can see, we used the <span>set</span> keyword infront 
+a <Span>method</Span> with a <Span>parameter</Span> we named <span>x</span>, 
+now, whatever <Span>value</Span> is <Span>assigned</Span> to <Span>lang property</Span>
+will be passed to <Span>x parameter</Span> and then the <span>method</span>
+will <span>return</span> that <span>value</span> to the wanted <Span>property</Span>.
+If we had used a <Span>normal</Span> method for this we would have to write 
+<Span>obj.lang("Greek")</Span>, while now we can just write <Span>obj.lang = "Greek"</Span>.</p>
+
+<p>Why use <Span>getters</Span> and <Span>setters</Span>? They 
+give simpler syntax, they allow equal syntax for properties and methods, they can 
+secure better data quality and they also are useful when you want 
+to do things behind-the-scenes.</p>
+
+<iframe src="https://www.youtube.com/embed/IbqCWoFO410?list=PLYxnDvM22X3NBARfD2aZcyUoKvfdHfygn" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</article>
+
+<hr>
+
+<article id="two">
+
+<header>
+
+<h1>Object Property Descriptors</h1>
+
+</header>
+
+<p>What's <Span>property descriptors</Span>? You could think of them 
+as like <Span>extra informations</Span> about <Span>properties</Span> inside 
+an <Span>object</Span>, informations such as what's the <Span>value</Span>
+of the <Span>property</Span>, can the <Span>value</Span> be <Span>changed</Span>, etc.</p>
+
+<img src="../images/a8.png" style="width: 500px; height: 300px; display: block; margin: 20px auto 20px auto; border: 3px solid black; border-radius: 20px">
+
+<p>So, as you can see, we categorize the <span>property descriptors</span>
+in <Span>two groups</Span>, the <span>Data Descriptors</span> 
+and <Span>accessor descriptors</Span>, you <Span>cannot</Span> merge 
+the two groups with each other, if you use <Span>set</Span> for example 
+then you can't use <Span>value</Span> or <span>writeable</span> since 
+they don't belong in the same group.</p>
+
+<p>So, before we start experimenting with these, let's talk about 
+    how we can use them first, there are some <Span>property descriptors methods</Span>
+    we can use to interact with them, here I have a list for you:
+</p>
+
+<div class="list_container">
+
+<ul>
+    <li>Object.defineProperty(obj, propName, {})</li>
+    <li>Object.defineProperties(obj, props)</li>
+    <li>Object.getOwnPropertyDescriptor(obj, prop)</li>
+    <li>Object.getOwnPropertyDescriptors(obj)</li>
+    <li>Object.keys(obj) - list of enurable properties</li>
+    <li>Object.values(obj) - list of enurable prop values</li>
+</ul>
+
+</div>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let obj = {name: "Alex", age: 16};
+
+Object.defineProperty(obj, 'age', {
+    enumerable: false
+});
+
+Object.defineProperties(obj, {
+ 'age': {
+    writable: false
+    }, 
+ 'name': {
+    writable: false
+    }
+});
+
+console.log(Object.getOwnPropertyDescriptor(obj, 'age'));
+console.log(Object.getOwnPropertyDescriptors(obj));</span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+if(true){
+
+let obj = {name: "Alex", age: 16};
+
+Object.defineProperty(obj, 'age', {
+    enumerable: false
+});
+
+Object.defineProperties(obj, {
+ 'age': {
+    writable: false
+  }, 
+ 'name': {
+    writable: false
+  }
+});
+
+console.log(Object.getOwnPropertyDescriptor(obj, 'age'));
+console.log(Object.getOwnPropertyDescriptors(obj));
+
+}
+
+</Script>
+
+<img src="../images/a9.png" style="display: block; margin: 20px auto 20px auto">
+
+<P>So, in the example above I demonstrated how the first 
+four methods are used. As you can see, the <span>property names</span>
+should be written as <Span>strings</Span>, if you added a <Span>new name</Span>
+that doesn't exist in the <Span>object</Span> it would simple create a 
+<Span>new property</Span> with that name. Also, another thing you may have noticed 
+is that the <Span>syntax</Span> of the <Span>defineProperties()</Span>
+method is a little weird, you got to get used to it, the <span>syntax</span>
+goes like this: <Span>defineProperties(obj, {property1:{...}, property2:{...}, etc})</Span>
+</P>
+
+<P>Now, let's talk about the <Span>property descriptors</Span>, 
+lets start by first learning what <Span>data descriptors</Span> 
+do. <span>value</span> sets a <span>value</span> to the 
+<span>property</span>, <span>writeable</span> takes a <Span>boolean value</Span>, 
+if <span>false</span> then the <Span>property</Span> cannot 
+be changed with <span>assignment operator</span>. 
+</p>
+
+<p><Span>Enumerable</Span> also takes <Span>true</Span> or <span>false</span>
+as it's value, if <span>false</span> then the <span>property</span>
+doesn't show up during <span>enumeration</span> of the <Span>properties</Span>, 
+if for example we used <span>for...in</span> loop to loop through the properties 
+of the <Span>object</Span> the <Span>property</Span> would be ignored, 
+same goes for <Span>methods</Span> such as <Span>Object.keys</Span> 
+and <Span>Object.values</Span> which create an <Span>array</Span>
+of the <Span>object's keys or values</Span>, if a <Span>property's enumerable</Span>
+is set to <Span>false</Span> the <Span>property</Span> will be ignored.
+</P>
+
+<p>Lastly, <Span>configurable</Span> also takes a <Span>boolean value</Span>, 
+if <Span>true</Span> then the <Span>descriptors</Span> of the <Span>property</Span>
+can be <Span>changed</Span> and the <Span>property</Span> can be <span>deleted</span>
+from the corresponding <Span>object</Span>.</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let obj1 = {name: "Alex", age: 15};
+
+Object.defineProperty(obj1, 'hobbies', {
+    value: "<br> programming",
+    writeable: false,
+    enumerable: false, 
+    configurable: false
+});
+
+document.write(obj1.hobbies);
+
+obj1.hobbies = "music";
+
+document.write(obj1.hobbies);
+
+delete obj1.hobbies
+
+document.write(obj1.hobbies);
+
+Object.defineProperty(obj1, 'hobbies', {
+    value: "art"
+});
+
+document.write(obj1.hobbies);</span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+if(true){
+
+let obj1 = {name: "Alex", age: 15};
+
+Object.defineProperty(obj1, 'hobbies', {
+    value: "<br> programming",
+    writeable: false,
+    enumerable: false, 
+    configurable: false
+});
+
+document.write(obj1.hobbies);
+
+obj1.hobbies = "music";
+
+document.write(obj1.hobbies);
+
+delete obj1.hobbies
+
+document.write(obj1.hobbies);
+
+Object.defineProperty(obj1, 'hobbies', {
+    value: "art"
+});
+
+document.write(obj1.hobbies);
+
+}
+
+
+</Script>
+
+<p>As you can see, <Span>rewriting</Span> the <Span>property</Span> with
+<Span>assignment operator</Span> did not work (because writable: false), <Span>deleting</Span> 
+did not work (because configurable: false), and at the end, when 
+I tried to <Span>change</Span> the <Span>value descriptor</Span> an 
+<Span>error</Span> appeared and <Span>code block</Span> stopped (because configurable: false), here 
+is the <Span>error</Span> I got:</p>
+
+<img src="../images/a10.PNG" style="display: block; margin: 20px auto 20px auto">
+
+<p>Let's try to check if the <Span>hobbies property</Span> 
+is <Span>enumerable</Span> or not now:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">for(let i in obj1){
+    document.write(i + "&lt;br>")
+}
+
+let arr1 = Object.keys(obj1);
+let arr2 = Object.values(obj1);
+
+document.write(arr1 + "&lt;br>" + arr2);
+
+document.write("&lt;br>" + obj1.hobbies);</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+    
+if(true){
+
+let obj1 = {name: "Alex", age: 16};
+
+Object.defineProperty(obj1, 'hobbies', {
+    enumerable: false,
+    value: "programming"
+})
+
+for(let i in obj1){
+    document.write(i + "<br>")
+}
+
+let arr1 = Object.keys(obj1);
+let arr2 = Object.values(obj1);
+
+document.write(arr1 + "<br>" + arr2);
+
+document.write("<br>" + obj1.hobbies);
+
+}
+
+</script>
+
+<p>Let's talk about the <Span>accessor descriptors</Span> now, 
+everything stays the same with <Span>data descriptors</Span>, 
+except <Span>get</Span> and <span>set</span> that <Span>replace</Span>
+the <Span>value</Span> and <span>writable</span> descriptors.</p>
+
+<p>So, <Span>accessor descriptors</Span> are 
+basically used for <span>getters</span> and <span>setters</span>, 
+let's try creating a <span>getter</span> using <Span>Object.defineProperty()</Span>
+method:</p>
+
+<p class="left">JavaScript</p>
+
+<p class="left"><Span class="code10">let obj = {
+    language: "Greek"
+}
+
+Object.defineProperty(obj, 'lang', {
+    get: function(){
+        return `The language is ${this.language}`;
+    }
+});
+
+document.write(obj.lang);</Span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let obj = {
+    language: "Greek"
+}
+
+Object.defineProperty(obj, 'lang', {
+    get: function(){
+        return `The language is ${this.language}`;
+    }
+})
+
+document.write(obj.lang);
+
+}
+
+
+</script>
+
+<p>Now let's create a <Span>setter</Span> using 
+<Span>Object.defineProperty()</Span> method:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<P class="left"><span class="code10">let obj = {
+    language: ""
+}
+
+Object.defineProperty(obj, 'lang', {
+    set: function(x){
+        this.language = `The language is ${x}`;
+    }
+});
+
+obj.lang = "Greek";
+
+document.write(obj.language);</span></P>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let obj = {
+    language: ""
+}
+
+Object.defineProperty(obj, 'lang', {
+    set: function(x){
+        this.language = `The language is ${x}`;
+    }
+});
+
+obj.lang = "Greek";
+
+document.write(obj.language);
+
+}
+
+</script>
+
+<p>Alright, lastly, before we finish with this section I want to 
+talk about two more <span>methods</span> that exist, the 
+<span>obj,propertyIsEnumerable(prop)</span> and 
+<Span>obj.hasOwnProperty(prop)</Span>, here is a 
+quick demonstration of what they do:
+</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let obj = {name: "Alex", age: 16};
+
+document.write(`${obj.propertyIsEnumerable('name')} &lt;br> ${obj.hasOwnProperty('age')} `)</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let obj = {name: "Alex", age: 16};
+
+document.write(`${obj.propertyIsEnumerable('name')} <br> ${obj.hasOwnProperty('age')} `)
+
+}
+
+
+</script>
+
+<p>As you can probably guess, <span>propertyIsEnumerable</span> checks if 
+a <Span>property</Span> of an <Span>object</Span> is <Span>enumerable</Span>
+or not, and <Span>hasOwnProperty</Span> checks if an <Span>object</Span>
+has a <Span>property</Span> or not.</p>
+
+<iframe src="https://www.youtube.com/embed/LD1tQEWsjz4?list=PLYxnDvM22X3NBARfD2aZcyUoKvfdHfygn" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</article>
+
+<hr>
+
+<article id="three">
+
+<header>
+    <h1>Objects can be Extensible, Frozen or Sealed</h1>
+</header>
+
+<p>So, in the section above we talked about <Span>property descriptors</Span>
+which let is define if a <Span>property</Span> can be 
+<Span>writable</Span>, <Span>configurable</Span>, etc, now 
+let's talk about the <Span>object</Span> it self.</p>
+
+<p>There are <Span>three states</Span> an <Span>object</Span>
+can be in:</p>
+
+<div class="list_container" style="width: 500px;">
+
+<ul>
+    <li>Extensible - Objects are extensible by default, which 
+        means they can have new properties added to them.</li>
+    <li>Frozen - A frozen object can no longer be changed. 
+    Freezing an object prevents new properties from being added 
+    to it, existing properties from being removed, prevents changing 
+    the enumerability, configurability, or writability of existing 
+    properties, and prevents the values of existing properties from 
+    being changed. In addition, freezing an object also prevents its
+     prototype from being changed. Note that properties inside 
+     it's prototype can still be added, removed or edited. </li>
+    <li>Sealed - prevents new properties from being added to it and 
+        marking all existing properties as non-configurable. Values 
+        of present properties can still be changed as long as they are 
+        writable. Note that properties inside 
+        it's prototype can still be added or edited.</li>
+</ul>
+
+</div>
+
+<p>Alright, so, before we start playing around with these 
+    three states to understand them better, we are gonna 
+    need to learn the following methods:
+</p>
+
+<div class="list_container" style="width: 600px;">
+
+<ul>
+    <li>Object.isExtensible(obj) - returns true if object is extensible else it returns false</li>
+    <li>Object.isFrozen(obj) - returns true if object is frozen else it returns false</li>
+    <li>Object.isSealed(obj) - returns true if object is sealed else it returns false</li>
+    <li>Object.freeze(obj) - freezes an object</li>
+    <li>Object.seal(obj) - seals an object</li>
+    <li>Object.preventExtensions(obj) - prevents properties from being added to the object (properties can still be added to it's prototype)</li>
+</ul>
+
+</div>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let obj1 = {name: "Alex", age: 16};
+let obj2 = {name: "Christina", age: 18};
+let obj3 = {name: "Jonathan", age: 17};
+
+Object.preventExtensions(obj1);
+Object.seal(obj2); 
+Object.freeze(obj3);
+
+<Span class="orange">// Experimenting with object that prevents extensions</Span>
+
+obj1.__proto__.fav_hobby = "drawing"; <Span class="gray">// adds property to prototype</span>
+obj1.fav_food = "pizza"; <Span class="gray">// adds property to object</span>
+
+document.write(`${obj1.fav_hobby}, ${obj1.fav_food} &lt;br>`);
+
+<Span class="orange">// Experimenting with sealed object</Span>
+
+try{
+Object.defineProperty(obj2, 'name', {
+    enumerable: false
+}); <Span class="gray">// tries to edit the enumerable property descriptor</span>
+} catch { 
+document.write("Cannot redefine enumerable because object is sealed.")
+} <Span class="gray">// only value can be changed so it didn't work</span>
+
+obj2.age = 17; <Span class="gray">// changes the value of age property</span>
+
+document.write(`&lt;br> ${obj2.name}, ${obj2.propertyIsEnumerable('name')}, ${obj2.fav_hobby}`)
+
+<Span class="orange">// Experimenting with frozen object</Span>
+
+obj3.name = "Karak10" <Span class="gray">// tries to change the name of the property</span>
+
+let example = {test: "test"}; <Span class="gray">// creates an object to use as a prototype later</span>
+
+try{
+Object.setPrototypeOf(obj3, example); <Span class="gray">// sets example to be the prototype of obj3</span>
+} catch {
+document.write("&lt;br> Cannot change the prototype because object is frozen")
+} <Span class="gray">// didn't work because object is frozen</span>
+
+obj3.__proto__.test2 = "test2"; <Span class="gray">// adds a new property to the prototype of obj3</span> 
+
+delete obj3.age; <Span class="gray">// tries to delete age property of object</span>
+
+document.write(`&lt;br> ${obj3.name}, ${obj3.test}, ${obj3.test2}, ${obj3.age}`)
+
+<Span class="orange">// Checking what each object is</Span>
+
+document.write(`&lt;br> ${Object.isExtensible(obj1)}, ${Object.isExtensible(obj2)}, \
+${Object.isExtensible(obj3)}, ${Object.isSealed(obj2)}, ${Object.isFrozen(obj3)}`);</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let obj1 = {name: "Alex", age: 16};
+let obj2 = {name: "Christina", age: 18};
+let obj3 = {name: "Jonathan", age: 17};
+
+Object.preventExtensions(obj1);
+Object.seal(obj2); 
+Object.freeze(obj3);
+
+obj1.__proto__.fav_hobby = "drawing"; // adds property to prototype
+obj1.fav_food = "pizza"; // adds property to object
+
+document.write(`${obj1.fav_hobby}, ${obj1.fav_food} <br>`);
+
+try{
+Object.defineProperty(obj2, 'name', {
+    enumerable: false
+}); // tries to edit the enumerable property descriptor
+} catch { 
+document.write("Cannot redefine enumerable because object is sealed.")
+} // only value can be changed so it didn't work
+
+obj2.age = 17; // changes the value of age property
+
+
+document.write(`<br> ${obj2.name}, ${obj2.propertyIsEnumerable('name')}, ${obj2.fav_hobby}`)
+
+obj3.name = "Karak10" // tries to change the name of the property
+
+let example = {test: "test"}; // creates an object to use as a prototype later
+
+try{
+Object.setPrototypeOf(obj3, example); // sets example to be the prototype of obj3
+} catch {
+document.write("<br> Cannot change the prototype because object is frozen")
+} // didn't work because object is frozen
+
+obj3.__proto__.test2 = "test2"; // adds a new property to the prototype of obj3 
+
+delete obj3.age; // tries to delete age property of object
+
+document.write(`<br> ${obj3.name}, ${obj3.test}, ${obj3.test2}, ${obj3.age}`)
+
+document.write(`<br> ${Object.isExtensible(obj1)}, ${Object.isExtensible(obj2)}, \
+${Object.isExtensible(obj3)}, ${Object.isSealed(obj2)}, ${Object.isFrozen(obj3)}`);
+}
+
+
+</script>
+
+<p>I hope my examples helped, I explain more about what <span>prototype</span>
+is in the section below.</p>
+
+</article>
+
+<hr>
+
+<article id="four">
+
+<header>
+
+<h1>JavaScript Prototype Chain</h1>
+
+</header>
+
+<p><span>Prototype</span> is basically a <Span>property</Span> of a 
+<Span>JavaScript function</Span>. At each time we create a <span>function</span>
+in <span>JavaScript</span>, <Span>JavaScript engine</Span> adds an 
+extra <Span>property</Span> called <Span>prototype</Span> to the created <Span>function</Span>. 
+</p>
+
+<p>This <Span>prototype</Span> property points to an <Span>object</Span> (called as <Span>prototype object</Span>) and has 
+a <Span>constructor</Span> property by default. This <span>constructor</span> property 
+points back to the <Span>function object</Span> on which the 
+<Span>prototype</Span> is a <Span>property</Span>. The following 
+image illustrates what I described above:</p> 
+
+<img style="display: block; margin: 20px auto 20px auto; background-color: white; border: 3px solid black; border-radius: 20px;" src="../images/a1.png">
+
+<p>We can access the <Span>function's prototype</Span> using the syntax 
+<Span>functionName.prototype</Span>, and then from the <Span>function's prototype object</Span>
+we can go back to our <Span>function</Span> by <span>functionName.prototype.constructor</span>. 
+Let's now write a few codes to confirm that what I'm saying is actually true, 
+and that <Span>function's prototype object</Span> truly exists.</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">function human(n,a){
+this.name = n;
+this.age = a;
+}
+
+console.log(human.prototype);
+console.log(human.prototype.constructor);</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let human = function(n,a){
+    this.name = n;
+    this.age = a;
+}
+
+console.log(human.prototype);
+console.log(human.prototype.constructor);
+
+}
+
+
+</script>
+
+<style>
+
+.log{
+    background-color: lightgray;
+}
+
+</style>
+
+<img src="../images/a2.png" style="display:block; margin: 20px auto 20px auto">
+
+<p>Alright, so, now, let's try to use a <span>function object constructor</span>
+    to create an <span>object</span> and see what the <span>prototype chain</span>
+    will be like:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let Person = function(n,a){
+    this.name = n;
+    this.age = a;
+}
+
+let Alex = new Person("Alex", 15);
+
+console.log(Alex.__proto__);
+console.log(Alex.__proto__.__proto__);
+console.log(Alex.__proto__.__proto__.__proto__);
+console.log(Alex.__proto__ === Person.prototype);</Span></p>
+
+<p class="left">Outcome:</p>
+
+<img src="../images/a4.png" style="display: block; margin: 20px auto 20px auto">
+
+    <Script>
+
+        if(true){
+        
+        let Person = function(n,a){
+            this.name = n;
+            this.age = a;
+        }
+        
+        let Alex = new Person("Alex", 15);
+        
+        console.log(Alex.__proto__);
+        console.log(Alex.__proto__.__proto__);
+        console.log(Alex.__proto__.__proto__.__proto__);
+        console.log(Alex.__proto__ === Person.prototype);
+
+        }
+        
+        
+        
+        </Script>
+        
+<p>As you can see, a <Span>property</Span> called <Span>__proto__</Span>
+is automatically added to the <Span>object</Span> which connects the <span>object</span>
+with the <span>function's prototype</span>, if you continue climbing 
+the chain you will eventually reach <Span>null</Span>, the top of the chain.</p>
+    
+<img src="../images/a3.png" style="border: 3px solid black; border-radius: 20px; display:block; margin: 20px auto 20px auto">
+
+<p>Alright, so, if I had made an <span>normal object</span>, how would it be tied in the 
+<Span>prototype chain</Span> without a <span>constructor</span>? Well, 
+<span>normal objects</span> do have a <Span>constructor</Span> too, a 
+built in one, this object: <Span>let person = {name: "alex"}</Span> could 
+also be made like this: <Span>let person = new Object(); person.name = "alex";</Span>, 
+does this remind you something? It's just like as we use a <Span>constructor</Span>, because 
+we do use a <span>constructor</span>, the built in constructor called <Span>Object()</Span>.</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let obj = {name: "Alex", age: 15};
+let obj2 = {name: "Christina", age: 18};
+
+console.log(obj.__proto__);
+console.log(obj.__proto__.constructor);
+console.log(obj.__proto__.__proto__);
+console.log(obj.__proto__.constructor === obj2.__proto__.constructor);</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let obj = {name: "Alex", age: 15};
+let obj2 = {name: "Christina", age: 18};
+
+console.log(obj.__proto__);
+console.log(obj.__proto__.constructor);
+console.log(obj.__proto__.__proto__);
+console.log(obj.__proto__.constructor === obj2.__proto__.constructor);
+
+}
+
+
+</script>
+
+<img src="../images/a5.png" style="display: block; margin: 20px auto 20px auto">
+
+<p>Here is an image I made displaying the <Span>prototype tree</Span> 
+so far:</p>
+
+<img src="../images/a6.png" style="width: 700px; height: 300px;border: 3px solid black; border-radius: 20px;display: block; margin: 20px auto 20px auto">
+
+<p>So, why should we care about the <Span>prototype</Span> tree? How is it helpful? 
+When you search for a <Span>property</Span> inside an <Span>object</Span>
+but it isn't found, <Span>JavaScript</Span> searches for the <Span>property</Span>
+inside the <Span>prototype</Span>. You probably have used 
+<Span>methods</Span> like <span>toString</span>, <span>valueOf</span>, 
+etc before, you never added these <Span>methods</Span> in 
+your <Span>Object</Span>, because they already existed inside the 
+<span>Object Prototype</span>, that's why you were able to use them.</p>
+
+<p>Inside the <Span>Object Prototype</Span> there also is a method called 
+<Span>setPrototypeOf()</Span> which you can use to set a <Span>prototype</Span> 
+to an <Span>object</Span>, if for example you wanted some <Span>properties</Span>
+to be used in <Span>multiple objects</Span> and you didn't want to redefine them 
+over and over again for every single <Span>object</Span> you could do something
+like this:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let person1 = {
+    skin_color: "white",
+    sexuality: "straight"
+}
+
+let person2 = {
+    name: "Alex",
+    age: 16
+}
+
+// this makes person1 the prototype of person2
+Object.setPrototypeOf(person2, person1); 
+
+console.log(person2);
+console.log(person2.__proto__);
+console.log(person2.__proto__.__proto__);</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let person1 = {
+    skin_color: "white",
+    sexuality: "straight"
+}
+
+let person2 = {
+    name: "Alex",
+    age: 16
+}
+
+// this makes person1 the prototype of person2
+Object.setPrototypeOf(person2, person1); 
+
+console.log(person2);
+console.log(person2.__proto__);
+console.log(person2.__proto__.__proto__);
+
+ 
+
+}
+
+</script>
+
+<img src="../images/a7.PNG" style="display: block; margin: 20px auto 20px auto">
+
+<p>According to <Span>w3school</Span> however, the <span>setPrototypeOf()</span>
+method should be avoided at the moment, because it has bad effect to 
+the website speed, I don't know much details about why, but it does 
+recommend us to use <Span>Object.create()</Span> instead.</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let person1 ={
+    skin_color: "white",
+    sexuality: "straight"
+}
+
+// uses person1 as prototype, second parameter
+// should contain the properties and property
+// descriptors like below or else it won't work
+
+let person2 = Object.create(person1, {
+    name: {
+        value: "Alex"
+    },
+    age: {
+        value: 16
+    }
+});
+
+
+document.write(`Hello, I'm ${person2.name} and I'm ${person2.sexuality}.`);</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let person1 ={
+    skin_color: "white",
+    sexuality: "straight"
+}
+
+// uses person1 as prototype, second parameter
+// should contain the properties and property
+// descriptors like below or else it won't work
+let person2 = Object.create(person1, {
+    name: {
+        value: "Alex"
+    },
+    age: {
+        value: 16
+    }
+});
+
+
+document.write(`Hello, I'm ${person2.name} and I'm ${person2.sexuality}.`);
+
+}
+
+
+</script>
+
+<p>Other <Span>built-in Objects</Span> such as <Span>Array</Span>, 
+<span>Date</span>, <Span>Function</Span>, <span>Map</span>, <span>Set</span>, etc also have an 
+associated <Span>prototype</Span> and those have all 
+<Span>additional methods</Span> which are specific to that type.</p>
+
+<h2><u>Arrays in the Prototype Chain:</u></h2>
+
+<p>For an instane, if we create a simple number <Span>array</Span>, 
+the default <Span>new Array()</Span> constructor functions get invoked 
+internally, from the behind the scene by the <Span>JavaScript engine</Span>, 
+I talked about how <Span>arrays</Span> are <Span>objects</Span> with <Span>built in iterators</Span>
+in previous lessons. Anyway, <Span>JavaScript</Span> wil add a <Span>__proto__</Span>
+pointer to newly created array instance which points to <Span>Array.prototype</Span>
+object which has all the <Span>methods</Span> relevant to the <Span>Array operations</Span>
+such as <Span>concat</Span>, <span>reduce</span>, <span>map</span>, 
+<Span>forEach</Span>, etc.</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let arr = [1,2,3,4];
+
+console.log(arr);
+console.log(arr.__proto__);
+console.log(arr.__proto__.constructor);
+console.log(arr.__proto__.constructor.prototype === arr.__proto__)
+console.log(arr.__proto__.__proto__);
+console.log(arr.__proto__.__proto__.__proto__)</Span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let arr = [1,2,3,4];
+
+console.log(arr);
+console.log(arr.__proto__);
+console.log(arr.__proto__.constructor);
+console.log(arr.__proto__.constructor.prototype === arr.__proto__)
+console.log(arr.__proto__.__proto__);
+console.log(arr.__proto__.__proto__.__proto__)
+
+}
+
+
+</script>
+
+<img src="../images/a11.PNG" style="display: block; margin: auto">
+
+<p>If you take a look inside the <Span>constructor</Span>, 
+you will see its filled with <Span>array methods</Span> you can use, 
+the <Span>built in iterator</Span> is there too, here is a picture 
+of what's inside:</p>
+
+<img src="../images/a12.PNG" style="display: block; margin: auto">
+
+<p>Here is a visual image of the <Span>Array prototype tree</Span> to understand it better, 
+as we can see, <Span>Arrays</Span> are connected to the <Span>Object Prototype</Span> too. </p>
+
+<img src="../images/a13.png" style="display: block; margin: auto; border: 3px solid black; border-radius: 20px;">
+
+<h2><u>Map Objects in the Prototype Chain:</u></h2>
+
+<p>Let's check a <Span>map object</Span> now, just like <Span>Arrays</Span>, 
+it has a <Span>built-in constructor</Span> with properties for it's type, 
+the <span>methods</span> we learned when we learned to use <Span>Map object</Span>
+in previous lessons:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let map = new Map([["k1", "v1"], ["k2", "v2"]]);
+
+console.log(map);
+console.log(map.__proto__);
+console.log(map.__proto__.constructor);
+console.log(map.__proto__.__proto__);
+console.log(map.__proto__.__proto__.__proto__);</span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+if(true){
+
+let map = new Map([["k1", "v1"], ["k2", "v2"]]);
+
+console.log(map);
+console.log(map.__proto__);
+console.log(map.__proto__.constructor);
+console.log(map.__proto__.__proto__);
+console.log(map.__proto__.__proto__.__proto__);
+
+}
+
+</Script>
+
+<style>
+img{
+    display: block; margin: auto; border: 3px solid black; border-radius: 20px
+}
+</style>
+
+<img src="../images/a14.PNG" style="display: block; margin: auto; border: 3px solid black; border-radius: 20px">
+
+<h2><u>Set Objects in the Prototype Chain:</u></h2>
+
+<p>Let's now try to create a <Span>set object</Span> and check it's 
+<Span>prototype chain</Span>:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let set = new Set([1,1,2,2,3,3]);
+
+console.log(set);
+console.log(set.__proto__);
+console.log(set.__proto__.constructor);
+console.log(set.__proto__.__proto__);
+console.log(set.__proto__.__proto__.__proto__);</Span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+let set = new Set([1,1,2,2,3,3]);
+
+console.log(set);
+console.log(set.__proto__);
+console.log(set.__proto__.constructor);
+console.log(set.__proto__.__proto__);
+console.log(set.__proto__.__proto__.__proto__);
+}
+
+</script>
+
+<img src="../images/a15.PNG">
+
+<h2><u>Arrow Functions in the Prototype Chain:</u></h2>
+
+<p>Let's check to see what the <Span>prototype chain</Span> of 
+an <Span>arrow function</Span> is, it's different than normal functions, 
+and that's why <Span>this</Span> keyword is treated differently in 
+<Span>arrow functions</Span>:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let example2 = () => {
+    document.write("Hello World!");
+}
+
+console.log(example2);
+console.log(example2.__proto__);
+console.log(example2.__proto__.constructor);
+console.log(example2.__proto__.__proto__);
+console.log(example2.__proto__.__proto__.__proto__);</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let example2 = () => {
+    document.write("Hello World!");
+}
+
+console.log(example2);
+console.log(example2.__proto__);
+console.log(example2.__proto__.constructor);
+console.log(example2.__proto__.__proto__);
+console.log(example2.__proto__.__proto__.__proto__);
+}
+
+</script>
+
+<img src="../images/a16.PNG">
+
+<h2><u>The Date Object in the Prototype Chain:</u></h2>
+<p>Let's create a <Span>date object</Span> now, it's <Span>prototype</Span> chain, 
+just like the others, contains a <Span>constructor</Span> that has <Span>methods</Span>
+and other stuff inside, and of course it is connected to the <Span>object prototype</Span>:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let date = new Date();
+
+console.log(date);
+console.log(date.__proto__);
+console.log(date.__proto__.constructor);
+console.log(date.__proto__.__proto__);
+console.log(date.__proto__.__proto__.__proto__);</Span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let date = new Date();
+
+console.log(date);
+console.log(date.__proto__);
+console.log(date.__proto__.constructor);
+console.log(date.__proto__.__proto__);
+console.log(date.__proto__.__proto__.__proto__);
+
+}
+
+</script>
+
+<img src="../images/a17.PNG">
+
+<h2><u>The Math Object in the Prototype Chain:</u></h2>
+
+<p>The <span>Math Object</span> is a <Span>built-in object</Span>, 
+you don't create it like <Span>Date</Span>, <span>Map</span> and <Span>Set</Span>, 
+it shares the same <Span>constructor</Span> with <Span>normal objects</Span>, 
+the <Span>Object()</Span> built-in function, and it's <Span>__proto__</Span> 
+is directly the <Span>Object Prototype</Span>, just like normal objects. The 
+<Span>Math Object methods</Span> are directly inside the <Span>Math Object</Span>
+too.</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">console.log(Math);
+console.log(Math.__proto__);
+console.log(Math.__proto__.constructor);
+console.log(Math.__proto__.__proto__);</span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+if(true){
+
+console.log(Math);
+console.log(Math.__proto__);
+console.log(Math.__proto__.constructor);
+console.log(Math.__proto__.__proto__);
+
+
+
+}
+
+</Script>
+
+<img src="../images/a18.PNG">
+
+<h2><u>Numbers in the Prototype Chain:</u></h2>
+
+<p><span>Numbers</span>, <Span>Strings</Span>, <Span>Booleans</Span> 
+and <span>Symbols</span> also belong to the <Span>Object Prototype</Span>, that's 
+why <span>strings</span> can be <Span>iterated</Span> for example, or why 
+<Span>numbers</Span> can be converted to <Span>string</Span> with <Span>toString()</Span>
+method, etc. Let's create a number and check it's prototype chain:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let a = 2;
+
+console.log(a);
+console.log(a.__proto__);
+console.log(a.__proto__.constructor);
+console.log(a.__proto__.__proto__);
+console.log(a.__proto__.__proto__.__proto__);</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let a = 2;
+
+console.log(a);
+console.log(a.__proto__);
+console.log(a.__proto__.constructor);
+console.log(a.__proto__.__proto__);
+console.log(a.__proto__.__proto__.__proto__);
+
+
+}
+
+
+
+</script>
+
+<img src="../images/a19.PNG">
+
+<h2><u>Strings in the Prototype Chain:</u></h2>
+
+<p>Let's check a <span>string</span> now, which as we know shares 
+many <Span>methods</Span> with <Span>Array's constructor</Span>, 
+I will not show them in the picture however, because they are too many 
+to fit, but you can always go check these out by your self:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let a = "Hello World!";
+
+console.log(a);
+console.log(a.__proto__);
+console.log(a.__proto__.constructor);
+console.log(a.__proto__.__proto__);
+console.log(a.__proto__.__proto__.__proto__);</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let a = "Hello World!";
+
+console.log(a);
+console.log(a.__proto__);
+console.log(a.__proto__.constructor);
+console.log(a.__proto__.__proto__);
+console.log(a.__proto__.__proto__.__proto__);
+
+
+}
+
+
+
+</script>
+
+<img src="../images/a20.PNG">
+
+<h2><u>Booleans in the Prototype Chain:</u></h2>
+
+<p>Let's investigate the <Span>prototype tree</Span> of a 
+<span>boolean</span> value now</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let a = true;
+
+console.log(a);
+console.log(a.__proto__);
+console.log(a.__proto__.constructor);
+console.log(a.__proto__.__proto__);
+console.log(a.__proto__.__proto__.__proto__);</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let a = true;
+
+console.log(a);
+console.log(a.__proto__);
+console.log(a.__proto__.constructor);
+console.log(a.__proto__.__proto__);
+console.log(a.__proto__.__proto__.__proto__);
+
+
+}
+
+
+
+</script>
+
+<img src="../images/a21.PNG">
+
+<h2><u>Symbols in the Prototype Chain:</u></h2>
+
+<p>And lastly, a <Span>Symbol</Span>:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let a = Symbol();
+
+console.log(a);
+console.log(a.__proto__);
+console.log(a.__proto__.constructor);
+console.log(a.__proto__.__proto__);
+console.log(a.__proto__.__proto__.__proto__);</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let a = function myFunction(){
+   document.write("hello");
+};
+
+console.log(a);
+console.log(a.prototype);
+console.log(a.__proto__.constructor);
+console.log(a.__proto__.__proto__);
+console.log(a.__proto__.__proto__.__proto__);
+
+
+}
+
+
+
+</script>
+
+<img src="../images/a22.PNG">
+
+<h2><u>Promise Object in the Prototype Chain:</u></h2>
+
+<p><span>Promises</span>, just like <span>set</span>, <span>date</span>, 
+<span>map</span> and other <Span>objects</Span> can be created using the 
+<span>new</span> keyword, so as we can expect, it has a <span>Promise() constructor</span>, 
+which <Span>Promise() constructor</Span> also has a <Span>prototype object</Span>, 
+let's check and confirm this:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let example = new Promise((resolve, reject) => {
+    resolve("Hello World!");
+});
+
+example.then((x) => {
+    document.write(x);
+})
+
+console.log(example); 
+console.log(example.__proto__);
+console.log(example.__proto__.constructor);
+console.log(example.__proto__.__proto__);
+console.log(example.__proto__.__proto__.__proto__);</Span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let example = new Promise((resolve, reject) => {
+    resolve("Hello World!");
+});
+
+example.then((x) => {
+    document.write(x);
+})
+
+console.log(example); 
+console.log(example.__proto__);
+console.log(example.__proto__.constructor);
+console.log(example.__proto__.__proto__);
+console.log(example.__proto__.__proto__.__proto__);
+
+
+}
+
+</script>
+
+<img src="../images/a.PNG" style="margin-top: 20px;">
+
+<h2><u>Functions in the Prototype Chain:</u></h2>
+
+<p>Alright, so, I want to talk more about <Span>functions</Span> now, 
+<Span>functions</Span> are created just like <span>arrow functions</span>, 
+their <Span>prototype tree</Span> is the same:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let a = function myFunction(){
+    document.write("hello");
+};
+
+console.log(a);
+console.log(a.__proto__);
+console.log(a.__proto__.constructor);
+console.log(a.__proto__.__proto__);
+console.log(a.__proto__.__proto__.__proto__);</span></p>
+
+<p class="left">Outcome:</p>
+
+<img src="../images/a24.PNG">
+
+<p>The difference between <Span>arrow functions</Span> and 
+<Span>normal functions</Span>, and the reason <Span>normal functions</Span>
+can become <Span>constructors</Span> is because as I said at the beginning of the section, 
+when a <Span>normal function</Span> is created, a <Span>property</Span> is assigned to it, 
+named <Span>prototype</Span>, so the <Span>function prototype chain</Span> 
+looks like this:</p>
+
+<img src="../images/a25.png">
+
+<h2><u>Window, Document and Console in the Prototype Chain</u></h2>
+
+<p>So, <Span>window</Span> and <Span>document</Span> are a little more complex, 
+they have a bigger <Span>prototype chain</Span>, but that had to be expected, 
+<Span>console</Span> has a smaller one, let's check these out:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">console.log(window);
+console.log(window.__proto__);
+console.log(window.__proto__.constructor);
+console.log(window.__proto__.__proto__);
+console.log(window.__proto__.__proto__.__proto__);
+console.log(window.__proto__.__proto__.__proto__.__proto__);
+console.log(window.__proto__.__proto__.__proto__.__proto__.__proto__);</span></p>
+
+<p class="left">Outcome:</p>
+
+<img src="../images/β4.PNG">
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">console.log(document);
+console.log(document.__proto__);
+console.log(document.__proto__.constructor);
+console.log(document.__proto__.__proto__);
+console.log(document.__proto__.__proto__.__proto__);
+console.log(document.__proto__.__proto__.__proto__.__proto__);
+console.log(document.__proto__.__proto__.__proto__.__proto__.__proto__);
+console.log(document.__proto__.__proto__.__proto__.__proto__.__proto__.__proto__);</span></p>
+
+<p class="left">Outcome:</p>
+
+<img src="../images/β5.PNG">
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">console.log(console);
+console.log(console.__proto__);
+console.log(console.__proto__.__proto__);
+console.log(console.__proto__.__proto__.__proto__);</span></p>
+
+<p class="left">Outcome:</p>
+
+<img src="../images/β6.PNG">
+
+<h2><u>Classes in the Prototype Chain:</u></h2>
+
+<p>Let's now talk about <span>classes</span>, 
+    they work similarly to <Span>object constructors</Span>, so let's see 
+    what their <Span>prototype chain</Span> looks like:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let human = class{
+    constructor(n,a){
+        this.name = n;
+        this.age = a;
+    }
+}
+
+let person = new human("Alex", 16);
+
+console.log(human);
+console.log(human.__proto__);
+console.log(human.__proto__.constructor);
+console.log(human.__proto__.__proto__);
+console.log(human.__proto__.__proto__.__proto__);
+
+let fun = function(){};
+let fun2 = () => {};
+
+console.log(fun.__proto__ === human.__proto__ && human.__proto__ === fun2.__proto__);</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let human = class{
+    constructor(n,a){
+        this.name = n;
+        this.age = a;
+    }
+}
+
+let person = new human("Alex", 16);
+
+console.log(person);
+console.log(person.__proto__);
+console.log(person.__proto__.constructor);
+console.log(person.__proto__.__proto__);
+console.log(person.__proto__.__proto__.__proto__);
+
+}
+
+</script>
+
+<img src="../images/a26.PNG">
+
+<p>As you can see, <Span>classes</Span>, <Span>functions</Span> and 
+<Span>arrow functions</Span> all share the same <span>prototype chain</span>, 
+however, both <Span>normal functions</Span> and <span>classes</span> can be 
+<Span>constructors</Span>, while <Span>arrow functions can't</Span>, that's because for 
+both <Span>classes</Span> and <span>normal functions</span>, when they are created, 
+a <Span>prototype object</Span> gets created for them, which connects 
+every <Span>object</Span> created by them to the <Span>Prototype Object</Span>:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let human = class{
+    constructor(n,a){
+        this.name = n;
+        this.age = a;
+    }
+}
+
+let person = new human("Alex", 16);
+
+console.log(person);
+console.log(person.__proto__);
+console.log(person.__proto__.constructor);
+console.log(person.__proto__.__proto__);
+console.log(person.__proto__.__proto__.__proto__);</span></p>
+
+<p class="left">Outcome:</p>
+
+<img src="../images/a27.PNG">
+
+<p>As you can see, <Span>classes</Span> and <Span>function constructors</Span>
+are pretty similar, here is a diagram of how a <Span>class's prototype chain</Span>
+looks like, compare it to the image I added above when I talked about <span>functions</span>, 
+the only change is that now I'm using a <Span>class</Span> instead of a 
+<Span>function</Span>, everything else stays the same:</p>
+
+<img src="../images/a28.png" style="height: 450px; width: 800px;">
+
+<p>Now, there are some more differences between <Span>classes</Span>
+and <Span>functions</Span> I want to talk about, for example, when 
+you create a <Span>method</Span> inside a <span>class</span>,
+there are two differen kind of <span>methods</span> you can create, 
+as I explained in the <Span>classes lesson</Span>, the 
+<Span>prototype methods</Span> and the <Span>static methods</Span>.
+A <span>prototype method</span> is added to <Span>class's prototype object</Span>, 
+it is not directly added to the <span>objects</span> like 
+when you create <Span>objects</Span> using <Span>function constructors</Span>, 
+<Span>Static methods</Span> can be called through the <span>class instance</span> only, 
+they are not added inside the <Span>class's prototype object</Span> or the <Span>objects</Span>
+them selves, they stay <Span>static</Span> inside the <Span>class</Span> 
+and can only be called through the <Span>class</span>.</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let human = class{
+    constructor(n,a){
+        this.name = n;
+        this.age = a;
+    }
+    
+    speak(){
+        return "Hello";
+    }
+
+    static test(){
+        return "test";
+    }
+}
+
+let obj = new human("Alex", 16);
+
+console.log(obj);
+console.log(obj.__proto__);
+console.log(obj.__proto__.constructor);</span></p>
+
+<P class="left">Outcome:</P>
+
+<script>
+
+if(true){
+
+let human = class{
+    constructor(n,a){
+        this.name = n;
+        this.age = a;
+    }
+    
+    speak(){
+        return "Hello";
+    }
+
+    static test(){
+        return "test";
+    }
+}
+
+let obj = new human("Alex", 16);
+
+console.log(obj);
+console.log(obj.__proto__);
+console.log(obj.__proto__.constructor);
+
+}
+
+</script>
+
+<img src="../images/α1.PNG">
+
+<p>Now, to finish with <Span>classes</Span>, let's talk about what 
+happens when a class <Span>extends</Span> another class:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let animal = class{
+    constructor(n,a){
+        this.name = n;
+        this.age = a;
+    }
+
+    die(){
+        return "The animal has died";
+    }
+}
+
+let dog = class extends animal{
+    constructor(n, a, c){
+        super(n, a);
+        this.color = c;
+    }
+}
+
+let rex = new dog("Rex", 4, "white");
+
+console.log(rex);
+console.log(rex.__proto__);
+console.log(rex.__proto__.constructor);
+console.log(rex.__proto__.__proto__);
+console.log(rex.__proto__.__proto__.constructor);
+console.log(rex.__proto__.__proto__.__proto__);
+console.log(rex.__proto__.__proto__.__proto__.__proto__);</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let animal = class{
+    constructor(n,a){
+        this.name = n;
+        this.age = a;
+    }
+
+    die(){
+        return "The animal has died";
+    }
+}
+
+let dog = class extends animal{
+    constructor(n, a, c){
+        super(n, a);
+        this.color = c;
+    }
+}
+
+let rex = new dog("Rex", 4, "white");
+
+console.log(rex);
+console.log(rex.__proto__);
+console.log(rex.__proto__.constructor);
+console.log(rex.__proto__.__proto__);
+console.log(rex.__proto__.__proto__.constructor);
+console.log(rex.__proto__.__proto__.__proto__);
+console.log(rex.__proto__.__proto__.__proto__.__proto__);
+
+}
+
+
+
+</script>
+
+<img src="../images/α2.PNG">
+
+<p>The <Span>dog class's prototype object</Span> becomes child of 
+the <Span>animal class's prototype object</Span>, so the <Span>methods</Span>
+of <Span>animal class</Span> can be accessed through <Span>dog class</Span> too, 
+but the <Span>properties</Span> should be added using the <span>super()</span>
+method, as I have explained in <Span>classes lesson</Span>. Here is 
+an image of how the <Span>prototype chain</Span> looks like when 
+a class <span>extends</span> another class.</p>
+
+<img src="../images/α3.png">
+
+<h2><u>Conclusion:</u></h2>
+
+<p>By specification, all <Span>built-in Objects</Span> in 
+<span>JavaScript</span> have <Span>prototype Object</Span> 
+associated with them and they point to the <Span>Object.prototype object</Span>. 
+That is why many people say <b>"Everything in JavaScript is inheriting from Object"</b>.</p>
+
+<p>The values <Span>null</Span> and <Span>undefined</Span> have no 
+<Span>object wrappers</Span>. Those will stand apart as <Span>special values</Span>
+in <Span>JavaScript</Span> when it comes to <span>primitives</span>. Since 
+they do not have <Span>object wrappers</Span>, simply they will not 
+have <Span>additional methods</Span> and <Span>properties</Span> for 
+them and also they don't have any associated <Span>prototype object</Span> too.</p>
+
+<p>Here is a bigger picture of the <Span>Prototype Chain</Span>:</p>
+
+<img src="../images/a23.png" style="background-color: white;">
+
+<p>To make this section I used help from this article: <a target="blank" href="https://medium.com/@chamikakasun/javascript-prototype-and-prototype-chain-explained-fdc2ec17dd04">click here</a></a> </p>
+<p>Here are some videos that I found useful:
+</p>
+
+<iframe src="https://www.youtube.com/embed/01jVgCK-HX4?list=PLYxnDvM22X3NBARfD2aZcyUoKvfdHfygn" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe src="https://www.youtube.com/embed/dgpaY5wjJ9w?list=PLYxnDvM22X3NBARfD2aZcyUoKvfdHfygn" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe src="https://www.youtube.com/embed/GhJTy5-X3kA?list=PLYxnDvM22X3NBARfD2aZcyUoKvfdHfygn" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</article>
+
+<hr>
+
+<article id="five">
+
+<header>
+    <h1>Classes behind the scenes</h1>
+</header>
+
+<p>So, in this section we are gonna talk a little bit more about 
+    <Span>classes</Span>, I already talked about the <Span>prototype chain</Span>
+    in the previous section, in this one I will talk more about what the <Span>class</Span>
+    syntax actually does, because <span>classes</span> are <Span>functions</Span> after all, 
+    so what exactly does <Span>super()</Span> do? What does <span>extends</span>
+    keyword do? To better undrestand this, we are gonna try and create 
+    a <Span>class</Span> using a <Span>normal function</Span>.
+</p>
+
+<p>Alright, so, firstly, let's create a <span>class</span>:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let animal = class{
+    constructor(n, a){
+        this.name = n;
+        this.age = a;
+    }
+    kill(){
+        return "The animal died";
+    }
+}
+
+let dog = class extends animal{
+    constructor(n, a, c){
+        super(n, a);
+        this.color = c;
+    }
+}
+
+let my_dog = new dog("Bella", 2, "brown");</span></p>
+
+ 
+<script>
+
+if(true){
+
+let animal = class{
+    constructor(n, a){
+        this.name = n;
+        this.age = a;
+    }
+    kill(){
+        return "The animal died";
+    }
+}
+
+let dog = class extends animal{
+    constructor(n, a, c){
+        super(n, a);
+        this.color = c;
+    }
+}
+
+let my_dog = new dog("Bella", 2, "brown");
+
+}
+
+</script>
+
+<p>Now, let's try to remake the exact same thing, without the <Span>class</Span>
+syntax:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let animal = function(n, a){
+    this.name = n;
+    this.age = a;
+}
+animal.prototype.kill = function(){
+    return "died";
+} <span class="gray">// adds the method to the function's prototype object just like in classes</span>
+
+let dog = function(n, a, c){
+    animal.call(this, n, a); <span class="gray">// basically does what super() does for classes</span>
+    this.color = c;
+}
+
+Object.setPrototypeOf(dog.prototype, animal.prototype) <span class="gray">// does what extends keyword does for classes</span>
+
+let my_dog = new dog("Bella", 2, "brown");
+
+<span class="gray">// testing to see if everything works correctly</span>
+
+document.write(`I once had a dog, her name was ${my_dog.name}, 
+her color was ${my_dog.color} and she was ${my_dog.age} years old, 
+sadly, a really bad person poisoned her and she ${my_dog.kill()}.`)</Span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+if(true){
+
+let animal = function(n, a){
+    this.name = n;
+    this.age = a;
+}
+animal.prototype.kill = function(){
+    return "died";
+} // adds the method to the function's prototype object just like in classes
+
+let dog = function(n, a, c){
+    animal.call(this, n, a); // basically does what super() does for classes
+    this.color = c;
+}
+
+Object.setPrototypeOf(dog.prototype, animal.prototype) // does what extends keyword does for classes
+
+let my_dog = new dog("Bella", 2, "brown");
+
+// testing to see if everything works correctly 
+
+document.write(`I once had a dog, her name was ${my_dog.name}, 
+her color was ${my_dog.color} and she was ${my_dog.age} years old, 
+sadly, a really bad person poisoned her and she ${my_dog.kill()}.`)
+}
+
+
+</Script>
+
+<iframe src="https://www.youtube.com/embed/XoQKXDWbL1M?list=PLYxnDvM22X3NBARfD2aZcyUoKvfdHfygn" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</article>
+
+<hr>
+
+<article id="six">
+
+<header>
+    <h1>Immediately Invoked Function Expressions</h1>
+</header>
+
+<p><Span>IIFE</Span> are <Span>functions</Span> 
+that immediately are <Span>executed</Span> without 
+being <Span>called</Span>, here is an example:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">(function example(x){
+document.write(x);
+})("Hello World!");</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+(function example(x){
+    document.write(x);
+})("Hello World!");
+
+
+}
+
+
+
+</script>
+
+<p>So, the <Span>syntax</Span> may look weird at first, but it's not 
+really that weird, if you understand what it does, normally, to 
+<Span>call</Span> the <Span>function</Span> we would write 
+<Span>example("Hello World!");</Span>, what's <Span>example</Span>? 
+It references the <Span>function</Span>, but because it has 
+<Span>("Hello World!");</Span> next to it, the <Span>function</Span>
+gets <Span>executed</Span>, if you haven't noticed already, 
+the <Span>syntax</Span> above is basically the same thing, 
+it's our <Span>function</Span> with <Span>("Hello World!");</Span>
+next to it.</p>
+
+<p>So what's the point of creating a <Span>function</Span> that 
+<Span>immediately executes</Span>? <span>IIFE</span> get used 
+commonly to create <Span>closures</Span>, <Span>namespaces</Span>, 
+to set up <Span>objects</Span> as part of the loading of an app/page, 
+and to <Span>protect</Span> the <span>values</span> that are inside 
+the <Span>function</Span> when it runs.</p>
+
+<p>We are gonna get to use <Span>IIFE</Span> again in the section 
+below to fix a <Span>closure</Span> problem.</p>
+
+<iframe src="https://www.youtube.com/embed/Xd7zgPFwVX8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</article>
+
+<hr>
+
+<article id="seven">
+
+<header>
+    <h1>Closures in JavaScript</h1>
+</header>
+
+<p>In this section we are going to talk about <Span>scoping rules</Span>, 
+as we know already, <Span>variables</Span> made with the keyword <Span>var</Span>
+are <Span>scoped</Span> to the <Span>immediate function body</Span>
+(henche the function scope) while <Span>let</Span> variables are <Span>scoped</Span> 
+to the <Span>immediate enclosing block</Span> denoted by <Span>{ }</Span>
+(henche the block scope). Here is an example to confirm what I just said 
+is true:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">function example10(){
+    var name69 = "Alex";
+    let age = 16;
+}
+
+if(true){
+    var color = "white";
+    let idk69 = "Hello!"
+}
+
+try{document.write(name69)} catch{ document.write("name69 could not be found &lt;br>")}
+try{document.write(age)} catch{ document.write("age could not be found &lt;br>")}
+try{document.write(color + "&lt;br>")} catch{ document.write("color could not be found")}
+try{document.write(idk69)} catch{ document.write("idk69 could not be found")}</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+function example10(){
+    var name69 = "Alex";
+    let age = 16;
+}
+
+if(true){
+    var color = "white";
+    let idk69 = "Hello!"
+}
+
+try{document.write(name69)} catch{ document.write("name69 could not be found <br>")}
+try{document.write(age)} catch{ document.write("age could not be found <br>")}
+try{document.write(color + "<br>")} catch{ document.write("color could not be found")}
+try{document.write(idk69)} catch{ document.write("idk69 could not be found")}
+
+
+}
+
+</script>
+
+<p>In <Span>JavaScript</Span>, there is something called <span>lexical scoping</span>
+which means, <Span>variables</Span> that are defined <Span>outside a scope</Span> can be 
+accessed from the <Span>inside scope</Span>, a <Span>variety</Span> 
+made inside the <Span>global function scope</Span> for example 
+could be accessed inside another <Span>function</Span>, let's have an example:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let var1 = "value1";
+
+let fun1 = function(){
+    document.write(var1);
+}
+
+fun1();
+
+if(true){
+
+document.write(var1);
+
+}</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let var1 = "value1";
+
+let fun1 = function(){
+    document.write(var1);
+}
+
+fun1();
+
+if(true){
+
+document.write(var1);
+
+}
+
+}
+
+</script>
+
+<p>So, if we put a <Span>function</Span> inside a <Span>codeblock</Span>
+that contains a <Span>variable</Span> made with <Span>let</Span> keyword, 
+and we tell the <Span>function</Span> to <Span>return</Span> that <Span>variable</Span>
+but we <Span>call</Span> the <Span>function</Span> from outside the <Span>block scope</Span> it 
+shouldn't work, right? Well, let's find out:</p>
+
+<p clas="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">if(true){
+
+let i = "variable";
+    
+var example11 = function(){
+    document.write(i);
+}
+
+}
+
+example11();</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+
+if(true){
+
+let i = "variable";
+
+var example11 = function(){
+    document.write(i);
+}
+
+}
+
+example11();
+
+}
+
+
+
+</script>
+
+
+<p>It works! Why though? Well, that's because when <Span>example11()</Span>
+was read, <Span>JavaScript</Span> looked back where <Span>example11 function</Span>
+was made and <Span>executed</Span> the <Span>function</Span> there, it's 
+the place it originally was made in that matters, not the position you call it, 
+here is an example that confirms it:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">if(true){
+
+function example12(){
+    document.write(i);
+}
+
+if(true){
+    let i = "variable";
+    try {example12()} catch {document.write("i was not found")};
+}
+
+}</Span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+if(true){
+
+function example12(){
+    document.write(i);
+}
+
+if(true){
+    let i = "variable";
+    try {example12()} catch {document.write("i was not found")};
+}
+
+}
+
+}
+
+</script>
+
+<p>So, now that we remembered some basic <Span>scoping rules</Span>, 
+let's talk about <span>closures</span>, see the example below:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let example = () => {
+    let item = "Variable";
+    return () => {
+        document.write(item);
+    }
+}
+
+example()();</span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+if(true){
+
+let example = () => {
+    let item = "Variable";
+    return () => {
+        document.write(item);
+    }
+}
+
+example()();
+
+}
+
+</Script>
+
+<p>So, this time, we called <span>example()</span> function, which 
+returned an <span>anonymous function</span> outside the 
+<Span>function scope</Span>, the difference with before is that now we 
+have a <span>function</span> that contains a <Span>variable</Span> 
+and returns <span>another function</span>, 
+as expected it will work just like before, but for different reasons:</p>
+
+<p>Using <Span>console.dir()</Span> we can investigate more, 
+<Span>console.dir()</Span> is similar to <Span>console.log()</Span>
+but contains extra informations like the <Span>scope</Span> and others:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">if(true){
+    let item = "variable1"
+    var example13 = () =>{
+        document.write(item);
+    }
+}
+
+example13();
+
+let example = () => {
+    let item = "variable2";
+    return () => {
+        document.write(item);
+    }
+}
+    
+example()();
+
+console.dir(example13);
+console.dir(example());</span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+if(true){
+    
+if(true){
+    let item = "variable1"
+    let food = "pizza";
+    var example13 = () =>{
+        document.write(item);
+    }
+}
+
+example13();
+
+let example = () => {
+    let item = "variable2";
+    return () => {
+        document.write(item);
+    }
+}
+    
+example()();
+
+console.dir(example13);
+console.dir(example());
+}
+    
+    </Script>
+
+<img src="../images/b1.PNG" style="margin-top: 20px;">
+
+<p>Let's try to add more <Span>variable</Span> now 
+and see how will they be <Span>effected</Span> by this:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let item = "variable1"
+    let food = "pizza";
+    let color = "white";
+    var example13 = () =>{
+        document.write(item, food);
+    }
+}
+
+let example = () => {
+    let food = "pizza";
+    let color = "white";
+    let item = "variable2";
+    return () => {
+        document.write(item, color);
+    }
+}
+
+console.dir(example13);
+console.dir(example());</span></p>
+
+<p class="left">Outcome:</p>
+
+<img src="../images/b2.PNG">
+
+<p>As you can see, only the <Span>variables</Span> that are used 
+inside the <Span>function</Span> are saved in <Span>block</Span>
+or <Span>closure</Span> (we get block when the function is inside a code block, 
+and closure when it is inside a function).</p>
+
+<p>Let's play around with it to get confortable with how 
+<Span>lexical scoping</Span> creates those <Span>blocks</Span>
+and <span>closures</span>, what if a <Span>function</Span> had a <Span>closure</Span>
+and a <Span>block</Span> together?
+</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">if(true){
+let food = "pizza";
+
+var example = () => {
+let item = "variable2";
+
+return () => {
+    document.write(item, food);
+    }
+  }
+}
+
+console.dir(example());</Span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+if(true){
+
+if(true){
+let food = "pizza";
+
+var example = () => {
+let item = "variable2";
+
+return () => {
+    document.write(item, food);
+    }
+  }
+}
+
+console.dir(example());
+
+}
+</Script>
+
+<img src="../images/b3.PNG">
+
+<p>As you can see, <span>JavaScript</span> creates those <Span>scoping layers</Span>, 
+first we have the <Span>global scope</Span>, then inside it we have a 
+<Span>code block</Span> and then we have a <Span>closure</Span>, as I said before, 
+only if the <Span>function</Span> uses a <Span>variable</Span> inside the 
+<Span>code block</Span> it will be added in the <Span>scopes</Span>, if it did not 
+then we would only see <Span>global</Span> and <Span>closures</Span> in the console.</p>
+
+<p>So, let's take a look the the code below, one that is commonly used 
+    in interviews, it's a tricky on, and you are gonna learn why soon:
+</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">for(var i = 0; i<3; i++){
+  setTimeout(() => {
+    console.log(i);
+  }, 1000);
+}</span></p>
+
+ 
+<script>
+
+if(true){
+
+//for(var i = 0; i<3; i++){
+ // setTimeout(() => {
+    //  console.log(i);
+     //console.dir(() => console.log(1))
+ /// }, 1000);
+ // console.log("loop ended");  
+//}
+
+}
+
+</script>
+
+<p>This will output <Span>3 3 3</Span>, and the reason that happens, 
+as we will confirm in the code below, is because the <Span>for loop</Span>
+is finished before the <Span>setTimeouts</Span> are done 
+waiting:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">for(var i = 0; i<3; i++){
+  setTimeout(() => {
+    console.log(i);
+  }, 1000);
+  console.log("Loop is done");
+}</span></p>
+
+<p class="left">Outcome:</p>
+
+<img src="../images/b4.PNG">
+
+<p>That's not the tricky part of the question though, what really is 
+    weird at first, is that if instead of <Span>var</Span> you write 
+    <Span>let</Span>, instead of writing <Span>3 3 3</Span> it will 
+    for some reason write <Span>0 1 2</Span>:
+</p>
+
+<p>In order to understand this, we should <Span>compare</Span> the two, 
+and understand what each does behind the scenes:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">for(var i = 0; i<3; i++){
+setTimeout(() => {
+    console.log(i);
+    console.dir(() => console.log(i))
+  }, 1000);
+ console.log("loop1 ended");  
+}</Span></p>
+
+<p class="left">Outcome:</p>
+
+ 
+
+<img src="../images/b5.PNG">
+
+<p>As expected, the <Span>iteration</Span> has created a 
+<Span>variable</Span> called <Span>i</Span> which can be accesed from the 
+<Span>global scope</Span>, since it was made with <Span>var</Span> and it's not 
+restricted inside the <Span>block</Span>. Let's see what happens 
+for <Span>let</Span> now:</p>
+
+<img src="../images/b6.PNG">
+
+<p>So, because <span>let</span> restricts the <Span>variable</Span> to it's 
+<Span>code block</Span> that's why we see <span>i</span> inside <Span>Block</Span>, 
+what's really interesting however is that each time the <Span>function</Span> 
+ran, <Span>i</Span> was different, even though the <Span>functions</Span>
+ran after the <Span>loop</Span> had finished and <Span>i</Span> should 
+had already increased, so why does it increase by one for each time the 
+<Span>function</Span> runs?</p>
+
+<p>Alright, so after a lot of research, I think I have understood what 
+exactly happens behind the scenes when you are using loops, now, 
+my demonstration is probably not 100% true, but I believe it's pretty 
+near, and it will do help you understand what kind of happens.
+</p>
+
+<p>So, to understand what happens, I tried to rewrite the loop syntax into 
+a handwritten one, here is how I would create the <Span>loop</Span> using 
+the <Span>var</Span> keyword:
+</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10"><span class="gray">/*
+The following loop:
+
+for(var x = 0; x<3; x++){
+setTimeout(() => console.log(x), 4000);
+}
+
+Can be handwritten to this:
+*/</span>
+
+{ <Span class="gray">// loop code block</span>
+
+var x = 0; <span class="gray">// does what first parameter of the for loop does</span>
+let temp = x; <span class="gray">// I use this to make a copy of x on each loop block</span>
+
+{ <span class="gray">// first loop</span> 
+
+var x = temp;
+
+    if(x<3){ <span class="gray">// it does what second parameter of loop does for each block</span>
+    setTimeout(() => console.log(x), 3000);
+    }
+
+}
+    
+{ <span class="gray">// second loop</span>
+    
+temp++ <span class="gray">// the last parameter of the loop increases x starting from second loop</span>
+var x = temp;
+
+    if(x<3){
+    setTimeout(() => console.log(x), 3000);
+    }
+
+}
+
+{ <span class="gray">// third loop</span> 
+
+temp++
+var x = temp;
+
+    if(x<3){
+    setTimeout(() => console.log(x), 3000);
+    }
+
+}
+
+{ <span class="gray">// fourth loop</span>
+
+temp++
+var x = temp;
+
+    if(x<3){ <span class="gray">// returns false, but x has already been increased to 3</span> 
+    setTimeout(() => console.log(x), 3000);
+    }
+
+}
+
+}</span></p>
+
+<p class="left">Outcome:</p>
+
+ 
+
+<img src="../images/b7.PNG">
+
+<p>So, because <Span>var</Span> is not restricted to the <Span>code block</Span>, 
+every loop was <Span>rewriting</Span> the original, if we used <span>let</span> however,
+each <Span>code block</Span> would create a </span>different variable</Span>:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10"><span class="gray">/*
+The following loop:
+
+for(let x = 0; x<3; x++){
+setTimeout(() => console.log(x), 4000);
+}
+
+Can be handwritten to this:
+*/</span>
+
+{ <Span class="gray">// loop code block</span>
+
+let x = 0; <span class="gray">// does what first parameter of the for loop does</span>
+let temp = x; <span class="gray">// I use this to make a copy of x on each loop block</span>
+
+{ <span class="gray">// first loop</span> 
+
+let x = temp; 
+
+    if(x<3){ <span class="gray">// it does what second parameter of loop does for each block</span>
+    setTimeout(() => console.log(x), 3000);
+    }
+
+}
+    
+{ <span class="gray">// second loop</span>
+    
+temp++ <span class="gray">// the last parameter of the loop increases x starting from second loop</span>
+let x = temp;
+
+    if(x<3){
+    setTimeout(() => console.log(x), 3000);
+    }
+
+}
+
+{ <span class="gray">// third loop</span> 
+
+temp++
+let x = temp;
+
+    if(x<3){
+    setTimeout(() => console.log(x), 3000);
+    }
+
+}
+
+{ <span class="gray">// fourth loop</span>
+
+temp++
+let x = temp;
+
+    if(x<3){ <span class="gray">// returns false, but x has already been increased to 3</span> 
+    setTimeout(() => console.log(x), 3000);
+    }
+
+}
+
+}</span></p>
+
+<p class="left">Outcome:</p>
+
+<img src="../images/b8.PNG">
+
+<p>So, as I explained before, since the <Span>variables</Span> that 
+are created in each <Span>loop</Span> are restricted to their 
+<Span>loop code block</Span>, they will be <Span>new variables</Span> 
+and not rewrite the previous ones, as a result, each loop 
+logs another number when the timeouts are over.</p>
+
+<p>So, if we used an <Span>already declared variable</Span> as the first parameter, 
+then we could simple move the <Span>let x = 0</Span> from the top of the 
+<Span>loop block</Span> and place it outside, and then simple remove 
+any <Span>let</Span>, since the <Span>first parameter</Span> of the <Span>loop</Span>
+is <Span>x</Span>, each <Span>loop</Span> will do <Span>x++</Span>, also, 
+<Span>temp</Span> is not needed for this case since we aren't copying x like before, 
+I needed temp because doing x = x wouldn't work.</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10"><span class="gray">/*
+The following loop:
+
+let x = 0;
+
+for(x; x<3; x++){
+setTimeout(() => console.log(x), 4000);
+}
+
+Can be handwritten to this:
+*/</span>
+
+{ <Span class="gray">// loop code block</span>
+
+{ <span class="gray">// first loop</span> 
+
+if(x<3){ <span class="gray">// it does what second parameter of loop does for each block</span>
+    setTimeout(() => console.log(x), 3000);
+    }
+
+}
+
+{ <span class="gray">// second loop</span>
+
+x++ <span class="gray">// the last parameter of the loop increases x starting from second loop</span>
+
+    if(x<3){
+    setTimeout(() => console.log(x), 3000);
+    }
+
+}
+
+{ <span class="gray">// third loop</span> 
+
+x++
+
+    if(x<3){
+    setTimeout(() => console.log(x), 3000);
+    }
+
+}
+
+{ <span class="gray">// fourth loop</span>
+
+x++
+
+    if(x<3){ <span class="gray">// returns false, but x has already been increased to 3</span> 
+    setTimeout(() => console.log(x), 3000);
+    }
+
+}
+
+}</span></p>
+
+<p class="left">Outcome:</p>
+
+<img src="../images/b7.PNG">
+
+<p>
+So, if we wanted to make the <Span>loop</Span> using 
+<Span>var</Span> for some reason, but we also wanted it 
+to log the <span>numbers</span> one by one like it does 
+when we use <span>let</span>, we could do this like this:
+</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">for(var item0 = 0; item0<3; item0++){
+    (function(x){
+    setTimeout(() => console.log(x), 6000);
+    })(item0);
+}</span></p>
+
+<p class="left">Outcome:</p>
+
+<img src="../images/b8.PNG">
+
+<Script>
+/*
+for(var item0 = 0; item0<3; item0++){
+    (function(x){
+    setTimeout(() => console.log(x), 6000);
+    })(item0);
+}
+*/
+</Script>
+
+<p>Let's try to understand what exactly happens to our code now, by simply 
+    taking this handwritten code I used before, and adding the body 
+    of the loop inside every if() statement:
+</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">{ // loop code block
+
+var item1 = 0;
+let temp = item1;
+
+{ // first loop
+
+var item1 = temp;
+
+if(item1<3){ // added the second parameter in each block seperately
+    (function(x){
+    setTimeout(() => console.log(x), 6000);
+    })(item1);
+  }
+
+}
+
+{ // second loop 
+
+temp++ // the last parameter of the loop increases x starting from second loop
+var item1 = temp;
+
+  if(item1<3){
+    (function(x){
+    setTimeout(() => console.log(x), 6000);
+    })(item1);
+  }
+
+}
+
+{ // third loop 
+
+temp++
+var item1 = temp;
+
+  if(item1<3){
+    (function(x){
+    setTimeout(() => console.log(x), 6000);
+    })(item1);
+  }
+
+}
+
+{ // fourth loop 
+
+temp++
+var item1 = temp;
+
+  if(item1<3){ // returns false, but x has already been increased to 3 
+    (function(x){
+    setTimeout(() => console.log(x), 6000);
+    })(item1);
+  }
+
+}
+
+}</Span></p>
+
+ 
+
+<p>As you can see, we have a <Span>function</Span> inside another, so 
+a <Span>closure</Span> is created, when the <Span>function</Span> runs 
+first time <Span>item1</Span> is <Span>0</Span>, it may change later, but 
+since the <Span>function</Span> was called <Span>before</Span> it changes, 
+the <span>x parameter</span> was assigned to be <Span>0</Span>, and the 
+<Span>closure</Span> of <Span>() => console.log()</Span> function is <Span>x = 0</Span>.</p>
+
+<img src="../images/b9.PNG">
+
+<iframe src="https://www.youtube.com/embed/-xqJo5VRP4A?list=PLYxnDvM22X3NBARfD2aZcyUoKvfdHfygn" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</article>
+
+<hr>
+
+<article id="eight">
+
+<header>
+
+<h1>Function Currying</h1>
+
+</header>
+
+<p>Let's talk about <span>function currying</span> now, it's not very hard to understand, 
+it's called <Span>function currying</Span> because it's like one <Span>function</Span>
+curries another, and you will understand what I mean soon, first of all, let's take a look 
+to the code below:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let greet = (a, b) => {
+    document.write(`${a} ${b}`);
+}
+
+greet("Hello", "Alex");</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+
+let greet = (a, b) => {
+    document.write(`${a} ${b}`);
+}
+
+greet("Hello", "Alex");
+
+}
+
+
+
+</script>
+
+<p>Alright, so, I now want to make the code above so that I can 
+greet users in different languages, let's say I don't have the <Span>usernames</Span>
+avaible yet, and I don't want to create a different <Span>function</Span> for each 
+language, there are of course many alternative ways to do this, like everything 
+in <span>JavaScript</span> in general, but since we are learning about <Span>function currying</Span>
+let's try to make what I want using <Span>functiogn currying</Span>:
+</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let greet = (a) => {
+    return(b) => {
+     document.write(`${a} ${b} &lt;br>`);
+    }
+}
+
+let english = greet("Hello");
+let svenska = greet("Hej");
+let espanol = greet("Hola");
+let deutsch = greet("Tag");
+
+english("Alex");
+svenska("Christina");
+espanol("Jonathan");
+deutsch("Monika");</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+
+let greet = (a) => {
+   return(b) => {
+    document.write(`${a} ${b} <br>`);
+   }
+}
+
+let english = greet("Hello");
+let svenska = greet("Hej");
+let espanol = greet("Hola");
+let deutsch = greet("Tag");
+
+english("Alex");
+svenska("Christina");
+espanol("Jonathan");
+deutsch("Monika");
+}
+    
+</script>
+
+<p>So that's what we call <span>function currying</span>, 
+the <span>greet function</span> returned <Span>another function</Span>, 
+and since it's a <span>function inside another</span> and uses <Span>parameter a</Span> 
+it also created a <span>closure of a's value</span>, then we used 
+the <Span>returned function</Span> to do the greeting by only having 
+to add the <Span>b parameter</Span> of the <Span>returned function</Span>.</p>
+
+<iframe src="https://www.youtube.com/embed/F_N97iovVbQ?list=PLYxnDvM22X3NBARfD2aZcyUoKvfdHfygn" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</article>
+
+<hr>
+
+<article id="nine">
+
+<header>
+
+<h1>More about the console</h1>
+
+</header>
+
+<p>Lately I have start to realized how useful the <span>console</span> 
+can be, using it can help a lot when you have a problem and want to understand 
+what exactly happens behind the scenes, because of that, in this section 
+I will speak about some console log methods you can use. Here is a list of 
+the methods I'm gonna talk about in this section:</p>
+
+<div class="list_container" style="background-color: unset; border: unset;">
+
+<ul>
+    <li>console.table</li>
+    <li>console.trace</li>
+    <li>console.dir</li>
+    <li>console.error</li>
+    <li>console.warn</li>
+    <li>console.info</li>
+</ul>
+
+</div>
+
+<p><span>Console.table</span> is pretty cool because it creates a 
+<span>table</span> of the information you pass into it, you may not 
+need it now, but when working with big objects this can be pretty helpful:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let obj = {
+prop1: ["bob", "29", "white"],
+prop2: ["jacob", "25", "black"],
+prop3: ["Christina", "18", "white"],
+prop4: ["Alex", "16", "white"]
+}
+
+console.table(obj);
+console.table(obj.prop3);</span></p>
+
+
+<p class="left">Outcome:</p>
+
+<img src="../images/β1.PNG">
+
+<script>
+
+if(true){
+
+let obj = {
+prop1: ["bob", "29", "white"],
+prop2: ["jacob", "25", "black"],
+prop3: ["Christina", "18", "white"],
+prop4: ["Alex", "16", "white"]
+}
+
+console.table(obj);
+console.table(obj.prop3);
+
+}
+
+
+</script>
+
+<p><span>Console.trace</span> is also one of the most useful console methods out there 
+in my opinion, what does it do? If you call a <Span>function</Span> which 
+<span>function</span> calls other <Span>functions</Span> it keeps 
+track of the <Span>path of functions</Span> that were <span>called</span> in order, and returns them 
+in an ordered list, that's very helpful, because as we have seen already 
+working with <Span>functions</Span> can become pretty complex, when you 
+start nesting them, using <Span>function call backs</Span>, <span>function currying</span>, 
+etc, by using <Span>console.trace</Span> you could save your self a lot of time 
+when working with <Span>functions</Span>.</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let obj = {
+    f1(){
+         obj.f2();
+    },
+    f2(){
+        obj.f3();
+    }, 
+    f3(){
+        obj.f4();
+    },
+    f4(){
+    console.trace("Hello World!");
+    }
+}
+
+obj.f1();</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let obj = {
+    f1(){
+         obj.f2();
+    },
+    f2(){
+        obj.f3();
+    }, 
+    f3(){
+        obj.f4();
+    },
+    f4(){
+    console.trace("Hello World!");
+    }
+}
+
+obj.f1();
+
+}
+
+
+
+</script>
+
+<img src="../images/β2.PNG">
+
+<p><span>Console.dir</span> works pretty similar to <span>console.log</span>, I already used it 
+in the sections above so I won't put any examples here, from what I understand 
+<Span>console.log</Span> stringifies some of the <Span>methods</Span> inside 
+the <Span>objects</Span> so basically, <span>console.dir</span> gives you more 
+information about what's in the <Span>object</Span>.</p>
+
+<p>To finish, the last three methods are basically decoration methods, 
+    the <span>console.info</span> from what I read has a litttle i next to 
+    the log or something, but in my browser it does not.
+</p>
+
+<p class="left">JavaScript Code</p>
+
+<p class="left"><span class="code10">console.error("This is an error log");
+console.warn("This is a warn log");
+console.info("This is an info log");</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+
+
+if(true){
+
+console.error("This is an error log");
+console.warn("This is a warn log");
+console.info("This is an info log");
+
+
+
+}
+
+
+
+
+</script>
+
+<img src="../images/β3.PNG">
+
+<iframe src="https://www.youtube.com/embed/H_-lTXBDVrM?list=PLYxnDvM22X3NBARfD2aZcyUoKvfdHfygn" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</article>
+
+<hr>
+
+<article id="ten">
+
+<header>
+    <h1>Array pop() and shift() methods</h1>
+</header>
+
+<p>The <Span>array.pop()</Span> methods <span>removes</span>
+the <Span>last element</Span> of an <span>array</span>
+and <span>returns</span> that <Span>element</Span>, the <Span>array.shift()</Span>
+does the same but it <span>removes</span> the <Span>first element</Span> of the 
+<Span>array</Span> instead, here is an example:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let arr = [1,2,3,4,5,6];
+
+document.write(`${arr.shift()} and ${arr.pop()} were removed \
+from the array, now the first element is ${arr[0]} and the last is \
+${arr[3]}, the array also is left with only ${arr.length} elements.`)</span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+if(true){
+
+let arr = [1,2,3,4,5,6];
+
+document.write(`${arr.shift()} and ${arr.pop()} were removed \
+from the array, now the first element is ${arr[0]} and the last is \
+${arr[3]}, the array also is left with only ${arr.length} elements.`)
+
+}
+
+
+
+</Script>
+
+
+</article>
+
+<hr>
+
+<article id="eleven">
+
+<header>
+
+<h1>Array find() method</h1>
+
+</header>
+
+<p class="left">The <span>find()</span> method <Span>returns</Span> the 
+<Span>value</Span> of the <span>first element</span> in the provided 
+<span>array</span> that passes a provided <Span>testing function</Span>. 
+If no <Span>values</Span> satisfies the testing function then <Span>undefined</Span>
+is <Span>returned</Span>.</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let arr = [1, 2, 3, 4, 5, 6];
+
+let foundElement = arr.find(x => x>2);
+
+document.write(foundElement);</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let arr = [1, 2, 3, 4, 5, 6];
+
+let foundElement = arr.find(x => x>2);
+
+document.write(foundElement); 
+
+}
+
+
+</script>
+
+<p>This <span>method's function</span> can actually take <span>three parameters</span>, 
+the <span>first parameter</span> as we saw above defines the <span>value</span>, the <span>second parameter</span>
+defined the <span>index number</span> and lastly the <Span>third parameter</Span>
+defines the <span>array</span> it self.</p>
+
+<p>Lastly, there can be a <span>second parameter</span> to the <span>find()</span>
+method, the <Span>first</Span> as you already know is a <Span>function</Span>, the 
+<span>second parameter</span> defines an <span>object</span> to use 
+as <span>this</span> inside the <span>function</span>, this will only work 
+however if you are using a <span>normal functions</span>, since 
+<span>this</span> in <span>arrow functions</span> is <span>lexically bound</span>.</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let arr = [1,2,3,0.4,5,6];
+
+let object69 = {
+name: "River"
+}
+
+let foundElement = arr.find(function(value, index, array, thisArg){
+    if(array.length == 6){
+        array.pop();
+        return false;
+    } else if(index > value){
+        return this.name == "River";
+    }
+}, object69);
+
+document.write(foundElement);</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+let arr = [1,2,3,0.4,5,6];
+
+let object69 = {
+    name: "River"
+}
+
+let foundElement = arr.find(function(value, index, array, thisArg){
+   if(array.length == 6){
+      array.pop();
+      return false;
+   } else if(index > value){
+        return this.name == "River";
+   }
+}, object69);
+
+document.write(foundElement);
+
+</script>
+
+<p>Let's make one more example, this time I will use <span>destructuring</span>
+syntax to check which <span>element</span> is an <span>object</span>
+that has <Span>name</Span> property with <span>cherries</span> value:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let inventory = [
+    {name: 'apples', quantity: 2},
+    {name: 'bananas', quantity: 0},
+    {name: 'cherries', quantity: 5}
+];
+
+let result = inventory.find( ({ name }) => name == 'cherries' );
+
+document.write(`${result.name} ${result.quantity}`);</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+let inventory = [
+  {name: 'apples', quantity: 2},
+  {name: 'bananas', quantity: 0},
+  {name: 'cherries', quantity: 5}
+];
+
+let result = inventory.find( ({ name }) => name == 'cherries' );
+
+document.write(`${result.name} ${result.quantity}`);
+
+</script>
+
+<p>Confused about what exactly happens to the code above? If you write 
+<span>let {name} = {name: "alex", age: 15}</span> this would create 
+a <span>variable</span> called <span>name</span> with the string alex 
+as it's <Span>value</Span>, I have talked about <span>destructuring</span>
+in previous lessons.
+</p>
+
+</article>
+
+<hr>
+
+<article id="twelve">
+
+<header>
+    <h1>Array some() method</h1>
+</header>
+
+<p>The <span>some()</span> method <Span>tests</Span> whether 
+<Span>at least one element</Span> in a provided <span>array</span> passes 
+a provided <Span>test</span> implemented by a provided <Span>function</Span>. 
+If the <Span>function</Span> returns <span>true</span> for at 
+least one of the <span>elements</span> then the <span>some()</span> method 
+will return <Span>true</Span>, else it will return <span>false</span>.</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">let arr = [1,2,"3",4,5];
+
+let test = arr.some(x => typeof(x) === "string");
+
+document.write(test);</Span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let arr = [1,2,"3",4,5];
+
+let test = arr.some(x => typeof(x) === "string");
+
+document.write(test);
+
+}
+
+
+</script>
+
+<p>The <Span>some()</Span> method can take a <Span>second parameter</Span>
+which defines the an <Span>object</Span> to use as <span>this</span> inside 
+the <span>function</span>, just like for <Span>find()</Span> method, and the 
+<Span>function</Span> can also take <Span>three parameters</Span>, 
+the <span>first parameter</span> is the <Span>value</Span>, the <span>second</span>
+is the <span>index number</span> and the <span>third</span> is the <span>array</span>
+it self, here is an example using all parameters:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let arr = [1,2,3,0.4,5,6];
+
+let object69 = {
+    name: "River"
+}
+
+let foundElement = arr.some(function(value, index, array, thisArg){
+    if(array.length == 6){
+        array.pop();
+        return false;
+    } else if(index > value){
+        return this.name == "River";
+    }
+}, object69);
+
+document.write(foundElement);</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+    let arr = [1,2,3,0.4,5,6];
+    
+    let object69 = {
+        name: "River"
+    }
+    
+    let foundElement = arr.some(function(value, index, array, thisArg){
+       if(array.length == 6){
+          array.pop();
+          return false;
+       } else if(index > value){
+            return this.name == "River";
+       }
+    }, object69);
+    
+    document.write(foundElement);
+    
+}
+
+    </script>
+
+</article>
+
+<hr>
+
+<article id="thirteen">
+
+<header>
+    <h1>Array every() method</h1>
+</header>
+
+<p>The <Span>every()</Span> method tests whether <Span>all elements</Span> in 
+a provided <Sapn>array</Sapn> pass a <Span>test</Span>
+by a <Span>provided function</Span>. Just like <span>some()</span> it 
+returns a <span>Boolean value</span>.</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let arr = [1,2,3,4,5];
+
+let test = arr.every(x => x < 6);
+
+document.write(test);</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+
+let arr = [1,2,3,4,5];
+
+let test = arr.every(x => x < 6);
+
+document.write(test);
+
+}
+
+</script>
+
+<p>Just like <span>some()</span> and <span>find()</span>, the 
+<span>every()</span> method also can take <span>extra parameters</span>, 
+they work the same way they do for <Span>some()</Span> and <span>find()</span>, 
+so I'm not gonna explain them all over again, here is an example however:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let arr = [1,2,3,4,5,6];
+
+let object69 = {
+    name: "River"
+}
+
+let foundElement = arr.every(function(value, index, array, thisArg){
+    if(array.length == 6){
+    if(index < value){
+        return this.name == "River";
+    }
+  } 
+}, object69);
+
+document.write(foundElement);</span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+if(true){
+    
+        let arr = [1,2,3,4,5,6];
+        
+        let object69 = {
+            name: "River"
+        }
+        
+        let foundElement = arr.every(function(value, index, array, thisArg){
+           if(array.length == 6){
+            if(index < value){
+                return this.name == "River";
+            }
+          } 
+        }, object69);
+        
+        document.write(foundElement);
+        
+    }
+    
+    </script>
+
+</article>
+
+<hr>
+
+<article id="fourteen">
+
+<header>
+    <h1>Array includes() method</h1>
+</header>
+
+<p>The <span>includes()</span> method determines whther an 
+<Span>array</Span> contains a <Span>specified element</Span> or not, 
+if it does then <span>true</span> is returned, else <Span>false</Span> is returned.</p>
+
+<p>This <span>method</span> only takes <span>2 parameters</span>, the 
+<Span>first parameter</Span> is <Span>required</Span> and it defines 
+the <span>element</span> to search for, the <span>second parameter</span>
+is <Span>optional</Span> and defined the <span>position</span> in the 
+<span>array</span> to <span>start the search</span>, by default it is <span>0</span>.</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let arr = [1, 2, 3, "Bannana", 4];
+
+let test = arr.includes("Bannana", 4)
+let test2 = arr.includes("Bannana", 3)
+
+document.write(`${test}, ${test2}`)</span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+if(true){
+
+let arr = [1, 2, 3, "Bannana", 4];
+
+let test = arr.includes("Bannana", 4)
+let test2 = arr.includes("Bannana", 3)
+
+document.write(`${test}, ${test2}`)
+}
+
+</Script>
+
+
+</article>
+
+<hr>
+</body>
+</html>

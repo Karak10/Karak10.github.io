@@ -1,0 +1,355 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<title> Facebook Project </title>
+<meta charset="UTF-8"> 
+</head>
+<body>
+
+<style>
+
+body {
+    background-color: rgb(150, 150, 150);
+    overflow: hidden;
+    width: 100%;
+ }
+
+.page {
+height: 2000px;;
+width: 5000px; 
+background: linear-gradient(
+180deg,
+rgb(255, 255, 255) 0%,
+ rgb(206, 205, 205) 35%,
+rgb(150, 150, 150) 60%);
+display: grid;
+grid-template-columns:  500px 500px;
+align-content: top;
+grid-column-gap: 340px;
+}
+
+
+.navigation-bar {
+    width: 5000px;
+    height: 90px;
+    background-color: rgb(43, 43, 185);
+    display: grid;
+    grid-template-columns: 300px 200px;
+    grid-column-gap: 500px;
+}
+
+* {
+    margin: 0px;
+}
+
+.facebook {
+    color: white;
+    font-size: 55px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-left: 70px;
+    line-height: 90px;
+}
+
+.navigation-bar table {
+     border-spacing: 15px 0px;
+     margin-top: 15px;
+}
+
+.navigation-bar [value="Log in"] {
+    background-color: rgb(57, 57, 235);
+    color: white;
+    box-shadow: 0.5px 1px 1px 0px black;
+    width: 70px;
+    cursor: pointer;
+ }
+
+ .navigation-bar [type="checkbox"] {
+    cursor: pointer;
+}
+
+.navigation-bar label {
+    color: white;
+}
+
+.gray-label, .gray-label a{
+    color:rgb(196, 194, 194) !important;  
+    text-decoration: none;
+}
+
+img {
+    width: 550px;
+    height: 280px;
+    margin-top: 0px;
+    margin-left: 50px;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+
+.text {
+    color:rgb(7, 7, 104);
+    font-size: 30px;
+    width: 550px;
+    margin-left: 50px;
+    margin-top: 60px;
+    display: inline-block;
+}
+
+.facebook-left-part {
+    display: inline-block;
+}
+
+ .register-section {
+     display: inline-block;
+    margin-top: 0px;
+     min-height: 100px;
+     width: 450px;
+ }
+
+ .text2 {
+     font-size: 30px;
+     color:rgb(7, 7, 104);
+     margin-top: 60px;
+     font-weight: bold;
+ }
+
+ .text2 span {
+     font-size: 20px;
+     font-weight: normal;
+ }
+
+.register-section hr {
+    background-color:rgb(23, 23, 146);
+    border: 0px solid transparent;
+    height: 1px;
+}
+
+.register-section table {
+  margin-top: 10px;
+   margin-left: auto;
+}
+
+.register-section table label {
+    color:rgb(23, 23, 146);
+}
+
+.register-section td {
+    text-align: right;
+}
+
+.register-section td+td{
+    text-align: left;
+}
+
+.register-section input {
+    height: 25px;
+    width: 300px;
+}
+
+.register-section a {
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.register-section [type="submit"] {
+   width: 100px;
+   background-color: rgb(51, 148, 51);
+   color: white;
+   margin-bottom: 5px;
+}
+
+.register-section p {
+    padding-left: 20px;
+    padding-top: 10px;
+    display: inline-block;
+}
+
+.register-section select, [type="submit"] {
+    cursor: pointer;
+}
+
+</style>
+
+<style>
+
+@media screen and (max-width: 900px) {
+
+    .register-section input {
+    height: 20px;
+    width: 200px;
+}
+
+    .text2 span {
+     font-size: 17px;
+     font-weight: normal;
+ }
+    .navigation-bar {
+    width: 5000px;
+    height: 90px;
+    background-color: rgb(43, 43, 185);
+    display: grid;
+    grid-template-columns: 300px 200px;
+    grid-column-gap: 100px;
+ }
+
+img {
+    width: 300px;
+    height: 160px;
+    margin-top: 0px;
+    margin-left: 20px;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+
+.text {
+    color:rgb(7, 7, 104);
+    font-size: 20px;
+    width: 350px;
+     margin-left: 20px;
+    margin-top: 30px;
+    display: inline-block;
+     
+}
+
+.page {
+height: 555px;;
+width: 5000px; 
+background: linear-gradient(
+180deg,
+rgb(255, 255, 255) 0%,
+ rgb(206, 205, 205) 90%,
+rgb(150, 150, 150) 100%);
+display: grid;
+grid-template-columns:  440px 500px;
+align-content: top;
+grid-column-gap: 0px;
+background-color: red;
+ }
+
+ .text2 {
+     font-size: 25px;
+     color:rgb(7, 7, 104);
+     margin-top: 30px;
+     font-weight: bold;
+ }
+  
+}
+
+</style>
+
+ 
+<div class="navigation-bar">
+    
+    <span class="facebook">facebook </span>
+   
+<form action="facebook-project.html">
+
+ <table>
+
+<tr>
+    <td><label for="email">Email</label</td>
+    <td><label for="password">Password</label</td>
+</tr>
+<tr>
+    <td><input type="email" id="email" autocomplete="off" required></td>
+    <td><input type="password" id="password" required></td>
+    <td><input type="submit" value="Log in"></td>
+</tr>
+<tr>
+    <td><input type="checkbox"> <label class="gray-label">Keep me logged in</label></td>
+    <td><label class="gray-label"><a href="../My-Projects/facebook-project.html">Forgot your password?</a></label></td>
+</tr>
+
+ </table>
+
+</form>
+
+</div>
+  
+<div class="page">
+
+<div class="facebook-left-part">
+
+<div class="text">
+    Facebook helps you connect 
+    and share with <br>
+    the people in your life.
+</div> <br> <br>
+
+<img src="../images/facebook2.png">
+
+</div>
+
+<div class="register-section">
+
+<div class="text2">
+Sign Up <br>
+    <span>It's free and always will be.</span>
+
+</div>
+
+<hr>
+
+<form action="facebook-project.html">
+
+<table>
+    <tr>
+        <td><label for="first-name">First Name:</label></td>
+    <td><input type="text" id="first-name" required></td>
+    </tr>
+    <tr>
+        <td><label for="last-name">Last Name:</label></td>
+        <td><input type="text" id="last-name" required></label></td>
+    </tr>
+    <tr>
+        <td><label for="your-email">Your Email:</label></td>
+        <td><input type="email" id="your-email" required></td>
+    </tr>
+    <tr>
+        <td><label for="re-enter-email">Re-enter Email:</label> </td>
+        <td><input type="email" id="re-enter-email" required></type></td>
+    </tr>
+    <tr>
+        <td><label for="new-password">New Password:</label></td>
+        <td><input type="password" id="new-password" required></td>
+    </tr>
+    <tr>
+        <td><label for="gender">I am:</label></td>
+        <td> <Select id="gender">
+                 <option value="" disabled selected hidden>Select Sex:</option>
+                 <option value="Male">Male</option>
+                <option value="Female">Female</option>
+     </tr>
+     <tr><td><label>Birthday:</label></td>
+    <td><select>
+        <option value="" disable selected hidden>Month:</option>
+    </select>
+<select>
+    <option value="" disabled selected hidden>Day:</option>
+ </select>
+<select>
+    <option value="" disabled selected hidden>Year:</option> 
+</select></td></tr>
+<tr>
+    <td> </td>
+    <td><a href="../My-Projects/facebook-project.html">Why do I need to provide my birthday?</a></td>
+</tr>
+<tr>
+    <td> </td>
+    <td><input type="submit" value="Sign Up"></td>
+</tr>
+</table> 
+
+</form>
+
+ 
+
+<hr>
+
+<p><a href="../My-Projects/facebook-project.html">Create a Page</a> for a celebrity, band or business.</p>
+
+</div>
+
+</div>
+
+</body>
+</html>

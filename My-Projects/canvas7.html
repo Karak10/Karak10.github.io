@@ -1,0 +1,209 @@
+<!DOCTYPE HTML>
+<html>
+<head lang="en-US">
+<meta charset="UTF-8">
+<title> Canvas Sine Waves </title>
+<style>
+       .left {
+        text-align: left;
+    }
+    
+    .code10 {
+    white-space: pre-wrap;
+    background-color: lightgreen;
+    }
+    
+    p {
+    text-align:center;
+    }
+    h1 {
+    text-align:center;
+    }
+    h2 {
+    text-align:center;
+    }
+    h3 {
+    text-align:center;
+    }
+    .c {
+    background-color:lightgreen;
+    }
+    hr {
+    width:100%;
+    height:15px;
+    background-color:black;
+    color:black;
+    border: black solid;
+    }
+    body {
+    background-color:rgb(165, 235, 235);
+    margin: 0;
+    height: 100vh;
+    }   
+    span {
+    background-color:lightgreen;
+    }
+    
+    a:link {
+    color: black;
+    text-shadow: 1px 0px 1px black;
+    
+    }
+    
+    a:visited {
+    color: black;
+    text-shadow: 1px 0px 1px rgb(22, 22, 22);
+    }
+    
+    a:hover {
+    text-decoration: underline;
+    color: red;
+    text-shadow: 1px 0px 1px black;
+    }
+    
+    .document{
+        width: 100vw;
+        height: 100vh;
+        overflow: auto;
+        overflow-x: hidden;
+    }
+    
+    .gray{
+        background-color: lightgray;
+    }
+    
+    .no-scroll{
+        overflow-y: hidden;
+    }
+</style> 
+<link rel="stylesheet" href="../CSS-JavaScript-External-Files/HTMLnotes.css?version=1">
+</head>
+<body>
+<hr>
+<article>
+
+<h1> Canvas Sine Waves </h1>
+<p><a href="../Home-Pages/myprojects.html">Click to go back</a></p>
+
+<script src="./../CSS-JavaScript-External-Files/dat/canvas/canvas.js"></script>
+
+<style>
+    .property-name{
+        background-color: gray !important;
+    }
+    .c{
+        background-color: gray !important;
+    }
+    .cvas{
+        display: block; 
+        margin: auto;
+        border: 3px solid black;
+    }
+</style>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><Span class="code10">&lt;canvas class="cvas" id="canvas-00011">&lt;/canvas></span></p>
+
+<p class="left">CSS Code:</p>
+
+<p class="left"><span class="code10">.property-name{
+    background-color: gray !important;
+}
+.c{
+    background-color: gray !important;
+}
+.cvas{
+    display: block; 
+    margin: auto;
+    border: 3px solid black;
+}</span></p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><Span class="code10">import * as dat from 'dat.gui' 
+
+let canvas = document.getElementById('canvas-00012');
+let c = canvas.getContext('2d');
+
+canvas.width = 500;
+canvas.height = 300;
+
+canvas.style.backgroundColor = 'black';
+
+let gui;
+
+let wave = {
+    y: canvas.height / 2,
+    aplitude: 50,
+    length: 0.01,
+    frequency: 0.02,
+}
+
+let stroke = {
+    h: 360,
+    s: 50, 
+    l: 50
+}
+
+canvas.addEventListener('click', (e) =>{
+    let div = document.querySelector('.close-button');
+    if(div == null){
+        gui = new dat.GUI();
+        let wave_folder = gui.addFolder('wave');
+        wave_folder.add(wave, 'y', 0, canvas.height);
+        wave_folder.add(wave, 'aplitude', -100, 100);
+        wave_folder.add(wave, 'length', -0.05, 0.05);
+        wave_folder.add(wave, 'frequency', -1, 1);
+        wave_folder.open();
+
+        let stroke_folder = gui.addFolder('stroke');
+        stroke_folder.add(stroke, 'h', 0, 360);
+        stroke_folder.add(stroke, 's', 0, 100);
+        stroke_folder.add(stroke, 'l', 0, 100);
+        stroke_folder.open();
+    } else {
+        div.remove();
+        let folders = document.querySelector('.dg ul');
+        if(folders != null){
+        folders.remove();
+        }
+    }
+});
+
+let increment = wave.frequency;
+function animate(){
+        let imageData = c.getImageData(0, 0, canvas.width, canvas.height);
+        let data = imageData.data;
+        for(let i = 3; i < data.length; i += 4){
+            data[i] = data[i] * 0.95;
+        }
+        c.clearRect(0, 0, canvas.width, canvas.height);
+        c.putImageData(imageData, 0, 0);
+
+        c.beginPath();
+        c.moveTo(0, wave.y + Math.sin(wave.length + increment) * wave.aplitude * Math.sin(increment));
+        for(let i = 0; i <= canvas.width; i++){
+            c.lineTo(i, wave.y + Math.sin(i * wave.length + increment) * wave.aplitude * Math.sin(increment));
+        }
+        c.strokeStyle = `hsl(${Math.abs(stroke.h * Math.sin(increment))}, ${stroke.s}%, ${stroke.l}%)`;
+        c.stroke();
+        c.fillStyle="white";
+        c.font = 'normal 20px Arial';
+        c.alignText = 'left';
+        c.fillText('Click to open variable changer', 10, 20);
+        increment += wave.frequency;
+    requestAnimationFrame(animate);
+}
+
+animate();</Span></p>
+
+<p class="left">Outcome:</p>
+
+<canvas class="cvas" id="canvas-00012"></canvas>
+
+ </article>
+ 
+<hr>
+</body>
+</html>

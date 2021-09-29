@@ -1,0 +1,777 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="../CSS-JavaScript-External-Files/HTMLnotes.css?version=1">
+<title> Page 4 of my notes </title>
+<meta charset="UTF-8">
+</head>
+<body>
+<hr width = "100%" size = "15" color = "black">
+
+<header>
+<h1>Page four of my HTML notes
+</header>
+
+<article id="start-of-page"> 
+  
+  <div id="homepages">
+  
+      <h3>Home Pages:</h3>
+     
+  
+  </div>
+  
+  <nav data-notes="html" data-page="4">
+  
+  </nav>
+          
+  <h3>Informations included in this page:</h3>
+  <p> <a href="#one"> Introduction to HTML5 </a> </p>
+  <p> <a href="#two"> Content Models </a> </p>
+  <p> <a href="#three"> Page Structure in HTML5 </a> </p>
+  <p> <a href="#four"> About audio element </a> </p>
+  <p> <a href="#five"> About video and iframe elements </a> </p>
+  <p> <a href="#six"> Progress and meter elements</a> </p>
+  <p> <a href="#seven"> HTML5 Web Storage API </a> </p>
+  <p> <a href="#eight"> About the Geolocation API </a> </p>
+  <p> <a href="#nine"> HTML5 Forms </a> </p>
+  <p> <a href="#end"> All input attributes and input types I know </a> </p> 
+
+  </article>
+  
+   <script src="../CSS-JavaScript-External-Files/nav.js"></script>
+
+
+ 
+<hr>
+
+<article id="one">
+
+<header>
+<h1 align = "center"> Introduction to HTML5 </h1>
+</header>
+
+<p align = "Center"> An <span class="c">HTML5</span> doc should start with <span class="c">&lt;!DOCTYPE HTML&gt;</span>, then <span class="c">&lt;html&gt;</span>, and you can add the <span class="c">lang="en-US"</span> attribute in <span class="c">&lt;html&gt;</span> 
+to specify that your website is going to be usign english, you can use other languages too. </p>
+
+<p align = "center"> In <span class="c">&lt;head&gtg;</span> after the <span class="c">&lt;title&gt;</span> tag you should write <span class="c">&lt;meta charset = "UTF-8"&gt;</span>, I don't fully understand what it does yet but you should use it, <span class="c">charset</span> stands for <span class="c">Character Set</span>, what set of characters to use as the text, <span class="c">utf-8</span> is a pre-defined list of characters, there are other list of characters you can use too like <span class="c">utf-16</span>, ascii and a bunch more. </p>
+
+</article>
+
+<hr width = "100%" size = "15" color = "black">
+
+<article id="two">
+
+<header>
+<h1 align = "center"> Content Models: </h1>
+</header>
+
+<p align = "center"> In <span>HTML</span>, elements typically belonged in either the <span>block</span> level (<span>&lt;p&gt;,&lt;h1&gt;,&lt;h2&gt;,&lt;h3&gt;,&lt;ul&gt;,&lt;ol&gt;,&lt;table&gt;,&lt;img&gt;</span>,etc) or <span>inline content model</span> (<span>&lt;strong&gt;,&lt;em&gt;,&lt;a&gt;,&lt;i&gt;</span>,etc)</span>. <span>HTML5</span> introduces <strong> seven </strong> main <span>content models</span>. <br />
+<br />
+<ol>
+<li> Metadata </li>
+<li> Embedded </li>
+<li> Interactive </li>
+<li> Heading </li>
+<li> Phrasing </li>
+<li> Flow </li>
+<li> Sectioning </li>
+</ol>
+</p>
+<p align = "center"> Here are more about each model: <br />
+<br />
+<dl>
+<dt> <span>Metadata</span>: </dt>
+<dd> Content that sets up the presentation or behavior of the rest of the content. These elements are found in the <span>&lt;head&gt;</span> section of the document. <br />
+Elements: <span>&lt;base&gt;,&lt;link&gt;,&lt;meta&gt;,&lt;noscript&gt;,&lt;script&gt;,&lt;style&gt;,&lt;title&gt;</span> </dd>
+<dt> <span>Embedded</span>: </dt>
+<dd> Content that imports other sources into the document. <br />
+Elements: <span>&lt;audio&gt;,&lt;video&gt;,&lt;canvas&gt;,&lt;iframe&gt;,&lt;img&gt;,&lt;math&gt;,&lt;object&gt;,&lt;svg&gt;</span></dd>
+<dt> <span>Interactive</span>: </dt>
+<dd> Content specifically intended for user interaction. <br />
+Elements: <span>&lt;a&gt;,&lt;audio&gt;,&lt;video&gt;,&lt;button&gt;,&lt;details&gt;,&lt;embed&gt;,&lt;iframe&gt;,&lt;img&gt;,&lt;input&gt;,&lt;label&gt;,&lt;object&gt;,&lt;select&gt;,&lt;textarea&gt;</span> </dd>
+<dt> <span>Heading</span>: </dt>
+<dd> Defines a section header. <br />
+Elements: <span>&lt;h1&gt;,&lt;h2&gt;,&lt;h3&gt;,&lt;h4&gt;,&lt;h5&gt;,&lt;h6&gt;</span> </dd>
+<dt> <span>Phrasing</span>: </dt>
+<dd> This model has a number of <span>inline</span> elements in common with <span>HTML4</span>. <br />
+Elements: <span>&lt;img&gt;,&lt;span&gt;,&lt;strong&gt;,&lt;label&gt;,&lt;br&gt;,&lt;small&gt;,&lt;sub&gt;</span>, and more. </dd>
+</dl> </p>
+<p align = "center"> The two last models are the following: <br />
+<br />
+<dl>
+<dt> <span>Flow content</span>: </dt>
+<dd> Contains the majority of <span>HTML5</span> elements that would be included in the normal flow of the document. </dd>
+<dt> <span>Sectioning content</span>: </dt>
+<dd> Defines the scope of the <span>headings</span>, <span>content</span>, <span>navigation</span>, and <span>footers</span>. <br />
+Elements: <span>&lt;article&gt;,&lt;aside&gt;,&lt;nav&gt;,&lt;section&gt;,&lt;footer&gt;,&lt;header&gt;</span> </dd>
+</dl> </p>
+<img src = "../images/models.jpg">
+
+</article>
+
+
+<hr width = "100%" size = "15" color = "black">
+
+<article id="three">
+
+<header>
+<h1 align = "center"> Page Structure in HTML5 </h1>
+</header>
+
+<p align = "center"> A genetic <span>HTML5</span> page structure looks like this, but it could change a little depending on the site you are making: 
+<image src = "../images/structure2.jpg" alt="a picture of HTML page structure">
+<image src = "../images/structure2.JPG" alt="a picture of HTML page structure"> </p>
+<dl>
+<dt> <span>Header</span> </dt>
+<dd> Contains the brandings like logo. </dd>
+<dt> <span>Nav</span> </dt>
+<dd> Contains navigational section of the site. </dd>
+<dt> <span>Article</span> </dt>
+<dd> Web page main content. </dd>
+<dt> <span>Section</span> </dt>
+<dd> Divided section of main content. </dd>
+<dt> <span>Aside</span> </dt>
+<dd> Contains extre information and related content or link. </dd>
+<dt> <span>Fotter</span> </dt>
+<dd> Information about copyright, privacy policy, terms of use, etc. </dd>
+</dl>
+
+</article>
+
+
+<hr width = "100%" size = "15" color = "black">
+
+<article id="four">
+
+<header>
+<h1 align = "center"> About audio element: </h1> 
+</header>
+
+<p align = "center"> There are <span>two ways</span> to put <span>audio</span> in your page, the <span>first one</span> is to simply type <span>&lt;audio src="name of audio" controls&gt; Example &lt;/audio&gt;</span>, the text you write between the <span>&lt;audio&gt;</span> and <span>&lt;/audio&gt;</span> tags will be displayed if the <span>audio is not supported</span> by a browser, can't be more simple</p> 
+
+<p>The <span>second way</span> is a little more complicated but <span>allows you to put more than one audio types</span> so if one isn't supported the other plays, 
+for example, you can put one in <span>mp3</span>, one in <Span>ogg</span>, etc, there are many types, 
+and not all browsers support <span>mp3</span> or <span>ogg</span>, 
+to do this you write <span>&lt;audio controls&gt; &lt;source src = "audio name" type="audio/type"&gt; Audio not supported in your browser &lt;/audio&gt;</span>, the type for <span>mp3</span> is <span>audio/mpeg</span>, for <span>ogg</span> its <span>audio/ogg</span>, if you want to put more <span>audio types</span> you just make another <span>&lt;source&gt;</span> tag, after you have added all the 
+<span>audio types</span> you want you should write the <Span>message</span> you want it to have <span>if</span> the <span>audio isn't supported</span> by a browser, the browsers will automatically pick to play the first available <span>type of audio</span> they find, however, there is always a chance one browser may not support any of the <span>types</span> you added, so having this message is good, the <span>controls</span> attribute is used to add the <span>pause</span> and <span>play</span> controls, to change the position of where the <Span>audio</span> will be, we can place it inside a <span>praragraph</span>, or use <span>CSS</span>. </p>
+
+<p style="text-align:left;">Code:</p>
+
+<p style="text-align:left;"> 
+<span>&lt;p align="center"&gt;<br>
+&lt;audio controls&gt;<br>
+&lt;source src="../images/Castelvania.mp3" type="audio/mpeg"&gt;<br>
+&lt;source src="Castelvania.ogg" type="audio/ogg"&gt;<br>
+Audio not supported by your browser <br>
+&lt;/audio&gt; <br>
+&lt;/p&gt;</span>  
+</p>  
+
+<p style="text-align:left;">Output:</p>
+
+
+<p><audio align = "center" controls>
+  <source src = "Castelvania.mp3" type="audio/mpeg">
+  <source src = "https://dl.dropbox.com/s/he2ko212l8vsv41/Castle%20Corridor%20Castlevania%20Aria%20of%20Sorrow%20-%20GaMetal%20Remix?dl=0" type="audio/mpeg">
+Audio element not supported by your browser 
+</audio></p>
+
+<p align = "center"> There are some <span>attributes</span> you can use if you want to change the behavior of your <span>audio</span>, as I said before the <span>controls</span> attribute I wrote in <Span>audio</span> is used to add the <span>pause</span> and <span>play</span> buttons, if you want your <span>audio</span> to start
+automatically you add the <span>autoplay</span> attribute, if you want it to <Span>loop</span> every time it ends you add the <span>loop</span> attribute. </p>
+
+<p align = "center"> If you don't like the <Span>play</span> and <span>pause</span> buttons you can just don't put the <span>controls</span> attribute and use <span>JavaScript</span> with <span>CSS</span> to create your own, I however don't know <span>JavaScript</span> and <span>CSS</span> yet so thats why I use the default controls. </p>
+
+</article>
+
+
+<hr width = "100%" size = "15" color = "black">
+
+<article id="five">
+
+<header>
+<h1 align = "center"> About video and iframe elements </h1>
+</header>
+
+<section>
+<header> 
+<h2>Video element:</h2>
+</header>
+
+<p align = "center"> <span>Videos</span> are pretty much used the same way with <span>audio</span>, there are <span>two ways</span> to add a video, just like I explained before with <span>audio</span>, but instead of <span>&lt;audio&gt;</span> you type <span>&lt;video&gt;</span>, there are also many different attributes you can use, here is a list of attributes that can be used for both <span>&lt;video&gt;</span> and <span>&lt;audio&gt;</span> elements: </p>
+
+<p>
+<dl>
+<dt> <span>Autoplay</span> </dt>
+<dd> autoplays video/audio when the website loads</dd>
+<dt> <Span>Preload</span> </dt>
+<dd> loads the video/audio data in advance </dd>
+<dt> <span>Controls</span> </dt>
+<dd> adds the pause and start controls </dd>
+<dt> <span>ControlsList="nodownload"</span></dt>
+<dd> disables the download option </dd>
+<dt> <span>Height</span> and <span>width</span> </dt>
+<dd> change the height and width of the video</dd>
+<dt> <span>Muted</span></dt>
+<dd> mutes the video/audio on load</dd>
+<dt> <span>Loop</span> </dt>
+<dd> starts the video/audio again after it ends</dd>
+<dt> <Span>Poster</span></dt>
+<dd> Poster image for your video</dd>
+</dl></p>
+
+<p>
+These are probably not the only attributes, however, these are 
+the most important ones, now, lets try to make a <span>video</span>, it will have <span>controls</span>, <span>poster</span> and I will put it inside a <span>paragraph</span> in order to center it. </p>
+
+<p style="text-align:left;">Code:</p>
+
+<p style="text-align:left;"> 
+<span>&lt;p align="center"&gt;<br>
+&lt;video height="350" width="600" controls loop poster="Karak10.jpg"&gt;<br>
+&lt;source src="../images/Earthbound.mp4" type="video/mp4"&gt;<br>
+Video not supported by your browser <br>
+&lt;/video&gt; <br>
+&lt;/p&gt;</span>  
+</p>  
+
+<p style="text-align:left;">Output:</p>
+
+<p>
+<video height="350" width="600" controls loop poster = "Karak10.jpg">
+  <source src = "Earthbound.mp4" type = "video/mp4">
+  <source src = "https://dl.dropbox.com/s/el6oamu9kl4l2u9/Earthbound%20Winters%20Vector%20U%20Remix.mp4?dl=0" type = "video/mp4">
+Video not supported by your browser
+</video></p>
+
+
+<p> Another <span>element</span> you can use between the <span>&lt;video&gt;</span> and <span>&lt;/video&gt;</span> tags is <Span>&lt;track&gt;</span> element,
+used to specify <span>subtitles</span>, <span>caption files</span> or <span>files containing text</span>, that should be visible when the media is playing. <span>Tracks</span> are 
+formatted in WebVTT format (.vtt files).</p>
+
+<p> Some attributes the <span>track</span> element uses are the following: <span>default</span> specifies that the <span>track</span> is to be enabled if the user's preferences do not indicate that 
+another <span>track</span> would be more appropriate. <span>Kind</span> specifies the <span>kind</span> of the <span>text track</span>, for example, <span>captions</span>, <span>chapters</span>, 
+<span>descriptions</span>, <span>metadata</span> or <span>subtitles</span>. <span>Label</span> specifies the title of the <Span>track</span>, <Span>src</span> is required, specifies the URL of the <span>track file</span> 
+and lastly, <Span>srclang</span> specifies the <span>language</span> of the <span>track</span> text data, (required if kind="subtitles").</p>
+
+<p>The <span>track</span> element can be used for both <span>video</span> and <span>audio</span> elements. </p>
+</section>
+
+<section>
+
+<header>
+<h2> Iframe element: </h2>
+</header>
+
+<p align = "center"> If you want to add a <span>video from another site</span>, like a <span>youtube video</span> for example you should use <span>&lt;iframe&gt;</span> element, I talked about it 
+in <a href="../HTML-Notes/Notes2.html">page two of my notes</a> as well, you just write <span>&lt;iframe src = "url"&gt;</span> and decorate it with <span>CSS</span> or change it's size and stuff with <span>HTML</span> attributes, however, we will now add one more <span>attribute</span> I hadn't mentioned before,
+the <span>allowfullscreen</span> attribute, this will allow us to use <span>fullscreen</span>. To put a <Span>youtube video</span> you should
+<span>not use the url</span> of the <span>video</span>, this will <span>not work</span>, you will have to <span>right click</span> on the <span>video</span> and <span>click copy embed code</span>, then <span>paste</span> it in your <span>code</span>, lets try this: </p>
+
+<p style="text-align:left;">Code:</p>
+
+<p style="text-align:left;"> 
+<span>&lt;p align="center"&gt;<br>
+&lt;iframe width="600" height="350" src="https://www.youtube.com/embed/<br>Q6_5InVJZ88" allowfullscreen&gt; &lt;/iframe&gt;<br>
+&lt;/p&gt;
+</p>
+
+<p style="text-align:left;">Output:</p>
+
+<p>
+<iframe height = "350" width = "600" src="https://www.youtube.com/embed/Q6_5InVJZ88" allowfullscreen> </iframe> </p>
+<br>
+</section>
+
+</article>
+ 
+
+
+<hr width = "100%" size = "15" color = "black">
+
+<article id="six">
+
+<header>
+<h1 align = "center"> Progress and meter elements:  </h1>
+</header>
+
+<p align = "center"> To make a <span>progress</span> bar you
+type <span>&lt;progress min = "0" max = "100" value = "40"&gt; &lt;/progress&gt;</span>, that will make a progress bar thats <span>40%</span> filled, and I will put it inside a paragraph to center it, like this: </p>
+
+<p>
+<progress min = "0" max = "100" value = "40"> </progress>
+</p>
+
+<p>
+If you don't put the <span>value</span> attribute thats what happens: </p>
+
+<p>
+<progress min = "0" max = "100"> </progress>
+</p>
+
+<p>
+You can edit it in many ways with <span>CSS</span> and <span>JavaScript</span>, if you want to make it load for example you should use 
+<span>JavaScript</span>, if you want to decorate it you use <span>CSS</span>, but I don't know <Span>JavaScript</span> and <span>CSS</span> yet. </p>
+
+<p align="center"> The <span>&lt;meter&gt;</span> tag is a similar tag, uses the same attributes, it needs a closing tag too, lets try this: </p>
+
+<p><meter min="0" max="100" value="50"> </meter></p>
+
+<p align="center"> According to the latest <span>HTML5</span> working draft, the <span>&lt;progress&gt;</span> tag is best used to display the <span>progress</span> of a specific task at hand. 
+The <span>&lt;meter&gt;</span> tag is best used for task-unrelated guages, such as disk space or memory usage. </p>
+
+</article>
+
+<hr width = "100%" size = "15" color = "black"> 
+
+<article id="seven">
+
+<header>
+<h1 align = "center"> HTML5 Web Storage API: </h1>
+</header>
+
+<p align = "center"> This is a <span>quick</span> description of how storage works, don't care too much about it for now, 
+you will understand it better in the future when you learn <span>JavaScript</span>. </p>
+
+<p align = "center"> With <span>HTML5</span> web storage, websites can store data on a user's local computer. <br />
+Before <span>HTML5</span>, we had to use <span>JavaScript cookies</span> to achieve this functionality. </p>
+<p align = "center"> <ins> The Advantages of Web Storage </ins> <br />
+<bl>
+<li> More secure </li>
+<li> Faster </li>
+<li> Stores a larger amount of data </li>
+<li> Stored data is not sent with server request </li>
+</bl> </p> 
+<p align = "center">
+There are two types of web storage objects: <br />
+<bl> 
+<li> SessionStorage() </li>
+<li> LoacalStorage() </li>
+</p>
+<p align = "center"> <ins> Local vs Session </ins> <br />
+<bl> 
+<li> Session Storage is destroyed once the user closes the browser </li>
+<li> Local storage stores data with no expiration date </li>
+</bl> </p>
+<p align = "center"> The <span>syntax</span> for web storage for both local and session storage is very simple and similar.
+The data is stored as a <span>key/value</span> pairs. </p>
+<p align = "center"> Storing a Value: <br />
+<span>LocalStorage.setItem("key1","value1");</span> <br/>
+<br />
+Getting a value: <br />
+(this will print the value) <br />
+<span>alert(localStorage.getItem("key1:));</span></p>
+<p align = "center"> Removing a value <br />
+<span>localStorage.removeItem("key1");</span> </p>
+<p align = "center"> Removing all values: <br />
+<span>localStorage.clear(); </span></p>
+<p align = "center"> These scripts are written in <span>JavaScript</span> language, to use <span>JavaScript</span> you have to write type <span>&lt;script&gt; your script &lt;/script&gt;</span>, 
+thats all I have for now, its not important to understand how storage works
+at the moment, but its good to know some stuff. </p>
+
+</article>
+
+
+<hr width = "100%" size = "15" color = "black"> 
+
+<article id="eight">
+
+<header>
+<h1 align = "center"> What is the Geolocation API? </h1>
+</header>
+
+<p align = "center"> In <span>HTML5</span>, the <span>Geolocation API</span> is used to obtain the user's geographical location.  <br />
+<br />
+Since this can compromise user privacy, the option is not available unless the user approves it.</p>
+<p align = "center"> The <span>Gelocation API's</span> main method is <span>getCurrentPosition</span>, which retrieves the current geographic location of the user's device. <br />
+<br />
+<span>navigator.geolocation.getCurrentPosition();</span> </p>
+<p align ="center"> <ins> Parameters: </ins> <br />
+  <span>shownLocation (mandatory)</span>: Defines the callback method that retrieves location information. <br />
+  <span>ErrorHandler (optional)</span>:  Defines the callback method that is invoked when an error occurs in processing the asynchronous call. <br />
+  <span>Options (optional)</span>: Defines a set of options for retrieving the location in information. </p>
+<h1 align = "center"> Presenting Data </h1>
+<p align = "center"> User location can be presented in two ways: <br />
+ <span>Geodetic</span> and <span>Civic</span>   <br />
+<br />
+<ol>
+<li> The <span>geodetic</span> way to describe position refers directly to latitude and longitude. </li>
+<li> The <span>civic</span> represantation of location data is presented in a format that is more easily read and understood by the average person. </li>
+</ol></p>
+<p align = "center"> Each parameter has both a <span>geodetic</span> and <span>civic</span> representation: </p>
+<table border = "3px" align = "center" bgcolor="white">
+<tr bgcolor="pink">
+<td> Attribute </td>
+<td> Geodetic </td>
+<td> Civic </td>
+</tr>
+<tr>
+<td> Position </td>
+<td> 59.3, 18.6</td>
+<td> Stockholm </td>
+</tr>
+<tr>
+<td> Elevation </td>
+<td> 10 meters</td>
+<td> 4th floor</td>
+</tr>
+<tr>
+<td> Heading</td>
+<td> 234 degrees</td>
+<td> City center</td>
+</tr>
+<tr> 
+<td> Speed</td>
+<td> 5km/h</td>
+<td> Walking</td>
+</tr>
+<tr>
+<td> Orientation</td>
+<td> 35 degrees </td>
+<td> North-East</td>
+</tr>
+</table>
+
+
+</article>
+
+
+<hr width = "100%" size = "15" color = "black">
+
+ 
+<article id="nine">
+
+<header>
+<h1 align="center"> HTML5 Forms </h1> 
+</header>
+
+<p> In this <Span>section</span> I'm not gonna go over stuff I included in <a href="../HTML-Notes/Notes3.html">page three of my notes</a>, I will only go over some
+new <Span>attributes</span>, <span>types</span> and <span>elements</span> we haven't yet seen. </p>
+<p align="center"> <span>HTML5</span> brings many features and improvements to the web form creation. There are new <span>attributes</span> and <span>input types</span> that were introduced to help create better experiences for web users. </p>
+<p align="center"> Form creation is done in <span>HTML5</span> the <span>same way</span> it was done in <span>HTML4</span>, this is an example to help you remember: </p>
+
+<p style="text-align: left;">Code:</p>
+
+<p style="text-align: left;"> 
+
+<span>&lt;form  align="center" action="url" target="_blank"&gt; <br>
+&lt;label for="user"&gt; your name &lt;/label&gt; <br>
+&lt;input id="user" name="username" type="text" placeholder="Enter your username"&gt; <br>
+&lt;/form&gt;</span>
+
+</p>
+
+<p style="text-align: left;">Outcome:</p>
+
+
+<form align="center" action="Notes4.html" target="_blank">
+<label for="user"> Your name: </label>
+<input id="user" name="username:" type="text" placeholder="Enter your username">
+</form>
+
+ 
+ 
+<p align="center"> A <span>new attribute</span> used in <span>&lt;form&gt;</span> element is <span>autocomplete"off/on"</span>, by <span>default its on</span>, when its <span>on</span> the browser <span>creates a list of values</span> based on <span>values that the user has entered before</span>. </p>
+
+<p style="text-align: left;">Code:</p>
+
+<p style="text-align: left;"> 
+
+<span>&lt;form align="center" autocomplete="on"&gt; <br>
+&lt;label for="email2"&gt; Your e-mail address: &lt;/label&gt; <br>
+&lt;input type="email" id="email2" name="email" placeholder="email@example.com"&gt; <br>
+&lt;/form&gt;</span>
+
+</p>
+
+<p style="text-align: left;">Outcome:</p>
+
+
+
+<form align="center" autocomplete="on">
+<label for="email2"> Your e-mail address: </label>
+<input type="email" id="email2" name="email" placeholder="email@example.com">
+</form>
+<p align="center"> As you can see when you <span>click on the input</span> a list of <span>emails</span> you have used in the past appear. </p>
+
+<p align="center"> Lets talk about some more <span>attributes</span> you can use, like <span>maxlength=""</span> and <span>minlength=""</span> attributes, which <span>restrict</span> the <span>number of characters</span> that <span>can be typed</span> in an <Span>input</span>, lets try this: </p>
+
+<p style="text-align: left;">Code:</p>
+
+<p style="text-align: left;"> 
+
+<span>&lt;form align="center" autocomplete="off"&gt; <br>
+&lt;label for="name999"&gt; Your name: &lt;/label&gt; <br>
+&lt;input type="text" id="name999" name="username" placeholder="Enter your username" minlength="3" manlength="10"&gt; <br>
+&lt;/form&gt;</span>
+
+</p>
+
+<p style="text-align: left;">Outcome:</p>
+
+
+
+<form align="center" autocomplete="off">
+<label for="name999"> Your name: </label>
+<input type="text" id="name999" name="username" maxlength="10" minlength="3">
+</form>
+<p align="center"> You can do <span>something similar</span> for the <span>number input</span>, you use <span>min=""</span> and <span>max=""</span>, lets make it so the <span>min</span> age you can put is <span>15</span> and the max is <span>100</span>. </p>
+
+<p style="text-align: left;">Code:</p>
+
+<p style="text-align: left;"> 
+
+<span>&lt;form align="center" autocomplete="off"&gt; <br>
+&lt;label&gt; Your age: &lt;/label&gt; <br>
+&lt;input type="number" name="age" min="15" max="100"&gt; <br>
+&lt;/form&gt;</span>
+
+</p>
+
+<p style="text-align: left;">Outcome:</p>
+
+
+
+<form align="center">
+<label> Your age: </label>
+<input type="number"   min="15" max="100">
+</form>
+
+
+<p align="center"> A <span>new attribute</span> that can be used in <span>&lt;input&gt;</span> and <span>&lt;textarea&gt;</span> is <span>autofocus</span>, this <span>attribute</span> allows the user to <span>input</span> data <span>immediately after the screen has loaded</span>, <span>without having to click</span> on the <span>input</span> box to start typing, lets try this: (I diactivated it because it ruins the page) </p>
+
+<p style="text-align: left;">Code:</p>
+
+<p style="text-align: left;"> 
+
+<span>&lt;form align="center" autocomplete="off"&gt; <br>
+&lt;label&gt; Your name: &lt;/label&gt; <br>
+&lt;input type="text" name="username" autofocus&gt; <br>
+&lt;/form&gt;</span>
+
+</p>
+
+<p style="text-align: left;">Outcome:</p>
+
+<form align="center" autocomplete="off">
+<label> Your name: </label>
+<input type="text" name="username">
+</form>
+
+
+<p align="center"> Another <span>input type</span> is <span>search</span> which can be used to create a <span>search box</span>: </p>
+<form align="center" autocomplete="off">
+<input id="mysearch" name="searchitem" type="search">
+</form>
+<p align="center"> You must remember to set a <span>name</span> for your <span>input</span>, otherwise, nothing will be <Span>submitted</span>. </p>
+ 
+<p align="center"> The <span>&lt;datalist&gt;</span> element can be used to define a <span>list of pre-defined options</span> for an <span>input</span>, its however mostly used for <span>search</span> type. Here is an example of how to use it: 
+
+<p style="text-align: left;">Code:</p>
+
+<p style="text-align: left;"> 
+
+<span>&lt;form align="center" autocomplete="off"&gt; <br>
+<br>
+&lt;label&gt; Favorite color: &lt;/label&gt; <br>
+<br>
+&lt;input type="text" name="favcolors" list="#colors"&gt; <br>
+<br>
+&lt;datalist id="color"&gt; <br>
+<br>
+&lt;option value="red"&gt; red &lt;/option&gt; <br>
+&lt;option value="green"&gt; green &lt;/option&gt; <br>
+&lt;option value="yellow"&gt; yellow &lt;/option&gt; <br>
+<br>
+&lt;/datalist>
+<br>
+&lt;/form&gt;</span>
+
+</p>
+
+<p style="text-align: left;">Outcome:</p>
+
+   
+<form align="center">
+<label> Favorite color: </label>
+<input id="cars" type="search" list="colors">
+<datalist id="colors">
+<option value="red"> red </option>
+<option value="green"> green </option>
+<option value="yellow"> yellow </option>
+</datalist>
+</form> 
+
+ 
+
+<p align="Center">The <Span>new attribute</span> called <Span>list</span> is used to <span>link</span> the <span>input</span> 
+with the <span>datalist</span>, the <span>value</span> of the <span>list</span> attribute should contain the <span>id</span> of the <span>datalist</span>. </p>
+
+<p align="center"> So far we know about <span>&lt;input&gt;</span> and <span>&lt;textarea&gt;</span> elements, lets now learn about <span>&lt;select&gt;</span> element.</p>
+<p>
+The <span>&lt;select&gt;</span> element lets you make a <span>bar</span> with a <Span>list of stuff</span> you can <Span>select</span>, 
+you can also use <Span>&lt;optgroup&gt;</span> element to <Span>categorize</span> the items of the <span>list</span>, lets try this:</P>
+
+
+<p style="text-align:left;">Code:</p>
+
+<p style="text-align: left;"> 
+
+<span>&lt;form align="Center"&gt;<br>
+<br>
+&lt;select&gt;<br>
+<br>
+&lt;optgroup label="Names that start with A"&gt;<br>
+<br>
+&lt;option value="Alex"&gt; Alex &lt;/option&gt;<br>
+&lt;option value="Argiris"&gt; Argiris &lt;/option&gt;<br>
+&lt;option value="Antronikos"&gt; Antronikos &lt;/option&gt;<br>
+<br>
+&lt;/optgroup&gt;<br>
+<br>
+&lt;optgroup label="Names that start with B"&gt;<br>
+<br>
+&lt;option value="Biktor"&gt; Biktor &lt;/option&gt;<br>
+&lt;option value="Beronika"&gt; Beronika &lt;/option&gt;<br>
+&lt;option value="Biki"&gt; Biki &lt;/option&gt;<br>
+<br>
+&lt;/optgroup&gt;<br>
+<br>
+&lt;/select&gt; <br>
+<br>
+&lt;/form&gt;</span>
+
+</p>
+
+<p style="text-align: left;">Outcome:</p>
+
+
+
+<form align="Center">
+<select>
+<optgroup label="Names that start with A">
+<option value="Alex"> Alex </option>
+<option value="Argiris"> Argiris </option>
+<option value="Antronikos"> Antronikos </option>
+</optgroup>
+<optgroup label="Names that start with B">
+<option value="Biktor"> Biktor </option>
+<option value="Beronika"> Beronika </option>
+<option value="Biki"> Biki </option>
+</optgroup>
+</select>
+</form>
+
+</article>
+
+<hr>
+
+<article id="end">
+
+<h1> All attributes and input types I know </h1>
+
+
+<h3 align="center"> <ins>Here are all the attributes I know:</ins> </h3>
+<p align="center">
+<dl> 
+<dt> <span>autofocus</span> </dt>
+<dd> Used in an inpute or textarea, allows the user to input data immediately after the screen has loaded. </dd>
+<dt> <span>action</span> </dt>
+<dd> Used in form element, this decides what page opens after you sumbit. </dd>
+<dt> <span>method</span> </dt>
+<dd> Used in form element, it can be method="get" or method="post", when method is get the form data is visible in the page address, when its post the form is updating data, or includes sensitive information (passwords). </dd>
+<dt> <span>enctype</span> </dt>
+<dd> Used in form element, specifies how the form-data should be encoded when submitting it to the server, this is only used if method="post" and you don't need to know much about it for now.</dd>
+<dt> <span>target</span> </dt>
+<dd> Used in form element, you can write target="_blank" so the page opens in another tab.</dd>
+<dt> <span>validate</span> </dt>
+<dd> Used in form element, don't know what it dows </dd>
+<dt> <span>height and width</strong> </dt>
+<dd> Used in input elements to change the height and width, is only used for type="image", for other inputs you can change the size with CSS, or for textarea you can use rows and cols. </dd>
+<dt> <span>list</span> </dt>
+<dd> Its used in input element when you want to add a datalist. </dd>
+<dt> <span>min and max</span> </dt>
+<dd> Used in input elements, its used to set a min number and a max number for input types like numbers.</dd>
+<dt> <span>placeholder</span> </dt>
+<dd> Used in input elements, puts a description of what you have to type </dd>
+<dt> <span> required </span> </dt>
+<dd> makes the input required to be filled </dd>
+<dt> <span>multiple</span> </dt>
+<dd> Its used in inputs, I haven't talked about it because it wasn't needed, this allows the user to enter more than one values, its however 
+used only for the following input types: email and file. To send multiple files you hold ctrl and shift while selecting, to add multiple emails you put a coma after each email </dd>
+<dt> <span>step</span> </dt>
+<dd> Used in input elements, didn't talk about it before, the step attribute specifies the interval between legal numbers in an input element, if step="3" then the legal numbers could be -6, -3, 0, 3, 6, etc, the step attribute can be used together with the max and min attributes to create a range of legal values, step attribute works with the following input types: number, range, date, datetime-local, month, time and week.</dd>
+<dt> <span>pattern</span> </dt>
+<dd>  Used in input elements, specifies a regular expression that the input element's value is checked against on form submission, for example, to make an input that can contain only three letters with no numbers or special characters you write pattern="[A-Za-z] {3}"</dd>
+<dt> <span>Title</span> </dt>
+<dd> Used in input elements, can be used in other elements as well like paragraphs or images, if you write title="something" when you point your mouse on the input a description writing "something" will appear </dd>
+<dt> <span>disabled</span> </dt>
+<dd> Used to disable an input from being used </dd>
+<dt> <span>minlength/maxlength</span> </dt>
+<dd> Used to restrict the number of characters that can be used in an input</dd>
+<dt> <span>formaction</span> </dt>
+<dd> Specifies where to send the form-data when a form is submitted, this attribute overrides the form's action attribute</dd>
+
+
+<h3 align="center"> <ins>Here are all the input types I know:</ins> </h3>
+
+ 
+<form align="center">
+<label> This is a <span>&lt;textarea&gt;</span>, its <span>not written</span> as <span>type="textarea"</span>, <span>its not an attribute</span>, its an <Span>element</span> it shares some <span>attributes</span> with the <span>&lt;input&gt;</span> element, but it also has it's own <span>attributes</span>, like <span>cols</span> and <span>rows</span>, lastly, this <span>element</span> needs to be <span>closed</span> too, with <span>&lt;/textarea&gt;</span> </label> <br />
+<br /><textarea></textarea> <br /><br />
+<label> This is a <Span>color</span> type input </label> <br /> <br />
+<input type="color"><br /> <br />
+<label> This is a <span>date</span> type input </label> <br /> <br />
+<input type="date"> <br /> <br />
+<label> This is a <span>datetime-local</span> type input </label> <br /> <br />
+<input type="datetime-local"> <br /> <br />
+<label> This is a <span>datetime</span> type input (probably visible by only phone I guess) </label> <br /> <br />
+<input type="datetime"><br /> <br />
+<label> This is an <Span>email</span> type input (changes visible on phone keyboard) </label> <br /> <br />
+<input type="email"><br /> <br />
+<label> This is a <span>month</span> type input </label> <br /> <br />
+<input type="month"> <br /> <br />
+<label> This is a <Span>number</span> type input </label> <br /> <br />
+<input type="number"> <br /> <br />
+<label> This is a <span>range</span> type input </label> <br /> <br />
+<input type="range"><br /> <br />
+<label> This is a <span>search</span> type input </label> <br /> <br />
+<input type="search"> <br /> <br />
+<label> This is a <Span>tel</span> type input (changes visible on phone keyboard)</label> <br /> <br />
+<input type="tel"> <br /> <br />
+<label> This is a <span>time</span> type input </label> <br/> <br />
+<input type="time"> <br /> <br />
+<label> This is an <Span>url</span> type input (changes visible on phone keyboard)</label> <br /> <br />
+<input type="url"> <br /> <br />
+<label> This is a <span>week</span> type input </label> <br /> <br />
+<input type="week"> <br /> <br />
+<label> This is a <Span>file</span> type input </label> <br /> <br />
+<input type="file"><br /> <br />
+<label> This is an <span>image</span> type input, it works as a sumbit button but is an image </label> <br /> <br />
+<input type="image" src="../images/up.jpg" height="70" width="100"> <br /> <br />
+<label> This is a <span>submit</span> type input </label> <br /> <br />
+<input type="submit" value="Submit"><br /> <br />
+<label> This is the <span>&lt;select&gt;</span> element, its <span>not</span> used as <span>type="select"</span>, it is <Span>not</span> an <span>attribute</span> its an <span>element</span> and needs to be <Span>closed</span> with <span>&lt;/select&gt;</span></label> <br /> <br />
+<select> </select><br><br>
+<label> This is the <span>hidden</span> type input </label> <br><br>
+<input type="hidden"><br><br>
+<label> This is the <Span>reset</span> type input, if its in a form it resets everything you have typed in the inputs </label><br><br>
+<input type="reset"><br><br>
+<label> This is the <span>button</span> type input </label><br><br>
+<input type="button">
+<label> This is the <Span>radio</span> type input </label> <br><br>
+<input type="radio" name="gender" value="male"> Male <br>
+<input type="radio" name="gender" value="female"> Female <br><br>
+<label> This is the <span>checkbox</span> type input </label> <br><br>
+<input type="checkbox" name="food" value="pizza"> Pizza <br>
+<input type="checkbox" name="food" value="pie"> Pie 
+</form> <br /> <br />
+
+
+</article>
+<hr width="100%" size="15" color="black">
+ 
+ 
+
+</body>
+</html> 

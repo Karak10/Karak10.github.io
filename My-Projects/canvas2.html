@@ -1,0 +1,283 @@
+<!DOCTYPE HTML>
+<html>
+<head lang="en-US">
+<meta charset="UTF-8">
+<title> Canvas gravity effect </title>
+<style>
+       .left {
+        text-align: left;
+    }
+    
+    .code10 {
+    white-space: pre-wrap;
+    background-color: lightgreen;
+    }
+    
+    p {
+    text-align:center;
+    }
+    h1 {
+    text-align:center;
+    }
+    h2 {
+    text-align:center;
+    }
+    h3 {
+    text-align:center;
+    }
+    .c {
+    background-color:lightgreen;
+    }
+    hr {
+    width:100%;
+    height:15px;
+    background-color:black;
+    color:black;
+    border: black solid;
+    }
+    body {
+    background-color:rgb(165, 235, 235);
+    margin: 0;
+    height: 100vh;
+    }   
+    span {
+    background-color:lightgreen;
+    }
+    
+    a:link {
+    color: black;
+    text-shadow: 1px 0px 1px black;
+    
+    }
+    
+    a:visited {
+    color: black;
+    text-shadow: 1px 0px 1px rgb(22, 22, 22);
+    }
+    
+    a:hover {
+    text-decoration: underline;
+    color: red;
+    text-shadow: 1px 0px 1px black;
+    }
+    
+    .document{
+        width: 100vw;
+        height: 100vh;
+        overflow: auto;
+        overflow-x: hidden;
+    }
+    
+    .gray{
+        background-color: lightgray;
+    }
+    
+    .no-scroll{
+        overflow-y: hidden;
+    }
+</style> 
+<link rel="stylesheet" href="../CSS-JavaScript-External-Files/HTMLnotes.css?version=1">
+</head>
+<body>
+ <hr>
+<article>
+
+<h1> Canvas gravity effect </h1>
+<p><a href="../Home-Pages/myprojects.html">Click to go back</a></p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let canvas = document.getElementById('canvas-020');
+let c = canvas.getContext('2d');
+
+canvas.width = 500;
+canvas.height = 300;
+
+let circleMaker = function(x, y, r, dx, dy, cl){
+    this.x = x;
+    this.y = y;
+    this.r = r; 
+    this.dx = dx;
+    this.dy = dy; 
+    this.cl = cl;
+    this.draw = function(){
+        c.fillStyle = cl;
+        c.beginPath();
+        c.arc(this.x, this.y, this.r, 0, 2 * Math.PI);
+        c.stroke();
+        c.fill();
+    }
+    this.update = function(){
+        let gravity = 0.5;
+        let finished = false;
+
+        if(this.y + this.r > canvas.height){
+            this.dy = ((this.dy < 0)? this.dy: -this.dy) * 0.95;
+            if(this.dy > -5){
+                this.dy = 0;
+                finished = true;
+            }
+        } else{
+            this.dy += gravity;
+        }
+
+        if(this.x + this.r > canvas.width){
+            this.dx = ((this.dx < 0)? this.dx: -this.dx) * 0.7;
+        } else if(this.x - this.r < 0){
+            this.dx = Math.abs(this.dx) * 0.7;
+        } else {
+            this.dx = (this.dx < 0)? this.dx + 0.001: this.dx - 0.001;
+        }
+
+        if(finished == true){
+            this.y = canvas.height - this.r + 0.1;
+        } else{
+            this.y += this.dy;
+        }
+
+        this.x += this.dx;
+
+        this.draw();
+    }
+}
+
+let circles = new Array();
+let colors = ["#F2EBEC", "#C8C1D9", "#5D84A6", "#485159", "#F2D4AE"];
+
+function createCircles(){
+    circles = [];
+    for(let i = 1; i<= 100; i++){
+    let r = Math.random() * 5 + 15;
+    let x = Math.random() * (canvas.width - r * 2) + r;
+    let y = Math.random() * (canvas.height - r * 4) + r;
+    let clr = colors[Math.floor(Math.random() * colors.length)];
+    let dx = (Math.random() - 0.5) * 5;
+    circles.push(new circleMaker(x, y, r, dx, 1, clr));
+    }
+}
+
+createCircles();
+
+canvas.addEventListener('click', (e) => {
+    createCircles();
+});
+
+function animate(){
+    c.clearRect(0, 0, canvas.width, canvas.height);
+    c.fillStyle = 'white';
+    c.font = 'normal 24px Arial';
+    c.textAlign = 'center';
+    c.fillText('Click to restart the animation', canvas.width / 2, canvas.height / 2);
+    circles.forEach((circle) => {
+        circle.update();
+    });
+    requestAnimationFrame(animate);
+}
+
+animate();</span></p>
+
+<p class="left">Outcome:</p>
+
+    <canvas id="canvas-020" style="border: 3px solid black; display: block; margin: auto; background-color: black;"></canvas>
+    
+    <script>
+        if(true){
+            let canvas = document.getElementById('canvas-020');
+            let c = canvas.getContext('2d');
+
+            canvas.width = 500;
+            canvas.height = 300;
+
+            let circleMaker = function(x, y, r, dx, dy, cl){
+                this.x = x;
+                this.y = y;
+                this.r = r; 
+                this.dx = dx;
+                this.dy = dy; 
+                this.cl = cl;
+                this.draw = function(){
+                    c.fillStyle = cl;
+                    c.beginPath();
+                    c.arc(this.x, this.y, this.r, 0, 2 * Math.PI);
+                    c.stroke();
+                    c.fill();
+                }
+                this.update = function(){
+                    let gravity = 0.5;
+                    let finished = false;
+
+                    if(this.y + this.r > canvas.height){
+                        this.dy = ((this.dy < 0)? this.dy: -this.dy) * 0.95;
+                        if(this.dy > -5){
+                            this.dy = 0;
+                            finished = true;
+                        }
+                    } else{
+                        this.dy += gravity;
+                    }
+
+                    if(this.x + this.r > canvas.width){
+                        this.dx = ((this.dx < 0)? this.dx: -this.dx) * 0.7;
+                    } else if(this.x - this.r < 0){
+                        this.dx = Math.abs(this.dx) * 0.7;
+                    } else {
+                        this.dx = (this.dx < 0)? this.dx + 0.001: this.dx - 0.001;
+                    }
+
+                    if(finished == true){
+                        this.y = canvas.height - this.r + 0.01;
+                    } else{
+                        this.y += this.dy;
+                    }
+
+                    this.x += this.dx;
+
+                    this.draw();
+                }
+            }
+
+            let circles = new Array();
+            let colors = ["#F2EBEC", "#C8C1D9", "#5D84A6", "#485159", "#F2D4AE"];
+
+            function createCircles(){
+                circles = [];
+                for(let i = 1; i<= 100; i++){
+                let r = Math.random() * 5 + 15;
+                let x = Math.random() * (canvas.width - r * 2) + r;
+                let y = Math.random() * (canvas.height - r * 6) + r;
+                let clr = colors[Math.floor(Math.random() * colors.length)];
+                let dx = (Math.random() - 0.5) * 5;
+                circles.push(new circleMaker(x, y, r, dx, 1, clr));
+                }
+            }
+
+            createCircles();
+
+            canvas.addEventListener('click', (e) => {
+                createCircles();
+            });
+
+            function animate(){
+                c.clearRect(0, 0, canvas.width, canvas.height);
+                c.fillStyle = 'white';
+                c.font = 'normal 24px Arial';
+                c.textAlign = 'center';
+                c.fillText('Click to restart the animation', canvas.width / 2, canvas.height / 2);
+                circles.forEach((circle) => {
+                    circle.update();
+                });
+                requestAnimationFrame(animate);
+            }
+
+            animate();
+
+
+        }
+    </script>
+
+
+ </article>
+ 
+<hr>
+ </body>
+</html>

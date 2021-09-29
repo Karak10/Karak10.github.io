@@ -1,0 +1,950 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<title> Page 1 of my SASS notes </title>
+<meta charset="UTF-8"> 
+<link href="../CSS-JavaScript-External-Files/HTMLnotes.css" rel="stylesheet">
+<style>
+    .left {
+        text-align: left;
+    }
+    
+    .code10 {
+    white-space: pre-wrap;
+    background-color: lightgreen;
+    
+    }
+    
+    p {
+    text-align:center;
+    }
+    h1 {
+    text-align:center;
+    }
+    h2 {
+    text-align:center;
+    }
+    h3 {
+    text-align:center;
+    }
+    .c {
+    background-color:lightgreen;
+    }
+    hr {
+    width:100%;
+    height:15px;
+    background-color:black;
+    color:black;
+    border: black solid;
+    }
+    body {
+    background-color:rgb(165, 235, 235);
+    }
+    span {
+    background-color:lightgreen;
+    }
+    
+    a:link {
+    color: black;
+    text-shadow: 1px 0px 1px black;
+    
+    }
+    
+    a:visited {
+    color: black;
+    text-shadow: 1px 0px 1px rgb(22, 22, 22);
+    }
+    
+    a:hover {
+    text-decoration: underline;
+    color: red;
+    text-shadow: 1px 0px 1px black;
+    }
+
+    .orange {
+        background-color: lightcoral;
+        font-weight: bold;
+    }
+
+    iframe {
+        width: 600px;
+        height: 350px;
+        border: 3px solid black;
+        margin: 20px auto 20px auto;
+        display: block;
+    }
+    
+   .list_container{
+       width: fit-content;
+       background-color: white;
+       border: 3px solid black;
+       border-radius: 20px;
+       margin: 20px auto 20px auto;
+       padding: 20px;
+       font-weight: bold;
+   }
+    
+   .list_container li{
+       margin-top: 15px;
+   }
+
+   .gray{
+       background-color: lightgray;
+   }
+
+</style> 
+</head>
+<body>
+
+<hr>
+
+    <header> 
+    <h1> Page one of my SASS notes </h1>
+    </header>
+    
+<article id="start-of-page"> 
+  
+<div id="homepages">
+
+    <h3>Home Pages:</h3>
+   
+
+</div>
+
+<nav data-notes="CSS_SASS" data-page="1">
+
+</nav>
+
+    <h3>Informations included in this page:</h3>
+    <p><a href="../CSS-Notes/CSS_SASS_1.html#one">idk</a></p>
+
+</article>
+
+ <script src="../CSS-JavaScript-External-Files/nav.js"></script>
+
+<hr>
+ 
+<style>
+    .big {
+        font-size: 2em;
+    }
+</style>
+<article id="one">
+<header><h1 class="big"><u>Introduction to SASS</u></h1></header>
+<h2>What is SASS?</h2>
+<P>SASS is an extension to CSS that can help us write more flexible styles. It uses variables, functions,
+conditional statements and more. It can also split our SASS files up into modules,
+which is very useful when working on large projects.
+</P>
+<p>When we write in SASS, browsers will not understand our code. SASS needs
+to first be translated into CSS, which can be achieved by a lot of different methods.
+Lastly, SASS is written in Ruby so you may need to install Ruby in your computer,
+this will depend on the way you want to use SASS.
+</p>
+<h2>What you should know before you learn SASS:</h2>
+<p>Before you go over this page you should first get familiar with programming fundamentals
+such as variables, functions, if statements, etc. You can check out my
+<a href="./../Home-Pages/javascriptnotes.html">JavaScript notes</a> where
+I write about those stuff. Of course you will also need to know CSS.
+</p>
+</article>
+
+<hr>
+
+<article id="two">
+<h1 class="big"><u>Installing and Compiling SASS</u></h1>
+<p>There are two different ways to install and use SASS, you can either install Sass ont he command line,
+or download one of the many applications that exist. Using an application
+is easier for beginners, and many also include cool extra feautures that can make
+your life easier, so why not use of of those?</p>
+<style>
+    .image {
+        max-width: 80%; 
+        margin: auto; 
+        display: block;
+        border: 3px solid black;
+    }
+</style>
+<img src="./../images/sass1.PNG" class="image" width="50%">
+<p>Let's download Prepros then, I know it says you need to pay, but it
+actually has a free version too and I have heared it's pretty cool,
+you can download it from <a href="https://prepros.io/" target="_blank">this site</a>,
+just press on the "Download Free Unlimited Trial" button:</p>
+<img src="./../images/sass2.PNG" class="image" style="width: 60%">
+<p>After you download it you should install it and then you will
+be ready to use it. After it is opened it will ask you to either drag
+a project or browse your files you select a folder:</p>
+<img src="./../images/sass3.PNG" class="image" style="width: 40%">
+
+<p>So, let's first create a really simple project folder, you can
+create it either by using the command line or if you are unfamiliar with
+it then you can simple create them your self with your mouse:</p>
+<img src="./../images/sass4.PNG" class="image">
+
+<p>Now, let's put this folder in Prepros:</p>
+<img src="./../images/sass5.PNG" class="image">
+
+<p>After clicking on the styles.scss file the list at the right appeared,
+as you can see there you can change some settings. The output file has automatically
+been assigned to be the styles.css file inside the css folder, that happened
+because I gave those two files the same name, if I had not I would have to
+select the output file my self. In file options the process automatically
+means it is going to compile Sass inside our styles.css file automatically every time
+we save the file, if you don't want this to be
+performed automatically just uncheck the option and use the
+process file button whenever you want to compile the file. The prefix CSS means it will automatically add prefixes to our
+CSS.</p>
+
+<p>If you check the folder you can actually see that a file named prepros.config
+has been added, this is a JSON file that basically contains information
+about how prepros should work and stuff, you shouldn't really care about that:</p>
+
+<img src="./../images/sass6.PNG" class="image">
+
+<p>Let's try writing some Sass now, just to test if this works or not:</p>
+
+<img src="./../images/sass7.PNG" class="image">
+
+<p>As you can see, just after I saved the file a notification
+appeared at the right down corner of my screen, if I had
+made an error in the syntax then it would also appear, but
+it would say that the file could not be processed, and
+also it would tell me what the error is, which is cool since
+it help with debugging.</p>
+
+<p>Let's what changes happened in our styles.css file now:</p>
+
+<img src="./../images/sass8.PNG" class="image">
+
+</article>
+
+<hr>
+
+<article id="three">
+<header><h1><u>Sass Variables</u></h1></header>
+<p>So, one of the many feautures Sass has is the ability
+to define variables. This is extremely helpful and can
+save you a lot of time. For example, if you wanted to have the same
+value applied to multiple styles, then you should probably do it using
+variables, this way if you ever need to change that value you won't
+have to change it for every single place you used it, you can simple
+change the variable's value and all the places you used the variable
+will automatically be updated:</p>
+
+<p class="left"><span class="code10"><span class="gray">// Variables</span>
+
+$deepBlue: #032f3e;
+$sectionHeading: 24px;
+
+#main-div{
+    background: $deepBlue;
+}
+
+section h1{
+    font-size: $sectionHeading;
+    color: $deepBlue;
+}</p>
+
+<p>So, first of all, I want you to notice how I made a comment by using
+"//" instead of "/* */", you can use "//" to make one line comments,
+if you want the comment to span multiple lines then you can still
+use "/* */" just like in JavaScript. Anyway, about variables now,
+it's pretty simple, you define a variable by using the <Strong>"$"</Strong>
+symbol followed by a name, and then you use <strong>":"</strong> symbol
+to assign a value to that variable. To reference a variable you need to
+again use the <strong>"$"</strong> symbol followed by the variable's
+name you want to reference.
+</p>
+
+<p>You can also define variables with normal CSS, using the var keyword,
+I have explained how it works before <a href="./CSS_Extra_1.html#two" target="_blank">here</a>,
+it may actually be better to use normal CSS variables in certain cases, since
+normal CSS variables can be manipulated easily using JavaScript.</p>
+</article>
+
+<hr>
+
+<article id="four">
+<header><h1><u>Sass Nesting Styles</u></h1></header>
+<link href="../CSS-JavaScript-External-Files/CSS/styles1.css" rel="stylesheet">
+<p>Sass also gives us the ability to nest styles. Let's firstly
+add some HTML so that we have something to style:</p>
+
+<p class="left"><span class="code10">&lt;div class="container">
+    &lt;div class="item1">&lt;p>Item1&lt;/p>&;t'/div>
+    &lt;div class="item2">&lt;p>Item2&lt;/p>&;t'/div>
+    &lt;div class="item3">&lt;p>Item3&lt;/p>&;t'/div>
+    &lt;div class="item4">&lt;p>Item4&lt;/p>&;t'/div>
+&lt;/div></span></p>
+
+<p>Now let's write our Sass code:</p>
+
+<img class="image" src="./../images/sass11.PNG">
+
+<p>As you can see, instead of writing .container .item1 {...}, .container .item2 {...}, etc, etc, I simple
+nest the styles inside .container. The code I wrote about was later compiled into CSS
+and here is how it looks when translated to normal CSS:</p>
+
+<img class="image" src="./../images/sass12.PNG">
+
+<p>The result of the code above is this very basic flex box you can see bellow:</p>
+<div class="container">
+    <div class="item1"><p>Item1</p></div>
+    <div class="item2"><p>Item2</p></div>
+    <div class="item3"><p>Item3</p></div>
+    <div class="item4"><p>Item4</p></div>
+</div>
+
+</article>
+
+<hr>
+
+<article id="five">
+<header><h1><u>Sass Mixins</u></h1></header>
+<p>Mixins is another great feauture of Sass that is going to make your life
+while writing CSS a little bit more easier. You can think of Mixins as JavaScript
+functions, and that's because they work pretty similarily to how JavaScript functions work,
+you can even add parameters like in JavaScript functions, anyway, here is an
+example of a very simple Mixin:</p>
+
+<p class="left">HTML Code:</p>
+<p class="left"><span class="code10">&lt;div class="container2">
+    &lt;div class="item1">Item1&lt;/div>
+    &lt;div class="item2">Item2&lt;/div>
+&lt;/div></span></p>
+
+<p class="left">Sass Code:</p>
+<p class="left"><span class="code10">@mixin example {
+    width: 50%;
+    height: fit-content;
+    text-transform: uppercase;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);  
+}
+
+.container2 {
+    width: 40%;
+    height: 300px;
+    margin: auto;
+    background-color: black;
+    color: white;
+    position: relative;
+    .item1 {
+        @include example;
+        text-align: left;
+    }
+    .item2 {
+        @include example;
+        text-align: right;
+    }
+}</span></p>
+<p class="left">Outcome:</p>
+
+<div class="container2">
+    <div class="item1">Item1</div>
+    <div class="item2">Item2</div>
+</div>
+
+<p>So, let me explain now, first I defined the mixin by using the <strong>"@"</strong>
+symbol followed by the word <strong>mixin</strong> and a <strong>name</strong>,
+inside the mixin I defined some styling rules. Later I used this mixin in two different
+places using the <strong>"@"</strong> symbol followed by the word <strong>include</strong>
+and the <strong>name of the mixin I wanted to include</strong>.</p>
+<p>Pretty cool, right? But this isn't all, mixins also lets us add parameters just like
+in JavaScript functions, here is an example:</p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><span class="code10">&lt;div class="container3">
+    &lt;div class="item1">Item1&lt;/div>
+    &lt;div class="item2">Item2&lt;/div>
+&lt;/div></span></p>
+
+<p class="left">Sass Code:</p>
+
+<p class="left"><span class="code10">@mixin example2($color, $bcolor){
+    background-color: $bcolor;
+    color: $color;
+    flex-grow: 1;
+    text-align: center;
+    line-height: 300px;
+    text-transform: uppercase;
+    font-size: 2em;
+    user-select: none;
+}
+
+.container3 {
+    width: 40%;
+    height: 300px;
+    display: flex;
+    margin: 50px auto;
+    background-color: grey;
+    border: 3px solid black;
+    flex-direction: wrap;
+    justify-content: space-evenly;
+    .item1 {
+        @include example2(black, white);
+    }
+    .item2 {
+        @include example2(white, black);
+    }
+}</span></p>
+
+<p class="left">Outcome:</p>
+
+<div class="container3">
+    <div class="item1">Item1</div>
+    <div class="item2">Item2</div>
+</div>
+
+<p>To define a parameter use the <strong>"$" symbol</strong> followed by a
+<strong>name</strong>, just like variables, inside the mixin you can reference
+those parameters just like how you would if they were variables.
+To add multiple parameters simple seperate them using the <strong>"," symbol</strong>,
+then you can assign values to those parameters every time you use the mixin, just like
+JavaScript functions.</p>
+</article>
+
+<hr>
+
+<article id="six">
+<header><h1><u>Importing Files in Sass</u></h1></header>
+<p>As a project gets bigger, your Sass code may start to get too big
+to maintain. It's good to keep things organized, in multiple files, so that
+you can keep things easier to maintain, and be more productive. For this reason,
+you can for example have a file where you create your variables, a file where
+you create your mixins, a file where you define some basic reset styles, and
+finally a file where you add all other extra stylings you want to do
+where you will also import all the other files so that they
+can all be compiled into one CSS file at the end.</p>
+
+<p>According to Sass website, those files you import into your main file
+are called <Strong>partials</Strong>, and their file names should begin
+with an <strong>underscore</strong>, an underscore is the <strong>"_" symbol</strong>.
+You might for example name a file something like <Strong>_partial.scss</Strong>. The underscore
+lets Sass know that the file is only a partial file and that it should not be generated into
+a CSS file. Sass partials are used with the <Strong>@import</Strong> rule.</p>
+
+<p>Inside a partial, if you want to have any variables, mixins or functions that
+are considered private and aren't imported, you should define them with an <Strong>underscore (_)</Strong>
+or <strong>hypen (-)</strong>.</p>
+
+<p>Let's give it a try then, to see if things work as expected, and if any problems
+will occur by prepros, will it be able to tell the files are partials? Or will it compile them
+into CSS?</p>
+
+<p>First let's create the files:</p>
+
+<img class="image" src="./../images/sass9.PNG">
+
+<p>Now let's add some code inside them and import it into styles1.scss to see if
+it will work:</p>
+
+<p class="left">HTML Code:</p>
+<p class="left"><span class="code10">&lt;div class="container4">
+    &lt;div class="item1">Item1&lt;/div>
+    &lt;div class="item2">Item2&lt;/div>
+    &lt;div class="item3">Item3&lt;/div>
+&lt;/div></span></p>
+<p class="left">_reset.scss:</p>
+<p class="left"><span class="code10">.container4 {
+    background-color: black;
+    border: 3px solid black;
+    width: 40%;
+    height: 300px;
+    margin: 50px auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    overflow: hidden;
+}</span></p>
+<p class="left">_variables.scss:</p>
+<p class="left"><span class="code10">$font-size: 2em;
+$flex-grow: 1;</span></p>
+<p class="left">_mixins.scss:</p>
+<p class="left"><span class="code10">@mixin example3($color, $bcolor, $h-align, $v-align){
+    color: $color;
+    background-color: $bcolor;
+    text-align: $h-align;
+    line-height: $v-align;
+    flex-grow: $flex-grow;
+    font-size: $font-size;
+}</span></p>
+<p class="left">styles1.scss</p>
+<p class="left"><span class="code10">@import "./_reset.scss";
+@import "./_variables.scss";
+@import "./_mixins.scss";
+
+.container4 {
+    .item1 {
+        @include example3(white, black, left, 50px);
+    }
+    .item2 {
+        @include example3(black, white, center, 300px);
+    }
+    .item3 {
+        @include example3(white, black, right, 550px);
+    }
+}</span></p>
+<p class="left">Outcome:</p>
+
+<div class="container4">
+    <div class="item1">Item1</div>
+    <div class="item2">Item2</div>
+    <div class="item3">Item3</div>
+</div>
+
+<p>As you can see everything worked well.</p>
+</article>
+
+<hr>
+
+<article id="seven">
+<header><h1><u>Nesting Pseudo classes in Sass</u></h1></header>
+<p>So, before we learned how to nest styles in Sass, but trying to
+nest pseudo classes won't work.</p>
+<p>To nest pseudo classes you have to add the <strong>"&"</strong> symbol
+infront the pseudo class, like in the example bellow:</p>
+
+<img src="./../images/sass10.PNG" class="image">
+
+<div class="example6"></div>
+</article>
+
+<hr>
+
+<article id="eight">
+<header><h1><u>Mathematical Operators</u></h1></header>
+<p>Sass let's use use math to calculate values, just like
+the calc() method in CSS does, however, in Sass you can simple
+add your calculations inside parenthesis without the calc
+keyword and it will still do the job:</p>
+
+<p class="left">HTML Code:</p>
+<p class="left"><span class="code10">&lt;div class="example7">
+    &lt;div>a&lt;/div>
+    &lt;div>a&lt;/div>
+    &lt;div>a&lt;/div>
+    &lt;div>a&lt;/div>
+    &lt;div>a&lt;/div>
+&lt;/div></span></p>
+<p class="left">Sass Code:</p>
+<p class="left"><span class="code10">.example7 {
+    background-color: black;
+    width: 500px;
+    height: 100px;
+    font-size: 0px;
+    box-sizing: border-box;
+    border: 3px solid black;
+    margin: 20px auto;
+    >* {
+        display: inline-block;
+        box-sizing: border-box;
+        border: 2px solid black;
+        width: (100% / 5);
+        height: 100%;
+        background-color: white;
+        &:nth-child(even){
+            background-color: grey;
+        }
+    }
+}</span></p>
+<p class="left">Outcome:</p>
+
+<div class="example7">
+    <div>a</div>
+    <div>a</div>
+    <div>a</div>
+    <div>a</div>
+    <div>a</div>
+</div>
+
+</article>
+
+<hr>
+
+<article id="nine">
+<header><h1><u>Sass Colour Functions</u></h1></header>
+<p>Colour functions are predefined functions that can be used to achieve
+a variety of different things, depending on the function you are using of course.
+In Sass there are a lot of colour functions you can use, you can find
+them <a href="https://sass-lang.com/documentation/modules/color" target="_blank">in this page</a> with explanations of what each does.</p>
+<p>To be able to use those color functions you should first import that sass:color module,
+you can easily do this by using the <strong>@use</strong> keyword, remember however, you have
+to do this at the start of the Sass document, or else it won't work, modules should be imported at
+the top, to import the color module simple write <strong>@use "sass:color";</strong> like this:</p>
+<p class="left">HTML Code:</p>
+<p class="left"><span class="code10">&lt;div class="color-example">&lt;/div></span></p>
+<p class="left">Sass Code:</p>
+<p class="left"><span class="code10">@use "sass:color";
+
+.color-example {
+    width: 10vw;
+    height: 10vw;
+    background-color: green;
+    border: 3px solid black;
+    box-sizing: border-box;
+    margin: 20px auto;
+    &:hover {
+        background-color: color.adjust(green, $lightness: 10);
+    }
+}</span></p>
+<p class="left">Outcome:</p>
+<div class="color-example"></div>
+<p>This function allowed us to easily make green lighter.</p>
+<p>Let's try another function, the color.complement($color) which will return the complement color of the color passed inside it.</p>
+<p class="left">HTML Code:</p>
+<p class="left"><span class="code10">&lt;div class="color-example2">&lt;/div></span></p>
+<p class="left">Sass Code:</p>
+<p class="left"><span class="code10">@use "sass:color";
+
+.color-example2 {
+    width: 10vw;
+    height: 10vw;
+    background-color: brown;
+    border: 3px solid black;
+    box-sizing: border-box;
+    margin: 20px auto;
+    &:hover {
+        background-color: color.complement(brown);
+    }
+}</span></p>
+<p class="left">Outcome:</p>
+
+<div class="color-example2"></div>
+</article>
+
+<hr>
+
+<article id="ten">
+<header><h1><u>The @content Keyword in Sass</u></h1></header>
+<p>The @content keyword is used together with mixins, basically, it can be used
+to dynamically add extra content to a mixin when referencing that mixin. For example,
+you can have a mixin that adds certain styles, but also give it the ability to include
+extra styling if needed when referenced. I think the best way to explain the @content keyword
+is to just show you an example, so here is one:</p>
+
+<p class="left">HTML Code:</p>
+<p class="left"><span class="code10">&lt;div class="example8">Fly me to the moon&lt;/div></span></p>
+<p class="left">Sass Code:</p>
+<p class="left"><span class="code10">@mixin createDiv($bc, $w, $h, $margin) {
+    background-color: $bc;
+    width: $w;
+    height: $h;
+    margin: $margin;
+    @content;
+}
+
+.example8 {
+    $size: 25vw;
+    @include createDiv(black, $size, $size, auto){
+        border: 2px solid white;
+        border-radius: $size;
+        text-align: center;
+        line-height: $size;
+        color: white;
+        text-transform: uppercase;
+        font-size: 2vw;
+        white-space: nowrap;
+    }    
+}</span></p>
+<p class="left">Outcome"</p>
+
+<div class="example8">Fly me to the moon</div>
+</article>
+
+<hr>
+
+<article id="eleven">
+<header><h1><u>Lists and Spread operator in Sass</u></h1></header>
+
+<p>Lists in Sass contain a sequence of values, like arrays in JavaScript. Elements in lists
+can be seperated by commas (Helvetica, Arial, sans-serif), spaces (10px 15px 0px), or slashes
+as long as it's consistent within the list. Unlike most other languages, lists in Sass
+do not require special brackets, however, you are allowed to write lists with square brackets ([line1, line2]).</p>
+
+<p>The spread operator in Sass works similarily to the spread operator in JavaScript,
+basically, in a mixin, instead of predefining all the parameters one by one you can instead
+define a list of any extra parameters that can possible be added.</p>
+
+<p>To access items in a list you can use the <strong>nth(list, item)</strong> keyword, like in the example bellow:</p>
+
+<p class="left">HTML Code:</p>
+<p class="left"><span class="code10">&lt;div class="example9">&lt;/div></span></p>
+<p class="left">Sass Code:</p>
+<p class="left"><span class="code10">@mixin something($cl, $size...){
+    background-color: nth($cl, 1);
+    border: 3px solid black;
+    border-color: nth($cl, 2);
+    width: nth($size, 1);
+    height: nth($size, -1);
+    @content;
+}
+
+.example9 {
+    @include something((black, white), 200px, 100px){
+        margin: auto;
+    };
+}</span></p>
+<p class="left">Outcome:</p>
+
+<div class="example9"></div>
+
+<p>I want you to notice how writing nth(list, -1) picks the last item in the list,
+if I wrote nth(list, -2) then the second item from the end would be picked, and so on.</p>
+
+<p>The <strong>list.append($list, $val)</strong> function can add an item to a list,
+the <strong>list.index($list, $value)</strong> can return the index of a value, and the
+<strong>length($arg)</strong> function returns the length of the array.</p>
+</article>
+
+<hr>
+
+<article id="twelve">
+<header><h1><u>If statements in Sass</u></h1></header>
+<p>The <strong>@if</strong> rule is written <strong>@if &lt;expression> { ... }</strong>, and 
+it controls whether or not it's block gets evaluated. The expression usually returns
+either <strong>true</strong> or <strong>false</strong>, if the expression returns <strong>true</strong>,
+the block is evaluated, and if the expression returns <strong>false</strong> it is not.</p>
+
+<p>For example, we could create a shorthand for adding media queries so that
+we don't have to write the whole thing every time we wanna add a new media query:</p>
+
+<p class="left"><span class="code10">@mixin mQ($arg...) {
+    @if length($arg) == 1 {
+        @media screen and (max-width: nth($arg, 1)){
+            @content;
+        }
+    }
+    @if length($arg) == 2 {
+        @media screen and (max-width: nth($arg, 1)) and (min-width: nth($arg, 2)){
+            @content;
+        }
+    }
+}
+
+@include mQ(400px){
+<span class="gray">    /* the styles added here will be applied on screens with a width smaller than 400px */</span>
+}
+
+@include mQ(700px, 400px){ 
+<span class="gray">    /* the styles added here will be applied on screens with a width between 700 and 400 pixels */</span>
+}</span></p>
+
+<p>An <Strong>@if</Strong> rule can optionally be followed by an <Strong>@else</Strong>
+rule, written <Strong>@else { ... }</Strong>. This rule's block is evaluated if the <strong>@if</strong>
+expression returns <strong>false</strong>:</p>
+
+<p class="left"><span class="code10">@mixin mQ($arg...) {
+    @if length($arg) == 1 {
+        @media screen and (max-width: nth($arg, 1)){
+            @content;
+        }
+    } @else {
+        @media screen and (max-width: nth($arg, 1)) and (min-width: nth($arg, 2)){
+            @content;
+        }
+    }
+}
+
+@include mQ(400px){
+<span class="gray">    /* the styles added here will be applied on screens with a width smaller than 400px */</span>
+}
+
+@include mQ(700px, 400px){ 
+<span class="gray">    /* the styles added here will be applied on screens with a width between 700 and 400 pixels */</span>
+}</span></p>
+
+<p>You can also choose whether to evaluate an <strong>else</strong>
+rule's block by writing it <strong>@else if &lt;expression> { ... }</strong>. If you do,
+the block is evaluated only if the preceding <strong>@if</strong> expression returns
+<Strong>false</Strong> and the <strong>@else if</strong> expression returns <strong>true</strong>.</p>
+
+<p>In fact, you can chain as many <strong>@else if</strong>s as you want after an
+<strong>@if</strong>. The first block in the chain whose expression returns <strong>true</strong>
+will be evaluated, and no others. If there's a plain <strong>@else</strong>
+at the end of the chain, it's block will be evaluated if every other block fails.</p>
+
+<p>With the if statements you may also need to know a little bit about <strong>boolean operators</strong>, known
+in JavaScript as <strong>logical operators</strong>, if you have learned JavaScript you may know
+them as (||, &&, !), but in Sass they are easier to remember, since in Sass they are words
+rather than symbols.</p>
+
+<ul>
+    <li><strong>not &lt;expression></strong> returns the opposite of the expression's value: it turns true into false and false into true.</li>
+    <li><strong>&lt;expression> and &lt;expression></strong> returns true if both expression's values are true, and false if either is false.</li>
+    <li><strong>&lt;expression> or &lt;expression></strong> returns true if either epxression's value is true, or false if both are false.</li>
+</ul>
+</article>
+
+<hr>
+
+<article id="thirteen">
+<header><h1><u>Sass Maps</u></h1></header>
+<p>Maps in Sass hold pairs of keys and values, and make it easy to loop uo a value by
+it's corresponding key. They are written <strong>(&lt;expression>: &lt;expression>, &lt;expression>: &lt;expression>)</strong>.
+The expression before the : is the key and the expression after is the value associated with that key. The keys must be unique, but the values
+may be duplicated. Unlike lists, map must be written with parentheses around them at all times.</p>
+
+<p>Maps are all about associating keys and values, so naturally there's a way to get the value
+associated with a key, the <strong>map.get($map, $key)</strong> function. This
+function returns the value in the map associated with the given key. It returns null if the map doesn't contain the key:</p>
+
+<p class="left"><span class="code10">@use "sass:map";
+
+$font-sizes: ("regular": 2em, "big": 3em, "huge": 4em);
+
+.text {
+    font-size: map.get($font-sizes, "big");
+}</span></p>
+
+<p class="text">This is a text lol</p>
+
+<p>As you can see I first used the @use rule to import map module because without
+it Sass wuldn't be able to find the map functions.</p>
+<p>To add a value you can use the <Strong>map.set($map, $key, $value)</Strong> function.</p>
+</article>
+
+<hr>
+
+<article id="fourteen">
+<header><h1><u>Interpolation in Sass</u></h1></header>
+<p>Interpolation can be used almost anywhere in Sass stylesheet to embed the result of a
+SassScript expression into a chunk of CSS. Just wrap an expression in #{} in any of the following 
+places: selectors in style rules, property names in declarations, custom property values, css at-rules, @extends,
+plain CSS @imports, quoted or unquoted strings, special functions, plain css function names, loud comments.</p>
+
+<p>Here is an example:</p>
+
+<p class="left"><span class="code10">$name: 'color';
+
+.example10 {
+    width: 20px;
+    height: 20px;
+    margin: auto;
+    background-#{$name}: black;
+}</span></p>
+
+<div class="example10"></div>
+</article>
+
+<hr>
+
+<article id="fifteen">
+<header><h1><u>Sass @for, @each and @while</u></h1></header>
+
+<p>Sass provides rule like <Strong>@for</Strong>, <Strong>@each</Strong> and
+<strong>while</strong> for implementing loops in a stylesheet. If you want to define repetitive style rules,
+something that could be needd for HTML lists, tables, etc then Sass loops can come handy.</p>
+
+<P>SAAS <strong>@for</strong> rule works the same way that <strong>for loop</strong>
+works in JavaScript. It is used to iterate and compile a style block with a different value each time.</P>
+
+<p>The following is the syntax for using <strong>@for</strong> rule in Sass:</p>
+
+<p class="left"><strong>@for &lt;variable> from &lt;expression> to &lt;expression> { ... }<br>
+/* or */<br>
+@for &lt;variable> from &lt;expression> through &lt;expression> { ... }</strong></p>
+
+<P>Alright, let's have an example now, below we have a simple HTML code with some paragraph tags:</P>
+
+<p class="left"><span class="code10">&lt;p class="paragraph-1">Sassy way&lt;/p>
+&lt;p class="paragraph-2">Sassy way&lt;/p>
+&lt;p class="paragraph-3">Sassy way&lt;/p>
+&lt;p class="paragraph-4">Sassy way&lt;/p>
+&lt;p class="paragraph-5">Sassy way&lt;/p></span></p>
+
+<p>Now, if there is a need to write some styling for the almost same style classes used in
+the paragraph tags, then a total of 5 blocks of styles should be written.</p>
+
+<p>In this case, if the for loop is used the this task requires way fewer efforts. Also, in
+the style rules we need to increase the font size of each paragraph by multiplying 1px with the paragraph number.</p>
+
+<p>Check the follow Sass code that can be used:</p>
+
+<p class="left"><span class="code10">@for $i from 1 to 6{
+    .paragraph-#{$i} {
+        font-size: 10px * $i;
+    }
+}</span></p>
+
+<p>The above example uses <strong>start to end</strong> method, so the variable $i goes from 1 to 5.
+If the same <strong>@for</strong> rule had been written in the form of <strong>start through end</strong>,
+then the variable $i would take values from 1 to 6.</p>
+
+<p>Here is the outcome of the code above:</p>
+
+<p class="paragraph-1">Sassy way</p>
+<p class="paragraph-2">Sassy way</p>
+<p class="paragraph-3">Sassy way</p>
+<p class="paragraph-4">Sassy way</p>
+<p class="paragraph-5">Sassy way</p>
+
+<p>The Sass <Strong>@each</Strong> rule works similarly to the <strong>@for</strong>
+rule with the only difference being that it is <Strong>used to iterate over the values of a list or map</Strong>.</p>
+
+<p>Following is the syntax for using <strong>@each</strong> rule:</p>
+
+<p class="left"><strong>@each &lt;variable> in &lt;expression { ... }</strong></p>
+
+<p>The expression returns a list and the style block evaluated for each element of the list, which
+is one by one assigned to given variable name, here is an example:</p>
+
+<p class="left"><span class="code10">@each $color in (blue, black, yellow) {
+    .#($color)-background {
+        background-color: $color;
+    }
+}</span></p>
+
+<p>The map way is a bit different than the list, it is as follows:</p>
+
+<p class="left"><span class="code10">$colors: (color1: blue, color2: black, color3: yellow);
+
+@each $key, $value in $colors {
+    .#{$value}-background {
+        background-color: $value;
+    }
+}
+</span></p>
+
+<p>Lastly, the <Strong>@while</Strong> rule is similar to the while loop in any other programming/scripting languate.
+It executes until the specified expression evaluates to true.</p>
+
+<p>Following is the syntaxt for <strong>@while</strong> rule:</p>
+
+<p class="left"><strong>@while &lt;expression> { ... }</strong></p>
+
+<P>The style block defined with the <strong>@while</strong> rule is evaluated
+until the expression evaluates to true. We should be careful while using the <strong>@while</strong>
+rule for looping as this can very easily lead to infinite loops.</P>
+
+<p class="left"><span class="code10">$x: 1;
+
+@while $x < 6 {
+    .paragraph-#{x} {
+        font-size: 10px * $x;
+    }
+    $x: $x + 1;
+}</span></p>
+</article>
+
+<hr>
+
+<article id="sixteen">
+<header><h1><u>@function in Sass</u></h1></header>
+<p>Functions allow you to define complex operations on SassScript values that you can re-use throughout
+your styleshseet. They make it easy to abstract out common formulas and behaviors in a readable way.</p>
+
+<p>Functions are defined using the <Strong>@function</Strong> rule, which is written
+<strong>@function &lt;name> (&lt;arguments...>) { ... }</strong>. A function's name can be
+any Sass identifier. It can only contain universal statements, as well as the <strong>@return</strong>
+rule which indicates the value to use as the result of the function call. Functions are called
+using the normal CSS function syntax.</p>
+
+</article>
+
+<hr>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{
+  "name": "my-notes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel ./CSS-JavaScript-External-Files/dat/canvas3.js --out-dir ./CSS-JavaScript-External-Files/dat/canvas --public-url ./",
+    "build": "parcel build ./CSS-JavaScript-External-Files/dat/canvas3.js --out-dir ./CSS-JavaScript-External-Files/dat/canvas --public-url ./"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@chriscourses/perlin-noise": "^1.0.5",
+    "dat.gui": "^0.7.7",
+    "gsap": "^3.6.0",
+    "moment": "^2.29.1"
+  }
+}

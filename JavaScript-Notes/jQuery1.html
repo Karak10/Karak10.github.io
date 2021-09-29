@@ -1,0 +1,1294 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<title> Page one of my jQuery notes </title>
+        <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+<meta charset="UTF-8"> 
+<link href="../CSS-JavaScript-External-Files/HTMLnotes.css" rel="stylesheet">
+<style>
+    .syntax{
+        white-space: pre-wrap;
+        background-color: black;
+        color: white;
+        padding: 10px;
+        width: fit-content;
+        border-radius: 7px;
+        margin-left: 10px;
+        padding-right: 100px;
+        position: relative;
+        font-size: 1em;
+    }
+    .syntax::after{
+        content: attr(name);
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        color: white;
+        display: block;
+        width: fit-content;
+        background-color: orangered;
+        padding: 5px 10px;
+        border-radius: 25%;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 0.7em;
+    }
+    .left {
+        text-align: left;
+    }
+    
+    .code10 {
+    white-space: pre-wrap;
+    background-color: lightgreen;
+    
+    }
+    
+    p {
+    text-align:center;
+    }
+    h1 {
+    text-align:center;
+    }
+    h2 {
+    text-align:center;
+    }
+    h3 {
+    text-align:center;
+    }
+    .c {
+    background-color:lightgreen;
+    }
+    hr {
+    width:100%;
+    height:15px;
+    background-color:black;
+    color:black;
+    border: black solid;
+    }
+    body {
+    background-color:rgb(165, 235, 235);
+    }
+    span {
+    background-color:lightgreen;
+    }
+    
+    a:link {
+    color: black;
+    text-shadow: 1px 0px 1px black;
+    
+    }
+    
+    a:visited {
+    color: black;
+    text-shadow: 1px 0px 1px rgb(22, 22, 22);
+    }
+    
+    a:hover {
+    text-decoration: underline;
+    color: red;
+    text-shadow: 1px 0px 1px black;
+    }
+
+    .pink {
+        background-color: lightcoral;
+        font-weight: bold;
+    }
+
+    iframe {
+        width: 600px;
+        height: 350px;
+        border: 3px solid black;
+        margin: 20px auto 20px auto;
+        display: block;
+    }
+    
+   .list_container li{
+       width: fit-content;
+       max-width: 600px;
+       background-color: white;
+       border: 3px solid black;
+       border-radius: 20px;
+       margin: 20px auto 20px auto;
+       padding: 20px;
+       font-weight: bold;
+   }
+    
+   .list_container li{
+       margin-top: 15px;
+   }
+
+   .gray{
+       background-color: lightgray;
+   }
+    
+   img{
+       margin: 20px auto 20px auto;
+       display: block;
+       border: 3px solid black;
+       border-radius: 20px;
+   }
+   .blue{
+       background-color: unset;
+       color: rgb(38, 127, 228);
+   }
+   .green{
+       background-color: unset;
+       color: rgb(30, 206, 14);
+   }
+   .orange{
+       background-color: unset;
+       color: rgba(223, 140, 64, 0.973);
+   }
+   .lightblue{
+       background-color: unset;
+       color:rgb(136, 238, 238);
+   }
+   .warn{
+       background-color: orange;
+       color: black;
+   }
+   .purple{
+       background-color: unset;
+       color: purple;
+   }
+   .yellow{
+       background-color: unset;
+       color: rgb(238, 217, 32);
+   }
+   .table{
+       border: 3px solid black;
+       border-collapse: collapse;
+       margin-left: 10px;
+   }
+   .table :is(td, th){
+       border: 3px solid black;
+       text-align: left;
+       padding: 5px;
+       background-color: white;
+   }
+   .table th{
+       background-color: rgb(99, 65, 116);
+       color: white;
+       font-size: 1.15em;
+       text-align: center;
+   }
+    </style> 
+</head>
+<body>
+
+<hr>
+
+    <header> 
+    <h1> Page one of my jQuery notes </h1>
+    </header>
+    
+<article id="start-of-page"> 
+  
+<div id="homepages">
+
+    <h3>Home Pages:</h3>
+   
+
+</div>
+
+<nav data-notes="jQuery" data-page="1">
+
+</nav>
+
+    <h3> Informations included in this page:</h3>
+<p><a href="./../JavaScript-Notes/jQuery1.html#one">jQuery Overview</a></p>
+<p><a href="./../JavaScript-Notes/jQuery1.html#two">Attributes and Content</a></p>
+<p><a href="./../JavaScript-Notes/jQuery1.html#three">Manipulating the CSS</a></p>
+<p><a href="./../JavaScript-Notes/jQuery1.html#four">Manipulating the DOM</a></p>
+<p><a href="./../JavaScript-Notes/jQuery1.html#five">Adding events</a></p>
+<p><a href="./../JavaScript-Notes/jQuery1.html#six">Creating effects</a></p>
+
+</article>
+
+ <script src="../CSS-JavaScript-External-Files/nav.js"></script>
+
+ <hr>
+<article id="one">
+<header><h1>jQuery Overview</h1></header>
+
+<p>In this section we will learn some basics about what jQuery is
+and how you can start using it, it's basically a preparation
+section for the following lessons.</p>
+<h2><u>What is jQuery</u></h2>
+<p>jQuery is a fast, small, and feature-rich JavaScript library.
+It makes things like HTML document traversal and manipulation, event handling, and animation much simpler.</p>
+
+<p>All the power of jQuery is accessed via JavaScript, so having a strong grasp of JavaScript is essential for understanding, structuring, and debugging your code.</p>
+
+<p>First, let's take a look at an example HTML manipulation with JavaScript.
+To get the element with the id="start" and change its html to "Go" we will need to do the following:</p>
+
+<div class="syntax" name="JS">var el = document.getElementById("start");
+el.innerHTML = "Go";</div>
+
+<p>To do the same manipulation with jQuery, we need just a single line of code:</p>
+
+<div class="syntax" name="JS">$("#start").html("Go");</div>
+
+<p>We will learn about the new syntax in the coming lessons, but as you can see, the code is much shorter and easier to understand.
+</p>
+
+<h2><u>Installing jQuery</u></h2>
+
+<p>So, there are two ways you can use jQuery, you can either install it into your
+project with NPM, I have talked about how NPM works in another page of my notes,
+so search for it if you don't already know how to use it. There is also an easier way however,
+which is to use a CDN (Content Delivery Network).
+</p>
+
+<p>I like using NPM though, and I do not want to depend on a CDN, so I
+will install jQuery my self with NPM and bundle it with browserify:
+</p>
+
+<div class="syntax" name="cmd"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop</span>$ mkdir jQuery_Project
+<span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop</span>$ cd jQuery_Project
+<span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/jQuery_Project</span>$ touch index.html
+<span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/jQuery_Project</span>$ mkdir JavaScript_Files
+<span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/jQuery_Project</span>$ cd JavaScript_Files
+<span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/jQuery_Project/JavaScript_Files</span>$ touch script.js
+<span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/jQuery_Project/JavaScript_Files</span>$ _</div>
+
+<br>
+<div class="syntax" name="index.html">&lt;!<span class="blue">DOCTYPE</span> <span class="lightblue">html</span>>
+&lt;<span class="blue">html</span> <span class="lightblue">lang</span>=<span class="orange">"en"</span>>
+&lt;<span class="blue">head</span>>
+    &lt;<span class="blue">meta</span> <span class="lightblue">charset</span>=<span class="orange">UTF-8"</span>>
+    &lt;<span class="blue">meta</span> <span class="lightblue">http-equiv</span>=<span class="orange">"X-UA-Compatible"</span> <span class="lightblue">content</span>=<span class="orange">"IE=edge"</span>>
+    &lt;<span class="blue">meta</span> <span class="lightblue">name</span>=<span class="orange">"viewport"</span> <span class="lightblue">content</span>=<span class="orange">"width=device-width, initial-scale=1.0"</span>>
+    &lt;<span class="blue">title</span>>Document&lt;/<span class="blue">title</span>>
+&lt;/<span class="blue">head</span>>
+&lt;<span class="blue">body</span>>
+    &lt;<span class="blue">p</span> <span class="lightblue">id</span>=<span class="orange">"test"</span>>&lt;/<span class="blue">p</span>>
+    &lt;<span class="blue">script</span> <span class="lightblue">src</span>=<span class="orange">"./build/script.js"</span>>&lt;/<span class="blue">script</span>>
+&lt;/<span class="blue">body</span>>
+&lt;/<span class="blue">html</span>></div>
+
+<br>
+<div class="syntax" name="cmd"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/jQuery_Project</span>$ npm init -y
+Wrote to /mnt/c/Users/alexi/Desktop/jQuery_Project/package.json:
+
+{
+  "name": "jQuery_Project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+  },
+  "devDependencies": {},
+  "description": ""
+}
+
+<span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/jQuery_Project</span>$ npm install jquery
+npm <span class="warn">WARN</span> jQuery_Project@1.0.0 No description
+npm <span class="warn">WARN</span> jQuery_Project@1.0.0 No repository field.
+
++ jquery@3.6.0
+updated 1 package and audited 1 package in 5.001s
+found <span class="green">0</span> vulnerabilities
+
+<span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/jQuery_Project</span>$ npm install -g browserify
+npm <span class="warn">WARN</span> <span class="purple">deprecated</span> querystring@0.2.0: The querystring API is considered Legacy. 
+new code should use the URLSearchParams API instead.
+/home/karak10/.nvm/versions/node/v14.17.4/bin/browserify -> /home/karak10/.nvm/versions/node/v14.17.4
+/lib/node_modules/browserify/bin/cmd.js
++ browserify@17.0.0
+updated 1 package in 32.153s
+<span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/jQuery_Project</span>$ _</div>
+
+<br>
+
+<div class="syntax" name="package.json">{
+  <span class="lightblue">name"</span>: <span class="orange">jQuery_Project"</span>,
+  <span class="lightblue">version"</span>: <span class="orange">1.0.0"</span>,
+  <span class="lightblue">description"</span>: <span class="orange">"</span>,
+  <span class="lightblue">main"</span>: <span class="orange">index.js"</span>,
+  <span class="lightblue">scripts"</span>: {
+    <span class="lightblue">build"</span>: <span class="orange">"browserify JavaScript_Files/script.js -o build/script.js"</span>
+  },
+  <span class="lightblue">keywords"</span>: [],
+  <span class="lightblue">author"</span>: <span class="orange">"</span>,
+  <span class="lightblue">license"</span>: <span class="orange">ISC"</span>,
+  <span class="lightblue">dependencies"</span>: {
+    <span class="lightblue">jquery"</span>: <span class="orange">^3.6.0"</span>
+  },
+  <span class="lightblue">devDependencies"</span>: {}
+}</div>
+
+<br>
+
+<div class="syntax" name="script.js"><Span class="yellow">var</Span> <span class="lightblue">$</span> = <span class="yellow">require</span>(<span class="orange">"./../node_modules/jquery/dist/jquery.js"</span>);
+
+<Span class="yellow">$</Span>(<span class="orange">'#test'</span>)<Span class="yellow">.html</Span>(<span class="orange">'Hello World!!!!'</span>);</div>
+
+<p>With all the above files done, you can now run the "build" script
+I created inside package.json file and your script.js file
+inside the JavaScript_Files folder will be bundled with the
+jQuery code you request at the beginning of the script and then it will be moved
+inside another script.js file in a folder I called build, you don't
+need to create this folder and file yet, just write npm run build
+in your terminal and browserify will create them it self if they don't
+exist.</p>
+
+<div class="syntax" name="cmds"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/jQuery_Project$</span> npm run build
+
+> jQuery_Project@1.0.0 build /mnt/c/Users/alexi/Desktop/jQuery_Project
+> browserify JavaScript_Files/script.js -o build/script.js
+
+<span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/jQuery_Project$</span> _</div>
+
+<p>In a project you may use a lot of tools, you may want to compile your SASS into
+CSS, concat and uglify your JavaScript files, and other stuff like that,
+that's why you may want to use a task runner like Grunt. I have talked before
+in another page of my notes about how Grunt works, and if you want to
+run terminal commands using grunt, for example, if you want to tell grunt
+to write "npm run build" in your terminal or even if you want to make it run the browserify command
+it self you can use a plugin to get this done, it's called grunt-run, and
+the reason you may want to use it is because with this you will be able to
+run the browserify command together with other tasks you add in Grunt and so
+you won't have to manually run the browserify command your self, you will have
+Grunt do this for you.</p>
+
+<h2><u>Basics about jQuery Syntax</u></h2>
+
+<p>jQuery is used to select (query) HTML elements and perform "actions" on them.</p>
+
+<p>Basic syntax is: $("selector").action()
+<ul><li>The $ accesses jQuery</li>
+<li>The (selector) finds HTML elements</li>
+<li>The action() is then performed on the element(s).</li></ul>
+</p>
+
+<p class="left"><strong>For example:</strong></p>
+
+<div class="syntax" name="JS">$("p").hide()  // hides all &lt;p> elements
+$(".demo").hide()  // hides all elements with class="demo"
+$("#demo").hide()  // hides the element with id="demo"
+</div>
+
+<P>It is a good practice to wait for the HTML document to be fully loaded and ready before working with it.
+For that we use the ready event of the document object:</P>
+
+<div class="syntax" name="JS">$(document).ready(function() {
+   // jQuery code goes here
+});</div>
+
+<p>Since the code above is used in almost all cases when using jQuery, there is a handy shortcut for writing it:</p>
+
+<div class="syntax" name="JS">$(function() {
+   // jQuery code goes here
+});</div>
+
+</article>
+
+<hr>
+
+<article id="two">
+<header><h1>Attributes and Content</h1></header>
+<p>In this sections we will talk about how you can manipulate
+the attributes and content of an element using jQuery.
+</p>
+<h2><u>How to get, set or remove attributes</u></h2>
+<p>We can manipulate attributes assigned to HTML elements easily through jQuery.
+href, src, id, class, style are all examples of HTML attributes.
+The attr() method is used for getting the value of an attribute, for example:
+</p>
+
+<div class="syntax" name="html">&lt;a href="www.sololearn.com">
+    Click here
+&lt;/a></div>
+<br>
+<div class='syntax' name="JS">$(function() {
+    var val = $("a").attr("href");
+    alert(val);
+});</div>
+
+<P>The attr() method also allows us to set a value for an attribute by specifying it as the second parameter.</P>
+
+<div class="syntax" name="JS">$(function() {
+    $("a").attr("href", "http://www.jquery.com");
+});</div>
+
+<P>You can also remove attributes from HTML elements.
+The removeAttr() method is used for removing any attribute of an element. In the example below we remove the border and class attributes of the table:</P>
+
+<div class="syntax" name="JS">$(function() {
+    $("table").removeAttr("border");
+    $("table").removeAttr("class"); 
+});</div>
+
+<h2><u>Get & Set Content</u></h2>
+
+<p>There are several methods for manipulating the content of HTML elements via jQuery.
+The html() method is used to get the content of the selected element, including the HTML markup, for example:</p>
+
+<div class="syntax" name="html">&lt;p>
+  JQuery is &lt;b>fun&lt;/b>
+&lt;/p></div>
+
+<br>
+
+<div class="syntax" name="JS">$(function() {
+    var val = $("p").html();
+    alert(val);
+});
+
+// alerts "JQuery is &lt;b>fun&lt;/b>"</div>
+
+<p>Notice, that the HTML markup (the &lt;b> tags) is also returned,
+If you need only the text content, without the HTML markup, you can use the text() method:</p>
+
+<div class="syntax" name="JS">$(function() {
+    var val = $("p").text();
+    alert(val);
+});
+
+// alerts "JQuery is fun"</div>
+
+<p>The same html() and text() methods can be used to change the content of HTML elements.
+The content to be set is provided as a parameter to the method, for example:</p>
+
+<div class="syntax" name="html">&lt;div id="test">
+   &lt;p>some text&lt;/p>
+&lt;/div></div>
+
+<br>
+
+<div class="syntax" name="JS">$(function() {
+    $("#test").text("hello!");
+    console.log($("#test").html())
+});</div>
+
+<p>So, by running the code above you will notice two things, the text has indeed changed
+from "some text" to "hello!", and the string that is returned by the console.log statement
+also is "hello!", so the text() method has changed the content of the div, not just
+the text, the div has no paragraph inside it anymore. Using the html() method would do the same,
+however, if you wrote text('&lt;b>hello!&lt;/b>') then that's where you would see
+a difference, the text method would change the text to "&lt;b>hello!&lt;/b>", the
+html() method however would treat the &lt;b> tags as HTML elements and not as text,
+so the text would become a bold "hello!". In other words, the html() method changes the
+HTML content inside an element, while the text() method changes the text conent inside an element.
+
+<h2><u>The val() Method</u></h2>
+
+<P>We have seen in the previous lesson how we can manipulate the content of HTML elements using the text() and html() methods.
+Another useful method is the val() method, which allows us to get and set the values of form fields, such as textboxes, dropdowns, and similar inputs. For Example:</P>
+</p>
+
+<div class="syntax" name="html">&lt;p>
+    &lt;input type="text" id="name" value="Your Name">
+&lt;/p></div>
+
+<br>
+
+<div class="syntax" name="JS">$(function() {
+    alert($("#name").val());
+});</div>
+
+<p>So, you may ask now, why not use the attr() method?
+Using attr('value') would always return "Your Name", meanwhile val() returns the actual written value that could be changed by the user.</p>
+
+<p>Similarly, you can set the value for the field by providing it as a parameter to the val() method.</p>
+
+<div class="syntax" name="JS">$(function() {
+    $("#name").val('Karak10 is cool')
+});</div>
+
+<h2><u>Adding Content</u></h2>
+
+<p>As we have seen in the previous lessons, the html() and text() methods can be used to get and set the content of a selected element. However, when these methods are used to set content, the existing content is lost.
+jQuery has methods that are used to add new content to a selected element without deleting the existing content:</p>
+
+<ul>
+    <li><strong>append()</strong> inserts content at the end of the selected elements.</li>
+    <li><strong>prepend()</strong> inserts content at the beginning of the selected elements.</li>
+    <li><strong>after()</strong> inserts content after the selected elements.</li>
+    <li><strong>before()</strong> inserts content before the selected elements.</li>
+</ul>
+
+<p>The append() method inserts content AT THE END of the selected HTML element. For example:
+HTML:</p>
+
+<div class="syntax" name="html">&lt;p id="demo">Hi &lt;/p></div>
+<br>
+<div class="syntax" name="JS">$(function() {
+    $("#demo").prepend("&lt;b>");
+    $("#demo").append("David&lt;b>");
+});
+
+// Outputs: &lt;p id="demo">&lt;b>Hi David&lt;/b>&lt;/p></div>
+
+<p>The jQuery after() and before() methods insert content AFTER and BEFORE the selected HTML element, 
+and those methods can also use HTML markup for the content, for example:</p>
+
+<div class="syntax" name="JS">$(function() {
+    $("#demo").before("&lt;h2>Some Title&lt;/h2>");
+    $("#demo").after("&lt;p>Welcome&lt;/p>");
+});
+
+// Outputs:
+// &lt;h2>Some Title&lt;/h2>
+// &lt;p id="demo">Hi &lt;/p>
+// &lt;p>Welcome&lt;/p></div>
+
+<p>The append(), prepend(), before() and after() methods can also be used to add newly created elements. The easiest way of creating a new HTML element with jQuery is the following:</p>
+
+<div class="syntax" name="JS">var txt = $("&lt;p>&lt;/p>").text("Hi");</div>
+
+<p>The code above creates a new &lt;p> element, which contains the text Hi and assigns it to a variable called txt.
+Now, we can use that variable as a parameter of the above mentioned methods to add it to our HTML, for example</p>
+
+<div class="syntax" name="JS">$(function() {
+    var txt = $("<p></p>").text("Hi");
+    $("#demo").after(txt);
+});</div>
+
+<p>This will insert the newly created &lt;p> element after the #demo paragraph.
+You can also specify multiple elements as arguments for the before(), after(), append(), prepend() methods by separating them using commas: $("#demo").append(var1, var2, var3).</p>
+</article>
+
+<hr>
+
+<article id="three">
+<header><h1>Manipulating the CSS</h1></header>
+<p>In this section you will learn how you can edit
+the CSS styles of elements using jQuery, as well
+as how you can add or remove classes:</p>
+
+<h2><u>Adding & Removing Classes</u></h2>
+
+<p>jQuery has several methods for CSS manipulation.
+The addClass( ) method adds one or more classes to the selected elements, for example:</p>
+
+<div class="syntax" name="html">&lt;div>Some text&lt;/div></div>
+
+<br>
+
+<div class="syntax" name="CSS">.header {
+  font-size:x-large;
+}
+
+.blue {
+    color: blue;
+}</div>
+
+<br>
+<div class="syntax" name="JS">$('div').addClass("header blue");</div>
+
+<p>The removeClass() method removes one or more class names from the selected elements.</p>
+
+<div class="syntax" name="JS">$('div').removeClass("header blue");</div>
+
+<p>The toggleClass() method toggles between adding/removing classes from the selected elements, meaning that if the specified class exists for the element, it is removed, and if it does not exist, it is added.
+To demonstrate this in action, we will handle a button click event to toggle a class. We will learn more about events and their syntax in the coming lessons.</p>
+
+<div class="syntax" name="html">&lt;p>Some text&lt;/p>
+&lt;button>Toggle Class&lt;/button></div>
+
+<br>
+
+<div class="syntax" name="CSS">.red { 
+  color:red; 
+  font-weight: bold;
+}</div>
+
+<br>
+<div class="syntax" name="JS">$(function() {
+    $("button").click(function() {
+        $("p").toggleClass("red");
+    });
+});</div>
+<p>The code above toggles the class name "red" upon clicking the button.</p>
+
+<h2><u>CSS Properties</u></h2>
+
+<p>Similar to the html() method, the css() method can be used to get and set CSS property values, for example:</p>
+
+<div class="syntax" name="html">&lt;p>Some text&lt;/p></div>
+
+<br>
+
+<div class="syntax" name="CSS">p {
+  background-color:red;
+  color: white;
+}</div>
+
+<br>
+<div class="syntax" name="JS">$(function() {
+    $("p").css("background-color", "blue");
+    alert($("p").css("background-color"));
+});
+
+// this will alert "blue"</div>
+
+<p>To set multiple CSS properties, the css() method uses JSON syntax, which is:</p>
+
+<div class="syntax" name="JS">css({
+    "property1": "value1",
+    "property2": "value2",
+    "property3" : "value3"
+});</div>
+
+<p>As you can see, the syntax consists of "property":"value" pairs, which are comma separated and enclosed in curly brackets { }.</p>
+
+<h2><u>Dimensions</u></h2>
+
+<p>The width() and height() methods can be used to get and set the width and height of HTML elements.</p>
+
+<p>Let's set both the width and height of a div to 100px, as well as set a background color for it:</p>
+
+<div class="syntax" name="JS">$(function() {
+    $("div").css("background-color", "red");
+    $("div").width(100);
+    $("div").height(100);
+});
+
+// Note: the sizes in default are pixels</div>
+
+<p>You can also do all these settings in one statement like this :</p>
+
+<div class="syntax" name="JS">$(function() { 
+    $("div").css("background-color", "red").width(100).height(100); 
+});</div>
+
+<p>The <strong>width()</strong> and <strong>height()</strong> methods get and set the dimensions without the padding, borders and margins.</p>
+
+<p>The <strong>innerWidth()</strong> and <strong>innerHeight()</strong> methods also include the padding.
+The <strong>outerWidth()</strong> and <strong>outerHeight()</strong> methods include the padding and borders.</p>
+
+<p>The following example demonstrates how the methods work:</p>
+
+<div class="syntax" name="html">&lt;div>&lt;/div></div>
+
+<br>
+
+<div class="syntax" name="CSS">div {
+  width: 300px;
+  height: 100px;
+  padding: 10px;
+  margin: 20px;
+  border: 3px solid blue;
+  background-color: red;
+  color: white;
+}</div>
+
+<br>
+<div class="syntax" name="JS">$(function() {
+    console.log($('div').width())
+    console.log($('div').innerWidth())
+    console.log($('div').outerWidth())
+});
+
+// outcome: 300, 320, 326</div>
+
+<p>width() is equal to 'width' in CSS when 'box-sizing: content-box' outerWidth() is equal to 'width' in CSS when 'box-sizing: border-box'</p>
+</article>
+
+<hr>
+
+<article id="four">
+<header><h1>Manipulate the DOM</h1></header>
+<p>In this section we will learn how to manipulate the DOM using jQuery, however,
+I will not go over the basics of what the DOM is, what a parent element is, what a child element is,
+what a sibling element is, and so on, and that's because I'm pretty sure i have already
+explained those stuff in previous notes, but you can just google this stuff too if you want
+there really aren't that much you need to know, you already know HTML,
+so you probably already have a basic idea of hoe the DOM is structured and stuff.
+</p>
+
+<h2><U>DOM Traversal</U></h2>
+
+<P>
+jQuery has many useful methods for DOM traversal.
+The <strong>parent()</strong> method returns the direct parent element of the selected element. For example:</P>
+
+<div class="syntax" name="html">&lt;div> div element
+  &lt;p>paragraph</p> 
+&lt;/div>
+</div>
+
+<br>
+
+<div class="syntax" name="JS">$(function() {
+    var e = $("p").parent();
+    e.css("border", "2px solid red");
+});</div>
+
+<P>The code above selects the parent element of the paragraph and sets a red border for it.</P>
+
+<P>The parent() method can only traverse a single level up the DOM tree.
+To get all ancestors of the selected element you can use the <strong>parents()</strong> method. For example:</P>
+
+<div class="syntax" name="html">&lt;body>  body
+  &lt;div style="width:300px;"> div
+    &lt;ul> ul
+      &lt;li> li
+        &lt;p>paragraph&lt;/p>
+      &lt;/li>
+    &lt;/ul>   
+  &lt;/div>
+&lt;/body></div>
+
+<br>
+
+<div class="syntax" name="JS">$(function() {
+    var e = $("p").parents();
+    e.css("border", "2px solid red");
+});</div>
+
+<p>The code above sets a red border for all parents of the paragraph.</p>
+
+<p class="left"><strong>Some of the most used traversal methods are presented below:</strong></p>
+
+<table class="table">
+    <tr>
+        <th>Method</th>
+        <th>What It Returns</th>
+    </tr>
+    <tr>
+        <td><strong>parent()</strong></td>
+        <td>direct parent element of the selected element</td>
+    </tr>
+    <tr>
+        <td><strong>parents()</strong></td>
+        <td>all ancestor elements of the selected element</td>
+    </tr>
+    <tr>
+        <td><strong>children()</strong></td>
+        <td>all direct children of the selected element</td>
+    </tr>
+    <tr>
+        <td><strong>siblings()</strong></td>
+        <td>all sibling elements</td>
+    </tr>
+    <tr>
+        <td><strong>next() / nextAll()</strong></td>
+        <td>next or all next sibling elements of the selected element</td>
+    </tr>
+    <tr>
+        <td><strong>prev() / prev</strong></td>
+        <td>previous or all previous sibling elements of the selected element</td>
+    </tr>
+    <tr>
+        <td><strong>eq()</strong></td>
+        <td>element with a specific index number of the selected elements</td>
+    </tr>
+</table>
+
+<p>You may be confused about the <strong>eq()</strong> method, do not be, it's simple,
+let's say you wanted to select the first paragraph in your document, if you wrote <Strong>$('p')</Strong>
+that would return a node array of all your paragraphs, to select the first one you could write
+<strong>$('p').eq(0)</strong>, to select the second you can change 0 to 1, the index
+works just like an array index.</p>
+
+<h2><u>Removing Elements</u></h2>
+
+<p>We remove selected elements from the DOM using the <Strong>remove()</Strong> method, for example:</p>
+
+<div class="syntax" name="html">&lt;p style="color:red">Red&lt;/p>
+&lt;p style="color:green">Green&lt;/p>
+&lt;p style="color:blue">Blue&lt;/p></div>
+
+<br>
+
+<div class="syntax" name="JS">$(function(){
+    $('p').eq(1).remove();
+});
+</div>
+
+<p>This removes Green, the second paragraph element.
+You can also use the <strong>remove()</strong> method on multiple selected elements, for example <strong>$("p").remove()</strong> removes all paragraphs.
+The jQuery <strong>remove()</strong> method removes the selected element(s), as well as its child elements.</p>
+
+<p>The <strong>empty()</strong> method is used to remove the child elements of the selected element(s), for example:</p>
+
+<div class="syntax" name="html">&lt;div>
+   &lt;p style="color:red">Red&lt;/p>
+   &lt;p style="color:green">Green&lt;/p>
+   &lt;p style="color:blue">Blue&lt;/p>
+&lt;/div></div>
+
+<br>
+
+<div class="syntax" name="JS">$(function(){
+    $("div").empty();
+});</div>
+
+<p>This removes all the three child elements of the div, leaving it empty.</p>
+</article>
+
+<hr>
+
+<article id="five">
+<header><h1>Events</h1></header>
+<p>In this section we will talk about how you can use events with jQuery.</p>
+<h2><u>Handling Events</u></h2>
+
+<p>JQuery provides an efficient way to handle events. Events occur when the user performs an action, such as clicking an element, moving the mouse, or submitting a form.
+When an event occurs on a target element, a <Strong>handler function</Strong> is executed.</p>
+
+<p>For example, let's say we want to handle the <strong>click</strong> event on an element with id="demo" and display the current date when the button is clicked. Using pure JavaScript, the code looks like:</p>
+
+<div class="syntax" name="JS">
+window.addEventListener('load', function(e)=>{
+
+    var el = document.getElementById('demo');
+
+    el.addEventListener('click', function(e)=>{
+        document.body.innerHTML = Date();
+    });
+
+});</div>
+
+<p>The same event could be handled using jQuery with the following code:</p>
+
+<div class="syntax" name="JS">$(function() {
+
+    $('#demo').click(function(e) {
+        $('body').html(Date());
+    });
+
+});</div>
+
+<p>As you can see, the jQuery code is shorter and easier to read and write.
+Notice, that the event name is provided without the "on" prefix.</p>
+
+<h2 class="left">Common Events:</h2>
+
+<dl style="margin-left: 10px">
+    <dt><strong><u>Mouse Events:</u></strong></dt>
+        <dd><br><Strong>click</Strong> - occurs when an element is clicked.</dd>
+        <dd><strong>dblclick</strong> - occurs when an element is double-clicked</dd>
+        <dd><Strong>mouseenter</Strong> - occurs when the mouse pointer gets over (enters) the selected element.</dd>
+        <dd><strong>mouseleave</strong> - occurs when the mouse pointer leaves the selected element</dd>
+        <dd><strong>mouseover</strong> - occurs when the mouse pointer is over the selected element</dd>
+        <dd><strong>mouseout</strong> - occurs when the mouse pointer is no longer over the selected element</dd>
+        <dd><strong>mousemove</strong> - occurs when the mouse is over the selected element and also is moving</dd>
+        <dd><br>You can see the difference between mouseenter / mouseleave and mouseover / mouseout events when your target element contains child elements: Each time your mouse enters or leaves a child element, mouseover or mouseout is triggered, but not mouseenter or mouseleave. The mouseenter event only triggers when the mouse pointer enters the selected element
+        and the mouseleave only triggers when the mouse leaves the selected element.</dd>
+    <dt><br><strong><u>Keyboard Events:</u></strong></dt>
+        <dd><br><Strong>keydown</Strong> - occurs when a keyboard key is pressed down.</dd>
+        <dd><strong>keyup</strong> - occurs when a keyboard key is released.</dd>
+    <dt><br><strong><u>Form Events:</u></strong></dt>
+        <dd><br><strong>submit</strong> - occurs when a form is submitted.</dd>
+        <dd><strong>change</strong> - occurs when the value of an element has been changed.</dd>
+        <dd><strong>focus</strong> - occurs when an element gets focus.</dd>
+        <dd><strong>blur</strong> - occurs when an element loses focus.</dd>
+    <dt><br><strong><u>Document Events:</u></strong></dt>
+        <dd><br><strong>ready</strong> - occurs when the DOM has been leaded.</dd>
+        <dd><strong>resize</strong> - occurs when the browser window changes size.</dd>
+        <dd><strong>scroll</strong> - occurs when the user scrolls in the specified element.</dd>
+</dl>
+
+<p>Another way to handle events in jQuery is by using the <strong>on()</strong> method.
+The <strong>on()</strong> method is used to attach an event to the selected element.
+For example:</p>
+
+<div class="syntax" name="JS">$("P").on("click", function(){
+    alert("Clicked");
+});</div>
+
+<p>The <strong>on()</strong> method is useful for binding the same handler function 
+to multiple events. You can provide multiple event names separated 
+by spaces as the first argument. For example, you could use the same 
+event handler for the click and dblclick events like this: <strong>$('p').on('click dblclick', function(){})</strong>.</p>
+
+<p>You can remove event handlers using the off() method:</p>
+
+<div class="syntax" name="JS">$('div').on('click', function(){
+    alert('Hi there!');
+    $('div').off('click');
+});</div>
+
+<h2><u>The Event Object</u></h2>
+
+<p>Every event handling function can receive an event object, which contains properties and methods related to the event:</p>
+
+<ul>
+    <li><strong>pageX, pageY</strong> - the mouse position (X & Y coordinates) at the time the event occurred, relative to the top left of the page.</li>
+    <li><strong>type</strong> - the type of the event (e.g. "click").</li>
+    <li><strong>which</strong> - the button or key that was pressed.</li>
+    <li><Strong>data</Strong> - any data that was passed in when the event was bound.</li>
+    <li><strong>target</strong> - the DOM element that initiated the event.</li>
+    <li><strong>preventDefault()</strong> - prevent the default action of the event (e.g., following a link).</li>
+    <li><strong>stopPropagation()</strong> - Stop the event from bubbling up to other elements.</li>
+</ul>
+
+<p>I have talked much more about events in my vanilla JavaScript notes so
+I will not explain them again.</p>
+
+<p>As an example, let’s handle the click event on an &lt;a> element and prevent it from following the link provided in the href attribute:</p>
+
+<div class="syntax" name="JS">$('a').click(function(event) {
+    alert(event.pageX);
+    event.preventDefault();
+});</div>
+
+<p>The code above alerts the mouse position at the time of the click and prevents following the link.</p>
+
+<p>We can also trigger events programmatically using the <Strong>trigger()</Strong> method. For example, you can trigger a click event without the user actually clicking on an element:</p>
+
+<div class="syntax" name="JS">$('div').click(function() {
+    alert('Clicked!');
+});
+
+$('div').trigger('click');</div>
+
+<p>The trigger() method cannot be used to mimic native browser events, such as clicking on a file input box or an anchor tag. Only events in the jQuery event system can be handled.</p>
+</article>
+
+<hr>
+
+<article id="six">
+<header><h1>Effects</h1></header>
+<p>In this section we will talk about the different effects we can create using jQuery, those
+effects are really cool because creating them with vanilla JavaScript would require a lot of time and effort,
+jQuery however has pre-build methods that get things done for as fast and simple, and
+those animation methods are actually one of the main reasons I like jQuery so much.</p>
+
+<h2><u>Hide/Show, Fade, Slide</u></h2>
+
+<p>jQuery has some easy-to-implement effects to create animations.
+The <Strong>hide()</Strong> and <Strong>show()</Strong> methods are used to hide and show the selected elements.</p>
+
+<p>The <Strong>toggle()</Strong> method is used to toggle between hiding and showing elements, for example:</p>
+
+<div class="syntax" name="html">&lt;div id="btn">Click to toggle show/hide&lt;/div>
+
+&lt;div id="el1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
+eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim 
+veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo 
+consequat.&lt;/div>
+</div>
+
+<br>
+
+<div class="syntax" name="CSS">#btn {
+    background-color: black;
+    text-align:center;
+    color:white;
+    padding:5px;
+    cursor:pointer;
+    width: 50%;
+    margin: auto;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+#el1 {
+    box-sizing: border-box;
+    background-color: black;
+    color:white;
+    width: 50%;
+    margin: auto;
+    margin-top: 10px;
+    padding: 10px;
+}</div>
+
+<br>
+
+<div class="syntax" name="JS">$(function(){
+    $('#btn').click(function() {
+        $('#el1').toggle();
+    });
+});</div>
+
+<br>
+
+<h2 class="left" style="margin-left: 10px;">Outcome:</h2>
+
+<style>
+#btn {
+    background-color: black;
+    text-align:center;
+    color:white;
+    padding:5px;
+    cursor:pointer;
+    width: 50%;
+    margin: auto;
+    box-sizing: border-box;
+    user-select: none;
+}
+#el1 {
+    box-sizing: border-box;
+    background-color: black;
+    color:white;
+    width: 50%;
+    margin: auto;
+    margin-top: 10px;
+    padding: 10px;
+}
+</style>
+<div id="btn">Click to toggle show/hide</div>
+
+<div id="el1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+
+<script>
+$('#btn').click(function() {
+    $('#el1').toggle();
+});
+</script>
+
+<p>The hide/show/toggle methods can take an optional argument, speed, which specifies the animation speed in milliseconds.
+    For example, let's pass 1000 millisecond as the speed argument to the toggle() method:</p>
+
+<div class="syntax" name="JS">$(function(){
+    $('#btn').click(function() {
+        $('#el1').toggle(1000);
+    });
+});</div>
+
+<style>
+#btn2 {
+    background-color: black;
+    text-align:center;
+    color:white;
+    padding:5px;
+    cursor:pointer;
+    width: 50%;
+    margin: auto;
+    box-sizing: border-box;
+    user-select: none;
+}
+#el2 {
+    box-sizing: border-box;
+    background-color: black;
+    color:white;
+    width: 50%;
+    margin: auto;
+    margin-top: 10px;
+    padding: 10px;
+}
+</style>
+
+<h2 class="left" style="margin-left: 10px;">Outcome:</h2>
+
+<div id="btn2">Click to toggle show/hide</div>
+
+<div id="el2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+
+<script>
+$('#btn2').click(function() {
+    $('#el2').toggle(1000);
+});
+</script>
+
+<p>The hide/show/toggle methods can also take a second optional parameter callback, which is a function to be executed after the animation completes.</p>
+
+<p>Similar to the hide/show methods, jQuery provides the <Strong>fadeIn</Strong> and <Strong>fadeOut</Strong> methods, which fade an element in and out of visibility.
+Just like the <strong>toggle()</strong> method switches between hiding and showing, the <strong>fadeToggle()</strong> method fades in and out.
+Let's see <strong>fadeToggle()</strong> in action:</p>
+
+<style>
+#btn3 {
+    background-color: black;
+    text-align:center;
+    color:white;
+    padding:5px;
+    cursor:pointer;
+    width: 50%;
+    margin: auto;
+    box-sizing: border-box;
+    user-select: none;
+}
+#el3 {
+    box-sizing: border-box;
+    background-color: black;
+    color:white;
+    width: 50%;
+    margin: auto;
+    margin-top: 10px;
+    padding: 10px;
+}
+</style>
+
+<div class="syntax" name="JS">$(function(){
+    $('#btn').click(function() {
+        $('#el1').fadeToggle(1000, function(){
+            console.log('test');
+        });
+    });
+});</div>
+
+<h2 class="left" style="margin-left: 10px;">Outcome:</h2>
+
+<div id="btn3">Click to toggle show/hide</div>
+
+<div id="el3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+
+<script>
+$('#btn3').click(function() {
+    $('#el3').fadeToggle(1000, function(){
+            console.log('test');
+        });
+});
+</script>
+
+<p>Just like toggle(), fadeToggle() takes two optional parameters: speed and callback.</p>
+
+<p>Another method used for fading is <strong>fadeTo()</strong>, which allows fading to a given opacity (value between 0 and 1). For example: <strong>$("div").fadeTo(1500, 0.7)</strong>;</p>
+
+<p>The <Strong>slideUp()</Strong> and <Strong>slideDown()</Strong> methods are used to create a sliding effect on elements.
+Again, similar to the previous toggle methods, the <Strong>slideToggle()</Strong> method switches between the sliding effects and can take two optional parameters: speed and callback.</p>
+
+<style>
+#btn4 {
+    background-color: black;
+    text-align:center;
+    color:white;
+    padding:5px;
+    cursor:pointer;
+    width: 50%;
+    margin: auto;
+    box-sizing: border-box;
+    user-select: none;
+}
+#el4 {
+    box-sizing: border-box;
+    background-color: black;
+    color:white;
+    width: 50%;
+    margin: auto;
+    margin-top: 10px;
+    padding: 10px;
+}
+</style>
+
+<div class="syntax" name="JS">$(function(){
+    $('#btn').click(function() {
+        $('#el1').slideToggle(1000);
+    });
+});</div>
+
+<h2 class="left" style="margin-left: 10px;">Outcome:</h2>
+
+<div id="btn4">Click to toggle show/hide</div>
+
+<div id="el4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+
+<script>
+$('#btn4').click(function() {
+    $('#el4').slideToggle(1000);
+});
+</script>
+
+<h2><u>The animate() method</u></h2>
+
+<p>The <strong>animate()</strong> method lets you animate to a set value, or to a value relative to the current value.
+You need to define the CSS properties to be animated as its parameter in JSON format ("key":"value" pairs).
+The second parameter defines the speed of the animation.
+For example, the following code animates the width and height properties of the div:</p>
+
+<div class="syntax" name="html">&lt;div id="special_div">&lt;/div></div>
+
+<br>
+
+<div class="syntax" name="CSS">#special_div {
+    width: 100px;
+    height: 100px;
+    background: black;
+    margin: auto;
+}</div>
+
+<br>
+
+<div class="syntax" name="JS">let div = $('#special_div')
+let x = 1;
+
+div.on('click', function(){
+    if(x == 1){
+        div.animate({
+            width: '250px',
+            height: '50px'
+        }, 1000);
+        x = 0;
+    } else {
+        div.animate({
+            width: '100px',
+            height: '100px'
+    }, 1000);
+        x = 1;
+    }
+});</div>
+
+
+<style>
+    #special_div {
+        width: 100px;
+        height: 100px;
+        background: black;
+        margin: auto;
+    }
+</style>
+<h2 class="left" style="margin-left: 10px;">Outcome:</h2>
+<div id="special_div"></div>
+<Script>
+let div = $('#special_div')
+let x = 1;
+
+div.on('click', function(){
+    if(x == 1){
+        div.animate({
+            width: '250px',
+            height: '50px'
+        }, 1000);
+        x = 0;
+    } else {
+        div.animate({
+            width: '100px',
+            height: '100px'
+    }, 1000);
+        x = 1;
+    }
+});
+</Script>
+
+<p>Note the JSON format for providing the CSS parameters. The JSON syntax was also used in the previous modules when manipulating CSS properties.</p>
+
+<p>You can animate any CSS property using the above mentioned syntax, but there is one important thing to remember: all property names must be camel-cased when used with the animate() method (camelCase is the practice of writing compound words or phrases such that each word or abbreviation begins with a capital letter with the first word in lowercase).
+    You will need to write paddingLeft instead of padding-left, marginRight instead of margin-right, and so on.</p>
+
+<p>It is also possible to define relative values (the value is then relative to the element's current value). This is done by putting += or -= in front of the value:</p>
+
+<div class="syntax" name="JS">let div2 = $('#cool_div');
+
+div2.on('click', function(){
+    div2.animate({width: '+=100px'}, 1000)
+});</div>
+
+<h2 class="left" style="margin-left: 10px">Outcome:</h2>
+<style>
+    #cool_div{
+        width: 100px;
+        height: 100px;
+        margin-left: 10px;
+        background-color: black;
+    }
+</style>
+<div id="cool_div"></div>
+
+<script>
+$(function(){
+    let div2 = $('#cool_div');
+    
+    div2.on('click', function(){
+        div2.animate({width: '+=100px'}, 1000);
+    });
+})
+</script>
+
+<p>By default, jQuery comes with queue functionality for animations.
+This means that if you write multiple animate() calls one after another, jQuery creates an "internal" queue for these method calls. Then it runs the animate calls one-by-one.</p>
+
+<p>The <strong>animate()</strong> method, just like the hide/show/fade/slide methods, can take an optional callback function as its parameter, which is executed after the current effect is finished.</p>
+</article>
+<hr>
+</body>
+</html>

@@ -1,0 +1,3126 @@
+<!DOCTYPE HTML>
+<html>
+<head lang="en-US">
+<meta charset="UTF-8">
+<title> Page eleven of my notes </title>
+<link rel="stylesheet" href="../CSS-JavaScript-External-Files/HTMLnotes.css">
+<Style>
+.left {
+    text-align: left;
+}
+
+.code10 {
+white-space: pre-line;
+background-color: lightgreen;
+}
+</style>
+</head>
+<body>
+
+<hr>
+<header> 
+<h1> Page six of my CSS notes </h1>
+</header>
+
+<article id="start-of-page"> 
+  
+    <div id="homepages">
+    
+        <h3>Home Pages:</h3>
+       
+    
+    </div>
+    
+    <nav data-notes="CSS" data-page="6">
+    
+    </nav>
+            
+    <h3> Informations included in this page:</h3>
+<p> <a href="../CSS-Notes/Notes11.html#one">Introduction to CSS3</a></p>
+<p> <a href="../CSS-Notes/Notes11.html#two">Vendor Prefixes </a></p>
+<p> <a href="../CSS-Notes/Notes11.html#three">The border-radius property</a></p>
+<p> <a href="../CSS-Notes/Notes11.html#four">The border-image property</a></p>
+<p> <a href="../CSS-Notes/Notes11.html#five">The outline property</a></p>
+<p> <a href="../CSS-Notes/Notes11.html#six">The box-shadow property</a></p>
+<p> <a href="../CSS-Notes/Notes11.html#seven">How to make Transparency effect</a></p>
+<p> <a href="../CSS-Notes/Notes11.html#seven-two">Standard Selectors of CSS</a></p>
+<p> <a href="../CSS-Notes/Notes11.html#seven-three">Combinator Selectors</a></p>
+<p> <a href="../CSS-Notes/Notes11.html#eight">Working with pseudo classes</a></p>
+<p> <a href="../CSS-Notes/Notes11.html#eight-two">The nth pseudo classes</a></p>
+<p> <a href="../CSS-Notes/Notes11.html#eight-three">User Action Selectors</a></p>
+<p> <a href="../CSS-Notes/Notes11.html#eight-four">UI Element States Selectors</a></p>
+<p> <a href="../CSS-Notes/Notes11.html#nine">Pseudo Elements</a></p>
+<p> <a href="../CSS-Notes/Notes11.html#ten">The attr() function</a></p>
+<p> <a href="../CSS-Notes/Notes11.html#eleven">The Attribute Selectors</a></p>
+<p> <a href="../CSS-Notes/Notes11.html#twelve">The word-wrap Property</a></p>
+<p> <a href="../CSS-Notes/Notes11.html#thirteen">The @font-face rule</a></p>
+
+    </article>
+    
+     <script src="../CSS-JavaScript-External-Files/nav.js"></script> 
+
+
+
+ 
+<hr>
+
+<article id="one">
+
+    <header>
+
+        <h1>Introduction to CSS3</h1>
+
+    </header>
+
+<p><span>CSS3</span> is the latest standard for <Span>CSS</Span>.</p>
+
+<p>Some of the most significant new features are:</p>
+
+<dl style="width: 50%; margin: 10px auto 10px auto; border: 3px solid black; padding: 10px; border-radius: 20px; background-color: white; ">
+    <dt><span>Border radius</span></dt>
+    <dd>I already talked about this property before, it's used to make 
+        the radius of the border curved.
+    </dd>
+    <dt><span>Border images</span></dt>
+    <dd>It allows us to specify an image as the border around an element, pretty cool.</dd>
+    <dt><Span>Multiple backgrounds</Span></dt>
+    <dd>I also spoke about it before, you can use comma to put multiple backgrounds to an element.</dd>
+    <dt><span>Animations, effects and much more</span></dt>
+    <dd>I'm really excited to learn these, I already have learned SVG pretty well and from 
+        what I have seen there are few stuff I'm already familiar with.
+    </dd>
+    <dt><Span>Box shadow</Span></dt>
+    <dd>With the box-shadow property, you can attach one or more shadows to an element.</dd>
+    <dt><span>Gradients</span></dt>
+    <dd>Just like in SVG, there are two types of gradients, linear and radial.</dd>
+    <dt><span>Transform</span></dt>
+    <dd>Just like in SVG it allows you to rotate, scale, move and skew.</dd>
+    <dt><span>Transitions</span></dt>
+    <dd>Allows you to animate from one CSS property value to another.</dd>
+    <dt><Span>Animations</Span></dt>
+    <dd>Also allows you to animate, CSS animations have their own specifications, and they allow you to 
+        create keyframes, set duration, easing, and more, just like SVG.
+    </dd>
+</dl>
+
+</article>
+
+<hr>
+
+<article id="two">
+
+
+    <header>
+
+        <h1>Vendor Prefixes</h1>
+
+    </header>
+
+<p><span>CSS vendor prefixes</span> or <Span>CSS browser prefixes</Span> are a 
+way for <span>browser makers</span> to add <span>support</span> for new <Span>CSS features</Span>
+during periods of <Span>testing</Span> and <span>experimentation</span>. <span>Browser prefixes</span>
+are used to add <Span>new features</Span> that may not be part of the <span>final</span>
+and <Span>formal</Span> <span>CSS specification</span>.</p>
+
+<p>Remember before when I talked about <Span>position: sticky</Span> that we added
+the <span>position</span> property more than once with different words at the start like 
+<span>-webkit-</span>, <Span>-moz-</Span>, etc? Thats what <Span>vendor prefixes</Span> are, and I added these
+so that <span>90%</span> of the browsers support the property.</p>
+
+<p>Most browsers today will work without <Span>prefixes</Span>, however it's good to know these 
+for backwards capability and understanding of older codes.</p>
+
+<p>Here is a <Span>list</Span> of <span>vendor prefixes</span> for each <Span>browser</Span>.</p>
+
+<img src="https://api.sololearn.com/DownloadFile?id=2665" alt="a list of vendor prefixes"
+style="display: block; margin: auto;">
+
+</article>
+
+<hr>
+
+<article id="three">
+
+    <header>
+
+        <h1>The border-radius property</h1>
+
+    </header>
+
+<p>I have already mentioned this property before, however, I wanted to talk more about it
+    since there are things I missed. 
+</p>
+
+<p>As you already know, with <span>border-radius</span> you can give any element <Span>rounded corners</Span></p>
+
+<p><Span>border-radius: 20px;</Span></p>
+<div style="display: grid; justify-content: center;">
+<div style="display: table;">
+<div style="background-color: green; border-radius: 20px; width: 500px; height: 150px; margin: 10px auto 10px auto;
+color: white; font-size: 30px; text-align: center; vertical-align: middle; display: table-cell;">
+Rounded Corners</div>
+</div>
+</div>
+
+<p>Specific <Span>border radius</Span> values can be applied for <Span>border-radius</Span>
+property in the following order: <span>top-left</span>, <span>top-right</span>, <Span>bottom-right</Span> and <Span>bottom-left</Span>.</p>
+
+<p>Or you can also just use <span>border-top-right-radius:</span>, <span>border-bottom-right-radius:</span>, etc, which however takes more time to write.</p>
+
+<p>A <span>rectangle</span> can be turned into a <span>circle</span> using only <span>CSS</span>. 
+To create a <span>circle</span>, the <span>border-radius</span> should be <Span>half</Span>
+of <Span>height</Span> and the <Span>width</Span>.</p>
+
+<p><Span>width: 300px;<br>
+height: 300px; <br>
+border-radius: 150px;</Span></p>
+<div style="display: grid; justify-content: center;">
+<div style="display: table;">
+<div style="background-color: green; border-radius: 150px; width: 300px; height: 300px; margin: 10px auto 10px auto;
+color: white; font-size: 30px; text-align: center; vertical-align: middle; display: table-cell;">
+Circle</div>
+</div>
+</div>
+
+<p>You can also just write <span>border-radius: 100%;</span>, as long as the <Span>height</Span>
+is same with the <Span>width</Span> it will work:</p>
+
+<p><Span>width: 200px;<br>
+    height: 200px; <br>
+    border-radius: 100%;</Span></p>
+    <div style="display: grid; justify-content: center;">
+    <div style="display: table;">
+    <div style="background-color: green; border-radius: 100%; width: 200px; height: 200px; margin: 10px auto 10px auto;
+    color: white; font-size: 30px; text-align: center; vertical-align: middle; display: table-cell;">
+    Circle</div>
+    </div>
+    </div>
+
+</article>
+
+<hr>
+
+<article id="four">
+
+    <header>
+        
+        <h1>The border-image property</h1>
+
+    </header>
+
+<p>The <span>border-image</span> property can be used to add an 
+<span>image</span> to be the <Span>border</Span> of an <span>element</span>, it's not however 
+as simple as it sounds, lets take this <Span>image</Span> I made for example: </p>
+
+<img src="../images/ad.jpg" style="display: block; width: 100px; height: 100px; margin: auto;">
+
+<p> Thats a pretty well image to be used as the <Span>border</Span>, and you will understand why as I explain how <Span>border-image</Span> works.</p>
+
+<p>The <Span>border-image</Span> property is a shortcut for all the following properties:<br><br>
+<span>border-image-outset</span> <br>
+<span>border-image-repeat</span> <br>
+<span>border-image-slice</span> <br>
+<span>border-image-source</span> <br>
+<span>border-image-width</span><br></p>
+
+
+<p>So, lets first create a <Span>div</Span> and give it an <span>outline</span> to help us 
+understand what is happening, I will explain what an <Span>outline</Span> is in the next section.</p>
+
+<p><span>style="outline: 7px dotted red;</span></p>
+
+<div style="display: grid; 
+    justify-content: center;">
+
+     <div style="display: table; margin-top: 20px;">
+
+        <div style="background-color: green; 
+        outline: 7px dotted red;
+         width: 500px; 
+         height: 200px; 
+         margin: 10px auto 10px auto;
+        color: white;
+         font-size: 30px; 
+         text-align: center;
+          vertical-align: middle;
+           display: table-cell;">
+
+        Border image
+    
+    </div>
+        
+</div>
+       
+</div>
+
+<p>Now lets add the <span>border-image</span> by writing the following code:</p>
+
+<p><Span>style="border: 20px solid transparent; <br>
+    border-image: url(../images/ad.jpg) 20px repeat;"</Span></p>
+
+<div style="display: grid; 
+    justify-content: center; margin-top: 20px;">
+
+     <div style="display: table;">
+
+        <div style="background-color: green; 
+        outline: 7px dotted red;
+        border: 20px solid transparent;
+        border-image: url(../images/ad.jpg) 20 repeat;
+         width: 500px; 
+         height: 200px; 
+         margin: 10px auto 10px auto;
+        color: white;
+         font-size: 30px; 
+         text-align: center;
+          vertical-align: middle;
+           display: table-cell;">
+
+        Border image
+    
+    </div>
+        
+</div>
+       
+</div>
+
+<p>The properties we actually used right now are the following: <br> <br>
+<span>border-image-source: url(../images/ad.jpg);</span><br>
+<span>border-image-slice: 20px;</span><br>
+<Span>border-image-repeat: repeat;</Span></p>
+
+<p>So, let me explain what <span>border-image-slice</span> does first, to understand what it does 
+you will need to understand the image:</p>
+
+<img src="../images/ad.jpg" style="display: block; width: 100px; height: 100px; margin: auto;">
+
+<p>In order to make this <span>image</span> the <span>border</span> of an 
+<span>element</span> we first need to define how we want it to be <Span>sliced</Span>. 
+The <span>corners</span> of the <span>image</span>, which I want to be the <span>corners</span>
+of my <span>border</span> are <Span>squares</Span> with <Span>20 pixels height</Span> and 
+<Span>20 pixels width</Span> each, so by writing <span>border-image-slice: 20;</span> I define 
+the <span>corners</span> of the <Span>image</Span>, then, everything <Span>between the corners</Span>, 
+will be added between the <Span>corners of the border</Span>, there are few different methods for this,
+you can make it <span>repeat</span>, <span>scale</span> and others that I'm going to explain in a moment.</p>
+
+<p>So, about <span>border-reapeat</span> property now, this property defines how we want the <Span>content</Span>
+between the <span>corners</span> to fill the <Span>space</Span>, and this property can get <Span>four values</Span>,
+which are the following: <br> <br>
+<span>stretch</span>: stretch the image to fill the area. <br>
+<span>repeat</span>: tile the image to fill the area. <br>
+<span>round</span>: tile the image and scale it so it tiles uniformly filling the area, when you just repeat the image 
+there is a chance that the final tile may doesn't fit and be cut at half, with round value you can prevent it. <br>
+<span>space</span>: tile the image and distribute left over space around tiles, its used for the same reason round is used, 
+but instead of scaling the tiles it distribute left over space around tiles. </p>
+
+<p>Lets use another <Span>image</Span> now to test out the <Span>border-image-repeat</Span> property, since the <span>image</span> we 
+use now won't do, lets use this one:</p>
+
+
+<img src="../images/ad2.png" style="display: block; width: 100px; height: 100px; margin: auto; margin-bottom: 20px;">
+
+
+<p><Span>style="border-image-repeat: stretch;"</Span></p>
+
+<div style="display: grid; 
+    justify-content: center; margin-top: 20px; margin-bottom: 50px;">
+
+     <div style="display: table;">
+
+        <div style="background-color: green; 
+        outline: 7px dotted red;
+        border: 20px solid transparent;
+        border-image: url(../images/ad2.png) 20 stretch;
+         width: 500px; 
+         height: 200px; 
+         margin: 10px auto 10px auto;
+        color: white;
+         font-size: 30px; 
+         text-align: center;
+          vertical-align: middle;
+           display: table-cell;">
+
+        Border image
+    
+    </div>
+        
+</div>
+       
+</div>
+
+<p><Span>style="border-image-repeat: repeat;"</Span></p>
+
+<div style="display: grid; 
+    justify-content: center; margin-top: 20px; margin-bottom: 50px;">
+
+     <div style="display: table;">
+
+        <div style="background-color: green; 
+        outline: 7px dotted red;
+        border: 20px solid transparent;
+        border-image: url(../images/ad2.png) 20 repeat;
+         width: 500px; 
+         height: 200px; 
+         margin: 10px auto 10px auto;
+        color: white;
+         font-size: 30px; 
+         text-align: center;
+          vertical-align: middle;
+           display: table-cell;">
+
+        Border image
+    
+    </div>
+        
+</div>
+       
+</div>
+
+<p><Span>style="border-image-repeat: round;"</Span></p>
+
+<div style="display: grid; 
+    justify-content: center; margin-top: 20px;  margin-bottom: 50px;">
+
+     <div style="display: table;">
+
+        <div style="background-color: green; 
+        outline: 7px dotted red;
+        border: 20px solid transparent;
+        border-image: url(../images/ad2.png) 20 round;
+         width: 500px; 
+         height: 200px; 
+         margin: 10px auto 10px auto;
+        color: white;
+         font-size: 30px; 
+         text-align: center;
+          vertical-align: middle;
+           display: table-cell;">
+
+        Border image
+    
+    </div>
+        
+</div>
+       
+</div>
+
+<p><Span>style="border-image-repeat: space;"</Span></p>
+
+<div style="display: grid; 
+    justify-content: center; margin-top: 20px;  margin-bottom: 50px;">
+
+     <div style="display: table;">
+
+        <div style="background-color: green; 
+        outline: 7px dotted red;
+        border: 20px solid transparent;
+        border-image: url(../images/ad2.png) 20 space;
+        background-clip: padding-box;
+         width: 500px; 
+         height: 200px; 
+         margin: 10px auto 10px auto;
+        color: white;
+         font-size: 30px; 
+         text-align: center;
+          vertical-align: middle;
+           display: table-cell;">
+
+        Border image
+    
+    </div>
+        
+</div>
+       
+</div>
+
+
+
+<p>When you use <span>border-image-reapeat: space;</span> also use <span>background-clip: padding-box;</span> or else the 
+<Span>background-color</Span> will be extended <Span>behind the border</Span> and the parts that are cut will be <span>green</span> too.</p>
+
+
+<p>Now, I will speak about the following properties: <br><br>
+<span>border-image-width</span><br>
+<span>border-image-outset</span></p>
+
+<p>The <span>border-width</span> property defines the <Span>width of the border</span>, the <span>border-image-width</span> however 
+defines only the <span>width of the image</span>, the image will not surpass the <Span>border</Span> and make the <Span>element box</Span> bigger
+like the <Span>border-width</Span> would, lets try this:</p>
+
+<p style="margin-top: 50px;"><Span>style="border-width: 20px;<br>
+border-image-width: 10px;</Span></p>
+
+<div style="display: grid; 
+    justify-content: center; margin-top: 50px; margin-bottom: 20px;">
+
+     <div style="display: table;">
+
+        <div style="background-color: green; 
+        outline: 7px dotted red;
+        border: 20px solid transparent;
+        border-image: url(../images/ad.jpg) 20 repeat;
+        border-image-width: 10px;
+         width: 500px; 
+         height: 200px; 
+         margin: 10px auto 10px auto;
+        color: white;
+         font-size: 30px; 
+         text-align: center;
+          vertical-align: middle;
+           display: table-cell;">
+
+        Border image
+    
+    </div>
+        
+</div>
+  
+<p style="margin-top: 50px;"><Span>style="border-width: 20px;<br>
+    border-image-width: 20px;</Span></p>
+
+<div style="display: grid; 
+    justify-content: center; margin-top: 50px; margin-bottom: 20px;">
+
+     <div style="display: table;">
+
+        <div style="background-color: green; 
+        outline: 7px dotted red;
+        border: 20px solid transparent;
+        border-image: url(../images/ad.jpg) 20 repeat;
+        border-image-width: 20px;
+         width: 500px; 
+         height: 200px; 
+         margin: 10px auto 10px auto;
+        color: white;
+         font-size: 30px; 
+         text-align: center;
+          vertical-align: middle;
+           display: table-cell;">
+
+        Border image
+    
+    </div>
+        
+</div>
+       
+</div>
+
+
+</div>
+
+<p><Span>style="border-width: 20px;<br>
+    border-image-width: 50px;</Span></p>
+
+<div style="display: grid; 
+    justify-content: center; margin-top: 50px;margin-bottom: 20px; ">
+
+     <div style="display: table;">
+
+        <div style="background-color: green; 
+        outline: 7px dotted red;
+        border: 20px solid transparent;
+        border-image: url(../images/ad.jpg) 20 repeat;
+        border-image-width: 50px;
+         width: 500px; 
+         height: 200px; 
+         margin: 10px auto 10px auto;
+        color: white;
+         font-size: 30px; 
+         text-align: center;
+          vertical-align: middle;
+           display: table-cell;">
+
+        Border image
+    
+    </div>
+        
+</div>
+       
+</div>
+
+<p>The <span>border-image-outset</span> property can move the <Span>image</Span> outside the <Span>element box</Span>, for example, 
+lets move the <span>image</span> 30px outside the <span>element box</span>.</p>
+
+<div style="display: grid; 
+    justify-content: center; margin-top: 50px; margin-bottom: 20px;">
+
+     <div style="display: table;">
+
+        <div style="background-color: green; 
+        outline: 7px dotted red;
+        border: 20px solid transparent;
+        border-image: url(../images/ad.jpg) 20 repeat;
+        border-image-width: 20px;
+         width: 500px; 
+         height: 200px; 
+         margin: 10px auto 10px auto;
+        color: white;
+         font-size: 30px; 
+         text-align: center;
+          vertical-align: middle;
+           display: table-cell;
+           border-image-outset: 30px;">
+
+        Border image
+    
+    </div>
+        
+</div>
+       
+</div>
+
+
+</div>
+
+<p style="margin-top: 50px;">You can confirm that the <span>border-image</span> has moved <Span>outside the element box</Span> since the 
+<Span>outline</Span> isn't around the <span>border-image</span>, also, the <Span>border-image</Span> doesn't 
+effect the <span>elements</span> under it or over it, you can make it as big as you like and it will go beyond the other elements.</p>
+
+<p>A last thing I want to talk about is the <span>fill</span> keyword which can be used after the 
+    <Span>slice value</Span> in <span>border-image</span> property or <Span>border-image-slice</Span> property. </p>
+
+<p><Span>style="border-image-slice: 20 fill;</Span></p>
+
+<div style="display: grid; 
+    justify-content: center; margin-top: 20px;  margin-bottom: 50px;">
+
+     <div style="display: table;">
+
+        <div style="background-color: green; 
+       
+        border: 20px solid transparent;
+        border-image-source: url(../images/ad2.png);
+        border-image-slice: 20 fill;  
+        border-image-repeat: round;
+        background-clip: padding-box;
+         width: 500px; 
+         height: 200px; 
+         margin: 10px auto 10px auto;
+        color: white;
+         font-size: 30px; 
+         text-align: center;
+          vertical-align: middle;
+           display: table-cell;">
+
+        Border image
+    
+    </div>
+        
+</div>
+       
+</div>
+
+<p>As you probably already noticed, it adds the <span>center</span> of the <span>image</span> which normally is 
+<span>sliced off</span> and since I used <span>border-image-repeat: round;</span> it repeats it and scales it to fill the whole <Span>element box</Span>.</p>
+
+<p>The video below is a really nice tutorial that helped me a lot, check this out:</p>
+
+<iframe width="683" height="384" style="width: 683px; height: 384px; display: block; margin: 50px auto 10px auto;"src="https://www.youtube.com/embed/lpf-5mG9CGg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</article>
+
+<hr>
+
+<article id="five">
+
+    <header>
+
+        <h1>The outline property</h1>
+
+    </header>
+
+<p>This property works exactly like <span>border</span>, however, you can't edit each 
+side seperately like <span>border</span>, all sides are styled the same. </p>
+
+<P>An <Span>outline</Span> is drawn just <span>outside</span> the <span>border's edge</span> of the <Span>element</Span>. 
+<Span>Outlines</Span> are generally used to indicate <span>focus</span> or <span>active states</span> of the 
+<Span>elements</Span> such as <Span>buttons</Span>, <Span>links</Span>, <span>form fields</span>, etc.</P>
+
+<p><Span>Outlines</Span> do not take up space, because they are always placed on <Span>top of trhe box</Span>
+of the <span>element</span>.</p>
+
+<p>Unline <span>borders</span>, <Span>outlines</Span> won't allow us to set each edge to a <span>different width</span> or 
+set <span>different colors</span> or <span>styles</span> for each edge. An <span>outline</span> is <Span>same in all sides</Span>.</p>
+
+<p>Unline <span>borders</span>, <span>outlines</span> do not change the <span>size</span> or <span>position</span>
+of the <Span>element</Span> and don't effect the <span>elements</span> around either.</p>
+
+<p>You cannot create <span>circular outlines</span>. </p>
+
+</article>
+
+<hr>
+
+<article id="six">
+
+    <header>
+
+        <h1>The box-shadow Property</h1>
+
+    </header>
+
+<p>The <span>box-shadow</span> property applies <span>shadow</span> to <span>elements</span>. 
+</p>
+
+<P>It works pretty similar to <Span>text-shadow</Span>, however, it can take up to <span>five values</span>,
+<Span>first</Span> is how much you want it to move on the <span>horizontal axis</span>, <Span>second</Span>
+is how much you want it to move on the <span>vertical axis</span>, <span>third</span> is how 
+much you want it to <Span>blur</Span>, then how much you want it to <span>spread</span> (get bigger than the original) and then 
+it's the <span>color</span> which can be defined with many different ways as you probably already know.</P>
+
+<p class="left">Code:</p>
+
+<p class="left"><span class="code10">&lt;div style="width: 500px; 
+    height: 150px;
+    background-color: green; 
+    margin: 20px auto 20px auto;
+    box-shadow: 4px 10px 10px 5px black;">
+    
+    &lt;/div></span></p>
+
+<p class="left">Outcome:</p>
+
+<div style="width: 500px; 
+height: 150px;
+background-color: green; 
+margin: 20px auto 20px auto;
+box-shadow: 4px 10px 10px 5px black;"></div>
+
+<p style="margin-top: 60px;">You can of course also use <span>multiple shadows</span> by using comma, lets try this:</p>
+
+<p class="left">Code:</p>
+
+<p class="left"><span class="code10">&lt;div style="width: 500px; 
+    height: 150px;
+    background-color: gray; 
+    margin: 20px auto 20px auto;
+    box-shadow: 4px 5px 10px 5px black, 
+    8px 5px 10px  5px red,
+    -4px 5px 10px  5px black,
+    -8px 0px 10px  5px blue;
+    line-height: 150px;
+    text-align: center;
+    font-size: 60px;
+    font-weight: bold;
+    text-shadow: 2px 2.5px 10px black, 
+    4px 2.5px 5px  red,
+    -2px 2.5px 5px  black,
+    -4px 0px  5px  blue;
+    color: white; "> 
+    
+    Tadaaaa 
+    
+    &lt;/div></span></p>
+
+<p class="left">Outcome:</p>
+
+<div style="width: 500px; 
+height: 150px;
+background-color: gray; 
+margin: 20px auto 20px auto;
+box-shadow: 4px 5px 10px 5px black, 
+8px 5px 10px  5px red,
+-4px 5px 10px  5px black,
+-8px 0px 10px  5px blue;
+line-height: 150px;
+text-align: center;
+font-size: 60px;
+font-weight: bold;
+text-shadow: 2px 2.5px 10px black, 
+4px 2.5px 5px  red,
+-2px 2.5px 5px  black,
+-4px 0px  5px  blue;
+color: white; "> Tadaaaa </div>
+
+<p style="margin-top: 60px;">The <Span>inset</Span> heyword allows to draw an <span>inner shadow</span>
+in the box, lets try this:</p>
+
+<p class="left">Code:</p>
+
+<p class="left"><span class="code10">&lt;div style="width: 500px; 
+    height: 150px;
+    background-color: green; 
+    margin: 20px auto 20px auto;
+    box-shadow: inset 50px 10px 10px 5px black;">
+    
+    &lt;/div></span></p>
+
+<p class="left">Outcome:</p>
+
+<div style="width: 500px; 
+height: 150px;
+background-color: green; 
+margin: 20px auto 20px auto;
+box-shadow: inset 50px 10px 10px 5px black;"></div>
+
+<p style="margin-top: 60px;">We can also use <Span>multiple inset shadows</Span>, in the example below, 
+I created a <span>shadow</span> covering the edges of the rectangle:</p>
+
+<p class="left">Code:</p>
+
+<p class="left"><span class="code10">&lt;div style="width: 500px; 
+    height: 150px;
+    background-color: green; 
+    margin: 20px auto 20px auto;
+    box-shadow: inset 10px 10px 10px 5px black,
+inset -10px -10px 10px 5px black;">
+    
+    &lt;/div></span></p>
+
+<p class="left">Outcome:</p>
+
+<div style="width: 500px; 
+height: 150px;
+background-color: green; 
+margin: 20px auto 20px auto;
+box-shadow: inset 10px 10px 10px 5px black,
+inset -10px -10px 10px 5px black;"></div>
+
+</article>
+
+<hr>
+
+<article id="seven">
+
+    <header>
+
+        <h1>How to make Transparency effect</h1>
+
+    </header>
+
+<p>So, I thought it would be cool to talk about some <span>CSS tricks</span>, and this 
+one is a simple one, so let me explain.</p>
+
+<p>To do that we are gonna use the following stuff:</p>
+
+<ul style="background-color: white; 
+border-radius: 20px; border: 3px solid black; padding: 20px; padding-left: 40px; width: 550px; margin: 20px auto 20px auto;">
+<li>Background property</li>
+<li>RGBA color format to change the opacity</li>
+<li>Linear-gradient, I haven't talked about it in my notes yet, but it works 
+    pretty similar to how SVG linear-gradient element works
+</li>
+<li>box-shadow to make the effect a little better</li>
+<li>Some general knowledge of other CSS properties and HTML elements</li>
+
+
+</ul>
+
+<p>Lets create a <span>navigation bar</span> first:</p>
+
+
+<p class="left">HTML code:</p>
+
+<p class="left"><Span class="code10">&lt;div class="nav">
+
+    &lt;div class="table">
+
+        &lt;div class="row">
+      
+        &lt;div class="cell"> PROFILE &lt;/div>
+
+      &lt;div class="cell"> DISCUSS &lt;/div>
+
+      &lt;div class="cell"> CONTACT US &lt;/div>
+
+      &lt;div class="cell"> HOME &lt;/div>
+
+      &lt;/div>
+
+       &lt;/div>
+
+&lt;/div></Span></p>
+
+<p class="left">CSS code:</p>
+
+<p class="left"><Span class="code10">&lt;Style>
+
+    .nav {
+        width:100%;
+        height: 80px;
+        background-color:red;
+        border: 3px solid black;
+        display: grid;
+        align-content: center;
+    }
+    
+    .table {
+        display: table;
+    }
+    
+    .row { 
+       display: table-row;
+    }
+    
+    .cell {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        height: 50px;
+        font-size: 25px;
+        font-weight: bold;
+        color: white;
+        text-shadow: 3px 0px 0px black;
+        font-family: Arial;
+    }
+    
+     &lt;/Style></Span></p>
+
+<p class="left"></p>Outcome:</p>
+
+
+
+ <Style>
+
+.nav {
+    width:100%;
+    height: 80px;
+    background-color:red;
+    border: 3px solid black;
+     display: grid;
+    align-content: center;
+}
+
+.table {
+    display: table;
+}
+
+.row { 
+   display: table-row;
+}
+
+.cell {
+    display: table-cell;
+     
+    vertical-align: middle;
+    text-align: center;
+    height: 50px;
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 3px 0px 0px black;
+    font-family: Arial;
+}
+
+ </Style>
+
+<div class="nav">
+
+    <div class="table">
+
+      <div class="row">
+      
+      <div class="cell"> PROFILE</div>
+
+      <div class="cell"> DISCUSS</div>
+
+      <div class="cell"> CONTACT US</div>
+
+      <div class="cell"> HOME</div>
+
+       </div>
+
+    </div>
+
+</div>
+
+
+<p style="margin-top: 50px;">Now let's create the <Span>transparency effect</Span> using <Span>linear-gradient</Span>, 
+and add some other imrpovements too:</p>
+
+<p class="left">Code:</p>
+
+<p class="left"><span class="code10">&lt;Style>
+
+    .nav .cell a {
+        text-decoration: none;
+        color: white;
+        text-shadow: 3px 0px 0px black;
+    }
+    
+    &lt;/Style>
+    
+    &lt;div style="background-color: gray; height: 500px; margin-top: 50px;
+    background-image:url('http://www.sololearn.com/images/bg2.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;">
+    
+    &lt;div class="nav" style="background: linear-gradient(90deg, 
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 25%,
+    rgba(255, 255, 255, 0.35) 50%,
+    rgba(255, 255, 255, 0.3) 75%,
+    rgba(255, 255, 255, 0) 100%);
+    box-shadow: 0 0 25px  rgba(0, 0, 0, 0.1),
+    inset 0 0 1px rgba(255, 255, 255, 0.6);
+    border: 0px solid transparent;
+    border-radius: 0px 0px 10px 10px;">
+    
+    &lt;div class="table">
+    
+    &lt;div class="row">
+          
+    &lt;div class="cell"> &lt;a href="../CSS-Notes/Notes11.html">PROFILE&lt;/a> &lt;/div>
+    
+    &lt;div class="cell"> &lt;a href="../CSS-Notes/Notes11.html">DISCUSS&lt;/a> &lt;/div>
+    
+    &lt;div class="cell"> &lt;a href="../CSS-Notes/Notes11.html">CONTACT US&lt;/a> &lt;/div>
+    
+    &lt;div class="cell"> &lt;a href="../CSS-Notes/Notes11.html">HOME&lt;/a> &lt;/div>
+    
+    &lt;/div>
+    
+    &lt;/div>
+    
+    &lt;/div>
+    
+    &lt;/div></span></p>
+
+
+<p class="left">Outcome:</p>
+
+
+<Style>
+
+.nav .cell a {
+    text-decoration: none;
+    color: white;
+    text-shadow: 3px 0px 0px black;
+}
+
+</Style>
+
+<div style="background-color: gray; height: 490px; margin-top: 50px;
+background-image:url('http://www.sololearn.com/images/bg2.jpg');
+background-repeat: no-repeat;
+background-size: 100% 100%;"> 
+
+<div class="nav" style="background: linear-gradient(90deg, 
+rgba(255, 255, 255, 0) 0%,
+rgba(255, 255, 255, 0.3) 25%,
+rgba(255, 255, 255, 0.35) 50%,
+rgba(255, 255, 255, 0.3) 75%,
+rgba(255, 255, 255, 0) 100%);
+box-shadow: 0 0 25px  rgba(0, 0, 0, 0.1),
+inset 0 0 1px rgba(255, 255, 255, 0.6);
+border: 0px solid transparent;
+border-radius: 0px 0px 10px 10px;">
+
+    <div class="table">
+
+      <div class="row">
+      
+      <div class="cell"> <a href="../CSS-Notes/Notes11.html">PROFILE</a> </div>
+
+      <div class="cell"> <a href="../CSS-Notes/Notes11.html">DISCUSS</a> </div>
+
+      <div class="cell"> <a href="../CSS-Notes/Notes11.html">CONTACT US</a> </div>
+
+      <div class="cell"> <a href="../CSS-Notes/Notes11.html">HOME</a> </div>
+
+       </div>
+
+    </div>
+
+</div>
+
+</div>
+
+</article>
+
+<hr>
+
+<article id="seven-two">
+
+    <header>
+
+        <h1>Standard Selectors of CSS</h1>
+
+    </header>
+
+ <P>The <span>standard selectors</span> of <span>CSS</span> are 
+the basic selectors you can use to <Span>style</Span> elements, and 
+you are probably already familiar with most of these.</P>   
+
+<p>Here is a list of all the <Span>standard selectors</Span>:</p>
+
+<Style>
+
+.selectors-list {
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 20px;
+    width: 40%;
+    min-height: 0px;
+    margin: auto;
+    display: grid;
+}
+
+.selectors-list  ul{
+    justify-self: center;
+    line-height: 30px;
+}
+
+.selectors-list li{
+    font-family: Arial, Helvetica, sans-serif;
+    list-style-type: square;
+}
+
+ 
+
+</Style>
+
+
+<div class="selectors-list">
+<ul>
+    <li>* - universal selector</li>
+    <li>p - type selector</li>
+    <li>p, h1, div - compound selection</li>
+    <li>.class - group class selector</li>
+    <li>#id - unique id selector</li>
+</ul>
+</div>
+
+<p>The only selectors you may not be familiar with is the <span>universal selector</span>,
+since I never used it before in the notes, this selector basically selects 
+<Span>all the elements</Span>, it can be well used together with the <Span>combinator selectors</Span>
+which I'm going to cover in the next section.</p>
+
+<p>Another selector you may not know is the <Span>compound selection</Span>, using 
+<Span>commas</Span> you can simply asign <span>styling rules</span> to multiple 
+<Span>elements</Span> together.</p>
+
+</article>
+
+<hr>
+
+<article id="seven-three">
+
+    <header>
+
+        <h1>Combinator Selectors</h1>
+
+    </header>
+
+<P>Usually while writing <Span>CSS</Span> we use 
+many <span>combinations</span> to select specific <Span>elements</Span>, 
+thats what this section is gonna be about.</P>
+
+
+<div class="selectors-list somthing">
+<ul>
+    <li>div p - selects all paragraphs in div</li>
+    <li>div > p - selects all direct child paragraphs in div</li>
+    <li>h3 + p - selects paragraph after h3</li>
+    <li>h3 ~ p - select all paragraphs that come after h3</li>
+</ul>
+</div>
+
+<p>When we want to <Span>select</Span> an <Span>element</Span> within 
+another <Span>element</Span> we usually write <Span>p span { color: red; }</Span> for example,
+which makes all <Span>spans</Span> inside <span>paragraphs</span> be <Span>red</Span>, 
+this is a really common and helpful feauture.</p>
+
+<p>Lets have an example to help you understand better: <p>
+
+<p class="left">Code:</p>
+
+<p class="left"><span class="code10">&lt;Style>
+
+    .example-bruh p {
+       color: red;
+    }
+    
+    &lt;/Style>
+    
+    &lt;div class="example-bruh">
+    
+    &lt;h3>Hello, I'm a heading inside div&lt;/h1>
+    
+    &lt;p>Hello, I'm a paragraph inside div&lt;/p>
+    
+    &lt;article>
+    
+    &lt;p>Hello, I'm also a paragraph inside div&lt;/p>
+    
+    &lt;/article>
+    
+    &lt;/div></span></p>
+
+<p class="left">Outcome:</p>
+
+
+<Style>
+
+.example-bruh p {
+   color: red;
+}
+
+</Style>
+
+<div class="example-bruh">
+
+<h3>Hello, I'm a heading inside div</h1>
+
+<p>Hello, I'm a paragraph inside div</p>
+
+<article>
+
+    <p>Hello, I'm also a paragraph inside div</p>
+
+</article>
+
+</div>
+
+<p>Another similar combinator we use is the <span>&gt;</span> symbol, 
+which also <Span>targets</Span> the <span>child</span> of 
+specific <Span>element</Span>, but with <Span>one difference</Span>, it
+<Span>only targets</Span> <Span>direct childs</Span>, the 
+<Span>paragraph</Span> inside the <span>article</span> for example would 
+not be <Span>targeted</Span> since it is not a <span>direct child</span> of
+the <Span>div</Span>.</p>
+   
+<p class="left">Code:</p>
+
+<p class="left"><span class="code10">&lt;Style>
+
+    .example-bruh2 > p {
+       color: red;
+    }
+    
+    &lt;/Style>
+    
+    &lt;div class="example-bruh2">
+    
+    &lt;h3>Hello, I'm a heading inside div&lt;/h1>
+    
+    &lt;p>Hello, I'm a paragraph inside div&lt;/p>
+    
+    &lt;article>
+    
+    &lt;p>Hello, I'm also a paragraph inside div&lt;/p>
+    
+    &lt;/article>
+    
+    &lt;/div></span></p>
+
+    <p class="left">Outcome:</p>
+
+<Style>
+
+.example-bruh2 > p {
+   color: red;
+}
+
+</Style>
+
+<div class="example-bruh2">
+
+<h3>Hello, I'm a heading inside div</h1>
+
+<p>Hello, I'm a paragraph inside div</p>
+
+<article>
+
+    <p>Hello, I'm also a paragraph inside div</p>
+
+</article>
+
+</div>
+
+<p>Lets move to the next <Span>combinator selector</Span>, which is the 
+<Span>+</Span> symbol, if I for example wrote <span>h3 + p { text-decoration: underline }</span>
+every <Span>paragraph</Span> thats right after a <Span>h3</Span> would get an <Span>underline</Span></p>
+
+<p class="left">Code:</p>
+
+<p class="left"><span class="code10">&lt;Style>
+
+    .example-bruh3 h3+p{
+        text-decoration: underline;
+    }
+    
+    &lt;/Style>
+    
+    
+    &lt;div class="example-bruh3">
+    
+    &lt;h3>Hello I'm a heading&lt;/h3>
+    &lt;p>I've got an underline baby&lt;/p>
+    &lt;p>I'm sad because I don't have an underline&lt;/p>
+    &lt;p>Me too, I also want an underline&lt;/p>
+    &lt;p>Please daddy give me an underline too&lt;/p>
+    &lt;h3>Bruh, I'm also a heading dude&lt;/h3>
+    &lt;p>And I also have an underline&lt;/p>
+    &lt;p>bruh that's unfair&lt;/p>
+    &lt;p>I wish I could die&lt;/p>
+    &lt;p>I don't really want an underline anyway&lt;/p>
+    
+    
+    &lt;/div></span></p>
+
+    <p class="left">Outcome:</p>
+
+<Style>
+
+.example-bruh3 h3+p{
+    text-decoration: underline;
+}
+
+</Style>
+
+
+<div class="example-bruh3">
+
+<h3>Hello I'm a heading</h3>
+<p>I've got an underline baby</p>
+<p>I'm sad because I don't have an underline</p>
+<p>Me too, I also want an underline</p>
+<p>Please daddy give me an underline too</p>
+<h3>Bruh, I'm also a heading dude</h3>
+<p>And I also have an underline</p>
+<p>bruh that's unfair</p>
+<p>I wish I could die</p>
+<p>I don't really want an underline anyway</p>
+
+
+</div>
+
+<p>The last <span>combinator selector</span> I'm gonna talk about is 
+the <Span>~</Span> symbol, which works pretty similar to the <Span>+</Span>
+symbol, however it <Span>selects</Span> all the elements <span>after</span>
+the chosen <span>element</span>, see example:</p>
+
+ 
+<p class="left">Code:</p>
+
+<p class="left"><span class="code10">&lt;Style>
+
+    .example-bruh4 h3~p{
+        text-decoration: underline;
+    }
+    
+    .example-bruh4 div {
+        text-align: center;
+    }
+    
+    &lt;/Style>
+    
+    
+    &lt;div class="example-bruh4">
+    
+    &lt;h3>Hello I'm a heading&lt;/h3>
+    &lt;p>I've got an underline baby&lt;/p>
+    &lt;p>I'm happy because I also have an underline&lt;/p>
+    &lt;div>I'm a div, lmao&lt;/div>
+    &lt;p>Yeah, an underline&lt;/p>
+    &lt;p>Thanks daddy, I love my underline&lt;/p>
+    &lt;h3>Hello heading, I'm also a heading&lt;/h3>
+    &lt;p>We all have an underline&lt;/p>
+    &lt;p>So cool&lt;/p>
+    &lt;p>I've never been happier before&lt;/p>
+    &lt;p>Did I ask for an underline? I'm gonna have to report it to the authorities.&lt;/p>
+    
+    &lt;/div>
+    
+    &lt;p>I'm a paragraph outside the div&lt;/p></span></p>
+
+    <p class="left">Outcome:</p>
+
+<Style>
+
+.example-bruh4 h3~p{
+    text-decoration: underline;
+}
+
+.example-bruh4 div {
+    text-align: center;
+}
+
+</Style>
+
+
+<div class="example-bruh4">
+
+<h3>Hello I'm a heading</h3>
+<p>I've got an underline baby</p>
+<p>I'm happy because I also have an underline</p>
+<div>I'm a div, lmao</div>
+<p>Yeah, an underline</p>
+<p>Thanks daddy, I love my underline</p>
+<h3>Hello heading, I'm also a heading</h3>
+<p>We all have an underline</p>
+<p>So cool</p>
+<p>I've never been happier before</p>
+<p>Did I ask for an underline? I'm gonna have to report it to the authorities.</p>
+
+</div>
+
+<p>I'm a paragraph outside the div</p>
+
+</article>
+
+<hr>
+
+<article id="eight">
+
+    <header>
+
+        <h1>Working with Pseudo-Classes</h1>
+
+    </header>
+
+<P>The <span>CSS pseudo-classes</span> allow us to <Span>style elements</Span>,
+or <Span>parts of elements</Span>, that exist in the <span>document tree</span> 
+without using <Span>JavaScript</Span> or any other scripts. A <span>pseudo-class</span>
+starts with a "<Span>:</Span>" (colon).</P>
+
+<div class="selectors-list somthing">
+    <ul>
+        <li>e:first-child - selects first child of element</li>
+        <li>e:last-child - selects last child of element</li>
+        <li>e:first-of-type - selects first child of it's type
+        </li>
+        <li>e:last-of-type - selects last child of it's type</li>
+       <li>e:only-child - selects element only if it's the only child of it's parent element</li>
+       <li>e:only-of-type - selects element only if it is the only element of it's type inside it's parent element</li>
+       <li>e:empty - selects element only if it is empty</li>
+       <li>root - matches the document's root elements, it basically does 
+           what writing html { color: red } would do
+       </li>
+    </ul>
+    </div>
+
+<p>The <span>:first-child</span> matches an <span>element</span> that is the 
+<span>first child element</span> of some other <span>element</span>.</p>
+
+<p>The <span>:last-child</span> matches an <span>element</span> that is the 
+    <span>last child element</span> of some other <span>element</span>.</p>
+
+<p>See example below: </p>
+
+<p class="left">HTML code:</p>
+
+<p class="left"><span class="code10">&lt;div id="parent-div">
+    
+     &lt;p>First paragraph&lt;/p>
+    &lt;p>Second paragraph&lt;/p>
+    &lt;p>Third paragraph&lt;/p>
+    &lt;p>Fourth paragraph&lt;/p>
+    &lt;h3>Last child&lt;/h3>
+
+    &lt;/div></span></p>
+
+<p class="left">CSS code:</p>
+
+<p class="left"><Span class="code10">&lt;style>
+
+    #parent-div :first-child {
+        color: red;
+    }
+    
+    #parent-div :last-child {
+        color: blue;
+    }
+    
+    &lt;/style></Span></p>
+
+<p class="left">Outcome:</p>
+
+<style>
+
+#parent-div :first-child {
+    color: red;
+}
+
+#parent-div :last-child {
+    color: blue;
+}
+
+</style>
+
+<div id="parent-div">
+ <p>First paragraph</p>
+<p>Second paragraph</p>
+<p>Third paragraph</p>
+<p>Fourth paragraph</p>
+<h3>Last child</h3>
+</div>
+
+<p>The <span>first-of-type</span> and <span>last-of-type</span> work the same way,
+however, the difference is that they select the <span>first/last</span> child 
+that's the <Span>same type</Span> of <span>element</span> that you chose.</p>
+
+<p class="left">HTML code:</p>
+
+<p class="left"><span class="code10">&lt;div id="parent-div2">
+
+    &lt;h3&gt; I'm first child &lt;/h3&gt;
+    &lt;p>First paragraph&lt;/p>
+    &lt;p>Second paragraph&lt;/p>
+    &lt;p>Third paragraph&lt;/p>
+    &lt;p>Fourth paragraph&lt;/p>
+    &lt;h3&gt; I'm last child &lt;/h3&gt;
+
+    &lt;/div></span></p>
+
+<p class="left">CSS code:</p>
+
+<p class="left"><Span class="code10">&lt;style>
+
+    #parent-div2 p:first-of-type {
+        color: red;
+    }
+    
+    #parent-div2 p:last-of-type {
+        color: blue;
+    }
+    
+    &lt;/style></Span></p>
+
+<p class="left">Outcome:</p>
+
+<style>
+
+#parent-div2 p:first-of-type {
+    color: red;
+}
+
+#parent-div2 p:last-of-type {
+    color: blue;
+}
+
+</style>
+
+<div id="parent-div2">
+<h3>I'm first child</h3>
+<p>First paragraph</p>
+<p>Second paragraph</p>
+<p>Third paragraph</p>
+<p>Fourth paragraph</p>
+<h3>I'm last child</h3>
+</div>
+
+<p>The <Span>only-child</Span> selects an element only if it's the 
+<Span>only child</Span> in it's <Span>parent element</Span>, see example below:</p>
+
+<p class="left">HTML code:</p>
+
+<p class="left"><span class="code10">&lt;div id="parent-div3">
+
+    &lt;h3&gt; I'm first child &lt;/h3&gt;
+    &lt;p>I'm a paragraph&lt;/p>
+    &lt;h3&gt; I'm last child &lt;/h3&gt;
+
+    &lt;/div>
+
+    &lt;div id="parent-div3">
+
+    &lt;p>I'm the only child of my parent, and I'm lonely&lt;/p>
+
+    &lt;/div></span></p>
+
+<p class="left">CSS code:</p>
+
+<p class="left"><Span class="code10">&lt;style>
+
+    #parent-div3 p:only-child{
+        color: red;
+    }
+    
+    &lt;/style></Span></p>
+
+<p class="left">Outcome:</p>
+
+<style>
+
+#parent-div3 p:only-child {
+    color: red;
+}
+
+
+</style>
+
+<div id="parent-div3">
+<h3>I'm first child</h3>
+<p>I'm a paragraph</p>
+<h3>I'm last child</h3>
+</div>
+
+<div id="parent-div3">
+<p>I'm the only child of my parent, and I'm lonely</p>
+</div>
+
+<p>The <Span>only-of-type</Span> selects an 
+<Span>element</Span> only if it's the <Span>only one</Span> of
+<Span>it's type</Span> inside it's <span>parent element</span>.</p>
+
+<p class="left">HTML code:</p>
+
+<p class="left"><span class="code10">&lt;div id="parent-div4">
+
+    &lt;h3>This heading below me is such a weird heading, why is it so small?&lt;/h3>
+    &lt;p>I'm sick of those headings, I wish I had a friend just like me&lt;/p>
+    &lt;h3>It's not a heading idiot, it's a paragraph&lt;/h3>
+
+    &lt;/div>
+
+    &lt;div id="parent-div4">
+
+    &lt;p>Hello sister&lt;/p>
+    &lt;p>Hello brother&lt;/p>
+
+    &lt;/div></span></p>
+
+<p class="left">CSS code:</p>
+
+<p class="left"><Span class="code10">&lt;style>
+
+    #parent-div4 p:only-of-type{
+        color: red;
+    }
+    
+    &lt;/style></Span></p>
+
+<p class="left">Outcome:</p>
+
+<style>
+
+#parent-div4 p:only-of-type {
+    color: red;
+}
+
+
+</style>
+
+<div id="parent-div4">
+<h3>This heading below me is such a weird heading, why is it so small?</h3>
+<p>I'm sick of those headings, I wish I had a friend just like me</p>
+<h3>It's not a heading idiot, it's a paragraph</h3>
+</div>
+
+<div id="parent-div4">
+<p>Hello sister</p>
+<p>Hello brother</p>
+</div>
+
+<P>The <Span>empty</Span> selector selects only <Span>child elements</Span>
+    that are <Span>empty</Span>.</P>
+
+    <p class="left">HTML code:</p>
+
+    <p class="left"><span class="code10">&lt;div id="parent-div4">
+        &lt;h3>&lt;/h3>
+        &lt;p>I'm a paragraph&lt;/p>
+        &lt;h3> &lt;/h3> &lt;!--This has a white space so it is not empty-->
+        &lt;p>&lt;/p>
+        &lt;p>&lt;/p>
+        &lt;p> &lt;/p> &lt;!--This has a white space so it is not empty-->
+        &lt;/div>
+    
+        &lt;div id="parent-div5">
+        &lt;h3>&lt;/h3>
+        &lt;p>&lt;/p>
+        &lt;/div></span></p>
+    
+    <p class="left">CSS code:</p>
+    
+    <p class="left"><Span class="code10">&lt;style>
+    
+        #parent-div4 :empty::after {
+            content: "hello";
+            background-color: red;
+            width: 30px;
+        }
+    
+        #parent-div5 p:empty::after {
+            content: "bruh";
+            background-color: blue;
+            width: 30px;
+        }
+        
+        &lt;/style></Span></p>
+    
+    <p class="left">Outcome:</p>
+    
+    <style>
+    
+    #parent-div4 :empty::after {
+        content: "hello";
+        background-color: red;
+        width: 30px;
+    }
+
+    #parent-div5 p:empty::after {
+        content: "bruh";
+        background-color: blue;
+        width: 30px;
+    }
+    
+    
+    </style>
+    
+    <div id="parent-div4">
+    <h3></h3>
+    <p>I'm a paragraph</p>
+    <h3> </h3> <!--This has a white space so it is not empty-->
+    <p></p>
+     <p></p>
+     <p> </p> <!--This has a white space so it is not empty-->
+    </div>
+
+    <div id="parent-div5">
+        <h3></h3>
+        <p></p>
+    </div>
+
+     
+
+</article>
+
+<hr>
+
+<article id="eight-two">
+
+    <header>
+
+        <h1>The nth pseudo classes</h1>
+    </header>
+<p>Another nice <span>pseudo-class</span> that gives you 
+way more <Span>flexibility</Span> than the <span>last/first-child</span> and 
+can save you a lot of time you would have wasted rewriting code over and over 
+again is the <span>nth-child</span>.</p>
+
+<p>More specifically, we have the following <span>nth pseudo-classes</span>:<br> <br>
+<span>nth-child(n)</span><br>
+<span>nth-last-child(n)</span><br>
+<Span>nth-of-type(n)</Span><br>
+<span>nth-last-of-type(n)</span></p>
+
+<p>So, <Span>nth-child(n)</Span> lets you specify which 
+<span>child</span> you want to select, for example, if I wanted to select 
+the <Span>third child</Span> I would write <Span>nth-child(3)</Span>, if I wanted 
+to select the last child I would write <span>nth-child(n)</span>.</p>
+
+<p>The <span>nth-last-child(n)</span> works the same way, but it counts 
+<span>reversed</span>, if I wrote <span>nth-last-child(2)</span> it would select 
+the <Span>second child</Span> from the end.</p>
+
+<p>Numbers however isn't the only value you can use, you can do some realy cool stuff 
+    with this <span>pseudo-class</span>, for example, if I wrote 
+    <span>nth-child(even)</span> it would select all <span>odd numbers</span>, such as 
+    <Span>2, 4, 6, 8</Span>, etc, if I wrote <Span>nth-child(odd)</Span> it would select the 
+    rest of the numbers, such as <span>1,3,5,7</span>, etc.
+</p>
+
+<p>See example below: </p>
+
+<p class="left">HTML code:</p>
+
+<p class="left"><span class="code10">&lt;div class="example2-idk" style="margin:50px;">
+    
+    &lt;p>this is a paragraph&lt;/p>
+    &lt;p>this is a paragraph&lt;/p>
+    &lt;p>this is a paragraph&lt;/p>
+    &lt;p>this is a paragraph&lt;/p>
+    &lt;p>this is a paragraph&lt;/p>
+    &lt;p>this is a paragraph&lt;/p>
+    &lt;p>this is a paragraph&lt;/p>
+    &lt;p>this is a paragraph&lt;/p>
+    
+   &lt;/div></span></p>
+
+<p class="left">CSS code:</p>
+
+<p class="left"><Span class="code10">&lt;style>
+
+    .example2-idk p:nth-child(even) {
+        color:red;
+   }
+   
+   .example2-idk p:nth-child(odd) {
+        color:blue;
+   }
+    
+    &lt;/style></Span></p>
+
+<p class="left">Outcome:</p>
+
+<style>
+
+    .example2-idk p:nth-child(even) {
+         color:red;
+    }
+    
+    .example2-idk p:nth-child(odd) {
+         color:blue;
+    }
+    
+    </style>
+    
+    <div class="example2-idk" style="margin:50px;  ">
+    
+    <p>this is a paragraph</p>
+    <p>this is a paragraph</p>
+    <p>this is a paragraph</p>
+    <p>this is a paragraph</p>
+    <p>this is a paragraph</p>
+    <p>this is a paragraph</p>
+    <p>this is a paragraph</p>
+    <p>this is a paragraph</p>
+    
+    </div>
+    
+
+<p>You can also write <span>nth-child(2n+2)</span> which gives same result
+with <span>nth-child(even)</span> the <span>2n</span> tells it to select 
+every two <span>paragraphs</span>, the <span>2</span> tells it to start from the 
+<span>second paragraph</span></p>
+
+<p>See example below: </p>
+
+<p class="left">HTML code:</p>
+
+<p class="left"><span class="code10">&lt;div class="example2-idk" style="margin:50px;">
+    
+    &lt;p>this is a paragraph&lt;/p>
+    &lt;p>this is a paragraph&lt;/p>
+    &lt;p>this is a paragraph&lt;/p>
+    &lt;p>this is a paragraph&lt;/p>
+    &lt;p>this is a paragraph&lt;/p>
+    &lt;p>this is a paragraph&lt;/p>
+    &lt;p>this is a paragraph&lt;/p>
+    &lt;p>this is a paragraph&lt;/p>
+    
+   &lt;/div></span></p>
+
+<p class="left">CSS code:</p>
+
+<p class="left"><Span class="code10">&lt;style>
+
+    .example2-idk p:nth-child(2n+2) {
+        color:red;
+   }
+   
+   .example2-idk p:nth-child(2n+0) {
+        color:blue;
+   }
+    
+    &lt;/style></Span></p>
+
+<p class="left">Outcome:</p>
+
+<style>
+
+.example-idk p:nth-child(2n+2) {
+     color:red;
+}
+
+.example-idk p:nth-child(2n+1) {
+     color:blue;
+}
+
+</style>
+
+<div class="example-idk" style="margin: 50px;">
+
+<p>this is a paragraph</p>
+<p>this is a paragraph</p>
+<p>this is a paragraph</p>
+<p>this is a paragraph</p>
+<p>this is a paragraph</p>
+<p>this is a paragraph</p>
+<p>this is a paragraph</p>
+<p>this is a paragraph</p>
+
+</div>
+
+<p>The <span>nth-of-type(d)</span> works the same, but if for example there was 
+a <span>heading</span> in the example, it would only select the <Span>paragraphs</Span>, even 
+tho the <span>heading</span> is also a <Span>child</Span> of the <Span>div</Span>. The 
+<Span>nth-last-of-type(n)</Span> does the same but counts reversed, from end to start. </p>
+
+</article>
+
+<hr>
+
+<article id="eight-three">
+
+    <header>
+
+        <h1>User Action Selectors</h1>
+
+    </header>
+
+<div class="selectors-list">
+    <ul>
+        <li>e:active - when user clicks the element</li>
+        <li>e:hover - when user hovers his mouse over the element</li>
+        <li>e:focus - when user focuses on the element (types on an input for example)</li>
+    </ul>
+</div>
+
+<p>You have probably already heared about <span>:active</span> from <Span>links</Span>, 
+but this <Span>pseudo selector</Span> does not work only for <Span>links</Span>, 
+it can work on any <Span>element</Span>, see the example below:</p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><span class="code10">&lt;div class="example69">
+    &lt;p>Click and hold on me to make me bigger&lt;/p>
+    &lt;p>I'm just a paragraph&lt;/p>
+    &lt;/div></span></p>
+
+<p class="left">CSS Code:</p>
+
+<p class="left"><span class="code10">&lt;style>
+
+    .example69 :first-child:active{
+        font-size: 40px;
+    }
+    
+    .example69 :first-child:active + :nth-child(2){
+        font-size: 10px;
+    }
+    
+    &lt;/style></span></p>
+
+<p class="left">Outcome:</p>
+
+<style>
+
+.example69 :first-child:active{
+    font-size: 40px;
+}
+
+.example69 :first-child:active + :nth-child(2){
+    font-size: 10px;
+}
+
+</style>
+
+<div class="example69">
+    <p>Click and hold on me to make me bigger</p>
+    <p>I'm just a paragraph</p>
+</div>
+
+<p>You are probably familiar with <span>:hover</span> as well, since it's also 
+used on <span>links</span>, it basically makes an effect appear after 
+the user <span>hovers his mouse</span> over an <Span>element</Span>, see
+the example below:</p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><span class="code10">&lt;div class="example-list">
+
+    &lt;ul>
+        &lt;li>Item 1&lt;/li>
+        &lt;li>Item 2&lt;/li>
+        &lt;li>Item 3&lt;/li>
+        &lt;li>Item 4&lt;/li>
+        &lt;/ul>
+
+        &lt;/div></span></p>
+
+<p class="left">CSS Code:</p>
+
+<p class="left"><span class="code10">&lt;style>
+
+    .example-list {
+        display: grid;
+        width:100%;
+    }
+    
+    .example-list ul {
+         justify-self: center;
+         width: 50%;
+    }
+    
+    .example-list li {
+        padding: 20px;
+        background-color: cyan;
+        list-style-position: outside;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        color:  #06F;
+        border: 1px solid black; 
+        border-radius: 20px;
+    }
+    
+    .example-list li:hover {
+        background-color: rgb(20, 241, 20);
+        color: green;
+    }
+    
+    &lt;/style></span></p>
+
+<p class="left">Outcome:</p>
+
+<Style>
+
+.example-list {
+    display: grid;
+    width:100%;
+}
+
+.example-list ul {
+     justify-self: center;
+     width: 50%;
+}
+
+.example-list li {
+    padding: 20px;
+    background-color: cyan;
+    list-style-position: outside;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color:  #06F;
+    border: 1px solid black; 
+    border-radius: 20px;
+}
+
+.example-list li:hover {
+    background-color: rgb(20, 241, 20);
+    color: green;
+}
+
+</Style>
+
+<div class="example-list">
+<ul>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+    <li>Item 4</li>
+</ul>
+</div>
+
+<p>The <Span>:focus</Span> pseudo selector is mostly used on 
+<span>inputs</span> and <Span>text-areas</Span>, here you can see an example 
+of how it works:</p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><span class="code10">&lt;form id="form-example">
+
+    &lt;fieldset>
+    
+    &lt;legend>Login</legend>
+    
+    &lt;input type="text" placeholder="Enter your name"> &lt;div class="container-div">&lt;span class="span-text">Don't enter fake username&lt;/span>&lt;/div>
+    &lt;input type="email" placeholder="Enter your email"> &lt;div class="container-div">&lt;span>Don't enter fake email address&lt;/span>&lt;/div>
+    
+    &lt;/fieldset>
+    
+    &lt;/form>
+    &lt;/span></p>
+
+<p class="left">CSS Code:</p>
+
+<p class="left"><span class="code10">&lt;style>
+
+    #form-example {
+        white-space: pre-line; 
+        display: grid;
+     }
+     
+     #form-example fieldset {
+         min-width: 40%;
+         min-height: 10px;
+         padding: 10px;
+         height:90px;
+         justify-self: center;
+         display: inline-block;
+         padding-bottom: 40px;
+          
+     }
+     
+     #form-example input {
+         margin: 10px auto 10px auto;
+         margin-top: -100px;
+         position:relative;
+         bottom: 50px;
+        
+     }
+     
+     #form-example .container-div {
+         position: relative;
+     }
+     
+     #form-example .span-text {
+         background-color: unset;
+         margin: 10px auto 10px auto;
+         position: absolute;
+         bottom: 50px;
+         left: 180px;
+         display: none;
+     }
+     
+     #form-example input:focus {
+         background-color: pink;
+     }
+     
+     #form-example input:focus + .container-div .span-text{
+         display: inline;
+     }
+    
+    &lt;/style></span></p>
+
+<p class="left">Outcome:</p>
+
+<style>
+
+#form-example {
+   white-space: pre-line; 
+   display: grid;
+}
+
+#form-example fieldset {
+    min-width: 480px;
+    min-height: 10px;
+    padding: 10px;
+    height:90px;
+    justify-self: center;
+    display: inline-block;
+    padding-bottom: 40px;
+     
+}
+
+#form-example input {
+    margin: 10px auto 10px auto;
+    margin-top: -100px;
+    position:relative;
+    bottom: 50px;
+   
+}
+
+#form-example .container-div {
+    position: relative;
+}
+
+#form-example .span-text {
+    background-color: unset;
+    margin: 10px auto 10px auto;
+    position: absolute;
+    bottom: 50px;
+    left: 180px;
+    display: none;
+    white-space: pre;
+}
+
+#form-example input:focus {
+    background-color: pink;
+}
+
+#form-example input:focus + .container-div .span-text{
+    display: inline;
+}
+
+
+</style>
+
+<form id="form-example">
+
+<fieldset>
+
+<legend>Login</legend>
+
+<input type="text" placeholder="Enter your name"> <div class="container-div"><span class="span-text">Don't enter fake username</span></div>
+<input type="email" placeholder="Enter your email"> <div class="container-div"><span class="span-text">Don't enter fake email address</span></div>
+
+</fieldset>
+
+</form>
+
+</article>
+
+<hr>
+
+<article id="eight-four">
+
+    <header>
+
+        <h1>UI Element States Selectors</h1>
+
+    </header>
+
+<div class="selectors-list">
+<ul>
+    <li>e:enabled - works when element is enabled</li>
+    <li>e:disabled - works when element is disabled</li>
+    <li>e:checked - works when element is checked</li>
+</ul>
+</div>
+
+<p>The <span>e:enabled</span> and <Span>e:disabled</Span> is used to 
+decorate <Span>elements</Span> based on if they are <span>enabled</span> or 
+<span>disabled</span>, not all elements can be <Span>disabled</Span> and <span>enabled</span>, 
+only some can, such as <Span>forms</Span>, <Span>buttons</Span> and <Span>links</Span> I believe.</p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><span class="code10">&lt;form class="form-example2"> 
+
+    &lt;input type="text" name="username" placeholder="Enter your username" enabled>
+    
+    &lt;input type="number" name="age" placeholder="Enter your age" disabled>
+    
+    &lt;input type="email" name="password" placeholder="Enter your email" enabled>
+    
+    &lt;input type="password" name="password" placeholder="Enter your password" enabled>
+    
+    &lt;/form></span></p>
+
+<p class="left">CSS Code:</p>
+
+<p class="left"><span class="code10">&lt;style>
+
+    .form-example2 {
+        white-space: pre-line;
+       display: grid;
+        margin: 20px auto 20px auto;
+    }
+    
+    .form-example2 input {
+        margin: 10px auto 10px auto;
+    }
+    
+    .form-example2 input:enabled {
+        background-color: lightgreen;
+    }
+    
+    .form-example2 input:disabled {
+        background-color: rgb(247, 104, 68);
+    }
+    
+    &lt;/style></span></p>
+
+<p class="left">Outcome:</p>
+
+<style>
+
+.form-example2 {
+    white-space: pre-line;
+   display: grid;
+    margin: 20px auto 20px auto;
+}
+
+.form-example2 input {
+    margin: 10px auto 10px auto;
+}
+
+.form-example2 input:enabled {
+    background-color: lightgreen;
+}
+
+.form-example2 input:disabled {
+    background-color: rgb(247, 104, 68);
+}
+
+</style>
+
+<form class="form-example2"> 
+
+<input type="text" name="username" placeholder="Enter your username" enabled>
+
+<input type="number" name="age" placeholder="Enter your age" disabled>
+
+<input type="email" name="password" placeholder="Enter your email" enabled>
+
+<input type="password" name="password" placeholder="Enter your password" enabled>
+
+
+</form>
+
+<p>The <Span>e:checked</Span> can be used for <Span>checkboxes</Span> and <span>radio</span> input types, 
+see example below:</p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><span class="code10">&lt;form class="form-example3">
+
+    &lt;span>
+    &lt;label>What's your gender?&lt;/label>
+    
+    &lt;input type="radio" name="gender" value="male" checked="checked"> &lt;span>Male&lt;/span>
+    &lt;input type="radio" name="gender" value="female"> &lt;span>Female&lt;/span>
+    
+    &lt;label>What's your favorite hobbies?&lt;/label>
+    
+    &lt;input type="checkbox" name="hobby" value="football"> &lt;span>Football&lt;/span>
+    &lt;input type="checkbox" name="hobby" value="basketball"> &lt;span>Basketball&lt;/span>
+    &lt;input type="checkbox" name="hobby" value="videogames" checked="checked"> &lt;span>Videogames&lt;/span>
+    &lt;input type="checkbox" name="hobby" value="programming" checked="checked"> &lt;span>Programming&lt;/span>
+    &lt;/span>  
+    
+    &lt;/form></span></p>
+
+<p class="left">CSS Code:</p>
+
+<p class="left"><span class="code10">&lt;style>
+
+    .form-example3 {
+        white-space: pre-line;
+        display: grid;
+    }
+    
+    .form-example3 span {
+        margin: auto;
+        background-color: unset;
+    }
+    
+    .form-example3 input:checked + span{
+        color: green;
+    }
+    
+    .form-example3 input + span {
+        color: red;
+    }
+    
+    &lt;/style></span></p>
+
+<p class="left">Outcome:</p>
+
+<Style>
+
+.form-example3 {
+    white-space: pre-line;
+    display: grid;
+    margin-bottom: 20px;
+}
+
+.form-example3 span {
+    margin: auto;
+    background-color: unset;
+}
+
+.form-example3 input:checked + span{
+    color: green;
+}
+
+.form-example3 input + span {
+    color: red;
+}
+ 
+
+</Style>
+
+<form class="form-example3">
+
+<span>
+<label>What's your gender?</label>
+
+<input type="radio" name="gender" value="male" checked="checked"> <span>Male</span>
+<input type="radio" name="gender" value="female"> <span>Female</span>
+
+<label>What's your favorite hobbies?</label>
+
+<input type="checkbox" name="hobby" value="football"> <span>Football</span>
+<input type="checkbox" name="hobby" value="basketball"> <span>Basketball</span>
+<input type="checkbox" name="hobby" value="videogames" checked="checked"> <span>Videogames</span>
+<input type="checkbox" name="hobby" value="programming" checked="checked"> <span>Programming</span>
+</span>  
+
+
+</form>
+
+
+</article>
+
+<hr>
+
+<article id="nine">
+
+    <header>
+
+        <h1>Pseudo elements</h1>
+
+    </header>
+
+<p><span>Pseudo elements</span> are used to <span>select</span> specific parts of an <Span>element</Span>. 
+There are <Span>five pseudo elements</Span> in <span>CSS</span>, each starting 
+with the <span>double colon</span> (<span>::</span>).</p>
+
+<p><Span>::first-line</Span> - the first line of text is selected<br>
+<span>::first-letter</span> - the first letter of text is selected<br>
+<span>::selection</span> - text that is selected by user is selected<br>
+<Span>::before</Span> - inserts some content before an element <br>
+<Span>::after</Span> - inserts some content after an element </p>
+
+
+<p class="left">HTML code:</p>
+
+<p class="left"><span class="code10">&lt;p class="iod">Hello this is first line &lt;br>
+    Hello this is second line&lt;/p></span></p>
+
+<p class="left">CSS code:</p>
+
+<p class="left"><Span class="code10">&lt;style>
+
+    .iod::first-line{
+        color: red
+    }
+    
+    .iod::first-letter{
+        color: blue;
+    }
+    
+    .iod::selection{
+        color: green;
+        background-color: cyan;
+    }
+    
+    
+    &lt;/style></Span></p>
+
+<p class="left">Outcome:</p>
+
+
+<style>
+
+.iod::first-line{
+    color: red
+}
+
+.iod::first-letter{
+    color: blue;
+}
+
+.iod::selection{
+    color: green;
+    background-color: cyan;
+}
+
+</style>
+
+<p class="iod">Hello this is first line <br>
+Hello this is second line</p>
+
+<p>If you click and hold your mouse over the text to select it you will see
+    the <span>::selection</span> effect.
+</p>
+
+<p>Now that we got these out of the way, lets talk about <span>::after</span> and <Span>::before</Span>.</p>
+
+<p>These two <span>pseudo elements</span> can only be used on <span>html elements</span> that 
+are <Span>closed</Span>, and that's because the <span>content</span> you add <span>before</span> or 
+<Span>after</Span> the specific <span>element</span> is added <Span>before</Span> or <span>after</span> 
+the <Span>element's content</Span>, not <Span>before</Span> or <span>after</span> 
+the <Span>element</Span> it self.</p>
+
+<P>I already used the <span>::before</span> pseudo element before 
+when I talked about how to style <Span>lists</Span>, you can check it out, 
+I basically used it to add an emoji <Span>before</Span> the <Span>list item</Span>.</P>
+
+<p>To use these two <span>pseudo elements</span> you need to use the 
+<Span>contet</Span> property, you can add many stuff as the <span>content</span>, 
+for example, an <span>image</span>, or <span>text</span> which you should add 
+between <span>""</span>.</p>
+
+<p class="left">HTML code:</p>
+
+<p class="left"><span class="code10">&lt;div class="idkdude">
+
+    &lt;p>Hello I'm a paragraph and I'm okay&lt;/p>
+    &lt;p>Hello I'm a paragraph and I'm okay&lt;/p>
+    &lt;p>Hello I'm a paragraph and I'm okay&lt;/p>
+
+    &lt;/div></span></p>
+
+<p class="left">CSS code:</p>
+
+<p class="left"><Span class="code10">&lt;style>
+
+    .idkdude p::before{
+        content: "";
+        display: inline-block;
+        width:50px;
+        height: 15px;
+        background-color: red;
+    }
+    
+    .idkdude p::after{
+        content: "Im blue dabudy dabuda";
+        display: inline-block;
+        width:50px;
+        min-height: 15px;
+        background-color: blue;
+        color: white;
+    }
+    
+    
+    &lt;/style></Span></p>
+
+<p class="left">Outcome:</p>
+
+<style>
+
+.idkdude p::before{
+    content: "";
+    display: inline-block;
+    width:50px;
+    height: 15px;
+    background-color: red;
+}
+
+.idkdude p::after{
+    content: "Im blue dabudy dabuda";
+    display: inline-block;
+    width:50px;
+    min-height: 15px;
+    background-color: blue;
+    color: white;
+}
+
+</style>
+
+<div class="idkdude">
+
+    <p>Hello I'm a paragraph and I'm okay</p>
+    <p>Hello I'm a paragraph and I'm okay</p>
+    <p>Hello I'm a paragraph and I'm okay</p>
+
+
+</div>
+
+<p>So as you can see, I created <span>two new html inline-block elements</span> using 
+only <span>CSS</span>.</p>
+
+<p>You can also use the <span>:hover</span> pseudo class so the 
+<Span>added content</Span> only appears when you <Span>hover your mouse</Span> over
+the element.</p>
+
+<p class="left">HTML code:</p>
+
+<p class="left"><span class="code10">&lt;div class="main">
+    &lt;div class="hover-div">Hover your mouse over me&lt;/div>
+    &lt;/div></span></p>
+
+<p class="left">CSS code:</p>
+
+<p class="left"><Span class="code10">&lt;style>
+
+    .main {
+        height: 250px;
+        background-color: black;
+        margin: auto;
+        width: 350px;
+        padding-top: 40px;
+    }
+    
+    .hover-div {
+        width:250px;
+        height: 100px;
+        background-color: gray;
+        margin: auto;
+        text-align: center;
+        line-height: 100px;
+        position: relative;
+    }
+    
+    .hover-div:hover::after {
+        content:"Thank you";
+        width: 250px;
+        height: 100px;
+        background-color: lightgray;
+        margin: 20px auto 20px auto;
+        text-align: center;
+        line-height: 100px;
+        position: absolute;
+        top: 100%;
+        left: 0px;
+    }
+    
+    
+    &lt;/style></Span></p>
+
+<p class="left">Outcome:</p>
+
+<style>
+
+.main {
+    height: 250px;
+    background-color: black;
+    margin: auto;
+    width: 350px;
+    padding-top: 40px;
+}
+
+.hover-div {
+    width:250px;
+    height: 100px;
+    background-color: gray;
+    margin: auto;
+    text-align: center;
+    line-height: 100px;
+    position: relative;
+}
+
+.hover-div:hover::after {
+    content:"Thank you";
+    width: 250px;
+    height: 100px;
+    background-color: lightgray;
+    margin: 20px auto 20px auto;
+    text-align: center;
+    line-height: 100px;
+    position: absolute;
+    top: 100%;
+    left: 0px;
+}
+
+
+
+</style>
+
+<div class="main">
+<div class="hover-div">Hover your mouse over me</div>
+</div>
+
+
+ 
+     
+    
+</article>
+
+<hr>
+
+<article id="ten">
+
+    <header>
+
+        <h1>The attr() function</h1>
+
+    </header>
+
+<p>The <Span>attr()</Span> fuction can be used in <Span>content</Span> property 
+together with <Span>::after</Span> or <span>::before</span> pseudo elements 
+so that the <span>content</span> takes the <span>value</span> of a chosen
+<span>attribute</span>.</p>
+
+<p>Why would I ever need that? Well, from what I understand if it's used together with 
+    <Span>JavaScript</Span> it makes it way easier to do cartain things, such as 
+    making a notification bell for example, the number of the noficications you have 
+    could simply change by changing the value of a made up attribute for example.
+</p>
+
+<p>Also, this can be useful for other reasons too, and in this section, we are actually going to 
+    make up a <Span>data-tooltip</Span> attribute and define cartain <Span>styling rules</Span> to it.
+</p>
+
+<p>First, let me show you a simple example of how <span>attr</span> function works,
+check the following code:</p>
+
+<p class="left">HTML code:</p>
+
+<p class="left"><span class="code10">&lt;div class="random-div">
+    
+    &lt;p id="paragraph-duh">Hello, I'm a paragraph &lt;/p> 
+    &lt;p id="zulu">Hello, I'm a paragraph &lt;/p>  
+    &lt;p id="idk">Hello, I'm a paragraph &lt;/p>
+    
+    &lt;/div></span></p>
+
+<p class="left">CSS code:</p>
+
+<p class="left"><Span class="code10">&lt;style>
+
+    .random-div {
+        background-color: white;
+        border: 3px solid black;
+        border-radius: 20px;
+        width: 350px;
+        min-height: 100px;
+        text-align: center;
+        line-height: 50px;
+        margin: auto;
+    }
+    
+    .random-div p::after{
+        content: " and my id is ''"attr(id)"'' ";
+    }
+    
+    &lt;/style></Span></p>
+
+<p class="left">Outcome:</p>
+
+<style>
+
+
+.random-div {
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 20px;
+    width: 350px;
+    min-height: 100px;
+    text-align: center;
+    line-height: 50px;
+    margin: auto;
+}
+
+.random-div p::after{
+    content: " and my id is ''"attr(id)"'' ";
+}
+
+</style>
+
+
+<div class="random-div">
+    
+<p id="paragraph-duh">Hello, I'm a paragraph </p> 
+<p id="zulu">Hello, I'm a paragraph </p>  
+<p id="idk">Hello, I'm a paragraph </p>
+
+</div>
+
+<p>As you can see, this simply trick I used saved me a lot of time, all I had to 
+    do is change the <span>id</span> of the <Span>paragraph</Span> and the 
+    <Span>text</Span> changed too.
+</p>
+
+<p>Now, lets try to create a <Span>data-tooltip</Span> of a <span>button</span> 
+using pure <span>CSS</span>.</p>
+
+<p class="left">HTML code:</p>
+
+<p class="left"><span class="code10">&lt;div class="button">
+
+
+    &lt;div data-tooltip="It will refresh the page">&lt;a href="#">Click me&lt;/a>&lt;/div>
+
+    &lt;p data-tooltip="If you press this, page 10 will open, isn't that 
+    nice how the tooltip gets bigger when there is much text in it btw?">&lt;a href="../CSS-Notes/Notes10.html">Click me&lt;/a>&lt;/p>
+
+
+    &lt;/div></span></p>
+
+<p class="left">CSS code:</p>
+
+<p class="left"><Span class="code10">&lt;style>
+
+    [data-tooltip] a{
+        color: white;
+        font-size: 30px;
+        text-shadow: 1px 1px 0px black, 
+        -1px -1px 0px black;
+        text-decoration: none;
+    }
+    
+    [data-tooltip] {
+        width:170px;
+        height: 60px;
+        background-color: gray;
+        text-align: center;
+        line-height: 60px;
+        border: 3px solid black;
+        border-radius: 20px;
+        margin: auto;
+        margin-bottom: 30px;
+        position: relative;
+    }
+    
+    [data-tooltip]:hover::after{
+        content: attr(data-tooltip);
+        display: grid;
+        align-content: center;
+        line-height: 20px;
+        padding: 20px 5px 20px 5px;
+        margin-top: 10px;
+        border: 3px solid black;
+        border-radius: 20px;
+        width: 95%;
+        min-height: 0px;
+        background-color: rgba(255, 255, 255, 0.816);
+        position: absolute;
+        left: -5px;
+        right: 0px;
+        top: 100%;
+        z-index: 999;
+        font-size: 0.9em;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+         
+    }
+    
+    &lt;/style></Span></p>
+
+<p class="left">Outcome:</p>
+
+<style>
+
+[data-tooltip] a{
+    color: white;
+    font-size: 30px;
+    text-shadow: 1px 1px 0px black, 
+    -1px -1px 0px black;
+    text-decoration: none;
+}
+
+[data-tooltip] {
+    width:170px;
+    height: 60px;
+    background-color: gray;
+    text-align: center;
+    line-height: 60px;
+    border: 3px solid black;
+    border-radius: 20px;
+    margin: auto;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+[data-tooltip]:hover::after{
+    content: attr(data-tooltip);
+    display: grid;
+    align-content: center;
+    line-height: 20px;
+    padding: 20px 5px 20px 5px;
+    margin-top: 10px;
+    border: 3px solid black;
+    border-radius: 20px;
+    width: 95%;
+    min-height: 0px;
+    background-color: rgba(255, 255, 255, 0.816);
+    position: absolute;
+    left: -5px;
+    right: 0px;
+    top: 100%;
+    z-index: 999;
+    font-size: 0.9em;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+     
+}
+
+</style>
+
+
+<div class="button">
+
+
+    <div data-tooltip="If you click this, the page will refresh"><a href="#">Click me</a></div>
+
+    <p data-tooltip="If you click this, page 10 will open, isn't that 
+    nice how the tooltip gets bigger when there is much text in it btw?"><a href="../CSS-Notes/Notes10.html">Click me</a></p>
+
+
+</div>
+
+<p>Now, every element with the <span>data-tooltip</span> attribute will be assigned these <Span>styling rules</Span>.</p>
+
+</article>
+
+<hr>
+
+<article id="eleven">
+
+<header>
+<h1>The Attribute Selectors</h1>
+<header>
+
+<div class="selectors-list">
+<ul>
+    <li><span>e[att]</span> - decorates any element that has this attribute.</li>
+    <li><span>e[att="val"]</span> - decorates any element that has this attribute with this value.</li>
+    <li><span>e[att~="val"]</span> - decorates any element that has this word inside the value, there can be
+        many different words inside an attribute, for example, title="hello apple", I could write
+        [att~="apple"] and it would still decorate the element  because the word apple is in it.
+    </li>
+    <li><span>e[att^="val"]</span> - decorates any element that starts with this value, for example, 
+        if I wanted to style all links that start with http I would write a[href^="http"].
+    </li>
+    <li><span>e[att$="val"]</span> - decorates any element that ends with this value, if for example 
+        I wanted to decorate all links that end with com I would write a[href$="com"].
+    </li>
+    <li><span>e[att*="val"]</span> - decorates any element that has this attribute with this word 
+        inside it just like att~="val", however, it doesn't need to have spaces before and after,
+       for example, an element with title="second" attribute could be styled by writing [title="cond"], since 
+       cond is inside second.
+    </li>
+    <li><span>e[att|="val"]</span> - is used for attributes that are listed like this (first-value, second-value, third-value), if for example 
+        the element had title="second-value" attribute I could write [title="second"] and it would decorate it.
+    </li> 
+</ul>
+</div>
+
+<p class="left">HTML code:</p>
+
+<p class="left"><span class="code10">&lt;div class="example69a">
+
+    &lt;p name="">name=""&lt;/p>
+    &lt;p name="alex">name="alex"&lt;/p>
+    &lt;p name="green apple">name="green apple"&lt;/p>
+    &lt;p name="Notes.html"> name="Notes.html"&lt;/p>
+    &lt;p name="JohnDoe">name="JohnDoe"&lt;/p>
+    &lt;p name="Second">name="Second"&lt;/p>
+    &lt;p title="second-third">title="second-third&lt;/p>
+    
+    &lt;/div></span></p>
+
+<p class="left">CSS code:</p>
+
+<p class="left"><Span class="code10">&lt;style>
+
+    .example69a [name] {
+        color: blue;
+    }
+    
+    .example69a [name="alex"] {
+        color: green;
+    }
+    
+    .example69a [name~="green"] {
+        color: brown;
+    }
+    
+    .example69a [name^="Notes"] {
+        color: blue;
+    }
+    
+    .example69a [name$="Doe"] {
+        color: purple;
+    }
+    
+    .example69a [name*="cond"] {
+        color: rgb(255, 88, 233);
+    }
+    
+    .example69a [title|="second"] {
+            color:red;
+        }
+    
+    &lt;/style></Span></p>
+
+<p class="left">Outcome:</p>
+
+
+<Style>
+  
+.example69a [name] {
+    color: blue;
+}
+
+.example69a [name="alex"] {
+    color: green;
+}
+
+.example69a [name~="green"] {
+    color: brown;
+}
+
+.example69a [name^="Notes"] {
+    color: blue;
+}
+
+.example69a [name$="Doe"] {
+    color: purple;
+}
+
+.example69a [name*="cond"] {
+    color: rgb(255, 88, 233);
+}
+
+.example69a [title|="second"] {
+        color:red;
+    }
+</Style>
+
+<div class="example69a">
+
+<p name="">name=""</p>
+<p name="alex">name="alex"</p>
+<p name="green apple">name="green apple"</p>
+<p name="Notes.html"> name="Notes.html"</p>
+<p name="JohnDoe">name="JohnDoe"</p>
+<p name="Second">name="Second"</p>
+<p title="second-third">title="second-third"</p>
+
+</div>
+
+</article>
+
+<hr>
+
+<article id="twelve">
+
+    <header>
+
+        <h1>The word-wrap Property</h1>
+
+    </header>
+
+<p>The <Span>word-wrap</Span> property allows <Span>long words</Span>
+to be <Span>broken</Span> and <Span>wrapped</Span> into the <Span>next line</Span> 
+if they don't fit in their container, this property takes only <Span>two values</Span>,
+<Span>normal</Span> and <Span>break-word</Span>.</p>
+
+
+<p class="left">Code: <br>
+<br>
+<Span class="code10">&lt;div style=" width: 200px;
+    padding: 20px;
+    margin: 20px auto 20px auto;
+    border: 3px solid black; 
+    border-radius: 20px;
+    background-color: white;
+    word-wrap: normal;">
+    
+    Hello, I'm a div and here is a very long word: 
+    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+    
+    &lt;/div>
+    
+    &lt;div style=" width: 200px;
+    padding: 20px;
+    margin: 20px auto 20px auto;
+    border: 3px solid black; 
+    border-radius: 20px;
+    background-color: white;
+    word-wrap: break-word;">
+    
+    Hello, I'm a div and here is a very long word: 
+    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+    
+    &lt;/div></Span> <br><br>
+    
+    Outcome:</p>
+
+
+<div style=" width: 200px;
+padding: 20px;
+margin: 20px auto 20px auto;
+border: 3px solid black; 
+border-radius: 20px;
+background-color: white;
+word-wrap: normal;">
+
+Hello, I'm a div and here is a very long word: 
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+</div>
+
+<div style=" width: 200px;
+padding: 20px;
+margin: 20px auto 20px auto;
+border: 3px solid black; 
+border-radius: 20px;
+background-color: white;
+word-wrap: break-word;">
+
+Hello, I'm a div and here is a very long word: 
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+</div>
+
+</article>
+
+<hr>
+
+<article id="thirteen">
+
+    <header>
+
+        <h1>The @font-face Rule</h1>
+
+    </header>
+
+    <p>The <Span>@font-face</Span> rule allows <Span>custom fonts</Span> to be 
+    <Span>loaded</Span> into a <Span>webpage</Span>.</p>
+
+    <p>With the help of this rule, designs are no longer limited to the <Span>fonts</Span>
+    that are <Span>installed</Span> on a user's computer.</p>
+
+    <p>In <Span>Internet Explorer 8</Span> and earlier, the <Span>URL</Span>
+    must point to an <span>Embedded Open Type</span> (eot) file, while 
+<Span>Firefox</Span>, <Span>Chrome</Span>, etc support <Span>True Type Fonts</Span>
+(ttf) fonts and <Span>Open Type Fonts</Span> (otf).</p>
+
+<div class="selectors-list">
+    <ul>
+        <li>Firefox - .ttf, .otf</li>
+        <li>Safari - .ttf, .otf</li>
+        <li>Chrome - .ttf, .otf</li>
+        <li>Opera - .ttf, .otf</li>
+        <li>Internet Explorer - .eot</li>
+    </ul>
+</div>
+
+<p>Each form of the <Span>font-family</Span> must be declared using the 
+<span>@font-face</span> rule, in the example below, a custom font called 
+<Span>"Delicious"</Span> is loaded and used for the <Span>paragraph</Span>.</p>
+
+
+<p class="left">Code: <br> <br>
+
+<span class="code10">&lt;Style>
+
+    @font-face {
+        font-family: Delicious;
+        src: url('Delicious-Roman.otf');
+    }
+    
+    @font-face {
+        font-family: Delicious;
+        font-weight: bold;
+        src: url('Delicious-Bold.otf');
+    }
+    
+    .paragraph-example {
+        font-family: Delicious;
+    }
+    
+    &lt;/Style>
+    
+    &lt;p class="paragraph-example">
+        
+        There isn't any file named Delicious-roman.otf, 
+        I just gave an example, the text will keep the default font-family.
+
+        &lt;/p></span><br><br>
+    
+    Outcome:</p>
+
+<Style>
+
+@font-face {
+    font-family: Delicious;
+    src: url('Delicious-Roman.otf');
+}
+
+@font-face {
+    font-family: Delicious;
+    font-weight: bold;
+    src: url('Delicious-Bold.otf');
+}
+
+.paragraph-example {
+    font-family: Delicious;
+}
+
+</Style>
+
+<p class="paragraph-example">There isn't any file named Delicious-roman.otf, 
+    I just gave an example, the text will keep the default font-family.
+</p>
+
+<p><Span>Internet Explorer</Span> has a <Span>built-in bug</Span>
+when <Span>multiple @font-face rules</Span> are defined. Using 
+<Span>#iefix</Span> as shown below fixes the problem:</p>
+
+<p class="left">
+    <span class="code10">&lt;Style>
+    
+        @font-face {
+            font-family: Delicious;
+            src: url('Delicious-Roman.ttf');
+            src: url('Delicious-Roman.eot?#iefix');
+        }
+        
+        &lt;/Style></span> </p>
+
+</article>
+
+<hr>
+
+</body>
+</html>

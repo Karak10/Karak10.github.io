@@ -1,0 +1,1050 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<title> Page two of my backend notes</title>
+<meta charset="UTF-8"> 
+<link href="../CSS-JavaScript-External-Files/HTMLnotes.css" rel="stylesheet">
+<style>
+    
+    body{
+        overflow-x: hidden;
+        width: 100%;
+    }
+    .left {
+        text-align: left;
+    }
+
+    iframe {
+        width: 600px;
+        height: 350px;
+        border: 3px solid black;
+        margin: 20px auto 20px auto;
+        display: block;
+    }
+    .code10 {
+    white-space: pre-wrap;
+    background-color: lightgreen;
+    overflow-wrap: break-word;
+    }
+    
+    p {
+    text-align:center;
+    }
+    h1 {
+    text-align:center;
+    }
+    h2 {
+    text-align:center;
+    }
+    h3 {
+    text-align:center;
+    }
+    .c {
+    background-color:lightgreen;
+    }
+    hr {
+    width:100%;
+    height:15px;
+    background-color:black;
+    color:black;
+    border: black solid;
+    }
+    body {
+    background-color:rgb(165, 235, 235);
+    }
+    span {
+    background-color:lightgreen;
+    }
+    
+    a:link {
+    color: black;
+    text-shadow: 1px 0px 1px black;
+    
+    }
+    
+    a:visited {
+    color: black;
+    text-shadow: 1px 0px 1px rgb(22, 22, 22);
+    }
+    
+    a:hover {
+    text-decoration: underline;
+    color: red;
+    text-shadow: 1px 0px 1px black;
+    }
+     
+    img{
+        display: block;
+        margin: 20px auto 20px auto;
+        border: 3px solid black;
+        border-radius: 10px;
+    }
+    .syntax >*{
+    text-align: left;
+    margin-left: 10px;
+    width: fit-content;
+}
+.syntax div{
+    padding: 10px 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    white-space: pre-wrap;
+    border-left: 5px solid green;
+}
+.blue{
+    color: blue;
+    background-color: unset;
+    font-size: 1em;
+}
+    </style> 
+</head>
+<body>
+
+<hr>
+
+    <header> 
+    <h1> Page two of my backend notes </h1>
+    </header>
+    
+<article id="start-of-page"> 
+  
+<div id="homepages">
+
+    <h3>Home Pages:</h3>
+   
+
+</div>
+
+<nav data-notes="backend" data-page="2">
+
+</nav>
+
+    <h3>Informations included in this page:</h3>
+    <p><a href="./../Backend-Notes/backend2.html#one">How to create or remove Databases</a></p>
+    <p><a href="./../Backend-Notes/backend2.html#two">How to create, copy or remove tables</a></p>
+    <p><a href="./../Backend-Notes/backend2.html#three">How to add, delete, or modify columns in an existing table</a></p>
+    <p><a href="./../Backend-Notes/backend2.html#four">SQL Constraints</a></p>
+    <p><a href="./../Backend-Notes/backend2.html#five">SQL NOT NULL Constraint</a></p>
+    <p><a href="./../Backend-Notes/backend2.html#six">SQL UNIQUE Constraint</a></p>
+    <p><a href="./../Backend-Notes/backend2.html#seven">SQL PRIMARY KEY Constraint</a></p>
+    <p><a href="./../Backend-Notes/backend2.html#eight">SQL FOREIGN KEY Constraint</a></p>
+    <p><a href="./../Backend-Notes/backend2.html#nine">SQL CHECK Constraint</a></p>
+    <p><a href="./../Backend-Notes/backend2.html#ten">SQL DEFAULT Constraint</a></p>
+    <p><a href="./../Backend-Notes/backend2.html#eleven">SQL CREATE INDEX Statement</a></p>
+    <p><a href="./../Backend-Notes/backend2.html#twelve">SQL AUTO INCREMENT Field</a></p>
+    <p><a href="./../Backend-Notes/backend2.html#thirteen">SQL Views</a></p>
+    <p><a href="./../Backend-Notes/backend2.html#fourteen">SQL Injection</a></p>
+    <p><a href="./../Backend-Notes/backend2.html#fifteen">SQL Hosting</a></p>
+    <p><a href="./../Backend-Notes/backend2.html#sixteen">What is a Stored Procedure?</a></p>
+
+
+</article>
+
+<script src="../CSS-JavaScript-External-Files/nav.js"></script>
+<hr>
+
+<article id='one'>
+    <header><h1>How to create or remove Databases</h1></header>
+    <p>So far, you should know how to view, add and edit data, it is time 
+    to learn more about how to design a database from scratch though, 
+    how to set up foreign keys, primary keys, and other cool stuff, with 
+    queries and by mySQL workbench interface, but first let's 
+    learn how to make a database and tables.
+    </p>
+    
+    <p>You create a database by using the CREATE DATABASE keyword like this:</p>
+    
+    <img src='./../images/sql17.PNG' class='img'>
+    
+    <p>You can remove a database by using the DROP DATABASE keyword:</p>
+    
+    <img src='./../images/sql18.PNG' class='img'>
+    
+    <p>I dropped all those databases because a database shouldn't be so 
+    specific, students, classes and professors should better be tables inside 
+    school database:
+    </p>
+    <img src='./../images/sql19.PNG' class='img'>
+    
+    
+    
+    </article>
+    
+    <hr>
+    
+    <article id='two'>
+    <header><h1>How to create, copy or remove tables</h1></header>
+    <p>To create a table you should use the CREATE TABLE statement:</p>
+    
+    <img src='./../images/sql20.PNG' class='img'>
+    
+    <p>You can use a subquery to copy a table:</p>
+    
+    <img src='./../images/sql21.PNG' class='img'>
+    
+    <p>Lastly, to remove a table you can use the DROP TABLE statement:</p>
+    
+    <img src='./../images/sql22.PNG' class='img'>
+    
+    
+    </article>
+    
+    <hr>
+    
+    <article id='three'>
+    <header><h1>How to add, delete, or modify columns in an existing table</h1></header>
+    <p>The ALTER TABLE statement is used to add, delete, or modify columns in an existing table.
+    The ALTER TABLE statement is also used to add and drop various constraints on an existing table.</p>
+    
+    <p>Here is an example of how to drop a column:</p>
+    
+    <img src='./../images/sql23.PNG' class='img'>
+    
+    <p>And here is an example of how to add a column:</p>
+    <img src='./../images/sql24.PNG' class='img'>
+    
+    <p>And lastly here is an example of how to modify a column:</p>
+    <img src='./../images/sql25.PNG' class='img'>
+    
+    </article>
+    
+    <hr>
+    
+    <article id='four'>
+    <header><h1>SQL Constraints</h1></header>
+    <p>SQL constraints are used to specify rules for data in a table.
+    Constraints can be specified when the table is created with the CREATE TABLE statement, or after the table is created with the ALTER TABLE statement.</p>
+    
+    <div class='syntax'>
+    <h1>Syntax:</h1>
+    <div>
+    <span class='blue'>CREATE TABLE</span> table_name (
+        column1 datatype <span class='blue'>constraint</span>,
+        column2 datatype <span class='blue'>constraint</span>,
+        column3 datatype <span class='blue'>constraint</span>,
+        ....
+    );
+    </div>
+    </div>
+    
+    <p>SQL constraints are used to specify rules for the data in a table.
+    Constraints can be used to limit the type of data that can go into a table. This ensures the accuracy and reliability of the data in the table. If there is any violation between the constraint and the data action, the action is aborted.
+    Constraints can be column level or table level. Column level constraints apply to a column, and table level constraints apply to the whole table.</p>
+    
+    <p class='left'>The following constraints are commonly used in SQL:</p>
+    
+    <ul>
+        <li><a href='' class='linkk'>NOT NULL</a> - Ensures that a column cannot have a NULL value</li>
+        <li><a href='' class='linkk'>UNIQUE</a> - Ensures that all values in a column are different</li>
+        <li><a href='' class='linkk'>PRIMARY KEY</a> - A combination of a NOT NULL and UNIQUE. Uniquely identifies each row in a table</li>
+        <li><a href='' class='linkk'>FOREIGN KEY</a> - Prevents actions that would destroy links between tables</li>
+        <li><a href='' class='linkk'>CHECK</a> - Ensures that the values in a column satisfies a specific condition</li>
+        <li><a href='' class='linkk'>DEFAULT</a> - Sets a default value for a column if no value is specified</li>
+        <li><a href='' class='linkk'>CREATE INDEX</a> - Used to create and retrieve data from the database very quickly</li>
+    </ul>
+    </article>
+    
+    <hr>
+    
+    <article id='five'>
+    <header><h1>SQL NOT NULL Constraint</h1></header>
+    <p>By default, a column can hold NULL values.
+    The NOT NULL constraint enforces a column to NOT accept NULL values.
+    This enforces a field to always contain a value, which means that you cannot insert a new record, or update a record without adding a value to this field.</p>
+    
+    <p>The following SQL ensures that the "ID", "LastName", and "FirstName" columns will NOT accept NULL values when the "Persons" table is created:</p>
+    
+    <div class='syntax'>
+    <div><span class='blue'>CREATE TABLE</span> Persons (
+        ID int <span class='blue'>NOT NULL</span>,
+        LastName varchar(255) <span class='blue'>NOT NULL</span>,
+        FirstName varchar(255) <span class='blue'>NOT NULL</span>,
+        Age int
+    );</div>
+    </div>
+    
+    <p>To create a NOT NULL constraint on the "Age" column when the "Persons" table is already created, use the following SQL:</p>
+    
+    <div class='syntax'>
+    <div><span class='blue'>ALTER TABLE</span> Persons
+    <span class='blue'>MODIFY</span> Age int <span class='blue'>NOT NULL</span>;</div>
+    </div>
+    
+    </article>
+    
+    <hr>
+    
+    <article id='six'>
+    <header><h1>SQL UNIQUE Constraint</h1></header>
+    <p>The UNIQUE constraint ensures that all values in a column are different.
+    Both the UNIQUE and PRIMARY KEY constraints provide a guarantee for uniqueness for a column or set of columns.
+    A PRIMARY KEY constraint automatically has a UNIQUE constraint.
+    However, you can have many UNIQUE constraints per table, but only one PRIMARY KEY constraint per table.</p>
+    
+    <div class='syntax'>
+        <p>The following SQL creates a UNIQUE constraint on the "ID" column when the "Persons" table is created</p>
+    
+    <div><span class='blue'>CREATE TABLE</span> Persons (
+        ID int <span class='blue'>NOT NULL</span>,
+        LastName varchar(255) <span class='blue'>NOT NULL</span>,
+        FirstName varchar(255),
+        Age int,
+        <span class='blue'>UNIQUE</span> (ID)
+    );</div>
+    
+    <p>To name a UNIQUE constraint, and to define a UNIQUE constraint on multiple columns, use the following SQL syntax:</p>
+    
+    <div><span class='blue'>CREATE TABLE</span> Persons (
+        ID int <span class='blue'>NOT NULL</span>,
+        LastName varchar(255) <span class='blue'>NOT NULL</span>,
+        FirstName varchar(255),
+        Age int,
+        <span class='blue'>CONSTRAINT</span> UC_Person <span class='blue'>UNIQUE</span> (ID, LastName)
+    );</div>
+    </div>
+    
+    <p>UC_Person is the name we gave the constraint.
+    We name constraints to identify them in the future (e.g. you want to drop it in the future), 
+    it should have a unique name. If you don't specify a name for it, 
+    the database engine will probably assign a weird name (e.g. containing random stuff to ensure uniqueness) for you.
+    You can see our constraint placed in indexes:</p>
+    
+    <div class='syntax'>
+    
+    <div><img class='image' src='./../images/sql2_1.PNG'></img></div>
+    
+    </div>
+    
+    <p>Unique indexes are indexes that help maintain data integrity by ensuring that no two rows of data in a table have identical key values. When you create a unique index for an existing table with data, values in the columns or expressions that comprise the index key are checked for uniqueness</p>
+    
+    <div class='syntax'>
+    <p>To create a UNIQUE constraint on the "ID" column when the table is already created, use the following SQL:</p>
+    
+    <div><span class='blue'>ALTER TABLE</span> Persons
+    <span class='blue'>ADD UNIQUE</span> (ID);</div>
+    
+    <p>To name a UNIQUE constraint, and to define a UNIQUE constraint on multiple columns, use the following SQL syntax:</p>
+    
+    <div><span class='blue'>ALTER TABLE</span> Persons
+    <span class='blue'>ADD CONSTRAINT</span> UC_Person <span class='blue'>UNIQUE</span> (ID,LastName);</div>
+    
+    <p>To drop a UNIQUE constraint, use the following SQL:</p>
+    
+    <div><span class='blue'>ALTER TABLE</span> Persons
+    <span class='blue'>DROP INDEX</span> UC_Person;</div>
+    </div>
+    </article>
+    
+    <hr>
+    
+    <article id='seven'>
+    <header><h1>SQL PRIMARY KEY Constraint</h1></header>
+    <p>The PRIMARY KEY constraint uniquely identifies each record in a table.
+    
+        Primary keys must contain UNIQUE values, and cannot contain NULL values.
+        
+        A table can have only ONE primary key; and in the table, this primary key can consist of single or multiple columns (fields).</p>
+    
+    <p>The following SQL creates a PRIMARY KEY on the "ID" column when the "Persons" table is created:</p>
+    
+    <div class='syntax'>
+    <div><span class='blue'>CREATE TABLE</span> Persons (
+        ID int <span class='blue'>NOT NULL</span>,
+        LastName varchar(255) <span class='blue'>NOT NULL</span>,
+        FirstName varchar(255),
+        Age int,
+        <span class='blue'>PRIMARY KEY</span> (ID)
+    );</div>
+    </div>
+    
+    <p>To allow naming of a PRIMARY KEY constraint, and for defining a PRIMARY KEY constraint on multiple columns, use the following SQL syntax:</p>
+    
+    <div class='syntax'>
+    <div><span class='blue'>CREATE TABLE</span> Persons (
+        ID int <span class='blue'>NOT NULL</span>,
+        LastName varchar(255) <span class='blue'>NOT NULL</span>,
+        FirstName varchar(255),
+        Age int,
+        <span class='blue'>CONSTRAINT</span> PK_Person <span class='blue'>PRIMARY KEY</span> (ID,LastName)
+    );</div>
+        </div>
+            
+    <p><strong>Note:</strong> In the example above there is only ONE PRIMARY KEY (PK_Person). However, the VALUE of the primary key is made up of TWO COLUMNS (ID + LastName).</p>
+    
+    <p>To create a PRIMARY KEY constraint on the "ID" column when the table is already created, use the following SQL:</p>
+    
+    <div class='syntax'>
+    <div><span class='blue'>ALTER TABLE</span> Persons
+    <span class='blue'>ADD PRIMARY KEY</span> (ID);</div>
+    </div>
+    
+    <p>To allow naming of a PRIMARY KEY constraint, and for defining a PRIMARY KEY constraint on multiple columns, use the following SQL syntax:</p>
+    
+    <div class='syntax'>
+    <div><span class='blue'>ALTER TABLE</span> Persons
+    <span class='blue'>ADD CONSTRAINT</span> PK_Person <span class='blue'>PRIMARY KEY</span> (ID,LastName);</div>
+    </div>
+    
+    <p><strong>Note:</strong> If you use ALTER TABLE to add a primary key, the primary key column(s) must have been declared to not contain NULL values (when the table was first created).</p>
+    
+    <p>To drop a PRIMARY KEY constraint, use the following SQL:</p>
+    
+    <div class='syntax'>
+    <div><span class='blue'>ALTER TABLE</span> Persons
+    <span class='blue'>DROP PRIMARY KEY</span>;</div>
+    </div>
+    </article>
+    
+    <hr>
+    
+    <article id="eight">
+    <header><h1>SQL FOREIGN KEY Constraint</h1></header>
+    <p>The FOREIGN KEY constraint is used to prevent actions that would destroy links between tables.
+    
+     A FOREIGN KEY is a field (or collection of fields) in one table, that refers to the PRIMARY KEY in another table.
+     
+     The table with the foreign key is called the child table, and the table with the primary key is called the referenced or parent table.
+     
+     Look at the following two tables:</p>
+    
+    <h2 class="left">Persons Table:</h2>
+    
+    <style>
+        .table{
+            border: 3px solid black;
+            border-collapse: collapse;
+            margin-left: 10px;
+            background-color: white;
+        }
+        .table :is(th, td){
+            border: 2px solid black;
+            padding: 10px 10px 5px 5px;
+        }
+    </style>
+    <table class="table">
+        <tr>
+            <th>PersonID</th>
+            <th>LastName</th>
+            <th>FirstName</th>
+            <th>Age</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Hansen</td>
+            <td>Ola</td>
+            <td>30</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Svendson</td>
+            <td>Tove</td>
+            <td>23</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Pattersen</td>
+            <td>Kari</td>
+            <td>20</td>
+        </tr>
+    </table>
+    
+    <h2 class="left">Orders Table:</h2>
+    
+    <table class="table" >
+        <tbody><tr>
+          <th>OrderID</th>
+          <th>OrderNumber</th>
+          <th>PersonID</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>77895</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>44678</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>22456</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>24562</td>
+          <td>1</td>
+        </tr>
+      </tbody></table>
+    
+    <p>Notice that the "PersonID" column in the "Orders" table points to the "PersonID" column in the "Persons" table.
+    
+    The "PersonID" column in the "Persons" table is the PRIMARY KEY in the "Persons" table.
+    
+    The "PersonID" column in the "Orders" table is a FOREIGN KEY in the "Orders" table.
+    
+    The FOREIGN KEY constraint prevents invalid data from being inserted into the foreign key column, because it has to be one of the values contained in the parent table.</p>
+    
+    <p>The following SQL creates a FOREIGN KEY on the "PersonID" column when the "Orders" table is created:</p>
+    
+    <div class='syntax'>
+    <div><span class='blue'>CREATE TABLE</span> Orders (
+        OrderID int <span class='blue'>NOT NULL</span>,
+        OrderNumber int <span class='blue'>NOT NULL</span>,
+        PersonID int,
+        <span class='blue'>PRIMARY KEY</span> (OrderID),
+        <span class='blue'>FOREIGN KEY</span> (PersonID) <span class='blue'>REFERENCES</span> Persons(PersonID)
+    );</div>
+        </div>
+    
+    <p>To allow naming of a FOREIGN KEY constraint, and for defining a FOREIGN KEY constraint on multiple columns, use the following SQL syntax:</p>
+    
+    <div class='syntax'>
+    <div><span class='blue'>CREATE TABLE</span> professors_classes(
+        ID int,
+        class_id int <span class='blue'>NOT NULL</span>,
+        prof_id int <span class='blue'>NOT NULL</span>,
+        <span class='blue'>PRIMARY KEY</span> (ID),
+        <span class='blue'>CONSTRAINT</span> FK_class <span class='blue'>FOREIGN KEY</span> (class_id)
+                             <span class='blue'>REFERENCES</span> classes(class_id),
+        <span class='blue'>CONSTRAINT</span> FK_prof <span class='blue'>FOREIGN KEY</span> (prof_id)
+                             <span class='blue'>REFERENCES</span> professors(prof_id)
+    )</div>
+            </div>
+    
+    <p>If a table uses two columns as it's primary key, then you need to use two columns as
+    the foreign key, and this can be done like this:
+    </p>
+    
+    
+    <div class='syntax'>
+    <div><span class='blue'>CREATE TABLE</span> MyReferencingTable(
+        <Span style="color: grey; background-color: unset;">[COLUMN DEFINITIONS]</span>
+        refcol1 INT <span class='blue'>NOT NULL</span>,
+        rofcol2 INT <span class='blue'>NOT NULL</span>,
+        <span class='blue'>CONSTRAINT</span> fk_mrt_ot <span class='blue'>FOREIGN KEY</span> (refcol1, refcol2)
+                             <span class='blue'>REFERENCES</span> OtherTable(col1, col2)
+    )</div>
+                </div>
+    
+    <p>To create a FOREIGN KEY constraint on the "PersonID" column when the "Orders" table is already created, use the following SQL:</p>
+    
+    <div class='syntax'>
+    <div><span class='blue'>ALTER TABLE</span> Orders
+    <span class='blue'>ADD FOREIGN KEY</span> (PersonID) <span class='blue'>REFERENCES</span> Persons(PersonID);</div>
+                    </div>
+    
+    <p>To allow naming of a FOREIGN KEY constraint, and for defining a FOREIGN KEY constraint on multiple columns, use the following SQL syntax:</p>
+    
+    <div class='syntax'>
+    <div><span class='blue'>ALTER TABLE</span> Orders
+    <span class='blue'>ADD CONSTRAINT</span> FK_PersonOrder
+    <span class='blue'>FOREIGN KEY</span> (PersonID) <span class='blue'>REFERENCES</span> Persons(PersonID);</div>
+                        </div>
+    
+    <p>To drop a FOREIGN KEY constraint, use the following SQL:</p>
+    
+    <div class='syntax'>
+    <div><span class='blue'>ALTER TABLE</span> Orders
+    <span class='blue'>DROP FOREIGN KEY</span> FK_PersonOrder;</div>
+                            </div>
+    
+    </article>
+    
+    <hr>
+    
+    <article id="nine">
+    <header><h1>SQL CHECK Constraint</h1></header>
+    <p>The CHECK constraint is used to limit the value range that can be placed in a column.
+    If you define a CHECK constraint on a column it will allow only certain values for this column.
+    If you define a CHECK constraint on a table it can limit the values in certain columns based on values in other columns in the row.</p>
+    
+    <p>The following SQL creates a CHECK constraint on the "Age" column when the "Persons" table is created. The CHECK constraint ensures that the age of a person must be 18, or older:</p>
+    
+    <div class="syntax">
+    <div><span class="blue">CREATE TABLE</span> Persons (
+        ID int <span class="blue">NOT NULL</span>,
+        LastName varchar(255) <span class="blue">NOT NULL</span>,
+        FirstName varchar(255),
+        Age int,
+        <span class="blue">CHECK</span> (Age>=18)
+    );</div>
+    </div>
+    
+    <p>To allow naming of a CHECK constraint, and for defining a CHECK constraint on multiple columns, use the following SQL syntax:</p>
+    
+    
+    <div class="syntax">
+    <div><span class="blue">CREATE TABLE</span> Persons (
+        ID int <span class="blue">NOT NULL</span>,
+        LastName varchar(255) <span class="blue">NOT NULL</span>,
+        FirstName varchar(255),
+        Age int,
+        City varchar(255),
+        <span class="blue">CONSTRAINT</span> CHK_Person <span class="blue">CHECK</span> (Age>=18 <span class="blue">AND</span> City='Sandnes')
+    );</div>
+    </div>
+    
+    <p>To create a CHECK constraint on the "Age" column when the table is already created, use the following SQL:</p>
+    
+    <div class="syntax">
+    <div><span class="blue">ALTER TABLE</span> Persons
+    <span class="blue">ADD CHECK</span>/ (Age>=18);</div>
+    </div>
+    
+    <p>To allow naming of a CHECK constraint, and for defining a CHECK constraint on multiple columns, use the following SQL syntax:</p>
+    
+    <div class="syntax">
+    <div><span class="blue">ALTER TABLE</span> Persons
+    <span class="blue">ADD CONSTRAINT</span> CHK_PersonAge <span class="blue">CHECK</span> (Age>=18 AND City='Sandnes');</div>
+    </div>
+    
+    <p>To drop a CHECK constraint, use the following SQL:</p>
+    
+    <div class="syntax">
+    <div><span class="blue">ALTER TABLE</span> Persons
+    <span class="blue">DROP CHECK</span> CHK_PersonAge;</div>
+    </div>
+    </div>
+    </article>
+    
+    <hr>
+    
+    <article id="ten">
+    <header><h1>SQL DEFAULT Constraint</h1></header>
+    <p>The DEFAULT constraint is used to set a default value for a column.
+    The default value will be added to all new records, if no other value is specified.</p>
+    
+    <p>The following SQL sets a DEFAULT value for the "City" column when the "Persons" table is created:</p>
+    
+    <div class="syntax">
+    <div><span class="blue">CREATE TABLE</span> Persons (
+        ID int <span class="blue">NOT NULL</span>,
+        LastName varchar(255) <span class="blue">NOT NULL</span>,
+        FirstName varchar(255),
+        Age int,
+        City varchar(255) <span class="blue">DEFAULT</span> 'Sandnes'
+    );</div>
+    </div>
+    
+    <p>The DEFAULT constraint can also be used to insert system values, by using functions like GETDATE()</p>
+    
+    <div class="syntax">
+    <div><span class="blue">CREATE TABLE</span> Orders (
+        ID int <span class="blue">NOT NULL</span>,
+        OrderNumber int <span class="blue">NOT NULL</span>,
+        OrderDate date <span class="blue">DEFAULT</span> GETDATE()
+    );</div>
+    </div>
+    
+    <p>To create a DEFAULT constraint on the "City" column when the table is already created, use the following SQL:</p>
+    
+    <div class="syntax">
+    <div><span class="blue">ALTER TABLE</span> Persons
+    <span class="blue">ALTER</span> City <span class="blue">SET DEFAULT</span> 'Sandnes';</div>
+    </div>
+    
+    <p>To drop a DEFAULT constraint, use the following SQL:</p>
+    
+    <div class="syntax">
+    <div><span class="blue">ALTER TABLE</span> Persons
+    <span class="blue">ALTER COLUMN</span> City <span class="blue">DROP DEFAULT</span>;</div>
+    </div>
+    </article>
+    
+    <hr>
+    
+    <article id="eleven">
+    <header><h1>SQL CREATE INDEX Statement</h1></header>
+    <p>The CREATE INDEX statement is used to create indexes in tables.
+    Indexes are used to retrieve data from the database more quickly than otherwise. The users cannot see the indexes, they are just used to speed up searches/queries.</p>
+    
+    <p><strong>Note:</strong> Updating a table with indexes takes more time than updating a table without (because the indexes also need an update). So, only create indexes on columns that will be frequently searched against.</p>
+    
+    <p>Creates an index on a table. Duplicate values are allowed:</p>
+    
+    <div class="syntax">
+    <div><span class="blue">CREATE INDEX</span> index_name
+    <span class="blue">ON</span> table_name (column1, column2, ...);</div>
+    </div>
+    
+    <p>Creates a unique index on a table. Duplicate values are not allowed:</p>
+    
+    <div class="syntax">
+    <div><span class="blue">CREATE UNIQUE INDEX</span> index_name
+    <span class="blue">ON</span> table_name (column1, column2, ...);</div>
+    </div>
+    
+    <p>The DROP INDEX statement is used to delete an index in a table:</p>
+    
+    <div class="syntax">
+    <div><span class="blue">ALTER TABLE</span> table_name
+    <span class="blue">DROP INDEX</span> index_name;</div>
+    </div>
+    
+    <p>By creating indexes for certain columns you can improve the speed of mySQL when searching for
+    specific rows in SELECT statement. The way it works is well explained in the video bellow:
+    </p>
+    
+    <iframe width="1264" height="720" src="https://www.youtube.com/embed/kv3jC0P4gOc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    
+    <p>Indexing only the columns you need indexed minimizes the insert/delete/update performance hit. Keep in mind that every index must be updated any time a row is updated, inserted, or deleted. So the more indexes you have, the slower performance you'll have for write operations.
+    </p>
+    
+    <p>A unique index ensures that the values in the index key columns are unique. A unique constraint also guarantees that no duplicate values can be inserted into the column(s) on which the constraint is created. When a unique constraint is created a corresponding unique index is automatically created on the column(s).</p>
+    </article>
+    
+    <hr>
+    
+    <article id="twelve">
+    <header><h1>SQL AUTO INCREMENT Field</h1></header>
+    <p>Auto-increment allows a unique number to be generated automatically when a new record is inserted into a table.
+    Often this is the primary key field that we would like to be created automatically every time a new record is inserted.</p>
+    
+    <p>The following SQL statement defines the "Personid" column to be an auto-increment primary key field in the "Persons" table:</p>
+    
+    <div class="syntax">
+    <div><span class="blue">CREATE TABLE</span> Persons (
+        Personid int <span class="blue">NOT NULL</span> AUTO_INCREMENT,
+        LastName varchar(255) <span class="blue">NOT NULL</span>,
+        FirstName varchar(255),
+        Age int,
+        <span class="blue">PRIMARY KEY</span> (Personid)
+    );</div>
+    </div>
+    
+    <p>MySQL uses the AUTO_INCREMENT keyword to perform an auto-increment feature.
+    By default, the starting value for AUTO_INCREMENT is 1, and it will increment by 1 for each new record.
+    To let the AUTO_INCREMENT sequence start with another value, use the following SQL statement:</p>
+    
+    <div class="syntax">
+    <div><span class="blue">ALTER TABLE</span> Persons AUTO_INCREMENT=100;</div>
+    </div>
+    
+    <p>To insert a new record into the "Persons" table, we will NOT have to specify a value for the "Personid" column (a unique value will be added automatically):</p>
+    
+    <Style>
+    .brown {
+        color: brown;
+        background-color: unset;
+    }
+    </Style>
+    <div class="syntax">
+    <div><span class="blue">INSERT INTO</span> Persons (FirstName,LastName)
+    <span class="blue">VALUES</span> (<span class="brown">'Lars'</span>,<span class="brown">'Monsen'</span>);</div>
+    </div>
+    
+    <p>The SQL statement above would insert a new record into the "Persons" table. The "Personid" column would be assigned a unique value. The "FirstName" column would be set to "Lars" and the "LastName" column would be set to "Monsen".</p>
+    </article>
+    
+    <hr>
+    
+    <article id="thirteen">
+    <header><h1>SQL Views</h1></header>
+    
+    <p>In SQL, a view is a virtual table based on the result-set of an SQL statement.
+    A view contains rows and columns, just like a real table. The fields in a view are fields from one or more real tables in the database.
+    You can add SQL statements and functions to a view and present the data as if the data were coming from one single table.</p>
+    
+    <p>A view is created with the CREATE VIEW statement.</p>
+    
+    <div class="syntax">
+    <div><span class="blue">CREATE VIEW</span> view_name <span class="blue">AS</span>
+    <span class="blue">SELECT</span> column1, column2, ...
+    <span class="blue">FROM</span> table_name
+    <span class="blue">WHERE</span> condition;</div>
+    </div>
+    
+    <p>A view can be updated with the CREATE OR REPLACE VIEW statement:</p>
+    
+    <div class="syntax">
+    <div><span class="blue">CREATE OR REPLACE VIEW</span> view_name AS
+    <span class="blue">SELECT</span> column1, column2, ...
+    <span class="blue">FROM</span> table_name
+    <span class="blue">WHERE</span> condition;</div>
+    </div>
+    
+    <p>A view is deleted with the DROP VIEW statement:</p>
+    
+    <div class="syntax">
+    <div><span class="blue">DROP VIEW</span> view_name;</div>
+    </div>
+    
+    <p>
+    Views enable us to hide some of the columns from a table, or even add columns, or mix columns from multiple tables. It simplifies complex queries because it can draw data from multiple tables and present it as a single table. It helps in data security that shows only authorized information to the users</p>
+    </article>
+    
+    <hr>
+    
+    <article id="fourteen">
+    <header><h1>SQL Injection</h1></header>
+    
+    <p>SQL injection is a code injection technique that might destroy your database.
+    SQL injection is one of the most common web hacking techniques.
+    SQL injection is the placement of malicious code in SQL statements, via web page input.</p>
+    
+    <h2><u>SQL in Web Pages</u></h2>
+    
+    <p>QL injection usually occurs when you ask a user for input, like their username/userid, and instead of a name/id, the user gives you an SQL statement that you will unknowingly run on your database.
+    Look at the following example which creates a SELECT statement by adding a variable (txtUserId) to a select string. The variable is fetched from user input (getRequestString):</p>
+    
+    <div class="syntax">
+    <div>txtUserId = getRequestString(<Span class="brown">"UserId"</Span>);
+    txtSQL = <Span class="brown">"SELECT * FROM Users WHERE UserId = "</Span> + txtUserId + <Span class="brown">";"</Span>;</div>
+    </div>
+    
+    <p>The rest of this chapter describes the potential dangers of using user input in SQL statements.</p>
+    
+    <h2><u>SQL Injection Based on 1=1 is Always True</u></h2>
+    
+    <p>Look at the example above again. The original purpose of the code was to create an SQL statement to select a user, with a given user id.
+    If there is nothing to prevent a user from entering "wrong" input, the user can enter some "smart" input like this:</p>
+    
+    <p class="left">UserID: <input value="105 OR 1=1"></p>
+    
+    <P>Then, the SQL statement will look like this:</P>
+    
+    <div class="syntax">
+    <div><Span class="blue">SELECT</Span> * <Span class="blue">FROM</Span> Users <Span class="blue">WHERE</Span> UserId = 105 <Span class="blue">OR</Span> 1=1;</div>
+    </div>
+    
+    <p>The SQL above is valid and will return ALL rows from the "Users" table, since OR 1=1 is always TRUE.
+    Does the example above look dangerous? What if the "Users" table contains names and passwords?
+    A hacker might get access to all the user names and passwords in a database, by simply inserting 105 OR 1=1 into the input field.</p>
+    
+    <h2><u>SQL Injection Based on Batched SQL Statements</u></h2>
+    
+    <style>
+        h2.left{
+            margin-left: 10px;
+        }
+    </style>
+    <p>Most databases support batched SQL statement.
+    A batch of SQL statements is a group of two or more SQL statements, separated by semicolons.
+    The SQL statement below will return all rows from the "Users" table, then delete the "Suppliers" table.</p>
+    
+    <div class="syntax">
+    <div><span class="blue">SELECT</span> * <span class="blue">FROM</span> Users; <span class="blue">DROP TABLE</span> Suppliers</div>
+    </div>
+    
+    <p>Look at the following example:</p>
+    
+    <div class="syntax">
+    <div>txtUserId = getRequestString(<Span class="brown">"UserId"</Span>);
+    txtSQL = <Span class="brown">"SELECT * FROM Users WHERE UserId = "</Span> + txtUserId;</div>
+    </div>
+    
+    <p>And the following input:</p>
+    
+    <p class="left">UserID: <input value="105; DROP TABLE Suppliers"></p>
+    
+    <p>The valid SQL statement would look like this:</p>
+    
+    <div class="syntax">
+    <div><span class="blue">SELECT</span> * <span class="blue">FROM</span> Users <span class="blue">WHERE</span> UserId = 105; <span class="blue">DROP TABLE</span> Suppliers;</div>
+    </div>
+    
+    <h2><u>Use SQL Parameters for Protection</u></h2>
+    
+    <p>To protect a web site from SQL injection, you can use SQL parameters.
+    SQL parameters are values that are added to an SQL query at execution time, in a controlled manner.</p>
+    
+    <p>The following examples shows how to build parameterized queries in some common web languages.</p>
+    
+    <h2 class="left">SELECT STATEMENT IN ASP.NET:</h2>
+    <div class="syntax">
+    <div>txtUserId = getRequestString(<span class="brown">"UserId"</span>);
+    sql = <span class="brown">"SELECT * FROM Customers WHERE CustomerId = @0"</span>;
+    command = new SqlCommand(sql);
+    command.Parameters.AddWithValue(<span class="brown">"@0"</span>,txtUserId);
+    command.ExecuteReader();</div>
+    </div>
+    
+    <h2 class="left">INSERT INTO STATEMENT IN ASP.NET:</h2>
+    <div class="syntax">
+    <div>txtNam = getRequestString(<span class="brown">"CustomerName"</span>);
+    txtAdd = getRequestString(<span class="brown">"Address"</span>);
+    txtCit = getRequestString(<span class="brown">"City"</span>);
+    txtSQL = <span class="brown">"INSERT INTO Customers (CustomerName,Address,City) Values(@0,@1,@2)"</span>;
+    command = new SqlCommand(txtSQL);
+    command.Parameters.AddWithValue(<span class="brown">"@0"</span>,txtNam);
+    command.Parameters.AddWithValue(<span class="brown">"@1"</span>,txtAdd);
+    command.Parameters.AddWithValue(<span class="brown">"@2"</span>,txtCit);
+    command.ExecuteNonQuery();</div>
+    </div>
+    
+    <h2 class="left">INSERT INTO STATEMENT IN PHP:</h2>
+    <div class="syntax">
+    <div>$stmt = $dbh->prepare(<span class="brown">"INSERT INTO Customers (CustomerName,Address,City)
+    VALUES (:nam, :add, :cit)"</span>);
+    $stmt->bindParam(<span class="brown">':nam'</span>, $txtNam);
+    $stmt->bindParam(<span class="brown">':add'</span>, $txtAdd);
+    $stmt->bindParam(<span class="brown">':cit'</span>, $txtCit);
+    $stmt->execute();</div>
+    </div>
+    
+    <p>The SQL engine checks each parameter to ensure that it is correct for its column and are treated literally, and not as part of the SQL to be executed.</p>
+    </article>
+    
+    <hr>
+    
+    <article id="fifteen">
+    <header><h1>SQL Hosting</h1></header>
+    <p>If you want your web site to be able to store and retrieve data from a database, your web server should have access to a database-system that uses the SQL language.
+    If your web server is hosted by an Internet Service Provider (ISP), you will have to look for SQL hosting plans.
+    The most common SQL hosting databases are MS SQL Server, Oracle, MySQL (which we have been using), and MS Access.</p>
+    
+    <h2><u>MS SQL Server</u></h2>
+    
+    <p>Microsoft's SQL Server is a popular database software for database-driven web sites with high traffic.
+    SQL Server is a very powerful, robust and full featured SQL database system.</p>
+    
+    <h2><u>Oracle</u></h2>
+    
+    <p>Oracle is also a popular database software for database-driven web sites with high traffic.
+    Oracle is a very powerful, robust and full featured SQL database system.</p>
+    
+    <h2><u>MySQL</u></h2>
+    
+    <p>MySQL is also a popular database software for web sites.
+    MySQL is a very powerful, robust and full featured SQL database system.
+    MySQL is an inexpensive alternative to the expensive Microsoft and Oracle solutions.</p>
+    
+    <h2><u>MS Access</u></h2>
+    
+    <p>When a web site requires only a simple database, Microsoft Access can be a solution.
+    MS Access is not well suited for very high-traffic, and not as powerful as MySQL, SQL Server, or Oracle.</p>
+    </article>
+    
+    <hr>
+    
+    <article id="sixteen">
+    <header><h1>What is a Stored Procedure?</h1></header>
+    <p>A stored procedure is a prepared SQL code that you can save, so the code can be reused over and over again.
+    So if you have an SQL query that you write over and over again, save it as a stored procedure, and then just call it to execute it.
+    You can also pass parameters to a stored procedure, so that the stored procedure can act based on the parameter value(s) that is passed.</p>
+    
+    <h2 class="left"><u>Stored Procedure Syntax</u></h2>
+    
+    <div class="syntax">
+    <div><span class="blue">CREATE PROCEDURE</span> procedure_name 
+    <span class="blue">AS</span> 
+    sql_statement
+    GO;</div>
+    </div>
+    
+    <h2 class="left"><u>Execute a Stored Procedure</u></h2>
+    
+    <div class="syntax">
+    <div><span class="blue">EXEC</span> procedure_name;</div>
+    </div>
+    
+    <p>Below is a selection from the "Customers" table in the Northwind sample database:</p>
+    
+    <table class="table" style="width: 50%; margin: auto;">
+      <tbody><tr>
+        <th>CustomerID</th>
+        <th>CustomerName</th>
+        <th>ContactName</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>PostalCode</th>
+        <th>Country</th>
+      </tr>
+      <tr>
+        <td>1<br><br></td>
+        <td>Alfreds Futterkiste</td>
+        <td>Maria Anders</td>
+        <td>Obere Str. 57</td>
+        <td>Berlin</td>
+        <td>12209</td>
+        <td>Germany</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Ana Trujillo Emparedados y helados</td>
+        <td>Ana Trujillo</td>
+        <td>Avda. de la Constitución 2222</td>
+        <td>México D.F.</td>
+        <td>05021</td>
+        <td>Mexico</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Antonio Moreno Taquería</td>
+        <td>Antonio Moreno</td>
+        <td>Mataderos 2312</td>
+        <td>México D.F.</td>
+        <td>05023</td>
+        <td>Mexico</td>
+      </tr>
+      <tr>
+        <td>4<br><br></td>
+        <td>Around the Horn</td>
+        <td>Thomas Hardy</td>
+        <td>120 Hanover Sq.</td>
+        <td>London</td>
+        <td>WA1 1DP</td>
+        <td>UK</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Berglunds snabbköp</td>
+        <td>Christina Berglund</td>
+        <td>Berguvsvägen 8</td>
+        <td>Luleå</td>
+        <td>S-958 22</td>
+        <td>Sweden</td>
+      </tr>
+    </tbody></table>
+    
+    <p>The following SQL statement creates a stored procedure named "SelectAllCustomers" that selects all records from the "Customers" table:</p>
+    
+    <div class="syntax">
+    <div><span class="blue">CREATE PROCEDURE</span> SelectAllCustomers
+    <span class="blue">AS</span>
+    <span class="blue">SELECT</span> * <span class="blue">FROM</span> Customers
+    GO;</div>
+    </div>
+    
+    <p>Execute the stored procedure above as follows:</p>
+    
+    <div class="syntax">
+    <div><span class="blue">EXEC</span> SelectAllCustomers;</div>
+    </div>
+    
+    <p>The following SQL statement creates a stored procedure that selects Customers from a particular City from the "Customers" table:</p>
+    
+    <div class="syntax">
+    <div><span class="blue">CREATE PROCEDURE</span> SelectAllCustomers @City nvarchar(30)
+    <span class="blue">AS</span>
+    <span class="blue">SELECT</span> * <span class="blue">FROM</span> Customers <span class="blue">WHERE</span> City = @City
+    GO;</div>
+    </div>
+    
+    <p>Execute the stored procedure above as follows:</p>
+    
+    <div class="syntax">
+    <div><span class="blue">EXEC</span> SelectAllCustomers @City = <span class="brown">'London'</span>;</div>
+    </div>
+    
+    <p>Setting up multiple parameters is very easy. Just list each parameter and the data type separated by a comma as shown below.
+    The following SQL statement creates a stored procedure that selects Customers from a particular City with a particular PostalCode from the "Customers" table:</p>
+    
+    <div class="syntax">
+    <div><span class="blue">CREATE PROCEDURE</span> SelectAllCustomers @City nvarchar(30), @PostalCode nvarchar(10)
+    <span class="blue">AS</span>
+    <span class="blue">SELECT</span> * <span class="blue">FROM</span> Customers <span class="blue">WHERE</span> City = @City <span class="blue">AND</span> PostalCode = @PostalCode
+    GO;</div>
+    </div>
+    
+    <p>Execute the stored procedure above as follows:</p>
+    
+    <div class="syntax">
+    <div><span class="blue">EXEC</span> SelectAllCustomers @City = <span class="brown">'London'</span>, @PostalCode = <span class="brown">'WA1 1DP'</span>;</div>
+    </div>
+    </article>
+
+<hr>
+</body>
+</html>   

@@ -1,0 +1,818 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<title> Page fifteen of my notes </title>
+<meta charset="UTF-8"> 
+<link href="../CSS-JavaScript-External-Files/HTMLnotes.css" rel="stylesheet">
+<Style>
+    .left {
+        text-align: left;
+    }
+    
+    .code10 {
+    white-space: pre-line;
+    background-color: lightgreen;
+    }
+    </style> 
+</head>
+<body>
+
+<hr>
+
+    <header> 
+    <h1> Page three of my JavaScript notes </h1>
+    </header>
+    
+    <article id="start-of-page"> 
+  
+        <div id="homepages">
+        
+            <h3>Home Pages:</h3>
+           
+        
+        </div>
+        
+        <nav data-notes="JavaScript" data-page="3">
+        
+        </nav>
+                
+            <h3> Informations included in this page:</h3>
+     
+    <p> <a href="../JavaScript-Notes/Notes15.html#one">JavaScript Functions</a></p>
+    <p> <a href="../JavaScript-Notes/Notes15.html#two">The return Statement</a></p>
+    <p> <a href="../JavaScript-Notes/Notes15.html#three">Alert, Prompt and Confirm</a></p>
+    <p> <a href="../JavaScript-Notes/Notes15.html#four">Introduction to JavaScript Objects</a></p>
+    <p> <a href="../JavaScript-Notes/Notes15.html#five">The Object Constructor</a></p>
+    <p> <a href="../JavaScript-Notes/Notes15.html#six">Adding Methods</a></p>
+
+
+        </article>
+        
+         <script src="../CSS-JavaScript-External-Files/nav.js"></script>
+
+
+<hr>
+
+<article id="one">
+
+<header>
+
+<h1>JavaScript Functions</h1>
+
+</header>
+
+<p>Just like <span>variables</span>, we also have <Span>Functions</Span> in 
+<Span>JavaScript</Span>, which are very useful, since they allow you to 
+<span>reuse</span> code very easily, and use it as many times as needed, 
+without having to write everything over and over again.</p>
+
+<p>See code below for example:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">&lt;script>
+
+    function hello(){
+        document.write("Hello World &lt;br>");
+    }
+    
+    hello();
+    hello();
+    hello();
+    
+    &lt;/script></span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+function hello(){
+    document.write("Hello World <br>");
+}
+
+hello();
+hello();
+hello();
+
+</script>
+
+<p>A <span>function</span> name can contain <span>letters</span>, 
+<span>digits</span>, <span>underscores</span> and <Span>dollar signs</Span>, 
+it basically has the <span>same rules</span> I wrote about naming <Span>variables</Span>
+before.</p>
+
+<p><span>Functions</span> can take <span>parameters</span>, function <span>parameters</span>
+are <Span>names</Span> listed in the <span>function's definition</span>, see the code 
+below for example:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">&lt;script>
+
+    function hello(greeting, name){
+        document.write(greeting + name, "I'm Karak10 and I welcome you. &lt;br>")
+    }
+    
+    hello("Hello, ", "Jack ");
+    hello("Hi, ", "Okabe ");
+    
+    &lt;/script></span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+function hello(greeting, name){
+    document.write(greeting + name, "I'm Karak10 and I welcome you. <br>")
+}
+
+hello("Hello, ", "Jack ");
+hello("Hi, ", "Okabe ");
+
+</script>
+
+<p>Here is one more example to help you understand how it works:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">&lt;script>
+
+    function example(x, y){
+        if ( x > y ){
+            document.write( x, "&lt;br>");
+        } else {
+            document.write( y, "&lt;br>" );
+        }
+    }
+    
+    example(6, 5);
+    example(5, 6);
+    
+    &lt;/script></span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+function example(x, y){
+    if ( x > y ){
+        document.write( x, "<br>");
+    } else {
+        document.write( y, "<br>" );
+    }
+}
+
+example(6, 5);
+    example(5, 6);
+
+
+</Script>
+
+<p>Here is another cool example I made, check this out:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">&lt;Script>
+
+    function example(money, price){
+      
+     var money_needed = "In order to buy this product you will need ";
+     var money_left = "If you buy this product you will be left with "
+    
+        if (money &lt;= price){
+            document.write(money_left, money - price, "$");
+        } else {
+             document.write(money_needed, price - money, "$");
+        }
+    }
+    
+    example(30, 60);
+    
+    &lt;/Script></span></p>
+
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+function example(money, price){
+  
+ var money_needed = "In order to buy this product you will need ";
+ var money_left = "If you buy this product you will be left with "
+
+    if (money >= price){
+        document.write(money_left, money - price, "$");
+    } else {
+        document.write(money_needed, price - money, "$");
+    }
+}
+
+example(30, 60);
+
+</Script>
+
+</article>
+
+<hr>
+
+<article id="two">
+
+<header>
+
+<h1>The return Statement</h1>
+
+</header>
+
+<p>A <Span>function</Span> can have an optional <span>return</span> statement.
+It is used to <Span>return</Span> a <Span>value</Span> from the <Span>function</Span>, 
+this <Span>return statement</span> is very useful when making <span>calculations</span> 
+that require a result.</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">&lt;Script>
+
+    function example(x, y){
+
+        var string1 = "If you buy this product you will be left with ";
+        var string2 = "In order to buy this product you will need ";
+    
+        if (x > y){
+            return string1 + (x - y) + "$";
+        } else {
+            return string2 + (y - x) + "$";
+        }
+    }
+    
+    var result = example(10, 5);
+    
+    document.write(result);
+    
+    &lt;/Script></span></p>
+
+
+<p class="left">Outcome:</p>
+
+<script>
+
+function example(x, y){
+
+    var string1 = "If you buy this product you will be left with ";
+    var string2 = "In order to buy this product you will need ";
+
+    if (x > y){
+        return string1 + (x - y) + "$";
+    } else {
+        return string2 + (y - x) + "$";
+    }
+}
+
+ 
+var result = example(10, 5);
+
+document.write(result);
+
+</script>
+
+
+</article>
+
+<hr>
+
+<article id="three">
+
+<header>
+
+<h1>Alert, Prompt and Confirm</h1>
+
+</header>
+
+<P><span>JavaScript</span> offers <Span>three</Span> types of <Span>pupup boxes</Span>, 
+the <span>Alert</span>, <Span>Prompt</Span>, and <span>Confirm</span> boxes. If you 
+read the lessons before this one, I have actually already used <Span>Alert</Span> and 
+<Span>Prompt</Span> before, but since I wanna be organized, and a section of 
+each thing differently, so I can find it easier when needed, I will talk about these in 
+more details here.</P>
+
+<p>An <Span>Alert Box</Span> is used when you want to ensure that <span>information</span>
+gets through to the <span>user</span>, the <Span>alert</Span> function takes 
+a <span>single parameter</span>, which is the <Span>text</Span> displayed in the 
+<span>popup box</span>, check this for example:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">&lt;script>
+
+    function myFunction(){
+        alert("Hello World!");
+    }
+    
+    &lt;/script></span></p>
+
+<p class="left">CSS Code:</p>
+
+<p class="left"><span class="code10">&lt;style>
+
+    .example a:hover {
+        cursor: pointer;
+    }
+    
+    .example {
+        width: 100px;
+        height: 40px;
+        background-color: white;
+        text-align: center;
+        line-height: 40px;
+        border: 2px solid black;
+        border-radius: 10px;
+        margin: 20px auto 20px auto;
+    }
+    
+    &lt;/style></span></p>
+
+<p class="left">HTML Code:</p>
+
+<p class="left"><span class="code10">&lt;div class="example">
+
+    &lt;a onclick="myFunction()">Click me&lt;/a> 
+
+    &lt;/div></span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+function myFunction(){
+    alert("Hello World!");
+}
+
+</script>
+
+<style>
+
+.example a:hover {
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
+    text-shadow: none;
+}
+
+.example {
+    width: 100px;
+    height: 40px;
+    background-color: white;
+    text-align: center;
+    line-height: 40px;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 20px auto 20px auto;
+}
+
+</style>
+
+ <div class="example">
+
+    <a onclick="myFunction()">Click me</a> 
+
+   </div>
+
+<p>To display <span>line breaks</span> within a <Span>popup box</Span> use 
+a <Span>backslash</Span> followed by the character <Span>n</Span>, for example, 
+<Span>first line /n second line</span>.</p>
+
+<p>A <span>prompt box</span> is often used to have <Span>user unput</Span> a <Span>value</Span>
+before entering a page, I have already created a project using this, check this out: </p>
+
+
+<p><a href="https://code.sololearn.com/WtVCilje8713/#" target="_blank">Click here to check the project</a></p>
+
+<p>Lastly, we have the <span>confirm</span> box, which basically is a <Span>true/false</Span>
+box, which lets the user pick <span>yes</span> or <span>no</span>, and then you 
+based on his option can decide what action should be taken, using the <Span>if</Span>
+statement.</p>
+
+<p class="left">JaveScript Code: <br>
+<br>
+<span class="code10">var result = confirm("Do you really want to leave this page?");
+    if (result == true) {
+      alert("Thanks for visiting");
+    }
+    else {
+      alert("Thanks for staying with us");
+    }</span> <br> <br> Outcome:</p>
+
+<img style="display: block; margin: 20px auto 20px auto;"  src="https://api.sololearn.com/DownloadFile?id=2991">
+
+</article>
+
+<hr>
+
+<article id="four">
+
+    <header>
+
+     <h1>Introduction to JavaScript Objects</h1>
+
+    </header>
+
+
+<p><span>JavaScript variables</span> are <span>containers</span> for 
+<Span>data values</Span>. <span>Objects</span> are <Span>variables</Span> too, but 
+they can <Span>contain multiple values</span>.</p>
+
+<p>Think of an <Span>object</Span> as a <Span>list of values</Span> that are 
+written as <Span>name:value</Span> pairs, with the <Span>names</Span> and <span>values</span>
+seperated by <Span>colons</Span>.</p>
+
+<p>See the code below for example:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">&lt;Script>
+
+    var person = { 
+        name: "Alex",
+        age: "15",
+        sex: "male"
+    };
+    
+    document.write("My name is ", person.name, 
+    ", I'm a ", person.sex, " and I'm ", person.age, "years old." );
+    
+    &lt;/Script></span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+var person = { 
+    name: "Alex",
+    age: "15",
+    sex: "male"
+};
+
+document.write("My name is ", person.name, 
+", I'm a ", person.sex, " and I'm ", person.age, "years old." );
+
+
+</Script>
+
+<p>In the example I accessed <span>object properties</span> by simply writing
+<Span>objectName.propertyName</Span>, there is however another way to do that too, 
+by writing <Span>objectName['propertyName']</Span>.</p>
+
+<p>An <Span>object method</Span> is a <Span>property</Span> that contains a <Span>function definition</Span>, 
+to access an <Span>object method</Span> you should write <span>objectName.methodName()</span>, 
+as you already know, <Span>document.write()</Span> outputs data, the <Span>write()</Span>
+is actually a <Span>method</Span> of the <span>document</span> which is the <Span>object</Span>.</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">&lt;Script>
+
+    var page = {
+        write: function(x){
+            document.write(x);
+        }
+    }
+    
+    page.write("Hello World!");
+    
+    &lt;/Script></span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+var page = {
+    write: function(x){
+        document.write(x);
+    }
+}
+
+page.write("Hello World!");
+
+</Script>
+
+<p><span>JavaScript's</span> build-in <span>length</span> property is used to 
+count the <span>number of characters</span> in a <Span>property</Span> or <span>string</span>, 
+empty spaces also count as characters.</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">&lt;Script>
+
+    var name = "Alex";
+
+    document.write(name.length);
+    
+    &lt;/Script></span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+var name = "Alex";
+
+document.write(name.length);
+
+</script>
+
+<p>Another build-in <Span>property</Span> is the <Span>substring()</Span> property, 
+which we can use to <Span>select specific parts of a string</Span> instead of 
+selecting the whole string, see the example below:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">&lt;Script>
+
+var alpha = "ABCD";
+
+document.write( alpha.substring(1, 4) );
+    
+    &lt;/Script></span></p>
+
+<p class="left">Outcome:</p>
+
+<Script>
+
+var alpha = "ABCD";
+
+document.write( alpha.substring(1, 4) );
+
+</Script>
+
+<p>It selects everything after <Span>first character</Span> and before <span>fourth character</span>, 
+so that's why we get <Span>BCD</Span> as the result.</p>
+
+</article>
+
+<hr>
+
+<article id="five">
+
+    <header>
+
+        <h1>The Object Constructor</h1>
+
+    </header>
+
+<p>In the <span>section above</span>, I talked about how we can create <span>objects</span>
+using the <Span>object syntax</Span>, like this:</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">&lt;script>
+
+    var person = {
+        name: "Alex",
+        age: 15
+    };
+    
+    document.write("My name is ", person.name,
+     " and I'm ", person.age, " years old.");
+    
+     &lt;/script></span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+var person = {
+    name: "Alex",
+    age: 15
+};
+
+document.write("My name is ", person.name,
+ " and I'm ", person.age, " years old.");
+
+</script>
+
+<p>This however allows you to create only <span>one object</span>, 
+for example, if I wanted to have a <Span>person2</Span> and give him
+the <Span>same properties</Span>, I would have to make a 
+<Span>new object</Span>, which takes time and space in your code, worry not
+however, for I, the great Karak have a solution for you, which solution 
+allows you to create <Span>object types</Span> using <Span>object constructor function</Span>.</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">&lt;script>
+
+    function human(n, a){ 
+        this.name = n;
+        this.age = a; 
+    }
+    
+    var p1 = new human("Alex", 15, "Male");
+    var p2 = new human("Christina", 18, "Female")
+    
+    document.write( p1.name, " is ", p1.age, "&lt;br>" );
+    document.write( p2.name, " is ", p2.age );
+    
+     &lt;/script></span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+function human(n, a){ 
+    this.name = n;
+    this.age = a; 
+}
+
+var p1 = new human("Alex", 15, "Male");
+var p2 = new human("Christina", 18, "Female")
+
+document.write( p1.name, " is ", p1.age, "<br>" );
+document.write( p2.name, " is ", p2.age );
+
+</script>
+
+<p>Alright, so, let me do the explaining now, <Span>human</Span> is an 
+<Span>object type</Span>, or else our <Span>object constructor</Span>, it contains <span>properties</span> named 
+<span>name</span> and <Span>age</Span>, to add <span>properties</span> you 
+must first use the <span>this</span>  keyword, between <span>this</span> and 
+the name of your <span>property</span> you should add a <Span>dot</Span>, we have 
+assinged the <Span>name property</Span> of our <span>human object constructor</span>
+to be the same with the <Span>first function paremeter</Span>, which is <span>n</span>, 
+I talked about how <span>function paremeters</span> work before, we did the same for 
+<Span>age</Span>.</p>
+
+<p>Now, by using the <span>new</span> keyword we are able to create <Span>new objects</Span>,
+of the <Span>human object type</Span>, which 
+we call <Span>p1</Span> and <Span>p2</Span>, 
+ and by taking advantage of the <Span>function parameters</Span>
+we simply write what we want the <Span>values</Span> for each <span>object</span> to be,
+without having to rewrite the <Span>properties</Span> again and again, we only 
+assign the <Span>values</Span>, it is a little confusing, play around with it to learn it better.</p>
+
+<p><Span>Simplified conclusion:</Span> the <span>new</span> keyword creates a 
+<span>new object</span>, then, the <Span>this</Span> keyword that is used inside the <span>function</span> 
+assigns the <span>properties</span> and <span>values</span> of the <span>object</span>.</p> 
+
+<p>If you want to assign the <Span>object property values</Span> to <Span>variables</Span>
+that are <Span>predefined</Span> you should do this like this:</p>
+
+<Script>
+
+if(true){
+
+    let obj = {
+    name: "Alex",
+    age: 16
+}
+
+let var1, var2;
+
+({name: var1, age: var2} = obj);
+
+document.write( var1, var2 );
+
+};
+
+
+</Script>
+
+</article>
+
+<hr>
+
+<article id="six">
+
+<header>
+<h1>Adding Methods</h1>
+</header>
+
+<p><span>Methods</span> are <Span>functions</Span> that are stored as 
+<span>object properties</span>. A <Span>method</Span> is a <Span>function</Span>, 
+belonging to an <span>object</span>. I have already used <Span>methods</Span> in simple 
+<span>objects</span> before, let's now try to add a <Span>method</Span> in 
+an <span>object constructor</span>, this <Span>method</Span> I will create will 
+allow you to <span>change</span> the <span>values</span> of an <Span>object</Span>
+by simply using <Span>.change()</Span> method, a method I created, see the code below:
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">&lt;script>
+
+    function human(n, a){
+     this.name = n;
+     this.age = a; 
+     this.change = function(n2, a2){
+         this.name = n2;
+         this.age = a2;
+     };
+    };
+    
+    var p = new human("Alex", 15);
+    p.change("Christina", 18);
+    
+    document.write( p.name, " ", p.age );
+    
+    &lt;/script></span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+function human(n, a){
+ this.name = n;
+ this.age = a; 
+ this.change = function(n2, a2){
+     this.name = n2;
+     this.age = a2;
+ };
+};
+
+var p = new human("Alex", 15);
+p.change("Christina", 18);
+
+document.write( p.name, " ", p.age );
+
+</script>
+
+<p>You can also define a <Span>function</Span> ouyside the <Span>constructor</Span> and 
+associate it with the <Span>object</Span>.</p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">&lt;script>
+
+    /* Using function inside the object constructor */
+
+    function person(n, a){
+        this.name = n;
+        this.age = a;
+        this.yearOfBirth = function(){
+        return 2020 - this.age;
+    };
+    }
+    
+    var p = new person("Alex", 16);
+    
+    /* Using function outside the object constructor */
+    
+    function person2(n, a){
+        this.name = n;
+        this.age = a;
+        this.yearOfBirth = birthYear;
+    }
+    
+    function birthYear(){
+        return 220 - this.age;
+    }
+    
+    var p2 = new person2("Christina", 18);
+    
+    /* printing out the results */
+    
+    document.write( p.yearOfBirth(), "&lt;br>" )
+    document.write( p2.yearOfBirth() )
+    
+    &lt;/script></span></p>
+
+<p class="left">Outcome:</p>
+
+<script>
+
+/* Using function inside the object constructor */
+
+function person(n, a){
+    this.name = n;
+    this.age = a;
+    this.yearOfBirth = function(){
+    return 2020 - this.age;
+};
+}
+
+var p = new person("Alex", 16);
+
+/* Using function outside the object constructor */
+
+function person2(n, a){
+    this.name = n;
+    this.age = a;
+    this.yearOfBirth = birthYear;
+}
+
+function birthYear(){
+    return 220 - this.age;
+}
+
+var p2 = new person2("Christina", 18);
+
+/* printing out the results */
+
+document.write( p.yearOfBirth(), "<br>" )
+document.write( p2.yearOfBirth() )
+
+</script>
+
+
+</article>
+
+<hr>
+
+</body>
+</html>

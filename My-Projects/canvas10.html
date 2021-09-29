@@ -1,0 +1,302 @@
+<!DOCTYPE HTML>
+<html>
+<head lang="en-US">
+<meta charset="UTF-8">
+<title> Torn-Like Particle Tunnels </title>
+<style>
+       .left {
+        text-align: left;
+    }
+    
+    .code10 {
+    white-space: pre-wrap;
+    background-color: lightgreen;
+    }
+    
+    p {
+    text-align:center;
+    }
+    h1 {
+    text-align:center;
+    }
+    h2 {
+    text-align:center;
+    }
+    h3 {
+    text-align:center;
+    }
+    .c {
+    background-color:lightgreen;
+    }
+    hr {
+    width:100%;
+    height:15px;
+    background-color:black;
+    color:black;
+    border: black solid;
+    }
+    body {
+    background-color:rgb(165, 235, 235);
+    margin: 0;
+    height: 100vh;
+    }   
+    span {
+    background-color:lightgreen;
+    }
+    
+    a:link {
+    color: black;
+    text-shadow: 1px 0px 1px black;
+    
+    }
+    
+    a:visited {
+    color: black;
+    text-shadow: 1px 0px 1px rgb(22, 22, 22);
+    }
+    
+    a:hover {
+    text-decoration: underline;
+    color: red;
+    text-shadow: 1px 0px 1px black;
+    }
+    
+    .document{
+        width: 100vw;
+        height: 100vh;
+        overflow: auto;
+        overflow-x: hidden;
+    }
+    
+    .gray{
+        background-color: lightgray;
+    }
+    
+    .no-scroll{
+        overflow-y: hidden;
+    }
+</style> 
+<link rel="stylesheet" href="../CSS-JavaScript-External-Files/HTMLnotes.css?version=1">
+</head>
+<body>
+<hr>
+<article>
+
+<h1> Torn-Like Particle Tunnels </h1>
+<p><a href="../Home-Pages/myprojects.html">Click to go back</a></p>
+
+<p class="left">JavaScript Code:</p>
+
+<p class="left"><span class="code10">let canvas = document.querySelector('#canvvaass4');
+let c = canvas.getContext('2d');
+
+canvas.width = 500;
+canvas.height = 300;
+
+let mouse = {
+    x: -9999,
+    y: -9999
+}
+
+canvas.addEventListener('mousemove', (e)=>{
+    mouse.x = e.offsetX;
+    mouse.y = e.offsetY;
+});
+
+let particle = class{
+    constructor(x, y, r, cl, velocity){
+        this.x = x;
+        this.y = y;
+        this.r = r;
+        this.cl = cl;
+        this.velocity = velocity;
+        this.ttl = 100;
+    }
+
+    draw(){
+        c.fillStyle = this.cl;
+        c.beginPath();
+        c.arc(this.x, this.y, this.r, 0, 2 * Math.PI);
+        c.fill();
+    }
+
+    update(){
+        this.x += this.velocity.x;
+        this.y += this.velocity.y;
+        this.ttl -= 1;
+        this.draw();
+    }
+}
+
+function isScrolledIntoView(el) {
+    var rect = el.getBoundingClientRect();
+    var elemTop = rect.top;
+    var elemBottom = rect.bottom;
+    var isVisible = (elemTop >= 0) && (elemBottom <= window.innerHeight);
+    return isVisible;
+}
+
+let particles = new Array();
+let increment = 0;
+
+let generator = function(){
+    let particlesCount = 50;
+    let angleIncrement = Math.PI * 2 / particlesCount;
+    let color = `hsl(${Math.abs(Math.sin(increment) * 360)}, 50%, 50%)`;
+    for(let i = 0; i < particlesCount; i++){
+        if(isScrolledIntoView(canvas)){
+            let x = mouse.x;
+            let y = mouse.y;
+            let r = 5;
+            let cl = color;
+            let velocity = {
+                x: Math.cos(angleIncrement * i) * 5,
+                y: Math.sin(angleIncrement * i) * 5
+            }
+            particles.push(new particle(x, y, r, cl, velocity));
+        }
+    }
+    increment += 2;
+    setTimeout(generator, 300);
+}
+
+let animate = function(){
+    if(isScrolledIntoView(canvas)){
+        let imageData = c.getImageData(0, 0, canvas.width, canvas.height);
+        let data = imageData.data;
+        for(let i = 3; i < data.length; i+=4){
+            data[i] *= 0.7;
+            if(data[i] / 255 < 0.09){
+                data[i] *= 0;
+            }
+        }
+        c.clearRect(0, 0, canvas.width, canvas.height);
+        c.putImageData(imageData, 0, 0);
+
+        particles.forEach((particle, i)=>{
+            if(particle.ttl > 0){
+                particle.update();
+            } else {
+                particles.splice(i, 1);
+            }
+        });
+    }
+    requestAnimationFrame(animate);
+}
+
+generator();
+animate();</span></p>
+
+<p class="left">Outcome:</p>
+
+    <canvas class="canvvaas" id="canvvaass4" style="background-color: black; margin: auto; display: block;"></canvas>
+
+    <script>
+        if(true){
+            let canvas = document.querySelector('#canvvaass4');
+            let c = canvas.getContext('2d');
+
+            canvas.width = 500;
+            canvas.height = 300;
+
+            let mouse = {
+                x: -9999,
+                y: -9999
+            }
+
+            canvas.addEventListener('mousemove', (e)=>{
+                mouse.x = e.offsetX;
+                mouse.y = e.offsetY;
+            });
+
+            let particle = class{
+                constructor(x, y, r, cl, velocity){
+                    this.x = x;
+                    this.y = y;
+                    this.r = r;
+                    this.cl = cl;
+                    this.velocity = velocity;
+                    this.ttl = 100;
+                }
+
+                draw(){
+                    c.fillStyle = this.cl;
+                    c.beginPath();
+                    c.arc(this.x, this.y, this.r, 0, 2 * Math.PI);
+                    c.fill();
+                }
+
+                update(){
+                    this.x += this.velocity.x;
+                    this.y += this.velocity.y;
+                    this.ttl -= 1;
+                    this.draw();
+                }
+            }
+
+            function isScrolledIntoView(el) {
+                var rect = el.getBoundingClientRect();
+                var elemTop = rect.top;
+                var elemBottom = rect.bottom;
+                var isVisible = (elemTop >= 0) && (elemBottom <= window.innerHeight);
+                return isVisible;
+            }
+
+            let particles = new Array();
+            let increment = 0;
+
+            let generator = function(){
+                let particlesCount = 50;
+                let angleIncrement = Math.PI * 2 / particlesCount;
+                let color = `hsl(${Math.abs(Math.sin(increment) * 360)}, 50%, 50%)`;
+                for(let i = 0; i < particlesCount; i++){
+                    if(isScrolledIntoView(canvas)){
+                        let x = mouse.x;
+                        let y = mouse.y;
+                        let r = 5;
+                        let cl = color;
+                        let velocity = {
+                            x: Math.cos(angleIncrement * i) * 5,
+                            y: Math.sin(angleIncrement * i) * 5
+                        }
+                        particles.push(new particle(x, y, r, cl, velocity));
+                    }
+                }
+                increment += 2;
+                setTimeout(generator, 300);
+            }
+
+            let animate = function(){
+                if(isScrolledIntoView(canvas)){
+                    let imageData = c.getImageData(0, 0, canvas.width, canvas.height);
+                    let data = imageData.data;
+                    for(let i = 3; i < data.length; i+=4){
+                        data[i] *= 0.7;
+                        if(data[i] / 255 < 0.09){
+                            data[i] *= 0;
+                        }
+                    }
+                    c.clearRect(0, 0, canvas.width, canvas.height);
+                    c.putImageData(imageData, 0, 0);
+
+                    particles.forEach((particle, i)=>{
+                        if(particle.ttl > 0){
+                            particle.update();
+                        } else {
+                            particles.splice(i, 1);
+                        }
+                    });
+                }
+                requestAnimationFrame(animate);
+            }
+
+            generator();
+            animate();
+        }
+    </script> 
+
+ </article>
+ 
+<hr>
+</body>
+</html>
