@@ -944,7 +944,14 @@ Then paste it in the following command:
 <div class="syntax" name="cmd" style=""><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git remote add origin url</div>
 
 <p>git remote add origin URL specifies that you are adding a remote repository, with the specified URL, as an origin to your local Git repo.
-Now we are going to push our master branch to the origin url, and set it as the default remote branch (which also is named master):</p>
+So, "origin" is the default remote repository, just like how master is the default branch,
+"origin" is a shorthand name for the remote repository that a project was originally cloned from.
+So, what do I mean by "clone", in this tutorial we first created a local repository and then connected it
+to Github, so it did not have a remote repository till now. Usually however, people first create their
+remote repository in Github, and then use the git clone command to clone the repository
+in their machine.</p>
+
+<p>Now we are going to push our master branch to the origin url, and set it as the default remote branch (which also is named master):</p>
 
 <div class="syntax" name="cmd" style=""><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git push --set-upstream origin master
 Enumerating objects: 22, done.
@@ -958,12 +965,31 @@ To https://github.com/w3schools-test/hello-world.git
  * [new branch]      master -> master
 Branch 'master' set up to track remote branch 'master' from 'origin'.</div>
 
-<p>Since this is the first time you are connecting to GitHub, you will get some kind of notification you to authenticate this connection.</p>
+<p>Since this is the first time you are connecting to GitHub, you will get some kind of notification to authenticate this connection.
+So, in the past you could just write your Github username and password and this would work, now however
+you gotta create a personal access token to use as the password instead,
+to create this token you should enter settings, then click Developer settings,
+and then there should be Personal access tokens, you create one, set what permissions
+a person using this token should have, what expire date the token should have,
+and after this you can copy the key, and paste it inside the password input.
+To paste something inside the terminal you should right click, that's how it's
+done for me at least.
+</p>
+
+<p>That's how you connect to Github using HTTPS, if you are using
+SSH you should set a SSH key in your machine, so if you want to use SSH
+you should search for a tutorial to learn how to do this.</p>
 
 <p>Now, go back into GitHub and see that the repository has been updated:</p>
 
 <img src="./../images/git4.png" style="width: 70%">
 
+<p>To change Git remote URL you can use the git remote set-url (remote-name) (url).
+You can add multiple remote repositories to your project, you aren't limited to just one.
+Your permissions over each repository depend on the access token you used, you could for example
+give an access token to a friend so that he can edit your remote repository on his own machine
+and only give him certain permissions over it, this provides security for your repository and is
+very useful when working in big teams.</p>
 </article>
 
 <hr>
