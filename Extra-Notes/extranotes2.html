@@ -724,7 +724,7 @@ no changes added to commit (use "git add" and/or "git commit -a")</div>
 <p>stage the file, and commit:</p>
 
 <div class="syntax" name="cmd"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git add index.html
-git commit -m "updated index.html with emergency fix"
+<span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git commit -m "updated index.html with emergency fix"
 [emergency-fix dfa79db] updated index.html with emergency fix
  1 file changed, 1 insertion(+), 1 deletion(-)</div>
 
@@ -786,7 +786,7 @@ Switched to branch 'hello-world-images'</div>
 <p>Now, we are done with our work here and can stage and commit for this branch:</p>
 
 <div class="syntax" name="cmd"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git add --all
-git commit -m "added new image"
+<span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git commit -m "added new image"
 [hello-world-images 1f1584e] added new image
  2 files changed, 1 insertion(+)
  create mode 100644 img_hello_git.jpg</div>
@@ -794,7 +794,7 @@ git commit -m "added new image"
 <p>We see that index.html has been changed in both branches. Now we are ready to merge hello-world-images into master. But what will happen to the changes we recently made in master?</p>
 
 <div class="syntax" name="cmd"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git checkout master
-git merge hello-world-images
+<span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git merge hello-world-images
 Auto-merging index.html
 CONFLICT (content): Merge conflict in index.html
 Automatic merge failed; fix conflicts and then commit the result.</div>
@@ -815,8 +815,8 @@ Unmerged paths:
   (use "git add ..." to mark resolution)
         both modified:   index.html</div>
 
-<p>This confirms there is a conflict in index.html, but the image files are ready and stagedto be committed.
-So we need to fix that conflict. Open the file in our editor:</p>
+<p>This confirms there is a conflict in index.html, but the image files are ready and staged to be committed.
+So we need to fix that conflict. Open the file in your editor:</p>
 
 <style>
     .green-color{
@@ -892,7 +892,7 @@ self. So, let's accept both changes:
 <p>Now we can stage index.html and check the status:</p>
 
 <div class="syntax" name="cmd"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git add index.html
-git status
+<span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git status
 On branch master
 All conflicts fixed but you are still merging.
   (use "git commit" to conclude merge)
@@ -990,6 +990,210 @@ Your permissions over each repository depend on the access token you used, you c
 give an access token to a friend so that he can edit your remote repository on his own machine
 and only give him certain permissions over it, this provides security for your repository and is
 very useful when working in big teams.</p>
+</article>
+
+<hr>
+
+<article id="ten">
+<header><h1>Edit Code in GitHub</h1></header>
+<p>In addition to being a host for Git content, GitHub has a very good code editor.</p>
+<p>Let's try to edit the README.md file in GitHub. Just click the edit button:</p>
+
+<img src="./../images/git5.png" style="width: 70%">
+
+<p>Add some changes to the code, and then commit the changes. For now, we will "Commit directly to the master branch".
+Remember to add a description for the commit:</p>
+
+<img src="./../images/git6.png" style="width: 70%">
+
+<p>So that's how we edit code directly in GitHub. In the next section we will learn how
+we can now pull this project from our remote repository to our local repository.</p>
+
+</article>
+
+<hr>
+
+<article id="eleven">
+<header><h1>How to pull from GitHub</h1></header>
+
+<p>When working as a team on a project, it is important that everyone stays up to date.
+Any time you start working on a project, you should get the most recent changes to your local copy.
+With Git, you can do that with pull.</p>
+
+<p class="left" style="margin-left: 10px">pull is a combination of 2 different commands:</p>
+<ul>
+    <li>fetch</li>
+    <li>merge</li>
+</ul>
+
+<p>Let's take a closer look into how <strong>fetch</strong>, <strong>merge</strong>, and <strong>pull</strong> works.</p>
+
+<h2 style="font-size: 2em"><u>Git Fetch</u></h2>
+
+<p>fetch gets all the change history of a tracked branch/repo.
+So, on your local Git, fetch updates to see what has changed on GitHub:</p>
+
+<div class="syntax" name="cmd" style=""><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git fetch origin
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 733 bytes | 3.00 KiB/s, done.
+From https://github.com/w3schools-test/hello-world
+   e0b6038..d29d69f  master     -> origin/master</div>
+
+<p>Now that we have the recent changes, we can check our status:</p>
+
+<div class="syntax" name="cmd" style=""><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git status
+On branch master
+Your branch is behind 'origin/master' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+
+nothing to commit, working tree clean</div>
+
+<p>We are behind the origin/master by 1 commit. That should be the updated README.md, but lets double check by viewing the log:</p>
+
+<div class="syntax" name="cmd" style=""><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git log origin/master
+commit d29d69ffe2ee9e6df6fa0d313bb0592b50f3b853 (origin/master)
+Author: w3schools-test &lt;77673807+w3schools-test@users.noreply.github.com>
+Date:   Fri Mar 26 14:59:14 2021 +0100
+
+    Updated README.md with a line about GitHub
+
+commit e0b6038b1345e50aca8885d8fd322fc0e5765c3b (HEAD -> master)
+Merge: dfa79db 1f1584e
+Author: w3schools-test 
+Date:   Fri Mar 26 12:42:56 2021 +0100
+
+    merged with hello-world-images after fixing conflicts
+
+...
+...</div>
+
+<p>That looks as expected, but we can also verify by showing the differences between our local master and origin/master:</p>
+
+<div class="syntax" name="cmd" style=""><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git diff origin/master
+diff --git a/README.md b/README.md
+index 23a0122..a980c39 100644
+--- a/README.md
++++ b/README.md
+@@ -2,6 +2,4 @@
+ Hello World repository for Git tutorial
+ This is an example repository for the Git tutoial on https://www.w3schools.com
+
+-This repository is built step by step in the tutorial.
+-
+-It now includes steps for GitHub
++This repository is built step by step in the tutorial.
+\ No newline at end of file</div>
+
+<p>That looks precisely as expected! Now we can safely <strong>merge</strong>.</p>
+
+<h2 style="font-size: 2em"><u>Git Merge</u></h2>
+
+<p>merge combines the current branch, with a specified branch, just like I explained in a previous section.
+We have confirmed that the updates are as expected, and we can merge our current branch (master) with origin/master:</p>
+
+<div class="syntax" name="cmd" style=""><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git merge origin/master
+Updating e0b6038..d29d69f
+Fast-forward
+ README.md | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)</div>
+
+<p>Check our status again to confirm we are up to date:</p>
+
+<div class="syntax" name="cmd" style=""><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean</div>
+
+<p>There! Your local git is up to date!</p>
+
+<h2 style="font-size: 2em"><u>Git Pull</u></h2>
+
+<p>But what if you just want to update your local repository, without going through all those steps?</p>
+
+<p>pull is a combination of fetch and merge. It is used to pull all changes from a remote repository into the branch you are working on.</p>
+
+<p>Let's make another change to the Readme.md file on GitHub:</p>
+
+<img src="./../images/git7.png" style="width: 70%">
+
+<p>Use pull to update our local Git:</p>
+
+<div class="syntax" name="cmd" style=""><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git pull origin
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 794 bytes | 1024 bytes/s, done.
+From https://github.com/w3schools-test/hello-world
+   a7cdd4b..ab6b4ed  master       -> origin/master
+Updating a7cdd4b..ab6b4ed
+Fast-forward
+ README.md | 2 ++
+ 1 file changed, 2 insertions(+)</div>
+
+<p>That is how you keep your local Git up to date from a remote repository. In the next section, we will look closer at how push works on GitHub.</p>
+
+</article>
+
+<hr>
+
+<article id="eight">
+<header><h1>Push Changes to GitHub</h1></header>
+<p>Let's try making some changes to our local git and pushing them to GitHub.</p>
+
+<div class="syntax" name="html">&lt;!DOCTYPE html>
+&lt;html>
+&lt;head>
+&lt;title>Hello World!&lt;/title>
+&lt;link rel="stylesheet" href="bluestyle.css">
+&lt;/head>
+&lt;body>
+
+&lt;h1>Hello world!&lt;/h1>
+&lt;div>&lt;img src="img_hello_world.jpg" alt="Hello World from Space" style="width:100%;max-width:640px">&lt;/div>
+&lt;p>This is the first file in my new Git Repo.&lt;/p>
+&lt;p>This line is here to show how merging works.&lt;/p>
+&lt;div>&lt;img src="img_hello_git.jpg" alt="Hello Git" style="width:100%;max-width:640px">&lt;/div>
+
+&lt;/body>
+&lt;/html></div>
+
+<p>Commit the changes:</p>
+
+<div class="syntax" name="cmd" style=""><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git commit -a -m "Updated index.html. Resized image"
+[master e7de78f] Updated index.html. Resized image
+ 1 file changed, 1 insertion(+), 1 deletion(-)</div>
+
+<p>And check the status:</p>
+
+<div class="syntax" name="cmd" style=""><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean</div>
+
+<P>Now push our changes to our remote origin:</P>
+
+<div class="syntax" name="cmd" style=""><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git push origin
+Enumerating objects: 9, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 578 bytes | 578.00 KiB/s, done.
+Total 5 (delta 3), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
+To https://github.com/w3schools-test/hello-world.git
+   5a04b6f..facaeae  master -> master</div>
+
+<P>Go to GitHub, and confirm that the repository has a new commit:</P>
+
+<img src="./../images/git8.png" style="width: 70%">
+
 </article>
 
 <hr>
