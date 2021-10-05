@@ -1197,5 +1197,176 @@ To https://github.com/w3schools-test/hello-world.git
 </article>
 
 <hr>
+
+<article id="nine">
+<header><h1>How to create a new Branch in Github</h1></header>
+
+<p>On GitHub, access your repository and click the "master" branch button.
+There you can create a new Branch. Type in a descriptive name, and click Create branch:</p>
+
+<img src="./../images/git9.png" style="width: 70%">
+
+<p>The branch should now be created and active. You can confirm which branch you are working on by looking at the branch button. See that it now says "html-skeleton" instead of "main"?</p>
+
+<img src="./../images/git10.png" style="width: 70%">
+
+<p>Start working on an existing file in this branch. Click the "index.html" file and start editing.
+After you have finished editing the file, you can click the "Preview changes" tab to see the changes you made highlighted:</p>
+
+<img src="./../images/git11.png" style="width: 70%">
+
+<p>If you are happy with the change, add a comment that explains what you did, and click Commit changes.
+You now have a new branch on GitHub, updated with some changes!</p>
+
+</article>
+
+<hr>
+
+<article id="ten">
+<header><h1>Pulling a Branch from GitHub</h1></header>
+
+<p>So, we now are back in our local Git and want to continue working on our project.
+First lets pull from our GitHub repository again so that our code is up-to-date:</p>
+
+<div class="syntax" name="cmd" style=""><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git pull
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 851 bytes | 9.00 KiB/s, done.
+From https://github.com/w3schools-test/hello-world
+ * [new branch]      html-skeleton -> origin/html-skeleton
+Already up to date.</div>
+
+<p>Now our main branch is up todate. And we can see that there is a new branch available on GitHub.
+Do a quick status check:</p>
+
+<div class="syntax" name="cmd" style=""><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean</div>
+
+<p>And confirm which branches we have, and where we are working at the moment:</p>
+
+<div class="syntax" name="cmd" style=""><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git branch
+* master</div>
+
+<p>So, we do not have the new branch on our local Git. But we know it is available on GitHub. So we can use the -a option to see all local and remote branches:</p>
+
+<div class="syntax" name="cmd" style=""><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git branch -a
+* master
+  remotes/origin/html-skeleton
+  remotes/origin/master</div>
+
+<p><strong>Note:</strong> branch -r is for remote branches only.</p>
+
+<p>We see that the branch html-skeleton is available remotely, but not on our local git. Lets check it out:</p>
+
+<div class="syntax" name="cmd" style=""><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git checkout html-skeleton
+Switched to a new branch 'html-skeleton'
+Branch 'html-skeleton' set up to track remote branch 'html-skeleton' from 'origin'.</div>
+
+<p>And check if it is all up to date:</p>
+
+<div class="syntax" name="cmd" style=""><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git pull
+Already up to date.</div>
+
+<p>Which branches do we have now, and where are we working from?</p>
+
+<div class="syntax" name="cmd" style=""><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git branch
+* html-skeleton
+  master</div>
+
+<p>Now, open your favourite editor and confirm that the changes from the GitHub branch carried over.
+That is how you pull a GitHub branch to your local Git.</p>
+
+
+</article>
+
+<hr>
+
+<article id="eleven">
+<header><h1>Push a Branch to GitHub</h1></header>
+
+<p>Let's try to create a new local branch, and push that to GitHub.
+Start by creating a branch, like we did earlier:</p>
+
+<div class="syntax" name="cmd" style=""><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git checkout -b update-readme
+Switched to a new branch 'update-readme'</div>
+
+<p>And we make some changes to the README.md file. Just add a new line.
+So now we check the status of the current branch.</p>
+
+<div class="syntax" name="cmd" style=""><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git status
+On branch update-readme
+Changes not staged for commit:
+  (use "git add ..." to update what will be committed)
+  (use "git restore ..." to discard changes in working directory)
+        modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")</div>
+
+<p>We see that README.md is modified but not added to the Staging Environment.
+So let's stage it and commit it:
+</p>
+
+<div class="syntax" name="cmd" style=""><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git add README.md
+    <span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git commit -m "Updated readme for GitHub Branches"
+[update-readme 836e5bf] Updated readme for GitHub Branches
+ 1 file changed, 1 insertion(+)</div>
+
+<p>Now push the branch from our local Git repository, to GitHub, where everyone can see the changes:</p>
+
+<div class="syntax" name="cmd" style=""><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git push origin update-readme
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 366 bytes | 366.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+remote:
+remote: Create a pull request for 'update-readme' on GitHub by visiting:
+remote:      https://github.com/w3schools-test/hello-world/pull/new/update-readme
+remote:
+To https://github.com/w3schools-test/hello-world.git
+ * [new branch]      update-readme -> update-readme</div>
+
+<p>Go to GitHub, and confirm that the repository has a new branch:</p>
+
+<img src="./../images/git12.png" style="width: 70%">
+
+<p>In GitHub, we can now see the changes and merge them into the master branch if we approve it.
+If you click the "Compare & pull request", you can go through the changes made and new files added</p>
+
+<img src="./../images/git13.png" style="width: 70%">
+
+<p>This comparison shows both the changes from update-readme and html-skeleton because we created the new branch FROM html-skeleton.
+If the changes look good, you can go forward, creating a pull request:</p>
+
+<img src="./../images/git14.png" style="width: 70%">
+
+<p>A pull request is how you propose changes. You can ask some to review your changes or pull your contribution and merge it into their branch.
+Since this is your own repository, you can  merge your pull request yourself:</p>
+
+<img src="./../images/git15.png" style="width: 70%">
+
+<p>The pull request will record the changes, which means you can go through them later to figure out the changes made.
+The result should be something like this:</p>
+
+<img src="./../images/git16.png" style="width: 70%">
+
+<p>To keep the repo from getting overly complicated, you can delete the now unused branch by clicking "Delete branch".</p>
+
+<img src="./../images/git17.png" style="width: 70%">
+
+<p>An after you confirm that the changes from the previous branch were included, delete that as well:</p>
+
+<img src="./../images/git18.png" style="width: 70%">
+
+</article>
+
+<hr>
 </body>
 </html>
