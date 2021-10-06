@@ -327,7 +327,7 @@ window.addEventListener('load', (e) => {
 
         // loop that creates links
 
-        let pages = 1;
+        let pages = 2;
         let num = 1;
 
         for(num; num <= pages; num++){

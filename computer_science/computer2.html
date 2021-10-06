@@ -1,0 +1,255 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<title> Page two of my Computer Science notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+<meta charset="UTF-8"> 
+<link href="../CSS-JavaScript-External-Files/HTMLnotes.css" rel="stylesheet">
+<style>
+    .float-bug-fix{
+        max-width: fit-content;
+        margin: 20px auto;
+    }
+    .float-bug-fix + *{
+        clear: both;
+    }
+    .floatleft {
+        width: 100%;
+        height: fit-content;
+        border-left: 5px solid green;
+        background-color: rgba(255, 255, 255, 0.2);
+        padding: 10px;
+        float: left;
+        margin: 20px 0px;
+    }
+    .floatleft img{
+        margin: 0px;
+        display: block;
+    }
+    .floatleft figure{
+        position: relative;
+        float: left;
+        margin: 0px 10px;
+        display: table; 
+    }
+    .floatleft p{
+        text-align: left;
+    }
+    body{
+        overflow-x: hidden;
+        width: 100%;
+    }
+    .floatleft figcaption{
+        background-color: rgba(255, 255, 255, 0.4);
+        margin-top: 5px;
+        padding: 10px;
+        display: table-caption; caption-side: bottom ;
+    }
+    .floatleft li{
+        list-style-position: inside;
+    }
+    .floatleft ul :nth-child(1n+2){
+        margin-top: 20px;
+    }
+    .left {
+        text-align: left;
+    }
+
+    iframe {
+        width: 600px;
+        height: 350px;
+        border: 3px solid black;
+        margin: 20px auto 20px auto;
+        display: block;
+    }
+    .code10 {
+    white-space: pre-wrap;
+    background-color: lightgreen;
+    overflow-wrap: break-word;
+    }
+    
+    p {
+    text-align:center;
+    }
+    h1 {
+    text-align:center;
+    }
+    h2 {
+    text-align:center;
+    }
+    h3 {
+    text-align:center;
+    }
+    .c {
+    background-color:lightgreen;
+    }
+    hr {
+    width:100%;
+    height:15px;
+    background-color:black;
+    color:black;
+    border: black solid;
+    }
+    body {
+    background-color:rgb(165, 235, 235);
+    }
+    span {
+    background-color:lightgreen;
+    }
+    
+    a:link {
+    color: black;
+    text-shadow: 1px 0px 1px black;
+    
+    }
+    
+    a:visited {
+    color: black;
+    text-shadow: 1px 0px 1px rgb(22, 22, 22);
+    }
+    
+    a:hover {
+    text-decoration: underline;
+    color: red;
+    text-shadow: 1px 0px 1px black;
+    }
+     
+    img{
+        display: block;
+        margin: 20px auto 20px auto;
+        border: 3px solid black;
+        border-radius: 10px;
+    }
+
+    </style> 
+</head>
+<body>
+
+    
+<hr>
+
+    <header> 
+    <h1> Page two of my Computer Science Notes </h1>
+    </header>
+    
+<article id="start-of-page"> 
+  
+<div id="homepages">
+
+    <h3>Home Pages:</h3>
+   
+
+</div>
+
+<nav data-notes="computer" data-page="2">
+
+</nav>
+
+    <h3>Informations included in this page:</h3>
+
+</article>
+
+<script src="../CSS-JavaScript-External-Files/nav.js"></script>
+<hr>
+
+<article id="one">
+<header><h1>How to calculate Network, Broadcast and host addresses</h1></header>
+
+<p>So, I talked before about private IPs and subnet mask, but I wanted to talk
+a little more about this, since by knowing a subnet mask of an ip address you
+are able to tell what the network and braodcast IPs are, as well as how many hosts
+there can be in the netword..</p>
+
+<p>So, for our example we will use this IP address:</p>
+
+<style>
+    .fake-image{
+        padding: 50px 50px;
+        background-color:rgb(26, 26, 26);
+        color: white;
+        font-family: 'Luckiest Guy', cursive;
+        margin: auto;
+        width: fit-content;
+        letter-spacing: 0.3em;
+        text-shadow: 2px 2px 0px black;
+        font-size: 1.5em;
+        border: 3px solid black;
+        text-align: center;
+    }
+    .smaller{
+        background-color: unset;
+        font-size: 0.6em;
+    }
+    .orange{
+        background-color: unset;
+        color: orangered
+    }
+    .yellow{
+        background-color: unset;
+        color: greenyellow;
+    }
+</style>
+<div class="fake-image"><span class="orange">172.16.5.</span><span class="yellow">34</span> /26<br><br>
+<span class="smaller"><span class="orange">10101100.00010000.00000101.00</span><span class="yellow">100010</span></span></div>
+<p>So, what is that <strong>/26</strong> I put at the end? The
+<Strong>/number</Strong> you may see after ip addressed indicates the subnet mask
+of the network. To better understand what I mean let's take a look at the subnet mask
+of the ip above:</p>
+
+<div class="fake-image"><span class="orange">255.255.255.192</span><br> <br>
+<span class="smaller"><span class="orange">11111111.11111111.11111111.11</span><span class="yellow">000000</span></span></div>
+
+<p>I want you to notice one thing about this subnet mask, the first 26
+bits are all 1, while the rest 6 are 0. That's what the <strong>/26</strong> means.
+The most common subnet mask you will see is usually <Strong>255.255.255.0</Strong>,
+so that means you will usually see <Strong>/24</Strong> at the end of IPs.
+</p>
+
+<p>So now, what would the network address be? To find this out, we will use
+the IP I showed you before, and the subnet mask we talked about now,
+all the bits that are 1 in our subnet mask represent thet network portion
+of our IP address, while all the 0 bits represent the host portion of the IP address,
+knowing this, we can now find what the network address is, by simple ignoring
+the host portion bits, as if they were 0:</p>
+
+<div class="fake-image"><span class="orange">172.16.5.</span><span class="yellow">0</span><br><br>
+<span class="smaller"><span class="orange">10101100.00010000.00000101.00</span><span class="yellow">000000</span></span></div>
+
+<p>So, that's what we call the network address, our first host, which is
+usually our default gateway (the router) will have the first IP address,
+you can find this IP address by changing the last bit at the host
+portion of our IP adress to 1:</p>
+
+<div class="fake-image"><span class="orange">172.16.5.</span><span class="yellow">1</span><br><br>
+<span class="smaller"><span class="orange">10101100.00010000.00000101.00</span><span class="yellow">000001</span></span></div>
+
+<p>A broadcast address is a network address used to transmit to 
+all devices connected to a multiple-access communications network. 
+A message sent to a broadcast address may be received by all network-attached 
+hosts. The broadcast address is the last IP address of our network, so in order
+to find what it is we should change all bits in host portion of our IP address to 1:</p>
+
+<div class="fake-image"><span class="orange">172.16.5.</span><span class="yellow">63</span><br><br>
+<span class="smaller"><span class="orange">10101100.00010000.00000101.00</span><span class="yellow">111111</span></span></div>
+
+<p>Calculating the number of hosts that our network can have is easy now, so,
+<Strong>172.16.5.0</Strong> is used as our network id, no host can use this as their IP address.
+<Strong>172.16.5.63</Strong> is used as our broadcast address, no host can have this IP address either.
+How many numbers are between 0 and 63? 62 numbers, so our network can have a max number of <strong>62 hosts</strong>.
+</p>
+
+<p>Here is a video that may help you:</p>
+
+<iframe width="790" height="444" src="https://www.youtube.com/embed/hb2yTNT2rBU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</article>
+ 
+<hr>
+
+<article id="two">
+<header><h1>Asymetrical Encryption </h1></header>
+</article>
+<hr>
+</body>
+</html>   
