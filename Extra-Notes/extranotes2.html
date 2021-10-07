@@ -1433,6 +1433,52 @@ If any issues arise, you can undo the changes by deploying the master branch int
 
 <p>Pull Requests keep records of changes to your code, and if you commented and named changes well, you can go back and understand why changes and decisions were made.</p>
 </article>
+
+<hr>
+
+<article id="thirteen">
+<header><h1>Host Your Page on GitHub</h1></header>
+<p>With GitHub pages, GitHub allows you to host a webpage from your repository. Let's try to use GitHub Pages to host our repository.</p>
+
+<h2 style="font-size: 2em"><u>Create a New Repository</u></h2>
+<p>Start by signing in to GitHub. GitHub pages need a special name and setup to work, so we start by creating a new repository:</p>
+<img src="./../images/git19.png" style="width: 70%">
+
+<p>This repository needs a special name to function as a GitHub page. It needs to be your GitHub username, followed by .github.io:</p>
+
+<img src="./../images/git20.png" style="width: 70%">
+
+<h2 style="font-size: 2em"><u>Push Local Repository to GitHub Pages</u></h2>
+
+<p>We add this new repository as a remote for our local repository, we are calling it gh-page (for GitHub Pages). Copy the URL from here:</p>
+
+<img src="./../images/git21.png" style="width: 70%">
+
+<p>And add it as a new remote:</p>
+
+<div class="syntax" name="cmd" style=""><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git remote add gh-page url</div>
+
+<p>Make sure you are on the master branch, then push the master branch to the new remote:</p>
+
+<div class="syntax" name="cmd" style=""><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ push gh-page master
+Enumerating objects: 33, done.
+Counting objects: 100% (33/33), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (33/33), done.
+Writing objects: 100% (33/33), 94.79 KiB | 15.80 MiB/s, done.
+Total 33 (delta 18), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (18/18), done.
+To https://github.com/w3schools-test/w3schools-test.github.io.git
+ * [new branch]      master -> master</div>
+
+ <h2 style="font-size: 2em"><u>Check Out Your Own GitHub Page</u></h2>
+
+ <p>That looks good, now click the Settings menu and navigate to the Pages tab:</p>
+
+ <img src="./../images/git22.png" style="width: 70%">
+
+ <p>The GitHub page is created, and you can click the URL to view the result!</p>
+</article>
 <hr>
 </body>
 </html>
