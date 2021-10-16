@@ -154,11 +154,38 @@
 
 </div>
 
-<nav data-notes="Extranotes" data-page="1">
+<nav data-notes="Extranotes" data-page="2">
 
 </nav>
 
     <h3>Informations included in this page:</h3>
+    <p><a href="../Extra-Notes/extranotes2.html#one">Git Intro</a></p>
+    <p><a href="../Extra-Notes/extranotes2.html#two">Git Getting Started</a></p>
+    <p><a href="../Extra-Notes/extranotes2.html#three">Git Adding New Files</a></p>
+    <p><a href="../Extra-Notes/extranotes2.html#four">Git Staging Environment</a></p>
+    <p><a href="../Extra-Notes/extranotes2.html#five">Git Commit</a></p>
+    <p><a href="../Extra-Notes/extranotes2.html#six">Git Help</a></p>
+    <p><a href="../Extra-Notes/extranotes2.html#seven">Working with Git Branches</a></p>
+    <p><a href="../Extra-Notes/extranotes2.html#eight">Git Branch Merge</a></p>
+    <p><a href="../Extra-Notes/extranotes2.html#nine">GitHub Getting Started</a></p>
+    <p><a href="../Extra-Notes/extranotes2.html#ten">Edit Code in GitHub</a></p>
+    <p><a href="../Extra-Notes/extranotes2.html#eleven">How to pull from GitHub</a></p>
+    <p><a href="../Extra-Notes/extranotes2.html#eight_2">Push Changes to GitHub</a></p>
+    <p><a href="../Extra-Notes/extranotes2.html#nine_2">How to create a new Branch in Github</a></p>
+    <p><a href="../Extra-Notes/extranotes2.html#ten_2">Pulling a Branch from GitHub</a></p>
+    <p><a href="../Extra-Notes/extranotes2.html#eleven_2">Push a Branch to GitHub</a></p>
+    <p><a href="../Extra-Notes/extranotes2.html#twelve">Working using the GitHub Flow</a></p>
+    <p><a href="../Extra-Notes/extranotes2.html#thirteen">Host Your Page on GitHub</a></p>
+    <p><a href="../Extra-Notes/extranotes2.html#fourteen">GitHub Fork</a></p>
+    <p><a href="../Extra-Notes/extranotes2.html#fifteen">Clone from GitHub</a></p>
+    <p><a href="../Extra-Notes/extranotes2.html#sixteen">Configuring Remotes</a></p>
+    <p><a href="../Extra-Notes/extranotes2.html#seventeen">Pull requests in Github</a></p>
+    <p><a href="../Extra-Notes/extranotes2.html#eighteen">Git .gitignore</a></p>
+    <p><a href="../Extra-Notes/extranotes2.html#nineteen">Git Security SSH</a></p>
+    <p><a href="../Extra-Notes/extranotes2.html#twenty">Git Revert</a></p>
+    <p><a href="../Extra-Notes/extranotes2.html#twentyone">Git Reset</a></p>
+    <p><a href="../Extra-Notes/extranotes2.html#twentytwo">Git commit --amend</a></p>
+
 
 </article>
 
@@ -918,7 +945,7 @@ Deleted branch hello-world-images (was 1f1584e).</div>
 <hr>
 
 <article id="nine">
-<header><h1>Git GitHub Getting Started</h1></header>
+<header><h1>GitHub Getting Started</h1></header>
 <p>So, first thing you gotta do is create an account in <a href="https://www.github.com/" target="_blank">Github</a>.
 Remember to use the same e-mail address you used in the Git config. After you do this, you need to create a Repository
 inside Github:</p>
@@ -1141,7 +1168,7 @@ Fast-forward
 
 <hr>
 
-<article id="eight">
+<article id="eight_2">
 <header><h1>Push Changes to GitHub</h1></header>
 <p>Let's try making some changes to our local git and pushing them to GitHub.</p>
 
@@ -1198,7 +1225,7 @@ To https://github.com/w3schools-test/hello-world.git
 
 <hr>
 
-<article id="nine">
+<article id="nine_2">
 <header><h1>How to create a new Branch in Github</h1></header>
 
 <p>On GitHub, access your repository and click the "master" branch button.
@@ -1222,7 +1249,7 @@ You now have a new branch on GitHub, updated with some changes!</p>
 
 <hr>
 
-<article id="ten">
+<article id="ten_2">
 <header><h1>Pulling a Branch from GitHub</h1></header>
 
 <p>So, we now are back in our local Git and want to continue working on our project.
@@ -1286,7 +1313,7 @@ That is how you pull a GitHub branch to your local Git.</p>
 
 <hr>
 
-<article id="eleven">
+<article id="eleven_2">
 <header><h1>Push a Branch to GitHub</h1></header>
 
 <p>Let's try to create a new local branch, and push that to GitHub.
@@ -1436,6 +1463,9 @@ If any issues arise, you can undo the changes by deploying the master branch int
 
 <hr>
 
+
+
+
 <article id="thirteen">
 <header><h1>Host Your Page on GitHub</h1></header>
 <p>With GitHub pages, GitHub allows you to host a webpage from your repository. Let's try to use GitHub Pages to host our repository.</p>
@@ -1478,6 +1508,624 @@ To https://github.com/w3schools-test/w3schools-test.github.io.git
  <img src="./../images/git22.png" style="width: 70%">
 
  <p>The GitHub page is created, and you can click the URL to view the result!</p>
+</article>
+
+<hr>
+
+<article id="fourteen">
+<header><h1>GitHub Fork</h1></header>
+<p>At the heart of Git is collaboration. However, Git does not allow you to add code to someone else's repository without access rights.
+In these next 3 chapters we will show you how to copy a repository, make changes to it, and suggest those changes be implemented to the original repository.</p>
+
+<h2 style="font-size: 2em"><u>Fork a Repository</u></h2>
+
+<p>A fork is a copy of a repository. This is useful when you want to contribute to someone else's project or start your own project based on theirs.</p>
+
+<p>fork is not a command in Git, but something offered in GitHub and other repository hosts. Let's start by logging in to GitHub, and fork our repository:</p>
+
+<img style="width: 70%" src="./../images/git23.png">
+
+<p>Now that we have our own copy of w3schools-test.github.io let's look at how we add a local copy of this for us to work with.</p>
+
+</article>
+
+<hr>
+
+<article id="fifteen">
+<header><h1>Clone from GitHub</h1></header>
+
+<p>Now we have our own fork, but only on GitHub. We also want a clone on our local Git to keep working on it.
+A clone is a full copy of a repository, including all logging and versions of files.</p>
+
+<p>Move back to the <strong>original</strong> repository, and click the green "Code" button to get the URL to clone:</p>
+
+<img style="width: 70%" src="./../images/git24.png">
+
+<p>Open your Git bash and clone the repository:</p>
+
+<div class="syntax" name="cmd" style=""><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ clone url
+Cloning into 'w3schools-test.github.io'...
+remote: Enumerating objects: 33, done.
+remote: Counting objects: 100% (33/33), done.
+remote: Compressing objects: 100% (15/15), done.
+remote: Total 33 (delta 18), reused 33 (delta 18), pack-reused 0
+Receiving objects: 100% (33/33), 94.79 KiB | 3.16 MiB/s, done.
+Resolving deltas: 100% (18/18), done.</div>
+
+<p>Take a look in your file system, and you will see a new directory named after the cloned project</p>
+
+<div class="syntax" name="cmd" style=""><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ ls
+w3schools-test.github.io/</div>
+
+<style>
+    .red-color{
+        background-color: unset;
+        color: red;
+    }
+</style>
+<p>To specify a specific folder to clone to, add the name of the folder after the repository URL, like this: git clone <u>https://github.com/w3schools-test/w3schools-test.github.io.git</u> myfolder</p>
+
+<p>Navigate to the new directory, and check the status:</p>
+
+<div class="syntax" name="cmd" style=""><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ cd w3schools-test.github.io
+<span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean</div>
+
+<p>And check the log to confirm that we have the full repository data:</p>
+
+<div class="syntax" name="cmd" style=""><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git log
+commit facaeae8fd87dcb63629f108f401aa9c3614d4e6 (HEAD -> master, origin/master, origin/HEAD)
+Merge: e7de78f 5a04b6f
+Author: w3schools-test 
+Date:   Fri Mar 26 15:44:10 2021 +0100
+
+    Merge branch 'master' of https://github.com/w3schools-test/hello-world
+
+commit e7de78fdefdda51f6f961829fcbdf197e9b926b6
+Author: w3schools-test 
+Date:   Fri Mar 26 15:37:22 2021 +0100
+
+    Updated index.html. Resized image</div>
+
+
+</article>
+
+<hr>
+
+<article id="sixteen">
+<header><h1>Configuring Remotes</h1></header>
+
+<p>So far, we have a full copy of a repository, whose origin we are not allowed to make changes to.
+Let's see how the remotes of this Git is set up:</p>
+
+<div class="syntax" name="cmd" style=""><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git remote -v
+origin  https://github.com/w3schools-test/w3schools-test.github.io.git (fetch)
+origin  https://github.com/w3schools-test/w3schools-test.github.io.git (push)</div>
+
+<p>We see that origin is set up to the original "w3schools-test" repository, we also want to add our own fork.
+First, we rename the original origin remote:</p>
+
+<div class="syntax" name="cmd" style=""><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git remote rename origin upstream
+<span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git remote -v
+upstream  https://github.com/w3schools-test/w3schools-test.github.io.git (fetch)
+upstream  https://github.com/w3schools-test/w3schools-test.github.io.git (push)</div>
+
+<p>Then fetch the URL of our own fork:</p>
+
+<img style="width: 70%" src="./../images/git25.png">
+
+<p>And add that as origin:</p>
+
+<div class="syntax" name="cmd" style=""><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git remote add origin url
+<span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git remote -v
+origin  https://github.com/kaijim/w3schools-test.github.io.git (fetch)
+origin  https://github.com/kaijim/w3schools-test.github.io.git (push)
+upstream  https://github.com/w3schools-test/w3schools-test.github.io.git (fetch)
+upstream  https://github.com/w3schools-test/w3schools-test.github.io.git (push)</div>
+
+<p>Why did we do this you may ask. Well, according to Git naming conventions, it is recommended to name your own repository origin, and the one you forked upstream.</p>
+
+<p class="left">Now we have 2 remotes:</p>
+
+<ul>
+    <li><strong>origin</strong> - our own fork, where we have read and write access</li>
+    <li><strong>upstream</strong> - the original, where we have read-only access</li>
+</ul>
+
+<p>Now we are going to make some changes to the code. In the next chapter, we will cover how we suggest those changes to the original repository.</p>
+</article>
+
+<hr>
+
+<article id="seventeen">
+<header><h1>Pull requests in Github</h1></header>
+
+<p>After we make the changes we want to our local git, and
+commit them, we can then push them to our GitHub fork:</p>      
+ 
+<div class="syntax" name="cmd" style=""><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git push origin  
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 393.96 KiB | 32.83 MiB/s, done.
+Total 5 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/kaijim/w3schools-test.github.io.git
+   facaeae..ebb1a5c  master -> master</div>
+
+<p>if we go to GitHub, we can see that our repository has a new commit. 
+We can now send a Pull Request to the original repository:</p>
+
+<img src="./../images/git26.png" style="width: 70%">
+
+<p>Click that and create a pull request:</p>
+
+<img src="./../images/git27.png" style="width: 70%">
+
+<p>Remember to add an explanation for the administrators.</p>
+
+<img src="./../images/git28.png" style="width: 70%">
+
+<p>Pull Request is sent:</p>
+
+<img src="./../images/git29.png" style="width: 70%">
+
+<h2 style="font-size: 2em"><u>Approving Pull Requests</u></h2>
+
+<p>Now any member with access can see the Pull Request when they see the original repository:</p>
+
+<img src="./../images/git30.png" style="width: 70%">
+
+<p>And they can see the proposed changes:</p>
+
+<img src="./../images/git31.png" style="width: 70%">
+
+<p>Comment on the changes and merge:</p>
+
+<img src="./../images/git32.png" style="width: 70%">
+
+<p>Confirm:</p>
+
+<img src="./../images/git33.png" style="width: 70%">
+
+<p>And changes have been merged with master:</p>
+
+<img src="./../images/git34.png" style="width: 70%">
+
+ 
+
+</article>
+
+<hr>
+
+<article id="eighteen">
+<header><h1>Git .gitignore</h1></header>
+<p>When sharing your code with others, there are often files or parts of your project, you do not want to share.</p>
+
+<p class="left">Examples</p>
+
+<ul>
+    <li>log files</li>
+    <li>temporary files</li>
+    <li>hidden files</li>
+    <li>personal files</li>
+    <li>etc</li>
+</ul>
+
+<p>Git can specify which files or parts of your project should be ignored by Git using a .gitignore file.
+Git will not track files and folders specified in .gitignore. However, the .gitignore file itself <strong>IS</strong> tracked by Git.</p>
+
+<p>To create a .gitignore file, go to the root of your local Git, and create it:</p>
+
+<div class="syntax" name="cmd" style=""><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ touch .gitignore</div>
+
+<p>Now open the file using a text editor.
+We are just going to add two simple rules:</p>
+
+<ul>
+    <li>Ignore any files with the .log extension</li>
+    <li>Ignore everything in any directory named temp</li>
+</ul>
+
+<div class="syntax" name=".gitignore"># ignore ALL .log files
+*.log 
+
+# ignore ALL files in ANY directory named temp
+temp/
+</div>
+
+<p>Now all .log files and anything in temp folders will be ignored by Git.</p>
+
+<p>It is also possible to have additional .gitignore files in subdirectories. These only apply to files or folders within that directory.</p>
+
+<p>For more rules you can use to specify which files to be ignored you can check out <a href="https://www.w3schools.com/git/git_ignore.asp?remote=github" target="_blank">this site</a>.</p>
+</article>
+
+<hr>
+
+<article id="nineteen">
+<header><h1>Git Security SSH</h1></header>
+<p>Up to this point, we have used HTTPS to connect to our remote repository.
+HTTPS will usually work just fine, but you should use SSH if you work with unsecured networks. And sometimes, a project will require that you use SSH.</p>
+
+<h2 style="font-size: 2em"><u>What is SSH</u></h2>
+
+<p>SSH is a secure shell network protocol that is used for network management, remote file transfer, and remote system access.
+SSH uses a pair of SSH keys to establish an authenticated and encrypted secure network protocol. It allows for secure remote communication on unsecured open networks.</p>
+
+<p>SSH keys are used to initiate a secure "handshake". When generating a set of keys, you will generate a "public" and "private" key.
+The "public" key is the one you share with the remote party. Think of this more as the lock.
+The "private" key is the one you keep for yourself in a secure place. Think of this as the key to the lock.</p>
+
+<p>SSH keys are generated through a security algorithm. It is all very complicated, but it uses prime numbers, and large random numbers to make the public and private key.
+It is created so that the public key can be derived from the private key, but not the other way around. This way, anyonce can use your public kay to encypt data and send it to you, but
+only you can decrypt the data with your private key, not even the person sending the data is able to do this. That's what we call assymetrical encryption
+and I have talked more about it in my computer science notes.</p>
+
+<h2 style="font-size: 2em"><u>Generating an SSH Key Pair</u></h2>
+
+<p>In the command line for Linux, Apple, and in the Git Bash for Windows, you can generate an SSH key.
+Let's go through it, step by step.
+Start by creating a new key, using your email as a label:</p>
+
+<div class="syntax" name="cmd" style="white-space: pre-wrap;"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ ssh-keygen -t rsa -b 4096 -C "test@w3schools.com"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/Users/user/.ssh/id_rsa):
+Created directory '/Users/user/.ssh'.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /Users/user/.ssh/id_rsa
+Your public key has been saved in /Users/user/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:******************************************* test@w3schools.com
+The key's randomart image is:
++---[RSA 4096]----+
+|                                  |
+|                                  |
+|                                  |
+|                                  |
+|                                  |
+|                                  |
+|                                  |
+|                                  |
+|                                  |
++----[SHA256]-----+</div>
+
+<p>So, let me now explain what the properties we used actually do.
+The first property we used was <strong>-t</strong> which stands for <Strong>type</Strong>. SSH supports several public key 
+algorithms for authentication keys. We chose to use <strong>rsa</strong> type - an old algorithm based on the difficulty of 
+factoring large numbers. Next we used the <Strong>-b</Strong> property, followed by a number. The -b property stands for <strong>bits</strong>, 
+this option specifies the number of bits in the key. A key size of at least 2048 bits is recommended for RSA; 4096 bits is better.
+Lastly, we used the <strong>-c</strong> property, which stands for <strong>comment</strong>. This property
+sets a comment for the keyfile.</p>
+
+<p>As you can see above, after we entered the command we were prompted with the following:
+</p>
+
+<div class="syntax" name="cmd" style="white-space: pre-wrap;">Enter file in which to save the key (/c/Users/user/.ssh/id_rsa):</div>
+
+<p>Select a file location to save the key inside, or press "Enter" to use the default file location.</p>
+
+<div class="syntax" name="cmd" style="white-space: pre-wrap;">Enter passphrase (empty for no passphrase):
+Enter same passphrase again:</div>
+
+<p>Entering a secure passphrase will create an additional layer of security. Preventing anyone who gains access to the computer to use that key without the passphrase. However, it will require you to supply the passphrase anytime the SSH key is used.</p>
+
+<p>Now we add this SSH key pair to the SSH-Agent (using the file location from above):</p>
+
+<div class="syntax" name="cmd" style="white-space: pre-wrap;"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ ssh-add /Users/user/.ssh/id_rsa
+Enter passphrase for /Users/user/.ssh/id_rsa:
+Identity added: /Users/user/.ssh/id_rsa (test@w3schools.com)</div>
+
+<p>You will be prompted to supply the passphrase, if you added one.
+Now the SSH key pair is ready to use.</p>
+
+<p>The ssh-agent is a program to hold private keys used for public key authentication. Through use of environment variables the agent can be located and automatically used for authentication when logging in to other machines using ssh.
+In order to understand why that's needed you need to first understand how SSH works.</p>
+
+<h2 style="font-size: 2em"><u>Copy the SSH Public Key</u></h2>
+
+<p>So far, we have created an SSH key pair.
+Now we will use the "<strong>clip &lt; path</strong>" command to copy the public key to our clipboard:</p>
+
+<div class="syntax" name="cmd" style="white-space: pre-wrap;"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ clip &lt; /Users/user/.ssh/id_rsa.pub</div>
+
+<p>After this you should go to GitHub, navigate to the top left corner, click your profile, and select: Settings:</p>
+
+<img src="./../images/git35.png">
+
+<p>Then select "SSH and GPG keys". and click the "New SSH key" button:</p>
+
+<img src="./../images/git36.png" style="width: 70%">
+
+<p>Select a title, and paste the public SSH key into the "Key" field, and click "Add SSH Key":</p>
+
+<img src="./../images/git37.png" style="width: 70%">
+
+<p>You will be prompted to supply your GitHub password.
+Then you will see your new SSH key added:</p>
+
+<img src="./../images/git38.png" style="width: 70%">
+
+<h2 style="font-size: 2em"><u>Test SSH Connection to GitHub</u></h2>
+
+<p>Now we can test our connection via SSH to GitHub:</p>
+
+<div class="syntax" name="cmd" style="white-space: pre-wrap;"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ ssh -T git@github.com
+The authenticity of host 'github.com (140.82.121.3)' can't be established.
+RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'github.com,140.82.121.3' (RSA) to the list of known hosts.
+Hi w3schools-test! You've successfully authenticated, but GitHub does not provide shell access.</div>
+
+<p>If the last line contains your username on GitHub, you are successfully authenticated!</p>
+
+<h2 style="font-size: 2em"><u>Add New GitHub SSH Remote</u></h2>
+
+<p>Now we can add a new remote via SSH to our Git.
+First, get the SSH address from our repository on GitHub:</p>
+
+<img src="./../images/git39.png" style="width: 70%">
+
+<p>Then use that address to add a new origin:</p>
+
+<div class="syntax" name="cmd" style="white-space: pre-wrap;"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git remote add ssh-origin url</div>
+
+</article>
+
+<hr>
+
+<article id="tewnty">
+<header><h1>Git Revert</h1></header>
+
+<p>revert is the command we use when we want to take a previous commit and add it as a new commit, keeping the log intact.</p>
+
+<p>Step 1: Find the previous commit:</p>
+
+<img src="./../images/git40.gif" style="width: 50%; border: unset;">
+
+<p>Step 2: Use it to make a new commit:</p>
+
+<img src="./../images/git41.gif" style="width: 50%; border: unset;">
+
+<p>Let's make a new commit, where we have "accidentally" deleted a file:</p>
+
+<div class="syntax" name="cmd" style="white-space: pre-wrap;"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git commit -m "Just a regular update, definitely no accidents here..."
+[master 16a6f19] Just a regular update, definitely no accidents here...
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ delete mode 100644 img_hello_git.jpg</div>
+
+ <p>Now we have a part in our commit history we want to go back to. Let's try and do that with revert.</p>
+
+<p>First thing, we need to find the point we want to return to. To do that, we need to go through the log.
+To avoid the very long log list, we are going to use the --oneline option, which gives just one line per commit showing:</p>
+
+<ul>
+    <li>The first seven characters of the commit hash</li>
+    <li>the commit message</li>
+</ul>
+
+<p>So let's find the point we want to revert:</p>
+
+<div class="syntax" name="cmd" style="white-space: pre-wrap;"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ log --oneline
+52418f7 (HEAD -> master) Just a regular update, definitely no accidents here...
+9a9add8 (origin/master) Added .gitignore
+81912ba Corrected spelling error
+3fdaa5b Merge pull request #1 from w3schools-test/update-readme
+836e5bf (origin/update-readme, update-readme) Updated readme for GitHub Branches
+daf4f7c (origin/html-skeleton, html-skeleton) Updated index.html with basic meta
+facaeae (gh-page/master) Merge branch 'master' of https://github.com/w3schools-test/hello-world
+e7de78f Updated index.html. Resized image
+5a04b6f Updated README.md with a line about focus
+d29d69f Updated README.md with a line about GitHub
+e0b6038 merged with hello-world-images after fixing conflicts
+1f1584e added new image
+dfa79db updated index.html with emergency fix
+0312c55 Added image to Hello World
+09f4acd Updated index.html with a new line
+221ec6e First release of Hello World!</div>
+
+<p>We want to revert to the previous commit: 52418f7 (HEAD -> master) Just a regular update, definitely no accidents here..., and we see that it is the latest commit.</p>
+
+<h2 style="font-size: 2em"><u>Git Revert HEAD</u></h2>
+
+<p>We revert the latest commit using git revert HEAD (revert the latest change,  and then commit), adding the option --no-edit to skip the commit message editor (getting the default revert message):</p>
+
+<div class="syntax" name="cmd" style="white-space: pre-wrap;"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git revert HEAD --no-edit
+[master e56ba1f] Revert "Just a regular update, definitely no accidents here..."
+ Date: Thu Apr 22 10:50:13 2021 +0200
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 img_hello_git.jpg</div>
+
+<p>Now let's check the log again:</p>
+
+<div class="syntax" name="cmd" style="white-space: pre-wrap;"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git log --oneline
+e56ba1f (HEAD -> master) Revert "Just a regular update, definitely no accidents here..."
+52418f7 Just a regular update, definitely no accidents here...
+9a9add8 (origin/master) Added .gitignore
+81912ba Corrected spelling error
+3fdaa5b Merge pull request #1 from w3schools-test/update-readme
+836e5bf (origin/update-readme, update-readme) Updated readme for GitHub Branches
+daf4f7c (origin/html-skeleton, html-skeleton) Updated index.html with basic meta
+facaeae (gh-page/master) Merge branch 'master' of https://github.com/w3schools-test/hello-world
+e7de78f Updated index.html. Resized image
+5a04b6f Updated README.md with a line about focus
+d29d69f Updated README.md with a line about GitHub
+e0b6038 merged with hello-world-images after fixing conflicts
+1f1584e added new image
+dfa79db updated index.html with emergency fix
+0312c55 Added image to Hello World
+09f4acd Updated index.html with a new line
+221ec6e First release of Hello World!</div>
+
+<p>To revert to earlier commits, use git revert HEAD~x (x being a number. 1 going back one more, 2 going back two more, etc.)</p>
+
+<p>On the next page, we'll go over git reset, which brings the repository back to an earlier state in the commits without making a new commit.</p>
+</article>
+
+<hr>
+
+<article id="twentyone">
+<header><h1>Git Reset</h1></header>
+
+<p>reset is the command we use when we want to move the repository back to a previous commit, discarding any changes made after that commit.</p>
+
+<p>Step 1: Find the previous commit:</p>
+
+<img src="./../images/git40.gif" style="width: 50%; border: unset;">
+
+<p>Step 2: Move the repository back to that step:</p>
+
+<img src="./../images/git42.gif" style="width: 50%; border: unset;">
+
+<p>After the previous chapter, we have a part in our commit history we could go back to. So let's find the point we want to reset to first:</p>
+
+<div class="syntax" name="cmd" style="white-space: pre-wrap;"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git log --oneline
+e56ba1f (HEAD -> master) Revert "Just a regular update, definitely no accidents here..."
+52418f7 Just a regular update, definitely no accidents here...
+9a9add8 (origin/master) Added .gitignore
+81912ba Corrected spelling error
+3fdaa5b Merge pull request #1 from w3schools-test/update-readme
+836e5bf (origin/update-readme, update-readme) Updated readme for GitHub Branches
+daf4f7c (origin/html-skeleton, html-skeleton) Updated index.html with basic meta
+facaeae (gh-page/master) Merge branch 'master' of https://github.com/w3schools-test/hello-world
+e7de78f Updated index.html. Resized image
+5a04b6f Updated README.md with a line about focus
+d29d69f Updated README.md with a line about GitHub
+e0b6038 merged with hello-world-images after fixing conflicts
+1f1584e added new image
+dfa79db updated index.html with emergency fix
+0312c55 Added image to Hello World
+09f4acd Updated index.html with a new line
+221ec6e First release of Hello World!</div>
+
+<p>We want to return to the commit: 9a9add8 (origin/master) Added .gitignore, the last one before we started to mess with things.</p>
+
+<p>We reset our repository back to the specific commit using git reset commithash (commithash being the first 7 characters of the commit hash we found in the log):</p>
+
+<div class="syntax" name="cmd" style="white-space: pre-wrap;"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git reset 9a9add8</div>
+
+<p>Now let's check the log again:</p>
+
+<div class="syntax" name="cmd" style="white-space: pre-wrap;"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git log --oneline
+9a9add8 (HEAD -> master, origin/master) Added .gitignore
+81912ba Corrected spelling error
+3fdaa5b Merge pull request #1 from w3schools-test/update-readme
+836e5bf (origin/update-readme, update-readme) Updated readme for GitHub Branches
+daf4f7c (origin/html-skeleton, html-skeleton) Updated index.html with basic meta
+facaeae (gh-page/master) Merge branch 'master' of https://github.com/w3schools-test/hello-world
+e7de78f Updated index.html. Resized image
+5a04b6f Updated README.md with a line about focus
+d29d69f Updated README.md with a line about GitHub
+e0b6038 merged with hello-world-images after fixing conflicts
+1f1584e added new image
+dfa79db updated index.html with emergency fix
+0312c55 Added image to Hello World
+09f4acd Updated index.html with a new line
+221ec6e First release of Hello World!</div>
+
+<p><Strong>Warning:</Strong> Messing with the commit history of a repository can be dangerous. It is usually ok to make these kinds of changes to your own local repository. However, you should avoid making changes that rewrite history to remote repositories, especially if others are working with them.</p>
+
+<h2 style="font-size: 2em"><u>Git Undo Reset</u></h2>
+
+<p>Even though the commits are no longer showing up in the log, it is not removed from Git.
+If you know the commit hash you can reset to it:</p>
+
+<div class="syntax" name="cmd" style="white-space: pre-wrap;"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git reset e56ba1f</div>
+
+<p>Now let's check the log again:</p>
+
+<div class="syntax" name="cmd" style="white-space: pre-wrap;"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git log --oneline
+e56ba1f (HEAD -> master) Revert "Just a regular update, definitely no accidents here..."
+52418f7 Just a regular update, definitely no accidents here...
+9a9add8 (origin/master) Added .gitignore
+81912ba Corrected spelling error
+3fdaa5b Merge pull request #1 from w3schools-test/update-readme
+836e5bf (origin/update-readme, update-readme) Updated readme for GitHub Branches
+daf4f7c (origin/html-skeleton, html-skeleton) Updated index.html with basic meta
+facaeae (gh-page/master) Merge branch 'master' of https://github.com/w3schools-test/hello-world
+e7de78f Updated index.html. Resized image
+5a04b6f Updated README.md with a line about focus
+d29d69f Updated README.md with a line about GitHub
+e0b6038 merged with hello-world-images after fixing conflicts
+1f1584e added new image
+dfa79db updated index.html with emergency fix
+0312c55 Added image to Hello World
+09f4acd Updated index.html with a new line
+221ec6e First release of Hello World!</div>
+
+</article>
+
+<hr>
+
+<article id="twentytwo">
+<header><h1>Git commit --amend</h1></header>
+
+<p>commit --amend is used to modify the most recent commit.
+It combines changes in the staging environment with the latest commit, and creates a new commit.
+This new commit replaces the latest commit entirely.</p>
+
+<p>One of the simplest things you can do with --amend is to change a commit message.
+Let's update the README.md and commit:</p>
+
+<div class="syntax" name="cmd" style="white-space: pre-wrap;"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git commit -m "Adding plines to reddme"
+[master 07c5bc5] Adding plines to reddme
+ 1 file changed, 3 insertions(+), 1 deletion(-)</div>
+
+<p>Now let's check the log:</p>
+
+<div class="syntax" name="cmd" style="white-space: pre-wrap;"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git log --oneline
+07c5bc5 (HEAD -> master) Adding plines to reddme
+9a9add8 (origin/master) Added .gitignore
+81912ba Corrected spelling error
+3fdaa5b Merge pull request #1 from w3schools-test/update-readme
+836e5bf (origin/update-readme, update-readme) Updated readme for GitHub Branches
+daf4f7c (origin/html-skeleton, html-skeleton) Updated index.html with basic meta
+facaeae (gh-page/master) Merge branch 'master' of https://github.com/w3schools-test/hello-world
+e7de78f Updated index.html. Resized image
+5a04b6f Updated README.md with a line about focus
+d29d69f Updated README.md with a line about GitHub
+e0b6038 merged with hello-world-images after fixing conflicts
+1f1584e added new image
+dfa79db updated index.html with emergency fix
+0312c55 Added image to Hello World
+09f4acd Updated index.html with a new line
+221ec6e First release of Hello World!</div>
+
+<p>Oh no! the commit message is full of spelling errors. Embarrassing. Let's amend that:</p>
+
+<div class="syntax" name="cmd" style="white-space: pre-wrap;"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git commit --amend -m "Added lines to README.md"
+[master eaa69ce] Added lines to README.md
+ Date: Thu Apr 22 12:18:52 2021 +0200
+ 1 file changed, 3 insertions(+), 1 deletion(-))</div>
+
+<p>And re-check the log:</p>
+
+<div class="syntax" name="cmd" style="white-space: pre-wrap;"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/alexi/Desktop/myproject</span>$ git log --oneline
+eaa69ce (HEAD -> master) Added lines to README.md
+9a9add8 (origin/master) Added .gitignore
+81912ba Corrected spelling error
+3fdaa5b Merge pull request #1 from w3schools-test/update-readme
+836e5bf (origin/update-readme, update-readme) Updated readme for GitHub Branches
+daf4f7c (origin/html-skeleton, html-skeleton) Updated index.html with basic meta
+facaeae (gh-page/master) Merge branch 'master' of https://github.com/w3schools-test/hello-world
+e7de78f Updated index.html. Resized image
+5a04b6f Updated README.md with a line about focus
+d29d69f Updated README.md with a line about GitHub
+e0b6038 merged with hello-world-images after fixing conflicts
+1f1584e added new image
+dfa79db updated index.html with emergency fix
+0312c55 Added image to Hello World
+09f4acd Updated index.html with a new line
+221ec6e First release of Hello World!</div>
+
+<p>We see the previous commit is replaced with our amended one!</p>
+
+<p>Adding or modifying files with --amend works the same way as above. Just add them to the staging environment before committing.</p>
+
 </article>
 <hr>
 </body>
