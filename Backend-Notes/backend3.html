@@ -1,0 +1,791 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<title> Page three of my backend notes</title>
+<meta charset="UTF-8"> 
+<link href="../CSS-JavaScript-External-Files/HTMLnotes.css" rel="stylesheet">
+<style>
+    
+    body{
+        overflow-x: hidden;
+        width: 100%;
+    }
+    .left {
+        text-align: left;
+    }
+
+    iframe {
+        width: 600px;
+        height: 350px;
+        border: 3px solid black;
+        margin: 20px auto 20px auto;
+        display: block;
+    }
+    .code10 {
+    white-space: pre-wrap;
+    background-color: lightgreen;
+    overflow-wrap: break-word;
+    }
+    
+    p {
+    text-align:center;
+    }
+    h1 {
+    text-align:center;
+    }
+    h2 {
+    text-align:center;
+    }
+    h3 {
+    text-align:center;
+    }
+    .c {
+    background-color:lightgreen;
+    }
+    hr {
+    width:100%;
+    height:15px;
+    background-color:black;
+    color:black;
+    border: black solid;
+    }
+    body {
+    background-color:rgb(165, 235, 235);
+    }
+    span {
+    background-color:lightgreen;
+    }
+    
+    a:link {
+    color: black;
+    text-shadow: 1px 0px 1px black;
+    
+    }
+    
+    a:visited {
+    color: black;
+    text-shadow: 1px 0px 1px rgb(22, 22, 22);
+    }
+    
+    a:hover {
+    text-decoration: underline;
+    color: red;
+    text-shadow: 1px 0px 1px black;
+    }
+     
+    img{
+        display: block;
+        margin: 20px auto 20px auto;
+        border: 3px solid black;
+        border-radius: 10px;
+    }
+     
+.syntax div{
+    padding: 10px 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    white-space: pre-wrap;
+    border-left: 5px solid green;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+.grey{
+    color: grey; background-color: unset;
+}
+
+.brown{
+    color: rgb(150, 60, 60); background-color: unset;
+}
+article header :is(h2,h1){
+    border: 3px solid black;
+    border-radius: 20px;
+    width: fit-content;
+    padding: 10px;
+    margin: auto;
+    background-color: #2d3436;
+background-image: linear-gradient(315deg, #000000 0%, #2d3436 46%, #000000 80%);
+    color: white;
+    font-family: 'Luckiest Guy', cursive;
+    max-width: 60%;
+    user-select: none;
+
+}
+article header h1{
+    font-size: 2em;
+     background-color: #2d3436;
+background-image: linear-gradient(315deg, #000000 0%, #2d3436 46%, #000000 80%);
+}
+li{
+    all:revert
+}
+ul{
+    all:revert
+}
+div li dl dd ul li{
+    margin-left: 40px
+}
+.content li{
+    margin-top: 10px;
+}
+    </style> 
+</head>
+<body>
+
+<hr>
+
+    <header> 
+    <h1> Page three of my backend notes </h1>
+    </header>
+    
+<article id="start-of-page"> 
+  
+<div id="homepages">
+
+    <h3>Home Pages:</h3>
+   
+
+</div>
+
+<nav data-notes="backend" data-page="3">
+
+</nav>
+
+    <h3>Informations included in this page:</h3>
+    <div class="content" style="width: fit-content; margin-left: 40%; white-space: unset;">
+    <li><a href="./../Backend-Notes/backend3.html#one">Python Introduction</a></li>
+    <li><a href="./../Backend-Notes/backend3.html#two">How to install Python</a></li>
+    <li><a href="./../Backend-Notes/backend3.html#three">Python Getting Started</a></li>
+    <li><a href="./../Backend-Notes/backend3.html#four">Python Syntax</a></li>
+    <li><a href="./../Backend-Notes/backend3.html#five">Python Comments</a></li>
+    <li><dl style="display: inline;">
+            <dt style="display: inline;"><a href="./../Backend-Notes/backend3.html#six">Python Variables</a></dt>
+            <dd >
+                <ul style="display: inline;">
+                     <li style="margin-top: -10px;"><a href="./../Backend-Notes/backend3.html#six-2">Variable Names</a></li>
+                    <li><a href="./../Backend-Notes/backend3.html#six-3">Assign Multiple Values</a></li>
+                    <li><a href="./../Backend-Notes/backend3.html#six-4">Output Variables</a></li>
+                    <li><a href="./../Backend-Notes/backend3.html#six-5">Global Variables</a></li>
+                </ul>
+            </dd>
+        </dl>
+    </li>
+    </ul>
+    </div>
+
+    <br>
+
+
+
+</article>
+
+<script src="../CSS-JavaScript-External-Files/nav.js"></script>
+<hr>
+
+<article id="one">
+<header><h1>Python Introduction</h1></header>
+
+<p>Before we start learning about Python it's important to learn a little more about the language first.
+What is Python? What can we do with it? Why learn this and not some other language? All those are questions
+you may be asking your self right now. So that's what this section basically is, an introduction to the language we are about to learn. 
+</p>
+<h2 style="font-size: 2em"><u>What is Python?</u></h2>
+
+<p>Python is a popular programming language. It was created by Guido van Rossum, and released in 1991.</p>
+<p class="left">It is used for:</p>
+
+<ul>
+    <li>web development (server-side)</li>
+    <li>software development</li>
+    <li>mathematics</li>
+    <li>system scripting</li>
+</ul>
+
+<h2 style="font-size: 2em"><u>What can Python do?</u></h2>
+
+<ul>
+    <li>Python can be used on a server to create web applications</li>
+    <li>Python can be used alongside software to create workflows</li>
+    <li>Python can connect to database systems. It can also read and modify files</li>
+    <li>Python can be used to handle big data and perform complex mathematics</li>
+    <li>Python can be used for rapid prototyping, or for production-ready software development</li>
+</ul>
+
+<h2 style="font-size: 2em"><u>Why Python?</u></h2>
+
+<ul>
+    <li>Python works on different platforms (Windows, Mac, Linux, Raspberry Pi, etc)</li>
+    <li>Python has simple syntax similar to the English language</li>
+    <li>Python has syntax that allows developers to write programs with fewer lines than some other programming languages</li>
+    <li>Python runs on an interpreter system, meaning that code can be executed as soon as it is written. This means that prototyping can be very quick</li>
+    <li>Python can be treated in a procedural way, an object-oriented way or functional way</li>
+</ul>
+
+<h2 style="font-size: 2em"><u>Good to know:</u></h2>
+
+<ul>
+    <li>The most recent major version of Python is Python 3, which we shall be using in the following chapters.
+    However, Python 2, although not being updated with anything other than security updates, is still quite popular.
+    </li>
+    <li>In the following chapters Python will be written in a text editor. It is possible to write Python in an
+    Integrated Development Environment, such as Thonny, Pycharm, Netbeans or Eclipse which are particularly useful
+    when managing larger collections of Python files.
+    </li>
+</ul>
+
+<h2 style="font-size: 2em"><u>Python Syntax compared to other programming languages:</u></h2>
+
+<ul>
+    <li>Python was designed for readability, and has some similarities to the English language with influence from mathematics</li>
+    <li>Python uses new lines to complete a command, as opposed to other programming languages which often use semicolons or parentheses</li>
+    <li>Python relies on indentation, using whitespace, to define scope; such as the scope of loops, functions and classes.
+    Other programming languages often use cruly-brackets for this purpose.
+    </li>
+</ul>
+
+<p class="left">Syntax example:</p>
+
+<div class="syntax" name="python">print("Hello, World!")</div>
+
+</article>
+ 
+<hr>
+
+<article id="two">
+<header><h1>How to install Python and make it accessible through CLI</h1></header>
+
+<p>Many PCs and Macs will have python already installed.
+To check if you have python installed, run the following on your terminal:</p>
+
+<div class="syntax" name="cmd"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/karak10</span>$ python --version</div>
+
+<p>If you find that you do not have python installed on your computer, then you can download it for free from the following website: <a href="https://www.python.org/" target="_blank">https://www.python.org/</a></p>
+
+<p>Rather than the command "python", consider launching Python via the py launcher, as described in sg7's answer, which by runs your latest version of Python (or lets you select a specific version). The py launcher is enabled via a check box during installation (default: "on").
+Nevertheless, you can still put the "python" command in your PATH, either at "first installation" or by "modifying" an existing installation.</p>
+
+<p>Checking the "[x] Add Python x.y to PATH" box on the very first dialog. Here's how it looks in version 3.8:</p>
+
+<img src="./../images/python1.png">
+
+<p class="left">This has the effect of adding the following to the PATH variable:</p>
+
+<ul>
+    <li>C:\Users\...\AppData\Local\Programs\Python\Python38-32\Scripts\</li>
+    <li>C:\Users\...\AppData\Local\Programs\Python\Python38-32\</li>
+</ul>
+
+<p>If you installed Python but didn't add it to the PATH you can run the installer again
+or add it manually on your own:</p>
+
+<p>The PATH is the system variable that your operating system uses to locate needed executables from the command line or Terminal window. The PATH system variable can be set using System Utility in control panel on Windows, or in your shell's startup file on Linux and Solaris.
+Here is a tutorial I found in YouTube for windows users:</p>
+
+<iframe width="790" height="444" src="https://www.youtube.com/embed/gb9e3m98avk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<p>Be careful however, the girl in the video recreated the Path variabe,
+which rewrote her original Path variable. You probably don't want to do this, because
+other programs you may installed in the past, such as NodeJS and npm
+have already been added to the Path variable, which is why you are able to access them in the
+terminal by writing "node" and "npm". So, instead of rewriting Path variable like the lady
+in the video did, try editing it instead.<br><br>So, just like she added those values while making Path variable,
+that's what you will do too, but you will add those values in your original Path variable, to do that 
+click on Path, and instead of pressing the "New" button press the one at it's right that writes
+"Edit". Another window will open after that where you can see all the values inside Path,
+there you can press the "New" button to add values, so add the path of Python and
+the path of the script folder like the girl in the video did, the only difference is that you will have to add them one by one.</p>
+
+<p>To find where Python is installed in your computer you can try running the following python script
+in the command prompt:</p>
+
+<div class="syntax" name="cmd">C:\Users\alexi>py -c "import os, sys; print(os.path.dirname(sys.executable))"
+C:\Users\alexi\AppData\Local\Programs\Python\Python310</div>
+
+<p>AppData is a hidden file, so if you are trying to access it from file explorer you should
+go to settings in alexi directory and make hidden files visible. Anyway, after you find the directory
+you can copy the paths like the girl in the video.</p>
+
+<p>What's the difference between system variables and user veriables? The system variables are system-wide 
+accepted and do not vary from user to user. Whereas, user variables are configured differently from user to user.
+When I tried editing Path variable in user variables it didn't work for me, I don't know why, so if
+you have the same problem then just edit Path in system variables and everything should work.</p>
+
+<P>Now, if you are using Ubuntu like me then "python" will still not work with bash. That's
+because variables are not passed to child shells by default, only if they are exported.
+Something I should had probably mentioned before is that Ubuntu has already python installed, and it's
+added to it's Path variable. Try searching for it's location:</P>
+<div class="syntax" name="cmd"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/karak10</span>$ whereis python3
+python3: /mnt/c/Users/alexi/AppData/Local/Microsoft/WindowsApps/python3.exe</div>
+
+<p>So, if you have Ubuntu then python is already installed to your computer, and you can access it by typing "python3". I didn't know this before, and
+I ended up having Python installed in my computer twice.</p>
+
+<p>So, what do I do now? There are few different options I can take, I could keep both pythons,
+but I would rather not. So I have to choose which I prefer, if I uninstall the Python that was installed with
+Ubuntu then I would have to add the Python that I installed before in the Ubuntu's PATH variable. If I uninstalled
+the Python that I downloaded then I would have to add Python3 that was installed with Ubuntu to my windows PATH variable.
+We already learned how to edit the PATH variable in windows, so for the sake of this tutorial,
+I think it would be cool to learn how it's done with bash too.
+</p>
+
+<p>First you can remove python3 that was installed with Ubuntu by using the following command: <strong>sudo apt-get purge python3</strong>
+<br>After the process is done, you should type <Strong>sudo apt autoremove python3</Strong>.<br><br> Whenever you install an application the system will also install the software that this application depends on. It is common in Ubuntu/Linux that applications share the same libraries. When you remove the application the dependency will stay on your system.
+So apt-get autoremove will remove those dependencies that were installed with applications and are no longer used by anything else on the system.
+</p>
+
+<p>To add values to the PATH variable you can use the <strong>export $PATH=$PATH:value</strong> command.
+From what I understand, you can change the values of a variable like this: export $VARIABLE=value, but this
+would rewrite the value that's already set in the variable. That's why we write export $PATH=$PATH:value, the $PATH references to
+the value the variable already has, the ":" is used to seperate paths inside the variable,
+and the value should be the path you are adding to the variable. So here is what the commands should look like:</p>
+<div style="font-size: 0.7!important"  class="syntax" name="cmd"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/karak10</span>$ export PATH=$PATH:/mnt/c/Users/usr/AppData/Local/Programs/<br>Python/Python310/
+<span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">mnt/c/Users/karak10</span>$ export $PATH=$PATH:/mnt/c/Users/usr/AppData/Local/Programs/<br>Python/Python310/Scripts/</div>
+
+<p>In a Windows command shell you can type "notepad.exe" or "notepad" and in both cases it will launch the same executable binary. 
+In Bash you must use "notepad.exe". So even if you add the path of the python folder to the PATH variable you will
+not be able to access it by writing "python", you will have to write "python.exe". To fix this problem you can add an alias for python.exe:</p>
+
+<div class="syntax" name="cmd"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/karak10</span>$ alias python='python.exe'</div>
+
+<p>By using the <strong>PATH=$PATH:value</strong> you only change your PATH variable temproarily. The
+alias you set is also temporary. After you close the terminal and reopen it the changes you made
+will be gone. To make those changes permanent you have to add those
+commands in the <strong>~/.bashrc</strong> file. A bashrc file is shell script that Bash runs whenever 
+it is started. Along with setting in the OS, the bashrc helps determine how your command line 
+interface (CLI) or Terminal app looks and acts. ... In most cases, the bashrc is a hidden file that 
+lives in your home directory, it's path is <strong>~/. bashrc</strong>. The <strong>/etc/skel/.bashrc</strong> file is copied into the 
+home folder of any new users that are created on a system, so by editing the <Strong>/etc/skel/.bashrc</Strong>
+file you can create a default <strong>~/.bashrc</strong> file for all new users that get created on your computer and thus make certain that all users 
+begin with the same settings or environment. So, you only really need to add those commands iside the
+<Strong>~/.bashrc</Strong> file but adding them in <strong>/etc/skel/.bashrc</strong> file would also be good
+for the future.</p>
+
+<p>So, what exactly should you do? First type <strong>cd ~/</strong> then you can edit the .bashrc file by writing
+<strong>sudo vi .bashrc</strong>. You need to add sudo so that you edit it as an administrator, and it will ask you to enter
+your password, if you don't edit it as an administrator you won't be able to save it. After you start editing it
+you will see a script, don't care about what it does, you can go to the end or the beginning of the script, wherever you like,
+press <strong>i</strong> to enter import mode and you can right click to paste the following commands: <br><br>
+PATH=$PATH:/mnt/c/Users/usr/AppData/Local/Programs/Python/Python310/<br>
+PATH=$PATH:/mnt/c/Users/usr/AppData/Local/Programs/Python/Python310/Scripts/<br>
+alias python='python.exe'<br><br>
+Don't forget to change "usr" with your username. After you are done press <strong>ESC</strong>, then type
+<strong>:wq!</strong> and press <strong>enter</strong>. You can repeat the same process for <strong>/etc/selk/.bashrc</strong> file and you are done.
+Restart your terminal or write <strong>source ~/.bashrc</strong> and you can then type python --version and it should hopefully work.</p>
+
+<h2><u>Conclusion</u></h2>
+<p>So, to conclude. If you have Ubuntu installed in your computer, you do not need to install Python since
+it's already installed, you will just have to add the path of it in the PATH variable if
+you want to be able to access it with windows shell and also you may need to create a Scripts folder and
+add that to the PATH variable as well if you want to be able to access your scripts from the terminal easier. With bash you will be able to access it as
+"python3". To fix this you can add <strong>alias python='python3'</strong> inside your <strong>~/.bashrc</strong> file, and then
+restart your terminal or run <strong>source ~/.bashrc</strong> command. If you want this process to
+be done automatically for all users that get created in your computer you should also
+add the command inside <strong>/etc/skel/.bashrc</strong> file. Another solution is to simply install python-is-python3
+by using this command: <strong>sudo apt-get install python-is-python3</strong>. If you however already installed Python
+like I did before, you can either uninstall it and do what I wrote before, or uninstall the python3 that was installed with Ubuntu 
+and add the Python you installed to the Ubuntu PATH variable, and also windows PATH variable too if you didn't
+already have the installer do this for you when installing the program. You can uninstall python3 by writing <strong>sudo apt-get purge python3</strong>
+and then <Strong>sudo apt autoremove python3</Strong>. Then as I explained above you can edit the <strong>/etc/skel/.bashrc</strong>
+and <Strong>~/.bashrc</Strong> files to add the paths of Python in the PATH variable, and also set an
+alias for python.exe since unlike windows, bash requires you to add the file extensions when running a program.
+</p>
+
+<P>Something I didn't mention before is that if you decide to use Python that was installed with Ubuntu then
+in order to access it with windows command line interface you will have to access it as "python3" I believe,
+so after you add it to the PATH you may also want to set an alias for it, here is a tutorial:</P>
+
+<iframe width="790" height="494" src="https://www.youtube.com/embed/E_6Lklnakew" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</article>
+
+<hr>
+
+<article id="three">
+<header><h1>Python Getting Started</h1></header>
+<p>Python is an interpreted programming language (just like JavaScript), this means that 
+as a developer you write Python (.py) files in a text editor and then put those files into the python interpreter to be executed.
+The way to run a python file is like this on the command line:</p>
+
+<div class="syntax" name="cmd"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/karak10</span>$ python helloworld.py</div>
+
+<p>Where "helloworld.py" is the name of your python file.
+Let's write our first Python file, called helloworld.py, which can be done in any text editor.</p>
+
+<div class="syntax" name="py">print("Hello, World!")</div>
+
+<p>Simple as that. Save your file in your scripts folder. Open your command line, and run <strong>python helloworld.py</strong>.
+If you read the previous section, then your scripts folder should be added in the PATH variable, so you should be able to access
+helloworld.py from anywhere, if you didn't do this then you will have to be in the same directory as the file to run it or
+add a full path to the file:</p>
+
+<div class="syntax" name="cmd"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/karak10</span>$ python helloworld.py
+Hello, World!</div>
+
+<p>By the way, you can also create and edit files directly from the command line, first you write
+<Strong>touch file</Strong> to create it and like I explained before just use
+the <Strong>vi file</Strong> command to edit, this time sudo is not needed since you do not need to open the file as an administrator
+to save the changes. I explained in the previous section how to edit files in command line, so check this out, it's
+pretty cool if you want to quickly make a change or something but a code editor is better when you work on big projects, I
+use VSC, and it's great, it just takes some time to open, but to open it from the command line I use the
+<strong>code -r directory</strong> command, and to add a new directory I use the <strong>code -add directory</strong>,
+I'm also pretty sure if you want to just edit a file without adding the whole directory you can write <strong>code file</strong>.
+</p>
+
+<h2 style="font-size: 2em"><u>The Python Command Line</u></h2>
+
+<p>To test a short amount of code in python sometimes it is quickest and easiest not to write the code in a file. This is made possible because Python can be run as a command line itself.
+Type the following on the Windows, Mac or Linux command line:</p>
+
+<div class="syntax" name="cmd"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/karak10</span>$ python
+Python 3.10.0 (tags/v3.10.0:b494f59, Oct  4 2021, 19:00:18) [MSC v.1929 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> _</div>
+
+<p>From there you can write any python, including our hello world example from earlier in the tutorial:</p>
+
+<div class="syntax" name="cmd">Python 3.10.0 (tags/v3.10.0:b494f59, Oct  4 2021, 19:00:18) [MSC v.1929 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> print("Hello, World!")
+Hello, World!
+>>> _</div>
+
+<p>Whenever you are done in the python command line, you can simply type the following to quit the python command line interface:</p>
+
+<div class="syntax" name="cmd">>>> exit()
+<span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/karak10</span>$ _</div>
+
+</article>
+
+<hr>
+
+<article id="four">
+<header><h1>Python Syntax</h1></header>
+
+<p>As we learned in the previous page, Python syntax can be executed by writing directly in the Command Line.</p>
+
+<div class="syntax" name="cmd"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/karak10</span>$ python
+Python 3.10.0 (tags/v3.10.0:b494f59, Oct  4 2021, 19:00:18) [MSC v.1929 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> print("Hello, World!")
+Hello, World!
+>>> _</div>
+
+<p>Or by creating a python file on the server, using the .py file extension, and running it in the Command Line.
+</p>
+
+<div class="syntax" name="cmd"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/karak10</span>$ python helloworld.py
+Hello, World!</div>
+
+<h2><u>Python Indentation</u></h2>
+
+<p>Indentation refers to the spaces at the beginning of a code line.
+Where in other programming languages the indentation in code is for readability only, the indentation in Python is very important.
+Python uses indentation to indicate a block of code. See an example:</p>
+
+<div class="syntax" name="py">if 5 > 2:
+  print("Five is greater than two!")</div>
+
+<p>Python will give you an error if you skip the indentation.</p>
+
+<p class="left" style="color: red; text-shadow: 1px 1px 1px black">Syntax Error:</p>
+<div class="syntax" name="py" style="border: 3px dotted red">if 5 > 2:
+print("Five is greater than two!")</div>
+
+<p>The number of spaces is up to you as a programmer, but it has to be at least one.    
+</p>
+
+<p class="left" style="color: green; text-shadow: 1px 1px 1px black">No Errors:</p>
+
+<div class="syntax" style="border: 3px dotted green" name="py">if 5 > 2:
+ print("Five is greater than two!") 
+if 5 > 2:
+        print("Five is greater than two!") 
+</div>
+<p>You have to use the same number of spaces in the same block of code, otherwise Python will give you an error:</p>
+
+<p class="left" style="color: red; text-shadow: 1px 1px 1px black">Syntax Error:</p>
+<div style="border: 3px dotted red" class="syntax" name="py">if 5 > 2:
+ print("Five is greater than two!")
+        print("Five is greater than two!")</div>
+
+<h2><u>Python Variables</u></h2>
+
+<p>In Python, variables are created when you assign a value to it:</p>
+
+<div class="syntax" name="py">x = 5
+y = "Hello, World!"</div>
+
+<p>Python has no command for declaring a variable.
+We will learn more about variables later.</p>
+
+<h2><u>Comments</u></h2>
+
+<p>Python has commenting capability for the purpose of in-code documentation.
+Comments start with a #, and Python will render the rest of the line as a comment:</p>
+
+<div class="syntax" name="py"><span style="color: grey; background-color: unset;">#This is a comment.</span>
+print("Hello, World!")</div>
+
+</article>
+
+<hr>
+
+<article id="five">
+<header><h1>Python Comments</h1></header>
+
+<p class="left">Comments can be used to:</p>
+<ul>
+    <li>Explain Python code</li>
+    <li>Make the code more readable</li>
+    <li>Prevent execution when testing code</li>
+</ul>
+
+<p>Comments starts with a #, and Python will ignore them:</p>
+
+<div class="syntax" name="py"><span class="grey">#This is a comment</span>
+print("Hello, World!")</div>
+
+<p>Comments can be placed at the end of a line, and Python will ignore the rest of the line:</p>
+
+<div class="syntax" name="py">print("Hello, World!") <span class="grey">#This is a comment</span></div>
+
+<p>A comment does not have to be text that explains the code, it can also be used to prevent Python from executing code:</p>
+
+<div class="syntax" name="py"><span class="grey">#print("Hello, World!")</span>
+print("Cheers, Mate!")</div>
+
+<p>Python does not really have a syntax for multi line comments.
+To add a multiline comment you could insert a # for each line:</p>
+
+<div class="syntax" name="py"><span class="grey">#This is a comment
+#written in
+#more than just one line</span>
+print("Hello, World!")</div>
+
+<p>Or, not quite as intended, you can use a multiline string.
+Since Python will ignore string literals that are not assigned to a variable, you can add a multiline string (triple quotes) in your code, and place your comment inside it:</p>
+
+<div class="syntax" name="py"><span class="brown">"""
+This is a comment
+written in
+more than just one line
+"""</span>
+print("Hello, World!")</div>
+
+<p>As long as the string is not assigned to a variable, Python will read the code, but then ignore it, and you have made a multiline comment.</p>
+</article>
+
+<hr>
+
+<article id="six">
+<header><h1>Python Variables</h1></header>
+ <br>
+ 
+<section>
+
+<h2><u>Creating Variables</u></h2>
+<p>Python has no command for declaring a variable.
+A variable is created the moment you first assign a value to it.</p>
+
+<div class="syntax" name="py">x = 5
+y = "John"
+print(x)
+print(y)</div>
+
+<p>Variables do not need to be declared with any particular type, and can even change type after they have been set.</p>
+
+<div class="syntax" name="py" style="white-space: pre;">x = 4           <span class="grey"># x is of type int</span>
+x = "Sally" <span class="grey"># x is now of type str</span>
+print(x)</div>
+
+<h2><u>Casting</u></h2>
+
+<p>If you want to specify the data type of a variable, this can be done with casting.</p>
+
+<div class="syntax" name="py" style="white-space: pre;">x = str(3)     <span class="grey"># x will be '3'</span>
+y = int(3)     <span class="grey"># y will be 3</span>
+z = float(3)  <span class="grey"># z will be 3.0</span></div>
+
+<h2><u>Get the Type</u></h2>
+
+<p>You can get the data type of a variable with the type() function.</p>
+
+<div class="syntax" name="py" style="white-space: pre;">x = 5
+y = "John"
+print(type(x))
+print(type(y))</div>
+
+<p>We will learn more about data types and casting another day.</p>
+
+<h2><u>Single or Double Quotes?</u></h2>
+
+<p>String variables can be declared either by using single or double quotes:</p>
+
+<div class="syntax" name="py" style="white-space: pre;">x = "John"
+<span class="grey"># is the same as</span>
+x = 'John'
+</div>
+
+<h2><u>Case-Sensitive</u></h2>
+
+<p>Variable names are case-sensitive.</p>
+
+<div class="syntax" name="py" style="white-space: pre;">a = 4
+A = "Sally"
+<span class="grey">#A will not overwrite a</span>
+</div>
+</section>
+
+<hr style="height: 0px">
+
+<section id="six-2">
+    <header><h2>Variable Names</h2></header> 
+
+ 
+<p>A variable can have a short name (like x and y) or a more descriptive name (age, carname, total_volume). Rules for Python variables:</p>
+
+<ul>
+    <li>A variable name must start with a letter or the underscore character</li>
+    <li>A variable name cannot start with a number</li>
+    <li>A variable name can only contain alpha-numeric characters and underscores (A-z, 0-9, and _ )</li>
+    <li>Variable names are case-sensitive (age, Age and AGE are three different variables)</li>
+</ul>
+
+<p>Variable names with more than one word can be difficult to read.
+There are several techniques you can use to make them more readable:</p>
+
+<ul>
+    <li><strong>Camel Case -</strong> myVariableName</li>
+    <li><strong>Pascal Case -</strong> MyVariableName</li>
+    <li><strong>Snake Case -</strong> my_variable_name</li>
+</ul>
+</section>
+
+<hr style="height: 0px">
+
+<section id="six-3">
+    <header><h2>Assign Multiple Values</h2></header> 
+
+<h2><u>Many Values to Multiple Variables</u></h2>
+
+<p>Python allows you to assign values to multiple variables in one line:</p>
+
+<div class="syntax" name="py">x, y, z = "Orange", "Banana", "Cherry"
+print(x)
+print(y)
+print(z)</div>
+
+<p>Make sure the number of variables matches the number of values, or else you will get an error.</p>
+
+<h2><u>One Value to Multiple Variables</u></h2>
+
+<p>And you can assign the same value to multiple variables in one line:</p>
+
+<div class="syntax" name="py">x = y = z = "Orange"
+print(x)
+print(y)
+print(z)</div>
+
+<h2><u>Unpack a Collection</u></h2>
+
+<p>If you have a collection of values in a list, tuple etc. Python allows you extract the values into variables. This is called unpacking.</p>
+
+<div class="syntax" name="py">fruits = ["apple", "banana", "cherry"]
+x, y, z = fruits
+print(x)
+print(y)
+print(z)</div>
+</section>
+<br>
+<hr style="height: 0px">
+
+<section id="six-4">
+    <header><h2>Output Variables</h2></header> 
+
+ 
+<p>The Python print statement is often used to output variables.
+To combine both text and a variable, Python uses the + character:</p>
+
+<div class="syntax" name="py">x = "awesome"
+print("Python is " + x)
+<span class="grey"># outcome will be "Python is awesome"</span></div>
+
+<p>You can also use the + character to add a variable to another variable:</p>
+
+<div class="syntax" name="py">x = "Python is "
+y = "awesome"
+z =  x + y
+print(z)
+<span class="grey"># outcome will be "Python is awesome"</span></div>
+
+<p>For numbers, the + character works as a mathematical operator:</p>
+
+<div class="syntax" name="py">x = 5
+y = 10
+print(x + y) 
+<span class="grey"># outcome will be 15</span></div>
+
+<p>If you try to combine a string and a number, Python will give you an error:</p>
+
+<p class="left" style="text-shadow: 1px 1px 1px black; color: red">Syntax Error:</p>
+<div class="syntax" name="py" style="border: 3px dotted red">x = 5
+y = "John"
+print(x + y)</div>
+
+<p>If you want to concatenate a number, such as an integer int or a floating point float , with a string, convert the number to a string with str()
+and then use the + operator:</p>
+
+ <div class="syntax" name="py"  >x = 5
+y = "John"
+print(str(x) + y)
+<span class="grey"># outcome will be 5John</span></div>
+</section>
+
+<hr style="height: 0px">
+
+<section id="six-5">
+    <header><h2>Global Variables</h2></header> 
+
+<p>Variables that are created outside of a function (as in all of the examples above) are known as global variables.
+Global variables can be used by everyone, both inside of functions and outside.</p>
+
+<div class="syntax" name="py">x = "awesome"
+
+def myfunc():
+  print("Python is " + x)
+
+myfunc()</div>
+
+<p>If you create a variable with the same name inside a function, this variable will be local, and can only be used inside the function. The global variable with the same name will remain as it was, global and with the original value.</p>
+
+<div class="syntax" name="py">x = "awesome"
+
+def myfunc():
+  x = "fantastic"
+  print("Python is " + x)
+
+myfunc()
+<span class="grey"># outcome will be "Python is fantastic"</span>
+
+print("Python is " + x)
+<span class="grey"># outcome will be "Python is awesome"</span></div>
+
+<h2><u>The global Keyword</u></h2>
+
+<p>Normally, when you create a variable inside a function, that variable is local, and can only be used inside that function.
+<br><br>To create a global variable inside a function, you can use the global keyword.</p>
+
+<div class="syntax" name="py">def myfunc():
+  global x
+  x = "fantastic"
+
+myfunc()
+
+print("Python is " + x)
+<span class="grey"># outcome will be "Python is fantastic"</span>
+</div>
+</section>
+
+</p>
+</article>
+<hr>
+</body>
+</html>   

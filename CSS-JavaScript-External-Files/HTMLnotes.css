@@ -72,3 +72,42 @@ a:hover {
 img{
     max-width: 95vw !important;
 }
+header h1{
+    font-size: 2em;
+}
+.syntax{
+    white-space: pre-wrap;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    width: fit-content;
+    border-radius: 7px;
+    margin-left: 10px;
+    padding-right: 100px;
+    position: relative;
+    font-size: 1em;
+}
+.syntax::after{
+    content: attr(name);
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: white;
+    display: block;
+    width: fit-content;
+    background-color: orangered;
+    padding: 5px 10px;
+    border-radius: 25%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 0.7em;
+}
+.blue{
+    background-color: unset;
+    color: rgb(38, 127, 228);
+    margin: 0px;
+}
+.green{
+    background-color: unset;
+    color: rgb(30, 206, 14);
+    margin: 0px;
+}
