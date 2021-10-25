@@ -4,79 +4,142 @@
 <meta charset="UTF-8">
 <title> Backend web development notes </title>
 <link rel="stylesheet" href="../CSS-JavaScript-External-Files/HTMLnotes.css?version=1">
+<style>
+    article section{
+        background-color: rgba(255, 255, 255, 0.2);
+        border: 2px solid black;
+        width: 85%;
+        padding: 30px 5%;
+        margin: auto;
+        margin-top: 50px;
+    }
+    article header :is(h2,h1){
+        border: 3px solid black;
+        border-radius: 20px;
+        width: fit-content;
+        padding: 10px;
+        margin: auto;
+        background-color: #2d3436;
+        background-image: linear-gradient(315deg, #000000 0%, #2d3436 46%, #000000 80%);
+        color: white;
+        font-family: 'Luckiest Guy', cursive;
+        max-width: 60%;
+        user-select: none;
+    }
+    article header h1{
+        font-size: 2em;
+        background-color: #2d3436;
+        background-image: linear-gradient(315deg, #000000 0%, #2d3436 46%, #000000 80%);
+    }
+</style>
 </head>
 <body>
 <hr>
 
-<h1>MySQL Notes:</h1>
-
-<hr>
-
 <article>
+<header><h1>MySQL Notes:</h1></header>
 
-<h1>Page one of MySQL notes:</h1>
+<section>
+<header><h2>Page one of MySQL notes:</h2></header>
 <p><a href="../Backend-Notes/backend1.html">Start of the page</a></p>
 <p><a href="./../Backend-Notes/backend1.html#one">What is mySQL?</a></p>
-    <p><a href="./../Backend-Notes/backend1.html#two">Installing MySQL on Windows</a></p>
-    <p><a href="./../Backend-Notes/backend1.html#three">Preparations for the following lessons</a></p>
-    <p><a href="./../Backend-Notes/backend1.html#four">Introduction to basics about retrieving data</a></p>
-    <p><a href="./../Backend-Notes/backend1.html#five">The IN and BETWEEN operators</a></p>
-    <p><a href="./../Backend-Notes/backend1.html#six">The LIKE and REGEXP operators</a></p>
-    <p><a href="./../Backend-Notes/backend1.html#seven">The IS NULL and IS NOT NULL operators</a></p>
-    <p><a href="./../Backend-Notes/backend1.html#eight">More about the ORDER BY keyword</a></p>
-    <p><a href="./../Backend-Notes/backend1.html#nine">The LIMIT keyword</a></p>
-    <p><a href="./../Backend-Notes/backend1.html#ten">Inner Joins</a></p>
-    <p><a href="./../Backend-Notes/backend1.html#eleven">Self Joins</a></p>
-    <p><a href="./../Backend-Notes/backend1.html#twelve">Joining multiple tables</a></p>
-    <p><a href="./../Backend-Notes/backend1.html#thirteen">Compound Join Conditions</a></p>
-    <p><a href="./../Backend-Notes/backend1.html#fourteen">Implicit Join Syntax</a></p>
-    <p><a href="./../Backend-Notes/backend1.html#fifteen">Outer Joins</a></p>
-    <p><a href="./../Backend-Notes/backend1.html#sixteen">Joining multiple tables with mixed types of joins</a></p>
-    <p><a href="./../Backend-Notes/backend1.html#seventeen">The USING keyword</a></p>
-    <p><a href="./../Backend-Notes/backend1.html#eighteen">Natural Joins</a></p>
-    <p><a href="./../Backend-Notes/backend1.html#nineteen">Cross Joins</a></p>
-    <p><a href="./../Backend-Notes/backend1.html#twenty">The UNION keyword</a></p>
-    <p><a href="./../Backend-Notes/backend1.html#twentyone">Column Attributes</a></p>
-    <p><a href="./../Backend-Notes/backend1.html#twentytwo">How to insert rows</a></p>
-    <p><a href="./../Backend-Notes/backend1.html#twentyfour">The LAST_INSERT_ID function of mySQL</a></p>
-    <p><a href="./../Backend-Notes/backend1.html#twentyfive">How to copy data from another table</a></p>
-    <p><a href="./../Backend-Notes/backend1.html#twentysix">How to update rows</a></p>
-    <p><a href="./../Backend-Notes/backend1.html#twentyseven">How to delete rows</a></p>
-    <p><a href="./../Backend-Notes/backend1.html#twentyeight"></a></p>
+<p><a href="./../Backend-Notes/backend1.html#two">Installing MySQL on Windows</a></p>
+<p><a href="./../Backend-Notes/backend1.html#three">Preparations for the following lessons</a></p>
+<p><a href="./../Backend-Notes/backend1.html#four">Introduction to basics about retrieving data</a></p>
+<p><a href="./../Backend-Notes/backend1.html#five">The IN and BETWEEN operators</a></p>
+<p><a href="./../Backend-Notes/backend1.html#six">The LIKE and REGEXP operators</a></p>
+<p><a href="./../Backend-Notes/backend1.html#seven">The IS NULL and IS NOT NULL operators</a></p>
+<p><a href="./../Backend-Notes/backend1.html#eight">More about the ORDER BY keyword</a></p>
+<p><a href="./../Backend-Notes/backend1.html#nine">The LIMIT keyword</a></p>
+<p><a href="./../Backend-Notes/backend1.html#ten">Inner Joins</a></p>
+<p><a href="./../Backend-Notes/backend1.html#eleven">Self Joins</a></p>
+<p><a href="./../Backend-Notes/backend1.html#twelve">Joining multiple tables</a></p>
+<p><a href="./../Backend-Notes/backend1.html#thirteen">Compound Join Conditions</a></p>
+<p><a href="./../Backend-Notes/backend1.html#fourteen">Implicit Join Syntax</a></p>
+<p><a href="./../Backend-Notes/backend1.html#fifteen">Outer Joins</a></p>
+<p><a href="./../Backend-Notes/backend1.html#sixteen">Joining multiple tables with mixed types of joins</a></p>
+<p><a href="./../Backend-Notes/backend1.html#seventeen">The USING keyword</a></p>
+<p><a href="./../Backend-Notes/backend1.html#eighteen">Natural Joins</a></p>
+<p><a href="./../Backend-Notes/backend1.html#nineteen">Cross Joins</a></p>
+<p><a href="./../Backend-Notes/backend1.html#twenty">The UNION keyword</a></p>
+<p><a href="./../Backend-Notes/backend1.html#twentyone">Column Attributes</a></p>
+<p><a href="./../Backend-Notes/backend1.html#twentytwo">How to insert rows</a></p>
+<p><a href="./../Backend-Notes/backend1.html#twentyfour">The LAST_INSERT_ID function of mySQL</a></p>
+<p><a href="./../Backend-Notes/backend1.html#twentyfive">How to copy data from another table</a></p>
+<p><a href="./../Backend-Notes/backend1.html#twentysix">How to update rows</a></p>
+<p><a href="./../Backend-Notes/backend1.html#twentyseven">How to delete rows</a></p>
+<p><a href="./../Backend-Notes/backend1.html#twentyeight"></a></p>
+</section>
 
-<hr style="height: 0px">
-
-<h1>Page two of MySQL notes:</h1>
+<section>
+<header><h2>Page two of MySQL notes:</h2></header>
 <p><a href="../Backend-Notes/backend2.html">Start of the page</a></p>
 <p><a href="./../Backend-Notes/backend2.html#one">How to create or remove Databases</a></p>
-    <p><a href="./../Backend-Notes/backend2.html#two">How to create, copy or remove tables</a></p>
-    <p><a href="./../Backend-Notes/backend2.html#three">How to add, delete, or modify columns in an existing table</a></p>
-    <p><a href="./../Backend-Notes/backend2.html#four">SQL Constraints</a></p>
-    <p><a href="./../Backend-Notes/backend2.html#five">SQL NOT NULL Constraint</a></p>
-    <p><a href="./../Backend-Notes/backend2.html#six">SQL UNIQUE Constraint</a></p>
-    <p><a href="./../Backend-Notes/backend2.html#seven">SQL PRIMARY KEY Constraint</a></p>
-    <p><a href="./../Backend-Notes/backend2.html#eight">SQL FOREIGN KEY Constraint</a></p>
-    <p><a href="./../Backend-Notes/backend2.html#nine">SQL CHECK Constraint</a></p>
-    <p><a href="./../Backend-Notes/backend2.html#ten">SQL DEFAULT Constraint</a></p>
-    <p><a href="./../Backend-Notes/backend2.html#eleven">SQL CREATE INDEX Statement</a></p>
-    <p><a href="./../Backend-Notes/backend2.html#twelve">SQL AUTO INCREMENT Field</a></p>
-    <p><a href="./../Backend-Notes/backend2.html#thirteen">SQL Views</a></p>
-    <p><a href="./../Backend-Notes/backend2.html#fourteen">SQL Injection</a></p>
-    <p><a href="./../Backend-Notes/backend2.html#fifteen">SQL Hosting</a></p>
-    <p><a href="./../Backend-Notes/backend2.html#sixteen">What is a Stored Procedure?</a></p>
+<p><a href="./../Backend-Notes/backend2.html#two">How to create, copy or remove tables</a></p>
+<p><a href="./../Backend-Notes/backend2.html#three">How to add, delete, or modify columns in an existing table</a></p>
+<p><a href="./../Backend-Notes/backend2.html#four">SQL Constraints</a></p>
+<p><a href="./../Backend-Notes/backend2.html#five">SQL NOT NULL Constraint</a></p>
+<p><a href="./../Backend-Notes/backend2.html#six">SQL UNIQUE Constraint</a></p>
+<p><a href="./../Backend-Notes/backend2.html#seven">SQL PRIMARY KEY Constraint</a></p>
+<p><a href="./../Backend-Notes/backend2.html#eight">SQL FOREIGN KEY Constraint</a></p>
+<p><a href="./../Backend-Notes/backend2.html#nine">SQL CHECK Constraint</a></p>
+<p><a href="./../Backend-Notes/backend2.html#ten">SQL DEFAULT Constraint</a></p>
+<p><a href="./../Backend-Notes/backend2.html#eleven">SQL CREATE INDEX Statement</a></p>
+<p><a href="./../Backend-Notes/backend2.html#twelve">SQL AUTO INCREMENT Field</a></p>
+<p><a href="./../Backend-Notes/backend2.html#thirteen">SQL Views</a></p>
+<p><a href="./../Backend-Notes/backend2.html#fourteen">SQL Injection</a></p>
+<p><a href="./../Backend-Notes/backend2.html#fifteen">SQL Hosting</a></p>
+<p><a href="./../Backend-Notes/backend2.html#sixteen">What is a Stored Procedure?</a></p>
+</section>
+
+<br>
 
 </article>
 
 
 <hr>
 
-<h1>Python Notes:</h1>
-
-<hr>
-
 <article>
-<h1>Page one of my Python notes:</h1>
-<p><a href="../Backend-Notes/backend3.html">Start of the page</a></p>
+<header><h1>Python Notes:</h1></header>
+
+<section>
+<header><h2>Page one of my Python notes:</h2></header>
+ <style>
+    .content li{
+        margin-top: 10px;
+    }
+</style>
+<div class="content" style="width: fit-content; margin-left: 40%; white-space: unset;">
+    <ul>
+        <li><a href="../Backend-Notes/backend3.html">Start of the page</a></li>
+        <li><a href="./../Backend-Notes/backend3.html#one">Python Introduction</a></li>
+        <li><a href="./../Backend-Notes/backend3.html#two">How to install Python</a></li>
+        <li><a href="./../Backend-Notes/backend3.html#three">Python Getting Started</a></li>
+        <li><a href="./../Backend-Notes/backend3.html#four">Python Syntax</a></li>
+        <li><a href="./../Backend-Notes/backend3.html#five">Python Comments</a></li>
+        <li><a href="./../Backend-Notes/backend3.html#six">Python Variables</a>
+            <ul>
+                <li><a href="./../Backend-Notes/backend3.html#six-2">Variable Names</a></li>
+                <li><a href="./../Backend-Notes/backend3.html#six-3">Assign Multiple Values</a></li>
+                <li><a href="./../Backend-Notes/backend3.html#six-4">Output Variables</a></li>
+                <li><a href="./../Backend-Notes/backend3.html#six-5">Global Variables</a></li>        
+            </ul>
+        </li>
+        <li><a href="./../Backend-Notes/backend3.html#seven">Python Data Types</a></li>
+        <li><a href="./../Backend-Notes/backend3.html#eight">Python Numbers</a></li>
+        <li><a href="./../Backend-Notes/backend3.html#nine">Python Strings</a>
+            <ul>
+                <li><a href="./../Backend-Notes/backend3.html#nine-2">The Basics</a></li>
+                <li><a href="./../Backend-Notes/backend3.html#nine-3">Slicing Strings</a></li>
+                <li><a href="./../Backend-Notes/backend3.html#nine-4">Modify Strings</a></li>
+                <li><a href="./../Backend-Notes/backend3.html#nine-5">String Format</a></li>
+                <li><a href="./../Backend-Notes/backend3.html#nine-6">Escape Character</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+</section>
+
 </article>
 <hr>
 </body>

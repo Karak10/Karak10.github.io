@@ -111,3 +111,25 @@ header h1{
     color: rgb(30, 206, 14);
     margin: 0px;
 }
+
+.table{
+    background-color: rgba(255, 255, 255, 0.2);
+    text-align: left;
+    border-collapse: collapse;
+    margin: auto;
+    background: -moz-linear-gradient(
+		top,
+		#ffcb69 0%,
+		#f0a733 50%,
+		#f2a324 92%,
+		#ffb730);
+ 	border-radius: 6px;
+	border: 1px solid #965F06;
+	box-shadow:
+		1px 1px 1px rgba(000,000,000,0.5),
+		inset 1px 2px 0px rgba(255,255,255,0.4);
+}
+.table :is(td, th){
+    border: 2px solid black;
+    padding: 10px;
+}

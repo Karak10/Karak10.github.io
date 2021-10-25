@@ -3,6 +3,7 @@
 <head>
 <title> Page three of my backend notes</title>
 <meta charset="UTF-8"> 
+
 <link href="../CSS-JavaScript-External-Files/HTMLnotes.css" rel="stylesheet">
 <style>
     
@@ -120,11 +121,30 @@ li{
 ul{
     all:revert
 }
-div li dl dd ul li{
-    margin-left: 40px
-}
+
 .content li{
     margin-top: 10px;
+}
+article section{
+        background-color: rgba(255, 255, 255, 0.2);
+        border: 2px solid black;
+        width: 85%;
+        padding: 30px 5%;
+        margin: auto;
+        margin-top: 50px;
+    }
+.w3-btn{
+    background-color: green;
+    color: white !important;
+    text-decoration: none !important;
+    padding: 3px;
+    font-family: 'Luckiest Guy', cursive;    
+    border-radius: 10px;
+    text-shadow: none !important;
+    font-weight: 10px;
+}
+.w3-btn:hover{
+    text-decoration: none !important;
 }
     </style> 
 </head>
@@ -149,30 +169,37 @@ div li dl dd ul li{
 
 </nav>
 
-    <h3>Informations included in this page:</h3>
-    <div class="content" style="width: fit-content; margin-left: 40%; white-space: unset;">
-    <li><a href="./../Backend-Notes/backend3.html#one">Python Introduction</a></li>
-    <li><a href="./../Backend-Notes/backend3.html#two">How to install Python</a></li>
-    <li><a href="./../Backend-Notes/backend3.html#three">Python Getting Started</a></li>
-    <li><a href="./../Backend-Notes/backend3.html#four">Python Syntax</a></li>
-    <li><a href="./../Backend-Notes/backend3.html#five">Python Comments</a></li>
-    <li><dl style="display: inline;">
-            <dt style="display: inline;"><a href="./../Backend-Notes/backend3.html#six">Python Variables</a></dt>
-            <dd >
-                <ul style="display: inline;">
-                     <li style="margin-top: -10px;"><a href="./../Backend-Notes/backend3.html#six-2">Variable Names</a></li>
-                    <li><a href="./../Backend-Notes/backend3.html#six-3">Assign Multiple Values</a></li>
-                    <li><a href="./../Backend-Notes/backend3.html#six-4">Output Variables</a></li>
-                    <li><a href="./../Backend-Notes/backend3.html#six-5">Global Variables</a></li>
-                </ul>
-            </dd>
-        </dl>
-    </li>
+<h3>Informations included in this page:</h3>
+<div class="content" style="width: fit-content; margin-left: 40%; white-space: unset;">
+    <ul>
+        <li><a href="./../Backend-Notes/backend3.html#one">Python Introduction</a></li>
+        <li><a href="./../Backend-Notes/backend3.html#two">How to install Python</a></li>
+        <li><a href="./../Backend-Notes/backend3.html#three">Python Getting Started</a></li>
+        <li><a href="./../Backend-Notes/backend3.html#four">Python Syntax</a></li>
+        <li><a href="./../Backend-Notes/backend3.html#five">Python Comments</a></li>
+        <li><a href="./../Backend-Notes/backend3.html#six">Python Variables</a>
+            <ul>
+                <li><a href="./../Backend-Notes/backend3.html#six-2">Variable Names</a></li>
+                <li><a href="./../Backend-Notes/backend3.html#six-3">Assign Multiple Values</a></li>
+                <li><a href="./../Backend-Notes/backend3.html#six-4">Output Variables</a></li>
+                <li><a href="./../Backend-Notes/backend3.html#six-5">Global Variables</a></li>        
+            </ul>
+        </li>
+        <li><a href="./../Backend-Notes/backend3.html#seven">Python Data Types</a></li>
+        <li><a href="./../Backend-Notes/backend3.html#eight">Python Numbers</a></li>
+        <li><a href="./../Backend-Notes/backend3.html#nine">Python Strings</a>
+            <ul>
+                <li><a href="./../Backend-Notes/backend3.html#nine-2">The Basics</a></li>
+                <li><a href="./../Backend-Notes/backend3.html#nine-3">Slicing Strings</a></li>
+                <li><a href="./../Backend-Notes/backend3.html#nine-4">Modify Strings</a></li>
+                <li><a href="./../Backend-Notes/backend3.html#nine-5">String Format</a></li>
+                <li><a href="./../Backend-Notes/backend3.html#nine-6">Escape Character</a></li>
+            </ul>
+        </li>
     </ul>
-    </div>
+</div>
 
-    <br>
-
+<br>
 
 
 </article>
@@ -578,7 +605,8 @@ print("Hello, World!")</div>
 <article id="six">
 <header><h1>Python Variables</h1></header>
  <br>
- 
+
+
 <section>
 
 <h2><u>Creating Variables</u></h2>
@@ -634,8 +662,7 @@ A = "Sally"
 </div>
 </section>
 
-<hr style="height: 0px">
-
+ 
 <section id="six-2">
     <header><h2>Variable Names</h2></header> 
 
@@ -659,8 +686,7 @@ There are several techniques you can use to make them more readable:</p>
 </ul>
 </section>
 
-<hr style="height: 0px">
-
+ 
 <section id="six-3">
     <header><h2>Assign Multiple Values</h2></header> 
 
@@ -695,8 +721,7 @@ print(y)
 print(z)</div>
 </section>
 <br>
-<hr style="height: 0px">
-
+ 
 <section id="six-4">
     <header><h2>Output Variables</h2></header> 
 
@@ -739,8 +764,7 @@ print(str(x) + y)
 <span class="grey"># outcome will be 5John</span></div>
 </section>
 
-<hr style="height: 0px">
-
+ 
 <section id="six-5">
     <header><h2>Global Variables</h2></header> 
 
@@ -784,7 +808,456 @@ print("Python is " + x)
 </div>
 </section>
 
-</p>
+<br>
+ </article>
+
+<hr>
+
+<article id="seven">
+<header><h1>Python Data Types</h1></header>
+
+<p>In programming, data type is an important concept.
+Variables can store data of different types, and different types can do different things.
+Python has the following data types built-in by default, in these categories:</p>
+
+<ul>
+    <li><strong>Text Type:</strong> str</li>
+    <li><strong>Numeric Types:</strong> int, float, complex</li>
+    <li><strong>Sequence Types:</strong> list, tuple, range</li>
+    <li><strong>Mapping Type:</strong> dict</li>
+    <li><strong>Set Types:</strong> set, frozenset</li>
+    <li><strong>Boolean Type:</strong> bool</li>
+    <li><strong>Binary Types:</strong> bytes, bytearray, memoryview</li>
+</ul>
+
+<h2><u>Getting the Data Type</u></h2>
+
+<p>You can get the data type of any object by using the <strong>type()</strong> function:</p>
+
+<div class="syntax" name="py">x = 5
+print(type(x))</div>
+
+<h2><u>Setting the Data Type</u></h2>
+
+<p>In Python, the data type is set when you assign a value to a variable:</p>
+<table class="table">
+    <tbody><tr>
+    <th style="min-width:350px">Example</th>
+    <th>Data Type</th>
+     </tr>
+    <tr>
+    <td>x = "Hello World"</td>
+    <td>str</td>
+    </tr>
+    <tr>
+    <td>x = 20</td>
+    <td>int</td>
+    </tr>
+    <tr>
+    <td>x = 20.5</td>
+    <td>float</td>
+    </tr>
+    <tr>
+    <td>x = 1j</td>
+    <td>complex</td>
+    </tr>
+    <tr>
+    <td>x = ["apple", "banana", "cherry"]</td>
+    <td>list</td>
+    </tr>
+      <tr>
+    <td>x = ("apple", "banana", "cherry")</td>
+    <td>tuple</td>
+      </tr>
+      <tr>
+    <td>x = range(6)</td>
+    <td>range</td>
+      </tr>
+      <tr>
+    <td>x = {"name" : "John", "age" : 36}</td>
+    <td>dict</td>
+      </tr>
+      <tr>
+    <td>x = {"apple", "banana", "cherry"}</td>
+    <td>set</td>
+      </tr>
+      <tr>
+    <td>x = frozenset({"apple", "banana", "cherry"})</td>
+    <td>frozenset</td>
+      </tr>
+      <tr>
+    <td>x = True</td>
+    <td>bool</td>
+      </tr>
+      <tr>
+    <td>x = b"Hello"</td>
+    <td>bytes</td>
+      </tr>
+      <tr>
+    <td>x = bytearray(5)</td>
+    <td>bytearray</td>
+      </tr>
+    <tr>
+    <td>x = memoryview(bytes(5))</td>
+    <td>memoryview</td>
+    </tr>
+    </tbody></table>
+
+<h2><u>Setting the Specific Data Type</u></h2>
+
+<p>If you want to specify the data type, you can use the following constructor functions:</p>
+
+<table  class="table">
+    <tbody><tr>
+    <th style="min-width:350px">Example</th>
+    <th>Data Type</th>
+    </tr>
+    <tr>
+    <td>x = str("Hello World")</td>
+    <td>str</td>
+    </tr>
+    <tr>
+    <td>x = int(20)</td>
+    <td>int</td>
+    </tr>
+    <tr>
+    <td>x = float(20.5)</td>
+    <td>float</td>
+    </tr>
+    <tr>
+    <td>x = complex(1j)</td>
+    <td>complex</td>
+    </tr>
+    <tr>
+    <td>x = list(("apple", "banana", "cherry"))</td>
+    <td>list</td>
+    </tr>
+      <tr>
+    <td>x = tuple(("apple", "banana", "cherry"))</td>
+    <td>tuple</td>
+      </tr>
+      <tr>
+    <td>x = range(6)</td>
+    <td>range</td>
+      </tr>
+      <tr>
+    <td>x = dict(name="John", age=36)</td>
+    <td>dict</td>
+      </tr>
+      <tr>
+    <td>x = set(("apple", "banana", "cherry"))</td>
+    <td>set</td>
+      </tr>
+      <tr>
+    <td>x = frozenset(("apple", "banana", "cherry"))</td>
+    <td>frozenset</td>
+      </tr>
+      <tr>
+    <td>x = bool(5)</td>
+    <td>bool</td>
+      </tr>
+      <tr>
+    <td>x = bytes(5)</td>
+    <td>bytes</td>
+      </tr>
+      <tr>
+    <td>x = bytearray(5)</td>
+    <td>bytearray</td>
+      </tr>
+    <tr>
+    <td>x = memoryview(bytes(5))</td>
+    <td>memoryview</td>
+    </tr>
+    </tbody></table>
+    <br>
+</article>
+
+<hr>
+
+<article id="eight">
+<header><h1>Python Numbers</h1></header>
+
+<p>There are three numeric types in Python:</p>
+
+<ul>
+    <li>int</li>
+    <li>float</li>
+    <li>complex</li>
+</ul>
+
+<p>Variables of numeric types are created when you assign a value to them.
+Int, or integer, is a whole number, positive or negative, without decimals, of unlimited length.</p>
+Float, or "floating point number" is a number, positive or negative, containing one or more decimals.
+Complex numbers are written with a "j" as the imaginary part:
+
+<h2><u>Type Conversion</u></h2>
+
+<p>You can convert from one type to another with the <strong>int()</strong>, <strong>float()</strong>, and <strong>complex()</strong> methods,
+this is what we call "Casting". Python is an object-orientated language, and as such it uses classes to define data types, including its primitive types.
+Casting in python is therefore done using constructor functions:</p>
+
+<div class="syntax" name="py">x = 1
+y = 2.8
+
+a = float(x)
+b = int(y)
+c = complex(x)
+
+print(a) <span class="grey"># outputs 1.0</span>
+print(b) <span class="grey"># outputs 2</span>
+print(c) <span class="grey"># outputs (1+0j)</span></div>
+
+<p><Strong>Note:</Strong> You cannot convert complex numbers into another number type.</p>
+
+<h2><u>Random Number:</u></h2>
+
+<p>Python does not have a random() function to make a random number, but Python has a built-in module called random that can be used to make random numbers:</p>
+
+<div class="syntax" name="py">import random
+
+print(random.randrange(1, 10))</div>
+
+</article>
+
+<hr>
+
+<article id="nine">
+<header><h1>Python Strings</h1></header>
+
+<section id="nine-2">
+<header><h2>The Basics</h2></header>
+<p>Strings in python are surrounded by either single quotation marks, or double quotation marks.
+'hello' is the same as "hello".
+You can display a string literal with the print() function:</p>
+
+<div class="syntax" name="py">a = "Hello"
+print(a)
+print('Hello')</div>
+
+<h2><u>Multiline Strings</u></h2>
+
+<p>You can assign a multiline string to a variable by using three quotes:</p>
+
+<div class="syntax" name="py">a = """Lorem ipsum dolor sit amet,
+consectetur adipiscing elit,
+sed do eiusmod tempor incididunt
+ut labore et dolore magna aliqua."""
+print(a)</div>
+
+<p>Or three single quotes:</p>
+
+<div class="syntax" name="py">a = '''Lorem ipsum dolor sit amet,
+consectetur adipiscing elit,
+sed do eiusmod tempor incididunt
+ut labore et dolore magna aliqua.'''
+print(a)</div>
+
+<p><Strong>Note:</Strong> in the result, the line breaks are inserted at the same position as in the code.</p>
+
+<h2><u>Strings are Arrays</u></h2>
+
+<p>Like many other popular programming languages, strings in Python are arrays of bytes representing unicode characters.
+However, Python does not have a character data type, a single character is simply a string with a length of 1.
+Square brackets can be used to access elements of the string.</p>
+
+<div class="syntax" name="py">a = "Hello, World!"
+print(a[0]) <span class="grey"># outputs "H"</span></div>
+
+<h2><u>Looping Through a String</u></h2>
+
+<p>Since strings are arrays, we can loop through the characters in a string, with a for loop.</p>
+
+<div class="syntax" name="py">for x in "banana":
+    print(x)</div>
+
+<p>We will learn more about loops another time.</p>
+
+<h2><u>String Length</u></h2>
+
+<p>To get the length of a string, use the len() function.</p>
+
+<div class="syntax" name="py">a = "Hello, World!"
+print(len(a)) <Span class="grey"># outputs 13</Span></div>
+
+<h2><u>Check String</u></h2>
+
+<p>To check if a certain phrase or character is present in a string, we can use the keyword in.</p>
+
+<div class="syntax" name="py">txt = "The best things in life are free!"
+if "free" in txt:
+  print("Yes, 'free' is present.")</div>
+
+<p>To check if a certain phrase or character is NOT present in a string, we can use the keyword not in.</p>
+
+<div class="syntax" name="py">txt = "The best things in life are free!"
+if "expensive" not in txt:
+  print("No, 'expensive' is NOT present.")</div>
+
+</section>
+
+<section id="nine-3">
+<header><h2>Slicing Strings</h2></header>
+
+<p>You can return a range of characters by using the slice syntax.
+Specify the start index and the end index, separated by a colon, to return a part of the string.</p>
+
+<div class="syntax" name="py">b = "Hello, World!"
+print(b[7:12]) <span class="grey"># outputs "World"</span></div>
+
+<h2><u>Slice From the Start</u></h2>
+
+<p>By leaving out the start index, the range will start at the first character:</p>
+
+<div class="syntax" name="py">b = "Hello, World!"
+print(b[:5]) <Span class="grey"># outputs "Hello"</Span></div>
+
+<h2><u>Slice To the End</u></h2>
+
+<p>By leaving out the end index, the range will go to the end:</p>
+
+<div class="syntax" name="py">b = "Hello, World!"
+print(b[2:]) <Span class="grey"># outputs "llo, World!"</Span></div>
+
+<h2><u>Negative Indexing</u></h2>
+
+<p>Use negative indexes to start the slice from the end of the string.</p>
+
+<p>The code bellow gets the characters from: "o" in "World!" (position -5)
+to, but not included: "d" in "World!" (position -2):</p>
+
+<div class="syntax" name="py">b = "Hello, World!"
+print(b[-5:-2]) <Span class="grey"># outputs "orl"</Span></div>
+</section>
+
+<section id="nine-4">
+<header><h2>Modify Strings</h2></header>
+<p>Python has a set of built-in methods that you can use on strings.</p>
+<h2><u>Upper Case</u></h2>
+<p>The upper() method returns the string in upper case:</p>
+<div class="syntax" name="py">a = "Hello, World!"
+print(a.upper()) <span class="grey"># outputs "HELLO, WORLD!"</span></div>
+<h2><u>Lower Case</u></h2>
+<p>The lower() method returns the string in lower case:</p>
+<div class="syntax" name="py">a = "Hello, World!"
+print(a.lower()) <span class="grey"># outputs "hello, world!"</span></div>
+<h2><u>Remove Whitespace</u></h2>
+<p>The strip() method removes any whitespace from the beginning or the end:</p>
+<div class="syntax" name="py">a = "    Hello, World!   "
+print(a.strip()) <span class="grey"># outputs "Hello, World!"</span></div>
+<h2><u>Replace String</u></h2>
+<p>The replace() method replaces a string with another string:</p>
+<div class="syntax" name="py">a = "HAHAHA!"
+print(a.replace("H", "J")) <span class="grey"># outputs "JAJAJA"</span></div>
+<h2><u>Split String</u></h2>
+<p>The split() method returns a list where the text between the specified separator becomes the list items.</p>
+
+<div class="syntax" name="py">a = "Hello, World!"
+print(a.split(",")) <span class="grey"># returns ['Hello', '  World!']</span></div>
+
+<h2><u>String Methods</u></h2>
+
+<p>To learn more string methods you can check out this <a href="https://www.w3schools.com/python/python_ref_string.asp" target="_blank">string methods cheatsheet</a>.</p>
+</section>
+
+<section id="nine-5">
+<header><h2>String Format</h2></header>
+<p>As we learned in the Python Variables chapter, we cannot combine strings and numbers.</p>
+<p>But we can combine strings and numbers by using the <strong>format()</strong> method!
+The <strong>format()</strong> method takes the passed arguments, formats them, and places them in the string where the placeholders <strong>{}</strong> are:</p>
+
+<div class="syntax" name="py">age = 36
+txt = "My name is John, and I am {}"
+print(txt.format(age))
+<Span class="grey"># returns "My name is John, and I am 36"</Span></div>
+<p>The format() method takes unlimited number of arguments, and are placed into the respective placeholders:</p>
+<div class="syntax" name="py">quantity = 3
+itemno = 567
+price = 49.95
+myorder = "I want {} pieces of item {} for {} dollars."
+print(myorder.format(quantity, itemno, price))
+<Span class="grey"># returns "I want 3 pieces of item 567 for 49.95 dollars."</Span></div>
+
+<p>You can use index numbers <strong>{0}</strong> to be sure the arguments are placed in the correct placeholders:</p>
+
+<div class="syntax" name="py">quantity = 3
+itemno = 567
+price = 49.95
+myorder = "I want to pay {2} dollars for {0} pieces of item {1}."
+print(myorder.format(quantity, itemno, price))</div>
+
+<p>We will return to string formats again in the future, for now that's all you really need to know.</p>
+</section>
+
+<section id="nine-6">
+<header><h2>Escape Character</h2></header>
+<p>To insert characters that are illegal in a string, use an escape character.
+An escape character is a backslash <strong>\</strong> followed by the character you want to insert.
+An example of an illegal character is a double quote inside a string that is surrounded by double quotes:</p>
+
+<p class="left" style='color: red; text-shadow: 1px 1px 1px black'>Syntax Error:</p>
+<div class="syntax" style="border: 3px dotted red" name="py">txt = <span class="brown">"We are the so-called "</span>Vikings<span class="brown">" from the north."</span></div>
+
+<p>To fix this problem, use the escape character <strong>\</strong>:
+
+<p class="left" style='color: green; text-shadow: 1px 1px 1px black'>No Errors:</p>
+<div class="syntax" style="border: 3px dotted green" name="py">txt = <span class="brown">"We are the so-called \"Vikings\" from the north."</span></div>
+
+<p>Here are some other escape characters that are used in Python:</p>
+
+<table class="table">
+    <tbody><tr>
+      <th width="25%">Code</th>
+      <th>Result</th>
+      <th style="width:10%">Try it</th>
+    </tr>
+    <tr>
+      <td>\'</td>
+      <td>Single Quote</td>
+    <td><a target="_blank" class="w3-btn btnsmall btnsmall" href="https://www.w3schools.com/python/trypython.asp?filename=demo_string_escape2">Try it »</a></td>
+    </tr>
+    <tr>
+      <td>\\</td>
+      <td>Backslash</td>
+    <td><a target="_blank" class="w3-btn btnsmall btnsmall" href="https://www.w3schools.com/python/trypython.asp?filename=demo_string_backslash">Try it »</a></td>
+    </tr>
+    <tr>
+      <td>\n</td>
+      <td>New Line</td>
+    <td><a target="_blank" class="w3-btn btnsmall btnsmall" href="https://www.w3schools.com/python/trypython.asp?filename=demo_string_newline">Try it »</a></td>
+    </tr>
+    <tr>
+      <td>\r</td>
+      <td>Carriage Return</td>
+    <td><a target="_blank" class="w3-btn btnsmall btnsmall" href="https://www.w3schools.com/python/trypython.asp?filename=demo_string_r">Try it »</a></td>
+    </tr>
+    <tr>
+      <td>\t</td>
+      <td>Tab</td>
+    <td><a target="_blank" class="w3-btn btnsmall btnsmall" href="https://www.w3schools.com/python/trypython.asp?filename=demo_string_t">Try it »</a></td>
+    </tr>
+    <tr>
+      <td>\b</td>
+      <td>Backspace</td>
+    <td><a target="_blank" class="w3-btn btnsmall btnsmall" href="https://www.w3schools.com/python/trypython.asp?filename=demo_string_b">Try it »</a></td>
+    </tr>
+    <tr>
+      <td>\f</td>
+      <td>Form Feed</td>
+    <td></td>
+    </tr>
+    <tr>
+      <td>\ooo</td>
+      <td>Octal value</td>
+    <td><a target="_blank" class="w3-btn btnsmall btnsmall" href="https://www.w3schools.com/python/trypython.asp?filename=demo_string_octal">Try it »</a></td>
+    </tr>
+    <tr>
+      <td>\xhh</td>
+      <td>Hex value</td>
+    <td><a target="_blank" class="w3-btn btnsmall btnsmall" href="https://www.w3schools.com/python/trypython.asp?filename=demo_string_hex">Try it »</a></td>
+    </tr>
+    </tbody></table>
+</section>
+
 </article>
 <hr>
 </body>
