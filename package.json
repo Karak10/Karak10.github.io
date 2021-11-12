@@ -14,5 +14,9 @@
     "dat.gui": "^0.7.7",
     "gsap": "^3.6.0",
     "moment": "^2.29.1"
+  },
+  "devDependencies": {
+    "grunt": "^1.4.1",
+    "grunt-exec": "^3.0.0"
   }
 }
