@@ -1,0 +1,247 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<title> Page four of my backend notes</title>
+<meta charset="UTF-8"> 
+
+<link href="../CSS-JavaScript-External-Files/HTMLnotes.css" rel="stylesheet">
+<style>
+    
+    body{
+        overflow-x: hidden;
+        width: 100%;
+    }
+    .left {
+        text-align: left;
+    }
+
+    iframe {
+        width: 600px;
+        height: 350px;
+        border: 3px solid black;
+        margin: 20px auto 20px auto;
+        display: block;
+    }
+    .code10 {
+    white-space: pre-wrap;
+    background-color: lightgreen;
+    overflow-wrap: break-word;
+    }
+    
+    p {
+    text-align:center;
+    }
+    h1 {
+    text-align:center;
+    }
+    h2 {
+    text-align:center;
+    }
+    h3 {
+    text-align:center;
+    }
+    .c {
+    background-color:lightgreen;
+    }
+    hr {
+    width:100%;
+    height:15px;
+    background-color:black;
+    color:black;
+    border: black solid;
+    }
+    body {
+    background-color:rgb(165, 235, 235);
+    }
+    span {
+    background-color:lightgreen;
+    }
+    
+    a:link {
+    color: black;
+    text-shadow: 1px 0px 1px black;
+    
+    }
+    
+    a:visited {
+    color: black;
+    text-shadow: 1px 0px 1px rgb(22, 22, 22);
+    }
+    
+    a:hover {
+    text-decoration: underline;
+    color: red;
+    text-shadow: 1px 0px 1px black;
+    }
+     
+    img{
+        display: block;
+        margin: 20px auto 20px auto;
+        border: 3px solid black;
+        border-radius: 10px;
+    }
+     
+.syntax div{
+    padding: 10px 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    white-space: pre-wrap;
+    border-left: 5px solid green;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+.grey{
+    color: grey; background-color: unset;
+}
+
+.brown{
+    color: rgb(150, 60, 60); background-color: unset;
+}
+article header :is(h2,h1){
+    border: 3px solid black;
+    border-radius: 20px;
+    width: fit-content;
+    padding: 10px;
+    margin: auto;
+    background-color: #2d3436;
+background-image: linear-gradient(315deg, #000000 0%, #2d3436 46%, #000000 80%);
+    color: white;
+    font-family: 'Luckiest Guy', cursive;
+    max-width: 60%;
+    user-select: none;
+
+}
+article header h1{
+    font-size: 2em;
+     background-color: #2d3436;
+background-image: linear-gradient(315deg, #000000 0%, #2d3436 46%, #000000 80%);
+}
+li{
+    all:revert
+}
+ul{
+    all:revert
+}
+
+.content li{
+    margin-top: 10px;
+}
+article section{
+        background-color: rgba(255, 255, 255, 0.2);
+        border: 2px solid black;
+        width: 85%;
+        padding: 30px 5%;
+        margin: auto;
+        margin-top: 50px;
+    }
+.w3-btn{
+    background-color: green;
+    color: white !important;
+    text-decoration: none !important;
+    padding: 3px;
+    font-family: 'Luckiest Guy', cursive;    
+    border-radius: 10px;
+    text-shadow: none !important;
+    font-weight: 10px;
+}
+.w3-btn:hover{
+    text-decoration: none !important;
+}
+    </style> 
+</head>
+<body>
+
+<hr>
+
+    <header> 
+    <h1> Page four of my backend notes </h1>
+    </header>
+    
+<article id="start-of-page"> 
+  
+<div id="homepages">
+
+    <h3>Home Pages:</h3>
+   
+
+</div>
+
+<nav data-notes="backend" data-page="4">
+
+</nav>
+
+<h3>Informations included in this page:</h3>
+ 
+
+<br>
+
+
+</article>
+
+<script src="../CSS-JavaScript-External-Files/nav.js"></script>
+<hr>
+
+<article id="one">
+<br>
+<header><h1>Introduction to Node.js</h1></header>
+
+<section>
+<header><h2>What is Node.js?</h2></header>
+<ul>
+    <li>Node.js is an open source server environment</li>
+    <li>Node.js is free</li>
+    <li>Node.js runs on various plaforms (Windows, Linux, Unix, Mac OS X, etc)</li>
+    <li>Node.js uses JavaScript on the server</li>
+</ul>
+</section>
+
+<section>
+<header><h2>Why Node.js?</h2></header>
+<p><strong>Node.js uses asynchronous programming!</strong></p>
+<p>A common task for a web server can be to open a file on the server
+and return the content to the client. Here is how PHP or ASP handles a file request:</p>
+
+<ol>
+    <li>Sends the task to the computer's file system</li>
+    <li>Waits while the file system opens and reads the file</li>
+    <li>Returns the content to the client</li>
+    <li>Ready to handle the next request</li>
+</ol>
+
+<p>Here is how Node.js handles a file request:</p>
+
+<ol>
+    <li>Sends the task to the com[puter's file system</li>
+    <li>Ready to handle the next request</li>
+    <li>When the file system has opened and read the file, the server returns the content to the client</li>
+</ol>
+
+<p>Node.js eliminates the waiting, and simply continues with the next request.</p>
+
+<p>Node.js runs single-threaded, non-blocking, asynchronously programming, which is
+very memory efficient.</p>
+</section>
+
+<section>
+<header><h2>What can Node.js Do?</h2></header>
+<ul>
+    <li>Node.js can generate dynamic page content</li>
+    <li>Node.js can create, open, read, write, delete, and close files on the server</li>
+    <li>Node.js can collect form data</li>
+    <li>Node.js can add, delete, modify data in your database</li>
+</ul>
+</section>
+
+<section>
+<header><h2>What is a Node.js File?</h2></header>
+<ul>
+    <li>Node.js files contain tasks that will be executed on certain events</li>
+    <li>A typical event is someone trying to access a port on the server</li>
+    <li>Node.js files must be initiated on the server before having any effect</li>
+    <li>Node.js files have the extensions ".js"</li>
+</ul>
+</section>
+</article>
+
+<hr>
+</body>
+</html>   
