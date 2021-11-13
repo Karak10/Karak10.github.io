@@ -5,7 +5,7 @@ module.exports = function(grunt){
 		exec: {
 			git1: 'git add --all',
 			git2: 'git commit -m "A new commit"',
-			git3: 'git push origin',
+			git3: 'echo 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',
 		}
 	});
 
