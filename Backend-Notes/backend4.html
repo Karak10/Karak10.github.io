@@ -248,8 +248,10 @@ very memory efficient.</p>
 
 <article id="two">
 <br>
-<header><h1>Node.js Getting Started</h1></header>
+<header><h1>NodeJS Getting Started</h1></header>
 
+<section>
+<header><h2>Installing NodeJS</h2></header>
 <p>The official Node.js website has installation instructions for Node.js: <a href="https://nodejs.org" target="_blank">https://nodejs.org</a></p>
 
 <p>If you are using Ubuntu there is a chance node may already
@@ -285,7 +287,125 @@ about some networking concepts in my computer science notes, and I have
 explained what ports are. For the moment however you don't have
 to understand everything about the code above, since this is just an
 example and we will learn those stuff in more detail another time.</P>
+</section>
 
+<section>
+<header><h2>How to initiate a Node.js File</h2></header>
+
+<p>Node.js files must be initiated in the "Command Line Interface" program of your computer.
+If you are on windows you can use cmd or PowerShell, but you could also download
+Ubuntu to use bash if you want to, that's what I do.</p>
+
+<p>The file you have just created must be initiated by Node.js before any action can take place.
+Start your command line interface, write node myfirst.js and hit enter:</p>
+
+<div class="syntax" name="cmd"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/karak10</span>$ node myfirst.js</div>
+
+<p>Now, your computer works as a server!<br><br>
+If anyone tries to access your computer on port 8080, they will get a "Hello World!" message in return!</p>
+
+<p>To check if it works, open your internet browser, and type in the address "127.0.0.1:8080". 
+The "127.0.0.1" IP address is known as the localhost address, it's an ip address that will always point back
+to your device, you can also try writing "localhost:8080" and this should also work the same way.</p>
+</section>
+</article>
+
+<br>
+<hr>
+<br>
+<article id="three">
+<header><h1>NodeJS Modules</h1></header>
+
+<section>
+<header><h2>What are modules?</h2></header>
+
+<p>Consider modules to be the same as JavaScript libraries.
+<br><br>
+A set of functions you want to include in your application.</p>
+
+<p>Node.js has a set of built-in modules which you can use without any further installation.
+<br><br>
+Look at this <a href="https://www.w3schools.com/nodejs/ref_modules.asp" target="_blank">Built-in Modules Reference</a> for a complete list of modules.</p>
+
+<p>To include a module, use the <strong>require()</strong> function with the name of the module:</p>
+
+<div class='syntax' name="node">var http = require('http');</div>
+
+<p>Now your application has access to the HTTP module, and is able to create a server:</p>
+
+<div class='syntax' name="node">http.createServer(function (req, res) {
+  res.writeHead(200, {'Content-Type': 'text/html'});
+  res.end('Hello World!');
+}).listen(8080);</div>
+
+</section>
+
+<section>
+<header><h2>Create Your Own Modules</h2></header>
+<p>You can create your own modules, and easily include them in your applications.
+<br><br>
+The following example creates a module that returns a date and time object:</p>
+
+<div class="syntax" name="node">exports.myDateTime = function(){
+    return Date();
+};</div>
+
+<p>Use the exports keyword to make properties and methods available outside the module file.
+Save the code above in a file called "myfirstmodule.js"</p>
+</section>
+
+<section>
+<header><h2>Include Your Own Module</h2></header>
+<p>Now you can include and use the module in any of your Node.js files.</p>
+
+<div class="syntax" name="node">var http = require('http');
+var dt = require('./myfirstmodule');
+
+http.createServer(function (req, res) {
+  res.writeHead(200, {'Content-Type': 'text/html'});
+  res.write("The date and time are currently: " + dt.myDateTime());
+  res.end();
+}).listen(8080);</div>
+
+<p>Notice that we use ./ to locate the module, that means that the module is located in the same folder as the Node.js file.
+
+Save the code above in a file called "demo_module.js", and initiate the file:</p>
+
+<div class="syntax" name="cmd"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/karak10</span>$ node demo_module.js</div>
+
+<p>If you have followed the same steps on your computer, you will see the result at this address: http://localhost:8080</p>
+</section>
+
+</article>
+
+<br><hr><br>
+
+<article id="four">
+
+<section>
+<header><h2>Node.js as a Web Server</h2></header>
+<p>Node.js has a built-in module called HTTP, which allows Node.js to transfer data over the Hyper Text Transfer Protocol (HTTP).</p>
+<p>To include the HTTP module, use the <Strong>require()</Strong> method:</p>
+<div class="syntax" name="NodeJS">var http = require('http');</div>
+
+<p>The HTTP module can create an HTTP server that listens to server ports and gives a response back to the client.
+Use the <Strong>createServer()</Strong> method to create an HTTP server:</p>
+
+<div class="syntax" name="NodeJS">var http = require('http');
+
+<span class="grey">//create a server object:</span>
+http.createServer(function (req, res) {
+  res.write('Hello World!'); <span class="grey">//write a response to the client</span>
+  res.end(); <span class="grey">//end the response</span>
+}).listen(8080); <span class="grey">//the server object listens on port 8080</span></div>
+
+<p>The function passed into the http.createServer() method, will be executed when someone tries to access the computer on port 8080.
+Save the code above in a file called "demo_http.js", and initiate the file:</p>
+
+<div class="syntax" name="cmd"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/karak10</span>$ node demo_http.js</div>
+
+<p>You can then see the results by visiting this address in your internet browser: http://localhost:8080</p>
+</section>
 </article>
 
 <hr>
