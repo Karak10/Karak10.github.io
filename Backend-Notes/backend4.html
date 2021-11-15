@@ -240,6 +240,52 @@ very memory efficient.</p>
     <li>Node.js files have the extensions ".js"</li>
 </ul>
 </section>
+
+<br>
+</article>
+
+<hr>
+
+<article id="two">
+<br>
+<header><h1>Node.js Getting Started</h1></header>
+
+<p>The official Node.js website has installation instructions for Node.js: <a href="https://nodejs.org" target="_blank">https://nodejs.org</a></p>
+
+<p>If you are using Ubuntu there is a chance node may already
+have been installed with it, I'm not sure since I never checked,
+try typing node --version in bash to find out. If it is not
+installed then install it from the link above. While installing it you are given
+the option to add node to the PATH variable automatically, so when
+the installation is done you should be able to check your PATH variable
+and see where node and npm are, so that you can then
+add the location to the PATH variable of Ubuntu as well so that you can
+access it in bash. You may also need to add an alias since bash requires you
+to write the full name of the files, with the extensions, and so writing "node"
+alone won't work. Lastly, if I remember correctly, npm has a ".cmd" extension,
+so you won't be able to run it in bash. To run it in bash you need to se this
+alias first: alias cmd='/mnt/c/Windows/System32/cmd.exe /c' so that you can then
+set this alias for npm: alias nom='cmd .../npm.cmd'. I have talked more about
+the path variable and how you can edit it in my python notes, in one of the first sections
+when I explain how to install it and prepare it.</p>
+
+<p>Once you have downloaded and installed Node.js on your computer, let's try to display "Hello World" in a web browser.
+Create a Node.js file named "myfirst.js", and add the following code:</p>
+
+<div class="syntax" name="NodeJS">var http = require('http');
+
+http.createServer(function (req, res) {
+  res.writeHead(200, {'Content-Type': 'text/html'});
+  res.end('Hello World!');
+}).listen(8080);</div>
+
+<P>The code tells the computer to write "Hello World!" if anyone (e.g. a web browser) tries to access your computer on port 8080.
+Having a basic understanding of networking could be useful, I have talked
+about some networking concepts in my computer science notes, and I have
+explained what ports are. For the moment however you don't have
+to understand everything about the code above, since this is just an
+example and we will learn those stuff in more detail another time.</P>
+
 </article>
 
 <hr>
