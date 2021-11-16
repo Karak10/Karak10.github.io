@@ -447,6 +447,26 @@ if everything works correctly, when visiting the first address your page should
 display "/karak10" while when visiting the second address your page should display
 "/christina".</p>
 </section>
+
+<section>
+<header><h2>Split the Query String</h2></header>
+<p>There are built-in modules to easily split the query string into readable parts, such as the URL module.</p>
+
+<div class="syntax" name="node">var http = require('http');
+<span class="red">var url = require('url');</span>
+
+http.createServer(function (req, res) {
+  res.writeHead(200, {'Content-Type': 'text/html'});
+  <span class="red">var q = url.parse(req.url, true).query;</span>
+  var txt = <span class="red">q.year</span> + " " + <span class="red">q.month</span>;
+  res.end(txt);
+}).listen(8080);</div>
+
+<p>Now if you initiate this file and visit this address "localhost:8080/?year=2017&month=July"
+then this should appear on your screen: 2017 July</p>
+
+<p>We will talk more about the URL module another time so you don't need to fully understand the code above yet.</p>
+</section>
 </article>
 
 
