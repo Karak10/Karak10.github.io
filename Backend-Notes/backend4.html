@@ -384,10 +384,10 @@ Save the code above in a file called "demo_module.js", and initiate the file:</p
 <br><hr><br>
 
 <article id="four">
-<header><h1>Node.js HTTP Module</h1></header>
+<header><h1>NodeJS HTTP Module</h1></header>
 
 <section>
-<header><h2>Node.js as a Web Server</h2></header>
+<header><h2>NodeJS as a Web Server</h2></header>
 <p>Node.js has a built-in module called HTTP, which allows Node.js to transfer data over the Hyper Text Transfer Protocol (HTTP).</p>
 <p>To include the HTTP module, use the <Strong>require()</Strong> method:</p>
 <div class="syntax" name="NodeJS">var http = require('http');</div>
@@ -424,6 +424,30 @@ http.createServer(function (req, res) {
 }).listen(8080);</div>
 
 <p>The first argument of the <Strong>res.writeHead()</Strong> method is the status code, 200 means that all is OK<br><br>The second argument is an object containing the response headers.</p>
+
+<p>You may wonder now, what is an HTTP header? And why do we even need it?
+I think it's necessary that you have some basic understanding of what HTTP is and how it
+works before learning NodeJS. Just learning how to do stuff without fully understanding them
+isn't the right way to learn.</p>
+
+<p>At first you may not see any difference when using the writeHead() method. To
+see that what you did works,
+open the dev tools and click "Network", then reload
+the page so that the HTTP requests made when accessing the page appear.
+Ignore the favicon.ico request, and click the one with the name "localhost",
+at the right you should be able to see the Response Headers, that's where the
+change between the two files should appear.</p>
+
+<p>I have collected here 2 videos that you could watch to better
+    understand HTTP and HTTPS. Firstly, here is a video that simplifies HTTPS
+    so that you can have a clearer picture of what happens in the background:</p>
+    
+    <iframe width="1264" height="720" src="https://www.youtube.com/embed/T4Df5_cojAs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    
+    <p>In the next video I am gonna share with you the guy goes over some HTTP concepts
+    in more detail, so it's a little harder to undertand, it's bigger, but it
+    explains a lot of useful stuff, and he talks about HTTP headers too:</p>
+    <iframe width="1264" height="720" src="https://www.youtube.com/embed/iYM2zFP3Zn0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </section>
 
 <section>
@@ -469,6 +493,66 @@ then this should appear on your screen: 2017 July</p>
 </section>
 </article>
 
+<br><hr><br>
+
+<article id="five">
+<header><h1>NodeJS File System Module</h1></header>
+
+<section>
+<header><h2>NodeJS as a File Server</h2></header>
+
+<p>The Node.js file system module allows you to work with the file system on your computer.
+<br><br>
+To include the File System module, use the require() method:</p>
+
+<div class="syntax" name="node">var fs = require('fs');</div>
+
+<p class="left">Common use for the File System module:</p>
+
+<ul>
+    <li>Read files</li>
+    <li>Create files</li>
+    <li>Update files</li>
+    <li>Delete files</li>
+    <li>Rename files</li>
+</ul>
+</section>
+
+<section>
+<header><h2>Read Files</h2></header>
+<p>The fs.readFile() method is used to read files on your computer.
+<br><br>
+Assume we have the following HTML file (located in the same folder as Node.js):</p>
+
+<div class="syntax" name="html">&lt;html>
+&lt;head>
+&lt;title>This is a title&lt;/title>
+&lt;/head>
+&lt;body>
+&lt;h1>My Header&lt;/h1>
+&lt;p>My paragraph.&lt;/p>
+&lt;/body>
+&lt;/html></div>
+
+<p>We can create a Node.js file that reads the HTML file, and return the content:</p>
+
+<div class="syntax" name="node">var http = require('http');
+<span class="red">var fs = require('fs');</span>
+http.createServer(function (req, res) {
+  <span class="red">fs.readFile('demofile1.html', function(err, data) {</span>
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.write(<span class="red">data</span>);
+    return res.end();
+  <span class="red">});</span>
+}).listen(8080);</div>
+
+<p>So, when you visit localhost:8080, the html file you created will now be used.
+You may have noticed that in previous examples the html tags were added on their
+own and we just added text, that's </p>
+</section>
+
+
+</article>
 
 <hr>
 </body>
