@@ -546,12 +546,127 @@ http.createServer(function (req, res) {
   <span class="red">});</span>
 }).listen(8080);</div>
 
-<p>So, when you visit localhost:8080, the html file you created will now be used.
-You may have noticed that in previous examples the html tags were added on their
-own and we just added text, that's </p>
+<p>So, when you visit localhost:8080, the html file you created will now be used.</p>
+<p>So, something I want to mention is that we return the res.end() method inside
+the function we passed in readFile method. Why are we doing that? That's because
+it takes time for the code inside readFile to run, since it has to retrieve data
+from anothe file first. We didn't necessarily need to return the res.end() method,
+we could just call it inside the function and it would still work.
+What would happen if we wrote the res.end() method outside the function though?
+The res.end() method would run slightly earlier than the function, and so we would get an error, since we cannot
+use the res.write() method after he have used the res.end() method. The res.end() method
+is supposed to end the response and send it to the browser.</p>
+
+<p>In the future we may need to retrieve multiple files and stuff
+so it may be necessary to use promises instead. Here is an example
+of how the code would look with a promise:</p>
+
+<div class="syntax" name="node">var http = require('http');
+var fs = require('fs');
+http.createServer(function (req, res) {
+  res.writeHead(200, {'Content-Type':'text/html'});
+  <span class="red">let promise = new Promise(function(resolve, reject){</span>
+      fs.readFile('demofile1.html', function(err, data){
+          res.write(data);
+          <span class="red">resolve();</span>
+      });
+  <span class="red">});</span>
+  <span class="red">promise.then(function(){</span>
+      res.end();
+  <span class="red">});</span>
+}).listen(8080);</div>
 </section>
 
 
+</article>
+
+<br><hr><br>
+
+<article id="six">
+<header><h1>NodeJS URL Module</h1></header>
+<section>
+<p>The URL module splits up a web address into readable parts.
+<br><br>
+To include the URL module, use the <strong>require()</strong> method:</p>
+
+<div class="syntax" name="node">var url = require('url');</div>
+
+<p>Parse an address with the url.parse() method, and it will return a URL object with each part of the address as properties:</p>
+
+<div class="syntax" name="node">var url = require('url');
+var adr = 'http://localhost:8080/default.htm?year=2017&month=february';
+var q = url.parse(adr, true);
+
+console.log(q.host); <span class="grey">//returns 'localhost:8080'</span>
+console.log(q.pathname); <span class="grey">//returns '/default.htm'</span>
+console.log(q.search); <span class="grey">//returns '?year=2017&month=february'</span>
+
+var qdata = q.query; <span class="grey">//returns an object: { year: 2017, month: 'february' }</span>
+console.log(q.data.month); <span class="grey">//returns 'february'</span></div>
+
+<p class="left">This method accepts three parameters as described below:</p>
+
+<ul>
+    <li><strong>urlString</strong> - It holds the URL string which needs to parse.</li>
+    <li><strong>parseQueryString</strong> - It is a boolean value. If set to true then the query property will be set to an object returned by the querystring module’s parse() method. If it set to false then the query property on the returned URL object will be an unparsed, undecoded string. Its default value is false.</li>
+    <li><strong>slashesDenoteHost</strong> - It is a boolean value. If it set to true then the first token after the literal string // and preceding the next / will be interpreted as the host. For example: //geeksforgeeks.org/web-technology contains the result {host: ‘geeksforgeeks.org’, pathname: ‘/web-technology’} rather than {pathname: ‘//geeksforgeeks.org/web-technology’}. Its default value is false.</li>
+</ul>
+</section>
+
+<section>
+<header><h2>NodeJS File Server</h2></header>
+<P>Now we know how to parse the query string, and in the previous chapter we learned how to make Node.js behave as a file server. Let us combine the two, and serve the file requested by the client.
+<br><br>
+Create two html files and save them in the same folder as your node.js files.</P>
+
+<div class="syntax" name="summer.html">&lt;!DOCTYPE html>
+&lt;html>
+&lt;body>
+&lt;h1>Summer&lt;/h1>
+&lt;p>I love the sun!&lt;/p>
+&lt;/body>
+&lt;/html></div>
+<br>
+<div class="syntax" name="winter.html">&lt;!DOCTYPE html>
+&lt;html>
+&lt;body>
+&lt;h1>Winter&lt;/h1>
+&lt;p>I love the snow!&lt;/p>
+&lt;/body>
+&lt;/html></div>
+
+<p>Create a Node.js file that opens the requested file and returns the content to the client. If anything goes wrong, throw a 404 error:</p>
+
+<div class="syntax" name="node" style="word-spacing: 3px;">var http = require('http');
+var url = require('url');
+var fs = require('fs');
+
+http.createServer(function (req, res) {
+  var q = url.parse(req.url, true);
+  var filename = "." + q.pathname;
+  fs.readFile(filename, function(err, data) {
+    if (err) {
+      res.writeHead(404, {'Content-Type': 'text/html'});
+      return res.end("404 Not Found");
+    } 
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.write(data);
+    return res.end();
+  });
+}).listen(8080);</div>
+
+<p>Remember to initiate the file:</p>
+
+<div class="syntax" name="cmd"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/karak10</span>$ node demo_fileserver.js</div>
+
+<p>If you have followed the same steps on your computer, you should see two different results when opening these two addresses:</p>
+
+<ul>
+    <li><a href="http://localhost:8080/summer.html" target="_blank">http://localhost:8080/summer.html</a></li>
+    <li><a href="http://localhost:8080/winter.html" target="_blank">http://localhost:8080/winter.html</a></li>
+</ul>
+</section>
+<br>
 </article>
 
 <hr>

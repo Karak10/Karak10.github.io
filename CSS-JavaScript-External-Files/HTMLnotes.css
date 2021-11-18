@@ -86,6 +86,7 @@ header h1{
     padding-right: 100px;
     position: relative;
     font-size: 1em;
+    word-spacing: 3px;
 }
 .syntax::after{
     content: attr(name);
@@ -97,7 +98,7 @@ header h1{
     width: fit-content;
     background-color: orangered;
     padding: 5px 10px;
-    border-radius: 25%;
+    border-radius: 0.7em;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 0.7em;
 }
