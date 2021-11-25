@@ -669,6 +669,277 @@ http.createServer(function (req, res) {
 <br>
 </article>
 
+<br><hr><br>
+
+<article id="seven">
+<header><h1>NodeJS Events</h1></header>
+
+<section>
+<p>Node.js is perfect for event-driven applications.</p>
+<p>Every action on a computer is an event. Like when a connection is made or a file is opened.
+<br><br>
+Objects in Node.js can fire events, like the readStream object fires events when opening and closing a file:</p>
+
+<div class="syntax" name="node">var fs = require('fs');
+var rs = fs.createReadStream('./demofile.txt');
+rs.on('open', function () {
+  console.log('The file is open');
+});</div>
+
+<p>Let's go step by step so we can understand what's going on with the code and how Node.js works.
+<br><br>
+First we import the filesystem module into our code.
+Then we are using the createReadStream method from fs to create a readable stream object. You can
+learn more about what a stream is in the video bellow:
+
+<iframe width="1264" height="720" src="https://www.youtube.com/embed/GlybFFMXXmQ?list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4byYp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Anyway, Node.js is event-driven. It means that you can know when something is done. In our case, we are listening to the event 'open' so whenever ReadStream opens the file it will let us know. The 'open' event doesn't mean that you need to open the file manually.</p>
+
+<p>I may talk more about the createReadStream method
+in the future, this section is about events, and createReadStream is just
+an example I used, don't let it confuse you. Just like how images, audio and
+document elements have events a read stream object can as well have events, this is
+nothing new actually if you know JavaScript you should already be familiar with events. Only new thing we learn here is
+the createReadStream method, which creates a ReadStream object, but it's not necessary to fully understand it yet,
+for now here is a video that explains the method a little better:
+</p>
+
+<iframe width="1264" height="720" src="https://www.youtube.com/embed/E3tTzx0Qoj0?list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4byYp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</section>
+
+<section>
+<header><h2>The EventEmitter Object</h2></header>
+<p>You can assign event handlers to your own events with the EventEmitter object.
+<br><br>
+In the example below we have created a function that will be executed when a "scream" event is fired.
+<br><br>
+To fire an event, use the emit() method.</p>
+
+<div class="syntax" name="node">var events = require('events');
+var eventEmitter = new events.EventEmitter();
+
+<span class="grey">//Create an event handler:</span>
+var myEventHandler = function () {
+  console.log('I hear a scream!');
+}
+
+<span class="grey">//Assign the event handler to an event:</span>
+eventEmitter.on('scream', myEventHandler);
+
+<span class="grey">//Fire the 'scream' event:</span>
+eventEmitter.emit('scream');</div>
+
+<p>So, EventEmitter is a class inside the events object, which you use to create
+a new object from that class. You can then use the object to set and emit events.</p>
+
+<p>Let's try making this more interesting by using it together with a module called util, which
+has a method that allows a constructor to inherit methods from another class or function.</p>
+
+<div class="syntax" name="noed">var events = require('events');
+var util = require('util');
+
+let createPerson = class{
+    constructor(name){
+        this.name = name;
+    }
+}
+
+util.inherit(createPerson, events.EventEmitter);
+
+let person1 = new createPerson('Alex');
+let person2 = new createPerson('Karak10')
+let person3 = new createPerson('Kektaran');
+
+let people = [person1, person2, person3];
+
+people.forEach(function(person)=>{
+    person.on('speak', function(msg){
+        console.log(person.name + ' said ' + msg);
+    })
+});
+
+person1.emite('speak', 'Karak10 is so stupid')
+person2.emite('speak', 'Kektaran is so antisocial')
+person3.emite('speak', 'Alex is so lazy')</div>
+
+<P>Here is a video that talks about events:</P>
+<iframe width="1264" height="720" src="https://www.youtube.com/embed/NtrnaTKqFPQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</section>
+</article>
+
+<br><hr><br>
+
+<article id='eight'>
+<header><h1>NodeJS Upload Files</h1></header>
+
+<section>
+<header><h2>The Formidable Module</h2></header>
+<p>There is a very good module for working with file uploads, called "Formidable".
+<br><br>
+The Formidable module can be downloaded and installed using NPM:</p>
+
+<div class="syntax" name="cmd"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/karak10/Desktop/my_project</span>$ npm init -y
+<span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/karak10/Desktop/my_project</span>$ npm install formidable</div>
+
+<p>After you have downloaded the Formidable module, you can include the module in any application:</p>
+
+<div class="syntax" name="node">var formidable = require('formidable');</div>
+
+
+</section>
+
+<section>
+<header><h2>Step 1: Create an Upload Form</h2></header>
+<p>Now you are ready to make a web page in Node.js that lets the user upload files to your computer:</p>
+
+<p>Create a Node.js file that writes an HTML form, with an upload field:</p>
+
+<div class="syntax" name="node">var http = require('http');
+
+http.createServer(function (req, res) {
+  res.writeHead(200, {'Content-Type': 'text/html'});
+  res.write('&lt;form action="fileupload" method="post" enctype="multipart/form-data">');
+  res.write('&lt;input type="file" name="filetoupload">&lt;br>');
+  res.write('&lt;input type="submit">');
+  res.write('&lt;/form>');
+  return res.end();
+}).listen(8080);</div>
+
+<p>The <strong>method</strong> attribute specifies how to send form-data. The form-data is sent to the page specified in the <strong>action</strong> attribute.</p>
+
+<dl style="margin-left: 10px">
+    <dt><strong>Notes on GET:</strong></dt>
+    <dd>
+        <ul>
+            <li>Appends form-data into the URL in name/value pairs</li>
+            <li>The length of a URL is limited (about 3000 characters)</li>
+            <li>Never use GET to send sensitive data! (will be visible in the URL)            </li>
+            <li>Useful for form submissions where a user wants to bookmark the result</li>
+            <li>GET is better for non-secure data, like query strings in Google</li>
+        </ul>
+    </dd>
+    <dt><strong>Notes on POST:</strong></dt>
+    <dd>
+        <ul>
+            <li>Appends form-data inside the body of the HTTP request (data is not shown in URL)</li>
+            <li>Has no size limitations</li>
+            <li>Form submissions with POST cannot be bookmarked</li>
+        </ul>
+    </dd>
+</dl>
+
+<p>The <strong>enctype</strong> attribute specifies how the form-data should be encoded when submitting it to the server.</p>
+
+<table class="table" style="width: 60%">
+    <tr>
+        <th>Value</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>application/x-www-form-urlencoded</td>
+        <td>Default. All characters are encoded before sent (spaces are converted to "+" symbols, and special characters are converted to ASCII HEX values)</td>
+    </tr>
+    <tr>
+        <td>multipart/form-data</td>
+        <td>This value is necessary if the user will upload a file through the form</td>
+    </tr>
+    <tr>
+        <td>text/plain</td>
+        <td>Sends data without any encoding at all. Not recommended</td>
+    </tr>
+</table>
+
+<p>The <Strong>enctype</Strong> attribute can be used only if <Strong>method="post"</Strong> is used.</p>
+
+<p>The <Strong>name</Strong> attribute is used to reference elements in JavaScript, or to reference form data after a form is submitted.
+Only form elements with a <strong>name</strong> attribute will have their values passed when submitting a form.</p>
+</section>
+
+<section>
+<header><h2 class="left">Step 2: Parse the Uploaded File</h2></header>
+
+<p>Include the Formidable module to be able to parse the uploaded file once it reaches the server.
+<br><br>
+When the file is uploaded and parsed, it gets placed on a temporary folder on your computer.</p>
+
+<div class='syntax' name="node">var http = require('http');
+var formidable = require('formidable');
+
+http.createServer(function (req, res) {
+  if (req.url == '/fileupload') {
+    var form = new formidable.IncomingForm(); 
+    form.parse(req, function (err, fields, files) { 
+      res.write('File uploaded');
+      res.end();
+    });
+  } else {
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.write('&lt;form action="fileupload" method="post" enctype="multipart/form-data">');
+    res.write('&lt;input type="file" name="filetoupload">&lt;br>');
+    res.write('&lt;input type="submit">');
+    res.write('&lt;/form>');
+    return res.end();
+  }
+}).listen(8080);</div>
+
+<p>So, I am pretty sure I mentioned perviously at some point that
+req.url holds the part of the url that comes after the domain name.
+When we sumbit the form, an HTTP request will be sent to the server
+with localhost:8080/fileupload being it's destination. Like we
+have done in previous examples we are using node to
+respond to that request. In fact, we
+are using the formidable module to parse the
+data sent with the http request and
+write a respond to be displayed on the page.</p>
+</section>
+
+<section>
+<header><h2 class="left">Step 3: Move the File</h2></header>
+<p>When a file is successfully uploaded to the server, it is placed on a temporary folder.
+<br><br>
+The path to this directory can be found in the "files" object, passed as the third argument in the parse() method's callback function.
+<br><br>
+To move the file to the folder of your choice, use the File System module, and rename the file:</p>
+
+<div class="syntax" name="node">var http = require('http');
+var formidable = require('formidable');
+var fs = require('fs');
+
+http.createServer(function (req, res) {
+  if (req.url == '/fileupload') {
+    var form = new formidable.IncomingForm();
+    form.parse(req, function (err, fields, files) {
+      var oldpath = files.filetoupload.filepath;
+      var newpath = 'C:/Users/Your Name/' + files.filetoupload.originalFilename;
+      fs.rename(oldpath, newpath, function (err) {
+        if (err) throw err;
+        res.write('File uploaded and moved!');
+        res.end();
+      });
+ });
+  } else {
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.write('&lt;form action="fileupload" method="post" enctype="multipart/form-data">');
+    res.write('&lt;input type="file" name="filetoupload">&lt;br>');
+    res.write('&lt;input type="submit">');
+    res.write('&lt;/form>');
+    return res.end();
+  }
+}).listen(8080);</div>
+
+<p>Don't let the code above confuse you. The <strong>fs.rename()</strong> method is 
+used to asynchronously rename a file at the given old path to a 
+given new path. It will overwrite the destination file if it already 
+exists. So that's all the code really does,
+it takes the path of where the file has been saved, and it changes that
+file's path to a new path that can be anywhere you like, I recommend a
+folder perhaps inside your project or something.</p>
+</section>
+
+
+</article>
+
 <hr>
 </body>
 </html>   
