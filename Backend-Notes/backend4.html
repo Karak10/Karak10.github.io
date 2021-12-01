@@ -935,9 +935,242 @@ exists. So that's all the code really does,
 it takes the path of where the file has been saved, and it changes that
 file's path to a new path that can be anywhere you like, I recommend a
 folder perhaps inside your project or something.</p>
+
+<p>About the files and fields property, they can be used
+to access files or fields inputs. As you can see
+in the example I am accessing the file input with the name
+"filetoupload", which name I had given the input inside
+the html. Similarly we can access fields like the example bellow:</p>
+
+<div class="syntax" name="node">var http = require('http');
+var formidable = require ('formidable');
+var fs = require('fs');
+
+http.createServer(function(req, res){
+  if(req.url == '/uploadfile'){
+    let form = new formidable.IncomingForm();
+    form.parse(req, function(err, fields, files){
+      <span class="red">var reg = new RegExp(/\..*/, 'gi');
+      var name = fields.filename + files.filetoupload.originalFilename.match(reg);</span>
+      var oldPath = files.filetoupload.filepath;
+      var newPath = 'C:/Users/fotis/Desktop/upload_files/files_folder/' + <span class="red">name</span>;
+      fs.rename(oldPath, newPath, function(err){
+        if(err){
+          res.write('An error occured while uploading the file');
+          res.end();
+        } else {
+          res.write('File uploaded and moved!');
+          res.end();
+        }
+      })
+    })
+  } else {
+    res.writeHead(200, {'Content-Type':'text/html'});
+    res.write('&lt;form action="uploadfile" method="post" enctype="multipart/form-data">');
+    res.write('&lt;input type="file" name="filetoupload" required>&lt;br>');
+    <span class="red">res.write('&lt;label>Custom name:&lt;/lebel>&lt;input type="text" name="filename">&lt;br>');</span>
+    res.write('&lt;input type="submit">');
+    res.write('&lt;/form>');
+    res.end();
+  }
+}).listen(5808);</div>
+
+<p>In the example above I have made it so you can type a name for the file,
+and to automatically add the extension of the image next to the name
+I used regular expressions so that I can take the extension from
+the original file's name.</p>
 </section>
 
 
+</article>
+
+<hr>
+
+<article id="nine">
+<header><h1>NodeJS MySQL</h1></header>
+
+<section>
+
+<header><h2>MySQL Database</h2></header>
+<p>Node.js can be used in database applications.
+<br><br>
+One of the most popular databases is MySQL.</p>
+
+<p>To be able to experiment with the code examples, you should have MySQL installed on your computer.
+<br><Br>
+I have written about MySQL a lot more in previous notes I have kept, so you can find more about
+how to install it and use it here: <a href="backend1.html" target="_blank">backend1.html</a>.</p>
+</section>
+
+<section>
+<header><h2>Install MySQL Driver</h2></header>
+
+<p>Once you have MySQL up and running on your computer, you can access it by using Node.js.
+<br><br>
+To access a MySQL database with Node.js, you need a MySQL driver. This tutorial will use the "mysql" module, downloaded from NPM.
+<br><br>
+To download and install the "mysql" module, open the Command Terminal and execute the following:</p>
+
+<div class="syntax" name="cmd"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/karak10/Desktop/my_project</span>$ npm install mysql</div>
+
+<p>Now you have downloaded and installed a mysql database driver.
+<br><br>
+Node.js can use this module to manipulate the MySQL database:</p>
+
+<div class="syntax" name="node">var mysql = require('mysql');</div>
+</section>
+
+<section>
+<header><h2>Create Connection</h2></header>
+<p>Start by creating a connection to the database.
+<br><br>
+Use the username and password from your MySQL database.</p>
+
+<div class="syntax" name="node">var mysql = require('mysql');
+
+var con = mysql.createConnection({
+  host: "localhost",
+  user: "yourusername",
+  password: "yourpassword"
+});
+
+con.connect(function(err) {
+  if (err) throw err;
+  console.log("Connected!");
+});</div>
+
+<p>You set the host, user and password of your connection when creating it
+in MySQL Workbench:</p>
+
+<img style="width: 90%; border: 3px solid black; display: block; margin: auto" src="./../images/node2.JPG">
+
+<p>Save the code above in a file called "demo_db_connection.js" and run the file:</p>
+
+<div class="syntax" name="cmd"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/karak10/Desktop/my_project</span>$ node demo_db_connection.js</div>
+
+<p>When doing that you may get an error, like I did:</p>
+
+<img style="width: 90%; border: 3px solid black; display: block; margin: auto" src="./../images/node1.JPG">
+
+<p>Error: ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication protocol requested by server; consider upgrading MySQL client</p>
+
+<p>So, as you can see the authentication protocol is not supported. Let's try to understand why this happens and learn how to fix this.</p>
+
+<section>
+  <h2>What's going on?</h2>
+  <p class="left">Let's first make it clear what's going on.</p>
+  <p class="left">MySQL 8 supports pluggable authentication methods. By default, one of them named <strong>caching_sha2_password</strong> is used rather than our good old <strong>mysql_native_password</strong> (<a href="https://dev.mysql.com/doc/refman/8.0/en/caching-sha2-pluggable-authentication.html" target="_blank">source</a>). It should be obvious that using a crypto algorithm with several handshakes is more secure than plain password passing that has been there for 24 years.
+<br><br>
+Now, the problem is <strong>mysqljs</strong> in Node (the package you install with <strong>npm install mysql</strong> and use it in your Node code) doesn't support this new default authentication method of MySQL 8, yet. The issue is in here: <a href="https://github.com/mysqljs/mysql/issues/1507" target="_blank">https://github.com/mysqljs/mysql/issues/1507</a> and is still open, after 3 years, as of July 2019.</p>
+</section>
+
+<section>
+<h2>If you just want to get rid of the error, at the cost of risking the security 
+of the project (e.g. it's just a personal project or dev environment)</h2>
+
+<p class="left">Execute the following query in MySQL Workbench</p>
+<p class="left"><strong>ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';</strong></p>
+
+<p class="left">Where root is your user, localhost is your URL and password is your password</p>
+
+<p class="left">Then run this query to refresh privileges:</p>
+
+<p class="left"><strong>flush privileges;</strong></p>
+
+<p class="left">Try connecting using node after you do so.</p>
+
+<p class="left"><span class="red">If that doesn't work, try it without @'localhost' part.</span></p>
+</section>
+
+<section>
+<h2>Else, replace "mysql.js" with "mysql2.js" package</h2>
+<p>Just install and use mysql2 (instead of mysql) and use it -- <strong>npm install mysql2</strong>, and <strong>mysql = require('mysql2')</strong></p>
+</section>
+
+<p>Now you can start querying the database using SQL statements.</p>
+
+</section>
+
+<section>
+<header><h2>Query a Database</h2></header>
+<p>Use SQL statements to read from (or write to) a MySQL database. This is also called "to query" the database.
+<br><br>
+The connection object created in the example before, has a method for querying the database:</p>
+
+<div class="syntax" name="node">con.connect(function(err) {
+  if (err) throw err;
+  console.log("Connected!");
+  con.query("SELECT * FROM students", function (err, result) {
+    if (err) throw err;
+    console.log(JSON.stringify(result, null, 2));
+  });
+});</div>
+
+<p>I have already made a simple Database named school, with a table
+named students, to which I have added 2 rows, we are using
+the JSON.stringify method so that the whole object tree is
+displayed in the terminal and not just the name of the object.</p>
+
+<p>The JSON.stringify object takes 3 properties:</p>
+
+<dl>
+  <dt><strong>value</strong></dt>
+  <dd>The value to convert to a JSON string.</dd>
+  <dt><strong>replacer (optional)</strong></dt>
+  <dd>A function that alters the behavior of the stringification process, or an array of String and Number that serve as an allowlist for selecting/filtering the properties of the value object to be included in the JSON string. If this value is null or not provided, all properties of the object are included in the resulting JSON string</dd>
+  <dt><strong> space (optional)</strong></dt>
+  <dd>A String or Number object that's used to insert white space (including indentation, line break characters, etc.) into the output JSON string for readability purposes.
+
+    If this is a Number, it indicates the number of space characters to use as white space for indenting purposes; this number is capped at 10 (if it is greater, the value is just 10). Values less than 1 indicate that no space should be used.
+    
+    If this is a String, the string (or the first 10 characters of the string, if it's longer than that) is used as white space.</dd>
+</dl>
+
+<p>Let's try out our code now and see how the object that is returned looks like:</p>
+
+<div class="syntax" name="cmd"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/karak10/Desktop/my_project</span>$ node .\demo_db_connection.js                                                         Connected!
+[
+  {
+    "student_id": 1,
+    "first_name": "Jane",
+    "last_name": "Doe",
+    "age": 17
+  },
+  {
+    "student_id": 2,
+    "first_name": "John",
+    "last_name": "Doe",
+    "age": 32
+  }
+]</div>
+
+<p>So we got an array of all the rows that were selected, each item of the
+array is an object that contains the columns of the row. Here is what the table
+looks like if seen inside the MySQL Workbench:</p>
+
+<table class="table">
+  <tr>
+    <td>student_id</td>
+    <td>first_name</td>
+    <td>last_name</td>
+    <td>age</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>Jane</td>
+    <td>Doe</td>
+    <td>17</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>John</td>
+    <td>Doe</td>
+    <td>32</td>
+  </tr>
+</table>
+
+<p>We are going to learn more about how to read, write, delete, and update databases in the next chapters.</p>
+</section>
 </article>
 
 <hr>
