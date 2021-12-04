@@ -780,6 +780,21 @@ person3.emite('speak', 'Alex is so lazy')</div>
 The Formidable module can be downloaded and installed using NPM:</p>
 
 <div class="syntax" name="cmd"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/karak10/Desktop/my_project</span>$ npm init -y
+Wrote to C:\Users/karak10/Desktop/my_project\package.json:
+
+{
+  "name": "desktop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
+
 <span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/karak10/Desktop/my_project</span>$ npm install formidable</div>
 
 <p>After you have downloaded the Formidable module, you can include the module in any application:</p>
@@ -940,6 +955,99 @@ folder perhaps inside your project or something.</p>
 
 </article>
 
+<hr>
+
+<article id="nine">
+<header><h1>NodeJS Sending an Email</h1></header>
+<section>
+<header><h2>The Nodemailer Module</h2></header>
+<p>The Nodemailer module makes it easy to send emails from your computer.
+<br><br>
+The Nodemailer module can be downloaded and installed using npm:</p>
+
+<div class="syntax" name="cmd"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/karak10/Desktop/my_project</span>$ npm init -y
+Wrote to C:\Users/karak10/Desktop/my_project\package.json:
+
+{
+  "name": "desktop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
+
+<span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/karak10/Desktop/my_project</span>$ npm install nodemailer</div>
+
+<p>After you have downloaded the Nodemailer module, you can include the module in any application:</p>
+
+<div class="syntax" name="node">var nodemailer = require('nodemailer');</div>
+</section>
+
+<section>
+<header><h2>Send an Email</h2></header>
+
+<p>Now you are ready to send emails from your server.
+<br><br>
+Use the username and password from your selected email provider to send an email. This example will show you how to use your Gmail account to send an email:</p>
+
+<div class="syntax" name="node">var nodemailer = require('nodemailer');
+
+var transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'youremail@gmail.com',
+    pass: 'yourpassword'
+  }
+});
+
+var mailOptions = {
+  from: 'youremail@gmail.com',
+  to: 'myfriend@yahoo.com',
+  subject: 'Sending Email using Node.js',
+  text: 'That was easy!'
+};
+
+transporter.sendMail(mailOptions, function(error, info){
+  if (error) {
+    console.log(error);
+  } else {
+    console.log('Email sent: ' + info.response);
+  }
+});</div>
+
+<p>And that's it! Now your server is able to send emails. Of course this
+module can be used while responding to HTTP requests too. Which means, if you use
+the formidable module as well you can do pretty cool things with this.</p>
+</section>
+
+<section>
+<header><h2>Multiple Receivers</h2></header>
+<p>To send an email to more than one receiver, add them to the "to" property of the mailOptions object, separated by commas:</p>
+<div class="syntax" name="node">var mailOptions = {
+  from: 'youremail@gmail.com',
+  to: 'myfriend@yahoo.com, myotherfriend@yahoo.com',
+  subject: 'Sending Email using Node.js',
+  text: 'That was easy!'
+}</div>
+</section>
+
+<section>
+<header><h2>Send HTML</h2></header>
+<p>To send HTML formatted text in your email, use the "html" property instead of the "text" property:</p>
+<div class="syntax" name="node">var mailOptions = {
+  from: 'youremail@gmail.com',
+  to: 'myfriend@yahoo.com',
+  subject: 'Sending Email using Node.js',
+  html: '&lt;h1>Welcome&lt;/h1>&lt;p>That was easy!&lt;/p>'
+}</div>
+</section>
+
+</article>
 <hr>
 </body>
 </html>   
