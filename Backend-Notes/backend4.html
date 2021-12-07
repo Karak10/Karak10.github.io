@@ -1098,6 +1098,7 @@ the formidable module as well you can do pretty cool things with this.</p>
 <article id="ten">
 <header><h1>NodeJS MySQL</h1></header>
 
+
 <section>
 
 <header><h2>MySQL Database</h2></header>
@@ -1280,8 +1281,177 @@ looks like if seen inside the MySQL Workbench:</p>
 
 <p>We are going to learn more about how to read, write, delete, and update databases in the next chapters.</p>
 </section>
-</article>
 
+
+<section>
+<header><h2>Inserting Into a Table</h2></header>
+<p>To fill a table in MySQL, use the <strong>"INSERT INTO"</strong> statement.</p>
+
+<div class="syntax" name="node">
+con.connect(function(err) {
+  if (err) throw err;
+  console.log("Connected!");
+  var sql = "INSERT INTO customers (name, address) VALUES ('Company Inc', 'Highway 37')";
+  con.query(sql, function (err, result) {
+    if (err) throw err;
+    console.log("1 record inserted");
+  });
+});
+</div>
+
+<p>To insert more than one record, make an array containing the values, and insert a question mark in the sql, which will be replaced by the value array:</p>
+
+<div class="syntax" name="node">
+con.connect(function(err) {
+  if (err) throw err;
+  console.log("Connected!");
+  var sql = "INSERT INTO customers (name, address) VALUES ?";
+  var values = [
+    ['John', 'Highway 71'],
+    ['Peter', 'Lowstreet 4'],
+    ['Amy', 'Apple st 652'],
+    ['Hannah', 'Mountain 21'],
+    ['Michael', 'Valley 345'],
+    ['Sandy', 'Ocean blvd 2'],
+    ['Betty', 'Green Grass 1'],
+    ['Richard', 'Sky st 331'],
+    ['Susan', 'One way 98'],
+    ['Vicky', 'Yellow Garden 2'],
+    ['Ben', 'Park Lane 38'],
+    ['William', 'Central st 954'],
+    ['Chuck', 'Main Road 989'],
+    ['Viola', 'Sideway 1633']
+  ];
+  con.query(sql, [values], function (err, result) {
+    if (err) throw err;
+    console.log("Number of records inserted: " + result.affectedRows);
+  });
+});
+</div>
+
+<p>When executing a query, a result object is returned.
+<br><br>
+The result object contains information about how the query affected the table.
+<br><br>
+The result object returned from the example above looks like this:</p>
+
+<div class="syntax" name="node">{
+  fieldCount: 0,
+  affectedRows: 14,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '\'Records:14  Duplicated: 0  Warnings: 0',
+  protocol41: true,
+  changedRows: 0
+}</div>
+
+<p>For tables with an auto increment id field, you can get the id of the row you just inserted by asking the result object.</p>
+<div class="syntax" name="node">con.connect(function(err) {
+  if (err) throw err;
+  var sql = "INSERT INTO customers (name, address) VALUES ('Michelle', 'Blue Village 1')";
+  con.query(sql, function (err, result) {
+    if (err) throw err;
+    console.log("1 record inserted, ID: " + result.insertId);
+  });
+});</div>
+<p>To be able to get the inserted id, only one row can be inserted, so if you want to insert multiple rows and
+get their inserted id for whatever reason then be creative and make this happen with a loop or something.</p>
+</section>
+
+<section>
+<header><h2>Selecting From a Table</h2></header>
+<p>To select data from a table in MySQL, use the "SELECT" statement.</p>
+<div class="syntax" name="node">con.connect(function(err) {
+  if (err) throw err;
+  con.query("SELECT * FROM customers", function (err, result, fields) {
+    if (err) throw err;
+    console.log(result);
+  });
+});</div>
+
+<p>To select only some of the columns in a table, use the "SELECT" statement followed by the column name:</p>
+<div class="syntax" name="node">con.connect(function(err) {
+  if (err) throw err;
+  con.query("SELECT name, address FROM customers", function (err, result, fields) {
+    if (err) throw err;
+    console.log(result);
+  });
+});</div>
+
+<p>Here is what the result object looks like:</p>
+<div class="syntax" name="cmd"><Span class="green">karak10@DESKTOP-47FREHA</Span>:<span class="blue">/mnt/c/Users/user/Desktop/project</span>$ node demo_db_select_fields.js
+[
+  { name: 'John', address: 'Highway 71'},
+  { name: 'Peter', address: 'Lowstreet 4'},
+  { name: 'Amy', address: 'Apple st 652'},
+  { name: 'Hannah', address: 'Mountain 21'},
+  { name: 'Michael', address: 'Valley 345'},
+  { name: 'Sandy', address: 'Ocean blvd 2'},
+  { name: 'Betty', address: 'Green Grass 1'},
+  { name: 'Richard', address: 'Sky st 331'},
+  { name: 'Susan', address: 'One way 98'},
+  { name: 'Vicky', address: 'Yellow Garden 2'},
+  { name: 'Ben', address: 'Park Lane 38'},
+  { name: 'William', address: 'Central st 954'},
+  { name: 'Chuck', address: 'Main Road 989'},
+  { name: 'Viola', address: 'Sideway 1633'}
+]</div>
+
+<p>The result object is an array containing each row as an object.
+To return the address of the third record, just refer to the third array object's address property: result[2].address</p>
+
+<p>The third parameter of the callback function is an array containing information about each field in the result:</p>
+
+<div class="syntax" name="node">con.connect(function(err) {
+  if (err) throw err;
+  con.query("SELECT name, address FROM customers", function (err, result, fields) {
+    if (err) throw err;
+    console.log(fields);
+  });
+});</div>
+<p>Here is what the field object looks like:</p>
+<div class="syntax" name="cmd"><Span class="green">karak10@DESKTOP-47FREHA</Span>:<span class="blue">/mnt/c/Users/user/Desktop/project</span>$ node demo_db_select_fields.js
+[
+  {
+    catalog: 'def',
+    db: 'mydb',
+    table: 'customers',
+    orgTable: 'customers',
+    name: 'name',
+    orgName: 'name',
+    charsetNr: 33,
+    length: 765,
+    type: 253,
+    flags: 0,
+    decimals: 0,
+    default: undefined,
+    zeroFill: false,
+    protocol41: true
+  },
+  {
+    catalog: 'def',
+    db: 'mydb',
+    table: 'customers',
+    orgTable: 'customers',
+    name: 'address',
+    orgName: 'address',
+    charsetNr: 33,
+    length: 765,
+    type: 253,
+    flags: 0,
+    decimals: 0,
+    default: undefined,
+    zeroFill: false,
+    protocol41: true
+  }
+]</div>
+
+<p>As you can see from the result of the example above, the fields object is an array containing information about each field as an object.
+To return the name of the second field, just refer to the second array item's name property:</p>
+</section>
+<br>
+</article>
 
 <hr>
 </body>
