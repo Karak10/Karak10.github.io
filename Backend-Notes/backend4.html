@@ -990,6 +990,8 @@ the original file's name.</p>
 <header><h1>NodeJS MySQL</h1></header>
 
 <section>
+<header><h1>MySQL Getting Started</h1></header>
+<section>
 
 <header><h2>MySQL Database</h2></header>
 <p>Node.js can be used in database applications.
@@ -1100,7 +1102,7 @@ The connection object created in the example before, has a method for querying t
 <div class="syntax" name="node">con.connect(function(err) {
   if (err) throw err;
   console.log("Connected!");
-  con.query("SELECT * FROM students", function (err, result) {
+  con.query("SELECT * FROM school.students", function (err, result) {
     if (err) throw err;
     console.log(JSON.stringify(result, null, 2));
   });
@@ -1128,7 +1130,8 @@ displayed in the terminal and not just the name of the object.</p>
 
 <p>Let's try out our code now and see how the object that is returned looks like:</p>
 
-<div class="syntax" name="cmd"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/karak10/Desktop/my_project</span>$ node .\demo_db_connection.js                                                         Connected!
+<div class="syntax" name="cmd"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/karak10/Desktop/my_project</span>$ node .\demo_db_connection.js
+Connected!
 [
   {
     "student_id": 1,
@@ -1171,6 +1174,131 @@ looks like if seen inside the MySQL Workbench:</p>
 
 <p>We are going to learn more about how to read, write, delete, and update databases in the next chapters.</p>
 </section>
+
+</section>
+
+<section>
+<header><h2>Creating a Database</h2></header>
+<p>To create a database in MySQL, use the <strong>"CREATE DATABASE"</strong> statement:</p>
+
+<div class="syntax" name="node">var mysql = require('mysql');
+
+var con = mysql.createConnection({
+  host: "localhost",
+  user: "yourusername",
+  password: "yourpassword"
+});
+
+con.connect(function(err) {
+  if (err) throw err;
+  console.log("Connected!");
+  con.query("CREATE DATABASE mydb", function (err, result) {
+    if (err) throw err;
+    console.log("Database created");
+  });
+});</div>
+
+<p>Save the code above in a file called "demo_create_db.js" and run the file:</p>
+
+<div class="syntax" name="cmd"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/karak10/Desktop/my_project</span>$ node .\demo_db_connection.js
+Connected!
+Database created</div>
+
+<p>If you check MySQL Workbench after that and reload the schemas a database named mydb should be there.</p>
+</section>
+
+<section>
+<header><h2>Creating a Table</h2></header>
+<p>To create a table in MySQL, use the <strong>"CREATE TABLE"</strong> statement.
+<br><br>
+Make sure you define the name of the database when you create the connection:</p>
+
+<div class="syntax" name="node">var mysql = require('mysql');
+
+var con = mysql.createConnection({
+  host: "localhost",
+  user: "yourusername",
+  password: "yourpassword",
+<span class="red">  database: "mydb"</span>
+});
+
+con.connect(function(err) {
+  if (err) throw err;
+  console.log("Connected!");
+  var sql = "CREATE TABLE customers (name VARCHAR(255), address VARCHAR(255))";
+  con.query(sql, function (err, result) {
+    if (err) throw err;
+    console.log("Table created");
+  });
+});</div>
+
+<p>Save the code above in a file called "demo_create_table.js" and run the file:</p>
+
+<div class="syntax" name="cmd"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/karak10/Desktop/my_project</span>$ node .\demo_db_connection.js
+Connected!
+Table created</div>
+<br><br>
+<header><h2>Primary Key</h2></header>
+<p>When creating a table, you should also create a column with a unique key for each record.
+<br><br>
+This can be done by defining a column as <strong>"INT AUTO_INCREMENT PRIMARY KEY"</strong> which will insert a unique number for each record. Starting at 1, and increased by one for each record.</p>
+
+<div class="syntax" name="node">var mysql = require('mysql');
+
+var con = mysql.createConnection({
+  host: "localhost",
+  user: "yourusername",
+  password: "yourpassword",
+  database: "mydb"
+});
+
+con.connect(function(err) {
+  if (err) throw err;
+  console.log("Connected!");
+  var sql = "CREATE TABLE customers ";
+  sql += "(id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255)" ;
+  sql += ", address VARCHAR(255))";
+  con.query(sql, function (err, result) {
+    if (err) throw err;
+    console.log("Table created");
+  });
+});</div>
+
+<p>If the table already exists, use the <strong>ALTER TABLE</strong> keyword:</p>
+
+<h2 class="left">Syntax:</h2>
+<section style="padding: 5px; width: fit-content; margin: unset;">
+<p class="left"style="white-space: pre;"><strong>ALTER TABLE</strong> table_name
+  <strong>ADD</strong> new_column_name column_definition
+    [ <strong>FIRST</strong> | <strong>AFTER</strong> column_name ];</p>
+</section>
+
+<h2 class="left">Example:</h2>
+
+<section style="padding: 5px; width: fit-content; margin: unset;">
+<p class="left"style="white-space: pre;"><strong>ALTER TABLE</strong> customers
+  <strong>ADD</strong> id INT AUTO_INCREMENT PRIMARY KEY
+    <strong>BEFORE</strong> name;
+</p>
+</section>
+<br><br>
+
+
+<p>If however we had already defined an id column but hadn't made it a primary key, we could use the <strong>MODIFY</strong> keyword:</p>
+
+<h2 class="left">Syntax</h2>
+
+<section style="padding: 5px; width: fit-content; margin: unset;">
+<p class="left"style="white-space: pre;"><strong>ALTER TABLE</strong> table_name
+  <strong>MODIFY</strong> column_name column_definition
+    [ <strong>FIRST</strong> | <strong>AFTER</strong> column_name ];</p> 
+</section>
+
+<p>This works just like the example above, but instead of creating a new column it modifies an existing column,
+the <strong>AFTER</strong> or <strong>BEFORE</strong> keywords are optional in
+case you want to move the position of the column.</p>
+</section>
+
 </article>
 
 <hr>
