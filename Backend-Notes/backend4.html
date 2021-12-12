@@ -1361,7 +1361,7 @@ get their inserted id for whatever reason then be creative and make this happen 
 
 <section>
 <header><h2>Selecting From a Table</h2></header>
-<p>To select data from a table in MySQL, use the "SELECT" statement.</p>
+<p>To select data from a table in MySQL, use the <Strong>"SELECT"</Strong> statement.</p>
 <div class="syntax" name="node">con.connect(function(err) {
   if (err) throw err;
   con.query("SELECT * FROM customers", function (err, result, fields) {
@@ -1449,6 +1449,61 @@ To return the address of the third record, just refer to the third array object'
 
 <p>As you can see from the result of the example above, the fields object is an array containing information about each field as an object.
 To return the name of the second field, just refer to the second array item's name property:</p>
+</section>
+
+<Section>
+<header><h2>Select With a Filter</h2></header>
+<p>When selecting records from a table, you can filter the selection by using the <strong>"WHERE"</strong> statement:</p>
+
+<div class="syntax" name="node">con.connect(function(err) {
+  if (err) throw err;
+  con.query("SELECT * FROM customers WHERE address = 'Park Lane 38'", function (err, result) {
+    if (err) throw err;
+    console.log(result);
+  });
+});</div>
+
+<p>When query values are variables provided by the user, you should escape the values.
+<br>
+This is to prevent SQL injections, which is a common web hacking technique to destroy or misuse your database.
+<br>
+The MySQL module has methods to escape query values:</p>
+
+<div class="syntax" name="node">var adr = 'Mountain 21';
+var sql = 'SELECT * FROM customers WHERE address = ' + mysql.escape(adr);
+con.query(sql, function (err, result) {
+  if (err) throw err;
+  console.log(result);
+});</div>
+
+<p>You can also use a ? as a placeholder for the values you want to escape.
+<br>
+In this case, the variable is sent as the second parameter in the query() method:</p>
+
+<div class="syntax" name="node">var adr = 'Mountain 21';
+var sql = 'SELECT * FROM customers WHERE address = ?';
+con.query(sql, [adr], function (err, result) {
+  if (err) throw err;
+  console.log(result);
+});</div>
+
+<p>If you have multiple placeholders, the array contains multiple values, in that order:</p>
+
+<div class="syntax" name="node">var name = 'Amy';
+var adr = 'Mountain 21';
+var sql = 'SELECT * FROM customers WHERE name = ? OR address = ?';
+con.query(sql, [name, adr], function (err, result) {
+  if (err) throw err;
+  console.log(result);
+});</div>
+</Section>
+
+<section>
+<header><h2>Conclusion</h2></header>
+<p>So, we went over some common SQL queries you may need to use,
+I have talked more about MySQL in another page of my notes. For more
+information about NodeJS and mysql you can visit this site: <a href="https://www.w3schools.com/nodejs/nodejs_mysql_orderby.asp" target="_blank">https://www.w3schools.com/nodejs/nodejs_mysql_orderby.asp</a>
+</p>
 </section>
 <br>
 </article>
