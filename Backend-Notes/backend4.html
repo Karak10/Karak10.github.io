@@ -1345,7 +1345,10 @@ con.connect(function(err) {
 <div class="syntax" name="cmd"><span class="green">karak10@DESKTOP-P0FANNP</span>:<span class="blue">/mnt/c/Users/karak10/Desktop/my_project</span>$ node .\demo_db_connection.js
 Connected!
 Table created</div>
-<br><br>
+<br>
+</section>
+
+<section> 
 <header><h2>Primary Key</h2></header>
 <p>When creating a table, you should also create a column with a unique key for each record.
 <br><br>
@@ -1386,7 +1389,7 @@ con.connect(function(err) {
 <section style="padding: 5px; width: fit-content; margin: unset;">
 <p class="left"style="white-space: pre;"><strong>ALTER TABLE</strong> customers
   <strong>ADD</strong> id INT AUTO_INCREMENT PRIMARY KEY
-    <strong>BEFORE</strong> name;
+    <strong>FIRST</strong>;
 </p>
 </section>
 <br><br>
